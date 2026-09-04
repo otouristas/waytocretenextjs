@@ -9,4 +9,6 @@ npm run dev
 
 Open `/en`. Languages: `en el de it fr sv`.
 
-Connect this repo on Vercel (framework Next.js). B2B rates stay private on `/en/partners`.
+Vercel project: `waytocretenextjs` (Frankfurt). Framework Next.js. No env vars required.
+
+B2B rates stay private on `/en/partners`.
