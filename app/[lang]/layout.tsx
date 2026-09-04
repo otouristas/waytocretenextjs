@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics, GSC_VERIFICATION } from "@/components/analytics";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DeskChrome } from "@/components/desk/desk-chrome";
@@ -45,6 +46,7 @@ export async function generateMetadata({
     },
     description: ui.layoutDesc,
     robots: isIndexable() ? { index: true, follow: true } : { index: false, follow: false },
+    verification: { google: GSC_VERIFICATION },
     icons: { icon: "/brand/logos/favicon.png" },
   };
 }
@@ -99,6 +101,7 @@ export default async function RootLayout({
           <Footer lang={lang} />
           <DeskChrome lang={lang} />
         </div>
+        <Analytics />
       </body>
     </html>
   );

@@ -1,13 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CalendarDays, Check, Loader2, Minus, Plus, ShieldCheck, TrendingDown } from "lucide-react";
+import { CalendarDays, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, TrendingDown } from "lucide-react";
 import type { Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import type { PriceModel, ThirdPartyCost } from "@/lib/content/schema";
 import { quote, type Party } from "@/lib/pricing";
 import { formatPrice } from "@/lib/format";
 import { sendRequest } from "@/lib/send-request";
+import { bookUrl, catalogUrl } from "@/lib/travelotopos";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -31,6 +32,7 @@ export function BookingWidget({
   cancelFreeHours,
   thirdPartyCosts,
   priceNote,
+  live,
 }: {
   slug: string;
   title: string;
@@ -41,6 +43,7 @@ export function BookingWidget({
   cancelFreeHours: number;
   thirdPartyCosts: ThirdPartyCost[];
   priceNote?: string;
+  live?: { serviceId: number; categoryId: number } | null;
 }) {
   const ui = t(lang);
   const [adults, setAdults] = useState(Math.max(groupMin, 2));
@@ -150,7 +153,16 @@ export function BookingWidget({
         {priceNote ? <p className="mt-3 text-xs leading-relaxed text-faint">{priceNote}</p> : null}
       </div>
 
-      <form onSubmit={submit} className="grid gap-4 p-5">
+      <form
+        onSubmit={(e) => {
+          if (live) {
+            e.preventDefault();
+            return;
+          }
+          void submit(e);
+        }}
+        className="grid gap-4 p-5"
+      >
         {/* Party */}
         <div className="grid gap-3">
           <Stepper
@@ -182,7 +194,7 @@ export function BookingWidget({
               value={date}
               onChange={(e) => setDate(e.target.value)}
               className="pl-9"
-              required
+              required={!live}
             />
           </span>
         </label>
@@ -229,27 +241,45 @@ export function BookingWidget({
           </details>
         ) : null}
 
-        <div className="grid gap-3">
-          <Input placeholder={ui.name} value={name} onChange={(e) => setName(e.target.value)} required />
-          <Input
-            type="email"
-            placeholder={ui.email}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <Input placeholder={ui.hotel} value={hotel} onChange={(e) => setHotel(e.target.value)} />
-          <Textarea
-            placeholder={ui.message}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </div>
+        {live ? (
+          <>
+            <Button asChild size="lg" className="w-full">
+              <a
+                href={date ? bookUrl(live.serviceId, live.categoryId, date) : catalogUrl(live.serviceId, live.categoryId)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="size-4" />
+                {date ? ui.bookLive : ui.bookLiveOpen}
+              </a>
+            </Button>
+            <p className="text-center text-xs text-muted">{ui.livePayNote}</p>
+          </>
+        ) : (
+          <>
+            <div className="grid gap-3">
+              <Input placeholder={ui.name} value={name} onChange={(e) => setName(e.target.value)} required />
+              <Input
+                type="email"
+                placeholder={ui.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <Input placeholder={ui.hotel} value={hotel} onChange={(e) => setHotel(e.target.value)} />
+              <Textarea
+                placeholder={ui.message}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </div>
 
-        <Button type="submit" size="lg" disabled={sending} className="w-full">
-          {sending ? <Loader2 className="size-4 animate-spin" /> : null}
-          {sending ? ui.sending : ui.bookThis}
-        </Button>
+            <Button type="submit" size="lg" disabled={sending} className="w-full">
+              {sending ? <Loader2 className="size-4 animate-spin" /> : null}
+              {sending ? ui.sending : ui.bookThis}
+            </Button>
+          </>
+        )}
 
         {cancelFreeHours > 0 ? (
           <p className="flex items-center justify-center gap-1.5 text-xs text-muted">

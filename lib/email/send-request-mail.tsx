@@ -1,25 +1,29 @@
 import { Resend } from "resend";
+import { DeskRequestEmail } from "@/emails/desk-request";
+import { GuestConfirmEmail } from "@/emails/guest-confirm";
 import { EMAIL, PARTNERS_EMAIL } from "@/lib/site";
 import { bodyFor, subjectFor, type RequestPayload } from "@/lib/request";
-import {
-  deskRequestHtml,
-  deskRequestText,
-  guestConfirmHtml,
-  guestConfirmSubject,
-  guestConfirmText,
-  templateVars,
-} from "@/lib/email/html";
+import { guestConfirmSubject, guestConfirmText, templateVars } from "@/lib/email/html";
 
 export type MailResult =
   | { ok: true }
   | { ok: false; fallback: "mailto"; to: string; subject: string; body: string };
 
-function deskTo(payload: RequestPayload) {
-  return payload.kind === "partner" ? PARTNERS_EMAIL : EMAIL;
+/** Every request is forwarded here. Override with RESEND_DESK_TO if needed. */
+function deskInbox() {
+  return process.env.RESEND_DESK_TO || EMAIL;
+}
+
+function deskRecipients(payload: RequestPayload) {
+  const inbox = deskInbox();
+  if (payload.kind === "partner" && PARTNERS_EMAIL !== inbox) {
+    return [inbox, PARTNERS_EMAIL];
+  }
+  return [inbox];
 }
 
 function fromAddress() {
-  return process.env.RESEND_FROM || "Way to Crete desk <onboarding@resend.dev>";
+  return process.env.RESEND_FROM || "Rethymno Tours desk <onboarding@resend.dev>";
 }
 
 async function sendOne(
@@ -36,10 +40,11 @@ async function sendOne(
 }
 
 export async function sendRequestMail(payload: RequestPayload): Promise<MailResult> {
-  const to = deskTo(payload);
+  const to = deskRecipients(payload);
+  const inbox = deskInbox();
   const key = process.env.RESEND_API_KEY;
   if (!key) {
-    return { ok: false, fallback: "mailto", to, subject: subjectFor(payload), body: bodyFor(payload) };
+    return { ok: false, fallback: "mailto", to: inbox, subject: subjectFor(payload), body: bodyFor(payload) };
   }
 
   const resend = new Resend(key);
@@ -71,8 +76,8 @@ export async function sendRequestMail(payload: RequestPayload): Promise<MailResu
           to,
           replyTo: payload.email,
           subject: subjectFor(payload),
-          html: deskRequestHtml(payload),
-          text: deskRequestText(payload),
+          react: <DeskRequestEmail payload={payload} />,
+          text: bodyFor(payload),
           tags: [
             { name: "kind", value: payload.kind },
             { name: "stream", value: "desk" },
@@ -82,16 +87,19 @@ export async function sendRequestMail(payload: RequestPayload): Promise<MailResu
       );
 
   if (!deskSent) {
-    return { ok: false, fallback: "mailto", to, subject: subjectFor(payload), body: bodyFor(payload) };
+    return { ok: false, fallback: "mailto", to: inbox, subject: subjectFor(payload), body: bodyFor(payload) };
   }
 
-  const guestSend = guestTemplate
-    ? sendOne(
+  const guestBcc = payload.email.toLowerCase() === inbox.toLowerCase() ? undefined : [inbox];
+
+  const guestResult = guestTemplate
+    ? await sendOne(
         resend,
         {
           from,
           to: payload.email,
-          replyTo: to,
+          replyTo: inbox,
+          bcc: guestBcc,
           template: { id: guestTemplate, variables: vars },
           tags: [
             { name: "kind", value: payload.kind },
@@ -100,14 +108,15 @@ export async function sendRequestMail(payload: RequestPayload): Promise<MailResu
         },
         `guest-confirm/${id}`,
       )
-    : sendOne(
+    : await sendOne(
         resend,
         {
           from,
           to: payload.email,
-          replyTo: to,
+          replyTo: inbox,
+          bcc: guestBcc,
           subject: guestConfirmSubject(payload),
-          html: guestConfirmHtml(payload),
+          react: <GuestConfirmEmail payload={payload} />,
           text: guestConfirmText(payload),
           tags: [
             { name: "kind", value: payload.kind },
@@ -117,7 +126,6 @@ export async function sendRequestMail(payload: RequestPayload): Promise<MailResu
         `guest-confirm/${id}`,
       );
 
-  const guestResult = await guestSend;
   if (!guestResult) {
     console.error("Guest confirmation email failed; desk notification was sent.");
   }

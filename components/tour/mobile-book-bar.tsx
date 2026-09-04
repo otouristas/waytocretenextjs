@@ -30,10 +30,12 @@ export function MobileBookBar({
   lang,
   priceFrom,
   onRequestLabel,
+  bookHref,
 }: {
   lang: Lang;
   priceFrom: number | null;
   onRequestLabel?: boolean;
+  bookHref?: string | null;
 }) {
   const ui = t(lang);
   const [show, setShow] = useState(false);
@@ -79,17 +81,28 @@ export function MobileBookBar({
           </p>
         ) : null}
 
-        <button
-          type="button"
-          onClick={() =>
-            document
-              .getElementById("booking-panel")
-              ?.scrollIntoView({ behavior: "smooth", block: "start" })
-          }
-          className="inline-flex min-h-11 flex-1 items-center justify-center truncate rounded-full bg-olive px-4 text-sm font-semibold text-surface shadow-[0_1px_0_rgba(255,255,255,0.28)_inset] transition hover:bg-olive-deep"
-        >
-          {ui.bookNow}
-        </button>
+        {bookHref ? (
+          <a
+            href={bookHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 flex-1 items-center justify-center truncate rounded-full bg-olive px-4 text-sm font-semibold text-surface shadow-[0_1px_0_rgba(255,255,255,0.28)_inset] transition hover:bg-olive-deep"
+          >
+            {ui.bookNow}
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={() =>
+              document
+                .getElementById("booking-panel")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
+            className="inline-flex min-h-11 flex-1 items-center justify-center truncate rounded-full bg-olive px-4 text-sm font-semibold text-surface shadow-[0_1px_0_rgba(255,255,255,0.28)_inset] transition hover:bg-olive-deep"
+          >
+            {ui.bookNow}
+          </button>
+        )}
 
         <a
           href={WHATSAPP}

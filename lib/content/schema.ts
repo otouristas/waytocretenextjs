@@ -247,6 +247,14 @@ export const TourCore = z.object({
   hero: MediaRef,
   gallery: z.array(MediaRef).default([]),
 
+  /** Live listing on waytocrete.travelotopos.com. Absent = email request. */
+  travelotopos: z
+    .object({
+      serviceId: z.number().int().positive(),
+      categoryId: z.number().int().positive(),
+    })
+    .optional(),
+
   featured: z.boolean().default(false),
   /** Old slugs that 301 here. Generates the redirect map at build time. */
   supersedes: z.array(z.string()).default([]),

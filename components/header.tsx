@@ -7,7 +7,8 @@ import { useEffect, useRef, useState } from "react";
 import { fill, LANGS, LANG_META, type Lang, langPath } from "@/lib/i18n/langs";
 import { activeNavId, navCopy } from "@/lib/i18n/nav";
 import { t } from "@/lib/i18n/ui";
-import { BOOK_NOW_URL, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/site";
+import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/site";
+import { bookNowTarget } from "@/lib/travelotopos";
 import { cn } from "@/lib/cn";
 import { BrandLogo } from "@/components/brand-logo";
 import { MobileMenu } from "@/components/mobile-menu";
@@ -19,7 +20,9 @@ import { GoogleWordmark, Stars } from "@/components/trust/source-logos";
 
 /**
  * Site header: edge-to-edge promo strip, primary bar, and a full-bleed
- * mega menu for Crete Tours. Booking CTA always points at Travelotopos.
+ * mega menu for Crete Tours. Booking CTA opens the matching Travelotopos
+ * listing on a live tour page, the request form on the others, and the
+ * catalog everywhere else.
  */
 export function Header({
   lang,
@@ -34,6 +37,7 @@ export function Header({
   const labels = navCopy(lang);
   const pathname = usePathname();
   const restPath = pathname.replace(/^\/(en|de|it|fr|sv)(?=\/|$)/, "") || "";
+  const book = bookNowTarget(pathname);
   const current = activeNavId(pathname);
   const [sheet, setSheet] = useState(false);
   const [open, setOpen] = useState<string | null>(null);
@@ -184,9 +188,8 @@ export function Header({
             </div>
 
             <a
-              href={BOOK_NOW_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={book.href}
+              {...(book.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="inline-flex h-10 items-center gap-1.5 rounded-full bg-olive px-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-surface transition hover:bg-olive-deep sm:px-4 sm:text-xs"
             >
               <CalendarCheck className="size-3.5 shrink-0" />
@@ -219,6 +222,8 @@ export function Header({
           restPath={restPath}
           rating={rating}
           nav={nav}
+          bookNowHref={book.href}
+          bookNowExternal={book.external}
           onClose={() => setSheet(false)}
         />
       ) : null}

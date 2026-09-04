@@ -1,6 +1,24 @@
-import { getTour } from "@/lib/tours";
+import { BOOK_NOW_URL } from "@/lib/site";
 
 export const TRAVELOTOPOS_ORIGIN = "https://waytocrete.travelotopos.com";
+
+/**
+ * Live Travelotopos listings, checked against the engine in Sep 2026.
+ * Category IDs: 3 culture, 4 outdoor, 5 gastronomy, 6 history, 7 romance, 8 flower.
+ * Tours not listed here stay on the Resend request form.
+ */
+export const TRAVELOTOPOS_BY_SLUG: Record<string, { serviceId: number; categoryId: number }> = {
+  "shepherd-for-a-day-crete": { serviceId: 3, categoryId: 3 },
+  "imbros-gorge-guided-tour": { serviceId: 11, categoryId: 4 },
+  "samaria-gorge-explorer": { serviceId: 13, categoryId: 4 },
+  "timeless-crete-villages-monasteries": { serviceId: 14, categoryId: 6 },
+  "romance-history-in-rethymno": { serviceId: 17, categoryId: 7 },
+  "botanical-tours-crete": { serviceId: 18, categoryId: 8 },
+  "lake-kournas-argyroupoli-springs-tour": { serviceId: 20, categoryId: 4 },
+  "rethymno-walk-taste": { serviceId: 21, categoryId: 5 },
+  "south-crete-highlights": { serviceId: 22, categoryId: 4 },
+  "cretan-nature-village-journey": { serviceId: 23, categoryId: 4 },
+};
 
 const ATHENS = "Europe/Athens";
 const CACHE_MS = 10 * 60 * 1000;
@@ -57,9 +75,20 @@ export function parseMonth(value: string | null | undefined) {
 }
 
 export function liveBooker(slug: string): LiveBooker | null {
-  const tour = getTour(slug);
-  if (!tour?.travelotopos) return null;
-  return { slug: tour.slug, ...tour.travelotopos };
+  const ids = TRAVELOTOPOS_BY_SLUG[slug];
+  if (!ids) return null;
+  return { slug, ...ids };
+}
+
+export type BookNowTarget = { href: string; external: boolean };
+
+/** Header / mobile Book now: the tour's engine page, the request form, or the catalog. */
+export function bookNowTarget(pathname: string): BookNowTarget {
+  const match = pathname.match(/\/tours\/([^/?#]+)/);
+  if (!match) return { href: BOOK_NOW_URL, external: true };
+  const booker = liveBooker(match[1]);
+  if (booker) return { href: catalogUrl(booker.serviceId, booker.categoryId), external: true };
+  return { href: "#booking-panel", external: false };
 }
 
 export function catalogUrl(serviceId: number, categoryId: number) {

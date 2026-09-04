@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "content:lint": "node --experimental-strip-types scripts/content-lint.ts",
     "content:reviews": "node --experimental-strip-types scripts/build-reviews.ts",
-    "content:media": "node --experimental-strip-types scripts/check-media.ts"
+    "content:media": "node --experimental-strip-types scripts/check-media.ts",
+    "email": "email dev --dir emails --port 3333"
   },
   "dependencies": {
     "@ai-sdk/react": "^4.0.95",
@@ -26,6 +27,7 @@
     "next": "^16.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-email": "^6.9.3",
     "resend": "^6.26.0",
     "server-only": "^0.0.1",
     "tailwind-merge": "^3.5.0",

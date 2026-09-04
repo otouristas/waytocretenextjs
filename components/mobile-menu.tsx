@@ -18,7 +18,7 @@ import { createPortal } from "react-dom";
 import { LANGS, LANG_META, type Lang, langPath } from "@/lib/i18n/langs";
 import { secondaryNav, navCopy } from "@/lib/i18n/nav";
 import { t } from "@/lib/i18n/ui";
-import { BOOK_NOW_URL, MHTE_LICENCE, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/site";
+import { MHTE_LICENCE, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/site";
 import { GoogleWordmark, Stars } from "@/components/trust/source-logos";
 import { BrandLogo } from "@/components/brand-logo";
 import { cn } from "@/lib/cn";
@@ -31,12 +31,16 @@ export function MobileMenu({
   onClose,
   rating,
   nav,
+  bookNowHref,
+  bookNowExternal,
 }: {
   lang: Lang;
   restPath: string;
   onClose: () => void;
   rating?: { average: number; count: number } | null;
   nav: NavEntry[];
+  bookNowHref: string;
+  bookNowExternal: boolean;
 }) {
   const copy = t(lang);
   const labels = navCopy(lang);
@@ -177,9 +181,8 @@ export function MobileMenu({
       <div className="shrink-0 border-t border-line/20 bg-earth px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <div className="flex gap-2">
           <a
-            href={BOOK_NOW_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={bookNowHref}
+            {...(bookNowExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             onClick={onClose}
             className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-olive text-sm font-semibold uppercase tracking-[0.12em] text-surface"
           >

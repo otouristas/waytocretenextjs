@@ -20,7 +20,8 @@ npm run build
 | Variable | Purpose |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | Indexability switch. Canonicals, JSON-LD `WebSite`/`Organization` URLs and the sitemap always use `https://rethymnotours.com`. Set this to that same origin on production so the site is indexable; leave unset on previews. |
-| `RESEND_API_KEY`, `RESEND_FROM` | Optional. Without them, request forms fall back to a `mailto:` draft. |
+| `RESEND_API_KEY`, `RESEND_FROM` | Desk mail via Resend. Without a key, forms fall back to a `mailto:` draft. After the domain is verified, set `RESEND_FROM` to `Rethymno Tours desk <desk@rethymnotours.com>`. |
+| `RESEND_DESK_TO` | Inbox that receives every request. Defaults to `info@waytocrete.com`. |
 
 `isIndexable()` in `lib/site.ts` only returns true for the real production host — a Vercel preview
 that ranks would compete with production for the same content.
@@ -40,7 +41,8 @@ Leave it unset on Preview and Development so those builds stay `noindex`. Option
 
 | Variable | Purpose |
 |---|---|
-| `RESEND_API_KEY`, `RESEND_FROM` | Desk request mail. Forms fall back to `mailto:` without them. |
+| `RESEND_API_KEY`, `RESEND_FROM` | Desk request mail. Forms fall back to `mailto:` without them. After DNS, `RESEND_FROM=Rethymno Tours desk <desk@rethymnotours.com>`. |
+| `RESEND_DESK_TO` | Forward target. Defaults to `info@waytocrete.com`. |
 | `RESEND_TEMPLATE_DESK`, `RESEND_TEMPLATE_GUEST` | Optional Resend template IDs. |
 | `AI_GATEWAY_API_KEY`, `AI_GATEWAY_MODEL` | Guest-desk chat. OIDC on Vercel also works without a key. |
 

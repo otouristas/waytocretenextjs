@@ -7,6 +7,7 @@ import { TourHeroMosaic } from "@/components/tour/hero-mosaic";
 import { priceFrom } from "@/lib/pricing";
 import { BookingWidget } from "@/components/tour/booking-widget";
 import { MobileBookBar } from "@/components/tour/mobile-book-bar";
+import { catalogUrl, liveBooker } from "@/lib/travelotopos";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
 import { RatingInline } from "@/components/reviews/rating-summary";
 import { ratingSummary } from "@/lib/content/load";
@@ -43,6 +44,7 @@ export function TourPage({
   reviews: Review[];
 }) {
   const ui = t(lang);
+  const live = liveBooker(core.slug);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 md:py-8">
@@ -150,6 +152,7 @@ export function TourPage({
             cancelFreeHours={core.cancelFreeHours}
             thirdPartyCosts={core.thirdPartyCosts}
             priceNote={copy.priceNote}
+            live={live}
           />
         </div>
       </div>
@@ -158,6 +161,7 @@ export function TourPage({
         lang={lang}
         priceFrom={priceFrom(core.price)}
         onRequestLabel={core.price.kind === "on_request"}
+        bookHref={live ? catalogUrl(live.serviceId, live.categoryId) : null}
       />
     </div>
   );
