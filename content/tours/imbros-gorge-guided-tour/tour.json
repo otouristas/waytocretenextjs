@@ -1,0 +1,60 @@
+{
+  "slug": "imbros-gorge-guided-tour",
+  "category": "hiking",
+  "wpSlug": "imbros-gorge-guided-tour",
+  "wpId": 45,
+  "price": {
+    "kind": "sliding_per_person",
+    "currency": "EUR",
+    "tiers": [
+      { "minGuests": 2, "maxGuests": 2, "perPerson": 145 },
+      { "minGuests": 3, "maxGuests": 3, "perPerson": 96 },
+      { "minGuests": 4, "maxGuests": 4, "perPerson": 72.5 },
+      { "minGuests": 5, "maxGuests": 5, "perPerson": 70 },
+      { "minGuests": 6, "maxGuests": 6, "perPerson": 58 },
+      { "minGuests": 7, "maxGuests": 7, "perPerson": 50 },
+      { "minGuests": 8, "maxGuests": 8, "perPerson": 44 }
+    ]
+  },
+  "thirdPartyCosts": [
+    {
+      "label": "Imbros Gorge entrance fee",
+      "amount": null,
+      "perPerson": true,
+      "optional": false,
+      "note": "Paid at the gorge gate; not included in the tour price."
+    },
+    {
+      "label": "Optional guide (history, flora and fauna of the gorge)",
+      "amount": null,
+      "perPerson": false,
+      "optional": true,
+      "note": "Available for an additional fee on request."
+    }
+  ],
+  "cadence": { "kind": "daily" },
+  "pickupTime": "07:00",
+  "durationMinutes": 360,
+  "difficulty": "easy",
+  "groupMin": 2,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": true,
+  "privateOnly": true,
+  "cancelFreeHours": 48,
+  "meetingPoint": { "lat": 35.2264, "lng": 24.1406 },
+  "places": ["imbros-gorge"],
+  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/imbros-17.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-27-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-25-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/imbros-26.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-19-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-22-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-18-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-46-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-49-scaled.jpg"
+  ],
+  "featured": true,
+  "supersedes": []
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "what-to-eat-in-crete",
+  "kind": "list",
+  "published": "2026-01-17",
+  "updated": "2026-07-11",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/114-scaled.jpg",
+  "places": [],
+  "tours": [
+    "taste-of-crete",
+    "authentic-cretan-cooking-class",
+    "cretan-honey-wine-experience",
+    "rethymno-walk-taste",
+    "shepherd-for-a-day-crete"
+  ],
+  "supersedes": [
+    "/2026/01/17/what-to-eat-in-crete-traditional-dishes-you-cant-leave-without-trying/"
+  ],
+  "featured": true
+}

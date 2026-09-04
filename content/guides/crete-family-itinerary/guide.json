@@ -1,0 +1,32 @@
+{
+  "slug": "crete-family-itinerary",
+  "kind": "itinerary",
+  "published": "2026-01-23",
+  "updated": "2026-01-23",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/1.jpg",
+  "places": [
+    "chania-old-town",
+    "elafonisi",
+    "rethymno-old-town",
+    "fortezza-castle",
+    "preveli-beach",
+    "knossos",
+    "heraklion-archaeological-museum",
+    "heraklion-old-town"
+  ],
+  "tours": [
+    "elafonisi-pink-sand-beach-tour-from-rethymno",
+    "shepherd-for-a-day-crete",
+    "south-crete-highlights",
+    "rethymno-walk-taste",
+    "knossos-palace-private-tour",
+    "authentic-cretan-cooking-class",
+    "timeless-crete-villages-monasteries",
+    "lake-kournas-argyroupoli-springs-tour"
+  ],
+  "supersedes": [
+    "/2026/01/23/crete-family-itinerary-the-ultimate-7-day-journey-through-chania-rethymno/"
+  ],
+  "featured": false
+}

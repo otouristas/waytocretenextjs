@@ -1,0 +1,46 @@
+{
+  "slug": "where-to-stay-in-crete",
+  "kind": "answer",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/hasika-rethymno.jpeg",
+  "places": [
+    "rethymno-old-town",
+    "fortezza-castle",
+    "chania-old-town",
+    "elafonisi",
+    "falassarna",
+    "balos-lagoon",
+    "samaria-gorge",
+    "almyrida",
+    "georgioupolis",
+    "lake-kournas",
+    "hersonissos",
+    "malia",
+    "elounda",
+    "agios-nikolaos",
+    "spinalonga",
+    "plakias",
+    "damnoni",
+    "preveli-beach",
+    "kourtaliotiko-gorge",
+    "heraklion-old-town",
+    "knossos",
+    "heraklion-archaeological-museum",
+    "agia-marina"
+  ],
+  "tours": [
+    "romance-history-in-rethymno",
+    "rethymno-walk-taste",
+    "lake-kournas-argyroupoli-springs-tour",
+    "spinalonga-tour-from-rethymno",
+    "south-crete-highlights",
+    "knossos-palace-private-tour",
+    "elafonisi-pink-sand-beach-tour-from-rethymno"
+  ],
+  "supersedes": [
+    "/2026/06/30/where-to-stay-in-crete-first-time/"
+  ],
+  "featured": true
+}

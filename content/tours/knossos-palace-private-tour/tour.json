@@ -1,0 +1,61 @@
+{
+  "slug": "knossos-palace-private-tour",
+  "category": "culture",
+  "wpSlug": "knossos-palace-private-tour",
+  "wpId": 723,
+  "price": {
+    "kind": "on_request",
+    "currency": "EUR",
+    "indicativeFrom": null
+  },
+  "thirdPartyCosts": [
+    {
+      "label": "Palace of Knossos entrance ticket",
+      "amount": null,
+      "perPerson": true,
+      "optional": false,
+      "note": "Paid at the site; not included in the tour price."
+    },
+    {
+      "label": "Heraklion Archaeological Museum entrance ticket",
+      "amount": null,
+      "perPerson": true,
+      "optional": false,
+      "note": "Paid at the museum; a combined Knossos + museum ticket is usually available."
+    },
+    {
+      "label": "Professional licensed guide at the sites",
+      "amount": null,
+      "perPerson": false,
+      "optional": true,
+      "note": "Your English-speaking driver is included; an expert site guide can be added for an extra charge."
+    }
+  ],
+  "cadence": {
+    "kind": "on_request"
+  },
+  "pickupTime": "09:00",
+  "durationMinutes": 420,
+  "difficulty": "easy",
+  "groupMin": 2,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": false,
+  "privateOnly": true,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": ["knossos", "heraklion-archaeological-museum", "heraklion-old-town"],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0007-scaled-1.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0001-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0002-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0003-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0004-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0005-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0006-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/04/heraklion-archeological-museum.jpeg",
+    "https://waytocrete.com/wp-content/uploads/2025/04/heraklion-archaeological-museum-gallery-005.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

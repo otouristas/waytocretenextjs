@@ -1,0 +1,40 @@
+{
+  "slug": "margarites",
+  "geo": {
+    "lat": 35.339167,
+    "lng": 24.686667
+  },
+  "kind": "village",
+  "sameAs": [
+    "https://el.wikipedia.org/wiki/%CE%9C%CE%B1%CF%81%CE%B3%CE%B1%CF%81%CE%AF%CF%84%CE%B5%CF%82_%CE%A1%CE%B5%CE%B8%CF%8D%CE%BC%CE%BD%CE%BF%CF%85",
+    "https://www.wikidata.org/wiki/Q37708354"
+  ],
+  "elevationM": null,
+  "lengthKm": null,
+  "openMonths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "entryFeeEur": 0,
+  "driveFromRethymnoMinutes": 30,
+  "tours": [
+    "timeless-crete-villages-monasteries"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-4-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-5-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-6-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-11-scaled.jpg"
+  ]
+}

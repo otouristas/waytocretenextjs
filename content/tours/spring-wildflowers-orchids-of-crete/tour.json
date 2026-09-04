@@ -1,0 +1,70 @@
+{
+  "slug": "spring-wildflowers-orchids-of-crete",
+  "category": "nature",
+  "wpSlug": "spring-wildflowers-orchids-of-crete-2",
+  "wpId": 9691,
+  "price": {
+    "kind": "fixed_departure",
+    "currency": "EUR",
+    "standard": 1200,
+    "earlyBird": {
+      "price": 990,
+      "until": "2026-12-31"
+    },
+    "deposit": 200,
+    "balanceDueWeeksBefore": [
+      10,
+      8
+    ]
+  },
+  "thirdPartyCosts": [],
+  "cadence": {
+    "kind": "fixed_dates",
+    "departures": [
+      {
+        "start": "2027-04-11",
+        "end": "2027-04-17"
+      }
+    ]
+  },
+  "pickupTime": null,
+  "durationMinutes": 10080,
+  "difficulty": "moderate",
+  "groupMin": 7,
+  "groupMax": 14,
+  "hotelPickup": false,
+  "photoshoot": false,
+  "privateOnly": false,
+  "cancelFreeHours": 0,
+  "meetingPoint": null,
+  "places": [
+    "spili",
+    "omalos-plateau",
+    "samaria-gorge",
+    "imbros-gorge",
+    "aradaina-gorge",
+    "kourtaliotiko-gorge",
+    "preveli-monastery",
+    "preveli-beach",
+    "triopetra-beach",
+    "gious-kampos",
+    "psiloritis"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/06/flowers-10-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2026/06/flowers-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-12-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-20-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-23-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-30-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-38-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-41-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/06/flowers-48-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": [
+    "/spring-wildflowers-orchids-of-crete",
+    "/spring-wildflowers-orchids-of-crete-2",
+    "/tours/spring-wildflowers-orchids-of-crete-2"
+  ]
+}

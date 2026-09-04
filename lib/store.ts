@@ -30,6 +30,6 @@ export const useWayStore = create<Store>()(
       bookings: [],
       addBooking: (b) => set({ bookings: [...get().bookings, b] }),
     }),
-    { name: "waytocrete-store" },
+    { name: "waytocrete-store", skipHydration: true },
   ),
 );

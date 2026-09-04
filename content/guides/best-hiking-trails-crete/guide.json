@@ -1,0 +1,34 @@
+{
+  "slug": "best-hiking-trails-crete",
+  "kind": "list",
+  "published": "2026-01-19",
+  "updated": "2026-07-11",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/lefka-ori-46-scaled.jpg",
+  "places": [
+    "samaria-gorge",
+    "agia-roumeli",
+    "imbros-gorge",
+    "aradaina-gorge",
+    "marmara-beach",
+    "agia-irini-gorge",
+    "preveli-beach",
+    "richtis-gorge",
+    "psiloritis",
+    "kedrodasos",
+    "lassithi-plateau",
+    "elounda"
+  ],
+  "tours": [
+    "samaria-gorge-explorer",
+    "imbros-gorge-guided-tour",
+    "aradaina-gorge",
+    "pachnes-summit",
+    "south-crete-highlights",
+    "spring-wildflowers-orchids-of-crete"
+  ],
+  "supersedes": [
+    "/2026/01/19/the-top-hiking-trails-in-crete-a-deep-exploration-of-the-island-on-foot/"
+  ],
+  "featured": true
+}

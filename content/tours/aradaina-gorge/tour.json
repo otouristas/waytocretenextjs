@@ -1,0 +1,50 @@
+{
+  "slug": "aradaina-gorge",
+  "category": "hiking",
+  "wpSlug": "aradaina-gorge",
+  "wpId": 8316,
+  "price": {
+    "kind": "on_request",
+    "currency": "EUR",
+    "indicativeFrom": null
+  },
+  "thirdPartyCosts": [
+    {
+      "label": "Gorge entrance fee",
+      "amount": 5,
+      "perPerson": true,
+      "optional": false
+    },
+    {
+      "label": "Private boat taxi from Marmara Beach",
+      "amount": 50,
+      "perPerson": false,
+      "optional": false,
+      "note": "50 EUR total for 1-5 passengers; 10 EUR per person for 6 or more."
+    }
+  ],
+  "cadence": { "kind": "on_request" },
+  "pickupTime": "07:00",
+  "durationMinutes": 540,
+  "difficulty": "hard",
+  "groupMin": 1,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": false,
+  "privateOnly": true,
+  "cancelFreeHours": 48,
+  "meetingPoint": { "lat": 35.2183, "lng": 24.065 },
+  "places": ["aradaina-gorge", "marmara-beach"],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/flowers-28-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-48-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-38-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-29-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-51-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-76-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-60-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-124-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "crete-without-a-car",
+  "kind": "answer",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-25-scaled.jpg",
+  "places": [
+    "rethymno-old-town",
+    "chania-old-town",
+    "heraklion-old-town",
+    "agios-nikolaos",
+    "knossos",
+    "heraklion-archaeological-museum",
+    "samaria-gorge",
+    "agia-roumeli",
+    "imbros-gorge",
+    "aradaina-gorge",
+    "elafonisi",
+    "preveli-beach",
+    "spinalonga",
+    "elounda",
+    "plaka",
+    "loutro",
+    "chora-sfakion",
+    "pachnes",
+    "fortezza-castle"
+  ],
+  "tours": [
+    "samaria-gorge-explorer",
+    "imbros-gorge-guided-tour",
+    "aradaina-gorge",
+    "elafonisi-pink-sand-beach-tour-from-rethymno",
+    "south-crete-highlights",
+    "spinalonga-tour-from-rethymno",
+    "knossos-palace-private-tour",
+    "timeless-crete-villages-monasteries",
+    "pachnes-summit"
+  ],
+  "supersedes": [
+    "/2026/06/30/crete-without-car/"
+  ],
+  "featured": true
+}

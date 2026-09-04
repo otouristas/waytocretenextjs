@@ -1,0 +1,40 @@
+{
+  "slug": "lake-kournas",
+  "geo": {
+    "lat": 35.330833,
+    "lng": 24.275556
+  },
+  "kind": "lake",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Lake_Kournas",
+    "https://www.wikidata.org/wiki/Q864878"
+  ],
+  "elevationM": 20,
+  "lengthKm": null,
+  "openMonths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "entryFeeEur": 0,
+  "driveFromRethymnoMinutes": 25,
+  "tours": [
+    "lake-kournas-argyroupoli-springs-tour"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-1--scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-2-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-46-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-52-scaled.jpg"
+  ]
+}

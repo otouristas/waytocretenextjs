@@ -1,0 +1,49 @@
+{
+  "slug": "best-villages-in-crete",
+  "kind": "list",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/05/Margarites-6-scaled-1.jpg",
+  "places": [
+    "maroulas",
+    "margarites",
+    "argyroupoli",
+    "kournas",
+    "lake-kournas",
+    "spili",
+    "vamos",
+    "axos",
+    "thronos",
+    "meronas",
+    "anogeia",
+    "chora-sfakion",
+    "archanes",
+    "zaros",
+    "anopoli",
+    "aradaina-gorge",
+    "milia",
+    "kapetaniana",
+    "loutro",
+    "elos",
+    "kritsa",
+    "mochlos",
+    "psiloritis",
+    "arkadi-monastery",
+    "eleftherna"
+  ],
+  "tours": [
+    "timeless-crete-villages-monasteries",
+    "cretan-nature-village-journey",
+    "shepherd-for-a-day-crete",
+    "lake-kournas-argyroupoli-springs-tour",
+    "cretan-honey-wine-experience",
+    "botanical-tours-crete",
+    "aradaina-gorge",
+    "taste-of-crete"
+  ],
+  "supersedes": [
+    "/2026/06/30/best-villages-in-crete/"
+  ],
+  "featured": false
+}

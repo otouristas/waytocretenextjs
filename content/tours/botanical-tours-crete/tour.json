@@ -1,0 +1,69 @@
+{
+  "slug": "botanical-tours-crete",
+  "category": "nature",
+  "wpSlug": "botanical-tours-crete",
+  "wpId": 4809,
+  "price": {
+    "kind": "adult_child_private",
+    "currency": "EUR",
+    "adult": 95,
+    "child": 60,
+    "infantFree": true,
+    "childAges": [
+      4,
+      13
+    ],
+    "infantAges": [
+      0,
+      3
+    ],
+    "privateGroup": {
+      "total": 360,
+      "includedGuests": 4,
+      "extraGuest": 90
+    }
+  },
+  "thirdPartyCosts": [],
+  "cadence": {
+    "kind": "seasonal",
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ],
+    "months": [
+      3,
+      4
+    ]
+  },
+  "pickupTime": "09:30",
+  "durationMinutes": 300,
+  "difficulty": "easy",
+  "groupMin": 1,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": true,
+  "privateOnly": false,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": [
+    "gious-kampos",
+    "agio-pnevma",
+    "spili"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/flower-12-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-29-1-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/05/flower-23-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/05/flower-21-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/05/flower-38-scaled-1.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-65-1-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-22-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "elafonisi",
+  "geo": {
+    "lat": 35.269167,
+    "lng": 23.5325
+  },
+  "kind": "beach",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Elafonisi",
+    "https://www.wikidata.org/wiki/Q1324824"
+  ],
+  "elevationM": null,
+  "lengthKm": null,
+  "openMonths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "entryFeeEur": 0,
+  "driveFromRethymnoMinutes": 150,
+  "tours": [
+    "elafonisi-pink-sand-beach-tour-from-rethymno"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/kriti-69-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-70-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-71-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-72-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-73-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-68-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-64-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-63-scaled.jpg"
+  ]
+}

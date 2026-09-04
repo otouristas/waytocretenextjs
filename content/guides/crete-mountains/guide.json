@@ -1,0 +1,32 @@
+{
+  "slug": "crete-mountains",
+  "kind": "editorial",
+  "published": "2026-01-18",
+  "updated": "2026-07-11",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/lefka-ori-57-scaled.jpg",
+  "places": [
+    "psiloritis",
+    "pachnes",
+    "omalos-plateau",
+    "lassithi-plateau",
+    "samaria-gorge",
+    "imbros-gorge",
+    "aradaina-gorge",
+    "gious-kampos",
+    "melidoni-cave"
+  ],
+  "tours": [
+    "pachnes-summit",
+    "samaria-gorge-explorer",
+    "imbros-gorge-guided-tour",
+    "aradaina-gorge",
+    "botanical-tours-crete",
+    "spring-wildflowers-orchids-of-crete",
+    "shepherd-for-a-day-crete"
+  ],
+  "supersedes": [
+    "/2026/01/18/the-ultimate-guide-to-cretes-mountains-hiking-flora-fauna-and-peaks/"
+  ],
+  "featured": true
+}

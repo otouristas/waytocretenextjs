@@ -1,0 +1,29 @@
+{
+  "slug": "is-crete-expensive",
+  "kind": "answer",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/food-staka.jpeg",
+  "places": [
+    "knossos",
+    "heraklion-archaeological-museum",
+    "samaria-gorge",
+    "agia-roumeli",
+    "rethymno-old-town",
+    "chania-old-town",
+    "elounda"
+  ],
+  "tours": [
+    "rethymno-walk-taste",
+    "taste-of-crete",
+    "shepherd-for-a-day-crete",
+    "timeless-crete-villages-monasteries",
+    "samaria-gorge-explorer",
+    "knossos-palace-private-tour"
+  ],
+  "supersedes": [
+    "/2026/06/30/is-crete-expensive/"
+  ],
+  "featured": false
+}

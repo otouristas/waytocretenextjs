@@ -1,0 +1,45 @@
+{
+  "slug": "rethymno-walk-taste",
+  "category": "gastronomy",
+  "wpSlug": "rethymno-walk-taste",
+  "wpId": 7314,
+  "price": {
+    "kind": "adult_child_private",
+    "currency": "EUR",
+    "adult": 120,
+    "child": 65,
+    "infantFree": true,
+    "childAges": [4, 13],
+    "infantAges": [0, 3],
+    "privateGroup": null
+  },
+  "thirdPartyCosts": [],
+  "cadence": {
+    "kind": "weekdays",
+    "days": ["mon", "wed", "thu"]
+  },
+  "pickupTime": "09:30",
+  "durationMinutes": 240,
+  "difficulty": "easy",
+  "groupMin": 4,
+  "groupMax": 8,
+  "hotelPickup": false,
+  "photoshoot": true,
+  "privateOnly": false,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": ["rethymno-old-town"],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-28-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-15-1-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-35-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-37-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-4-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-7-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-5-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-24-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-31-scaled.jpg"
+  ],
+  "featured": true,
+  "supersedes": []
+}

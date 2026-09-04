@@ -1,0 +1,24 @@
+{
+  "slug": "minoan-crete",
+  "kind": "editorial",
+  "published": "2025-12-30",
+  "updated": "2025-12-30",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/04/heraklion-archaeological-museum-gallery-005.jpg",
+  "places": [
+    "knossos",
+    "phaistos",
+    "malia",
+    "zakros",
+    "heraklion-archaeological-museum"
+  ],
+  "tours": [
+    "knossos-palace-private-tour",
+    "timeless-crete-villages-monasteries",
+    "taste-of-crete"
+  ],
+  "supersedes": [
+    "/2025/12/30/crete-a-cultural-journey-rooted-in-the-minoan-civilization/"
+  ],
+  "featured": true
+}

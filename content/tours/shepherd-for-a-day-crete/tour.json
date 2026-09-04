@@ -1,0 +1,48 @@
+{
+  "slug": "shepherd-for-a-day-crete",
+  "category": "culture",
+  "wpSlug": "shepherd-for-a-day-crete",
+  "wpId": 653,
+  "price": {
+    "kind": "adult_child_private",
+    "currency": "EUR",
+    "adult": 240,
+    "child": 90,
+    "infantFree": true,
+    "childAges": [4, 13],
+    "infantAges": [0, 3],
+    "privateGroup": {
+      "total": 790,
+      "includedGuests": 4,
+      "extraGuest": 160
+    }
+  },
+  "thirdPartyCosts": [],
+  "cadence": {
+    "kind": "weekdays",
+    "days": ["sat", "sun"]
+  },
+  "pickupTime": "11:00",
+  "durationMinutes": 300,
+  "difficulty": "easy",
+  "groupMin": 2,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": true,
+  "privateOnly": false,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": [],
+  "hero": "https://waytocrete.com/wp-content/uploads/2024/05/to-spiti-tou-voskou-1024-2.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/4-6-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/176-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/78-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/13-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/55-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/90-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/114-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

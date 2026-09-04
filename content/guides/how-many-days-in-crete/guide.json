@@ -1,0 +1,49 @@
+{
+  "slug": "how-many-days-in-crete",
+  "kind": "answer",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-6-scaled.jpg",
+  "places": [
+    "rethymno-old-town",
+    "chania-old-town",
+    "knossos",
+    "heraklion-archaeological-museum",
+    "samaria-gorge",
+    "imbros-gorge",
+    "aradaina-gorge",
+    "pachnes",
+    "elafonisi",
+    "preveli-beach",
+    "preveli-monastery",
+    "kourtaliotiko-gorge",
+    "triopetra-beach",
+    "margarites",
+    "eleftherna",
+    "arkadi-monastery",
+    "spinalonga",
+    "elounda",
+    "vai",
+    "loutro",
+    "agia-roumeli",
+    "lasithi-plateau"
+  ],
+  "tours": [
+    "rethymno-walk-taste",
+    "imbros-gorge-guided-tour",
+    "timeless-crete-villages-monasteries",
+    "taste-of-crete",
+    "authentic-cretan-cooking-class",
+    "knossos-palace-private-tour",
+    "samaria-gorge-explorer",
+    "south-crete-highlights",
+    "spinalonga-tour-from-rethymno",
+    "aradaina-gorge",
+    "pachnes-summit"
+  ],
+  "supersedes": [
+    "/2026/06/30/how-many-days-in-crete/"
+  ],
+  "featured": true
+}

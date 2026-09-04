@@ -1,0 +1,72 @@
+{
+  "slug": "lake-kournas-argyroupoli-springs-tour",
+  "category": "nature",
+  "wpSlug": "lake-kournas-argyroupoli-springs-tour",
+  "wpId": 6977,
+  "price": {
+    "kind": "banded_group",
+    "currency": "EUR",
+    "bands": [
+      {
+        "minGuests": 1,
+        "maxGuests": 4,
+        "total": 250
+      },
+      {
+        "minGuests": 5,
+        "maxGuests": 8,
+        "total": 290
+      }
+    ]
+  },
+  "thirdPartyCosts": [
+    {
+      "label": "Pedal boat hire on Lake Kournas",
+      "amount": null,
+      "perPerson": false,
+      "optional": true,
+      "note": "Rented on the shore if you want to go out on the lake."
+    },
+    {
+      "label": "Food and drinks at the lakeside and spring-side tavernas",
+      "amount": null,
+      "perPerson": true,
+      "optional": true,
+      "note": "Not included in the tour price."
+    }
+  ],
+  "cadence": {
+    "kind": "weekdays",
+    "days": [
+      "mon",
+      "fri",
+      "sat",
+      "sun"
+    ]
+  },
+  "pickupTime": "08:30",
+  "durationMinutes": 240,
+  "difficulty": "easy",
+  "groupMin": 1,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": true,
+  "privateOnly": true,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": [
+    "lake-kournas",
+    "argyroupoli"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-2-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-1--scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Argiroupoli-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Argirpoupoli-1-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-46-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-52-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

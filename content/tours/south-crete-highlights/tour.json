@@ -1,0 +1,76 @@
+{
+  "slug": "south-crete-highlights",
+  "category": "nature",
+  "wpSlug": "south-crete-highlights",
+  "wpId": 875,
+  "price": {
+    "kind": "adult_child_private",
+    "currency": "EUR",
+    "adult": null,
+    "child": 45,
+    "infantFree": true,
+    "childAges": [4, 13],
+    "infantAges": [0, 3],
+    "privateGroup": {
+      "total": 250,
+      "includedGuests": 4,
+      "extraGuest": 50
+    }
+  },
+  "thirdPartyCosts": [
+    {
+      "label": "Preveli Monastery admission",
+      "amount": null,
+      "perPerson": true,
+      "optional": false,
+      "note": "Paid on site; not included in the tour price."
+    },
+    {
+      "label": "Lunch at a Triopetra taverna",
+      "amount": null,
+      "perPerson": true,
+      "optional": true,
+      "note": "Food and drinks are not included."
+    },
+    {
+      "label": "Optional guide",
+      "amount": null,
+      "perPerson": false,
+      "optional": true,
+      "note": "A guide can be added for an additional fee."
+    }
+  ],
+  "cadence": {
+    "kind": "daily"
+  },
+  "pickupTime": "09:00",
+  "durationMinutes": 360,
+  "difficulty": "easy",
+  "groupMin": 1,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": true,
+  "privateOnly": true,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": [
+    "kourtaliotiko-gorge",
+    "preveli-monastery",
+    "preveli-beach",
+    "triopetra-beach",
+    "spili"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-15-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-6-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-10-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-14-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-24-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/preveli-palm-forest-4-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-23-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-28-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-32-scaled.jpg"
+  ],
+  "featured": true,
+  "supersedes": []
+}

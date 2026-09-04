@@ -1,0 +1,20 @@
+{
+  "slug": "authentic-crete-experiences",
+  "kind": "list",
+  "published": "2025-11-17",
+  "updated": "2025-11-19",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/11/meet-the-locals--scaled.jpg",
+  "places": ["rethymno-old-town", "chania-old-town"],
+  "tours": [
+    "rethymno-walk-taste",
+    "authentic-cretan-cooking-class",
+    "shepherd-for-a-day-crete",
+    "sunset-sound-therapy",
+    "cretan-nature-village-journey"
+  ],
+  "supersedes": [
+    "/2025/11/17/5-things-you-absolutely-must-experience-in-crete/"
+  ],
+  "featured": false
+}

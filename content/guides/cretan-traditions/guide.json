@@ -1,0 +1,20 @@
+{
+  "slug": "cretan-traditions",
+  "kind": "editorial",
+  "published": "2025-12-05",
+  "updated": "2025-12-05",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/12/increteblue-suites-5-scaled.jpg",
+  "places": ["anogeia", "margarites"],
+  "tours": [
+    "shepherd-for-a-day-crete",
+    "authentic-cretan-cooking-class",
+    "timeless-crete-villages-monasteries",
+    "cretan-honey-wine-experience",
+    "taste-of-crete"
+  ],
+  "supersedes": [
+    "/2025/12/05/cretan-traditions-you-will-see-a-local-experience/"
+  ],
+  "featured": false
+}

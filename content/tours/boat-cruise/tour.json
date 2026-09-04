@@ -1,0 +1,37 @@
+{
+  "slug": "boat-cruise",
+  "category": "boat",
+  "wpSlug": "boat-cruise",
+  "wpId": 8566,
+  "price": {
+    "kind": "on_request",
+    "currency": "EUR",
+    "indicativeFrom": null
+  },
+  "thirdPartyCosts": [],
+  "cadence": {
+    "kind": "on_request"
+  },
+  "pickupTime": null,
+  "durationMinutes": 120,
+  "difficulty": "easy",
+  "groupMin": 1,
+  "groupMax": 19,
+  "hotelPickup": false,
+  "photoshoot": false,
+  "privateOnly": true,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": [
+    "kamarola-beach",
+    "fortezza-castle",
+    "panormo"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/11-2-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/12-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/8-2-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

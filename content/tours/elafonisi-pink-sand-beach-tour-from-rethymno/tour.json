@@ -1,0 +1,56 @@
+{
+  "slug": "elafonisi-pink-sand-beach-tour-from-rethymno",
+  "category": "nature",
+  "wpSlug": "elafonisi-pink-sand-beach-tour-from-rethymno",
+  "wpId": 953,
+  "price": {
+    "kind": "on_request",
+    "currency": "EUR",
+    "indicativeFrom": null
+  },
+  "thirdPartyCosts": [
+    {
+      "label": "Sunbed and umbrella hire at Elafonisi",
+      "amount": null,
+      "perPerson": true,
+      "optional": true,
+      "note": "Available on the beach but they fill up fast."
+    },
+    {
+      "label": "Lunch or snacks at the beachside tavernas",
+      "amount": null,
+      "perPerson": true,
+      "optional": true,
+      "note": "Lunch is not included; you can also bring a picnic."
+    }
+  ],
+  "cadence": {
+    "kind": "on_request"
+  },
+  "pickupTime": "07:00",
+  "durationMinutes": 480,
+  "difficulty": "easy",
+  "groupMin": 1,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": true,
+  "privateOnly": true,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": [
+    "topolia-gorge",
+    "elafonisi"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/kriti-69-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-70-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-71-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-72-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-73-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-68-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-64-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/kriti-63-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

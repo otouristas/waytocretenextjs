@@ -1,0 +1,26 @@
+{
+  "slug": "romantic-crete",
+  "kind": "editorial",
+  "published": "2025-12-30",
+  "updated": "2026-08-22",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-37-scaled.jpg",
+  "places": [
+    "rethymno-old-town",
+    "fortezza-castle",
+    "chania-old-town",
+    "elafonisi",
+    "balos"
+  ],
+  "tours": [
+    "romance-history-in-rethymno",
+    "sunset-sound-therapy",
+    "boat-cruise",
+    "authentic-cretan-cooking-class",
+    "rethymno-walk-taste"
+  ],
+  "supersedes": [
+    "/2025/12/30/fall-in-love-in-crete-a-romantic-journey-for-couples-honeymooners-and-engaged-couples/"
+  ],
+  "featured": false
+}

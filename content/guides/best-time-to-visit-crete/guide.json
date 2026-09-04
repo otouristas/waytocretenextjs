@@ -1,0 +1,37 @@
+{
+  "slug": "best-time-to-visit-crete",
+  "kind": "answer",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-4-1-scaled.jpg",
+  "places": [
+    "samaria-gorge",
+    "imbros-gorge",
+    "knossos",
+    "heraklion-archaeological-museum",
+    "gious-kampos",
+    "spili",
+    "plakias",
+    "damnoni",
+    "preveli-beach",
+    "frangokastello",
+    "rethymno-old-town",
+    "chania-old-town",
+    "psiloritis"
+  ],
+  "tours": [
+    "botanical-tours-crete",
+    "spring-wildflowers-orchids-of-crete",
+    "samaria-gorge-explorer",
+    "imbros-gorge-guided-tour",
+    "south-crete-highlights",
+    "taste-of-crete",
+    "timeless-crete-villages-monasteries"
+  ],
+  "supersedes": [
+    "/2026/01/06/the-best-time-to-visit-crete-a-journey-through-the-seasons/",
+    "/2026/06/30/best-time-to-visit-crete/"
+  ],
+  "featured": true
+}

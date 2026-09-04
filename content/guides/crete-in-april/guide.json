@@ -1,0 +1,42 @@
+{
+  "slug": "crete-in-april",
+  "kind": "editorial",
+  "published": "2025-12-05",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/12/flower-36-scaled.jpg",
+  "places": [
+    "gious-kampos",
+    "spili",
+    "imbros-gorge",
+    "aradaina-gorge",
+    "samaria-gorge",
+    "knossos",
+    "phaistos",
+    "heraklion-archaeological-museum",
+    "spinalonga",
+    "elafonisi",
+    "balos-lagoon",
+    "archanes",
+    "anogeia",
+    "loutro",
+    "chora-sfakion",
+    "psiloritis",
+    "agio-pnevma"
+  ],
+  "tours": [
+    "botanical-tours-crete",
+    "spring-wildflowers-orchids-of-crete",
+    "imbros-gorge-guided-tour",
+    "aradaina-gorge",
+    "knossos-palace-private-tour",
+    "spinalonga-tour-from-rethymno",
+    "timeless-crete-villages-monasteries",
+    "cretan-nature-village-journey"
+  ],
+  "supersedes": [
+    "/2026/02/20/crete-in-april-a-different-side-of-the-island/",
+    "/2025/12/05/crete-in-bloom-a-floral-paradise-for-nature-lovers/"
+  ],
+  "featured": true
+}

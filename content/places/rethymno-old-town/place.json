@@ -1,0 +1,45 @@
+{
+  "slug": "rethymno-old-town",
+  "geo": {
+    "lat": 35.3703,
+    "lng": 24.4744
+  },
+  "kind": "town",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Rethymno",
+    "https://www.wikidata.org/wiki/Q200908"
+  ],
+  "elevationM": null,
+  "lengthKm": null,
+  "openMonths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "entryFeeEur": 0,
+  "driveFromRethymnoMinutes": null,
+  "tours": [
+    "rethymno-walk-taste",
+    "romance-history-in-rethymno"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-28-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-35-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-37-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-4-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-7-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-5-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-24-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-37-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-59-scaled.jpg"
+  ]
+}

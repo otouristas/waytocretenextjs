@@ -1,24 +1,37 @@
 import type { Metadata } from "next";
-import { parseLang, type Lang } from "@/lib/i18n/langs";
+import { parseLang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import { pageMeta } from "@/lib/seo";
+import { breadcrumbNode, faqNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { HomeView } from "@/components/home-view";
 
-const titles: Record<Lang, string> = {
-  en: "Private Crete Tours & Hikes from Rethymno | Way to Crete",
-  el: "Ιδιωτικές εκδρομές και πεζοπορίες στην Κρήτη από Ρέθυμνο | Way to Crete",
-  de: "Private Kreta-Touren und Wanderungen ab Rethymno | Way to Crete",
-  it: "Tour privati e trekking a Creta da Rethymno | Way to Crete",
-  fr: "Circuits privés et randonnées en Crète depuis Réthymnon | Way to Crete",
-  sv: "Privata Kreta-turer och vandringar från Rethymno | Way to Crete",
-};
-
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
   const lang = parseLang((await params).lang);
-  return pageMeta({ lang, title: titles[lang], description: t(lang).heroSub, path: "/" });
+  const ui = t(lang);
+  return pageMeta({ lang, title: ui.homeTitle, description: ui.heroSub, path: "/" });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const lang = parseLang((await params).lang);
-  return <HomeView lang={lang} />;
+  const copy = t(lang);
+  const crumbs: Crumb[] = [{ name: copy.home, path: "/" }];
+
+  // The home page has visible FAQ content but the previous build never marked
+  // it up. FAQPage is exactly the kind of markup answer engines lift verbatim.
+  const jsonLd = graph([
+    webPageNode({ lang, path: "/", name: copy.homeTitle, description: copy.heroSub, crumbs }),
+    breadcrumbNode(lang, "/", crumbs),
+    faqNode(copy.faqs),
+  ]);
+
+  return (
+    <>
+      <JsonLd data={jsonLd} />
+      <HomeView lang={lang} />
+    </>
+  );
 }

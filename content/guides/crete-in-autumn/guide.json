@@ -1,0 +1,25 @@
+{
+  "slug": "crete-in-autumn",
+  "kind": "editorial",
+  "published": "2026-02-28",
+  "updated": "2026-02-28",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-15-scaled.jpg",
+  "places": [
+    "imbros-gorge",
+    "samaria-gorge",
+    "kourtaliotiko-gorge",
+    "preveli-beach",
+    "spili"
+  ],
+  "tours": [
+    "imbros-gorge-guided-tour",
+    "cretan-honey-wine-experience",
+    "authentic-cretan-cooking-class",
+    "taste-of-crete",
+    "south-crete-highlights",
+    "shepherd-for-a-day-crete"
+  ],
+  "supersedes": ["/2026/02/28/a-autumn-escape-to-crete/"],
+  "featured": false
+}

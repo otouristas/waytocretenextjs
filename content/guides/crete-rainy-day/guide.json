@@ -1,0 +1,30 @@
+{
+  "slug": "crete-rainy-day",
+  "kind": "list",
+  "published": "2026-02-28",
+  "updated": "2026-02-28",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/kriti-135-scaled.jpg",
+  "places": [
+    "rethymno-old-town",
+    "fortezza-castle",
+    "chania-old-town",
+    "arkadi-monastery",
+    "melidoni-cave",
+    "margarites",
+    "sfendoni-cave",
+    "psychro-cave",
+    "knossos",
+    "heraklion-archaeological-museum"
+  ],
+  "tours": [
+    "timeless-crete-villages-monasteries",
+    "authentic-cretan-cooking-class",
+    "knossos-palace-private-tour",
+    "cretan-honey-wine-experience",
+    "rethymno-walk-taste",
+    "taste-of-crete"
+  ],
+  "supersedes": ["/2026/02/28/what-to-do-on-rainy-day-in-crete/"],
+  "featured": false
+}

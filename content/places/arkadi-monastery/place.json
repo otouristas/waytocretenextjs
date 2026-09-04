@@ -1,0 +1,40 @@
+{
+  "slug": "arkadi-monastery",
+  "geo": {
+    "lat": 35.31,
+    "lng": 24.629444
+  },
+  "kind": "monastery",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Arkadi_Monastery",
+    "https://www.wikidata.org/wiki/Q541696"
+  ],
+  "elevationM": 500,
+  "lengthKm": null,
+  "openMonths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "entryFeeEur": null,
+  "driveFromRethymnoMinutes": 30,
+  "tours": [
+    "timeless-crete-villages-monasteries"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-6-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-23-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-39-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-46-scaled.jpg"
+  ]
+}

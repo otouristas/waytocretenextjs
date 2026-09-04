@@ -1,0 +1,39 @@
+{
+  "slug": "samaria-gorge",
+  "geo": {
+    "lat": 35.3078,
+    "lng": 23.9053
+  },
+  "kind": "gorge",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Samaria_Gorge",
+    "https://www.wikidata.org/wiki/Q1128366"
+  ],
+  "elevationM": 1250,
+  "lengthKm": 16,
+  "openMonths": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "entryFeeEur": 10,
+  "driveFromRethymnoMinutes": 120,
+  "tours": [
+    "samaria-gorge-explorer",
+    "spring-wildflowers-orchids-of-crete"
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-73-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-71.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-118-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-103-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-98-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-105-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-115-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-122-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-123-scaled.jpg"
+  ]
+}

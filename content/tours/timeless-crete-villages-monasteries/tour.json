@@ -1,0 +1,83 @@
+{
+  "slug": "timeless-crete-villages-monasteries",
+  "category": "culture",
+  "wpSlug": "timeless-crete-villages-monasteries",
+  "wpId": 771,
+  "price": {
+    "kind": "adult_child_private",
+    "currency": "EUR",
+    "adult": null,
+    "child": 45,
+    "infantFree": true,
+    "childAges": [4, 13],
+    "infantAges": [0, 3],
+    "privateGroup": {
+      "total": 290,
+      "includedGuests": 4,
+      "extraGuest": 60
+    }
+  },
+  "thirdPartyCosts": [
+    {
+      "label": "Arkadi Monastery entrance fee",
+      "amount": null,
+      "perPerson": true,
+      "optional": false,
+      "note": "Paid at the monastery gate."
+    },
+    {
+      "label": "Eleftherna Archaeological Site and Museum entrance fee",
+      "amount": null,
+      "perPerson": true,
+      "optional": false
+    },
+    {
+      "label": "Melidoni Cave entrance fee",
+      "amount": null,
+      "perPerson": true,
+      "optional": false
+    },
+    {
+      "label": "Certified guide",
+      "amount": null,
+      "perPerson": false,
+      "optional": true,
+      "note": "Your English-speaking driver is included; a certified guide is available at additional cost."
+    },
+    {
+      "label": "Food and drinks",
+      "amount": null,
+      "perPerson": true,
+      "optional": true,
+      "note": "The Margarites coffee stop is included; meals are not."
+    }
+  ],
+  "cadence": {
+    "kind": "weekdays",
+    "days": ["mon", "wed", "thu", "fri", "sat", "sun"]
+  },
+  "pickupTime": "09:00",
+  "durationMinutes": 300,
+  "difficulty": "easy",
+  "groupMin": 2,
+  "groupMax": 8,
+  "hotelPickup": true,
+  "photoshoot": true,
+  "privateOnly": false,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": ["arkadi-monastery", "eleftherna", "margarites", "melidoni-cave"],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-6-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-23-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-39-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-5-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-11-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave-1-scaled.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}

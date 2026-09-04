@@ -1,0 +1,14 @@
+{
+  "slug": "rethymno-food-guide",
+  "kind": "list",
+  "published": "2026-01-18",
+  "updated": "2026-07-11",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/prima-plora.jpeg",
+  "places": ["rethymno-old-town"],
+  "tours": ["rethymno-walk-taste", "taste-of-crete", "romance-history-in-rethymno"],
+  "supersedes": [
+    "/2026/01/18/rethymno-food-guide-the-best-restaurants-you-cant-miss/"
+  ],
+  "featured": true
+}

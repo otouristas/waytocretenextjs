@@ -1,0 +1,26 @@
+{
+  "slug": "weddings-in-crete",
+  "kind": "editorial",
+  "published": "2026-08-22",
+  "updated": "2026-08-22",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-48-scaled.jpg",
+  "places": [
+    "chania-old-town",
+    "rethymno-old-town",
+    "elounda",
+    "elafonisi",
+    "preveli-beach"
+  ],
+  "tours": [
+    "taste-of-crete",
+    "timeless-crete-villages-monasteries",
+    "authentic-cretan-cooking-class",
+    "rethymno-walk-taste",
+    "romance-history-in-rethymno"
+  ],
+  "supersedes": [
+    "/2026/08/22/weddings-in-crete/"
+  ],
+  "featured": true
+}

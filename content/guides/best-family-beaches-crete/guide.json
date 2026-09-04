@@ -1,0 +1,39 @@
+{
+  "slug": "best-family-beaches-crete",
+  "kind": "list",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/kedrodasos-beach.jpeg",
+  "places": [
+    "elafonisi",
+    "falassarna",
+    "almyrida",
+    "georgioupolis",
+    "bali",
+    "vai",
+    "damnoni",
+    "plakias",
+    "matala",
+    "frangokastello",
+    "stavros",
+    "agia-marina",
+    "malia",
+    "agia-pelagia",
+    "balos-lagoon",
+    "preveli-beach",
+    "kissamos"
+  ],
+  "tours": [
+    "elafonisi-pink-sand-beach-tour-from-rethymno",
+    "south-crete-highlights",
+    "lake-kournas-argyroupoli-springs-tour",
+    "shepherd-for-a-day-crete",
+    "spinalonga-tour-from-rethymno",
+    "boat-cruise"
+  ],
+  "supersedes": [
+    "/2026/06/30/best-family-beaches-crete/"
+  ],
+  "featured": false
+}

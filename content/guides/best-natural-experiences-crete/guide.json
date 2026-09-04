@@ -1,0 +1,29 @@
+{
+  "slug": "best-natural-experiences-crete",
+  "kind": "list",
+  "published": "2025-12-05",
+  "updated": "2025-12-05",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/12/kourtaliotis-1.jpg",
+  "places": [
+    "samaria-gorge",
+    "imbros-gorge",
+    "aradaina-gorge",
+    "kourtaliotiko-gorge",
+    "anogeia",
+    "margarites",
+    "spili"
+  ],
+  "tours": [
+    "samaria-gorge-explorer",
+    "imbros-gorge-guided-tour",
+    "aradaina-gorge",
+    "cretan-nature-village-journey",
+    "south-crete-highlights",
+    "timeless-crete-villages-monasteries"
+  ],
+  "supersedes": [
+    "/2025/12/05/top-natural-experiences-you-cant-miss-in-crete/"
+  ],
+  "featured": true
+}

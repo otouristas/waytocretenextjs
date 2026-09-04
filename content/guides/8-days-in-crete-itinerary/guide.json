@@ -1,0 +1,41 @@
+{
+  "slug": "8-days-in-crete-itinerary",
+  "kind": "itinerary",
+  "published": "2026-01-11",
+  "updated": "2026-01-11",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2026/01/2.jpg",
+  "places": [
+    "chania-old-town",
+    "balos-lagoon",
+    "gramvousa",
+    "elafonisi",
+    "samaria-gorge",
+    "agia-roumeli",
+    "omalos-plateau",
+    "lake-kournas",
+    "argyroupoli",
+    "kourtaliotiko-gorge",
+    "preveli-beach",
+    "rethymno-old-town",
+    "fortezza-castle",
+    "rimondi-fountain",
+    "knossos",
+    "heraklion-archaeological-museum",
+    "heraklion-old-town"
+  ],
+  "tours": [
+    "samaria-gorge-explorer",
+    "elafonisi-pink-sand-beach-tour-from-rethymno",
+    "lake-kournas-argyroupoli-springs-tour",
+    "south-crete-highlights",
+    "knossos-palace-private-tour",
+    "rethymno-walk-taste",
+    "romance-history-in-rethymno",
+    "imbros-gorge-guided-tour"
+  ],
+  "supersedes": [
+    "/2026/01/11/8-magical-days-in-crete-the-ultimate-guide-to-adventure-and-relaxation/"
+  ],
+  "featured": true
+}

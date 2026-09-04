@@ -1,0 +1,38 @@
+{
+  "slug": "chania-vs-heraklion",
+  "kind": "comparison",
+  "published": "2026-06-30",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/01/kouvalite-rent-a-car-heraklion-archaeological-musuem-in-crete-inside-space-with-old-weapons-and-jugs-1.jpg",
+  "places": [
+    "chania-old-town",
+    "heraklion-old-town",
+    "heraklion-archaeological-museum",
+    "knossos",
+    "elafonisi",
+    "balos-lagoon",
+    "falassarna",
+    "samaria-gorge",
+    "imbros-gorge",
+    "spinalonga",
+    "elounda",
+    "matala",
+    "vai",
+    "rethymno-old-town",
+    "almyrida",
+    "hersonissos"
+  ],
+  "tours": [
+    "knossos-palace-private-tour",
+    "spinalonga-tour-from-rethymno",
+    "elafonisi-pink-sand-beach-tour-from-rethymno",
+    "samaria-gorge-explorer",
+    "romance-history-in-rethymno",
+    "rethymno-walk-taste"
+  ],
+  "supersedes": [
+    "/2026/06/30/chania-vs-heraklion/"
+  ],
+  "featured": true
+}

@@ -1,0 +1,72 @@
+{
+  "legalName": null,
+  "tradingName": "Way to Crete",
+  "vat": null,
+  "gemi": null,
+  "mhte": "1041E60000439401",
+  "address": {
+    "street": "Eratous 6",
+    "locality": "Rethymno",
+    "region": "Crete",
+    "postalCode": null,
+    "countryCode": "GR",
+    "country": "Greece",
+    "geo": { "lat": 35.3655545, "lng": 24.4919838 },
+    "confidence": "low"
+  },
+  "phones": [
+    {
+      "label": "Mobile and WhatsApp",
+      "e164": "+306972531808",
+      "display": "+30 697 253 1808",
+      "whatsapp": "https://wa.me/306972531808",
+      "primary": true
+    },
+    {
+      "label": "Office landline",
+      "e164": "+302832020102",
+      "display": "+30 28320 20102",
+      "whatsapp": null,
+      "primary": false
+    }
+  ],
+  "emails": [
+    { "label": "General enquiries and bookings", "address": "info@waytocrete.com", "public": true }
+  ],
+  "hours": {
+    "verified": false,
+    "publishedClaim": "Our team is available 24/7 to assist you with any inquiries (Contact page, WP 46).",
+    "structuredDataValue": "Mo-Su 09:00-17:00",
+    "transferBookingWindow": "Pickups accepted 00:00-23:59, every day; bookings taken 1 to 365 days ahead.",
+    "note": "Three different answers exist in the source. The 09:00-17:00 value is the Rank Math opening-hours setting, identical for all seven days, which reads like an untouched default; the Contact page claims 24/7; the transfer booking engine accepts any pickup time. Confirm with the operator before publishing openingHours in schema."
+  },
+  "socials": [
+    "https://www.instagram.com/waytocrete/",
+    "https://www.tiktok.com/@waytocrete",
+    "https://www.facebook.com/people/WaytoCrete/61557000327140/",
+    "https://www.tripadvisor.com/Attraction_Review-g189421-d27887863-Reviews-WaytoCrete-Rethymnon_Rethymnon_Prefecture_Crete.html",
+    "https://g.page/r/CU_EsfuRR6JSEBM/review"
+  ],
+  "found": {
+    "tradingName": "wp_options blogname (\"Way to Crete - Crete Storytelling Tours - waytocrete.com\") and the GDPR page (WP 2745), which refers to \"the company under the title 'Way to Crete'\".",
+    "mhte": "Elementor footer template \"way Footer\" (WP 111) and its German twin (WP 2752): an image-box widget whose description_text is the bare string \"1041E60000439401\", sitting beside badge image /wp-content/uploads/2024/05/image-6-1-1.png. The footer prints the number with no label, so the classification as an MHTE/GNTO tour-operator registry number rests on the format (NNNN + E + 11 digits), which is the Greek MHTE pattern. Verify with the operator before publishing it as a licence number.",
+    "address.street": "Google Maps embed on the Contact page (WP 46): maps.google.com/maps?q=Eratous%206%2C%20rethymno. This is the ONLY place a street appears anywhere in the database. The visible Contact page text says only \"Crete, Greece\".",
+    "address.geo": "Chauffeur booking form (WP 5930) chbs_base_location \"Rethymnon, Greece\" with lat 35.3655545 / lng 24.4919838. This is the transfer dispatch base, not necessarily the office.",
+    "phones[0]": "Header template (WP 78), footer (WP 111), Contact page (WP 46) and 34 other places; also the WhatsApp link wa.me/306972531808.",
+    "phones[1]": "German header (WP 2743), German footer (WP 2752) and the tel: link behind the phone heading on both the English Contact page (WP 46) and the German Kontakt page (WP 2692).",
+    "emails[0]": "Header, footer, Contact page, and the PayPal receiving address on the transfer booking form (WP 5930).",
+    "hours.structuredDataValue": "wp_options rank-math-options-titles, opening_hours array.",
+    "hours.publishedClaim": "Contact page body copy (WP 46).",
+    "hours.transferBookingWindow": "Chauffeur booking form (WP 5930) chbs_business_hour, chbs_booking_period_from/to.",
+    "socials": "Footer template (WP 111) social-icons widget and the Contact page \"We would appreciate your review\" block."
+  },
+  "missing": [
+    "legalName",
+    "vat",
+    "gemi",
+    "address.postalCode",
+    "address.streetVerification",
+    "openingHours"
+  ],
+  "notes": "Searched wp_posts content, wp_postmeta (_elementor_data across every published page, post, popup and Elementor template), and wp_options for ΑΦΜ, VAT, ΓΕΜΗ, GEMI, ΜΗΤΕ, MHTE, GNTO and the string 1041E. The only regulatory identifier anywhere on the site is the footer number recorded above. There is no legal entity name, no VAT/AFM, no GEMI number and no postcode in the database. Two further addresses exist as system values only and are not the business: wordpress@waytocrete.com is the WordPress admin_email, and smtp@ / email@waytocrete.com are plugin placeholders."
+}

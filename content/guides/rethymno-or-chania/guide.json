@@ -1,0 +1,27 @@
+{
+  "slug": "rethymno-or-chania",
+  "kind": "comparison",
+  "published": "2026-09-04",
+  "updated": "2026-09-04",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-9-scaled.jpg",
+  "places": [
+    "rethymno-old-town",
+    "fortezza-castle",
+    "chania-old-town",
+    "samaria-gorge",
+    "imbros-gorge",
+    "elafonisi",
+    "preveli-beach"
+  ],
+  "tours": [
+    "rethymno-walk-taste",
+    "romance-history-in-rethymno",
+    "samaria-gorge-explorer",
+    "imbros-gorge-guided-tour",
+    "elafonisi-pink-sand-beach-tour-from-rethymno",
+    "south-crete-highlights"
+  ],
+  "supersedes": [],
+  "featured": true
+}

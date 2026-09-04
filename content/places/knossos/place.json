@@ -1,0 +1,36 @@
+{
+  "slug": "knossos",
+  "geo": {
+    "lat": 35.297961,
+    "lng": 25.163156
+  },
+  "kind": "site",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Knossos",
+    "https://www.wikidata.org/wiki/Q173527"
+  ],
+  "elevationM": null,
+  "lengthKm": null,
+  "openMonths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "entryFeeEur": null,
+  "driveFromRethymnoMinutes": 90,
+  "tours": [
+    "knossos-palace-private-tour"
+  ],
+  "hero": null,
+  "gallery": [],
+  "_heroRemoved": "The linked image is Heraklion old harbour at dusk, not the palace site."
+}

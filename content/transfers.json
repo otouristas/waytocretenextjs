@@ -1,0 +1,221 @@
+{
+  "source": {
+    "transferPage": { "wpId": 4776, "url": "https://waytocrete.com/transfer/" },
+    "weddingPage": { "wpId": 9965, "url": "https://waytocrete.com/wedding-transfers-crete/" },
+    "bookingEngine": "Chauffeur Taxi Booking System for WordPress, booking form \"Book WayToCrete\" (WP 5930)"
+  },
+  "coverage": {
+    "basedIn": "Rethymno, Crete",
+    "baseGeo": { "lat": 35.3655545, "lng": 24.4919838 },
+    "serves": [
+      "The city of Rethymno",
+      "The wider Rethymno region"
+    ],
+    "airportRoutes": [
+      "Rethymno to Chania Airport, and Chania Airport to Rethymno",
+      "Rethymno to Heraklion Airport, and Heraklion Airport to Rethymno"
+    ],
+    "excluded": [
+      "Within the Chania region",
+      "Within the Heraklion region",
+      "Within the Lassithi region, including areas such as Agios Nikolaos"
+    ],
+    "statement": "Our transfer services are based in Rethymno and operate within the city of Rethymno and the wider Rethymno region. We also provide transfers from Rethymno to Chania Airport and Heraklion Airport, as well as from Chania Airport or Heraklion Airport to Rethymno. Please note that we do not offer transfers within the Chania region, the Heraklion region, or the Lassithi region, including areas such as Agios Nikolaos.",
+    "note": "The exclusion is a hard rule, not a preference: the airport runs are the only journeys the operator makes outside the Rethymno regional unit. A pickup and a drop-off that both sit inside Chania, Heraklion or Lassithi cannot be booked."
+  },
+  "vehicle": {
+    "name": "Mini Van",
+    "passengers": 8,
+    "bags": 8,
+    "description": "One to eight seats, suited to families and small groups.",
+    "hero": "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-2-scaled.jpg",
+    "gallery": [
+      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-34-scaled.jpg",
+      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-7-scaled.jpg",
+      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-25-scaled.jpg",
+      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-4-scaled.jpg"
+    ],
+    "note": "One vehicle is published. Larger wedding parties are covered by combining vehicles rather than by a bigger single vehicle."
+  },
+  "pricing": {
+    "currency": "EUR",
+    "model": "per_km",
+    "perKmRates": [
+      { "minPassengers": 1, "maxPassengers": 4, "eurPerKm": 1.3 },
+      { "minPassengers": 5, "maxPassengers": 8, "eurPerKm": 1.75 }
+    ],
+    "returnLegRate": "same",
+    "minimumDistanceKm": 20,
+    "maximumDistanceKm": 500,
+    "minimumOrderEur": 20,
+    "maximumOrderEur": 1500,
+    "paymentMethods": ["Card", "PayPal", "Cash", "Bank transfer"],
+    "depositRequired": false,
+    "note": "These are the live rate rules the public booking form quotes from (chbs_price_rule 6663 for 1-4 passengers and 6661 for 5-8). No route is sold at a published flat fare, which is why every route below carries a null price."
+  },
+  "extras": [
+    {
+      "label": "Child seat",
+      "description": "Baby car seat for children aged 0-36 months",
+      "priceEur": 0,
+      "perBooking": true,
+      "maxQuantity": 2,
+      "mandatory": false,
+      "note": "Published at 0.00 EUR in the booking engine, so it is added free of charge, up to two seats per booking."
+    }
+  ],
+  "booking": {
+    "leadTimeDays": { "min": 1, "max": 365 },
+    "pickupTimes": "Any time, 00:00 to 23:59, every day",
+    "timeStepMinutes": 30,
+    "transferTypes": ["One way", "Return", "Return as a new ride"],
+    "waypointsAllowed": true,
+    "countryRestriction": "Greece"
+  },
+  "routes": [
+    {
+      "slug": "chania-airport-to-rethymno",
+      "from": "Chania International Airport (CHQ)",
+      "to": "Rethymno",
+      "distanceKm": 78,
+      "durationMinutes": 65,
+      "priceEur": null
+    },
+    {
+      "slug": "rethymno-to-chania-airport",
+      "from": "Rethymno",
+      "to": "Chania International Airport (CHQ)",
+      "distanceKm": 78,
+      "durationMinutes": 65,
+      "priceEur": null
+    },
+    {
+      "slug": "heraklion-airport-to-rethymno",
+      "from": "Heraklion International Airport (HER)",
+      "to": "Rethymno",
+      "distanceKm": 85,
+      "durationMinutes": 70,
+      "priceEur": null
+    },
+    {
+      "slug": "rethymno-to-heraklion-airport",
+      "from": "Rethymno",
+      "to": "Heraklion International Airport (HER)",
+      "distanceKm": 85,
+      "durationMinutes": 70,
+      "priceEur": null
+    },
+    {
+      "slug": "rethymno-to-plakias",
+      "from": "Rethymno",
+      "to": "Plakias",
+      "distanceKm": 38,
+      "durationMinutes": 45,
+      "priceEur": null
+    },
+    {
+      "slug": "rethymno-to-bali",
+      "from": "Rethymno",
+      "to": "Bali",
+      "distanceKm": 32,
+      "durationMinutes": 30,
+      "priceEur": null
+    },
+    {
+      "slug": "rethymno-to-panormo",
+      "from": "Rethymno",
+      "to": "Panormo",
+      "distanceKm": 22,
+      "durationMinutes": 22,
+      "priceEur": null
+    },
+    {
+      "slug": "rethymno-to-spili",
+      "from": "Rethymno",
+      "to": "Spili",
+      "distanceKm": 30,
+      "durationMinutes": 35,
+      "priceEur": null
+    },
+    {
+      "slug": "rethymno-to-agia-galini",
+      "from": "Rethymno",
+      "to": "Agia Galini",
+      "distanceKm": 60,
+      "durationMinutes": 60,
+      "priceEur": null
+    }
+  ],
+  "weddings": {
+    "positioning": "A local transportation and tour operator based in Rethymno, working directly with wedding planners, couples and guest groups.",
+    "services": [
+      "Airport transfers for wedding guests from Heraklion and Chania airports to Rethymno, and back for departures",
+      "Hotel and villa transfers",
+      "Hotel-to-venue transport on the wedding day, and the return afterwards",
+      "Group transportation across multiple pickup points and staggered departure times",
+      "Private transfers",
+      "Transport between different accommodation locations",
+      "Private tours and excursions for wedding guests during their stay",
+      "Customised itineraries built around the wedding schedule"
+    ],
+    "typicalRoutes": [
+      { "route": "Heraklion Airport to Rethymno hotel", "when": "Guest arrivals" },
+      { "route": "Chania Airport to Rethymno hotel", "when": "Guest arrivals" },
+      { "route": "Hotel to wedding venue", "when": "Wedding day" },
+      { "route": "Wedding venue to hotel", "when": "After the celebration" },
+      { "route": "Hotel to airport", "when": "Departures" }
+    ],
+    "process": [
+      "Share the wedding date, venue, number of guests, accommodation locations and arrival airports.",
+      "Way to Crete works out which transfers are actually required.",
+      "Optional guest tours and excursions are arranged around the wedding schedule.",
+      "Pickup locations, departure times, routes and vehicles are confirmed against the wedding itinerary.",
+      "The plan is fixed in advance so the day itself needs no coordination."
+    ],
+    "coverageNote": "The same regional limits apply: Rethymno city and region plus the two airport runs, and no transfers within the Chania, Heraklion or Lassithi regions. If a venue or guest accommodation sits in one of those areas, the operator asks to be told early so it can say straight away what it can and cannot cover.",
+    "vehicleNote": "Vehicles are matched to group size and route: private cars and taxis for small movements, minivans for families and small groups, larger vehicles for full guest parties. A single departure for a large wedding is often split across several vehicles leaving from different pickup points at staggered times.",
+    "priceEur": null,
+    "priceNote": "No wedding transfer price is published. The page states that vehicle combination and cost are confirmed after the planner supplies guest numbers and pickup locations.",
+    "enquiryFields": [
+      "Name",
+      "Email",
+      "Wedding date",
+      "Wedding venue or area",
+      "Number of guests",
+      "Where guests are staying",
+      "Arrival airport(s)",
+      "Message"
+    ],
+    "faqs": [
+      {
+        "q": "Can you arrange wedding transportation for guests in Crete?",
+        "a": "Yes. Wedding guest transportation can be organised for airport arrivals, hotel transfers, transport to and from the wedding venue and other requirements during the wedding stay."
+      },
+      {
+        "q": "Can you provide airport transfers from Heraklion and Chania?",
+        "a": "Yes. Private and group transfers can be arranged from both Heraklion International Airport and Chania International Airport to Rethymno, and back again for departures."
+      },
+      {
+        "q": "Can you organise transportation between hotels and wedding venues?",
+        "a": "Yes. Transport can be coordinated between hotels, villas and wedding venues according to the wedding schedule and the number of guests, within the Rethymno region."
+      },
+      {
+        "q": "Which areas of Crete do you cover for wedding transfers?",
+        "a": "Rethymno city and the wider Rethymno region, including transfers to and from Chania Airport and Heraklion Airport. Transfers within the Chania, Heraklion or Lassithi regions are not currently run."
+      },
+      {
+        "q": "Do you work with wedding planners?",
+        "a": "Yes. Way to Crete works directly with wedding planners and destination wedding organisers who need a local transportation and tour partner in Crete."
+      },
+      {
+        "q": "Can you organise excursions for wedding guests?",
+        "a": "Yes. Private tours and excursions can be arranged for wedding guests during their stay, including cultural, gastronomic and nature experiences, departing from Rethymno."
+      },
+      {
+        "q": "Can you create a customised itinerary for a wedding group?",
+        "a": "Yes. Private transportation and tours can be adapted to the group's schedule, interests, accommodation locations and overall wedding itinerary."
+      }
+    ]
+  },
+  "notes": "Distances and durations on the routes are accurate road figures, not values published by the operator, which is why they sit alongside null prices. The operator publishes no flat fare for any route: everything is quoted per kilometre by the booking engine, subject to a 20 km minimum distance and a 20 EUR minimum order."
+}

@@ -1,0 +1,88 @@
+{
+  "lang": "en",
+  "state": "reviewed",
+  "title": "Boat Cruise",
+  "tagline": "East from Rethymno by boat to the sea caves and Kamarola beach.",
+  "seoTitle": "Rethymno Boat Cruise: Sea Caves, Kamarola Beach & Fortezza",
+  "seoDescription": "A private boat cruise east along the Rethymno coast to hidden sea caves and Kamarola beach, returning below Fortezza Castle. Up to 19 guests, 2, 3 or 4 hours.",
+  "summary": "The East Side Boat Cruise takes you out of Rethymno marina and east along the coast to a line of sea caves cut into the cliffs, then on to Kamarola, a small private beach ten minutes further, before returning past Fortezza Castle from the water. It is sold in three lengths - 2, 3 or 4 hours - for up to 19 guests, with an English-speaking professional skipper, snorkelling masks, life jackets, water, soft drinks and snacks on board. Departures are arranged on request to suit your own schedule, and there is no published price.",
+  "overview": "This is Rethymno seen from the water rather than the promenade. The boat leaves the marina and heads east, following a coastline of wind- and wave-cut cliffs that is difficult to reach any other way, past quiet beaches with no road behind them and into a stretch where the rock is pierced by sea caves.\n\nThe first stop is about 40 minutes out, where the cliffs meet the sea. As the boat closes in, openings appear in the rock, worn out over time by the waves. Ten minutes further on the scenery softens completely: the cliffs give way to Kamarola, a small, quiet beach with water clear enough to see straight to the bottom, where the boat stays for roughly an hour. Swimming at the caves and at Kamarola is part of the 3- and 4-hour options; the 4-hour version adds a stop at Panormo.\n\nThe way back is a slow sightseeing cruise, ending underneath Fortezza Castle. Seen from sea level the Venetian fortress reads differently from the way it does in the old town - it was built to be looked at from exactly this angle, by anyone thinking of approaching. Snorkelling masks and life jackets are on board, along with fruit, snacks, water and soft drinks.",
+  "highlights": [
+    "Hidden sea caves and secluded beaches along the cliffs east of Rethymno",
+    "Kamarola, a small private beach with water clear to the bottom, for about an hour",
+    "Swimming and snorkelling in turquoise water, masks provided",
+    "Fortezza Castle seen from the sea on the way back",
+    "Up to 19 guests with a professional English-speaking skipper",
+    "Choose 2, 3 or 4 hours; the longest option adds a stop at Panormo"
+  ],
+  "itinerary": [
+    {
+      "heading": "The sea caves",
+      "body": "About 40 minutes after leaving the marina we reach the first stop, a stretch of coastline where the cliffs drop straight into the sea and a series of hidden caves opens out of the rock. As the boat gets closer you begin to pick out the openings, shaped naturally over time by the waves. On the 3- and 4-hour options there is time to swim here."
+    },
+    {
+      "heading": "Kamarola beach",
+      "body": "Kamarola is the second stop, just 10 minutes from the caves - close in distance but completely different in feeling. The cliffs give way to a small, quiet beach with water so clear you can see straight to the bottom. We stay for about an hour, which is long enough to swim, snorkel, or simply sit on the boat and do nothing at all.",
+      "place": "kamarola-beach",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/12-scaled.jpg"
+    },
+    {
+      "heading": "Back below Fortezza Castle",
+      "body": "On the way back we cruise beneath Fortezza Castle, rising above the town and the sea. From the water the Venetian fortress looks more imposing than it does from the streets behind it. The return leg is deliberately gentle - a sightseeing cruise rather than a transfer. On the 4-hour option a stop at Panormo comes before this.",
+      "place": "fortezza-castle",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/8-2-scaled.jpg"
+    }
+  ],
+  "included": [
+    "A professional, English-speaking skipper",
+    "Fruits and snacks",
+    "Bottled water and soft drinks",
+    "Snorkelling masks",
+    "Life jackets",
+    "Public liability insurance",
+    "All taxes, fees and handling charges"
+  ],
+  "excluded": [
+    "Hotel pick-up and drop-off: you join the boat at the marina",
+    "Personal expenses and any additional services not specified in the itinerary",
+    "Gratuities and tips (optional)"
+  ],
+  "whatToWear": [
+    "Flip-flops or sandals, easy to slip on and off between stops",
+    "Swimwear underneath, so you are always ready for a swim",
+    "A hat and sunglasses: there is little shade on the water",
+    "Sunscreen, applied before you board"
+  ],
+  "whatToBring": [
+    "A towel, for after your swim or to lie on at the beach",
+    "A change of clothes if you plan to swim",
+    "Cash for a tip if you would like to leave one"
+  ],
+  "faqs": [
+    {
+      "q": "How much does the cruise cost?",
+      "a": "No price is published for this cruise. It is arranged on request, so we quote once we know the option you want, the date and the number of guests."
+    },
+    {
+      "q": "How long is the cruise?",
+      "a": "There are three options: 2 hours, 3 hours or 4 hours. All three visit the sea caves and Kamarola beach and return below Fortezza Castle. The 3-hour option adds swimming at the caves and at Kamarola; the 4-hour option adds swimming plus a stop at Panormo."
+    },
+    {
+      "q": "How many people can come?",
+      "a": "Up to 19 people."
+    },
+    {
+      "q": "What time does it leave?",
+      "a": "Departure times are set on request, based on your preferred schedule."
+    },
+    {
+      "q": "Is hotel pick-up included?",
+      "a": "No. This cruise does not include hotel transfers; you join the boat at the marina."
+    },
+    {
+      "q": "Is snorkelling equipment provided?",
+      "a": "Basic snorkelling masks and life jackets are on board. Water, soft drinks and snacks are included; fruit and snacks come with the 4-hour option as standard."
+    }
+  ],
+  "priceNote": "No price is published. The cruise is quoted on request and depends on which of the three durations - 2, 3 or 4 hours - you choose and how many guests are on board."
+}

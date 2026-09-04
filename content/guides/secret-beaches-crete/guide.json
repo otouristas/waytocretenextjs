@@ -1,0 +1,21 @@
+{
+  "slug": "secret-beaches-crete",
+  "kind": "list",
+  "published": "2025-12-05",
+  "updated": "2025-12-05",
+  "authorId": "ernest",
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/12/5.jpg",
+  "places": [
+    "ammoudi-beach",
+    "ammoudaki-beach",
+    "schoinaria-beach",
+    "souda-beach",
+    "ligres-beach",
+    "plakias"
+  ],
+  "tours": ["south-crete-highlights", "cretan-nature-village-journey", "boat-cruise"],
+  "supersedes": [
+    "/2025/12/05/the-secret-beaches-in-crete-only-locals-know-about/"
+  ],
+  "featured": true
+}
