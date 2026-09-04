@@ -42,7 +42,7 @@ export function DeskChrome({ lang }: { lang: Lang }) {
   const chatOrb = dockActive && !chatOpen ? BELOW_LG : "pointer-events-auto";
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50">
+    <div className={cn("pointer-events-none fixed inset-0", chatOpen ? "z-[80]" : "z-50")}>
       {chatOpen ? (
         <button
           type="button"

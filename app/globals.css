@@ -193,6 +193,17 @@
     cursor: pointer;
   }
   html { -webkit-font-smoothing: antialiased; }
+
+/* iOS Safari zooms any focused field under 16px and does not zoom back
+   out, which traps the hero search (and the chat composer) under the
+   keyboard. Keep native controls at 16px on phones. */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
   body {
     background-color: var(--color-bg);
     color: var(--color-ink);

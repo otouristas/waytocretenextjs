@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DeskChrome } from "@/components/desk/desk-chrome";
@@ -19,6 +19,12 @@ import "../globals.css";
  * `app/layout.tsx` and hard-coded `lang="en"`, so all six locales shipped as
  * English to screen readers and to Google. Five locales ship: en, de, it, fr, sv.
  */
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));

@@ -168,8 +168,20 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
     }
   }
 
+  function focusField() {
+    setOpen(true);
+    // iOS zooms any field under 16px and then leaves the page stuck
+    // mid-zoom. The inputs themselves are 16px; this just keeps the
+    // card above the keyboard instead of under the sticky header.
+    if (typeof window === "undefined") return;
+    if (!window.matchMedia("(max-width: 767px)").matches) return;
+    window.setTimeout(() => {
+      rootRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+    }, 50);
+  }
+
   return (
-    <div ref={rootRef} className="relative">
+    <div ref={rootRef} className="relative scroll-mt-20">
       <form
         role="search"
         onSubmit={(event) => {
@@ -194,10 +206,13 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
                 setQ(event.target.value);
                 setOpen(true);
               }}
-              onFocus={() => setOpen(true)}
+              onFocus={focusField}
               onKeyDown={onKeyDown}
               placeholder={copy.searchHint}
               autoComplete="off"
+              enterKeyHint="search"
+              autoCorrect="off"
+              autoCapitalize="none"
               role="combobox"
               aria-expanded={open}
               aria-controls={listId}
@@ -205,7 +220,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
               aria-activedescendant={
                 open && results[active] ? `${listId}-${results[active].id}` : undefined
               }
-              className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-faint"
+              className="w-full bg-transparent text-base text-ink outline-none placeholder:text-faint"
             />
           </span>
         </label>
@@ -216,7 +231,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
             name="date"
             value={date}
             onChange={(event) => setDate(event.target.value)}
-            className="w-full bg-transparent text-sm text-ink outline-none"
+            className="w-full bg-transparent text-base text-ink outline-none"
           />
         </Field>
 
@@ -228,7 +243,8 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
             max={19}
             value={guests}
             onChange={(event) => setGuests(event.target.value)}
-            className="w-full bg-transparent text-sm text-ink outline-none"
+            inputMode="numeric"
+            className="w-full bg-transparent text-base text-ink outline-none"
           />
         </Field>
 
@@ -259,7 +275,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
             </div>
           ) : (
             <>
-              <ul id={listId} role="listbox" aria-label={copy.searchWhere} className="max-h-[22rem] overflow-y-auto py-2">
+              <ul id={listId} role="listbox" aria-label={copy.searchWhere} className="max-h-[min(22rem,50dvh)] overflow-y-auto py-2">
                 {groups.map((group) => (
                   <li key={group.kind} role="presentation">
                     <p className="px-5 pb-1 pt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-faint">

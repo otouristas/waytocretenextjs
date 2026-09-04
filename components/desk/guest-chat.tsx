@@ -214,7 +214,7 @@ export function GuestChat({
           aria-modal="true"
           aria-label={copy.chatName}
           className={cn(
-            "chat-sheet pointer-events-auto flex flex-col overflow-hidden",
+            "chat-sheet pointer-events-auto z-[80] flex flex-col overflow-hidden",
             // Phone: the whole screen. It is the only thing you are doing.
             "fixed inset-0 h-[100dvh] w-screen",
             // Desktop: a proper panel — a quarter wider than the old 24rem
@@ -232,7 +232,7 @@ export function GuestChat({
             Scaled up a step for the wider panel, and the row now holds an
             avatar so the face in the corner is the same face that answers.
           */}
-          <header className="relative shrink-0 overflow-hidden bg-earth px-4 pb-4 pt-4 text-surface sm:px-5 sm:pt-5">
+          <header className="relative shrink-0 overflow-hidden bg-earth px-4 pb-4 pt-[max(1rem,env(safe-area-inset-top))] text-surface sm:px-5 sm:pt-5">
             <div className="absolute -right-6 -top-8 size-32 rounded-full bg-olive/30 blur-2xl" />
             <div className="absolute -left-10 top-6 size-24 rounded-full bg-gold/10 blur-2xl" />
 
@@ -252,10 +252,10 @@ export function GuestChat({
                 </div>
               </div>
 
-              <div className="flex shrink-0 gap-1">
+              <div className="flex shrink-0 items-center gap-1.5">
                 <button
                   type="button"
-                  className="grid size-9 place-items-center rounded-full text-surface/75 transition hover:bg-white/10 hover:text-surface"
+                  className="grid size-11 place-items-center rounded-full bg-white/10 text-surface ring-1 ring-white/15 transition hover:bg-white/20 sm:size-9"
                   aria-label={copy.chatNew}
                   title={copy.chatNew}
                   onClick={() => setMessages([])}
@@ -264,11 +264,11 @@ export function GuestChat({
                 </button>
                 <button
                   type="button"
-                  className="grid size-9 place-items-center rounded-full text-surface/75 transition hover:bg-white/10 hover:text-surface"
+                  className="grid size-11 place-items-center rounded-full bg-white/20 text-surface ring-1 ring-white/30 transition hover:bg-white/30 sm:size-9"
                   onClick={onClose}
                   aria-label={copy.chatClose}
                 >
-                  <X className="size-5" />
+                  <X className="size-5" strokeWidth={2.25} />
                 </button>
               </div>
             </div>
@@ -379,7 +379,7 @@ export function GuestChat({
                   }
                 }}
                 placeholder={copy.chatPlaceholder}
-                className="max-h-[8.25rem] min-h-10 flex-1 resize-none self-center bg-transparent py-2 text-sm leading-relaxed outline-none placeholder:text-faint"
+                className="max-h-[8.25rem] min-h-10 flex-1 resize-none self-center bg-transparent py-2 text-base leading-relaxed outline-none placeholder:text-faint"
               />
               {/* WhatsApp sits beside the send key rather than as a line of
                   uppercase text under the composer: it is an alternative to
