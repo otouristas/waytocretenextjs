@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "CF Asty";
+  src: url("/brand/fonts/CFAsty.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cornetta";
+  src: url("/brand/fonts/Cornetta.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-bg: #efe6d4;
+  --color-surface: #f7f1e4;
+  --color-ink: #2b2a24;
+  --color-muted: #5c584c;
+  --color-faint: #8a8474;
+  --color-line: #d6ccb6;
+  --color-olive: #6c7c59;
+  --color-olive-deep: #4a563c;
+  --color-gold: #c9a227;
+  --color-gold-soft: #e6d39a;
+  --color-hero: #1a1c14;
+  --color-background: #efe6d4;
+  --color-foreground: #2b2a24;
+  --color-card: #f7f1e4;
+  --color-primary: #6c7c59;
+  --color-primary-foreground: #f7f1e4;
+  --color-accent: #c9a227;
+  --color-border: #d6ccb6;
+  --color-ring: #6c7c59;
+  --font-display: "CF Asty", "Plus Jakarta Sans", sans-serif;
+  --font-script: "Cornetta", Georgia, serif;
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background-color: var(--color-bg);
+    background-image: url("/patterns/linen.svg");
+    background-size: 180px 180px;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+}
+
+.pattern-linen {
+  background-color: var(--color-bg);
+  background-image: url("/patterns/linen.svg");
+  background-size: 180px 180px;
+}
+.pattern-olive {
+  background-image: url("/patterns/olive.svg"), url("/patterns/linen.svg");
+  background-size: 240px 240px, 180px 180px;
+}
