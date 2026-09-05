@@ -300,6 +300,20 @@ console.log("\nPlanner");
   const legs = (load(join(CONTENT, "planner/legs.json")) as unknown[]) ?? [];
   const templates = (load(join(CONTENT, "planner/templates.json")) as unknown[]) ?? [];
   const copy = load(join(CONTENT, "planner/copy/en.json"));
+  for (const lang of ["de", "it", "fr", "sv"] as const) {
+    const localePath = join(CONTENT, `planner/copy/${lang}.json`);
+    const localeCopy = load(localePath);
+    const parsed = check(PlannerCopyFile, localeCopy, `planner/copy/${lang}.json`);
+    const enParsed = copy && typeof copy === "object" ? (copy as PlannerCopyFile) : null;
+    if (parsed && enParsed) {
+      for (const slug of Object.keys(enParsed.starts)) {
+        if (!parsed.starts[slug]) fail(`planner/copy/${lang}.json`, `missing start label ${slug}`);
+      }
+      for (const slug of Object.keys(enParsed.stops)) {
+        if (!parsed.stops[slug]) fail(`planner/copy/${lang}.json`, `missing stop copy ${slug}`);
+      }
+    }
+  }
 
   const startSlugs = new Set<string>();
   if (Array.isArray(starts)) {

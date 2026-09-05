@@ -1,0 +1,40 @@
+{
+  "lang": "it",
+  "state": "reviewed",
+  "name": "Spinalonga",
+  "seoTitle": "Isola di Spinalonga: biglietto, battello e la colonia",
+  "seoDescription": "Spinalonga è l'isola-fortezza veneziana nella baia di Mirabello, colonia di lebbrosi fino agli anni 1950. Ingresso 20 EUR; battelli da Elounda in 15 minuti.",
+  "summary": "Spinalonga è una piccola isola fortificata nella baia di Mirabello, al largo della costa nord-est di Creta vicino a Elounda e Plaka. I veneziani costruirono la fortezza nel 1579 per custodire l'ingresso della baia, e resistette agli ottomani per decenni dopo la caduta del resto di Creta. Dal 1903 al 1957 fu una colonia di lebbrosi, una delle ultime in Europa, dove alcune centinaia di persone visse una vita civica piena dietro le mura, con negozi, chiesa, cinema e un proprio comune. L'ingresso è 20 EUR a adulto e il battello da Elounda o Plaka impiega circa quindici minuti; il giro dell'isola è dolce, su sentieri di pietra con alcuni gradini.",
+  "body": "## La fortezza\n\nI veneziani fortificarono l'isolotto nel 1579, staccandolo dalla penisola di Kalydon e cingendo di bastioni per controllare l'accesso al porto naturale di Elounda. Quando Creta cadde agli ottomani nel 1669 Spinalonga resistette e fu consegnata solo nel 1715. Una comunità ottomana si insediò poi dentro le mura e restò fino all'inizio del Novecento.\n\n## La colonia, 1903-1957\n\nNel 1903 il nuovo Stato cretese autonomo designò l'isola colonia di lebbrosi e gli abitanti del villaggio ottomano se ne andarono. Pazienti da tutta la Grecia furono inviati qui, all'inizio in condizioni molto dure. Col tempo si organizzarono: una via principale di negozi, una chiesa, una lavanderia, un cinema, un ospedale e infine il riconoscimento municipale. Una cura efficace raggiunse la Grecia alla fine degli anni Quaranta e la colonia chiuse nel 1957. L'ultimo abitante, un prete, restò fino al 1962 per tenere i riti funebri.\n\nIl romanzo *The Island* di Victoria Hislop e la serie televisiva greca tratta da esso sono il motivo per cui l'isola è oggi il sito più visitato della Creta orientale.\n\n## La visita\n\nI battelli partono da Elounda e Plaka, e da Agios Nikolaos su percorsi più lunghi. Plaka è la più vicina, di fronte. Si sbarca attraverso il tunnel che i veneziani tagliarono nella roccia, si percorre la via principale tra le case in rovina e l'ospedale e si segue l'anello intorno alle fortificazioni fino al molo. Un'ora o un'ora e mezza è la norma.\n\n## Informazioni pratiche\n\nL'ingresso è 20 EUR a adulto, pagato sull'isola, e il battello è un biglietto a parte, di solito 14-15 EUR a persona andata e ritorno. Dentro le mura c'è quasi nessuna ombra, quindi cappello, acqua e crema solare contano. Da Rethymno il viaggio è di circa due ore a tratta, il che ne fa una giornata lunga, non mezza.",
+  "quickAnswers": [
+    { "term": "Biglietto d'ingresso", "value": "20 EUR a adulto, pagato sull'isola" },
+    { "term": "Biglietto del battello", "value": "Circa 14-15 EUR a persona, pagato a parte" },
+    { "term": "Tempo di traversata", "value": "Circa 15 minuti da Elounda; meno da Plaka, di fronte" },
+    { "term": "Percorso da Rethymno", "value": "Circa 2 ore a tratta" },
+    { "term": "Fortezza costruita", "value": "1579, dai veneziani" },
+    { "term": "Colonia di lebbrosi", "value": "1903-1957" },
+    { "term": "Tempo sull'isola", "value": "Da un'ora a un'ora e mezza su sentieri di pietra con alcuni gradini" }
+  ],
+  "faqs": [
+    {
+      "q": "Quanto costa visitare Spinalonga?",
+      "a": "Il biglietto dell'isola è 20 EUR a adulto, pagato all'arrivo. Il battello da Elounda o Plaka è un biglietto a parte di circa 14-15 EUR a persona. Nessuno dei due è incluso nei prezzi dei tour da Rethymno."
+    },
+    {
+      "q": "Come si arriva a Spinalonga?",
+      "a": "Solo in barca. Le traversate partono da Elounda, da Plaka di fronte e da Agios Nikolaos. La traversata da Elounda dura circa quindici minuti."
+    },
+    {
+      "q": "Quanto tempo si passa sull'isola?",
+      "a": "Un'ora o un'ora e mezza basta per percorrere la via principale, le rovine dell'ospedale e l'anello intorno alle fortificazioni veneziane."
+    },
+    {
+      "q": "Spinalonga era davvero una colonia di lebbrosi?",
+      "a": "Sì. Operò dal 1903 al 1957 e fu una delle ultime colonie di lebbrosi d'Europa. I residenti costruirono lì una comunità funzionante, con negozi, chiesa e cinema, e il sito è presentato come storia di quella comunità, non solo della malattia."
+    },
+    {
+      "q": "Quanto dista Spinalonga da Rethymno?",
+      "a": "Circa due ore di strada a tratta, dall'altra parte dell'isola. Un tour da Rethymno dura otto-dieci ore, buona parte in viaggio."
+    }
+  ]
+}

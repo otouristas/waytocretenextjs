@@ -1,0 +1,90 @@
+{
+  "starts": {
+    "rethymno": "Réthymnon",
+    "chania": "La Canée",
+    "chania-airport": "Aéroport de La Canée",
+    "heraklion-airport": "Aéroport d'Héraklion"
+  },
+  "stops": {
+    "preveli-beach": {
+      "name": "Preveli",
+      "blurb": "Forêt de palmiers, lagune de rivière et une plage sauvage au sud."
+    },
+    "triopetra-beach": {
+      "name": "Triopetra",
+      "blurb": "Trois rochers dans une eau turquoise et un déjeuner calme en taverne."
+    },
+    "plakias": {
+      "name": "Plakias",
+      "blurb": "Une baie tranquille de la côte sud, avec un port de village."
+    },
+    "damnoni": {
+      "name": "Damnoni",
+      "blurb": "Une crique abritée à quelques minutes de Plakias."
+    },
+    "georgioupoli": {
+      "name": "Georgioupoli",
+      "blurb": "Longue plage de sable et une place sous les eucalyptus."
+    },
+    "elafonisi": {
+      "name": "Elafonisi",
+      "blurb": "Lagune de sable rose à l'extrême ouest — une journée à elle seule."
+    },
+    "arkadi-monastery": {
+      "name": "Monastère d'Arkadi",
+      "blurb": "Le fort de 1866 dans les collines derrière Réthymnon."
+    },
+    "melidoni-cave": {
+      "name": "Grotte de Melidoni",
+      "blurb": "Une salle de stalactites qui fut refuge et mémorial."
+    },
+    "eleftherna": {
+      "name": "Antique Eleftherna",
+      "blurb": "La cité de colline et le musée des siècles obscurs de Crète."
+    },
+    "rethymno-old-town": {
+      "name": "Vieille ville de Réthymnon",
+      "blurb": "Rues vénitiennes, une forteresse et un vrai déjeuner crétois."
+    },
+    "knossos": {
+      "name": "Knossos",
+      "blurb": "Le palais minoen aux portes d'Héraklion. Une longue journée vers l'est."
+    },
+    "spili": {
+      "name": "Spili",
+      "blurb": "Place du village avec 25 fontaines vénitiennes à tête de lion."
+    },
+    "margarites": {
+      "name": "Margarites",
+      "blurb": "Le village des potiers — des ateliers en activité sur la rue principale."
+    },
+    "anogia": {
+      "name": "Anogia",
+      "blurb": "Un village de montagne de musiciens, de tisserands et de moutons."
+    },
+    "argyroupoli": {
+      "name": "Argyroupoli",
+      "blurb": "Sources antiques sous les platanes et tavernes de village."
+    },
+    "klados-winery": {
+      "name": "Domaine Klados",
+      "blurb": "Une cave familiale à Adele, à quinze minutes de la ville."
+    },
+    "kourtaliotiko-gorge": {
+      "name": "Gorges de Kourtaliotiko",
+      "blurb": "Un arrêt court dans les falaises sur la route de Preveli."
+    },
+    "preveli-monastery": {
+      "name": "Monastère de Preveli",
+      "blurb": "Monastère perché, avec vue sur la mer de Libye."
+    },
+    "lake-kournas": {
+      "name": "Lac Kournas",
+      "blurb": "Le seul lac d'eau douce de Crète, sous les Montagnes Blanches."
+    },
+    "imbros-gorge": {
+      "name": "Gorges d'Imbros",
+      "blurb": "Une marche de 8 km dans un couloir calcaire. Une journée de randonnée."
+    }
+  }
+}

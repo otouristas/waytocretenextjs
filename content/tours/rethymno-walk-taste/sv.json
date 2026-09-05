@@ -1,0 +1,105 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "title": "Rethymno Walk & Taste",
+  "tagline": "En fyra timmar lång promenad genom mat och historia i gamla stan",
+  "seoTitle": "Rethymno gamla stan: mat och historia | Way to Crete",
+  "seoDescription": "Fyra timmar på förmiddagen genom Rethymnos gamla stan: grekiskt kaffe, filoverkstaden Chatziparaschos, venetianska platser och en delad kretensisk lunch.",
+  "summary": "Rethymno Walk & Taste är en fyra timmar lång morgonpromenad genom Rethymnos gamla stan som kombinerar stadens mat, dess landmärken och vardagen. Den börjar kl. 09:30 med ett grekiskt kaffe eller kretensiskt bergste på ett lokalt kafé, besöker familjen Chatziparaschos verkstad där filo och kataifi har gjorts för hand i över 60 år, går förbi Rimondifontänen, Porta Guora, Neratze-moskén och den venetianska hamnen, stannar för kalitsounia och lichnarakia i lokala bagerier och avslutar med en delad kretensisk lunch på en traditionell taverna. Den går varje måndag, onsdag och torsdag som en promenad i liten grupp, kostar 120 EUR per vuxen och 65 EUR för barn i åldern 4-13, kräver minst fyra gäster för att bekräftas och inkluderar en professionell fotografering.",
+  "overview": "Det här är en promenad, inte en bilutflykt, och medvetet stillsam: fyra timmar genom hjärtat av gamla stan, med provningar, landmärken och tid att titta i ett skyltfönster. Det finns ingen hämtning på hotellet. Ni möter guiden på ett kafé i gamla stan kl. 09:30 över ett grekiskt kaffe, långsamt kokat i en briki och serverat med tjockt skum, eller en kopp milt, aromatiskt kretensiskt bergste.\n\nDet första riktiga stoppet är verkstaden Chatziparaschos, och för de flesta gäster är det det de minns. Familjen har gjort filo- och kataifideg för hand i mer än 60 år och hör till de sista producenterna i Grekland som fortfarande arbetar så. Filoark sträcks tills de är nästan genomskinliga; kataifi spinns till tunna trådar med verktyg som familjen lärt sig av tidigare generationer. Ni tittar på nära håll, fotograferar, pratar med den som arbetar den morgonen och smakar kataifin färsk.\n\nDärifrån fortsätter promenaden genom de smala gatorna, där venetianska valv, osmanska byggnader, gamla kretensiska hus och moderna kaféer står sida vid sida. Rutten tar in Rimondifontänen, byggd av venetianerna 1626; Porta Guora, den enda bevarade delen av de ursprungliga stadsmurarna; Neratze-moskén, som har tjänat flera olika syften genom århundradena; och den venetianska hamnen med fiskebåtar och fyr. Guiden förklarar hur staden kom att se ut som den gör, utan att begrava er i datum.\n\nMellan landmärkena finns provningar av bakverken som lokalborna faktiskt äter: kalitsounia, de små ostpajerna som kan vara söta eller lätt salta, och lichnarakia med en mild, krämig fyllning, allt från lokala bagerier. Förmiddagen slutar som de flesta kretensiska förmiddagar, runt ett bord: en delad lunch på en traditionell taverna med säsongens grönsaker, sallader och lokala specialiteter, avslutad med en varm dessert.",
+  "highlights": [
+    "Börja med ett grekiskt kaffe eller kretensiskt bergste, så som lokalborna öppnar dagen",
+    "Se filo sträckas och kataifi spinnas för hand i verkstaden Chatziparaschos",
+    "Gå förbi Rimondifontänen, Porta Guora, Neratze-moskén och den venetianska hamnen",
+    "Smaka kalitsounia och lichnarakia från bagerier i gamla stan",
+    "Avsluta med en delad kretensisk lunch och en varm traditionell dessert",
+    "Professionell fotografering ingår, redigerat galleri levereras inom 48 timmar"
+  ],
+  "itinerary": [
+    {
+      "heading": "09:30 - kaffe på ett lokalt kafé",
+      "body": "Vi möts i gamla stan över något mycket vardagligt och mycket kretensiskt: ett grekiskt kaffe långsamt kokat i en briki, eller en kopp bergste. Det är ett kort stopp för att sätta sig, lära känna gruppen och sätta tonen för en förmiddag som är vänlig snarare än formell.",
+      "place": "rethymno-old-town",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-15-1-scaled.jpg"
+    },
+    {
+      "heading": "Familjen Chatziparaschos verkstad",
+      "body": "Familjen Chatziparaschos har gjort filo och kataifi för hand i över 60 år och är en av de sista verkstäderna i Grekland som fortfarande använder den gamla metoden. Filo sträcks för hand tills den är pappers tunn och kataifi spinns till långa, tunna trådar. Ni följer hela processen på nära håll och smakar den nygjorda kataifin.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-35-scaled.jpg"
+    },
+    {
+      "heading": "Promenad genom gamla stan",
+      "body": "Promenaden fortsätter genom smala gator där venetianska, osmanska och kretensiska byggnader står bredvid moderna kaféer. Vi stannar vid Rimondifontänen, byggd 1626; Porta Guora, den sista kvarvarande delen av stadsmurarna; Neratze-moskén; och den venetianska hamnen. Inget är forcerat, och det finns tid för foton och små butiker.",
+      "place": "rethymno-old-town",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-37-scaled.jpg"
+    },
+    {
+      "heading": "Provning av lokala bakverk",
+      "body": "Längs vägen stannar vi för bakverken som kretensare äter varje dag: kalitsounia, små ostpajer som kan vara söta eller lätt salta, och lichnarakia med en mild, krämig fyllning. Allt är färskt från lokala bagerier. Idén är inte en stor måltid utan en smak av de smaker människor här växer upp med.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-7-scaled.jpg"
+    },
+    {
+      "heading": "En kretensisk lunch som avslutning",
+      "body": "Promenaden slutar runt ett bord på en lokal taverna, med en traditionell lunch byggd på enkla säsongsråvaror: färska sallader, säsongens grönsaker och ett urval av lokala specialiteter att dela. En varm traditionell dessert avslutar upplevelsen.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-24-scaled.jpg"
+    }
+  ],
+  "included": [
+    "Traditionellt grekiskt kaffe eller kretensiskt bergste på ett lokalt kafé",
+    "Besök i Giorgos Chatziparaschos verkstad och provning av handgjorda filosötsaker, inklusive kataifi",
+    "Guidad promenad genom gamla stan med inblick i lokal historia och kultur",
+    "Stopp vid viktiga landmärken: Rimondifontänen, Porta Guora, Neratze-moskén och den venetianska fyren",
+    "Lunch på en traditionell kretensisk restaurang, med lokala rätter",
+    "Provning av kalitsounia eller lichnarakia",
+    "Professionell fotografering: porträtt och landskap av hög kvalitet under turen",
+    "Redigerat digitalt album: högupplösta, färgkorrigerade bilder levererade inom 48 timmar",
+    "En flaska vatten under turen",
+    "Ansvarsförsäkring",
+    "Alla skatter, avgifter och expeditionsavgifter"
+  ],
+  "excluded": [
+    "Privata utgifter, inklusive souvenirer eller extra tjänster som inte anges i programmet",
+    "Dricks till guider (frivilligt)"
+  ],
+  "whatToWear": [
+    "Bekväma promenadskor: gamla stan är kullersten och ojämn på sina ställen",
+    "Lätta, luftiga kläder på sommaren; promenaden är utomhus hela tiden",
+    "Hatt och solglasögon från sen vår och framåt"
+  ],
+  "whatToBring": [
+    "Solskydd",
+    "Lite kontanter till de små butikerna och bagerierna längs vägen",
+    "Aptit: det finns provningar hela tiden och lunch på slutet"
+  ],
+  "faqs": [
+    {
+      "q": "Var börjar promenaden, och finns det hämtning på hotellet?",
+      "a": "Det finns ingen hämtning på hotellet: det här är en promenad som börjar och slutar i Rethymnos gamla stan. Vi möts kl. 09:30 på ett lokalt kafé, och den exakta mötesplatsen skickas till er när bokningen är bekräftad."
+    },
+    {
+      "q": "Hur mycket går man?",
+      "a": "Svårighetsgraden är lätt. På fyra timmar täcker vi gamla stan i ett stillsamt tempo, med täta stopp för provningar, landmärken och foton. Bekväma skor räcker."
+    },
+    {
+      "q": "Vad är verkstaden Chatziparaschos?",
+      "a": "Det är en familjeverkstad i gamla stan som har gjort filo- och kataifideg för hand i över 60 år, och en av mycket få producenter kvar i Grekland som fortfarande följer den traditionella metoden. Ni ser filon sträckas och kataifin spinnas, och smakar den nygjord."
+    },
+    {
+      "q": "Ingår lunch?",
+      "a": "Ja. Promenaden slutar med lunch på en traditionell kretensisk restaurang, med lokala rätter att dela och en varm traditionell dessert. Det finns också bakverks- och filoprovningar längs vägen, plus kaffe i början och en flaska vatten under turen."
+    },
+    {
+      "q": "Kan ni ta hänsyn till vegetarianer eller andra kostbehov?",
+      "a": "Berätta när ni bokar så anpassar vi provningarna och lunchen. Mycket av det kretensiska bordet är dessutom naturligt vegetariskt: kalitsounia, säsongens grönsaker, sallader och ostpajer."
+    },
+    {
+      "q": "Passar det för barn, och vad kostar det?",
+      "a": "Ja, det lätta tempot passar familjer. Vuxna betalar 120 EUR per person, barn i åldern 4 till 13 är 65 EUR och spädbarn 0 till 3 är gratis. Minst fyra deltagare krävs för att avgången ska bekräftas."
+    },
+    {
+      "q": "Vad gäller vid avbokning?",
+      "a": "Avboka upp till 48 timmar före turen så får ni full återbetalning."
+    }
+  ],
+  "priceNote": "120 EUR per vuxen, 65 EUR för barn i åldern 4-13, spädbarn 0-3 gratis. Minst fyra gäster för att avgången ska bekräftas."
+}

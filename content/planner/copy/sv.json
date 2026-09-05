@@ -1,0 +1,90 @@
+{
+  "starts": {
+    "rethymno": "Rethymno",
+    "chania": "Chania",
+    "chania-airport": "Chanias flygplats",
+    "heraklion-airport": "Heraklions flygplats"
+  },
+  "stops": {
+    "preveli-beach": {
+      "name": "Preveli",
+      "blurb": "Palmskog, flodlagun och en vild sydkuststrand."
+    },
+    "triopetra-beach": {
+      "name": "Triopetra",
+      "blurb": "Tre klippor i turkost vatten och en lugn tavernalunch."
+    },
+    "plakias": {
+      "name": "Plakias",
+      "blurb": "En avslappnad sydkustvik med byhamn."
+    },
+    "damnoni": {
+      "name": "Damnoni",
+      "blurb": "En skyddad vik några minuter från Plakias."
+    },
+    "georgioupoli": {
+      "name": "Georgioupoli",
+      "blurb": "Lång sandstrand och ett torg under eukalyptusträd."
+    },
+    "elafonisi": {
+      "name": "Elafonisi",
+      "blurb": "Rosa sandlagun längst i väster — en dag för sig."
+    },
+    "arkadi-monastery": {
+      "name": "Klostret Arkadi",
+      "blurb": "Fästet från 1866 i kullarna bakom Rethymno."
+    },
+    "melidoni-cave": {
+      "name": "Melidoni-grottan",
+      "blurb": "En stalaktitkammare som var både tillflykt och minnesplats."
+    },
+    "eleftherna": {
+      "name": "Antika Eleftherna",
+      "blurb": "Stad på sluttningen och museum över Kretas mörka århundraden."
+    },
+    "rethymno-old-town": {
+      "name": "Rethymnos gamla stad",
+      "blurb": "Venetianska gränder, en fästning och en riktig kretensisk lunch."
+    },
+    "knossos": {
+      "name": "Knossos",
+      "blurb": "Det minoiska palatset utanför Heraklion. En lång dag österut."
+    },
+    "spili": {
+      "name": "Spili",
+      "blurb": "Bytorg med 25 venetianska lejonhuvudfontäner."
+    },
+    "margarites": {
+      "name": "Margarites",
+      "blurb": "Krukmakarbyn — verkstäder som fortfarande arbetar vid huvudgatan."
+    },
+    "anogia": {
+      "name": "Anogia",
+      "blurb": "En bergsby med musiker, vävare och får."
+    },
+    "argyroupoli": {
+      "name": "Argyroupoli",
+      "blurb": "Antika källor under plataner och bytavernor."
+    },
+    "klados-winery": {
+      "name": "Klados vingård",
+      "blurb": "En familjekällare i Adele, femton minuter från stan."
+    },
+    "kourtaliotiko-gorge": {
+      "name": "Kourtaliotiko-ravinen",
+      "blurb": "Ett kort stopp i klipporna på vägen mot Preveli."
+    },
+    "preveli-monastery": {
+      "name": "Klostret Preveli",
+      "blurb": "Kloster på klippan med utsikt över Libyska havet."
+    },
+    "lake-kournas": {
+      "name": "Kournassjön",
+      "blurb": "Kretas enda sötvattensjö, under de Vita bergen."
+    },
+    "imbros-gorge": {
+      "name": "Imbros-ravinen",
+      "blurb": "En 8 km vandring genom en kalkstenskorridor. En vandringsdag."
+    }
+  }
+}

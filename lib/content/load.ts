@@ -136,6 +136,36 @@ export const allGuides = cache((lang: Lang) =>
     .sort((a, b) => b.core.published.localeCompare(a.core.published)),
 );
 
+/** The “things to do in Crete” listicle — pinned as the guides hub lead. */
+export const GUIDES_HUB_LEAD = "authentic-crete-experiences";
+
+const GUIDES_TEASER_SLUGS = [
+  GUIDES_HUB_LEAD,
+  "crete-rainy-day",
+  "how-many-days-in-crete",
+] as const;
+
+export function guidesForHub(lang: Lang) {
+  const all = allGuides(lang);
+  const lead = all.find((g) => g.core.slug === GUIDES_HUB_LEAD);
+  const rest = all.filter((g) => g.core.slug !== GUIDES_HUB_LEAD);
+  return lead ? [lead, ...rest] : all;
+}
+
+export function guidesForHomeTeaser(lang: Lang) {
+  const all = allGuides(lang);
+  const picked: typeof all = [];
+  for (const slug of GUIDES_TEASER_SLUGS) {
+    const match = all.find((g) => g.core.slug === slug);
+    if (match) picked.push(match);
+  }
+  for (const g of all) {
+    if (picked.length >= 3) break;
+    if (!picked.some((p) => p.core.slug === g.core.slug)) picked.push(g);
+  }
+  return picked.slice(0, 3);
+}
+
 /* ────────────────────────────── places ────────────────────────────── */
 
 export const placeSlugs = cache((): string[] =>

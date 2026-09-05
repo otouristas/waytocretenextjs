@@ -1,0 +1,34 @@
+{
+  "lang": "de",
+  "state": "reviewed",
+  "name": "Spili",
+  "seoTitle": "Spili, Kreta: Das Dorf der Löwenbrunnen",
+  "seoDescription": "Spili ist ein Bergdorf 45 Minuten südlich von Rethymno, bekannt für 25 venezianische Löwenkopf-Brunnen mit kaltem Quellwasser auf dem Hauptplatz.",
+  "summary": "Spili liegt in einer Falte der Kedros-Vorberge, etwa 45 Minuten südlich von Rethymno, und ist das Dorf, durch das die meisten Südküsten-Tage auf dem Rückweg von Preveli führen. Der Grund zum Anhalten ist der Platz: eine Reihe von 25 venezianischen Löwenkopf-Brunnen mit kaltem Quellwasser, Platanen und ein paar Kafenions, die sich nachmittags noch mit Einheimischen füllen. Es ist frei, dauert eine halbe Stunde und ist der sanfteste volle Halt nach einem Strand.",
+  "body": "## Die Brunnen\n\nDie Löwenköpfe sind venezianisch, 16. Jahrhundert, und sie funktionieren noch. Das Wasser kommt vom Berg Kedros und läuft selbst im August kalt. Die Menschen füllen Flaschen, waschen Obst und spritzen sich ins Gesicht; es ist kein Denkmal, das man hinter einem Seil betrachtet. Die Reihe sitzt unter Platanen auf dem Hauptplatz, der zugleich Bushaltestelle, Taxistand und der Ort ist, an dem das Dorf am Abend sitzt.\n\n## Das Dorf\n\nSpili ist ein arbeitendes Dorf in Agios Vasileios, kein inszeniertes. Es gibt ein Gesundheitszentrum, ein Gymnasium, ein paar Metzgereien und eine Bäckerei, die Dakos-Zwieback macht. Die Gassen hinter dem Platz steigen in Steinhäuser mit Höfen. Es ist ein nützlicher Mittagsstopp an einem Preveli-Tag, weil die Tavernen im Schatten liegen und die Fahrt zurück an die Nordküste danach durchgehend bergab ist.\n\n## Praktisches\n\nFrei zu besuchen. Etwa 30 km von Rethymno, 45 Minuten mit dem Auto über die Kourtaliotiko-Straße oder die inland Spili-Straße. Auf dem Platz parken. Zwanzig bis fünfundvierzig Minuten reichen, sofern Sie nicht essen. Es passt natürlich zum Preveli-Strand, zum Kloster Preveli und zu Triopetra im selben Südküsten-Kreis.",
+  "quickAnswers": [
+    { "term": "Besuchskosten", "value": "Frei" },
+    { "term": "Fahrt von Rethymno", "value": "Etwa 45 Minuten, rund 30 km" },
+    { "term": "Bekannt für", "value": "25 venezianische Löwenkopf-Brunnen mit Quellwasser auf dem Platz" },
+    { "term": "Benötigte Zeit", "value": "20 bis 45 Minuten, länger wenn Sie essen" },
+    { "term": "Am besten kombiniert mit", "value": "Preveli-Strand, Kloster Preveli und Triopetra" }
+  ],
+  "faqs": [
+    {
+      "q": "Wofür ist Spili berühmt?",
+      "a": "Für die Reihe von 25 venezianischen Löwenkopf-Brunnen auf dem Hauptplatz, die noch mit kaltem Quellwasser vom Berg Kedros laufen."
+    },
+    {
+      "q": "Wie weit ist Spili von Rethymno entfernt?",
+      "a": "Etwa 30 km südlich, 45 Minuten mit dem Auto. Es ist das Inlanddorf, durch das die meisten Südküsten-Tage von Rethymno führen."
+    },
+    {
+      "q": "Gibt es eine Eintrittsgebühr?",
+      "a": "Nein. Spili ist ein Dorf. Sie zahlen nur, wenn Sie essen, trinken oder einkaufen."
+    },
+    {
+      "q": "Ist das Brunnenwasser trinkbar?",
+      "a": "Einheimische trinken es und füllen Flaschen daraus. Es ist Quellwasser vom Kedros, das ganze Jahr kalt. Wer Flaschen bevorzugt, verkaufen die Kafenions die auch."
+    }
+  ]
+}

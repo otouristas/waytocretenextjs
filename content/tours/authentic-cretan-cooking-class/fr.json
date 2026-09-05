@@ -1,0 +1,104 @@
+{
+  "lang": "fr",
+  "state": "reviewed",
+  "title": "Cours de cuisine crétoise authentique",
+  "tagline": "Une journée pratique dans une cuisine de village sous le Psiloritis",
+  "seoTitle": "Cours de cuisine crétoise au village | Way to Crete",
+  "seoDescription": "Cours de cuisine crétoise près du Psiloritis : dakos, gemista et pita sfakienne avec Mme Ntina, puis le repas partagé avec du vin local. Prise en charge incluse.",
+  "summary": "Le cours de cuisine crétoise authentique est une journée en petit groupe de 5-6 heures dans une taverne traditionnelle au pied du Psiloritis, où vous cuisinez un déjeuner crétois avec Mme Ntina avant de vous asseoir pour le manger. La prise en charge a lieu à votre hébergement à 10:30 et le trajet traverse les hauts plateaux de Réthymnon, en passant par les gorges de Patsos et en s'arrêtant pour un café au barrage de Potamon. Le cours est entièrement pratique et fondé sur des recettes de maison : salade grecque, dakos, gemista et pita sfakienne, préparés avec des ingrédients locaux frais et servis à la familiale avec du vin local ou du raki. Il a lieu chaque lundi, jeudi et vendredi pour jusqu'à huit voyageurs, est coté facile, et comprend une séance photo professionnelle avec photos retouchées livrées sous 48 heures.",
+  "overview": "La journée commence par une route pittoresque au cœur de Réthymnon, à travers des villages de colline et vers les hauts plateaux crétois. L'itinéraire passe par les gorges de Patsos, avec leurs falaises dramatiques et leur ravin vert, et par le calme barrage de Potamon, où l'eau reflète les montagnes alentour et où il y a le temps de s'arrêter pour un café avant de continuer.\n\nLa taverne de Mme Ntina se trouve près de la base du Psiloritis, la plus haute montagne de Crète. Avant que la cuisine ne commence, vous vous asseyez autour d'un café grec traditionnel, qui fait autant partie de la journée que le cours lui-même : une demi-heure lente pour parler avec votre hôtesse et entrer dans le rythme d'un village de montagne.\n\nLe cours est entièrement pratique et bâti sur des recettes de maison plutôt que sur une technique de restaurant. Vous préparez une salade grecque avec des légumes frais, de la feta, des olives et de l'huile d'olive extra vierge ; des dakos, des biscottes d'orge recouvertes de tomate râpée, de fromage et d'herbes ; des gemista, tomates et poivrons cuits au four avec du riz, des herbes et de l'huile d'olive ; et une pita sfakienne, une fine tourte au fromage faite main de la région de Sfakia, légèrement poêlée et servie chaude, souvent avec une touche de miel. Chaque étape est expliquée simplement, comme on le ferait dans une cuisine locale.\n\nPendant que vous cuisinez, la conversation se tourne vers l'origine des plats : les saisons auxquelles ils appartiennent, les réunions de famille et les fêtes qu'ils marquent, et pourquoi on les fait encore dans presque chaque foyer de l'île. Quand tout est prêt, tout le monde mange ensemble à une seule table, servi directement depuis la cuisine, avec du vin local ou du raki à côté. Rien n'est précipité.",
+  "highlights": [
+    "Cuisiner dans une cuisine de village face au Psiloritis, la plus haute montagne de Crète",
+    "Un cours pratique avec Mme Ntina, à partir d'ingrédients frais d'origine locale",
+    "Quatre classiques à partir de zéro : salade grecque, dakos, gemista et pita sfakienne",
+    "Une pause café au barrage de Potamon et un trajet le long des gorges de Patsos",
+    "S'asseoir à la familiale pour manger ce que vous avez cuisiné, avec du vin local ou du raki",
+    "Séance photo professionnelle incluse, galerie retouchée livrée sous 48 heures"
+  ],
+  "itinerary": [
+    {
+      "heading": "10:30 - prise en charge et route vers l'intérieur",
+      "body": "Nous venons vous chercher à votre hébergement et traversons le cœur de Réthymnon, devant de charmants villages et vers les hauts plateaux. L'itinéraire passe par les gorges de Patsos, avec leurs falaises dramatiques et leur paysage d'un vert luxuriant, avant d'atteindre le pays de montagne ouvert.",
+      "place": "patsos-gorge"
+    },
+    {
+      "heading": "Pause café au barrage de Potamon",
+      "body": "Nous nous arrêtons au barrage de Potamon, où l'eau claire reflète les montagnes alentour. C'est un court arrêt pour un café et des photos, et le premier vrai regard sur le paysage intérieur de Réthymnon dans lequel l'excursion passe la journée.",
+      "place": "potamon-dam"
+    },
+    {
+      "heading": "Café de bienvenue à la taverne",
+      "body": "La taverne traditionnelle de Mme Ntina se trouve près de la base du Psiloritis, et l'accueil est un café grec à une table dehors. C'est un moment calme pour se détendre, parler avec votre hôtesse et prendre le cadre avant que la cuisine ne commence.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/cooking-classes-33-scaled.jpg"
+    },
+    {
+      "heading": "Le cours de cuisine",
+      "body": "La leçon est entièrement pratique et suit des recettes crétoises traditionnelles de maison. Vous préparez une salade grecque, des dakos sur biscottes d'orge avec de la tomate râpée, du fromage et des herbes, des gemista cuits au four avec du riz et de l'huile d'olive, et une fine pita au fromage sfakienne faite main, légèrement poêlée et terminée avec du miel. Tout utilise des ingrédients locaux frais et chaque étape est expliquée comme elle le serait dans une cuisine de village.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/cooking-classes-24-scaled.jpg"
+    },
+    {
+      "heading": "Déjeuner à la table partagée",
+      "body": "Une fois le repas prêt, tout le monde s'assoit ensemble et mange à la familiale, servi chaud directement depuis la cuisine. Le vin local ou le raki accompagne le repas. Il n'y a pas d'horaire à tenir pour cette partie de la journée : c'est un long déjeuner sans hâte, avec des vues de montagne et de la conversation.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/cooking-classes-22-scaled.jpg"
+    },
+    {
+      "heading": "La séance photo Memory Maker",
+      "body": "Votre hôtesse photographie la journée avec des appareils et des objectifs professionnels, en vous guidant vers la meilleure lumière et les coins les plus photogéniques de la taverne et du village. Vous recevez une galerie soignée, en haute résolution, sur votre appareil sous 48 heures, sans supplément.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/cooking-classes-21-scaled.jpg"
+    }
+  ],
+  "included": [
+    "Prise en charge et retour à votre hébergement",
+    "Transport en minivan climatisé",
+    "Chauffeur / guide local (anglophone)",
+    "Cours de cuisine",
+    "Recettes traditionnelles",
+    "Déjeuner à la fin de la leçon de cuisine",
+    "Pause café au barrage de Potamon",
+    "Séance photo professionnelle : portraits et paysages de qualité pendant l'excursion",
+    "Album numérique retouché : photos haute résolution et corrigées des couleurs, livré sous 48 heures",
+    "Assurance responsabilité civile",
+    "Toutes taxes, frais et charges de dossier"
+  ],
+  "excluded": [
+    "Dépenses personnelles, y compris souvenirs ou services supplémentaires non mentionnés dans l'itinéraire",
+    "Pourboires pour les guides (facultatifs)"
+  ],
+  "whatToWear": [
+    "Des vêtements décontractés confortables dans lesquels vous ne craignez pas de cuisiner",
+    "Des chaussures fermées et confortables pour le village et la cour de la taverne",
+    "Une couche légère : les villages de montagne sont plus frais que la côte"
+  ],
+  "whatToBring": [
+    "Lunettes de soleil et protection solaire pour les arrêts au barrage et aux belvédères",
+    "Une bouteille d'eau pour le trajet",
+    "Tout régime alimentaire confirmé auprès de nous au moment de la réservation"
+  ],
+  "faqs": [
+    {
+      "q": "Que puis-je attendre du cours de cuisine crétoise authentique ?",
+      "a": "Cette expérience mêle cuisine crétoise authentique, traditions locales et participation pratique. Vous apprendrez des recettes traditionnelles, préparerez des plats locaux et découvrirez les secrets de la gastronomie crétoise dans un cadre accueillant et authentique."
+    },
+    {
+      "q": "Faut-il une expérience de cuisine préalable ?",
+      "a": "Non. Le cours convient aussi bien aux débutants qu'aux cuisiniers expérimentés. L'expérience est conçue pour quiconque souhaite découvrir la cuisine crétoise authentique."
+    },
+    {
+      "q": "Quels plats crétois traditionnels préparerons-nous ?",
+      "a": "Le menu peut varier selon la saison et la disponibilité des ingrédients locaux frais, mais il comprend des recettes crétoises traditionnelles préparées avec des produits locaux et des techniques éprouvées. Un cours type couvre la salade grecque, les dakos, les gemista et la pita au fromage sfakienne."
+    },
+    {
+      "q": "Y a-t-il des options végétariennes ?",
+      "a": "Oui. Des options végétariennes peuvent être organisées sur demande. Merci de nous indiquer tout régime alimentaire lors de la réservation."
+    },
+    {
+      "q": "À quelle heure cela commence-t-il et combien de temps cela dure-t-il ?",
+      "a": "La prise en charge à votre hébergement est à 10:30 et l'expérience dure 5 à 6 heures porte à porte. Elle a lieu chaque lundi, jeudi et vendredi, pour des groupes jusqu'à huit voyageurs."
+    },
+    {
+      "q": "La journée est-elle physiquement exigeante ?",
+      "a": "Non. Le niveau de difficulté est facile. Hormis le trajet, la journée se passe dans et autour de la taverne, ce qui convient à tous les âges et niveaux de forme."
+    }
+  ],
+  "priceNote": "Aucun tarif n'est publié pour cette expérience. Nous établissons un devis sur demande, selon la taille du groupe et votre point de prise en charge."
+}

@@ -1,0 +1,94 @@
+{
+  "lang": "it",
+  "state": "reviewed",
+  "title": "Palazzo di Knossos",
+  "tagline": "Il palazzo minoico, il museo che ne custodisce i tesori e la vecchia Heraklion.",
+  "seoTitle": "Knossos in privato | Creta minoica e Museo di Heraklion",
+  "seoDescription": "Una giornata privata al Palazzo di Knossos e al Museo Archeologico di Heraklion, con tempo nella città vecchia veneziana. Ritiro in hotel alle 09:00, sette ore.",
+  "summary": "Questo è un tour privato di sette ore nella Creta minoica: il Palazzo di Knossos appena fuori Heraklion, il Museo Archeologico di Heraklion che custodisce quasi tutto quanto vi è stato scavato, e in mezzo la città vecchia veneziana. Il ritiro in hotel è alle 09:00, il trasporto è in minivan climatizzato con autista di lingua inglese, i gruppi arrivano a un massimo di otto. I biglietti d'ingresso a Knossos e al museo non sono inclusi. Una guida professionista abilitata può essere aggiunta per €150, da pagare direttamente alla guida il giorno del tour. Il tour si svolge su richiesta, non con un calendario settimanale fisso.",
+  "overview": [
+    "Knossos era il centro della civiltà minoica, fiorita a Creta grosso modo tra il 2000 e il 1400 a.C. Il palazzo è una struttura complessa, a più piani, nota per un'ingegneria in anticipo di secoli – compreso un ingegnoso sistema di drenaggio – e per affreschi che ritraggono vita quotidiana, religione e mondo naturale. La pianta labirintica è il motivo per cui la leggenda del Minotauro si è legata al sito. Gli scavi guidati da Sir Arthur Evans hanno portato alla luce i reperti da cui conosciamo gran parte dell'arte e della struttura sociale minoiche.",
+    "Camminando tra le rovine potete cogliere l'architettura, la grande sala del trono e gli affreschi ricostruiti che danno un'immagine vivida, a volte sorprendentemente moderna, della vita minoica. Il sito è ampio, così la visita è senza fretta: c'è tempo per attraversare i diversi quartieri del palazzo e capire come l'edificio funzionasse davvero, invece di spuntare una lista di nomi.",
+    "La seconda metà della giornata è il Museo Archeologico di Heraklion, che conserva una delle più importanti collezioni di materiale minoico al mondo: ceramica, gioielli d'oro, sigilli, oggetti cerimoniali e gli affreschi originali le cui copie avete visto a Knossos. Il museo è disposto in ordine cronologico, così le due metà della giornata si completano. Il tour si chiude nella stessa Heraklion, con la Loggia veneziana, la Fontana Morosini e le antiche mura."
+  ],
+  "highlights": [
+    "Il Palazzo di Knossos, capitale del mondo minoico per sei secoli",
+    "La sala del trono ricostruita e gli affreschi della vita e della natura minoiche",
+    "Il Museo Archeologico di Heraklion: ceramica, gioielli d'oro e oggetti cerimoniali",
+    "Gli affreschi originali restaurati, conservati in museo e non sul sito",
+    "La Loggia veneziana e la Fontana Morosini di Heraklion",
+    "Viste panoramiche dalle antiche mura"
+  ],
+  "itinerary": [
+    {
+      "heading": "Il Palazzo di Knossos",
+      "body": "Venite ritirati alle 09:00 e accompagnati a Knossos, appena fuori Heraklion. La passeggiata nel palazzo dura circa 90 minuti su terreno irregolare ma perlopiù pianeggiante, a passo gentile con molte pause. Vedete la grande sala del trono, i magazzini, l'ingegneria di drenaggio e pozzi di luce, e gli affreschi ricostruiti che Evans installò per rendere le rovine leggibili. Il focus è su come i Minoici vivessero, lavorassero e pregassero davvero, non su un elenco di date.",
+      "place": "knossos"
+    },
+    {
+      "heading": "Il Museo Archeologico di Heraklion",
+      "body": "Da Knossos è un breve tragitto fino al Museo Archeologico di Heraklion. Quasi tutto ciò che di valore è stato trovato a Knossos è finito qui: gli affreschi originali, le statuette in faïence, le scene del salto del toro, i sigilli e l'oro. Le gallerie corrono in ordine cronologico, così gli oggetti riempiono il palazzo che avete appena percorso. Anche per chi non si considera un frequentatore di musei, il colore e il dettaglio dei pezzi minoici tendono a essere la sorpresa della giornata.",
+      "place": "heraklion-archaeological-museum"
+    },
+    {
+      "heading": "La città vecchia di Heraklion",
+      "body": "La giornata si chiude con tempo in città. Percorrete il centro storico passando dalla Loggia veneziana e dalla Fontana Morosini, e potete salire sulle antiche mura per una vista sul porto e sulla campagna. È un'occasione per vedere cosa è successo a Creta dopo i Minoici, e un buon posto per un caffè prima del rientro in hotel.",
+      "place": "heraklion-old-town"
+    }
+  ],
+  "included": [
+    "Ritiro e riconsegna in hotel",
+    "Trasporto in minivan climatizzato",
+    "Autista di lingua inglese",
+    "Acqua in bottiglia e rinfreschi leggeri durante il tour",
+    "Assicurazione di responsabilità civile",
+    "Tutte le tasse, i diritti e le spese di gestione"
+  ],
+  "excluded": [
+    "Biglietti d'ingresso al Palazzo di Knossos e al Museo Archeologico",
+    "Guida di sito privata abilitata €150, da pagare direttamente alla guida il giorno del tour (opzionale)",
+    "Spese personali, inclusi souvenir e servizi non elencati nel programma",
+    "Mance per le guide (opzionali)"
+  ],
+  "whatToWear": [
+    "Scarpe da passeggio comode con grip: i percorsi del palazzo sono irregolari",
+    "Cappello e abiti leggeri e traspiranti; Knossos ha pochissima ombra",
+    "Occhiali da sole"
+  ],
+  "whatToBring": [
+    "Crema solare",
+    "Contanti o carta per i biglietti di Knossos e del museo",
+    "Una bottiglia d'acqua riutilizzabile"
+  ],
+  "faqs": [
+    {
+      "q": "È solo una noiosa lezione di storia?",
+      "a": "Tutt'altro. È un viaggio immersivo tra miti e leggende. Ci concentriamo sulle storie umane dei Minoici: come vivevano, giocavano e creavano un'arte che ancora oggi sembra moderna."
+    },
+    {
+      "q": "Farà troppo caldo?",
+      "a": "Knossos ha pochissima ombra. Per questo usiamo trasporti climatizzati e pianifichiamo il percorso a piedi per trovare ogni brezza e ogni angolo d'ombra possibile mentre parliamo."
+    },
+    {
+      "q": "Quanto si cammina?",
+      "a": "La passeggiata nel palazzo dura circa 90 minuti su terreno irregolare ma perlopiù pianeggiante. Andiamo a passo molto gentile, con molte pause alle ricostruzioni."
+    },
+    {
+      "q": "Il museo vale la pena?",
+      "a": "Assolutamente. È uno dei musei più belli d'Europa. Anche se non siete tipi da museo, i colori e i dettagli dei reperti minoici sono straordinari."
+    },
+    {
+      "q": "I biglietti d'ingresso sono inclusi?",
+      "a": "No. L'ingresso al Palazzo di Knossos e al Museo Archeologico di Heraklion si paga a parte in ciascun sito. Di solito è disponibile un biglietto combinato per entrambi, più conveniente dei singoli."
+    },
+    {
+      "q": "Ho una guida nei siti?",
+      "a": "L'autista di lingua inglese è incluso e vi dà il contesto della giornata. Una guida professionista abilitata che vi accompagna nel palazzo e nel museo può essere aggiunta per €150, da pagare direttamente alla guida il giorno del tour. Selezionatela nel pannello di prenotazione quando richiedete un preventivo."
+    },
+    {
+      "q": "Quanto dura la giornata e quando inizia?",
+      "a": "Sette ore in totale, con ritiro in hotel alle 09:00. Il tour si svolge su richiesta e non in giorni fissi: indicateci le date e confermeremo la disponibilità."
+    }
+  ],
+  "priceNote": "Questo tour è quotato su richiesta: il prezzo dipende da date, dimensione del gruppo e punto di ritiro. I biglietti di Knossos e del museo si pagano a parte. Una guida di sito abilitata costa €150, da pagare direttamente alla guida il giorno stesso."
+}

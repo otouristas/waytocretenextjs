@@ -1,0 +1,90 @@
+{
+  "starts": {
+    "rethymno": "Rethymno",
+    "chania": "La Canea",
+    "chania-airport": "Aeroporto di La Canea",
+    "heraklion-airport": "Aeroporto di Heraklion"
+  },
+  "stops": {
+    "preveli-beach": {
+      "name": "Preveli",
+      "blurb": "Foresta di palme, laguna del fiume e una spiaggia selvaggia a sud."
+    },
+    "triopetra-beach": {
+      "name": "Triopetra",
+      "blurb": "Tre scogli in acqua turchese e un pranzo quieto in taverna."
+    },
+    "plakias": {
+      "name": "Plakias",
+      "blurb": "Una baia tranquilla della costa sud, con porto di paese."
+    },
+    "damnoni": {
+      "name": "Damnoni",
+      "blurb": "Una cala riparata a pochi minuti da Plakias."
+    },
+    "georgioupoli": {
+      "name": "Georgioupoli",
+      "blurb": "Lunga spiaggia di sabbia e una piazza sotto gli eucalipti."
+    },
+    "elafonisi": {
+      "name": "Elafonisi",
+      "blurb": "Laguna di sabbia rosa all'estremo ovest — una giornata a sé."
+    },
+    "arkadi-monastery": {
+      "name": "Monastero di Arkadi",
+      "blurb": "La rocca del 1866 sulle colline dietro Rethymno."
+    },
+    "melidoni-cave": {
+      "name": "Grotta di Melidoni",
+      "blurb": "Una camera di stalattiti che fu rifugio e memoriale."
+    },
+    "eleftherna": {
+      "name": "Antica Eleftherna",
+      "blurb": "La città sul colle e il museo dei secoli bui di Creta."
+    },
+    "rethymno-old-town": {
+      "name": "Città vecchia di Rethymno",
+      "blurb": "Vicoli veneziani, una fortezza e un pranzo cretese vero."
+    },
+    "knossos": {
+      "name": "Cnosso",
+      "blurb": "Il palazzo minoico fuori Heraklion. Una lunga giornata verso est."
+    },
+    "spili": {
+      "name": "Spili",
+      "blurb": "Piazza del paese con 25 fontane veneziane a testa di leone."
+    },
+    "margarites": {
+      "name": "Margarites",
+      "blurb": "Il villaggio dei vasai — botteghe al lavoro sulla strada principale."
+    },
+    "anogia": {
+      "name": "Anogia",
+      "blurb": "Un villaggio di montagna di musicisti, tessitori e pecore."
+    },
+    "argyroupoli": {
+      "name": "Argyroupoli",
+      "blurb": "Sorgenti antiche sotto i platani e taverne di paese."
+    },
+    "klados-winery": {
+      "name": "Cantina Klados",
+      "blurb": "Una cantina di famiglia ad Adele, quindici minuti dalla città."
+    },
+    "kourtaliotiko-gorge": {
+      "name": "Gola di Kourtaliotiko",
+      "blurb": "Una sosta breve tra le rupi sulla strada per Preveli."
+    },
+    "preveli-monastery": {
+      "name": "Monastero di Preveli",
+      "blurb": "Monastero a picco sul mare, con vista sul Mar Libico."
+    },
+    "lake-kournas": {
+      "name": "Lago Kournas",
+      "blurb": "L'unico lago d'acqua dolce di Creta, sotto le Montagne Bianche."
+    },
+    "imbros-gorge": {
+      "name": "Gola di Imbros",
+      "blurb": "Un cammino di 8 km in un corridoio di calcare. Una giornata di trekking."
+    }
+  }
+}

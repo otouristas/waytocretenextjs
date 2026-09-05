@@ -1,0 +1,34 @@
+{
+  "lang": "it",
+  "state": "reviewed",
+  "name": "Spili",
+  "seoTitle": "Spili, Creta: il villaggio delle fontane dei leoni",
+  "seoDescription": "Spili è un villaggio di montagna a 45 minuti a sud di Rethymno, famoso per 25 fontane veneziane a testa di leone con acqua di sorgente fredda in piazza.",
+  "summary": "Spili siede in una piega delle colline del Kedros, a circa 45 minuti a sud di Rethymno, ed è il villaggio attraverso cui passa la maggior parte delle giornate sulla costa sud al ritorno da Preveli. Il motivo per fermarsi è la piazza: una fila di 25 fontane veneziane a testa di leone che corrono con acqua di sorgente fredda, platani e un paio di kafenion che ancora si riempiono di gente del posto nel pomeriggio. È gratis, ci vuole mezz'ora, ed è la sosta più dolce dopo una spiaggia.",
+  "body": "## Le fontane\n\nLe teste di leone sono veneziane, Cinquecento, e funzionano ancora. L'acqua viene dal monte Kedros e corre fredda anche in agosto. La gente riempie bottiglie, lava la frutta e si spruzza il viso; non è un monumento da guardare dietro una corda. La fila siede sotto i platani sulla piazza principale, che è anche fermata dell'autobus, posteggio dei taxi e il posto dove il villaggio siede la sera.\n\n## Il villaggio\n\nSpili è un villaggio di Agios Vasileios che lavora, non uno allestito. C'è un ambulatorio, un liceo, un paio di macellerie e un forno che fa i dakos. I vicoli dietro la piazza salgono tra case di pietra con cortili. È una tappa pranzo utile in una giornata a Preveli perché le taverne sono all'ombra e il ritorno verso la costa nord è poi tutto in discesa.\n\n## Informazioni pratiche\n\nAd accesso libero. Circa 30 km da Rethymno, 45 minuti in auto per la strada di Kourtaliotiko o per la strada inland verso Spili. Parcheggiate in piazza. Venti-quarantacinque minuti bastano se non si mangia. Si abbina naturalmente alla spiaggia di Preveli, al monastero di Preveli e a Triopetra nello stesso circuito della costa sud.",
+  "quickAnswers": [
+    { "term": "Costo della visita", "value": "Gratuito" },
+    { "term": "Percorso da Rethymno", "value": "Circa 45 minuti, all'incirca 30 km" },
+    { "term": "Nota per", "value": "25 fontane veneziane a testa di leone con acqua di sorgente in piazza" },
+    { "term": "Tempo necessario", "value": "20-45 minuti, di più se si mangia" },
+    { "term": "Meglio abbinata a", "value": "Spiaggia di Preveli, monastero di Preveli e Triopetra" }
+  ],
+  "faqs": [
+    {
+      "q": "Per cosa è famoso Spili?",
+      "a": "Per la fila di 25 fontane veneziane a testa di leone sulla piazza principale, ancora in funzione con acqua di sorgente fredda dal monte Kedros."
+    },
+    {
+      "q": "Quanto dista Spili da Rethymno?",
+      "a": "Circa 30 km a sud, 45 minuti in auto. È il villaggio inland attraverso cui passa la maggior parte delle giornate sulla costa sud da Rethymno."
+    },
+    {
+      "q": "C'è un biglietto d'ingresso?",
+      "a": "No. Spili è un villaggio. Si paga solo se si mangia, si beve o si fa shopping."
+    },
+    {
+      "q": "L'acqua della fontana è potabile?",
+      "a": "I locali la bevono e riempiono bottiglie. È acqua di sorgente dal Kedros, fredda tutto l'anno. Se preferite quella in bottiglia, i kafenion la vendono anche."
+    }
+  ]
+}

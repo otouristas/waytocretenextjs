@@ -133,8 +133,8 @@ export function PlannerApp({
   const twin = matchPackagedTour(state.stops);
   const twinInfo = twin ? twins[twin.slug] : null;
 
-  const stopNames = state.stops.map((s) => stopName(s.slug));
-  const routeLine = routeLabels(startName(state.start), stopNames);
+  const stopNames = state.stops.map((s) => stopName(s.slug, lang));
+  const routeLine = routeLabels(startName(state.start, lang), stopNames);
 
   const startGeo = geoOf(state.start);
   const routePts = [
@@ -151,7 +151,7 @@ export function PlannerApp({
         lat: startGeo.lat,
         lng: startGeo.lng,
         kind: "start",
-        label: startName(state.start),
+        label: startName(state.start, lang),
       });
     }
     for (const [index, stop] of state.stops.entries()) {
@@ -162,7 +162,7 @@ export function PlannerApp({
         lat: geo.lat,
         lng: geo.lng,
         kind: "stop",
-        label: stopName(stop.slug),
+        label: stopName(stop.slug, lang),
         order: index + 1,
       });
     }
@@ -179,7 +179,7 @@ export function PlannerApp({
         lat: stop.geo.lat,
         lng: stop.geo.lng,
         kind: "available",
-        label: stopName(stop.slug),
+        label: stopName(stop.slug, lang),
       });
     }
     if (
@@ -194,7 +194,7 @@ export function PlannerApp({
           lat: geo.lat,
           lng: geo.lng,
           kind: "available",
-          label: stopName(selected),
+          label: stopName(selected, lang),
         });
       }
     }
@@ -311,12 +311,12 @@ export function PlannerApp({
       hotel,
       date: state.date,
       guests: state.people,
-      pickup: startName(state.start),
+      pickup: startName(state.start, lang),
       message: note.trim() || undefined,
       itinerary: {
-        start: startName(state.start),
+        start: startName(state.start, lang),
         route: routeLine,
-        stops: state.stops.map((s) => ({ name: stopName(s.slug), stay: clock(s.stayMin) })),
+        stops: state.stops.map((s) => ({ name: stopName(s.slug, lang), stay: clock(s.stayMin) })),
         driving: clock(trip.drivingMin),
         stays: clock(trip.stayMin),
         billed: hoursClock(trip.billableHours),
@@ -411,7 +411,7 @@ export function PlannerApp({
             <select className={SELECT} value={state.start} onChange={(e) => update({ start: e.target.value })}>
               {PLANNER_STARTS.map((start) => (
                 <option key={start.slug} value={start.slug}>
-                  {startName(start.slug)}
+                  {startName(start.slug, lang)}
                 </option>
               ))}
             </select>
@@ -509,8 +509,8 @@ export function PlannerApp({
                     <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
                       {copy.categories[stop.categories[0]]}
                     </p>
-                    <h2 className="mt-1.5 font-display text-xl leading-snug text-ink">{stopName(stop.slug)}</h2>
-                    <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{stopBlurb(stop.slug)}</p>
+                    <h2 className="mt-1.5 font-display text-xl leading-snug text-ink">{stopName(stop.slug, lang)}</h2>
+                    <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{stopBlurb(stop.slug, lang)}</p>
                     <div className="mt-4 flex items-center justify-between gap-3">
                       <p className="flex items-center gap-1.5 text-xs text-faint">
                         <Clock className="size-3.5" />
@@ -685,7 +685,7 @@ function StudioRail({
               <li key={s.slug} className="rounded-xl bg-bg px-3 py-3 ring-1 ring-line">
                 <div className="flex items-start justify-between gap-2">
                   <p className="text-sm font-semibold text-ink">
-                    {i + 1}. {stopName(s.slug)}
+                    {i + 1}. {stopName(s.slug, lang)}
                   </p>
                   <span className="flex shrink-0 gap-0.5">
                     <button type="button" aria-label="Up" className="p-1" onClick={() => onMove(s.slug, -1)}>
@@ -820,7 +820,7 @@ function Onboard({
             <select className={SELECT} value={state.start} onChange={(e) => onStart(e.target.value)}>
               {PLANNER_STARTS.map((start) => (
                 <option key={start.slug} value={start.slug}>
-                  {startName(start.slug)}
+                  {startName(start.slug, lang)}
                 </option>
               ))}
             </select>

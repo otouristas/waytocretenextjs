@@ -1,0 +1,93 @@
+{
+  "lang": "fr",
+  "state": "reviewed",
+  "title": "Gorges de Samaria",
+  "tagline": "16 km depuis le plateau d'Omalos, à travers les Portes de Fer, jusqu'à la mer de Libye.",
+  "seoTitle": "Gorges de Samaria : randonnée guidée de 16 km vers Agia Roumeli",
+  "seoDescription": "Randonnée guidée dans les gorges de Samaria : 16 km depuis Xyloskalo à 1,250 m, via les Portes de Fer jusqu'à Agia Roumeli. Transfert, minibus et ferry gérés.",
+  "summary": "Samaria Gorge Explorer est une randonnée guidée d'une journée dans le parc national des gorges de Samaria, dans l'ouest de la Crète : 16 km depuis Xyloskalo, sur le plateau d'Omalos à environ 1,250 mètres, jusqu'au village côtier d'Agia Roumeli sur la mer de Libye, en passant par les Portes de Fer. La marche prend 5 à 7 heures pour un randonneur moyen et la journée entière dure environ 12 heures, avec une prise en charge à l'hôtel à 06:30 en minibus climatisé ; ferry et bus sont organisés pour vous. Les gorges sont généralement ouvertes du 1er mai au 31 octobre ; la visite coûte 350 EUR pour huit participants au plus, les 10 EUR d'entrée et le billet de ferry étant payés à part.",
+  "overview": [
+    "La journée commence à Xyloskalo, l'entrée nord du parc national des gorges de Samaria sur le plateau d'Omalos, à environ 1,250 mètres. Xyloskalo signifie « escalier de bois », et le nom se justifie tout de suite : le premier tronçon est fait de marches de pierre raides et de sol rocheux taillés dans le versant, avec des vues panoramiques sur les Montagnes Blanches. L'air est frais là-haut, et la descente est dure pour les genoux – c'est l'une des parties les plus exigeantes du parcours.",
+    "Plus bas, le sentier atteint l'ancien village de Samaria, au cœur des gorges. Ce tronçon central est plus plat et plus ouvert, et c'est l'endroit naturel pour se reposer. Maisons de pierre abandonnées, église d'Osia Maria et traces de la vie villageoise marquent un lieu habité toute l'année jusqu'à ce que le secteur devienne un parc national protégé. C'est à peu près le milieu de la randonnée.",
+    "Sous le village, le chemin descend dans le lit inférieur, où les parois s'élèvent et se resserrent, des blocs barrent la ligne et le sentiment d'échelle s'aiguise. Le point le plus étroit est Sideroportes – les Portes de Fer – où les gorges se réduisent à quelques mètres tandis que les falaises montent presque à la verticale sur plusieurs centaines de mètres. C'est le point le plus profond et le plus spectaculaire de Samaria, et l'un des hauts lieux naturels les plus connus de Crète.",
+    "Après les Portes de Fer, le terrain s'aplanit et s'ouvre, la végétation s'éclaircit, l'air se réchauffe et la mer se fait sentir à mesure que le sentier approche le niveau de la mer et le poste de contrôle sud. La randonnée s'achève à Agia Roumeli, un village isolé sur la mer de Libye accessible seulement à pied ou en bateau, où vous avez le temps de nager, de vous asseoir sur la plage et de déjeuner dans une taverne en bord de mer avant le ferry retour."
+  ],
+  "highlights": [
+    "La traversée complète de 16 km des gorges de Samaria, le monument naturel le plus connu de Crète",
+    "La descente depuis Xyloskalo à 1,250 m, avec des vues panoramiques sur les Montagnes Blanches",
+    "Le village abandonné de Samaria et l'église d'Osia Maria à mi-parcours",
+    "Sideroportes – les Portes de Fer – où les gorges se resserrent à quelques mètres sous des falaises verticales",
+    "Agia Roumeli sur la mer de Libye, accessible seulement à pied ou en bateau, pour une baignade et un déjeuner en taverne",
+    "Billets de bateau et retour en bus gérés pour vous, le rythme du groupe étant calé sur le ferry"
+  ],
+  "itinerary": [
+    {
+      "heading": "Xyloskalo et la descente depuis Omalos",
+      "body": "Prise en charge à 06:30 à votre hébergement et transfert en minibus climatisé jusqu'au plateau d'Omalos. La randonnée commence à Xyloskalo, l'entrée nord du parc à environ 1,250 mètres. Le premier tronçon est fait de marches de pierre raides et de terrain rocheux taillé dans le versant, frais, avec de larges vues sur les Montagnes Blanches – et exigeant pour les genoux.",
+      "place": "samaria-gorge"
+    },
+    {
+      "heading": "L'ancien village de Samaria",
+      "body": "Le sentier s'aplanit à l'ancien village de Samaria, au cœur des gorges, point de repos naturel du parcours. Maisons de pierre abandonnées, église d'Osia Maria et restes de la vie villageoise racontent une communauté qui vivait ici toute l'année jusqu'à ce que le secteur devienne un parc national protégé. C'est le milieu du chemin, et l'endroit où manger et se reposer avant les gorges inférieures."
+    },
+    {
+      "heading": "Le lit inférieur et les Portes de Fer",
+      "body": "Sous le village, le chemin suit de près le lit asséché et les parois s'élèvent et se rapprochent, avec de gros blocs, des passages étroits et un sol exposé. À Sideroportes – les Portes de Fer – les gorges se resserrent à quelques mètres tandis que les falaises montent presque à la verticale sur plusieurs centaines de mètres. C'est le point le plus profond et le plus spectaculaire de la marche."
+    },
+    {
+      "heading": "La sortie inférieure et Agia Roumeli",
+      "body": "Après les Portes de Fer, le terrain s'aplanit et s'ouvre, la végétation s'éclaircit et l'air se réchauffe à mesure que l'itinéraire descend au niveau de la mer et au poste de contrôle sud, sortie officielle du parc national. La randonnée s'achève à Agia Roumeli sur la mer de Libye – accessible seulement à pied ou en bateau – avec le temps de nager, de se reposer sur la plage et de manger dans une taverne en bord de mer avant le ferry vers Chora Sfakion et le retour.",
+      "place": "agia-roumeli"
+    }
+  ],
+  "included": [
+    "Prise en charge et dépose à l'hôtel",
+    "Transport dans un minibus confortable et climatisé",
+    "Chauffeur anglophone",
+    "Bouteille d'eau pendant la visite",
+    "Assurance responsabilité civile",
+    "Toutes taxes, frais et charges de dossier"
+  ],
+  "excluded": [
+    "Droit d'entrée des gorges : 10 EUR par personne",
+    "Billet de ferry d'Agia Roumeli à Chora Sfakion : 17 EUR par adulte, 8.50 EUR par enfant de 5-12 ans",
+    "Navette en bus de la fin des gorges à Agia Roumeli (optionnelle, 2 EUR)",
+    "Guide local privé 180 €, payable directement au guide le jour de la visite (optionnel)",
+    "Dépenses personnelles, y compris souvenirs ou prestations supplémentaires non mentionnées au programme",
+    "Pourboires (optionnels)"
+  ],
+  "whatToWear": [
+    "Chaussures de randonnée confortables – solides, bien ajustées, avec une bonne accroche pour le terrain varié des gorges",
+    "Vêtements légers et respirants ; les couches aident face à l'écart de température entre le plateau et la côte",
+    "Chapeau et lunettes de soleil",
+    "Crème solaire, à appliquer avant le départ"
+  ],
+  "whatToBring": [
+    "Au moins 1.5 litre d'eau",
+    "Un appareil photo pour les vues",
+    "Des encas pour l'énergie pendant la randonnée, aucun repas n'étant inclus"
+  ],
+  "faqs": [
+    {
+      "q": "Combien de temps dure la randonnée de Samaria ?",
+      "a": "Un randonneur moyen parcourt les 16 km en 5 à 7 heures. Notre planning laisse largement le temps pour les photos et les pauses."
+    },
+    {
+      "q": "Est-ce difficile ?",
+      "a": "C'est une randonnée de difficulté moyenne à élevée en raison de la longueur et de la pression en descente sur les genoux. Elle n'est pas recommandée aux personnes souffrant de problèmes cardiaques ou de genoux graves."
+    },
+    {
+      "q": "Quelle est la meilleure période pour y aller ?",
+      "a": "Les gorges sont généralement ouvertes du 1er mai au 31 octobre. Mai et septembre offrent les meilleures températures pour marcher."
+    },
+    {
+      "q": "Pourquoi choisir cette visite des gorges de Samaria ?",
+      "a": "Prise en charge tôt le matin à Rethymno en minibus climatisé ; des guides qui partagent l'histoire, la mythologie et le récit des chèvres sauvages Kri-Kri ; un rythme de groupe suivi pour que chacun arrive au bateau à l'heure ; et la logistique des billets de bateau depuis Agia Roumeli et du retour en bus gérée pour vous."
+    },
+    {
+      "q": "Quelle est la politique d'annulation ?",
+      "a": "Remboursement intégral pour les annulations effectuées jusqu'à 48 heures avant la visite."
+    }
+  ],
+  "priceNote": "350 EUR forfait pour le groupe, jusqu'à 8 participants. Les 10 EUR d'entrée des gorges, le ferry depuis Agia Roumeli (17 EUR adulte / 8.50 EUR enfant 5-12) et le bus optionnel à 2 EUR se règlent sur place."
+}

@@ -1,0 +1,39 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "name": "Margarites",
+  "seoTitle": "Margarites, Kreta: keramikbyn nära Rethymno",
+  "seoDescription": "Margarites är Kretas keramikby, 30 minuter från Rethymno, där verkstäder fortfarande drejar och bränner för hand. Gratis att besöka och gå i.",
+  "summary": "Margarites är en by i sluttningen cirka 30 minuter sydost om Rethymno som har gjort keramik i århundraden och fortfarande gör det. Dragningskraften är inte ett museum utan verkstäder i arbete: ett dussin eller så längs huvudgatan, där krukmakare drejar i det öppna och eldar ugnar på plats, och där det ni köper kommer från den som gjort det. Byn själv är stenhus, smala gränder, bysantinska kyrkor och utsikt över Mylopotamosdalen; det tar ungefär en timme att gå. Besöket är gratis och paras naturligt med Arkadi-klostret, antika Eleftherna och Melidoni-grottan, alla i samma korta slinga.",
+  "body": "## Keramiken\n\nMargarites har lera i marken omkring sig och har arbetat den åtminstone sedan den venetianska tiden. Den lokala traditionen är pithos, det stora lagringskärlet för olja, vin och säd; de största byggdes upp i etapper snarare än drejades och brändes sedan i vedugnar i dagar. Den handeln föll när plast och stål kom; byn lever nu på mindre husgeråd, glaserat och oglaserat, sålt till besökare.\n\nDet som gör resan värd är att verkstäderna verkligen är verkstäder. Hjulen går, ugnar lastas, ofärdiga stycken torkar på hyllor ute. Krukmakare är vana vid att folk tittar och förklarar vanligtvis vad de gör.\n\n## Byn\n\nHuvudgatan löper längs en hylla i sluttningen med dalen som faller bort på ena sidan, så nästan varje kaféterrass har utsikt. Det finns bysantinska kyrkor, bland dem Agios Ioannis med fresker från 1300-talet, och den vanliga kretensiska byväven av stenhus, yttre trappor och vinrankor över gränderna. Ett enda torg med ett par tavernor fungerar som mittpunkt.\n\n## Att köpa\n\nPriserna är verkstadspriser och styckena varierar i kvalitet eftersom de varierar i tillverkare. Fråga om något är livsmedelssäkert och om glasyren är blyfri om ni tänker använda det snarare än ställa ut det, och räkna med ett rakt svar från krukmakaren.\n\n## Praktiskt\n\nByn är gratis att gå in i och ligger cirka 25 km från Rethymno, en halvtimme med bil. Parkera vid infarten och gå in; huvudgatan är smal. En timme räcker om ni inte stannar för att äta. De flesta verkstäder stänger för en lång eftermiddagspaus, så förmiddagar är den pålitliga tiden att se någon i arbete.",
+  "quickAnswers": [
+    { "term": "Kostnad att besöka", "value": "Gratis" },
+    { "term": "Körtid från Rethymno", "value": "Omkring 30 minuter, ungefär 25 km" },
+    { "term": "Känt för", "value": "Keramik; ett dussin eller så verkstäder i arbete längs huvudgatan" },
+    { "term": "Traditionell produkt", "value": "Pithos, det stora kretensiska lagringskärlet för olja, vin och säd" },
+    { "term": "Tid som behövs", "value": "Omkring en timme att gå genom byn och verkstäderna" },
+    { "term": "Bästa tid på dagen", "value": "Förmiddag; de flesta verkstäder stänger för en lång eftermiddagspaus" }
+  ],
+  "faqs": [
+    {
+      "q": "Vad är Margarites känt för?",
+      "a": "Keramik. Byn har arbetat den lokala leran i århundraden och har fortfarande omkring ett dussin keramikverkstäder i arbete, där ni kan se krukmakare vid hjulet och köpa direkt av dem."
+    },
+    {
+      "q": "Hur långt är det till Margarites från Rethymno?",
+      "a": "Omkring 25 km österut, ungefär 30 minuter med bil genom Mylopotamoskullarna."
+    },
+    {
+      "q": "Kan man se krukmakarna arbeta?",
+      "a": "Ja, i de flesta verkstäder, och de är vana vid det. Förmiddagar är mer pålitliga än eftermiddagar, då många stänger för rast."
+    },
+    {
+      "q": "Finns det en entréavgift?",
+      "a": "Nej. Margarites är en by, gratis att gå in i och runt. Ni betalar bara för det ni köper eller äter."
+    },
+    {
+      "q": "Vad mer finns i närheten?",
+      "a": "Arkadi-klostret, den arkeologiska platsen och museet i antika Eleftherna samt Melidoni-grottan ligger alla en kort bilresa bort, och de fyra besöks vanligtvis som en dag."
+    }
+  ]
+}

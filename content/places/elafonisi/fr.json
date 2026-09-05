@@ -1,0 +1,39 @@
+{
+  "lang": "fr",
+  "state": "reviewed",
+  "name": "Elafonisi",
+  "seoTitle": "Elafonisi : plage de sable rose, lagon et conseils",
+  "seoDescription": "Elafonisi est la plage de sable rose et le lagon à la pointe sud-ouest de la Crète, à environ 2,5 heures de Rethymno. L'entrée est libre ; on gagne l'îlot à pied.",
+  "summary": "Elafonisi est une plage de sable rose et un lagon peu profond à l'extrême pointe sud-ouest de la Crète, à environ deux heures et demie de route de Rethymno. Le rose vient de coquilles broyées d'un organisme à pigment rouge mêlées au sable blanc, visibles en bandes le long de la laisse de mer, variables selon la marée et la lumière. Un lagon de quelques dizaines de centimètres sépare la plage continentale de l'îlot d'Elafonisi, réserve naturelle protégée que vous gagnez en quelques minutes ; le sable est plus rose sur l'îlot et la foule s'éclaircit aussitôt. L'entrée est libre, le parking est payant, et la route est assez longue pour en faire une journée entière, pas un après-midi.",
+  "body": "## Le sable rose\n\nLa couleur est réelle et elle n'est pas uniforme. Des fragments de coquilles de foraminifères rouges s'échouent et se mêlent au sable blanc, de sorte que le rose se concentre là où l'eau est passée récemment : en bandes le long du rivage, dans des poches entre les rochers, et le plus fidèlement du côté de l'îlot. Le soleil de midi l'efface ; le matin et la fin d'après-midi le montrent le mieux. Emporter le sable est illégal, et c'est la raison pour laquelle la couleur a pâli aux endroits les plus fréquentés.\n\n## Le lagon et l'îlot\n\nL'îlot d'Elafonisi se trouve à courte distance au large, séparé par une eau généralement à hauteur de cheville ou de genou. Le traverser à pied prend quelques minutes et c'est la meilleure chose à faire ici. L'îlot est un site Natura 2000 protégé, avec dunes, lis de mer, genévriers et sentiers balisés, des plages plus calmes de l'autre côté et un mémorial du massacre de 1824 des Crétois qui s'y étaient réfugiés. Les tortues caouannes nichent sur ces plages, d'où les dunes grillagées.\n\n## S'y rendre\n\nIl n'y a pas de raccourci. Depuis Rethymno, le trajet dure environ deux heures et demie dans chaque sens, vers l'ouest à travers l'île puis en descente dans les montagnes du sud-ouest de Chania, sur des routes étroites et lentes pour le dernier tronçon. La plupart des itinéraires s'arrêtent aux gorges de Topolia ou à la grotte d'Agia Sophia au-dessus. Partir tôt compte deux fois : pour la lumière sur le sable et pour une place au parking.\n\n## Informations pratiques\n\nL'accès est libre ; le parking est payant en saison. Transats et parasols se louent et partent vite ; il y a des buvettes mais aucune vraie ombre, chapeau et serviette valent donc le déplacement. Les équipements sont rudimentaires pour un lieu aussi connu. Le vent se lève l'après-midi sur cette côte.",
+  "quickAnswers": [
+    { "term": "Droit d'entrée", "value": "Gratuit ; le parking est payant en saison" },
+    { "term": "Trajet depuis Rethymno", "value": "Environ 2 heures 30 minutes dans chaque sens" },
+    { "term": "Traversée vers l'îlot", "value": "On gagne un lagon généralement à hauteur de cheville ou de genou" },
+    { "term": "Pourquoi le sable est rose", "value": "Coquilles broyées de foraminifères rouges mêlées au sable blanc" },
+    { "term": "Statut de protection", "value": "Réserve naturelle Natura 2000 et site de nidification de la caouanne" },
+    { "term": "Saison d'ouverture", "value": "Toute l'année ; transats, buvettes et personnel du parking fonctionnent en été" }
+  ],
+  "faqs": [
+    {
+      "q": "Le sable d'Elafonisi est-il vraiment rose ?",
+      "a": "Oui, mais en bandes plutôt qu'uniforme. Les fragments de coquille rouge se concentrent le long de la laisse de mer et dans des poches parmi les rochers ; la couleur se lit le mieux le matin et en fin d'après-midi."
+    },
+    {
+      "q": "Combien dure le trajet de Rethymno à Elafonisi ?",
+      "a": "Environ deux heures et demie dans chaque sens. C'est pourquoi c'est une journée entière : à peu près cinq heures de route autour de quatre heures sur la plage."
+    },
+    {
+      "q": "Peut-on marcher jusqu'à l'île d'Elafonisi ?",
+      "a": "Oui. Le lagon entre la plage continentale et l'îlot est normalement à hauteur de cheville ou de genou et se traverse en quelques minutes. Le sable est plus rose de l'autre côté et c'est nettement plus calme."
+    },
+    {
+      "q": "Y a-t-il un droit d'entrée ?",
+      "a": "Non. La plage est libre d'accès. Vous payez le parking, ainsi qu'un transat et un parasol si vous en voulez."
+    },
+    {
+      "q": "Quand est-il préférable de visiter Elafonisi ?",
+      "a": "Mai, juin, septembre et début octobre : eau chaude, lumière plus douce sur le sable et bien moins de monde qu'en juillet et août, lorsque le parking est plein dès le milieu de la matinée."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "name": "Spinalonga",
+  "seoTitle": "Spinalonga: entré, båttider och spetälskekolonin",
+  "seoDescription": "Spinalonga är den venetianska fästningsön i Mirabellobukten som blev en spetälskekoloni fram till 1950-talet. Entré 20 EUR; båtar från Elounda tar 15 minuter.",
+  "summary": "Spinalonga är en liten befäst ö i Mirabellobukten, utanför Kretas nordostkust nära Elounda och Plaka. Venezianarna byggde fästningen 1579 för att bevaka bukten, och den höll ut mot osmanerna i årtionden efter att resten av Kreta fallit. Från 1903 till 1957 var den en spetälskekoloni, en av de sista i Europa, där flera hundra människor levde ett fullt medborgerligt liv bakom murarna, med butiker, kyrka, biograf och egen kommun. Entré är 20 EUR per vuxen och båten från Elounda eller Plaka tar omkring femton minuter; rundvandringen är mild, på stenstigar med några trappsteg.",
+  "body": "## Fästningen\n\nVenezianarna befäste ön 1579, skar den loss från Kalydonhalvön och ringade den med bastioner för att kontrollera infarten till Eloundas naturhamn. När Kreta föll till osmanerna 1669 höll Spinalonga ut och överlämnades först 1715. Ett osmanskt samhälle bosatte sig sedan innanför murarna och stannade till början av 1900-talet.\n\n## Kolonin, 1903 till 1957\n\nÅr 1903 utpekade den nyautonoma kretensiska staten ön som spetälskekoloni, och invånarna i den osmanska byn lämnade. Patienter från hela Grekland skickades hit, till en början under mycket dåliga förhållanden. Med tiden organiserade de sig: en huvudgata med butiker, en kyrka, ett tvätteri, en biograf, ett sjukhus och till sist kommunalt erkännande. Effektiv behandling nådde Grekland i slutet av 1940-talet och kolonin stängde 1957. Den sista invånaren, en präst, stannade till 1962 för att hålla begravningsriterna.\n\nVictoria Hislops roman *The Island* och den grekiska tv-serien efter den är skälet till att ön nu är den mest besökta platsen på östra Kreta.\n\n## Besöket\n\nBåtar går från Elounda och Plaka, och från Agios Nikolaos på längre turer. Plaka är närmast, rakt emot. Ni landar genom tunneln som venezianarna högg genom berget, går huvudgatan förbi de ruinerade husen och sjukhuset och följer slingan runt befästningarna tillbaka till bryggan. En timme till en och en halv är vanligt.\n\n## Praktiskt\n\nEntré är 20 EUR per vuxen, betalas på ön, och båten är en separat biljett, typiskt 14 till 15 EUR per person tur och retur. Det finns nästan ingen skugga innanför murarna, så hatt, vatten och solkräm spelar roll. Från Rethymno tar körningen omkring två timmar åt vardera hållet, vilket gör det till en lång dag, inte en halvdag.",
+  "quickAnswers": [
+    { "term": "Entréavgift", "value": "20 EUR per vuxen, betalas på ön" },
+    { "term": "Båtbiljett", "value": "Omkring 14 till 15 EUR per person, betalas separat" },
+    { "term": "Överfartstid", "value": "Omkring 15 minuter från Elounda; mindre från Plaka, rakt emot" },
+    { "term": "Körtid från Rethymno", "value": "Omkring 2 timmar åt vardera hållet" },
+    { "term": "Fästningen byggd", "value": "1579, av venezianarna" },
+    { "term": "Spetälskekoloni", "value": "1903 till 1957" },
+    { "term": "Tid på ön", "value": "En till en och en halv timme på stenstigar med några trappsteg" }
+  ],
+  "faqs": [
+    {
+      "q": "Vad kostar det att besöka Spinalonga?",
+      "a": "Öns entréavgift är 20 EUR per vuxen, betalas vid ankomst. Båten från Elounda eller Plaka är en separat biljett på ungefär 14 till 15 EUR per person. Ingen av dem ingår i turpriser från Rethymno."
+    },
+    {
+      "q": "Hur tar man sig till Spinalonga?",
+      "a": "Bara med båt. Överfarter går från Elounda, från Plaka rakt emot och från Agios Nikolaos. Överfarten från Elounda tar omkring femton minuter."
+    },
+    {
+      "q": "Hur länge stannar ni på ön?",
+      "a": "En timme till en och en halv räcker för att gå huvudgatan, sjukhusruinerna och slingan runt de venetianska befästningarna."
+    },
+    {
+      "q": "Var Spinalonga verkligen en spetälskekoloni?",
+      "a": "Ja. Den verkade från 1903 till 1957 och var en av de sista spetälskekolonierna i Europa. Invånarna byggde ett fungerande samhälle där, med butiker, kyrka och biograf, och platsen berättas som historien om det samhället snarare än bara om sjukdomen."
+    },
+    {
+      "q": "Hur långt är det till Spinalonga från Rethymno?",
+      "a": "Omkring två timmar med bil åt vardera hållet, på andra sidan ön. En tur från Rethymno tar åtta till tio timmar, en god del av det körning."
+    }
+  ]
+}

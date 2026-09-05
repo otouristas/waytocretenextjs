@@ -1,0 +1,39 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "name": "Elafonisi",
+  "seoTitle": "Elafonisi: rosa sandstrand, lagun och besökstips",
+  "seoDescription": "Elafonisi är den rosa sandstranden och lagunen längst i sydväst på Kreta, cirka 2,5 timmar från Rethymno. Entré är gratis; ni vadar över till ön.",
+  "summary": "Elafonisi är en rosa sandstrand och en grund lagun längst i sydväst på Kreta, ungefär två och en halv timme med bil från Rethymno. Det rosa kommer från krossade skal av en röd pigmenterad organism blandade i den vita sanden, synliga som band längs vattenlinjen som skiftar med tidvatten och ljus. En lagun på några tiotal centimeter skiljer fastlandsstranden från Elafonisi-ön, ett skyddat naturreservat som ni vadar till på ett par minuter; sanden är rosaare på ön och folkmassan glesnar genast. Entré är gratis, parkering kostar, och körningen är tillräckligt lång för att det ska vara en heldag, inte en eftermiddag.",
+  "body": "## Den rosa sanden\n\nFärgen är äkta och den är inte jämn. Fragment av röda foraminiferskal sköljs upp och blandas med den vita sanden, så det rosa samlas där vattnet nyss varit: i stråk längs stranden, i fickor mellan klippor och mest tillförlitligt på öns sida. Stark middagssol tvättar bort den; morgon och sen eftermiddag visar den bäst. Att ta med sig sand är olagligt, och det är skälet till att färgen bleknat på de mest trafikerade ställena.\n\n## Lagunen och ön\n\nElafonisi-ön ligger en kort bit utanför kusten, skild av vatten som oftast når vristen eller knät. Att vada över tar ett par minuter och är det bästa ni kan göra här. Ön är ett skyddat Natura 2000-område med dyner, havsnarcisser, enbuskar och markerade stigar, tystare stränder på andra sidan och ett minnesmärke över massakern 1824 på kretensare som sökt skydd där. Karettsköldpaddor häckar på dessa stränder, vilket är varför dynerna är inhägnade.\n\n## Hitta dit\n\nDet finns ingen genväg. Från Rethymno tar körningen omkring två och en halv timme åt vardera hållet, västerut över ön och sedan ner genom bergen i sydvästra Chania, på vägar som är smala och långsamma sista biten. De flesta resvägar bryter färden vid Topolia-ravinen eller Agia Sophia-grottan ovanför. Att åka tidigt räknas dubbelt: för ljuset på sanden och för en plats på parkeringen.\n\n## Praktiskt\n\nTillträde är gratis; parkering kostar under säsong. Solstolar och parasoller hyrs ut och tar slut snabbt. Det finns kiosker men ingen riktig skugga, så hatt och handduk lönar sig. Faciliteterna är enkla för en så känd plats. Vinden tar i på eftermiddagen längs den här kusten.",
+  "quickAnswers": [
+    { "term": "Entréavgift", "value": "Gratis; parkering kostar under säsong" },
+    { "term": "Körtid från Rethymno", "value": "Omkring 2 timmar 30 minuter åt vardera hållet" },
+    { "term": "Övergång till ön", "value": "Vada över en lagun som oftast når vristen eller knät" },
+    { "term": "Varför sanden är rosa", "value": "Krossade skal av röda foraminifer blandade i vit sand" },
+    { "term": "Skyddsstatus", "value": "Natura 2000-naturreservat och häckningsplats för karettsköldpadda" },
+    { "term": "Öppen säsong", "value": "Året runt; solstolar, kiosker och parkeringspersonal arbetar på sommaren" }
+  ],
+  "faqs": [
+    {
+      "q": "Är sanden på Elafonisi verkligen rosa?",
+      "a": "Ja, men i band snarare än jämnt. Krossade röda skalfragment samlas längs vattenlinjen och i fickor bland klipporna; färgen syns starkast på morgonen och sent på eftermiddagen."
+    },
+    {
+      "q": "Hur lång är körningen från Rethymno till Elafonisi?",
+      "a": "Omkring två och en halv timme åt vardera hållet. Därför är det en heldagstur: ungefär fem timmars körning kring fyra timmar på stranden."
+    },
+    {
+      "q": "Kan man gå till Elafonisi-ön?",
+      "a": "Ja. Lagunen mellan fastlandsstranden och ön är normalt vrist- till knädjup och tar ett par minuter att korsa. Sanden är rosaare på andra sidan och det är betydligt tystare."
+    },
+    {
+      "q": "Finns det en entréavgift?",
+      "a": "Nej. Stranden är gratis att besöka. Ni betalar för parkering, och för solstol och parasoll om ni vill ha dem."
+    },
+    {
+      "q": "När är bästa tiden att besöka Elafonisi?",
+      "a": "Maj, juni, september och tidig oktober: varmt vatten, mjukare ljus på sanden och långt färre människor än i juli och augusti, då parkeringen fylls vid förmiddagen."
+    }
+  ]
+}

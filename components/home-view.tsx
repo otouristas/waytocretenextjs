@@ -1,7 +1,7 @@
 import type { Lang } from "@/lib/i18n/langs";
 import { langPath } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import { allGuides, allReviews, allTours } from "@/lib/content/load";
+import { allReviews, allTours, guidesForHomeTeaser } from "@/lib/content/load";
 import { reviewExperienceOptions } from "@/lib/reviews/experiences";
 import { HomeHero } from "@/components/home/hero";
 import {
@@ -40,14 +40,12 @@ export function HomeView({ lang }: { lang: Lang }) {
     span: i === 0 || i === 3,
   }));
 
-  const guides = allGuides(lang)
-    .slice(0, 3)
-    .map(({ core, copy }) => ({
-      slug: core.slug,
-      title: copy.title,
-      summary: copy.summary,
-      hero: core.hero,
-    }));
+  const guides = guidesForHomeTeaser(lang).map(({ core, copy }) => ({
+    slug: core.slug,
+    title: copy.title,
+    summary: copy.summary,
+    hero: core.hero,
+  }));
 
   return (
     <div>

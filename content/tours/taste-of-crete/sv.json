@@ -1,0 +1,97 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "title": "Kretas smaker",
+  "tagline": "Honung, olivolja och lunch, smakade vid källan",
+  "seoTitle": "Kretas smaker: honung och olivolja | Way to Crete",
+  "seoDescription": "Fyra till sex timmars provning från Rethymno: timjan-, tall- och johannesbrödshonung hos en biodlare, kallpressad olivolja och en traditionell lunch.",
+  "summary": "Kretas smaker är en 4-6 timmar lång provningsdag från Rethymno som besöker små producenter i stället för restauranger. Hämtning från ert boende är kl. 09:30, och rutten går ut ur staden och upp i kullarna: en biodlares gård i Lampini för timjan-, tall- och johannesbrödshonung serverad med lokal ost, sedan en gård vid Potamon-dammen för en provning av kallpressad koroneiki-olivolja, där ni provar dakos, ögonbönor, fava och fyllda grönsaker först utan olja och sedan med. Dagen slutar med en traditionell kretensisk lunch med lokala rätter. Den går varje dag för upp till åtta gäster, är graderad som lätt, inkluderar en professionell fotografering och offereras på förfrågan.",
+  "overview": "På Kreta är mat inte bara näring, det är kultur, tradition och njutning, och den här provningsdagen är byggd kring den idén. Det är en inbjudan att sakta ner, lämna de trafikerade rutterna och lära känna ön genom dess smaker, de små producenterna som gör dem och platserna där de traditionerna fortfarande lever.\n\nDagen börjar med honung. Timjan, tall och johannesbröd: varje sort bär doften av ett annat hörn av kretensisk natur och berättar om en säsong, en blomma och bina som arbetade den. Ni smakar långsamt, låter aromerna öppna sig, och sedan kombineras honung med färsk ost. Den krämiga texturen mot sötman är paret som de flesta gäster minns efteråt.\n\nSedan kommer olivolja, hjärtat i kretensisk matlagning. I stället för att beskrivas visas den: ni smakar traditionella rätter först utan olja och sedan med. Dakos, ögonbönor, fava och fyllda grönsaker ändrar alla karaktär med en sked färsk, kallpressad olja av sorten koroneiki, och skillnaden är påtaglig - mer djup, mer rikedom, mer harmoni i varje tugga.\n\nUpplevelsen slutar vid bordet, med en traditionell kretensisk lunch med lokala rätter. Genomgående ligger betoningen på att gå till källan: familjegårdar och byverkstäder som större bussar inte når, och producenter som visar er sitt eget arbete i stället för en demonstration uppsatt för besökare.",
+  "highlights": [
+    "Smaka timjan-, tall- och johannesbrödshonung direkt från en kretensisk biodlares gård",
+    "Den klassiska kombinationen av färsk lokal ost med honung",
+    "En provning av kallpressad koroneiki-olivolja på en gård vid Potamon-dammen",
+    "Rätter smakade två gånger, först utan olja och sedan med, för att visa skillnaden",
+    "En traditionell kretensisk lunch med lokala rätter som avslutning",
+    "Professionell fotografering ingår, redigerat galleri levereras inom 48 timmar"
+  ],
+  "itinerary": [
+    {
+      "heading": "09:30 - hämtning och ut ur staden",
+      "body": "Vi hämtar er vid ert boende i luftkonditionerad minibuss med engelsktalande förare. Dagen börjar i Rethymno men går snabbt mot kullarna, där familjegårdarna och byverkstäderna finns.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/09/taste-of-crete-50-scaled.jpg"
+    },
+    {
+      "heading": "Honung och biodling i Lampini",
+      "body": "På en biodlares gård smakar ni tre sorter kretensisk honung - timjan, tall och johannesbröd - var och en med doften av ett annat landskap och en annan säsong. Provningen är ostressad och avslutas med honung serverad tillsammans med färsk lokal ost.",
+      "place": "lampini",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/02/Honey-experience-12-scaled.jpg"
+    },
+    {
+      "heading": "Olivoljeprovning vid Potamon-dammen",
+      "body": "På en gård nära Potamon-dammen smakar ni färsk, kallpressad olivolja av sorten koroneiki på det mest direkta sättet: traditionella rätter serverade först utan olja, sedan med. Dakos, ögonbönor, fava och fyllda grönsaker ändras var och en med tillsatsen, och det är hela poängen med övningen.",
+      "place": "potamon-dam",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/09/taste-of-crete-28-scaled.jpg"
+    },
+    {
+      "heading": "En traditionell kretensisk lunch",
+      "body": "Dagen slutar runt ett bord med en traditionell kretensisk lunch med lokala rätter. Lokalt vin och raki hör till det kretensiska bordet, med bergste och lemonad för den som hellre inte dricker.",
+      "image": "https://waytocrete.com/wp-content/uploads/2025/09/taste-of-crete-48-scaled.jpg"
+    }
+  ],
+  "included": [
+    "Hämtning och avlämning vid ert boende",
+    "Transport i en bekväm, luftkonditionerad minibuss",
+    "Engelsktalande förare",
+    "Provning av unik kretensisk honung på en biodlares gård i Lampini",
+    "Provning av färsk, kallpressad olivolja på en gård vid Potamon-dammen",
+    "Traditionell kretensisk lunch med lokala rätter",
+    "Professionell fotografering: porträtt och landskap av hög kvalitet under turen",
+    "Redigerat digitalt album: högupplösta, färgkorrigerade bilder levererade inom 48 timmar",
+    "En flaska vatten under turen",
+    "Ansvarsförsäkring",
+    "Alla skatter, avgifter och expeditionsavgifter"
+  ],
+  "excluded": [
+    "Valfri guide, tillgänglig mot extra avgift",
+    "Privata utgifter, inklusive souvenirer eller extra tjänster som inte anges i programmet",
+    "Dricks till guider (frivilligt)"
+  ],
+  "whatToWear": [
+    "Bekväma, slutna skor för gårdarna och bystoppen",
+    "Hatt och solglasögon: flera stopp är utomhus",
+    "Ett lätt lager för kullarna, som är svalare än kusten"
+  ],
+  "whatToBring": [
+    "Solskydd",
+    "En kylväska om ni vill ta med honung eller olivolja hem",
+    "Eventuella kostbehov bekräftade med oss vid bokningen"
+  ],
+  "faqs": [
+    {
+      "q": "Är det bara ännu en matupplevelse?",
+      "a": "Nej. De flesta turer går till restauranger; vi går till källan. Ni besöker familjegårdar och fjällmejerier och ser exakt hur maten blir till. Det är en berättelse, inte bara en måltid."
+    },
+    {
+      "q": "Jag är vegetarian. Kan jag följa med ändå?",
+      "a": "Absolut. Den kretensiska kosten bygger naturligt på grönt, baljväxter och olivolja, och vi ser till att ni blir mätta med gott om köttfria alternativ."
+    },
+    {
+      "q": "Stannar vi i staden?",
+      "a": "Vi börjar i Rethymnos gränder men går snabbt mot kullarna. Ni hittar inte den äkta smaken av Kreta utan att besöka de traditionella byverkstäderna dit stora bussar inte kommer."
+    },
+    {
+      "q": "Hur är det med dryck?",
+      "a": "Det finns inget kretensiskt bord utan lokalt vin och raki, och vi smakar båda. Det finns alltid färskt bergste och lemonad för den som inte dricker, plus en flaska vatten under turen."
+    },
+    {
+      "q": "Varför boka med Way to Crete?",
+      "a": "För att vi tar er till våra vänner. Ni träffar producenterna personligen, i en liten och avspänd grupp. Det känns som en dag med lokalbor snarare än en turistutflykt."
+    },
+    {
+      "q": "Hur lång är dagen och vad kostar den?",
+      "a": "Hämtning är kl. 09:30 och upplevelsen varar 4 till 6 timmar, varje dag i veckan, för upp till åtta gäster. Inget pris publiceras: vi offererar på förfrågan, utifrån gruppstorlek och hämtningsplats."
+    }
+  ],
+  "priceNote": "Inget pris publiceras för den här upplevelsen. Vi offererar på förfrågan, och en valfri guide kan läggas till mot extra avgift."
+}

@@ -1,0 +1,39 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "name": "Samariaravinen",
+  "seoTitle": "Samariaravinen: längd, entré, säsong och vandringstid",
+  "seoDescription": "Samariaravinen är en 16 km enkelriktad vandring från Xyloskalo på 1 250 m ner till Agia Roumeli. Den tar 5–7 timmar, kostar 10 EUR och är öppen 1 maj–31 oktober.",
+  "summary": "Samariaravinen är en 16 km vandring genom en nationalpark i västra Kreta, enkelriktad från Xyloskalo på Omalosplatån på omkring 1 250 meter ner till kustbyn Agia Roumeli vid Libyska havet. Den genomsnittlige vandraren tar 5 till 7 timmar; entré kostar 10 EUR och ravinen är vanligtvis öppen från 1 maj till 31 oktober. Det är den längsta ravinvandringen i Europa som de flesta besökare försöker, och dess smalaste punkt, Sideroportes eller järnportarna, sluter sig till några meter medan klipporna reser sig nästan lodrätt flera hundra meter. Agia Roumeli har ingen väg, så dagen slutar alltid med en färja.",
+  "body": "## Vandringen\n\nVandringen börjar vid Xyloskalo, den norra porten till nationalparken Samariaravinen på Omalosplatån, på omkring 1 250 meter. Xyloskalo betyder trätrappa och namnet förtjänas den första timmen: stensteg och stenig mark skuren i bergssidan, sval luft, vida vyer över de Vita bergen och en nedstigning som är hård mot knäna.\n\nLängre ner planar stigen ut vid den övergivna byn Samaria, mittpunkten och den naturliga rastplatsen. Stenhus, kyrkan Osia Maria och rester av byliv markerar ett samhälle som bodde här året runt tills området blev nationalpark.\n\nNedanför byn sjunker stigen ner i själva flodbädden. Väggarna reser sig och sluter sig, blockerar block linjen, och vid Sideroportes, järnportarna, smalnar ravinen till några meter medan klipporna går nästan lodrätt flera hundra meter. Därefter planar terrängen, vegetationen glesnar och leden går ner till havsnivå och den södra kontrollpunkten.\n\n## Agia Roumeli och färjan\n\nVandringen slutar i Agia Roumeli, en by vid Libyska havet som bara nås till fots eller med båt. Det finns tid att simma och äta före färjan till Chora Sfakion, varifrån vägen hem börjar. Att missa båten är dagens enda riktiga felsätt, vilket är varför guidade grupper håller takten mot den.\n\n## Säsong och avgift\n\nParken är normalt öppen 1 maj till 31 oktober. Entré är 10 EUR per vuxen, betalas vid grinden, och färjebiljetten är separat. Utanför säsongen är hela leden stängd, även om en kort sträcka från Agia Roumeli ibland förblir vandringsbar.\n\n## Är den svår?\n\nMedel till hög. Svårigheten är längd och oavbruten nedförsbacke snarare än exponering eller klättring; knäna lider, inte lungorna. Den rekommenderas inte för personer med hjärtbesvär eller allvarliga knäproblem. Maj och september ger de bästa vandringstemperaturerna.",
+  "quickAnswers": [
+    { "term": "Längd", "value": "16 km, enkel riktning, vandrad nedför" },
+    { "term": "Gångtid", "value": "5 till 7 timmar för den genomsnittlige vandraren" },
+    { "term": "Starthöjd", "value": "Omkring 1 250 m, vid Xyloskalo på Omalosplatån" },
+    { "term": "Entréavgift", "value": "10 EUR per vuxen, betalas vid grinden; färjan från Agia Roumeli är extra" },
+    { "term": "Öppen säsong", "value": "Vanligtvis 1 maj till 31 oktober" },
+    { "term": "Körtid från Rethymno", "value": "Omkring 2 timmar till leden vid Xyloskalo" }
+  ],
+  "faqs": [
+    {
+      "q": "Hur lång tid tar vandringen genom Samariaravinen?",
+      "a": "Den genomsnittlige vandraren klarar de 16 km på 5 till 7 timmar. En hel dag från Rethymno, inklusive körning till Omalos, vandringen, färjan från Agia Roumeli och återfärden, tar omkring 12 timmar."
+    },
+    {
+      "q": "Vad kostar det att gå in i Samariaravinen?",
+      "a": "10 EUR per vuxen, betalas vid entrén. Färjan från Agia Roumeli till Chora Sfakion är en separat biljett."
+    },
+    {
+      "q": "När är Samariaravinen öppen?",
+      "a": "Vanligtvis från 1 maj till 31 oktober. Datumen skiftar något år från år med vädret, och parken stänger leden efter kraftigt regn."
+    },
+    {
+      "q": "Är Samariaravinen svår?",
+      "a": "Det är en vandring av medelhög till hög svårighet. Det finns varken klättring eller exponering, men 16 km oavbruten nedförsbacke belastar knäna på riktigt. Den rekommenderas inte för någon med hjärtbesvär eller betydande knäproblem."
+    },
+    {
+      "q": "Kan man vandra bara en del av Samariaravinen?",
+      "a": "Ja. Den korta versionen, ibland kallad Samaria the lazy way, startar i Agia Roumeli och går upp till järnportarna och tillbaka. Den är ungefär 6 km tur och retur och når det mest dramatiska avsnittet utan att binda sig till hela nedstigningen."
+    }
+  ]
+}

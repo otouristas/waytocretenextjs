@@ -1,0 +1,34 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "name": "Spili",
+  "seoTitle": "Spili, Kreta: byn med lejonfontänerna",
+  "seoDescription": "Spili är en bergsby 45 minuter söder om Rethymno, känd för 25 venetianska lejonhuvudfontäner med kallt källvatten på torget.",
+  "summary": "Spili ligger i en veck i Kedros förberg, cirka 45 minuter söder om Rethymno, och är byn som de flesta sydkustdagar passerar på vägen tillbaka från Preveli. Skälet att stanna är torget: en rad av 25 venetianska lejonhuvudfontäner med kallt källvatten, plataner och ett par kafenion som fortfarande fylls av lokalbor på eftermiddagen. Det är gratis, det tar en halvtimme, och det är det mildaste hela stoppet efter en strand.",
+  "body": "## Fontänerna\n\nLejonhuvudena är venetianska, 1500-tal, och de fungerar fortfarande. Vattnet kommer från berget Kedros och rinner kallt även i augusti. Folk fyller flaskor, tvättar frukt och sköljer ansiktet; det är inte ett monument man tittar på bakom ett rep. Raden sitter under plataner på huvudtorget, som också är busshållplats, taxiställning och platsen där byn sitter på kvällen.\n\n## Byn\n\nSpili är en arbetande by i Agios Vasileios, inte en iscensatt. Det finns en vårdcentral, ett gymnasium, ett par slakterier och ett bageri som gör dakos-skorpor. Gränderna bakom torget klättrar in bland stenhus med gårdar. Det är ett användbart lunchstopp på en Preveli-dag eftersom tavernorna ligger i skuggan och färden tillbaka till nordkusten sedan är hela vägen nedför.\n\n## Praktiskt\n\nGratis att besöka. Omkring 30 km från Rethymno, 45 minuter med bil via Kourtaliotiko-vägen eller inlandsvägen mot Spili. Parkera på torget. Tjugo till fyrtiofem minuter räcker om ni inte äter. Det paras naturligt med Preveli-stranden, Preveli-klostret och Triopetra i samma sydkustslinga.",
+  "quickAnswers": [
+    { "term": "Kostnad att besöka", "value": "Gratis" },
+    { "term": "Körtid från Rethymno", "value": "Omkring 45 minuter, ungefär 30 km" },
+    { "term": "Känt för", "value": "25 venetianska lejonhuvudfontäner med källvatten på torget" },
+    { "term": "Tid som behövs", "value": "20 till 45 minuter, längre om ni äter" },
+    { "term": "Bäst att para med", "value": "Preveli-stranden, Preveli-klostret och Triopetra" }
+  ],
+  "faqs": [
+    {
+      "q": "Vad är Spili känt för?",
+      "a": "Raden av 25 venetianska lejonhuvudfontäner på huvudtorget, som fortfarande rinner med kallt källvatten från berget Kedros."
+    },
+    {
+      "q": "Hur långt är det till Spili från Rethymno?",
+      "a": "Omkring 30 km söderut, 45 minuter med bil. Det är inlandets by som de flesta sydkustdagar från Rethymno passerar."
+    },
+    {
+      "q": "Finns det en entréavgift?",
+      "a": "Nej. Spili är en by. Ni betalar bara om ni äter, dricker eller handlar."
+    },
+    {
+      "q": "Är fontänvattnet säkert att dricka?",
+      "a": "Lokalbor dricker det och fyller flaskor från det. Det är källvatten från Kedros, kallt året runt. Föredrar ni flaskvatten säljer kafenionen det också."
+    }
+  ]
+}

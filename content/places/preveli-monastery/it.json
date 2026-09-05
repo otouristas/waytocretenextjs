@@ -1,0 +1,34 @@
+{
+  "lang": "it",
+  "state": "reviewed",
+  "name": "Monastero di Preveli",
+  "seoTitle": "Monastero di Preveli, Creta: storia sopra le palme",
+  "seoDescription": "Il monastero di Preveli sorge su una scogliera sul Mar Libico, a 45 minuti da Rethymno, noto per aver rifugiato soldati alleati nel 1941 e per la vista.",
+  "summary": "Il monastero di Preveli è l'edificio in cima alla scogliera che si vede prima di scendere alla spiaggia delle palme: un monastero attivo con vista sul Mar Libico, un piccolo museo e una parte reale nella storia della battaglia di Creta. Distano 45 minuti da Rethymno, lontano dalla folla della laguna, ed è di solito la prima tappa di una giornata sulla costa sud perché la luce sul cortile è migliore al mattino.",
+  "body": "## L'edificio\n\nCi sono due siti monastici: Kato Preveli presso il fiume, in gran parte in rovina, e Piso Preveli sulla scogliera, quello che si visita. La chiesa e il cortile attuali risalgono alla ricostruzione ottocentesca dopo una distruzione ottomana. La vista dalla terrazza è quella delle cartoline — mare, foce della gola e il palmeto come una striscia verde scuro sotto.\n\n## La storia\n\nI monaci ospitarono soldati alleati dopo l'invasione aviotrasportata del 1941 e li aiutarono a lasciare l'isola in sottomarino dalla spiaggia sotto. È per questo che i visitatori britannici e australiani vengono ancora, e perché c'è un memoriale sull'accesso. Il museo conserva paramenti, armi e il consueto mix cretese di liturgia e resistenza.\n\n## Informazioni pratiche\n\nIl biglietto si paga sul posto e non è incluso nel prezzo del tour; portate contanti. Spalle e ginocchia coperte. Circa 45 minuti da Rethymno via la gola di Kourtaliotiko. Trenta-quarantacinque minuti bastano per il cortile, la chiesa e la vista. La spiaggia delle palme è un'altra discesa — una tappa a parte, con parcheggio proprio e sentiero o barca a seconda di come si fa. Chiuso in alcuni giorni religiosi; controllate se guidate da soli a Pasqua.",
+  "quickAnswers": [
+    { "term": "Percorso da Rethymno", "value": "Circa 45 minuti, attraverso la gola di Kourtaliotiko" },
+    { "term": "Nota per", "value": "Viste dalla scogliera e rifugio ai soldati alleati nel 1941" },
+    { "term": "Tempo necessario", "value": "30-45 minuti per il monastero stesso" },
+    { "term": "Abbigliamento", "value": "Spalle e ginocchia coperte in chiesa" },
+    { "term": "Spiaggia", "value": "La spiaggia delle palme di Preveli è una tappa a parte sotto il monastero" }
+  ],
+  "faqs": [
+    {
+      "q": "Il monastero di Preveli è la stessa cosa della spiaggia di Preveli?",
+      "a": "No. Il monastero siede sulla scogliera. Il palmeto e la laguna sono sotto, una tappa a parte con accesso proprio. La maggior parte delle giornate sulla costa sud da Rethymno fa entrambe."
+    },
+    {
+      "q": "Perché il monastero di Preveli è importante?",
+      "a": "Ospitò soldati alleati dopo la battaglia di Creta nel 1941 e li aiutò a evacuare dalla spiaggia sotto. Stette anche nella precedente resistenza cretese sotto il dominio ottomano."
+    },
+    {
+      "q": "C'è un biglietto d'ingresso?",
+      "a": "Sì, si paga al cancello e non è incluso nel nostro prezzo del tour. Portate contanti. L'importo cambia; sono pochi euro."
+    },
+    {
+      "q": "Quanto tempo ci si sta?",
+      "a": "Da mezz'ora a quarantacinque minuti basta per il cortile, la chiesa, il piccolo museo e la vista sul mare. La spiaggia è tempo extra."
+    }
+  ]
+}

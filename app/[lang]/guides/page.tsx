@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LANGS, langPath, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import { allGuides } from "@/lib/content/load";
+import { allGuides, GUIDES_HUB_LEAD, guidesForHub } from "@/lib/content/load";
 import { breadcrumbNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -19,7 +19,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = parseLang((await params).lang) as Lang;
   const ui = t(lang);
-  const featured = allGuides(lang).find((guide) => guide.core.hero);
+  const featured =
+    allGuides(lang).find((guide) => guide.core.slug === GUIDES_HUB_LEAD) ??
+    allGuides(lang).find((guide) => guide.core.hero);
   return pageMeta({
     lang,
     title: ui.guidesSeoTitle,
@@ -33,7 +35,7 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const lang = parseLang((await params).lang) as Lang;
   const ui = t(lang);
-  const guides = allGuides(lang);
+  const guides = guidesForHub(lang);
 
   const crumbs: Crumb[] = [
     { name: ui.home, path: "/" },
@@ -75,7 +77,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         ) : (
           <>
-            {/* The most recent guide gets a wide lead slot. */}
+            {/* The things-to-do listicle is pinned in the lead slot. */}
             <Link
               href={langPath(lang, `/guides/${lead.core.slug}`)}
               className="group mt-10 grid overflow-hidden rounded-2xl bg-surface ring-1 ring-line transition hover:shadow-[0_28px_60px_-34px_rgba(57,36,32,0.5)] md:grid-cols-2"

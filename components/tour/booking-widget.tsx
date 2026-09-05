@@ -3,7 +3,9 @@
 import { useMemo, useState } from "react";
 import { CalendarDays, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
 import type { Lang } from "@/lib/i18n/langs";
-import { t } from "@/lib/i18n/ui";
+import { fill } from "@/lib/i18n/langs";
+import { t, type UI } from "@/lib/i18n/ui";
+import { costLabel } from "@/lib/i18n/costs";
 import type { PriceModel, ThirdPartyCost, TourCore } from "@/lib/content/schema";
 import { quote, type Party } from "@/lib/pricing";
 import { formatPrice } from "@/lib/format";
@@ -17,6 +19,24 @@ import { cn } from "@/lib/cn";
 
 function guideOpsNote(amount: number) {
   return `Private Guide requested: €${amount} — payable to the guide on the day. Do not charge online.`;
+}
+
+function quoteLineLabel(ui: UI, label: string): string {
+  if (label === "participants") return ui.quoteParticipants;
+  if (label === "extra guests") return ui.quoteExtraGuests;
+  if (label === "adults") return ui.quoteAdults;
+  if (label === "children") return ui.quoteChildren;
+  if (label === "private group") return ui.quotePrivateGroup;
+  if (label === "per couple") return ui.perCouple;
+  if (label === "places") return ui.quotePlaces;
+  if (label === "early-bird places") return ui.quoteEarlyBird;
+  const band = label.match(/^group of (\d+)–(\d+)$/);
+  if (band) return fill(ui.quoteGroupBand, { min: band[1], max: band[2] });
+  const upTo = label.match(/^group of up to (\d+)$/);
+  if (upTo) return fill(ui.quoteGroupUpTo, { n: upTo[1] });
+  const hourly = label.match(/^(\d+(?:\.\d+)?)h private tour$/);
+  if (hourly) return fill(ui.quoteHourly, { hours: hourly[1] });
+  return label;
 }
 
 /**
@@ -155,7 +175,7 @@ export function BookingWidget({
                 {formatPrice(lang, q.total)}
               </span>
               <span className="text-sm text-faint">
-                {guests} {guests === 1 ? "guest" : "guests"}
+                {guests} {guests === 1 ? ui.guestOne : ui.guestMany}
               </span>
             </div>
             {q.perPerson != null && guests > 1 ? (
@@ -165,7 +185,7 @@ export function BookingWidget({
             ) : null}
             {q.deposit != null ? (
               <p className="mt-1 text-xs text-muted">
-                {formatPrice(lang, q.deposit)} deposit holds your place
+                {fill(ui.depositHolds, { price: formatPrice(lang, q.deposit) })}
               </p>
             ) : null}
           </>
@@ -173,9 +193,7 @@ export function BookingWidget({
           <>
             <span className="font-display text-2xl font-semibold text-ink">{ui.onRequest}</span>
             <p className="mt-1 text-sm text-muted">
-              {q.reason === "out_of_range"
-                ? `Tell us your group size and we will price it.`
-                : ui.checkAvail}
+              {q.reason === "out_of_range" ? ui.tellUsGroup : ui.checkAvail}
             </p>
           </>
         )}
@@ -189,8 +207,10 @@ export function BookingWidget({
           <p className="mt-3 flex items-start gap-2 rounded-lg bg-olive-50 p-2.5 text-xs text-accent">
             <TrendingDown className="mt-0.5 size-3.5 shrink-0" />
             <span>
-              Add one more guest and the rate drops to{" "}
-              <strong>{formatPrice(lang, q.nudge.newPerPerson)}</strong> {ui.perPerson}.
+              {fill(ui.nudgeAddGuest, {
+                price: formatPrice(lang, q.nudge.newPerPerson),
+                perPerson: ui.perPerson,
+              })}
             </span>
           </p>
         ) : null}
@@ -211,7 +231,7 @@ export function BookingWidget({
         {/* Party */}
         <div className="grid gap-3">
           <Stepper
-            label="Adults"
+            label={ui.adults}
             value={adults}
             min={Math.max(1, groupMin - children)}
             max={groupMax - children}
@@ -219,7 +239,10 @@ export function BookingWidget({
           />
           {supportsChildren ? (
             <Stepper
-              label={`Children (${price.childAges[0]}–${price.childAges[1]})`}
+              label={fill(ui.childrenAges, {
+                min: price.childAges[0],
+                max: price.childAges[1],
+              })}
               value={children}
               min={0}
               max={groupMax - adults}
@@ -279,7 +302,7 @@ export function BookingWidget({
             {q.lines.map((line) => (
               <div key={line.label} className="flex justify-between gap-3 text-muted">
                 <dt>
-                  {line.label}
+                  {quoteLineLabel(ui, line.label)}
                   {line.qty > 1 ? ` × ${line.qty}` : ""}
                 </dt>
                 <dd>{formatPrice(lang, line.total)}</dd>
@@ -325,18 +348,18 @@ export function BookingWidget({
         {thirdPartyCosts.length > 0 ? (
           <details className="rounded-lg bg-bg p-3 text-sm">
             <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.14em] text-faint">
-              Payable on the day
+              {ui.payableOnDay}
             </summary>
             <ul className="mt-2 grid gap-1 text-xs text-muted">
               {thirdPartyCosts.map((cost) => (
                 <li key={cost.label} className="flex justify-between gap-3">
                   <span>
-                    {cost.label}
-                    {cost.optional ? " (optional)" : ""}
+                    {costLabel(lang, cost.label)}
+                    {cost.optional ? ` ${ui.optionalParen}` : ""}
                   </span>
                   <span>
                     {cost.amount != null
-                      ? `${formatPrice(lang, cost.amount)}${cost.perPerson ? " pp" : ""}`
+                      ? `${formatPrice(lang, cost.amount)}${cost.perPerson ? ` ${ui.perPersonShort}` : ""}`
                       : "—"}
                   </span>
                 </li>

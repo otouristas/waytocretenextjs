@@ -1,0 +1,90 @@
+{
+  "starts": {
+    "rethymno": "Rethymno",
+    "chania": "Chania",
+    "chania-airport": "Flughafen Chania",
+    "heraklion-airport": "Flughafen Heraklion"
+  },
+  "stops": {
+    "preveli-beach": {
+      "name": "Preveli",
+      "blurb": "Palmenwald, Flusslagune und ein wilder Südstrand."
+    },
+    "triopetra-beach": {
+      "name": "Triopetra",
+      "blurb": "Drei Felsen im türkisen Wasser und ein ruhiges Taverne-Mittagessen."
+    },
+    "plakias": {
+      "name": "Plakias",
+      "blurb": "Eine entspannte Südbucht mit Dorfhafen."
+    },
+    "damnoni": {
+      "name": "Damnoni",
+      "blurb": "Eine geschützte Bucht wenige Minuten von Plakias."
+    },
+    "georgioupoli": {
+      "name": "Georgioupoli",
+      "blurb": "Langer Sandstrand und ein Platz unter Eukalyptusbäumen."
+    },
+    "elafonisi": {
+      "name": "Elafonisi",
+      "blurb": "Rosa Sandlagune ganz im Westen — ein Tag für sich."
+    },
+    "arkadi-monastery": {
+      "name": "Kloster Arkadi",
+      "blurb": "Die Festung von 1866 in den Hügeln hinter Rethymno."
+    },
+    "melidoni-cave": {
+      "name": "Melidoni-Höhle",
+      "blurb": "Eine Tropfsteinkammer, die Zuflucht und Gedenkstätte war."
+    },
+    "eleftherna": {
+      "name": "Antikes Eleftherna",
+      "blurb": "Die Hügelstadt und das Museum der Dunklen Jahrhunderte Kretas."
+    },
+    "rethymno-old-town": {
+      "name": "Altstadt von Rethymno",
+      "blurb": "Venezianische Gassen, eine Festung und ein richtiges kretisches Mittagessen."
+    },
+    "knossos": {
+      "name": "Knossos",
+      "blurb": "Der minoische Palast vor Heraklion. Ein langer Tag nach Osten."
+    },
+    "spili": {
+      "name": "Spili",
+      "blurb": "Dorfplatz mit 25 venezianischen Löwenkopfbrunnen."
+    },
+    "margarites": {
+      "name": "Margarites",
+      "blurb": "Das Töpferdorf — arbeitende Werkstätten an der Hauptstraße."
+    },
+    "anogia": {
+      "name": "Anogia",
+      "blurb": "Ein Bergdorf der Musiker, Weber und Schafe."
+    },
+    "argyroupoli": {
+      "name": "Argyroupoli",
+      "blurb": "Antike Quellen unter Platanen und Dorftavernen."
+    },
+    "klados-winery": {
+      "name": "Weingut Klados",
+      "blurb": "Ein Familienkeller in Adele, fünfzehn Minuten von der Stadt."
+    },
+    "kourtaliotiko-gorge": {
+      "name": "Schlucht Kourtaliotiko",
+      "blurb": "Ein kurzer Halt in den Felsen auf dem Weg nach Preveli."
+    },
+    "preveli-monastery": {
+      "name": "Kloster Preveli",
+      "blurb": "Kloster auf der Klippe mit Blick auf das Libysche Meer."
+    },
+    "lake-kournas": {
+      "name": "Kournas-See",
+      "blurb": "Kretas einziger Süßwassersee, unter den Weißen Bergen."
+    },
+    "imbros-gorge": {
+      "name": "Imbros-Schlucht",
+      "blurb": "Ein 8-km-Weg durch einen Kalksteinkorridor. Ein Wandertag."
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "slug": "crete-rainy-day",
   "kind": "list",
   "published": "2026-02-28",
-  "updated": "2026-02-28",
+  "updated": "2026-09-05",
   "authorId": "ernest",
   "hero": "https://waytocrete.com/wp-content/uploads/2026/01/kriti-135-scaled.jpg",
   "places": [
@@ -26,5 +26,5 @@
     "taste-of-crete"
   ],
   "supersedes": ["/2026/02/28/what-to-do-on-rainy-day-in-crete/"],
-  "featured": false
+  "featured": true
 }

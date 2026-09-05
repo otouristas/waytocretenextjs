@@ -258,6 +258,26 @@ export type UI = {
   minShort: string;
   tourSingular: string;
   maxGuests: string;
+  guestOne: string;
+  guestMany: string;
+  adults: string;
+  childrenAges: string;
+  depositHolds: string;
+  nudgeAddGuest: string;
+  tellUsGroup: string;
+  payableOnDay: string;
+  optionalParen: string;
+  perPersonShort: string;
+  quoteParticipants: string;
+  quotePrivateGroup: string;
+  quoteExtraGuests: string;
+  quoteAdults: string;
+  quoteChildren: string;
+  quotePlaces: string;
+  quoteEarlyBird: string;
+  quoteGroupBand: string;
+  quoteGroupUpTo: string;
+  quoteHourly: string;
   legalKicker: string;
   lastUpdated: string;
   onThisPage: string;
@@ -546,6 +566,26 @@ const EN: UI = {
   minShort: "min",
   tourSingular: "tour",
   maxGuests: "max {n}",
+  guestOne: "guest",
+  guestMany: "guests",
+  adults: "Adults",
+  childrenAges: "Children ({min}–{max})",
+  depositHolds: "{price} deposit holds your place",
+  nudgeAddGuest: "Add one more guest and the rate drops to {price} {perPerson}.",
+  tellUsGroup: "Tell us your group size and we will price it.",
+  payableOnDay: "Payable on the day",
+  optionalParen: "(optional)",
+  perPersonShort: "pp",
+  quoteParticipants: "participants",
+  quotePrivateGroup: "private group",
+  quoteExtraGuests: "extra guests",
+  quoteAdults: "adults",
+  quoteChildren: "children",
+  quotePlaces: "places",
+  quoteEarlyBird: "early-bird places",
+  quoteGroupBand: "group of {min}–{max}",
+  quoteGroupUpTo: "group of up to {n}",
+  quoteHourly: "{hours}h private tour",
   legalKicker: "Legal",
   lastUpdated: "Last updated",
   onThisPage: "On this page",
@@ -890,6 +930,26 @@ const DE: UI = {
   minShort: "Min.",
   tourSingular: "Tour",
   maxGuests: "max. {n}",
+  guestOne: "Gast",
+  guestMany: "Gäste",
+  adults: "Erwachsene",
+  childrenAges: "Kinder ({min}–{max})",
+  depositHolds: "{price} Anzahlung sichert Ihren Platz",
+  nudgeAddGuest: "Noch eine Person dazu, und der Preis sinkt auf {price} {perPerson}.",
+  tellUsGroup: "Nennen Sie uns die Gruppengröße, dann kalkulieren wir den Preis.",
+  payableOnDay: "Vor Ort zu zahlen",
+  optionalParen: "(optional)",
+  perPersonShort: "p. P.",
+  quoteParticipants: "Teilnehmer",
+  quotePrivateGroup: "private Gruppe",
+  quoteExtraGuests: "weitere Gäste",
+  quoteAdults: "Erwachsene",
+  quoteChildren: "Kinder",
+  quotePlaces: "Plätze",
+  quoteEarlyBird: "Frühbucherplätze",
+  quoteGroupBand: "Gruppe {min}–{max}",
+  quoteGroupUpTo: "Gruppe bis {n} Personen",
+  quoteHourly: "{hours} Std. Privattour",
   legalKicker: "Rechtliches",
   lastUpdated: "Zuletzt aktualisiert",
   onThisPage: "Auf dieser Seite",
@@ -1234,6 +1294,26 @@ const IT: UI = {
   minShort: "min",
   tourSingular: "tour",
   maxGuests: "max {n}",
+  guestOne: "ospite",
+  guestMany: "ospiti",
+  adults: "Adulti",
+  childrenAges: "Bambini ({min}–{max})",
+  depositHolds: "{price} di acconto tiene il posto",
+  nudgeAddGuest: "Aggiungete un ospite e la tariffa scende a {price} {perPerson}.",
+  tellUsGroup: "Diteci quanti siete e vi indichiamo il prezzo.",
+  payableOnDay: "Da pagare in giornata",
+  optionalParen: "(facoltativo)",
+  perPersonShort: "a pers.",
+  quoteParticipants: "partecipanti",
+  quotePrivateGroup: "gruppo privato",
+  quoteExtraGuests: "ospiti extra",
+  quoteAdults: "adulti",
+  quoteChildren: "bambini",
+  quotePlaces: "posti",
+  quoteEarlyBird: "posti early bird",
+  quoteGroupBand: "gruppo di {min}–{max}",
+  quoteGroupUpTo: "gruppo fino a {n}",
+  quoteHourly: "{hours}h tour privato",
   legalKicker: "Note legali",
   lastUpdated: "Ultimo aggiornamento",
   onThisPage: "In questa pagina",
@@ -1578,6 +1658,26 @@ const FR: UI = {
   minShort: "min",
   tourSingular: "excursion",
   maxGuests: "max {n}",
+  guestOne: "voyageur",
+  guestMany: "voyageurs",
+  adults: "Adultes",
+  childrenAges: "Enfants ({min}–{max})",
+  depositHolds: "{price} d'acompte réserve votre place",
+  nudgeAddGuest: "Ajoutez une personne et le tarif passe à {price} {perPerson}.",
+  tellUsGroup: "Indiquez la taille du groupe et nous établirons le tarif.",
+  payableOnDay: "À régler sur place",
+  optionalParen: "(en option)",
+  perPersonShort: "p. p.",
+  quoteParticipants: "participants",
+  quotePrivateGroup: "groupe privé",
+  quoteExtraGuests: "voyageurs supplémentaires",
+  quoteAdults: "adultes",
+  quoteChildren: "enfants",
+  quotePlaces: "places",
+  quoteEarlyBird: "places early bird",
+  quoteGroupBand: "groupe de {min}–{max}",
+  quoteGroupUpTo: "groupe jusqu'à {n}",
+  quoteHourly: "{hours}h en privé",
   legalKicker: "Mentions légales",
   lastUpdated: "Dernière mise à jour",
   onThisPage: "Sur cette page",
@@ -1922,6 +2022,26 @@ const SV: UI = {
   minShort: "min",
   tourSingular: "tur",
   maxGuests: "max {n}",
+  guestOne: "gäst",
+  guestMany: "gäster",
+  adults: "Vuxna",
+  childrenAges: "Barn ({min}–{max})",
+  depositHolds: "{price} i handpenning håller platsen",
+  nudgeAddGuest: "Lägg till en gäst till så sjunker priset till {price} {perPerson}.",
+  tellUsGroup: "Berätta hur många ni är så tar vi fram priset.",
+  payableOnDay: "Betalas på plats",
+  optionalParen: "(valfritt)",
+  perPersonShort: "pp",
+  quoteParticipants: "deltagare",
+  quotePrivateGroup: "privat grupp",
+  quoteExtraGuests: "extra gäster",
+  quoteAdults: "vuxna",
+  quoteChildren: "barn",
+  quotePlaces: "platser",
+  quoteEarlyBird: "early bird-platser",
+  quoteGroupBand: "grupp {min}–{max}",
+  quoteGroupUpTo: "grupp upp till {n}",
+  quoteHourly: "{hours}h privat tur",
   legalKicker: "Juridiskt",
   lastUpdated: "Senast uppdaterad",
   onThisPage: "På den här sidan",

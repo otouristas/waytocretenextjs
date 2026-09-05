@@ -1,0 +1,39 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "name": "Knossos",
+  "seoTitle": "Knossos palats: besök den minoiska platsen från Rethymno",
+  "seoDescription": "Knossos är Kretas största minoiska palats, strax utanför Heraklion och cirka 90 minuter från Rethymno. Rundvandringen tar ungefär 90 minuter på mestadels plan mark.",
+  "summary": "Knossos är den största bronsåldersplatsen på Kreta och centrum för den minoiska civilisationen, fem kilometer söder om Heraklion och omkring nittio minuter med bil från Rethymno. Palatskomplexet täcker cirka 14 000 kvadratmeter av gårdar, magasin, trappor och verkstäder, bebott från omkring 1900 f.Kr. och förstört på 1400-talet f.Kr. Sir Arthur Evans grävde ut det från 1900 och rekonstruerade delar i målad betong, vilket är varför Knossos inte liknar någon annan grekisk fornlämning och varför det delar åsikter. Rundvandringen tar omkring nittio minuter på ojämn men mestadels plan mark; originalfreskerna och fynden finns på det arkeologiska museet i Heraklion, inte på platsen.",
+  "body": "## Vad som finns kvar\n\nPalatset är organiserat kring en stor central gård, med bostadskvarteren, tronsalen och de ceremoniella rummen på ena sidan och magasinen, med sina rader av enorma lagringskärl, på den andra. Det som är värt att sakta ner för är strukturellt snarare än dekorativt: ljusschakten som bär dagsljus tre våningar ner, avlopps- och vattentillförselkanalerna, den stora trappan och det rena antalet förråd, som säger mer om hur platsen fungerade än freskerna gör.\n\nBebyggelsen började omkring 1900 f.Kr. på en plats som redan varit bebodd sedan neolitikum. Komplexet byggdes om mer än en gång efter skador och förstördes för gott på 1400-talet f.Kr.\n\n## Evans och rekonstruktionerna\n\nArthur Evans började gräva 1900 och byggde under de följande decennierna upp sektioner i armerad betong med reproducerade fresker. Arkeologer har argumenterat om det sedan dess: rekonstruktionerna låser en tolkning i beständigt material, och vissa detaljer är säkert fel. De gör också platsen läsbar för en icke-specialist på ett sätt som ett fält av grunder inte skulle vara. Båda sakerna är sanna, och det lönar sig att veta vilken del ni tittar på.\n\n## Museet\n\nNästan allt flyttbart från Knossos finns på det arkeologiska museet i Heraklion, tjugo minuter bort: originalfresken med tjurhoppet, ormgudinnefigurerna, Faistoss tolkskiva, sigillen och guldet. Att se palatset och sedan museet, i den ordningen, är den följd som får båda att fungera.\n\n## Praktiskt\n\nDet finns mycket lite skugga och stenen kastar tillbaka värme, så tidig morgon eller sen eftermiddag är mycket bättre än mitt på dagen på sommaren. Biljetter köps på platsen eller online; en kombibiljett för Knossos och det arkeologiska museet i Heraklion finns normalt och är billigare än två separata. Ingen av biljetterna ingår i turpriser från Rethymno.",
+  "quickAnswers": [
+    { "term": "Körtid från Rethymno", "value": "Omkring 1 timme 30 minuter, ungefär 80 km" },
+    { "term": "Läge", "value": "5 km söder om Heraklion" },
+    { "term": "Rundvandring", "value": "Omkring 90 minuter på ojämn men mestadels plan mark" },
+    { "term": "Bebott från", "value": "Omkring 1900 f.Kr., på en plats bebodd sedan neolitikum" },
+    { "term": "Utgrävt av", "value": "Sir Arthur Evans, från 1900, som rekonstruerade delar i betong" },
+    { "term": "Biljetter", "value": "Köps på platsen; en kombibiljett med det arkeologiska museet i Heraklion finns normalt och är billigare" }
+  ],
+  "faqs": [
+    {
+      "q": "Hur långt är det till Knossos från Rethymno?",
+      "a": "Omkring 80 km österut, ungefär en och en halv timme med bil på riksvägen. En privat dagstur från Rethymno med Knossos, museet och Heraklions gamla stad tar omkring sju timmar."
+    },
+    {
+      "q": "Hur lång tid behöver ni vid Knossos?",
+      "a": "Omkring nittio minuter för själva platsen, i lugnt tempo med stopp. Lägg till ytterligare en och en halv timme om ni också besöker det arkeologiska museet i Heraklion, som rymmer originalfreskerna och fynden."
+    },
+    {
+      "q": "Ingår biljetterna i en tur?",
+      "a": "Nej. Entré till Knossos och till det arkeologiska museet i Heraklion betalas separat på varje plats. En kombibiljett för båda finns vanligtvis och blir billigare än två enskilda biljetter."
+    },
+    {
+      "q": "Är Knossos en rekonstruktion?",
+      "a": "Delvis. Arthur Evans byggde upp sektioner i armerad betong och lät måla om fresker, så det ni går igenom blandar originalmaterial med en tolkning från tidigt 1900-tal. Rekonstruktionerna gör planen begriplig; de är också, på sina ställen, omstridda."
+    },
+    {
+      "q": "Finns det skugga vid Knossos?",
+      "a": "Mycket lite. Platsen är öppen sten nästan utan skydd, så kom tidigt eller sent på dagen på sommaren och ta med vatten och hatt."
+    }
+  ]
+}
