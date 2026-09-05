@@ -22,15 +22,9 @@
       "perPerson": true,
       "optional": false,
       "note": "Paid at the museum; a combined Knossos + museum ticket is usually available."
-    },
-    {
-      "label": "Professional licensed guide at the sites",
-      "amount": null,
-      "perPerson": false,
-      "optional": true,
-      "note": "Your English-speaking driver is included; an expert site guide can be added for an extra charge."
     }
   ],
+  "privateGuide": { "amount": 150, "currency": "EUR" },
   "cadence": {
     "kind": "on_request"
   },

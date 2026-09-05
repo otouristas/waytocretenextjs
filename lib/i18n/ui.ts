@@ -134,6 +134,16 @@ export type UI = {
   bookLive: string;
   bookLiveOpen: string;
   livePayNote: string;
+  guideUpgradeEyebrow: string;
+  guideUpgradeTitle: string;
+  guideUpgradeBody: string;
+  guideAdd: string;
+  guideAdded: string;
+  guideLine: string;
+  guidePayNote: string;
+  tourLine: string;
+  payOnline: string;
+  dayTotal: string;
   calendarLoading: string;
   calendarEmpty: string;
   calendarError: string;
@@ -187,6 +197,9 @@ export type UI = {
   transferExtras: string;
   transferPayment: string;
   skipToContent: string;
+  themeToggle: string;
+  themeToLight: string;
+  themeToDark: string;
   breadcrumb: string;
   homeTitle: string;
   homeFeaturedTitle: string;
@@ -391,6 +404,17 @@ const EN: UI = {
   bookLive: "Book this date",
   bookLiveOpen: "Open live dates",
   livePayNote: "Timeslot and payment finish on the booking engine.",
+  guideUpgradeEyebrow: "Upgrade Your Experience",
+  guideUpgradeTitle: "Add a Private Local Guide",
+  guideUpgradeBody:
+    "Explore Crete with a professional local guide and discover the history, culture and stories behind each place.",
+  guideAdd: "Add private guide +",
+  guideAdded: "Private guide added",
+  guideLine: "Private Guide",
+  guidePayNote: "Payable directly to the guide on the day of the tour.",
+  tourLine: "Tour",
+  payOnline: "Pay online",
+  dayTotal: "Day total",
   calendarLoading: "Checking the diary…",
   calendarEmpty: "No open days this month. Try the next month, or open the live diary.",
   calendarError: "Could not load the diary. Open live dates instead.",
@@ -448,6 +472,9 @@ const EN: UI = {
   transferExtras: "Included at no charge",
   transferPayment: "Paying",
   skipToContent: "Skip to content",
+  themeToggle: "Colour theme",
+  themeToLight: "Switch to light appearance",
+  themeToDark: "Switch to dark appearance",
   breadcrumb: "Breadcrumb",
   homeTitle: "Private Tours from Rethymno, Crete | Rethymno Tours",
   homeFeaturedTitle: "Days our guests book first",
@@ -710,6 +737,17 @@ const DE: UI = {
   bookLive: "Dieses Datum buchen",
   bookLiveOpen: "Live-Termine öffnen",
   livePayNote: "Uhrzeit und Zahlung schließen Sie auf der Buchungsplattform ab.",
+  guideUpgradeEyebrow: "Erweitern Sie Ihr Erlebnis",
+  guideUpgradeTitle: "Privaten lokalen Guide hinzufügen",
+  guideUpgradeBody:
+    "Entdecken Sie Kreta mit einem professionellen lokalen Guide und die Geschichte, Kultur und Geschichten hinter jedem Ort.",
+  guideAdd: "Privaten Guide hinzufügen +",
+  guideAdded: "Privater Guide hinzugefügt",
+  guideLine: "Privater Guide",
+  guidePayNote: "Direkt an den Guide am Tag der Tour zu zahlen.",
+  tourLine: "Tour",
+  payOnline: "Online zahlen",
+  dayTotal: "Tagessumme",
   calendarLoading: "Kalender wird geprüft…",
   calendarEmpty: "Diesen Monat keine freien Tage. Nächsten Monat versuchen oder den Live-Kalender öffnen.",
   calendarError: "Kalender konnte nicht geladen werden. Stattdessen Live-Termine öffnen.",
@@ -767,6 +805,9 @@ const DE: UI = {
   transferExtras: "Kostenlos inklusive",
   transferPayment: "Zahlung",
   skipToContent: "Zum Inhalt springen",
+  themeToggle: "Farbschema",
+  themeToLight: "Zur hellen Ansicht wechseln",
+  themeToDark: "Zur dunklen Ansicht wechseln",
   breadcrumb: "Brotkrumen",
   homeTitle: "Private Touren ab Rethymno, Kreta | Rethymno Tours",
   homeFeaturedTitle: "Tage, die unsere Gäste zuerst buchen",
@@ -1029,6 +1070,17 @@ const IT: UI = {
   bookLive: "Prenota questa data",
   bookLiveOpen: "Apri le date live",
   livePayNote: "Orario e pagamento si chiudono sul motore di prenotazione.",
+  guideUpgradeEyebrow: "Arricchisci l'esperienza",
+  guideUpgradeTitle: "Aggiungi una guida locale privata",
+  guideUpgradeBody:
+    "Esplora Creta con una guida locale professionista e scopri la storia, la cultura e le storie di ogni luogo.",
+  guideAdd: "Aggiungi guida privata +",
+  guideAdded: "Guida privata aggiunta",
+  guideLine: "Guida privata",
+  guidePayNote: "Da pagare direttamente alla guida il giorno del tour.",
+  tourLine: "Tour",
+  payOnline: "Paga online",
+  dayTotal: "Totale del giorno",
   calendarLoading: "Controllo del diario…",
   calendarEmpty: "Nessun giorno libero questo mese. Provate il mese successivo o aprite il diario live.",
   calendarError: "Impossibile caricare il diario. Aprite invece le date live.",
@@ -1086,6 +1138,9 @@ const IT: UI = {
   transferExtras: "Incluso senza extra",
   transferPayment: "Pagamento",
   skipToContent: "Vai al contenuto",
+  themeToggle: "Tema colori",
+  themeToLight: "Passa alla modalità chiara",
+  themeToDark: "Passa alla modalità scura",
   breadcrumb: "Percorso di navigazione",
   homeTitle: "Tour privati da Rethymno, Creta | Rethymno Tours",
   homeFeaturedTitle: "Le giornate che i nostri ospiti prenotano per prime",
@@ -1348,6 +1403,17 @@ const FR: UI = {
   bookLive: "Réserver cette date",
   bookLiveOpen: "Ouvrir les dates en direct",
   livePayNote: "Le créneau et le paiement se terminent sur le moteur de réservation.",
+  guideUpgradeEyebrow: "Enrichissez votre expérience",
+  guideUpgradeTitle: "Ajouter un guide local privé",
+  guideUpgradeBody:
+    "Explorez la Crète avec un guide local professionnel et découvrez l'histoire, la culture et les récits de chaque lieu.",
+  guideAdd: "Ajouter un guide privé +",
+  guideAdded: "Guide privé ajouté",
+  guideLine: "Guide privé",
+  guidePayNote: "À régler directement au guide le jour de l'excursion.",
+  tourLine: "Excursion",
+  payOnline: "Paiement en ligne",
+  dayTotal: "Total du jour",
   calendarLoading: "Vérification de l'agenda…",
   calendarEmpty: "Aucun jour libre ce mois-ci. Essayez le mois suivant, ou ouvrez l'agenda en direct.",
   calendarError: "Impossible de charger l'agenda. Ouvrez plutôt les dates en direct.",
@@ -1405,6 +1471,9 @@ const FR: UI = {
   transferExtras: "Inclus sans supplément",
   transferPayment: "Paiement",
   skipToContent: "Aller au contenu",
+  themeToggle: "Thème de couleurs",
+  themeToLight: "Passer en mode clair",
+  themeToDark: "Passer en mode sombre",
   breadcrumb: "Fil d'Ariane",
   homeTitle: "Excursions privées depuis Réthymnon, Crète | Rethymno Tours",
   homeFeaturedTitle: "Les journées que nos voyageurs réservent en premier",
@@ -1667,6 +1736,17 @@ const SV: UI = {
   bookLive: "Boka det här datumet",
   bookLiveOpen: "Öppna live-datum",
   livePayNote: "Tid och betalning avslutas i bokningsmotorn.",
+  guideUpgradeEyebrow: "Uppgradera upplevelsen",
+  guideUpgradeTitle: "Lägg till en privat lokal guide",
+  guideUpgradeBody:
+    "Utforska Kreta med en professionell lokal guide och upptäck historien, kulturen och berättelserna bakom varje plats.",
+  guideAdd: "Lägg till privat guide +",
+  guideAdded: "Privat guide tillagd",
+  guideLine: "Privat guide",
+  guidePayNote: "Betalas direkt till guiden på turdagen.",
+  tourLine: "Tur",
+  payOnline: "Betala online",
+  dayTotal: "Dagens total",
   calendarLoading: "Kollar kalendern…",
   calendarEmpty: "Inga lediga dagar den här månaden. Prova nästa månad, eller öppna live-kalendern.",
   calendarError: "Kunde inte ladda kalendern. Öppna live-datum istället.",
@@ -1724,6 +1804,9 @@ const SV: UI = {
   transferExtras: "Ingår utan extra kostnad",
   transferPayment: "Betalning",
   skipToContent: "Hoppa till innehållet",
+  themeToggle: "Färgtema",
+  themeToLight: "Växla till ljust läge",
+  themeToDark: "Växla till mörkt läge",
   breadcrumb: "Sökväg",
   homeTitle: "Privata turer från Rethymno, Kreta | Rethymno Tours",
   homeFeaturedTitle: "Dagarna våra gäster bokar först",

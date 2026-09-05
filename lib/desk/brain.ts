@@ -101,6 +101,9 @@ export function experienceCard(slug: string, lang: Lang) {
     highlights: info.highlights.slice(0, 4),
     liveCalendar: false,
     payment: deskCopy(lang).tourPayment,
+    privateGuide: tour.privateGuide
+      ? `Optional private local guide €${tour.privateGuide.amount}, payable to the guide on the day, not charged online.`
+      : null,
   };
 }
 
@@ -142,6 +145,7 @@ ${catalog}
 
 Current page: ${path || "unknown"}
 ${currentCard?.found ? `The guest is looking at: ${currentCard.title} (${currentCard.slug}), ${currentCard.price}. Prefer this day unless they ask for something else.` : ""}
+${currentCard?.found && currentCard.privateGuide ? `Private guide add-on: ${currentCard.privateGuide}` : ""}
 
 When they name a feeling (hike, wine, boat, yoga, family, wedding), call searchExperiences. When they name a slug or a specific day, call getExperience. If they ask whether a date is free, or they are on a live-calendar day, call checkAvailability — do not guess the diary. For airports, vans, weddings, call transferRules. Offer the live book URL when checkAvailability returns one, otherwise a date request and WhatsApp.`;
 }
@@ -278,9 +282,8 @@ function faqAnswer(query: string, lang: Lang, currentSlug: string | null): strin
  * This is not a degraded fallback that apologises — it is the site answering
  * out of its own content, and on the questions guests actually ask (what does
  * it cost, does it pick me up, can I cancel, how do I get from the airport)
- * it can be exact where a model would have to hedge. It runs whenever no AI
- * gateway key is configured, which is every local build and any deploy where
- * the key is absent.
+ * it can be exact where a model would have to hedge. It is the only path
+ * the chat route uses — never a model, never gateway credits.
  *
  * It returns cards as well as prose, so the answer is something you can act
  * on rather than read.

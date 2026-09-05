@@ -11,6 +11,7 @@
     "extraGuest": null,
     "unitLabel": "group"
   },
+  "privateGuide": { "amount": 180, "currency": "EUR" },
   "thirdPartyCosts": [
     {
       "label": "Samaria Gorge entrance fee",

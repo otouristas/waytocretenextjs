@@ -41,7 +41,7 @@ export function RatingPanel({
         {summary ? (
           <>
             <p className="flex items-baseline gap-2">
-              <span className="font-display text-4xl leading-none text-earth">
+              <span className="font-display text-4xl leading-none text-ink">
                 {summary.average.toFixed(1)}
               </span>
               <span className="text-sm text-faint">/ 5</span>
@@ -107,7 +107,7 @@ function PlatformTile({
         <span className="block text-sm text-muted">
           {count} {countLabel}
         </span>
-        <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-olive-deep">
+        <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-accent">
           {label}
           <ArrowRight className="size-3.5 transition group-hover:translate-x-0.5" />
         </span>
@@ -131,10 +131,10 @@ export function RatingInline({
   return (
     <Link
       href={langPath(lang, "/reviews")}
-      className={`inline-flex items-center gap-2 text-sm text-muted hover:text-olive-deep ${className}`}
+      className={`inline-flex items-center gap-2 text-sm text-muted hover:text-accent ${className}`}
     >
       <Stars value={summary.average} size={14} label={fill(ui.starsOutOf, { n: summary.average.toFixed(1) })} />
-      <span className="font-semibold text-earth">{summary.average.toFixed(1)}</span>
+      <span className="font-semibold text-ink">{summary.average.toFixed(1)}</span>
       <span>· {reviewCountLabel(lang, summary.count)}</span>
       <GoogleWordmark className="h-3.5 w-auto" />
     </Link>
@@ -160,7 +160,7 @@ export function RatingBanner({
   return (
     <div className={`flex flex-wrap items-center gap-x-5 gap-y-3 border-b border-line bg-olive-50 px-6 py-5 ${className}`}>
       <p className="flex items-baseline gap-1.5">
-        <span className="font-display text-5xl leading-none text-earth">
+        <span className="font-display text-5xl leading-none text-ink">
           {summary.average.toFixed(1)}
         </span>
         <span className="text-sm text-faint">/ 5</span>

@@ -65,10 +65,10 @@ export function TransferForm({
         id="booking-panel"
         className="flex scroll-mt-28 items-start gap-4 rounded-2xl bg-olive-50 p-6 ring-1 ring-olive-200"
       >
-        <span className="grid size-9 shrink-0 place-items-center rounded-full bg-olive text-surface">
+        <span className="grid size-9 shrink-0 place-items-center rounded-full bg-olive text-paper">
           <Check className="size-4" />
         </span>
-        <p className="text-sm leading-relaxed text-olive-900">{copy.submitted}</p>
+        <p className="text-sm leading-relaxed text-accent">{copy.submitted}</p>
       </div>
     );
   }
@@ -100,7 +100,7 @@ export function TransferForm({
         setDone(true);
       }}
     >
-      <h2 className="font-display text-2xl text-earth">{title ?? p.formTitle}</h2>
+      <h2 className="font-display text-2xl text-ink">{title ?? p.formTitle}</h2>
 
       <div className="grid gap-3 sm:grid-cols-2">
         <Field label={copy.name}>
@@ -156,7 +156,7 @@ export function TransferForm({
             type="checkbox"
             checked={form.wedding}
             onChange={set("wedding")}
-            className="size-4 accent-[var(--olive-500)]"
+            className="size-4 accent-[var(--pine)]"
           />
           {p.wedding}
         </label>

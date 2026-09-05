@@ -108,16 +108,16 @@ export default async function Page({
       <JsonLd data={jsonLd} />
       <article className="mx-auto max-w-3xl px-4 py-10 md:py-14">
         <nav aria-label={ui.breadcrumb} className="text-xs text-muted">
-          <Link href={`/${lang}`} className="hover:text-olive-deep">
+          <Link href={`/${lang}`} className="hover:text-accent">
             {ui.home}
           </Link>
           <span className="px-1.5 text-faint">/</span>
-          <Link href={`/${lang}/guides`} className="hover:text-olive-deep">
+          <Link href={`/${lang}/guides`} className="hover:text-accent">
             {ui.navGuides}
           </Link>
         </nav>
 
-        <h1 className="mt-4 font-display text-4xl leading-tight text-earth md:text-5xl">
+        <h1 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
           {copy.title}
         </h1>
 
@@ -162,7 +162,7 @@ export default async function Page({
 
         {linked.length > 0 ? (
           <section className="mt-14 border-t border-line pt-10">
-            <h2 className="font-display text-2xl text-earth">{ui.guidesMentioned}</h2>
+            <h2 className="font-display text-2xl text-ink">{ui.guidesMentioned}</h2>
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
               {linked.slice(0, 4).map(({ core: c, copy: cp }) => (
                 <TourCard key={c.slug} core={c} copy={cp} lang={lang} />

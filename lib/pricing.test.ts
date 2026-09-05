@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 // Relative, extension-bearing imports so Node's type stripping can run this
 // file directly without a bundler or a path-alias resolver.
 import type { PriceModel } from "./content/schema.ts";
-import { priceFrom, priceTo, quote } from "./pricing.ts";
+import { billableHours, priceFrom, priceTo, quote, type HourlyPrivate } from "./pricing.ts";
 
 /**
  * Run with:  npm run test
@@ -169,4 +169,58 @@ test("a party beyond every band becomes an enquiry with an honest anchor", () =>
 test("banded group exposes its true low/high for AggregateOffer", () => {
   assert.equal(priceFrom(lakeKournas), 250);
   assert.equal(priceTo(lakeKournas), 290);
+});
+
+/** Create Your Own Crete Experience: €50/h for 1–4, €60/h for 5–8, min 5h. */
+const customDay: HourlyPrivate = {
+  kind: "hourly_private",
+  currency: "EUR",
+  minHours: 5,
+  maxHours: 11,
+  warnHours: 8.5,
+  incrementMinutes: 30,
+  bands: [
+    { minGuests: 1, maxGuests: 4, perHour: 50 },
+    { minGuests: 5, maxGuests: 8, perHour: 60 },
+  ],
+};
+
+test("hourly private From price is the five-hour minimum at the cheap band", () => {
+  assert.equal(priceFrom(customDay), 250);
+  assert.equal(priceTo(customDay), 660);
+});
+
+test("hourly private without hours quotes the minimum day", () => {
+  const q = quote(customDay, party(2));
+  assert.equal(q.kind, "priced");
+  if (q.kind !== "priced") return;
+  assert.equal(q.total, 250);
+});
+
+test("hourly private 7h20m for two guests bills 7.5h at €50", () => {
+  const hours = billableHours(3 * 60 + 20 + 4 * 60, customDay);
+  assert.equal(hours, 7.5);
+  const q = quote(customDay, party(2), undefined, hours);
+  assert.equal(q.kind, "priced");
+  if (q.kind !== "priced") return;
+  assert.equal(q.total, 375);
+});
+
+test("hourly private short day still bills the five-hour minimum", () => {
+  const hours = billableHours(4 * 60, customDay);
+  assert.equal(hours, 5);
+  const q = quote(customDay, party(4), undefined, hours);
+  if (q.kind !== "priced") throw new Error("expected a price");
+  assert.equal(q.total, 250);
+});
+
+test("hourly private five guests step to the €60 band", () => {
+  const q = quote(customDay, party(5), undefined, 5);
+  if (q.kind !== "priced") throw new Error("expected a price");
+  assert.equal(q.total, 300);
+});
+
+test("hourly private beyond eight guests is an enquiry", () => {
+  const q = quote(customDay, party(9), undefined, 5);
+  assert.equal(q.kind, "enquiry");
 });

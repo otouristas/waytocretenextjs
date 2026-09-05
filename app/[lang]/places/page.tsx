@@ -83,10 +83,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <JsonLd data={jsonLd} />
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <header className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             {ui.navPlaces}
           </p>
-          <h1 className="mt-2 font-display text-4xl text-earth md:text-5xl">
+          <h1 className="mt-2 font-display text-4xl text-ink md:text-5xl">
             {ui.placesHubTitle}
           </h1>
           <p className="mt-4 leading-relaxed text-muted">{ui.placesSeoDesc}</p>
@@ -100,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           grouped.map((group) => (
             <section key={group.kind} className="mt-12">
               <div className="mb-5 flex items-center gap-4">
-                <h2 className="font-display text-2xl text-earth">{group.label}</h2>
+                <h2 className="font-display text-2xl text-ink">{group.label}</h2>
                 <span className="h-px flex-1 bg-line" />
                 <span className="text-xs text-faint">{group.items.length}</span>
               </div>
@@ -126,13 +126,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                         // Not every attraction has a photograph that is
                         // genuinely of it, and a wrong hero is worse than
                         // none — so those cards lead with type instead.
-                        <div className="grid aspect-[16/10] place-items-center bg-olive-50 text-olive">
+                        <div className="grid aspect-[16/10] place-items-center bg-olive-50 text-accent">
                           <Mountain className="size-8" />
                         </div>
                       )}
 
                       <div className="flex flex-1 flex-col p-5">
-                        <h3 className="font-display text-lg leading-snug text-earth">{copy.name}</h3>
+                        <h3 className="font-display text-lg leading-snug text-ink">{copy.name}</h3>
                         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">
                           {copy.summary}
                         </p>
@@ -174,7 +174,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 function Meta({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
     <li className="inline-flex items-center gap-1.5">
-      <span className="text-olive">{icon}</span>
+      <span className="text-accent">{icon}</span>
       {children}
     </li>
   );

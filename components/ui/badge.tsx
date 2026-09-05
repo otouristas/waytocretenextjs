@@ -6,10 +6,9 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-olive text-surface",
-        outline: "border border-line bg-surface text-olive-deep",
-        gold: "bg-gold-soft text-olive-deep",
-        ghost: "bg-surface/90 text-olive-deep",
+        default: "bg-olive text-paper",
+        outline: "border border-line bg-surface text-accent",
+        ghost: "bg-surface/90 text-accent",
       },
     },
     defaultVariants: { variant: "default" },

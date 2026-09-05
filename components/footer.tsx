@@ -7,6 +7,7 @@ import { t } from "@/lib/i18n/ui";
 import { allGuides, allPlaces, allTours, allReviews, ratingSummary } from "@/lib/content/load";
 import { transferRoutes } from "@/lib/transfers";
 import { GoogleWordmark, Stars, TripAdvisorOwl } from "@/components/trust/source-logos";
+import { BrandLogo } from "@/components/brand-logo";
 import {
   ADDRESS_DISPLAY,
   BRAND,
@@ -45,26 +46,20 @@ export function Footer({ lang }: { lang: Lang }) {
     <footer className="mt-16 border-t border-line pattern-olive">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <Image
-            src="/brand/logos/logo-full.png"
-            alt={BRAND}
-            width={LOGO.width}
-            height={LOGO.height}
-            className="h-14 w-auto object-contain object-left"
-          />
+          <BrandLogo lang={lang} height={56} />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">{ui.aboutLead}</p>
 
           <address className="mt-5 grid gap-2 text-sm not-italic text-muted">
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 hover:text-olive-deep">
-              <Phone className="size-3.5 text-olive" />
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 hover:text-accent">
+              <Phone className="size-3.5 text-accent" />
               {PHONE_DISPLAY}
             </a>
-            <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2 hover:text-olive-deep">
-              <Mail className="size-3.5 text-olive" />
+            <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2 hover:text-accent">
+              <Mail className="size-3.5 text-accent" />
               {EMAIL}
             </a>
             <span className="inline-flex items-center gap-2">
-              <MapPin className="size-3.5 text-olive" />
+              <MapPin className="size-3.5 text-accent" />
               {ADDRESS_DISPLAY}
             </span>
           </address>
@@ -137,7 +132,7 @@ export function Footer({ lang }: { lang: Lang }) {
               className="size-12 shrink-0 object-contain"
             />
             <p className="text-xs leading-relaxed text-muted">
-              <span className="block font-semibold text-earth">{ui.licensedTitle}</span>
+              <span className="block font-semibold text-ink">{ui.licensedTitle}</span>
               {MHTE_LICENCE ? `${ui.gntoLicence} ${MHTE_LICENCE}` : ui.gntoLicence}
             </p>
           </div>
@@ -149,7 +144,7 @@ export function Footer({ lang }: { lang: Lang }) {
             >
               <Stars value={rating.average} size={14} label={fill(ui.starsOutOf, { n: rating.average.toFixed(1) })} />
               <span>
-                <span className="font-semibold text-earth">{rating.average.toFixed(1)}</span>{" "}
+                <span className="font-semibold text-ink">{rating.average.toFixed(1)}</span>{" "}
                 {ui.reviewsOn}{" "}
                 <span className="inline-flex translate-y-[1px] items-center gap-1.5">
                   <GoogleWordmark className="h-3 w-auto" />
@@ -197,13 +192,13 @@ export function Footer({ lang }: { lang: Lang }) {
               © {new Date().getFullYear()} {BRAND} · {ADDRESS_DISPLAY}
             </p>
             <nav className="flex gap-4">
-              <Link href={langPath(lang, "/terms")} className="hover:text-olive-deep">
+              <Link href={langPath(lang, "/terms")} className="hover:text-accent">
                 {ui.terms}
               </Link>
-              <Link href={langPath(lang, "/privacy")} className="hover:text-olive-deep">
+              <Link href={langPath(lang, "/privacy")} className="hover:text-accent">
                 {ui.privacy}
               </Link>
-              <Link href={langPath(lang, "/contact")} className="hover:text-olive-deep">
+              <Link href={langPath(lang, "/contact")} className="hover:text-accent">
                 {ui.navContact}
               </Link>
             </nav>
@@ -217,7 +212,7 @@ export function Footer({ lang }: { lang: Lang }) {
               href="https://anotherseoguru.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-olive-deep"
+              className="hover:text-accent"
             >
               Designed by <span className="font-semibold text-muted">AnotherSEOGuru</span>
             </a>
@@ -225,7 +220,7 @@ export function Footer({ lang }: { lang: Lang }) {
               href="https://touristas.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-olive-deep"
+              className="hover:text-accent"
             >
               Powered by <span className="font-semibold text-muted">Touristas AI</span>
             </a>
@@ -243,7 +238,7 @@ export function Footer({ lang }: { lang: Lang }) {
                 className="size-5 object-contain"
               />
               <span className="leading-tight">
-                <span className="block text-xs font-bold text-earth">Discover Crete</span>
+                <span className="block text-xs font-bold text-ink">Discover Crete</span>
                 <span className="block text-[9px] font-medium uppercase tracking-wider text-faint">
                   Partner
                 </span>
@@ -256,13 +251,10 @@ export function Footer({ lang }: { lang: Lang }) {
   );
 }
 
-/** Intrinsic size of /brand/logos/logo-full.png — 1024 × 527. */
-const LOGO = { width: 1024, height: 527 } as const;
-
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-olive">{title}</h3>
+      <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-accent">{title}</h3>
       <ul className="space-y-2 text-sm text-muted">{children}</ul>
     </div>
   );
@@ -271,7 +263,7 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="hover:text-olive-deep">
+      <Link href={href} className="hover:text-accent">
         {children}
       </Link>
     </li>
@@ -295,7 +287,7 @@ function SocialIcon({
         rel="noopener noreferrer"
         aria-label={label}
         title={label}
-        className="grid size-9 place-items-center rounded-full bg-surface text-earth ring-1 ring-line transition hover:bg-olive hover:text-surface hover:ring-olive"
+        className="grid size-9 place-items-center rounded-full bg-surface text-ink ring-1 ring-line transition hover:bg-olive hover:text-paper hover:ring-olive"
       >
         {children}
       </a>

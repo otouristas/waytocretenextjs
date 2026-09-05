@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
-  <rect width="180" height="180" fill="#f1eadc"/>
+  <rect width="180" height="180" fill="#ecede9"/>
   <filter id="n">
     <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
-    <feColorMatrix type="matrix" values="0 0 0 0 0.72  0 0 0 0 0.68  0 0 0 0 0.52  0 0 0 0.16 0"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.314  0 0 0 0 0.396  0 0 0 0 0.318  0 0 0 0.16 0"/>
   </filter>
   <rect width="180" height="180" filter="url(#n)" opacity="0.55"/>
-  <g fill="none" stroke="#6c7c59" stroke-width="0.6" opacity="0.18">
+  <g fill="none" stroke="#506551" stroke-width="0.6" opacity="0.18">
     <path d="M12 30c8-2 14 6 12 14-6 2-14-4-12-14z"/>
     <path d="M168 150c-8 2-14-6-12-14 6-2 14 4 12 14z"/>
   </g>

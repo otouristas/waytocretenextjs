@@ -91,6 +91,7 @@ export const NAV_SPEC: readonly NavItemSpec[] = [
   { id: "home", kind: "link", path: "/" },
   { id: "about", kind: "link", path: "/about" },
   { id: "tours", kind: "mega", path: "/tours", columns: TOUR_COLUMNS },
+  { id: "create", kind: "link", path: "/create" },
   {
     id: "multiday",
     kind: "menu",
@@ -117,6 +118,7 @@ export type NavCopy = {
   home: string;
   about: string;
   tours: string;
+  create: string;
   multiday: string;
   transfer: string;
   boat: string;
@@ -142,6 +144,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     home: "Home",
     about: "About us",
     tours: "Crete Tours",
+    create: "Create your day",
     multiday: "Multiday Tours",
     transfer: "Transfer",
     boat: "Boat Cruise",
@@ -165,6 +168,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     home: "Startseite",
     about: "Über uns",
     tours: "Kreta Touren",
+    create: "Tag gestalten",
     multiday: "Mehrtagesreisen",
     transfer: "Transfer",
     boat: "Bootsfahrt",
@@ -188,6 +192,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     home: "Home",
     about: "Chi siamo",
     tours: "Tour a Creta",
+    create: "Crea la tua giornata",
     multiday: "Tour di più giorni",
     transfer: "Transfer",
     boat: "Crociera in barca",
@@ -211,6 +216,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     home: "Accueil",
     about: "À propos",
     tours: "Circuits en Crète",
+    create: "Créer votre journée",
     multiday: "Circuits de plusieurs jours",
     transfer: "Transfert",
     boat: "Croisière",
@@ -234,6 +240,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     home: "Hem",
     about: "Om oss",
     tours: "Kretaturer",
+    create: "Skapa er dag",
     multiday: "Flerdagarsturer",
     transfer: "Transfer",
     boat: "Båttur",
@@ -268,6 +275,8 @@ export function itemLabel(id: string, lang: Lang): string {
       return copy.about;
     case "tours":
       return copy.tours;
+    case "create":
+      return copy.create;
     case "multiday":
       return copy.multiday;
     case "transfer":
@@ -331,6 +340,7 @@ export function activeNavId(pathname: string): string | null {
   if (rest === "/guides" || rest.startsWith("/guides/")) return "blog";
   if (rest === "/contact" || rest.startsWith("/contact/")) return "contact";
   if (rest === "/tours" || rest.startsWith("/tours/")) return "tours";
+  if (rest === "/create" || rest.startsWith("/create/")) return "create";
   const hub = rest.replace(/\/$/, "");
   if (hub === "/multiday-tours") return "multiday";
   if (HUB_PATHS.has(hub)) return "tours";

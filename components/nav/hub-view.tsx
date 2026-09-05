@@ -21,15 +21,15 @@ export function HubView({ lang, hub }: { lang: Lang; hub: HubDef }) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
       <header className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           {labels.tours}
         </p>
-        <h1 className="mt-2 font-display text-4xl text-earth md:text-5xl">{copy.label}</h1>
+        <h1 className="mt-2 font-display text-4xl text-ink md:text-5xl">{copy.label}</h1>
         <p className="mt-4 leading-relaxed text-muted">{copy.lead}</p>
         <div className="mt-6 flex flex-wrap gap-2">
           <Link
             href={langPath(lang, "/tours")}
-            className="inline-flex h-11 items-center rounded-full bg-olive px-5 text-sm font-semibold text-surface transition hover:bg-olive-deep"
+            className="inline-flex h-11 items-center rounded-full bg-olive px-5 text-sm font-semibold text-paper transition hover:bg-olive-deep"
           >
             {labels.seeAllTours}
           </Link>
@@ -37,7 +37,7 @@ export function HubView({ lang, hub }: { lang: Lang; hub: HubDef }) {
             href={BOOK_NOW_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 items-center rounded-full px-5 text-sm font-semibold text-earth ring-1 ring-line transition hover:bg-surface"
+            className="inline-flex h-11 items-center rounded-full px-5 text-sm font-semibold text-ink ring-1 ring-line transition hover:bg-surface"
           >
             {labels.bookNow}
           </a>

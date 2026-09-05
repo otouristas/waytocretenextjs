@@ -28,15 +28,15 @@ import {
 
 export const emailTheme = {
   earth: "#392420",
-  earthSoft: "#442f29",
-  olive: "#6c7c59",
+  earthSoft: "#392420",
+  olive: "#506551",
   oliveDeep: "#506551",
-  gold: "#e6d39a",
-  cream: "#f7f3ea",
-  sand: "#f1ece1",
-  paper: "#e4d8c4",
-  line: "#e4dccb",
-  muted: "#8a8474",
+  gold: "#ecede9",
+  cream: "#ecede9",
+  sand: "#ecede9",
+  paper: "#f5f5f2",
+  line: "#d5d9d2",
+  muted: "#6f605c",
   ink: "#392420",
 };
 

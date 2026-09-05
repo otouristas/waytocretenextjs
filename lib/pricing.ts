@@ -14,6 +14,8 @@ export type Party = {
   infants: number;
 };
 
+export type HourlyPrivate = Extract<PriceModel, { kind: "hourly_private" }>;
+
 export const EMPTY_PARTY: Party = { adults: 1, children: 0, infants: 0 };
 
 export type QuoteLine = {
@@ -67,14 +69,31 @@ function findTier(
 }
 
 /**
+ * Turn raw tour minutes (driving + stays) into the hours we actually bill.
+ *
+ * Ceil to `incrementMinutes`, then apply the published minimum. The planner
+ * engine computes the minutes; this is the only place the rounding lives, so
+ * a test and the live dock cannot disagree.
+ */
+export function billableHours(rawMinutes: number, price: HourlyPrivate): number {
+  const raw = Math.max(0, rawMinutes);
+  const rounded = Math.ceil(raw / price.incrementMinutes) * price.incrementMinutes;
+  return Math.max(price.minHours, rounded / 60);
+}
+
+/**
  * Price a party against a product.
  *
  * `date` is only consulted for early-bird cutoffs on fixed departures; it is
  * accepted as a plain YYYY-MM-DD string so this stays a pure function with no
  * dependence on the ambient clock (which would make it untestable and would
  * differ between the server render and the client rehydration).
+ *
+ * `hours` is only consulted for `hourly_private`. Omit it and the quote is
+ * the published minimum day — the "From €X" figure. The planner passes the
+ * already-rounded billable hours from `billableHours()`.
  */
-export function quote(price: PriceModel, party: Party, date?: string): Quote {
+export function quote(price: PriceModel, party: Party, date?: string, hours?: number): Quote {
   const guests = participants(party);
 
   switch (price.kind) {
@@ -240,6 +259,36 @@ export function quote(price: PriceModel, party: Party, date?: string): Quote {
         nudge: null,
       };
     }
+
+    case "hourly_private": {
+      const band = price.bands.find((b) => guests >= b.minGuests && guests <= b.maxGuests);
+      if (!band || guests < 1) {
+        return {
+          kind: "enquiry",
+          currency: "EUR",
+          indicativeFrom: price.minHours * Math.min(...price.bands.map((b) => b.perHour)),
+          reason: "out_of_range",
+        };
+      }
+      const billed = hours != null && hours > 0 ? hours : price.minHours;
+      const total = round(billed * band.perHour);
+      return {
+        kind: "priced",
+        currency: "EUR",
+        total,
+        perPerson: guests > 0 ? round(total / guests) : null,
+        lines: [
+          {
+            label: `${billed}h private tour`,
+            qty: 1,
+            unit: total,
+            total,
+          },
+        ],
+        deposit: null,
+        nudge: null,
+      };
+    }
   }
 }
 
@@ -262,6 +311,8 @@ export function priceFrom(price: PriceModel): number | null {
       return price.adult ?? price.privateGroup?.total ?? null;
     case "fixed_departure":
       return price.earlyBird?.price ?? price.standard;
+    case "hourly_private":
+      return price.minHours * Math.min(...price.bands.map((b) => b.perHour));
   }
 }
 
@@ -274,6 +325,8 @@ export function priceTo(price: PriceModel): number | null {
       return Math.max(...price.bands.map((b) => b.total));
     case "fixed_departure":
       return price.standard;
+    case "hourly_private":
+      return price.maxHours * Math.max(...price.bands.map((b) => b.perHour));
     default:
       return priceFrom(price);
   }

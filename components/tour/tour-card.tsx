@@ -51,13 +51,13 @@ export function TourCard({
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover transition duration-700 group-hover:scale-[1.06]"
           />
-          <span className="absolute left-3 top-3 rounded-full bg-hero/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-surface backdrop-blur-sm">
+          <span className="absolute left-3 top-3 rounded-full bg-hero/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-paper backdrop-blur-sm">
             {ui.categories[core.category as keyof typeof ui.categories] ?? core.category}
           </span>
         </div>
 
         <div className="flex flex-1 flex-col p-4">
-          <h3 className="font-display text-lg leading-snug text-earth">{copy.title}</h3>
+          <h3 className="font-display text-lg leading-snug text-ink">{copy.title}</h3>
 
           {copy.tagline ? (
             <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted">{copy.tagline}</p>
@@ -85,15 +85,15 @@ export function TourCard({
               {isPriced(core.price) && from != null ? (
                 <>
                   <span className="text-faint">{ui.fromPrice} </span>
-                  <span className="font-display text-xl font-semibold text-earth">
+                  <span className="font-display text-xl font-semibold text-ink">
                     {formatPrice(lang, from)}
                   </span>
                 </>
               ) : (
-                <span className="font-display text-lg font-semibold text-earth">{ui.onRequest}</span>
+                <span className="font-display text-lg font-semibold text-ink">{ui.onRequest}</span>
               )}
             </p>
-            <span className="rounded-full bg-olive-50 px-3.5 py-1.5 text-xs font-semibold text-olive-deep transition group-hover:bg-olive group-hover:text-surface">
+            <span className="rounded-full bg-olive-50 px-3.5 py-1.5 text-xs font-semibold text-accent transition group-hover:bg-olive group-hover:text-paper">
               {ui.bookThis}
             </span>
           </div>
@@ -105,7 +105,7 @@ export function TourCard({
 
 function Tag({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-olive-50 px-2 py-0.5 text-[10px] font-medium text-olive-deep">
+    <span className="inline-flex items-center gap-1 rounded-full bg-olive-50 px-2 py-0.5 text-[10px] font-medium text-accent">
       {icon}
       {children}
     </span>

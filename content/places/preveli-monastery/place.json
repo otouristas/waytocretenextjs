@@ -1,0 +1,17 @@
+{
+  "slug": "preveli-monastery",
+  "geo": { "lat": 35.157, "lng": 24.456 },
+  "kind": "monastery",
+  "sameAs": [
+    "https://en.wikipedia.org/wiki/Preveli",
+    "https://www.wikidata.org/wiki/Q388579"
+  ],
+  "elevationM": 170,
+  "lengthKm": null,
+  "openMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "entryFeeEur": null,
+  "driveFromRethymnoMinutes": 45,
+  "tours": ["south-crete-highlights", "spring-wildflowers-orchids-of-crete"],
+  "hero": null,
+  "gallery": []
+}

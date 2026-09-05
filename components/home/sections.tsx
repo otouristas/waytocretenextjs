@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, BadgeCheck, Camera, MessageCircle, Mountain, Users } from "lucide-react";
 import { langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
+import { plannerCopy } from "@/lib/i18n/planner";
 import type { Review } from "@/lib/content/schema";
 import { SOCIAL } from "@/lib/site";
 import { GoogleWordmark, TripAdvisorOwl } from "@/components/trust/source-logos";
@@ -28,8 +29,8 @@ export function SectionHead({
         <p
           className={
             tone === "dark"
-              ? "text-xs font-semibold uppercase tracking-[0.2em] text-gold-soft"
-              : "text-xs font-semibold uppercase tracking-[0.2em] text-olive"
+              ? "text-xs font-semibold uppercase tracking-[0.2em] text-paper"
+              : "text-xs font-semibold uppercase tracking-[0.2em] text-accent"
           }
         >
           {eyebrow}
@@ -37,8 +38,8 @@ export function SectionHead({
         <h2
           className={
             tone === "dark"
-              ? "mt-2 font-display text-3xl text-surface md:text-4xl"
-              : "mt-2 font-display text-3xl text-earth md:text-4xl"
+              ? "mt-2 font-display text-3xl text-paper md:text-4xl"
+              : "mt-2 font-display text-3xl text-ink md:text-4xl"
           }
         >
           {title}
@@ -49,8 +50,8 @@ export function SectionHead({
           href={href}
           className={
             tone === "dark"
-              ? "inline-flex items-center gap-1.5 text-sm font-semibold text-gold-soft hover:text-surface"
-              : "inline-flex items-center gap-1.5 text-sm font-semibold text-olive-deep hover:text-olive"
+              ? "inline-flex items-center gap-1.5 text-sm font-semibold text-paper hover:text-paper"
+              : "inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent"
           }
         >
           {linkLabel}
@@ -58,6 +59,28 @@ export function SectionHead({
         </Link>
       ) : null}
     </div>
+  );
+}
+
+export function PlannerHomeBand({ lang }: { lang: Lang }) {
+  const copy = plannerCopy(lang);
+  return (
+    <section className="mx-auto max-w-6xl px-4 pt-10 md:pt-12">
+      <Link
+        href={langPath(lang, "/create")}
+        className="group flex flex-col gap-4 overflow-hidden rounded-3xl bg-earth px-6 py-8 text-paper ring-1 ring-earth-deep transition hover:-translate-y-0.5 md:flex-row md:items-center md:justify-between md:px-10 md:py-9"
+      >
+        <div className="max-w-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-paper">{copy.homeEyebrow}</p>
+          <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">{copy.homeTitle}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-paper/90 md:text-base">{copy.homeLead}</p>
+        </div>
+        <span className="inline-flex items-center gap-2 self-start rounded-full bg-olive px-5 py-3 text-sm font-semibold text-paper group-hover:bg-olive-deep">
+          {copy.homeCta}
+          <ArrowRight className="size-4" />
+        </span>
+      </Link>
+    </section>
   );
 }
 
@@ -102,10 +125,10 @@ export function CategoryTiles({ lang, tiles }: { lang: Lang; tiles: Tile[] }) {
             />
             <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-hero/80 via-hero/20 to-transparent" />
             <span className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 p-4">
-              <span className="font-display text-lg text-surface">
+              <span className="font-display text-lg text-paper">
                 {ui.categories[tile.key as keyof typeof ui.categories] ?? tile.key}
               </span>
-              <ArrowRight className="size-4 shrink-0 text-gold-soft transition group-hover:translate-x-1" />
+              <ArrowRight className="size-4 shrink-0 text-paper transition group-hover:translate-x-1" />
             </span>
           </Link>
         ))}
@@ -121,7 +144,7 @@ const REASON_ICONS = [Users, Camera, Mountain, BadgeCheck, MessageCircle, BadgeC
 export function WhyBookDirect({ lang }: { lang: Lang }) {
   const ui = t(lang);
   return (
-    <section className="bg-earth py-16 text-surface md:py-20">
+    <section className="bg-earth py-16 text-paper md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHead eyebrow={ui.whyUs} title={ui.pointsTitle} tone="dark" />
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -130,12 +153,12 @@ export function WhyBookDirect({ lang }: { lang: Lang }) {
             return (
               <li
                 key={point}
-                className="flex gap-3 rounded-xl bg-earth-deep/45 p-5 ring-1 ring-gold/20"
+                className="flex gap-3 rounded-xl bg-earth-deep/45 p-5 ring-1 ring-paper/20"
               >
-                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-gold/15 text-gold-soft">
+                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-paper/15 text-paper">
                   <Icon className="size-4" />
                 </span>
-                <p className="text-sm leading-relaxed text-sand-200/90">{point}</p>
+                <p className="text-sm leading-relaxed text-paper/90">{point}</p>
               </li>
             );
           })}
@@ -171,7 +194,7 @@ export function Reviews({ lang, reviews }: { lang: Lang; reviews: Review[] }) {
               “{review.text}”
             </blockquote>
             <figcaption className="mt-5 border-t border-line pt-4 text-xs">
-              <span className="font-semibold text-earth">{review.author}</span>
+              <span className="font-semibold text-ink">{review.author}</span>
               <span className="text-faint"> · {review.source}</span>
             </figcaption>
           </figure>
@@ -265,7 +288,7 @@ export function GuidesTeaser({
                 </div>
               ) : null}
               <div className="p-5">
-                <h3 className="font-display text-lg leading-snug text-earth">{guide.title}</h3>
+                <h3 className="font-display text-lg leading-snug text-ink">{guide.title}</h3>
                 <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{guide.summary}</p>
               </div>
             </Link>
@@ -290,9 +313,9 @@ export function HomeFaq({ lang }: { lang: Lang }) {
       <div className="divide-y divide-line border-y border-line">
         {ui.faqs.map((item) => (
           <details key={item.q} className="group py-4">
-            <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-earth marker:content-['']">
+            <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-ink marker:content-['']">
               {item.q}
-              <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-olive-deep transition group-open:rotate-45">
+              <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-accent transition group-open:rotate-45">
                 +
               </span>
             </summary>

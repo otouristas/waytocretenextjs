@@ -29,7 +29,7 @@
   },
   "pickupTime": null,
   "durationMinutes": 10080,
-  "difficulty": "moderate",
+  "difficulty": "easy",
   "groupMin": 7,
   "groupMax": 14,
   "hotelPickup": false,

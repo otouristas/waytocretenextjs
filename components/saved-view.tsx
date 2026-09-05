@@ -37,13 +37,13 @@ export function SavedView({
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="font-display text-4xl text-earth">{ui.wishlist}</h1>
+      <h1 className="font-display text-4xl text-ink">{ui.wishlist}</h1>
 
       {!mounted ? (
         <div className="mt-10 h-40" />
       ) : chosen.length === 0 ? (
         <div className="mt-10 rounded-2xl bg-surface p-10 text-center ring-1 ring-line">
-          <span className="mx-auto grid size-12 place-items-center rounded-full bg-olive-50 text-olive-deep">
+          <span className="mx-auto grid size-12 place-items-center rounded-full bg-olive-50 text-accent">
             <Heart className="size-5" />
           </span>
           <p className="mt-4 text-muted">{ui.emptyTours}</p>

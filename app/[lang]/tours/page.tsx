@@ -179,10 +179,10 @@ export default async function Page({
       <JsonLd data={jsonLd} />
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <header className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             {ui.navTours}
           </p>
-          <h1 className="mt-2 font-display text-4xl text-earth md:text-5xl">
+          <h1 className="mt-2 font-display text-4xl text-ink md:text-5xl">
             {ui.toursHubTitle}
           </h1>
           <p className="mt-4 leading-relaxed text-muted">{ui.heroSub}</p>
@@ -202,10 +202,10 @@ export default async function Page({
 
             {results.length === 0 ? (
               <div className="mt-6 rounded-2xl bg-surface p-10 text-center ring-1 ring-line">
-                <p className="font-display text-lg text-earth">{ui.emptyTours}</p>
+                <p className="font-display text-lg text-ink">{ui.emptyTours}</p>
                 <Link
                   href={langPath(lang, "/tours")}
-                  className="mt-4 inline-flex rounded-full bg-olive px-5 py-2.5 text-sm font-semibold text-surface transition hover:bg-olive-deep"
+                  className="mt-4 inline-flex rounded-full bg-olive px-5 py-2.5 text-sm font-semibold text-paper transition hover:bg-olive-deep"
                 >
                   {ui.filterClearAll}
                 </Link>

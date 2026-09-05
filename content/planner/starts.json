@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "rethymno",
+    "geo": { "lat": 35.3655545, "lng": 24.4919838 },
+    "region": "rethymno-town"
+  },
+  {
+    "slug": "chania",
+    "geo": { "lat": 35.5138, "lng": 24.018 },
+    "region": "west"
+  },
+  {
+    "slug": "chania-airport",
+    "geo": { "lat": 35.5317, "lng": 24.1497 },
+    "region": "west"
+  },
+  {
+    "slug": "heraklion-airport",
+    "geo": { "lat": 35.3397, "lng": 25.1803 },
+    "region": "east"
+  }
+]

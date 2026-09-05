@@ -54,8 +54,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <JsonLd data={jsonLd} />
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
         <header className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">{ui.navGuides}</p>
-          <h1 className="mt-2 font-display text-4xl text-earth md:text-5xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{ui.navGuides}</p>
+          <h1 className="mt-2 font-display text-4xl text-ink md:text-5xl">
             {ui.guidesHubTitle}
           </h1>
           <p className="mt-4 leading-relaxed text-muted">{ui.guidesSeoDesc}</p>
@@ -85,10 +85,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 </div>
               ) : null}
               <div className="flex flex-col justify-center p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-olive">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
                   {ui.guideKinds[lead.core.kind]}
                 </p>
-                <h2 className="mt-2 font-display text-2xl leading-snug text-earth md:text-3xl">
+                <h2 className="mt-2 font-display text-2xl leading-snug text-ink md:text-3xl">
                   {lead.copy.title}
                 </h2>
                 <p className="mt-3 line-clamp-4 text-sm leading-relaxed text-muted">
@@ -116,10 +116,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                     </div>
                   ) : null}
                   <div className="flex flex-1 flex-col p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-olive">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
                       {ui.guideKinds[core.kind]}
                     </p>
-                    <h2 className="mt-1.5 font-display text-lg leading-snug text-earth">
+                    <h2 className="mt-1.5 font-display text-lg leading-snug text-ink">
                       {copy.title}
                     </h2>
                     <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">

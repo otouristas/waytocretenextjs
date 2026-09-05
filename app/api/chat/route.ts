@@ -1,16 +1,8 @@
-import {
-  convertToModelMessages,
-  createUIMessageStream,
-  createUIMessageStreamResponse,
-  isStepCount,
-  streamText,
-  type UIMessage,
-} from "ai";
+import { createUIMessageStream, createUIMessageStreamResponse, type UIMessage } from "ai";
 import { parseLang } from "@/lib/i18n/langs";
 import { deskCopy } from "@/lib/i18n/desk";
-import { answerLocally, deskSystemPrompt } from "@/lib/desk/brain";
+import { answerLocally } from "@/lib/desk/brain";
 import { DESK_DATA_PART } from "@/lib/desk/cards";
-import { deskTools } from "@/lib/desk/tools";
 
 export const maxDuration = 60;
 
@@ -28,14 +20,12 @@ function lastUserText(messages: UIMessage[]) {
 }
 
 /**
- * The desk answering from its own content.
- *
- * Streams the prose as text and the tours or routes as a `data-desk` part, so
- * the same cards render whether or not a model was involved. Without this the
- * no-gateway path — every local build, and any deploy missing the key — could
- * only return a paragraph.
+ * Olive answers from the catalogue, FAQs, prices and routes already on
+ * this site. A Vercel OIDC token in `.env.local` is enough for the AI SDK
+ * to bill the gateway — that is not this desk, and this route never
+ * calls a model.
  */
-async function offlineResponse(text: string, lang: ReturnType<typeof parseLang>, path: string) {
+async function localResponse(text: string, lang: ReturnType<typeof parseLang>, path: string) {
   const answer = await answerLocally(text || "hello", lang, path);
   const stream = createUIMessageStream({
     execute: ({ writer }) => {
@@ -49,10 +39,6 @@ async function offlineResponse(text: string, lang: ReturnType<typeof parseLang>,
     },
   });
   return createUIMessageStreamResponse({ stream });
-}
-
-function hasGateway() {
-  return Boolean(process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN);
 }
 
 export async function POST(req: Request) {
@@ -70,23 +56,5 @@ export async function POST(req: Request) {
     return new Response(deskCopy(lang).emptyChat, { status: 400 });
   }
 
-  if (!hasGateway()) {
-    return await offlineResponse(userText, lang, path);
-  }
-
-  try {
-    const result = streamText({
-      model: process.env.AI_GATEWAY_MODEL || "openai/gpt-5.4-mini",
-      system: deskSystemPrompt(lang, path),
-      messages: await convertToModelMessages(messages, { ignoreIncompleteToolCalls: true }),
-      tools: deskTools(lang),
-      stopWhen: isStepCount(6),
-    });
-    return result.toUIMessageStreamResponse({
-      onError: () => "The desk could not finish that reply. Try WhatsApp.",
-    });
-  } catch (error) {
-    console.error("Desk chat failed", error);
-    return await offlineResponse(userText, lang, path);
-  }
+  return await localResponse(userText, lang, path);
 }

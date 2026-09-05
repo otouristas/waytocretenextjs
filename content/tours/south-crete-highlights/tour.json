@@ -31,15 +31,9 @@
       "perPerson": true,
       "optional": true,
       "note": "Food and drinks are not included."
-    },
-    {
-      "label": "Optional guide",
-      "amount": null,
-      "perPerson": false,
-      "optional": true,
-      "note": "A guide can be added for an additional fee."
     }
   ],
+  "privateGuide": { "amount": 150, "currency": "EUR" },
   "cadence": {
     "kind": "daily"
   },

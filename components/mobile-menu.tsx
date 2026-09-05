@@ -21,6 +21,7 @@ import { t } from "@/lib/i18n/ui";
 import { MHTE_LICENCE, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/site";
 import { GoogleWordmark, Stars } from "@/components/trust/source-logos";
 import { BrandLogo } from "@/components/brand-logo";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/cn";
 import type { NavColumn, NavEntry, NavTour } from "@/lib/nav/catalog";
 import { formatPrice } from "@/lib/format";
@@ -70,14 +71,17 @@ export function MobileMenu({
         <div onClick={onClose}>
           <BrandLogo lang={lang} height={36} />
         </div>
-        <button
-          type="button"
-          onClick={onClose}
-          className="grid size-11 place-items-center rounded-full bg-bg text-earth"
-          aria-label={copy.menuClose}
-        >
-          <X className="size-5" />
-        </button>
+        <div className="flex items-center gap-1.5">
+          <ThemeToggle toLight={copy.themeToLight} toDark={copy.themeToDark} />
+          <button
+            type="button"
+            onClick={onClose}
+            className="grid size-11 place-items-center rounded-full bg-bg text-ink"
+            aria-label={copy.menuClose}
+          >
+            <X className="size-5" />
+          </button>
+        </div>
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
@@ -95,7 +99,7 @@ export function MobileMenu({
             className="flex items-center gap-3 border-b border-line bg-surface px-5 py-3 text-xs text-muted"
           >
             <Stars value={rating.average} size={14} />
-            <span className="font-semibold text-earth">{rating.average.toFixed(1)}</span>
+            <span className="font-semibold text-ink">{rating.average.toFixed(1)}</span>
             <span className="inline-flex translate-y-[1px] items-center">
               <GoogleWordmark className="h-3 w-auto" />
             </span>
@@ -115,10 +119,10 @@ export function MobileMenu({
                     onClick={onClose}
                     className="group flex items-center justify-between gap-3 py-3.5"
                   >
-                    <span className="font-display text-[1.65rem] leading-none text-olive-deep">
+                    <span className="font-display text-[1.65rem] leading-none text-accent">
                       {item.label}
                     </span>
-                    <ArrowUpRight className="size-5 shrink-0 text-line transition group-hover:text-olive" />
+                    <ArrowUpRight className="size-5 shrink-0 text-line transition group-hover:text-accent" />
                   </Link>
                 ) : (
                   <AccordionItem
@@ -136,13 +140,13 @@ export function MobileMenu({
           <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-muted">
             {secondaryNav(lang).map((item) => (
               <li key={item.href}>
-                <Link href={item.href} onClick={onClose} className="hover:text-olive-deep">
+                <Link href={item.href} onClick={onClose} className="hover:text-accent">
                   {item.label}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href={langPath(lang, "/saved")} onClick={onClose} className="hover:text-olive-deep">
+              <Link href={langPath(lang, "/saved")} onClick={onClose} className="hover:text-accent">
                 {copy.wishlist}
               </Link>
             </li>
@@ -160,7 +164,7 @@ export function MobileMenu({
                   href={langPath(code, restPath)}
                   className={cn(
                     "grid h-10 place-items-center rounded-lg text-[11px] font-bold uppercase ring-1 ring-line",
-                    code === lang ? "bg-olive text-surface ring-olive" : "bg-surface text-muted",
+                    code === lang ? "bg-olive text-paper ring-olive" : "bg-surface text-muted",
                   )}
                 >
                   {LANG_META[code].hreflang}
@@ -171,7 +175,7 @@ export function MobileMenu({
 
           {MHTE_LICENCE ? (
             <p className="mt-5 inline-flex items-center gap-1.5 text-[11px] text-faint">
-              <BadgeCheck className="size-3.5 text-olive" />
+              <BadgeCheck className="size-3.5 text-accent" />
               {copy.gntoLicence} {MHTE_LICENCE}
             </p>
           ) : null}
@@ -184,7 +188,7 @@ export function MobileMenu({
             href={bookNowHref}
             {...(bookNowExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             onClick={onClose}
-            className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-olive text-sm font-semibold uppercase tracking-[0.12em] text-surface"
+            className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-olive text-sm font-semibold uppercase tracking-[0.12em] text-paper"
           >
             {labels.bookNow}
           </a>
@@ -193,14 +197,14 @@ export function MobileMenu({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={copy.whatsapp}
-            className="grid size-12 shrink-0 place-items-center rounded-full bg-surface/15 text-surface ring-1 ring-surface/25"
+            className="grid size-12 shrink-0 place-items-center rounded-full bg-paper/15 text-paper ring-1 ring-paper/25"
           >
             <MessageCircle className="size-5" />
           </a>
           <a
             href={`tel:${PHONE}`}
             aria-label={PHONE_DISPLAY}
-            className="grid size-12 shrink-0 place-items-center rounded-full bg-surface/15 text-surface ring-1 ring-surface/25"
+            className="grid size-12 shrink-0 place-items-center rounded-full bg-paper/15 text-paper ring-1 ring-paper/25"
           >
             <Phone className="size-5" />
           </a>
@@ -236,12 +240,12 @@ function AccordionItem({
           <Link
             href={item.href}
             onClick={onClose}
-            className="min-w-0 flex-1 py-3.5 font-display text-[1.65rem] leading-none text-olive-deep"
+            className="min-w-0 flex-1 py-3.5 font-display text-[1.65rem] leading-none text-accent"
           >
             {item.label}
           </Link>
         ) : (
-          <span className="min-w-0 flex-1 py-3.5 font-display text-[1.65rem] leading-none text-olive-deep">
+          <span className="min-w-0 flex-1 py-3.5 font-display text-[1.65rem] leading-none text-accent">
             {item.label}
           </span>
         )}
@@ -250,7 +254,7 @@ function AccordionItem({
           onClick={onToggle}
           aria-expanded={open}
           aria-label={`${copy.openMenu}: ${item.label}`}
-          className="grid size-10 shrink-0 place-items-center rounded-full bg-bg text-earth"
+          className="grid size-10 shrink-0 place-items-center rounded-full bg-bg text-ink"
         >
           <ChevronDown className={cn("size-5 transition", open && "rotate-180")} />
         </button>
@@ -301,7 +305,7 @@ function MobileColumn({
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-3 py-2.5 text-left"
       >
-        <span className="text-sm font-semibold text-earth">{column.short}</span>
+        <span className="text-sm font-semibold text-ink">{column.short}</span>
         <ChevronDown className={cn("size-4 text-faint transition", open && "rotate-180")} />
       </button>
       {open ? (
@@ -315,7 +319,7 @@ function MobileColumn({
             <Link
               href={column.href}
               onClick={onClose}
-              className="block py-2 text-xs font-semibold text-olive-deep"
+              className="block py-2 text-xs font-semibold text-accent"
             >
               {seeCollection}
             </Link>
@@ -340,8 +344,8 @@ function TourLink({ tour, lang, onClose }: { tour: NavTour; lang: Lang; onClose:
 
 function Perk({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <li className="flex items-center gap-2 bg-surface px-4 py-3 text-[11px] font-semibold leading-tight text-earth">
-      <span className="shrink-0 text-olive">{icon}</span>
+    <li className="flex items-center gap-2 bg-surface px-4 py-3 text-[11px] font-semibold leading-tight text-ink">
+      <span className="shrink-0 text-accent">{icon}</span>
       {label}
     </li>
   );

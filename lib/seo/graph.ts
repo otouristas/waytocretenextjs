@@ -149,7 +149,7 @@ export function offerNode(price: PriceModel, url: string): Node | null {
     const offerCount =
       price.kind === "sliding_per_person"
         ? price.tiers.length
-        : price.kind === "banded_group"
+        : price.kind === "banded_group" || price.kind === "hourly_private"
           ? price.bands.length
           : 2;
     return { "@type": "AggregateOffer", ...base, lowPrice: low, highPrice: high, offerCount };

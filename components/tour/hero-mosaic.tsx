@@ -72,7 +72,7 @@ export function TourHeroMosaic({
                 className="object-cover transition duration-700 hover:scale-105"
               />
               {i === tiles.length - 1 && total > images.length && moreLabel ? (
-                <span className="pointer-events-none absolute inset-0 grid place-items-center bg-hero/45 text-sm font-semibold text-surface">
+                <span className="pointer-events-none absolute inset-0 grid place-items-center bg-hero/45 text-sm font-semibold text-paper">
                   {moreLabel}
                 </span>
               ) : null}

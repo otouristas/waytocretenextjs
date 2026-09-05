@@ -1,0 +1,65 @@
+[
+  {
+    "id": "south-coast",
+    "interests": ["beach", "nature", "villages", "hidden"],
+    "stops": ["kourtaliotiko-gorge", "preveli-monastery", "preveli-beach", "triopetra-beach", "spili"],
+    "matchTour": "south-crete-highlights",
+    "preferStarts": ["rethymno"]
+  },
+  {
+    "id": "hidden-south",
+    "interests": ["hidden", "beach", "villages"],
+    "stops": ["spili", "preveli-beach", "plakias"],
+    "matchTour": "south-crete-highlights",
+    "preferStarts": ["rethymno"]
+  },
+  {
+    "id": "wine-villages",
+    "interests": ["wine", "food", "villages"],
+    "stops": ["klados-winery", "margarites", "spili"],
+    "matchTour": "cretan-honey-wine-experience",
+    "preferStarts": ["rethymno"]
+  },
+  {
+    "id": "history-hills",
+    "interests": ["history", "villages"],
+    "stops": ["arkadi-monastery", "eleftherna", "margarites", "melidoni-cave"],
+    "matchTour": "timeless-crete-villages-monasteries",
+    "preferStarts": ["rethymno"]
+  },
+  {
+    "id": "kournas-springs",
+    "interests": ["nature", "villages", "food"],
+    "stops": ["lake-kournas", "argyroupoli", "georgioupoli"],
+    "matchTour": "lake-kournas-argyroupoli-springs-tour",
+    "preferStarts": ["rethymno", "chania"]
+  },
+  {
+    "id": "old-town-taste",
+    "interests": ["food", "history"],
+    "stops": ["rethymno-old-town", "klados-winery"],
+    "matchTour": "rethymno-walk-taste",
+    "preferStarts": ["rethymno"]
+  },
+  {
+    "id": "west-beach",
+    "interests": ["beach", "nature"],
+    "stops": ["elafonisi"],
+    "matchTour": "elafonisi-pink-sand-beach-tour-from-rethymno",
+    "preferStarts": ["chania", "chania-airport"]
+  },
+  {
+    "id": "knossos-day",
+    "interests": ["history"],
+    "stops": ["knossos"],
+    "matchTour": "knossos-palace-private-tour",
+    "preferStarts": ["heraklion-airport"]
+  },
+  {
+    "id": "imbros-hike",
+    "interests": ["hiking", "nature"],
+    "stops": ["imbros-gorge"],
+    "matchTour": "imbros-gorge-guided-tour",
+    "preferStarts": ["rethymno", "chania"]
+  }
+]

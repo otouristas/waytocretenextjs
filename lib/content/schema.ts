@@ -141,6 +141,30 @@ export const PriceModel = z.discriminatedUnion("kind", [
     currency: z.literal("EUR").default("EUR"),
     indicativeFrom: z.number().positive().nullable().default(null),
   }),
+
+  /**
+   * A private van day billed by the hour. Create Your Own Crete Experience.
+   * `quote()` takes the already-computed billable hours; the planner engine
+   * is what turns driving + stays into that number. `priceFrom` is always
+   * `minHours ×` the cheapest band — the honest "From €X" on the create page.
+   */
+  z.object({
+    kind: z.literal("hourly_private"),
+    currency: z.literal("EUR").default("EUR"),
+    minHours: z.number().positive(),
+    maxHours: z.number().positive(),
+    warnHours: z.number().positive(),
+    incrementMinutes: z.number().int().positive(),
+    bands: z
+      .array(
+        z.object({
+          minGuests: z.number().int().min(1),
+          maxGuests: z.number().int().min(1),
+          perHour: z.number().positive(),
+        }),
+      )
+      .min(1),
+  }),
 ]);
 export type PriceModel = z.infer<typeof PriceModel>;
 
@@ -219,6 +243,17 @@ export const TourCore = z.object({
 
   price: PriceModel,
   thirdPartyCosts: z.array(ThirdPartyCost).default([]),
+  /**
+   * Optional private local guide. Shown in the booking widget and payable
+   * to the guide on the day — never added to `quote()` or the live checkout.
+   */
+  privateGuide: z
+    .object({
+      amount: z.number().positive(),
+      currency: z.literal("EUR").default("EUR"),
+    })
+    .nullable()
+    .default(null),
 
   cadence: Cadence,
   /** Local time, 24h "HH:MM", or null for on-request products. */
@@ -459,3 +494,84 @@ export const Author = z.object({
   sameAs: z.array(Url).default([]),
 });
 export type Author = z.infer<typeof Author>;
+
+/* ────────────────────────────── planner ────────────────────────────── */
+
+export const PlannerRegion = z.enum([
+  "rethymno-town",
+  "rethymno-south",
+  "rethymno-hills",
+  "west",
+  "far-west",
+  "east",
+  "sfakia",
+]);
+export type PlannerRegion = z.infer<typeof PlannerRegion>;
+
+export const PlannerInterest = z.enum([
+  "beach",
+  "villages",
+  "food",
+  "wine",
+  "history",
+  "hiking",
+  "hidden",
+  "nature",
+]);
+export type PlannerInterest = z.infer<typeof PlannerInterest>;
+
+export const PlannerNeed = z.enum(["ticket", "hike", "boat"]);
+export type PlannerNeed = z.infer<typeof PlannerNeed>;
+
+export const PlannerAddon = z.enum(["guide", "lunch", "wine", "experience"]);
+export type PlannerAddon = z.infer<typeof PlannerAddon>;
+
+export const PlannerStart = z.object({
+  slug: Slug,
+  geo: GeoPoint,
+  region: PlannerRegion,
+});
+export type PlannerStart = z.infer<typeof PlannerStart>;
+
+export const PlannerStop = z.object({
+  slug: Slug,
+  geo: GeoPoint,
+  categories: z.array(PlannerInterest).min(1),
+  region: PlannerRegion,
+  suggestedStayMin: z.number().int().positive(),
+  minStayMin: z.number().int().positive(),
+  maxStayMin: z.number().int().positive(),
+  pairsWell: z.array(Slug).default([]),
+  needs: z.array(PlannerNeed).default([]),
+  place: Slug.nullable().default(null),
+  tour: Slug.nullable().default(null),
+  hero: z.string().nullable().default(null),
+});
+export type PlannerStop = z.infer<typeof PlannerStop>;
+
+export const PlannerLeg = z.object({
+  from: Slug,
+  to: Slug,
+  minutes: z.number().int().positive(),
+});
+export type PlannerLeg = z.infer<typeof PlannerLeg>;
+
+export const PlannerTemplate = z.object({
+  id: Slug,
+  interests: z.array(PlannerInterest).min(1),
+  stops: z.array(Slug).min(1),
+  matchTour: Slug.nullable().default(null),
+  preferStarts: z.array(Slug).default([]),
+});
+export type PlannerTemplate = z.infer<typeof PlannerTemplate>;
+
+export const PlannerStopCopy = z.object({
+  name: z.string().min(1),
+  blurb: z.string().min(1),
+});
+
+export const PlannerCopyFile = z.object({
+  starts: z.record(z.string(), z.string().min(1)),
+  stops: z.record(z.string(), PlannerStopCopy),
+});
+export type PlannerCopyFile = z.infer<typeof PlannerCopyFile>;

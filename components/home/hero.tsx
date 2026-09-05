@@ -45,13 +45,13 @@ export function HomeHero({ lang }: { lang: Lang }) {
 
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-6xl px-4 pb-28 md:pb-32">
-            <p className="font-script text-2xl text-gold-soft md:text-3xl">{copy.desk}</p>
+            <p className="font-script text-2xl text-paper md:text-3xl">{copy.desk}</p>
 
-            <h1 className="mt-3 max-w-3xl font-display text-[2.6rem] leading-[1.02] text-surface md:text-6xl lg:text-[4.25rem]">
+            <h1 className="mt-3 max-w-3xl font-display text-[2.6rem] leading-[1.02] text-paper md:text-6xl lg:text-[4.25rem]">
               {copy.heroTitle}
             </h1>
 
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-sand-200/90 md:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-paper/90 md:text-lg">
               {copy.heroSub}
             </p>
 
@@ -77,8 +77,8 @@ export function HomeHero({ lang }: { lang: Lang }) {
 
 function Chip({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <li className="flex items-center gap-2 rounded-full bg-surface/12 px-3.5 py-1.5 text-xs font-medium text-sand-100 ring-1 ring-surface/25 backdrop-blur-sm">
-      <span className="text-gold-soft">{icon}</span>
+    <li className="flex items-center gap-2 rounded-full bg-paper/12 px-3.5 py-1.5 text-xs font-medium text-paper ring-1 ring-paper/25 backdrop-blur-sm">
+      <span className="text-paper">{icon}</span>
       {children}
     </li>
   );

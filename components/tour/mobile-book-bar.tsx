@@ -75,7 +75,7 @@ export function MobileBookBar({
             <span className="block text-[9px] font-semibold uppercase tracking-[0.14em] text-faint">
               {ui.fromPrice}
             </span>
-            <span className="font-display text-base font-semibold text-earth">
+            <span className="font-display text-base font-semibold text-ink">
               {formatPrice(lang, priceFrom)}
             </span>
           </p>
@@ -86,7 +86,7 @@ export function MobileBookBar({
             href={bookHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 flex-1 items-center justify-center truncate rounded-full bg-olive px-4 text-sm font-semibold text-surface shadow-[0_1px_0_rgba(255,255,255,0.28)_inset] transition hover:bg-olive-deep"
+            className="inline-flex min-h-11 flex-1 items-center justify-center truncate rounded-full bg-olive px-4 text-sm font-semibold text-paper shadow-[0_1px_0_rgba(236,237,233,0.28)_inset] transition hover:bg-olive-deep"
           >
             {ui.bookNow}
           </a>
@@ -98,7 +98,7 @@ export function MobileBookBar({
                 .getElementById("booking-panel")
                 ?.scrollIntoView({ behavior: "smooth", block: "start" })
             }
-            className="inline-flex min-h-11 flex-1 items-center justify-center truncate rounded-full bg-olive px-4 text-sm font-semibold text-surface shadow-[0_1px_0_rgba(255,255,255,0.28)_inset] transition hover:bg-olive-deep"
+            className="inline-flex min-h-11 flex-1 items-center justify-center truncate rounded-full bg-olive px-4 text-sm font-semibold text-paper shadow-[0_1px_0_rgba(236,237,233,0.28)_inset] transition hover:bg-olive-deep"
           >
             {ui.bookNow}
           </button>
@@ -119,9 +119,9 @@ export function MobileBookBar({
           type="button"
           onClick={openDeskChat}
           aria-label={ui.chatOpen}
-          className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full bg-surface/60 px-3.5 text-xs font-semibold text-earth ring-1 ring-line transition hover:bg-surface"
+          className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-full bg-surface/60 px-3.5 text-xs font-semibold text-ink ring-1 ring-line transition hover:bg-surface"
         >
-          <SparkGlyph className="size-4 text-olive" />
+          <SparkGlyph className="size-4 text-accent" />
           <span>AI</span>
         </button>
       </div>

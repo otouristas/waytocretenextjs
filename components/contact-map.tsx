@@ -38,7 +38,7 @@ export function ContactMap({ lang }: { lang: Lang }) {
 
   return (
     <section aria-labelledby="find-us" className="mt-12">
-      <h2 id="find-us" className="font-display text-2xl text-earth">
+      <h2 id="find-us" className="font-display text-2xl text-ink">
         {copy.findUs}
       </h2>
 
@@ -65,12 +65,12 @@ export function ContactMap({ lang }: { lang: Lang }) {
               {/* A schematic pin over the texture rather than a static map
                   image: a real Maps static tile is another Google request,
                   which is the thing this component exists to defer. */}
-              <span className="grid size-14 place-items-center rounded-full bg-olive text-surface shadow-[0_12px_28px_-10px_rgba(57,36,32,0.55)] transition group-hover:scale-105">
+              <span className="grid size-14 place-items-center rounded-full bg-olive text-paper shadow-[0_12px_28px_-10px_rgba(57,36,32,0.55)] transition group-hover:scale-105">
                 <MapPin className="size-6" />
               </span>
               <span className="px-6">
-                <span className="flex items-center justify-center gap-2 font-display text-lg text-earth">
-                  <Play className="size-3.5 fill-current text-olive" />
+                <span className="flex items-center justify-center gap-2 font-display text-lg text-ink">
+                  <Play className="size-3.5 fill-current text-accent" />
                   {copy.showMap}
                 </span>
                 <span className="mt-1 block max-w-sm text-xs leading-relaxed text-muted">
@@ -83,7 +83,7 @@ export function ContactMap({ lang }: { lang: Lang }) {
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line px-5 py-4">
           <address className="text-sm not-italic leading-relaxed text-muted">
-            <span className="block font-semibold text-earth">{BRAND}</span>
+            <span className="block font-semibold text-ink">{BRAND}</span>
             {ADDRESS.street}, {ADDRESS.locality} {ADDRESS.postalCode}, {ADDRESS.region}
             <span className="mt-0.5 block text-xs text-faint">
               {GEO.lat.toFixed(5)}, {GEO.lng.toFixed(5)}
@@ -95,7 +95,7 @@ export function ContactMap({ lang }: { lang: Lang }) {
               href={MAP_DIRECTIONS}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-olive px-4 py-2.5 text-sm font-semibold text-surface transition hover:bg-olive-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-olive px-4 py-2.5 text-sm font-semibold text-paper transition hover:bg-olive-deep"
             >
               <Navigation className="size-3.5" />
               {copy.directions}
@@ -104,7 +104,7 @@ export function ContactMap({ lang }: { lang: Lang }) {
               href={MAP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-olive-deep ring-1 ring-line transition hover:bg-bg"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-accent ring-1 ring-line transition hover:bg-bg"
             >
               <ExternalLink className="size-3.5" />
               {copy.openInMaps}

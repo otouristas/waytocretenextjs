@@ -48,17 +48,17 @@ export function Prose({ markdown, anchors = false }: { markdown: string; anchors
     <div
       className={[
         "max-w-none text-[15px] leading-relaxed text-muted",
-        "[&_h2]:mt-10 [&_h2]:scroll-mt-28 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:text-earth",
-        "[&_h3]:mt-7 [&_h3]:scroll-mt-28 [&_h3]:font-display [&_h3]:text-lg [&_h3]:text-earth",
+        "[&_h2]:mt-10 [&_h2]:scroll-mt-28 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:text-ink",
+        "[&_h3]:mt-7 [&_h3]:scroll-mt-28 [&_h3]:font-display [&_h3]:text-lg [&_h3]:text-ink",
         "[&_p]:mt-4",
         "[&_ul]:mt-4 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5",
         "[&_ol]:mt-4 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_ol]:pl-5",
-        "[&_strong]:font-semibold [&_strong]:text-earth",
-        "[&_a]:font-medium [&_a]:text-olive-deep [&_a]:underline",
+        "[&_strong]:font-semibold [&_strong]:text-ink",
+        "[&_a]:font-medium [&_a]:text-accent [&_a]:underline",
         "[&_blockquote]:mt-5 [&_blockquote]:border-l-2 [&_blockquote]:border-olive [&_blockquote]:pl-4 [&_blockquote]:italic",
         // Wide tables scroll inside their own box; the page never scrolls sideways.
         "[&_table]:mt-6 [&_table]:block [&_table]:w-full [&_table]:overflow-x-auto [&_table]:border-collapse [&_table]:text-sm",
-        "[&_th]:border-b [&_th]:border-line [&_th]:px-3 [&_th]:py-2.5 [&_th]:text-left [&_th]:font-semibold [&_th]:text-earth [&_th]:whitespace-nowrap",
+        "[&_th]:border-b [&_th]:border-line [&_th]:px-3 [&_th]:py-2.5 [&_th]:text-left [&_th]:font-semibold [&_th]:text-ink [&_th]:whitespace-nowrap",
         "[&_td]:border-b [&_td]:border-line [&_td]:px-3 [&_td]:py-2.5 [&_td]:align-top",
         "[&_tbody_tr:hover]:bg-surface",
       ].join(" ")}
@@ -84,12 +84,12 @@ export function QuickAnswers({
   if (items.length === 0) return null;
   return (
     <section className="mt-8 rounded-2xl bg-surface p-5 ring-1 ring-line">
-      <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-olive">{title}</h2>
+      <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">{title}</h2>
       <dl className="mt-3 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
         {items.map((item) => (
           <div key={item.term} className="flex justify-between gap-4 border-b border-line pb-2">
             <dt className="text-sm text-faint">{item.term}</dt>
-            <dd className="text-right text-sm font-semibold text-earth">{item.value}</dd>
+            <dd className="text-right text-sm font-semibold text-ink">{item.value}</dd>
           </div>
         ))}
       </dl>

@@ -61,6 +61,8 @@ function priceLine(price: Parameters<typeof isPriced>[0]): string {
         : "for the group"
       : price.kind === "banded_group"
         ? "for the group"
+        : price.kind === "hourly_private"
+          ? "for a 5-hour private day"
         : "per person";
 
   if (high != null && high !== low) return `€${low}–${high} ${unit}`;
@@ -193,6 +195,11 @@ export function llmsFullTxt(): string {
     out.push(`- Hotel pickup: ${core.hotelPickup ? "yes, across the Rethymno area" : "no"}`);
     if (core.photoshoot) out.push("- Includes a professional photoshoot at no extra cost");
     out.push(`- Free cancellation: up to ${core.cancelFreeHours} hours before pickup`);
+    if (core.privateGuide) {
+      out.push(
+        `- Optional private local guide: €${core.privateGuide.amount}, payable to the guide on the day of the tour, not part of the tour price and not charged online`,
+      );
+    }
     if (core.thirdPartyCosts.length > 0) {
       out.push(
         `- Paid on the day to third parties: ${core.thirdPartyCosts

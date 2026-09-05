@@ -101,12 +101,12 @@ export function FilterRail({ lang, facets }: { lang: Lang; facets: Facets }) {
     <aside className="hidden lg:sticky lg:top-28 lg:block">
       <div className="overflow-hidden rounded-2xl bg-surface ring-1 ring-line">
         <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-4">
-          <h2 className="font-display text-base text-earth">{ui.filters}</h2>
+          <h2 className="font-display text-base text-ink">{ui.filters}</h2>
           {count > 0 ? (
             <button
               type="button"
               onClick={clearAll}
-              className="rounded-full px-2 py-1 text-xs font-semibold text-olive-deep underline decoration-olive-200 underline-offset-4 transition hover:decoration-olive focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+              className="rounded-full px-2 py-1 text-xs font-semibold text-accent underline decoration-olive-200 underline-offset-4 transition hover:decoration-olive focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
             >
               {ui.filterClearAll}
             </button>
@@ -147,7 +147,7 @@ export function FilterBar({
     <>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-muted" aria-live="polite">
-          <span className="font-semibold text-earth">{total}</span>{" "}
+          <span className="font-semibold text-ink">{total}</span>{" "}
           {total === 1 ? ui.experience : ui.experiences}
         </p>
 
@@ -156,12 +156,12 @@ export function FilterBar({
             ref={triggerRef}
             type="button"
             onClick={() => setOpen(true)}
-            className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm font-semibold text-earth ring-1 ring-line transition hover:ring-olive-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive lg:hidden"
+            className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm font-semibold text-ink ring-1 ring-line transition hover:ring-olive-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive lg:hidden"
           >
-            <SlidersHorizontal className="size-4 text-olive" />
+            <SlidersHorizontal className="size-4 text-accent" />
             {ui.filters}
             {count > 0 ? (
-              <span className="grid size-5 place-items-center rounded-full bg-olive text-[11px] font-semibold tabular-nums text-surface">
+              <span className="grid size-5 place-items-center rounded-full bg-olive text-[11px] font-semibold tabular-nums text-paper">
                 {count}
               </span>
             ) : null}
@@ -179,7 +179,7 @@ export function FilterBar({
                 type="button"
                 onClick={() => setParam(chip.key, null)}
                 aria-label={`${ui.filterClearOne}: ${chip.label}`}
-                className="inline-flex items-center gap-1.5 rounded-full bg-olive-50 py-1.5 pl-3 pr-2.5 text-xs font-medium text-olive-deep transition hover:bg-olive-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+                className="inline-flex items-center gap-1.5 rounded-full bg-olive-50 py-1.5 pl-3 pr-2.5 text-xs font-medium text-accent transition hover:bg-olive-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
               >
                 {chip.label}
                 <X className="size-3.5" />
@@ -190,7 +190,7 @@ export function FilterBar({
             <button
               type="button"
               onClick={clearAll}
-              className="rounded-full px-2 py-1.5 text-xs font-semibold text-faint underline underline-offset-4 transition hover:text-olive-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+              className="rounded-full px-2 py-1.5 text-xs font-semibold text-faint underline underline-offset-4 transition hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
             >
               {ui.filterClearAll}
             </button>
@@ -237,7 +237,7 @@ function SortSelect({ lang }: { lang: Lang }) {
           // rather than a value for it — no `?sort=popular` in shared links.
           setParam("sort", event.target.value === "popular" ? null : event.target.value)
         }
-        className="cursor-pointer appearance-none bg-transparent pr-1 font-semibold text-earth focus:outline-none"
+        className="cursor-pointer appearance-none bg-transparent pr-1 font-semibold text-ink focus:outline-none"
       >
         {SORTS.map((value) => (
           <option key={value} value={value}>
@@ -297,12 +297,12 @@ function FilterSheet({
         className="absolute inset-x-0 bottom-0 flex max-h-[88vh] flex-col rounded-t-3xl bg-surface shadow-[0_-24px_60px_-20px_rgba(57,36,32,0.55)] focus:outline-none"
       >
         <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-4">
-          <h2 className="font-display text-lg text-earth">{ui.filters}</h2>
+          <h2 className="font-display text-lg text-ink">{ui.filters}</h2>
           <button
             type="button"
             onClick={onClose}
             aria-label={ui.filterClose}
-            className="grid size-9 place-items-center rounded-full text-earth transition hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+            className="grid size-9 place-items-center rounded-full text-ink transition hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
           >
             <X className="size-4" />
           </button>
@@ -317,7 +317,7 @@ function FilterSheet({
             <button
               type="button"
               onClick={clearAll}
-              className="rounded-full px-3 py-2.5 text-sm font-semibold text-muted underline underline-offset-4 transition hover:text-olive-deep"
+              className="rounded-full px-3 py-2.5 text-sm font-semibold text-muted underline underline-offset-4 transition hover:text-accent"
             >
               {ui.filterClearAll}
             </button>
@@ -325,7 +325,7 @@ function FilterSheet({
           <button
             type="button"
             onClick={onClose}
-            className="ml-auto rounded-full bg-olive px-6 py-2.5 text-sm font-semibold text-surface transition hover:bg-olive-deep"
+            className="ml-auto rounded-full bg-olive px-6 py-2.5 text-sm font-semibold text-paper transition hover:bg-olive-deep"
           >
             {ui.filterShow} {total} {total === 1 ? ui.experience : ui.experiences}
           </button>
@@ -415,14 +415,14 @@ function Pill({
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition",
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive",
-        active && "bg-olive text-surface shadow-[0_6px_16px_-10px_rgba(57,36,32,0.8)]",
+        active && "bg-olive text-paper shadow-[0_6px_16px_-10px_rgba(57,36,32,0.8)]",
         !active && !empty && "bg-bg text-ink ring-1 ring-line hover:ring-olive-200",
         empty && "cursor-not-allowed bg-bg/60 text-faint/60 ring-1 ring-line/60",
       )}
     >
       {active ? <Check className="size-3" /> : null}
       {children}
-      <span className={cn("tabular-nums", active ? "text-surface/70" : "text-faint")}>{count}</span>
+      <span className={cn("tabular-nums", active ? "text-paper/70" : "text-faint")}>{count}</span>
     </button>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import type { Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { GuestChat } from "@/components/desk/guest-chat";
@@ -9,10 +10,12 @@ import { DESK_DOCK, DESK_OPEN_CHAT } from "@/lib/desk/bus";
 import { cn } from "@/lib/cn";
 
 export function DeskChrome({ lang }: { lang: Lang }) {
+  const pathname = usePathname();
   const [chatOpen, setChatOpen] = useState(false);
   // Set while a page-level dock (currently the tour booking dock) owns the
   // bottom of the screen and carries these same two actions itself.
   const [dockActive, setDockActive] = useState(false);
+  const pathOnScreen = useRef(pathname);
 
   useEffect(() => {
     const open = () => setChatOpen(true);
@@ -24,6 +27,15 @@ export function DeskChrome({ lang }: { lang: Lang }) {
       window.removeEventListener(DESK_DOCK, dock);
     };
   }, []);
+
+  // The chrome lives in the locale layout, so the sheet would otherwise stay
+  // open across in-app navigations — including a tour card the guest just
+  // tapped. Fold it away as soon as the path changes; the thread stays.
+  useEffect(() => {
+    if (pathOnScreen.current === pathname) return;
+    pathOnScreen.current = pathname;
+    setChatOpen(false);
+  }, [pathname]);
 
   /*
    * A dock stands the orbs down only below `lg` — that is the only width the

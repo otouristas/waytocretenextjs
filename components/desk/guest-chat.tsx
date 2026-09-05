@@ -4,7 +4,7 @@ import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import { ArrowRight, ArrowUp, RotateCcw, Square, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import type { Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { WHATSAPP } from "@/lib/site";
@@ -21,7 +21,7 @@ export function OliveMark({ className = "size-7" }: { className?: string }) {
       <path d="M11 19c2.2-4.8 7.8-4.8 10 0" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
       <circle cx="12.2" cy="13.2" r="1.15" fill="currentColor" />
       <circle cx="19.8" cy="13.2" r="1.15" fill="currentColor" />
-      <path d="M16 7.2c.4 2.2-.2 3.8-1.6 5" fill="none" stroke="#e6d39a" strokeWidth="1.3" strokeLinecap="round" />
+      <path d="M16 7.2c.4 2.2-.2 3.8-1.6 5" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
     </svg>
   );
 }
@@ -71,10 +71,8 @@ function ToolBits({ part, lang }: { part: UIMessage["parts"][number]; lang: Lang
 /**
  * The local desk answer.
  *
- * Arrives as a `data-desk` part whenever the reply came from the site's own
- * content rather than a model, and renders the identical cards — so a build
- * with no AI gateway key still answers with tours, routes, prices and CTAs
- * instead of a bare paragraph.
+ * Arrives as a `data-desk` part from the catalog brain — tours, routes,
+ * prices and CTAs, never a model.
  */
 function DeskBits({
   part,
@@ -99,7 +97,7 @@ function DeskBits({
               key={chip}
               type="button"
               onClick={() => onAsk(chip)}
-              className="rounded-full bg-surface px-3 py-1.5 text-[11px] font-semibold text-earth ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive"
+              className="rounded-full bg-surface px-3 py-1.5 text-[11px] font-semibold text-ink ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive"
             >
               {chip}
             </button>
@@ -110,13 +108,36 @@ function DeskBits({
   );
 }
 
+/** Fold the sheet before an in-app link navigates, so the new page is not
+ *  hidden behind a dialog the guest already left. New tabs and tel/mailto
+ *  stay put. */
+function minimizeIfInAppNav(event: MouseEvent, onClose: () => void) {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  const node = event.target;
+  if (!(node instanceof Element)) return;
+  const anchor = node.closest("a");
+  if (!(anchor instanceof HTMLAnchorElement)) return;
+  if (anchor.target === "_blank" || anchor.hasAttribute("download")) return;
+  const href = anchor.getAttribute("href");
+  if (!href || href.startsWith("#") || /^(mailto|tel|javascript):/i.test(href)) return;
+  let next: URL;
+  try {
+    next = new URL(anchor.href);
+  } catch {
+    return;
+  }
+  if (next.origin !== window.location.origin) return;
+  if (next.pathname === window.location.pathname && next.search === window.location.search) return;
+  onClose();
+}
+
 function LinkOut({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="mt-3 inline-flex h-9 items-center gap-1.5 rounded-full bg-olive px-4 text-xs font-semibold text-surface transition hover:bg-olive-deep"
+      className="mt-3 inline-flex h-9 items-center gap-1.5 rounded-full bg-olive px-4 text-xs font-semibold text-paper transition hover:bg-olive-deep"
     >
       {children}
       <ArrowRight className="size-3.5" />
@@ -186,7 +207,7 @@ export function GuestChat({
         <button
           type="button"
           onClick={onOpen}
-          className="pointer-events-auto absolute -top-9 right-0 hidden max-w-40 truncate rounded-full bg-earth px-3 py-1 text-[11px] text-surface shadow-lg sm:block"
+          className="pointer-events-auto absolute -top-9 right-0 hidden max-w-40 truncate rounded-full bg-earth px-3 py-1 text-[11px] text-paper shadow-lg sm:block"
         >
           {copy.chatKicker}
         </button>
@@ -198,8 +219,8 @@ export function GuestChat({
         aria-label={open ? copy.chatClose : copy.chatOpen}
         aria-expanded={open}
         className={cn(
-          "glass-orb relative grid size-[52px] place-items-center rounded-full text-surface transition hover:scale-[1.03] active:scale-95",
-          open && "ring-2 ring-gold-soft/70",
+          "glass-orb relative grid size-[52px] place-items-center rounded-full text-paper transition hover:scale-[1.03] active:scale-95",
+          open && "ring-2 ring-paper/70",
           // On a phone the sheet is full-screen and covers this entirely. Its
           // own header X closes it there.
           open && "max-sm:hidden",
@@ -213,6 +234,7 @@ export function GuestChat({
           role="dialog"
           aria-modal="true"
           aria-label={copy.chatName}
+          onClickCapture={(event) => minimizeIfInAppNav(event, onClose)}
           className={cn(
             "chat-sheet pointer-events-auto z-[80] flex flex-col overflow-hidden",
             // Phone: the whole screen. It is the only thing you are doing.
@@ -224,7 +246,7 @@ export function GuestChat({
           )}
         >
           {/*
-            The original header, kept as it was: the script kicker in gold,
+            The original header, kept as it was: the script kicker in paper,
             the olive bloom behind it, the desk's name in caps, and the line
             about what Olive can actually do. It reads like the brand rather
             than like a widget, and that is the whole point of it.
@@ -232,20 +254,20 @@ export function GuestChat({
             Scaled up a step for the wider panel, and the row now holds an
             avatar so the face in the corner is the same face that answers.
           */}
-          <header className="relative shrink-0 overflow-hidden bg-earth px-4 pb-4 pt-[max(1rem,env(safe-area-inset-top))] text-surface sm:px-5 sm:pt-5">
+          <header className="relative shrink-0 overflow-hidden bg-earth px-4 pb-4 pt-[max(1rem,env(safe-area-inset-top))] text-paper sm:px-5 sm:pt-5">
             <div className="absolute -right-6 -top-8 size-32 rounded-full bg-olive/30 blur-2xl" />
-            <div className="absolute -left-10 top-6 size-24 rounded-full bg-gold/10 blur-2xl" />
+            <div className="absolute -left-10 top-6 size-24 rounded-full bg-paper/10 blur-2xl" />
 
             <div className="relative flex items-start justify-between gap-3">
               <div className="flex min-w-0 items-center gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-olive/90 text-surface ring-1 ring-white/15">
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-olive/90 text-paper ring-1 ring-paper/15">
                   <OliveMark className="size-7" />
                 </span>
                 <div className="min-w-0">
-                  <p className="font-script text-[1.75rem] leading-none text-gold-soft">
+                  <p className="font-script text-[1.75rem] leading-none text-paper">
                     {copy.chatKicker}
                   </p>
-                  <p className="mt-1.5 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-soft/80">
+                  <p className="mt-1.5 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-paper/80">
                     <span className="size-1.5 rounded-full bg-olive-200" />
                     {copy.chatName} · Rethymno
                   </p>
@@ -255,7 +277,7 @@ export function GuestChat({
               <div className="flex shrink-0 items-center gap-1.5">
                 <button
                   type="button"
-                  className="grid size-11 place-items-center rounded-full bg-white/10 text-surface ring-1 ring-white/15 transition hover:bg-white/20 sm:size-9"
+                  className="grid size-11 place-items-center rounded-full bg-paper/10 text-paper ring-1 ring-paper/15 transition hover:bg-paper/20 sm:size-9"
                   aria-label={copy.chatNew}
                   title={copy.chatNew}
                   onClick={() => setMessages([])}
@@ -264,7 +286,7 @@ export function GuestChat({
                 </button>
                 <button
                   type="button"
-                  className="grid size-11 place-items-center rounded-full bg-white/20 text-surface ring-1 ring-white/30 transition hover:bg-white/30 sm:size-9"
+                  className="grid size-11 place-items-center rounded-full bg-paper/20 text-paper ring-1 ring-paper/30 transition hover:bg-paper/30 sm:size-9"
                   onClick={onClose}
                   aria-label={copy.chatClose}
                 >
@@ -273,13 +295,13 @@ export function GuestChat({
               </div>
             </div>
 
-            <p className="relative mt-3.5 text-xs leading-relaxed text-surface/75">{copy.chatHint}</p>
+            <p className="relative mt-3.5 text-xs leading-relaxed text-paper/75">{copy.chatHint}</p>
           </header>
 
           <div className="min-h-0 flex-1 space-y-5 overflow-y-auto overscroll-contain px-3 py-4 sm:px-4">
             {messages.length === 0 ? (
               <div className="chat-msg">
-                <p className="font-display text-[1.35rem] leading-snug text-earth">{copy.chatGreeting}</p>
+                <p className="font-display text-[1.35rem] leading-snug text-ink">{copy.chatGreeting}</p>
 
                 {/* Full-width rows, not pills. These are the first thing a
                     guest touches, and a 28px pill on a phone is a smaller
@@ -290,10 +312,10 @@ export function GuestChat({
                       <button
                         type="button"
                         onClick={() => void send(chip)}
-                        className="group flex w-full items-center justify-between gap-3 rounded-2xl bg-surface px-4 py-3 text-left text-sm font-medium text-earth ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive"
+                        className="group flex w-full items-center justify-between gap-3 rounded-2xl bg-surface px-4 py-3 text-left text-sm font-medium text-ink ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive"
                       >
                         {chip}
-                        <ArrowRight className="size-4 shrink-0 text-line transition group-hover:translate-x-0.5 group-hover:text-olive" />
+                        <ArrowRight className="size-4 shrink-0 text-line transition group-hover:translate-x-0.5 group-hover:text-accent" />
                       </button>
                     </li>
                   ))}
@@ -304,7 +326,7 @@ export function GuestChat({
             {messages.map((message) =>
               message.role === "user" ? (
                 <div key={message.id} className="chat-msg flex justify-end">
-                  <p className="max-w-[85%] whitespace-pre-wrap rounded-[20px] rounded-br-md bg-earth px-4 py-2.5 text-sm leading-relaxed text-surface">
+                  <p className="max-w-[85%] whitespace-pre-wrap rounded-[20px] rounded-br-md bg-earth px-4 py-2.5 text-sm leading-relaxed text-paper">
                     {textOf(message)}
                   </p>
                 </div>
@@ -314,7 +336,7 @@ export function GuestChat({
                    already carry their own edge, so wrapping them put three
                    frames around one tour. */
                 <div key={message.id} className="chat-msg flex gap-2.5">
-                  <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-olive text-surface">
+                  <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-olive text-paper">
                     <OliveMark className="size-5" />
                   </span>
                   <div className="min-w-0 flex-1">
@@ -336,7 +358,7 @@ export function GuestChat({
 
             {busy ? (
               <div className="flex items-center gap-2.5">
-                <span className="grid size-7 shrink-0 place-items-center rounded-full bg-olive text-surface">
+                <span className="grid size-7 shrink-0 place-items-center rounded-full bg-olive text-paper">
                   <OliveMark className="size-5" />
                 </span>
                 <span className="flex items-center gap-1" role="status" aria-label={copy.chatTyping}>
@@ -352,7 +374,7 @@ export function GuestChat({
             ) : null}
 
             {error ? (
-              <p className="rounded-2xl bg-clay-soft/25 px-4 py-3 text-xs text-earth ring-1 ring-clay/30">
+              <p className="rounded-2xl bg-clay-soft/25 px-4 py-3 text-xs text-ink ring-1 ring-clay/30">
                 {copy.chatError}
               </p>
             ) : null}
@@ -398,7 +420,7 @@ export function GuestChat({
                 <button
                   type="button"
                   onClick={() => stop()}
-                  className="grid size-10 shrink-0 place-items-center rounded-full bg-earth text-surface"
+                  className="grid size-10 shrink-0 place-items-center rounded-full bg-earth text-paper"
                   aria-label={copy.chatStop}
                 >
                   <Square className="size-3.5 fill-current" />
@@ -407,7 +429,7 @@ export function GuestChat({
                 <button
                   type="submit"
                   disabled={!input.trim()}
-                  className="grid size-10 shrink-0 place-items-center rounded-full bg-olive text-surface transition hover:bg-olive-deep disabled:opacity-35"
+                  className="grid size-10 shrink-0 place-items-center rounded-full bg-olive text-paper transition hover:bg-olive-deep disabled:opacity-35"
                   aria-label={copy.send}
                 >
                   <ArrowUp className="size-4" />

@@ -74,16 +74,16 @@ export function MegaMenu({
         <div className="min-w-0 px-6 py-6 lg:px-8">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-olive">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
                 {item.label}
               </p>
-              <h3 className="mt-1 font-display text-2xl leading-tight text-earth">{column.label}</h3>
+              <h3 className="mt-1 font-display text-2xl leading-tight text-ink">{column.label}</h3>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{column.blurb}</p>
             </div>
             <Link
               href={column.href}
               onClick={onNavigate}
-              className="hidden shrink-0 items-center gap-1.5 text-xs font-semibold text-olive-deep hover:text-olive lg:inline-flex"
+              className="hidden shrink-0 items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent lg:inline-flex"
             >
               {copy.seeCollection}
               <ArrowRight className="size-3.5" />
@@ -136,7 +136,7 @@ function CategoryRail({
   onHub: (id: HubId) => void;
 }) {
   return (
-    <ul className="flex gap-1 overflow-x-auto border-b border-line bg-earth px-3 py-3 text-surface xl:block xl:overflow-visible xl:border-b-0 xl:border-r xl:border-white/10 xl:px-0 xl:py-3">
+    <ul className="flex gap-1 overflow-x-auto border-b border-line bg-earth px-3 py-3 text-paper xl:block xl:overflow-visible xl:border-b-0 xl:border-r xl:border-paper/10 xl:px-0 xl:py-3">
       {columns.map((col) => {
         const Icon = HUB_ICON[col.id];
         const active = col.id === activeId;
@@ -150,14 +150,14 @@ function CategoryRail({
               className={cn(
                 "flex w-full items-center gap-3 rounded-full px-3 py-2 text-left transition xl:rounded-none xl:px-6 xl:py-3",
                 active
-                  ? "bg-surface/15 text-surface xl:bg-surface/10 xl:shadow-[inset_3px_0_0_0_var(--gold-500)]"
-                  : "text-surface/70 hover:bg-surface/10 hover:text-surface",
+                  ? "bg-paper/15 text-paper xl:bg-paper/10 xl:shadow-[inset_3px_0_0_0_var(--pine)]"
+                  : "text-paper/70 hover:bg-paper/10 hover:text-paper",
               )}
             >
-              <Icon className="size-4 shrink-0 text-gold-soft" />
+              <Icon className="size-4 shrink-0 text-paper" />
               <span className="min-w-0 flex-1">
                 <span className="block text-[13px] font-semibold leading-tight">{col.short}</span>
-                <span className="hidden text-[10px] uppercase tracking-[0.14em] text-surface/50 xl:block">
+                <span className="hidden text-[10px] uppercase tracking-[0.14em] text-paper/50 xl:block">
                   {col.tours.length} {experiences}
                 </span>
               </span>
@@ -204,7 +204,7 @@ function TourTile({
             <BadgeChip key={badge} badge={badge} copy={copy} />
           ))}
         </span>
-        <span className="mt-1 block font-display text-[15px] leading-snug text-earth group-hover:text-olive-deep">
+        <span className="mt-1 block font-display text-[15px] leading-snug text-ink group-hover:text-accent">
           {tour.label}
         </span>
         <span className="mt-1 flex flex-wrap items-center gap-x-2.5 gap-y-0.5 text-[11px] text-faint">
@@ -214,7 +214,7 @@ function TourTile({
               {tour.duration}
             </span>
           ) : null}
-          <span className="font-semibold text-earth">
+          <span className="font-semibold text-ink">
             {tour.priceFrom != null ? (
               <>
                 {ui.fromPrice} {formatPrice(lang, tour.priceFrom)}
@@ -261,12 +261,12 @@ function FeaturedPanel({
         <div className="absolute inset-0 bg-earth" />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-hero via-hero/40 to-hero/5" />
-      <div className="relative flex h-full flex-col justify-end p-6 text-surface">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-soft">
+      <div className="relative flex h-full flex-col justify-end p-6 text-paper">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-paper">
           {kicker}
         </p>
         <h4 className="mt-2 font-display text-2xl leading-tight">{tour.label}</h4>
-        <p className="mt-2 text-sm text-surface/80">
+        <p className="mt-2 text-sm text-paper/80">
           {[tour.duration, tour.hotelPickup ? ui.pickup : null, tour.photoshoot ? ui.photoshoot : null]
             .filter(Boolean)
             .join(" · ")}
@@ -274,7 +274,7 @@ function FeaturedPanel({
         <p className="mt-3 font-display text-2xl">
           {tour.priceFrom != null ? (
             <>
-              <span className="text-sm font-sans text-surface/70">{fromLabel} </span>
+              <span className="text-sm font-sans text-paper/70">{fromLabel} </span>
               {formatPrice(lang, tour.priceFrom)}
             </>
           ) : (
@@ -285,7 +285,7 @@ function FeaturedPanel({
           <Link
             href={tour.href}
             onClick={onNavigate}
-            className="inline-flex h-11 items-center justify-center rounded-full bg-olive text-sm font-semibold text-surface transition hover:bg-olive-deep"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-olive text-sm font-semibold text-paper transition hover:bg-olive-deep"
           >
             {bookLabel}
           </Link>
@@ -313,21 +313,21 @@ function TrustBar({
   const ui = t(lang);
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line bg-olive-50 px-6 py-3 lg:px-8">
-      <ul className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[11px] font-semibold text-earth">
+      <ul className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-[11px] font-semibold text-ink">
         <li className="inline-flex items-center gap-1.5">
-          <CalendarCheck className="size-3.5 text-olive" />
+          <CalendarCheck className="size-3.5 text-accent" />
           {ui.freeCancel}
         </li>
         <li className="inline-flex items-center gap-1.5">
-          <CarFront className="size-3.5 text-olive" />
+          <CarFront className="size-3.5 text-accent" />
           {ui.pickup}
         </li>
         <li className="inline-flex items-center gap-1.5">
-          <Camera className="size-3.5 text-olive" />
+          <Camera className="size-3.5 text-accent" />
           {ui.photoshoot}
         </li>
         <li className="inline-flex items-center gap-1.5">
-          <Users className="size-3.5 text-olive" />
+          <Users className="size-3.5 text-accent" />
           {ui.smallGroup}
         </li>
         <li className="hidden text-faint lg:inline">{licensed}</li>
@@ -336,7 +336,7 @@ function TrustBar({
         <Link
           href={toursHref}
           onClick={onNavigate}
-          className="inline-flex h-9 items-center rounded-full px-3.5 text-xs font-semibold text-earth ring-1 ring-line transition hover:bg-surface"
+          className="inline-flex h-9 items-center rounded-full px-3.5 text-xs font-semibold text-ink ring-1 ring-line transition hover:bg-surface"
         >
           {seeAll}
         </Link>
@@ -345,7 +345,7 @@ function TrustBar({
           target="_blank"
           rel="noopener noreferrer"
           onClick={onNavigate}
-          className="inline-flex h-9 items-center rounded-full bg-olive px-3.5 text-xs font-semibold uppercase tracking-[0.12em] text-surface transition hover:bg-olive-deep"
+          className="inline-flex h-9 items-center rounded-full bg-olive px-3.5 text-xs font-semibold uppercase tracking-[0.12em] text-paper transition hover:bg-olive-deep"
         >
           {bookNow}
         </a>
@@ -369,11 +369,11 @@ function BadgeChip({ badge, copy }: { badge: NavBadge; copy: ReturnType<typeof n
     <span
       className={cn(
         "rounded-full px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em]",
-        badge === "most_booked" && "bg-gold-soft text-earth",
-        badge === "private" && "bg-olive-100 text-olive-deep",
-        badge === "seasonal" && "bg-olive-50 text-olive-deep",
-        badge === "couples" && "bg-earth-100 text-earth",
-        badge === "multiday" && "bg-earth text-surface",
+        badge === "most_booked" && "bg-olive-50 text-accent",
+        badge === "private" && "bg-olive-100 text-accent",
+        badge === "seasonal" && "bg-olive-50 text-accent",
+        badge === "couples" && "bg-earth-100 text-ink",
+        badge === "multiday" && "bg-earth text-paper",
       )}
     >
       {label}

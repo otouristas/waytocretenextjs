@@ -44,10 +44,10 @@ export function QuickFacts({ core, lang }: { core: TourCore; lang: Lang }) {
       {facts.map((fact) => (
         <div key={fact.term} className="bg-surface px-4 py-3.5">
           <dt className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-faint">
-            <span className="text-olive">{fact.icon}</span>
+            <span className="text-accent">{fact.icon}</span>
             {fact.term}
           </dt>
-          <dd className="mt-1 font-semibold text-earth">{fact.value}</dd>
+          <dd className="mt-1 font-semibold text-ink">{fact.value}</dd>
         </div>
       ))}
     </dl>
@@ -81,22 +81,22 @@ export function ItineraryTimeline({
   if (itinerary.length === 0) return null;
   return (
     <section className="mt-12">
-      <h2 className="font-display text-2xl text-earth">{title}</h2>
+      <h2 className="font-display text-2xl text-ink">{title}</h2>
       <ol className="relative mt-6 grid gap-8 before:absolute before:bottom-4 before:left-[11px] before:top-3 before:w-px before:bg-line">
         {itinerary.map((step, i) => (
           <li key={`${step.heading}-${i}`} className="relative pl-10">
             <span
               aria-hidden
-              className="absolute left-0 top-1 grid size-6 place-items-center rounded-full bg-olive text-[11px] font-semibold text-surface ring-4 ring-bg"
+              className="absolute left-0 top-1 grid size-6 place-items-center rounded-full bg-olive text-[11px] font-semibold text-paper ring-4 ring-bg"
             >
               {i + 1}
             </span>
-            <h3 className="font-display text-lg text-earth">{step.heading}</h3>
+            <h3 className="font-display text-lg text-ink">{step.heading}</h3>
             <p className="mt-1.5 text-sm leading-relaxed text-muted">{step.body}</p>
             {step.place && linkablePlaces.has(step.place) ? (
               <Link
                 href={langPath(lang, `/places/${step.place}`)}
-                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-olive-deep hover:underline"
+                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
               >
                 <MapPin className="size-3" />
                 {step.place.replace(/-/g, " ")}
@@ -126,11 +126,11 @@ export function IncludedExcluded({
     <section className="mt-12 grid gap-6 sm:grid-cols-2">
       {included.length > 0 ? (
         <div className="rounded-xl bg-surface p-5 ring-1 ring-line">
-          <h2 className="font-display text-xl text-earth">{ui.included}</h2>
+          <h2 className="font-display text-xl text-ink">{ui.included}</h2>
           <ul className="mt-3 grid gap-2 text-sm text-muted">
             {included.map((item) => (
               <li key={item} className="flex gap-2">
-                <Check className="mt-0.5 size-4 shrink-0 text-olive" />
+                <Check className="mt-0.5 size-4 shrink-0 text-accent" />
                 {item}
               </li>
             ))}
@@ -139,7 +139,7 @@ export function IncludedExcluded({
       ) : null}
       {excluded.length > 0 ? (
         <div className="rounded-xl bg-surface p-5 ring-1 ring-line">
-          <h2 className="font-display text-xl text-earth">{ui.notIncluded}</h2>
+          <h2 className="font-display text-xl text-ink">{ui.notIncluded}</h2>
           <ul className="mt-3 grid gap-2 text-sm text-muted">
             {excluded.map((item) => (
               <li key={item} className="flex gap-2">
@@ -171,7 +171,7 @@ export function PackingLists({
     <section className="mt-12 grid gap-6 sm:grid-cols-2">
       {wear.length > 0 ? (
         <div>
-          <h2 className="font-display text-xl text-earth">{ui.wearTitle}</h2>
+          <h2 className="font-display text-xl text-ink">{ui.wearTitle}</h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-muted">
             {wear.map((item) => (
               <li key={item}>{item}</li>
@@ -181,7 +181,7 @@ export function PackingLists({
       ) : null}
       {bring.length > 0 ? (
         <div>
-          <h2 className="font-display text-xl text-earth">{ui.bringTitle}</h2>
+          <h2 className="font-display text-xl text-ink">{ui.bringTitle}</h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-muted">
             {bring.map((item) => (
               <li key={item}>{item}</li>
@@ -206,13 +206,13 @@ export function FaqList({
   if (faqs.length === 0) return null;
   return (
     <section className="mt-12">
-      <h2 className="font-display text-2xl text-earth">{title}</h2>
+      <h2 className="font-display text-2xl text-ink">{title}</h2>
       <div className="mt-4 divide-y divide-line border-y border-line">
         {faqs.map((faq) => (
           <details key={faq.q} className="group py-4">
-            <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-earth marker:content-['']">
+            <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-ink marker:content-['']">
               {faq.q}
-              <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-olive-deep transition group-open:rotate-45">
+              <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-accent transition group-open:rotate-45">
                 +
               </span>
             </summary>
@@ -237,7 +237,7 @@ export function RelatedTours({
   if (tours.length === 0) return null;
   return (
     <section className="mt-16 border-t border-line pt-10">
-      <h2 className="font-display text-2xl text-earth">{ui.relatedTours}</h2>
+      <h2 className="font-display text-2xl text-ink">{ui.relatedTours}</h2>
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         {tours.map((tour) => (
           <Link
@@ -254,7 +254,7 @@ export function RelatedTours({
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
             </div>
-            <p className="p-4 font-display text-base leading-snug text-earth">{tour.title}</p>
+            <p className="p-4 font-display text-base leading-snug text-ink">{tour.title}</p>
           </Link>
         ))}
       </div>

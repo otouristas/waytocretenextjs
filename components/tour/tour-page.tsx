@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
+import { plannerCopy } from "@/lib/i18n/planner";
+import { PLANNER_STOPS } from "@/lib/planner/catalog";
 import type { Review, TourCopy, TourCore } from "@/lib/content/schema";
 import { SISTER_BRAND, sisterUrl } from "@/lib/site";
 import { TourHeroMosaic } from "@/components/tour/hero-mosaic";
@@ -49,11 +51,11 @@ export function TourPage({
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 md:py-8">
       <nav aria-label={ui.breadcrumb} className="text-xs text-muted">
-        <Link href={langPath(lang)} className="hover:text-olive-deep">
+        <Link href={langPath(lang)} className="hover:text-accent">
           {ui.home}
         </Link>
         <span className="px-1.5 text-faint">/</span>
-        <Link href={langPath(lang, "/tours")} className="hover:text-olive-deep">
+        <Link href={langPath(lang, "/tours")} className="hover:text-accent">
           {ui.navTours}
         </Link>
         <span className="px-1.5 text-faint">/</span>
@@ -69,10 +71,10 @@ export function TourPage({
 
       <div className="mt-8 grid items-start gap-10 lg:grid-cols-[1fr_360px]">
         <article>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-olive">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             {ui.categories[core.category as keyof typeof ui.categories] ?? core.category}
           </p>
-          <h1 className="mt-2 font-display text-3xl leading-tight text-earth md:text-[2.75rem]">
+          <h1 className="mt-2 font-display text-3xl leading-tight text-ink md:text-[2.75rem]">
             {copy.title}
           </h1>
           {copy.tagline ? (
@@ -93,10 +95,21 @@ export function TourPage({
               reader needs before anything else. */}
           <p className="mt-8 text-base leading-relaxed text-ink">{copy.summary}</p>
 
+          {core.durationMinutes < 1440 ? (
+            <p className="mt-6">
+              <Link
+                href={customDayHref(lang, core.places)}
+                className="text-sm font-semibold text-accent hover:text-accent"
+              >
+                {plannerCopy(lang).buildDifferent}
+              </Link>
+            </p>
+          ) : null}
+
           {copy.highlights.length > 0 ? (
             <ul className="mt-6 grid gap-2 rounded-xl bg-olive-50 p-5 sm:grid-cols-2">
               {copy.highlights.map((item) => (
-                <li key={item} className="flex gap-2 text-sm text-olive-900">
+                <li key={item} className="flex gap-2 text-sm text-accent">
                   <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rounded-full bg-olive" />
                   {item}
                 </li>
@@ -130,7 +143,7 @@ export function TourPage({
           <p className="mt-12 rounded-xl bg-surface p-5 text-sm leading-relaxed text-muted ring-1 ring-line">
             {ui.storyHint}{" "}
             <a
-              className="font-semibold text-olive-deep underline"
+              className="font-semibold text-accent underline"
               href={sisterUrl(core.wpSlug)}
               rel="noopener"
             >
@@ -151,6 +164,7 @@ export function TourPage({
             groupMax={core.groupMax}
             cancelFreeHours={core.cancelFreeHours}
             thirdPartyCosts={core.thirdPartyCosts}
+            privateGuide={core.privateGuide}
             priceNote={copy.priceNote}
             live={live}
           />
@@ -165,4 +179,15 @@ export function TourPage({
       />
     </div>
   );
+}
+
+function customDayHref(lang: Lang, places: readonly string[]): string {
+  const stops = places
+    .map((place) => PLANNER_STOPS.find((s) => s.place === place || s.slug === place))
+    .filter((s): s is (typeof PLANNER_STOPS)[number] => !!s);
+  const unique = [...new Map(stops.map((s) => [s.slug, s])).values()];
+  const qs = unique.length
+    ? `?s=${unique.map((s) => `${s.slug}:${s.suggestedStayMin}`).join(",")}`
+    : "";
+  return langPath(lang, `/create${qs}`);
 }

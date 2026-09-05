@@ -14,7 +14,7 @@ export function WhatsAppFab({ lang, className }: { lang: Lang; className?: strin
       rel="noopener noreferrer"
       aria-label={copy.whatsapp}
       className={cn(
-        "glass-orb group relative grid size-[52px] place-items-center rounded-full text-surface transition hover:scale-[1.03] active:scale-95",
+        "glass-orb group relative grid size-[52px] place-items-center rounded-full text-paper transition hover:scale-[1.03] active:scale-95",
         className,
       )}
     >

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
   font-family: "CF Asty";
   src: url("/brand/fonts/CFAsty.woff2") format("woff2");
@@ -43,97 +45,132 @@
 }
 
 /**
- * Palette.
+ * Official palette — three anchors only.
  *
- * Every colour is defined once on `:root` as a raw value, then referenced by
- * `@theme inline`, so a token can be retuned in one place.
+ *   paper  #ecede9   RAL 9003
+ *   pine   #506551   RAL 6028
+ *   earth  #392420   RAL 8017
  *
- * This is a light, warm, cream-ground brand and it commits to that: there is
- * deliberately NO dark mode. `color-scheme: light` is declared so a reader
- * whose OS is in dark mode still gets the intended palette instead of a
- * browser-inverted approximation of it.
+ * Everything else is color-mix from those. `--paper` never flips: it is the
+ * type color on pine, earth, and photographs. `--surface` is paper in light
+ * (never white) and earth in dark. Pine-on-earth is ~2.3:1 — banned for text.
+ * Dark mode uses `--accent-readable` sage for links and icons.
  */
 :root {
-  color-scheme: light only;
+  color-scheme: light;
 
-  --olive-50: #f2f4ee;
-  --olive-100: #e3e8db;
-  --olive-200: #c8d2b9;
-  --olive-300: #a8b795;
-  --olive-400: #879a75;
-  --olive-500: #6c7c59; /* brand primary */
-  --olive-600: #5b6a4b;
-  --olive-700: #506551;
-  --olive-800: #3d4a38;
-  --olive-900: #2b3327;
+  --paper: #ecede9;
+  --pine: #506551;
+  --earth: #392420;
 
-  --earth-50: #f6f1ee;
-  --earth-100: #e9ded7;
-  --earth-200: #d0bcb0;
-  --earth-300: #b09586;
-  --earth-400: #8a6b5c;
-  --earth-500: #6b4d41;
-  --earth-600: #55392f;
-  --earth-700: #442f29; /* brand secondary */
-  --earth-800: #392420;
+  --bg: var(--paper);
+  --surface: var(--paper);
+  --surface-raised: color-mix(in srgb, var(--paper) 92%, var(--pine));
+  --ink: var(--earth);
+  --muted: color-mix(in srgb, var(--earth) 70%, var(--paper));
+  --faint: color-mix(in srgb, var(--earth) 48%, var(--paper));
+  --line: color-mix(in srgb, var(--paper) 85%, var(--pine));
+  --pine-soft: color-mix(in srgb, var(--paper) 88%, var(--pine));
+  --pine-hover: color-mix(in srgb, var(--pine) 70%, var(--earth));
+  --accent-readable: var(--pine);
+  --hero: var(--earth);
+  --earth-deep: var(--earth-900);
+  --texture-opacity: 1;
+
+  --olive-50: var(--pine-soft);
+  --olive-100: color-mix(in srgb, var(--paper) 78%, var(--pine));
+  --olive-200: color-mix(in srgb, var(--paper) 62%, var(--pine));
+  --olive-300: color-mix(in srgb, var(--paper) 42%, var(--pine));
+  --olive-400: color-mix(in srgb, var(--paper) 22%, var(--pine));
+  --olive-500: var(--pine);
+  --olive-600: var(--pine-hover);
+  --olive-700: var(--pine);
+  --olive-800: color-mix(in srgb, var(--pine) 78%, var(--earth));
+  --olive-900: color-mix(in srgb, var(--pine) 55%, var(--earth));
+
+  --earth-50: color-mix(in srgb, var(--paper) 92%, var(--earth));
+  --earth-100: color-mix(in srgb, var(--paper) 84%, var(--earth));
+  --earth-200: color-mix(in srgb, var(--paper) 68%, var(--earth));
+  --earth-300: color-mix(in srgb, var(--paper) 52%, var(--earth));
+  --earth-400: color-mix(in srgb, var(--paper) 36%, var(--earth));
+  --earth-500: color-mix(in srgb, var(--paper) 22%, var(--earth));
+  --earth-600: color-mix(in srgb, var(--earth) 82%, var(--paper));
+  --earth-700: var(--earth);
+  --earth-800: var(--earth);
   --earth-900: #241614;
 
-  --sand-50: #fbf9f4;
-  --sand-100: #f7f3ea; /* surface */
-  --sand-200: #f1ece1; /* page ground */
-  --sand-300: #e4dccd;
-  --sand-400: #d8d0c0; /* hairline */
-  --sand-500: #b9ae99;
-  --sand-600: #8a8474;
-  --sand-700: #5c554c;
-  --sand-800: #3a352f;
-  --sand-900: #252525;
+  --sand-50: var(--surface-raised);
+  --sand-100: var(--surface);
+  --sand-200: var(--paper);
+  --sand-300: color-mix(in srgb, var(--paper) 88%, var(--earth));
+  --sand-400: var(--line);
 
-  --gold-300: #e6d39a;
-  --gold-500: #c9a227;
-  --gold-700: #9a7a17;
+  --clay: #6b3228;
+  --clay-300: color-mix(in srgb, var(--clay) 28%, var(--paper));
+  --clay-500: var(--clay);
+  --clay-700: color-mix(in srgb, var(--clay) 82%, var(--earth));
 
-  /* Libyan sea. Desaturated on purpose so beach and boat categories never
-     read as generic OTA blue. */
-  --sea-300: #9dc2c0;
-  --sea-500: #55868a;
-  --sea-700: #35595e;
+  --sea: color-mix(in srgb, var(--pine) 62%, var(--earth) 38%);
+  --sea-300: color-mix(in srgb, var(--sea) 32%, var(--paper));
+  --sea-500: var(--sea);
+  --sea-700: color-mix(in srgb, var(--sea) 72%, var(--earth));
+}
 
-  /* Warm terracotta for scarcity and urgency — never an OTA red. */
-  --clay-300: #e3a98c;
-  --clay-500: #c2643c;
-  --clay-700: #8f4526;
+html.dark {
+  color-scheme: dark;
 
-  --hero: #1a1c14;
+  --bg: #241614;
+  --surface: var(--earth);
+  --surface-raised: color-mix(in srgb, var(--earth) 78%, var(--paper));
+  --ink: var(--paper);
+  --muted: color-mix(in srgb, var(--paper) 70%, var(--earth));
+  --faint: color-mix(in srgb, var(--paper) 48%, var(--earth));
+  --line: color-mix(in srgb, var(--earth) 78%, var(--paper));
+  --pine-soft: color-mix(in srgb, var(--earth) 72%, var(--pine));
+  --pine-hover: color-mix(in srgb, var(--pine) 82%, var(--paper));
+  --accent-readable: #a6afa4;
+  --hero: #241614;
+  --texture-opacity: 0.12;
 
-  /* Semantic roles. Components reference these, never the raw ramps. */
-  --bg: var(--sand-200);
-  --surface: var(--sand-100);
-  --surface-raised: #ffffff;
-  --ink: var(--sand-900);
-  --muted: var(--sand-700);
-  --faint: var(--sand-600);
-  --line: var(--sand-400);
-  --texture-opacity: 1;
+  --olive-50: var(--pine-soft);
+  --olive-100: color-mix(in srgb, var(--earth) 62%, var(--pine));
+  --olive-200: color-mix(in srgb, var(--earth) 48%, var(--pine));
+  --olive-300: color-mix(in srgb, var(--pine) 70%, var(--paper));
+  --olive-800: color-mix(in srgb, var(--pine) 55%, var(--paper));
+  --olive-900: color-mix(in srgb, var(--paper) 82%, var(--pine));
+
+  --sand-50: var(--surface-raised);
+  --sand-100: var(--surface);
+  --sand-200: var(--paper);
+  --sand-300: color-mix(in srgb, var(--earth) 70%, var(--paper));
+  --sand-400: var(--line);
+
+  --clay-300: color-mix(in srgb, var(--clay) 38%, var(--earth));
+  --sea-300: color-mix(in srgb, var(--sea) 40%, var(--earth));
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-raised: var(--surface-raised);
+  --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-faint: var(--faint);
   --color-line: var(--line);
+  --color-accent: var(--accent-readable);
+  --color-pine: var(--pine);
+  --color-pine-soft: var(--pine-soft);
+  --color-pine-hover: var(--pine-hover);
 
   --color-olive-50: var(--olive-50);
   --color-olive-100: var(--olive-100);
   --color-olive-200: var(--olive-200);
   --color-olive-300: var(--olive-300);
   --color-olive-400: var(--olive-400);
-  --color-olive: var(--olive-500);
+  --color-olive: var(--pine);
   --color-olive-600: var(--olive-600);
-  --color-olive-deep: var(--olive-700);
+  --color-olive-deep: var(--pine-hover);
   --color-olive-800: var(--olive-800);
   --color-olive-900: var(--olive-900);
 
@@ -141,8 +178,8 @@
   --color-earth-200: var(--earth-200);
   --color-earth-300: var(--earth-300);
   --color-earth-400: var(--earth-400);
-  --color-earth: var(--earth-700);
-  --color-earth-deep: var(--earth-800);
+  --color-earth: var(--earth);
+  --color-earth-deep: var(--earth-deep);
   --color-earth-900: var(--earth-900);
 
   --color-sand-50: var(--sand-50);
@@ -150,10 +187,6 @@
   --color-sand-200: var(--sand-200);
   --color-sand-300: var(--sand-300);
   --color-sand-400: var(--sand-400);
-
-  --color-gold-soft: var(--gold-300);
-  --color-gold: var(--gold-500);
-  --color-gold-deep: var(--gold-700);
 
   --color-sea-soft: var(--sea-300);
   --color-sea: var(--sea-500);
@@ -167,11 +200,10 @@
   --color-background: var(--bg);
   --color-foreground: var(--ink);
   --color-card: var(--surface);
-  --color-primary: var(--olive-500);
-  --color-primary-foreground: var(--sand-100);
-  --color-accent: var(--earth-700);
+  --color-primary: var(--pine);
+  --color-primary-foreground: var(--paper);
   --color-border: var(--line);
-  --color-ring: var(--olive-500);
+  --color-ring: var(--pine);
 
   --font-display: "CF Asty", "CF Asty Fallback", "Plus Jakarta Sans", sans-serif;
   --font-script: "Cornetta", "Cornetta Fallback", Georgia, serif;
@@ -192,7 +224,9 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
-  html { -webkit-font-smoothing: antialiased; }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
 
 /* iOS Safari zooms any focused field under 16px and does not zoom back
    out, which traps the hero search (and the chat composer) under the
@@ -208,6 +242,7 @@
     background-color: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    caret-color: var(--pine);
   }
   h1, h2, h3 {
     font-family: var(--font-display);
@@ -216,6 +251,20 @@
   }
   a {
     text-underline-offset: 3px;
+  }
+  input,
+  select,
+  textarea {
+    color: var(--color-ink);
+    background-color: var(--color-bg);
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-faint);
+  }
+  ::selection {
+    background-color: var(--pine);
+    color: var(--paper);
   }
   /* Honour the reader's motion preference everywhere, once. */
   @media (prefers-reduced-motion: reduce) {
@@ -266,38 +315,55 @@
 }
 
 body {
+  isolation: isolate;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--texture-opacity);
   background-image: url("/patterns/linen.svg");
   background-size: 180px 180px;
 }
 
 .glass-pill {
-  background: linear-gradient(180deg, rgba(247, 243, 234, 0.78), rgba(241, 236, 225, 0.5));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 78%, transparent),
+    color-mix(in srgb, var(--bg) 50%, transparent)
+  );
   backdrop-filter: blur(28px) saturate(1.45);
   -webkit-backdrop-filter: blur(28px) saturate(1.45);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    inset 0 -1px 0 rgba(68, 47, 41, 0.06),
-    0 18px 40px -16px rgba(57, 36, 32, 0.45),
-    0 0 0 1px rgba(68, 47, 41, 0.08);
+    inset 0 1px 0 color-mix(in srgb, var(--paper) 72%, transparent),
+    inset 0 -1px 0 color-mix(in srgb, var(--earth) 6%, transparent),
+    0 18px 40px -16px color-mix(in srgb, var(--earth) 45%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--earth) 8%, transparent);
 }
 
 .glass-orb {
-  background: linear-gradient(180deg, rgba(108, 124, 89, 0.96), rgba(80, 101, 81, 0.98));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--pine) 96%, var(--paper)),
+    color-mix(in srgb, var(--pine) 98%, var(--earth))
+  );
   backdrop-filter: blur(16px) saturate(1.3);
   -webkit-backdrop-filter: blur(16px) saturate(1.3);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.28),
-    0 12px 28px -10px rgba(57, 36, 32, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.12);
+    inset 0 1px 0 color-mix(in srgb, var(--paper) 28%, transparent),
+    0 12px 28px -10px color-mix(in srgb, var(--earth) 55%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--paper) 12%, transparent);
 }
 
 .chat-sheet {
   background:
-    radial-gradient(120% 60% at 50% 0%, rgba(108, 124, 89, 0.1), transparent 60%),
+    radial-gradient(120% 60% at 50% 0%, color-mix(in srgb, var(--pine) 10%, transparent), transparent 60%),
     var(--color-bg);
   box-shadow:
-    0 30px 80px -24px rgba(57, 36, 32, 0.55),
-    0 0 0 1px rgba(68, 47, 41, 0.1);
+    0 30px 80px -24px color-mix(in srgb, var(--earth) 55%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--earth) 10%, transparent);
   animation: chat-rise 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -365,6 +431,169 @@ body {
   .chat-sheet,
   .chat-msg,
   .chat-dot {
+    animation: none;
+  }
+}
+
+/**
+ * Planner map. Leaflet's default pane z-index is 400–1000, which punches
+ * through the header and page content unless the map owns a stacking context
+ * and those values are rewritten down.
+ */
+.planner-map-frame,
+.planner-map {
+  isolation: isolate;
+  z-index: 0;
+}
+.planner-map-frame {
+  position: relative;
+}
+.planner-map .leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 100%;
+  z-index: 0 !important;
+  background: color-mix(in srgb, var(--sea) 18%, var(--bg));
+  font-family: inherit;
+}
+.planner-map .leaflet-pane,
+.planner-map .leaflet-map-pane,
+.planner-map .leaflet-tile-pane {
+  z-index: 1 !important;
+}
+.planner-map .leaflet-overlay-pane {
+  z-index: 2 !important;
+}
+.planner-map .leaflet-marker-pane,
+.planner-map .leaflet-tooltip-pane {
+  z-index: 3 !important;
+}
+.planner-map .leaflet-popup-pane {
+  z-index: 4 !important;
+}
+.planner-map .leaflet-top,
+.planner-map .leaflet-bottom,
+.planner-map .leaflet-control {
+  z-index: 5 !important;
+}
+.planner-map .leaflet-tile-pane {
+  filter: saturate(0.82) sepia(0.12) contrast(0.97);
+}
+html.dark .planner-map .leaflet-tile-pane {
+  filter: saturate(0.7) sepia(0.18) brightness(0.78);
+}
+.planner-map .leaflet-control-zoom {
+  overflow: hidden;
+  margin: 0 10px 10px 0 !important;
+  border: 0 !important;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--paper) 70%, transparent),
+    0 8px 18px -12px color-mix(in srgb, var(--earth) 50%, transparent),
+    0 0 0 1px var(--line);
+}
+.planner-map .leaflet-control-zoom a {
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  color: var(--ink) !important;
+  background: transparent !important;
+  border-bottom-color: var(--line) !important;
+}
+.planner-map .leaflet-control-zoom a:hover {
+  color: var(--accent-readable) !important;
+  background: var(--pine-soft) !important;
+}
+.planner-map .leaflet-control-attribution {
+  max-width: calc(100% - 3rem);
+  margin: 0 !important;
+  background: color-mix(in srgb, var(--surface) 88%, transparent) !important;
+  color: var(--muted);
+  font-size: 9px;
+}
+.planner-map .leaflet-control-attribution a {
+  color: var(--accent-readable);
+}
+.planner-pin-wrap {
+  background: transparent !important;
+  border: none !important;
+}
+
+.planner-pin {
+  display: grid;
+  place-items: center;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  filter: drop-shadow(0 8px 14px color-mix(in srgb, var(--earth) 38%, transparent));
+}
+.planner-pin-stop,
+.planner-pin-start {
+  width: 26px;
+  height: 26px;
+  margin-bottom: -2px;
+  border-radius: 50% 50% 50% 4px;
+  transform: rotate(-45deg);
+  background: var(--pine);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--paper) 28%, transparent), 0 0 0 2px var(--paper);
+}
+.planner-pin-start {
+  background: var(--earth);
+  border-radius: 6px;
+  transform: none;
+  width: 22px;
+  height: 22px;
+}
+.planner-pin-stop span {
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(45deg);
+}
+.planner-pin-available {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 0 0 1.5px var(--pine);
+}
+.planner-pin-selected {
+  z-index: 2;
+  box-shadow: 0 0 0 3px var(--accent-readable), 0 10px 18px -8px color-mix(in srgb, var(--earth) 55%, transparent);
+  animation: planner-pin-pulse 1.8s ease-in-out infinite;
+}
+.planner-pin-available.planner-pin-selected {
+  width: 16px;
+  height: 16px;
+  background: var(--pine);
+}
+
+@keyframes planner-pin-pulse {
+  0%,
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.12);
+  }
+}
+.planner-pin-start.planner-pin-selected,
+.planner-pin-available.planner-pin-selected {
+  animation: planner-pin-pulse-flat 1.8s ease-in-out infinite;
+}
+@keyframes planner-pin-pulse-flat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .planner-pin-selected {
     animation: none;
   }
 }

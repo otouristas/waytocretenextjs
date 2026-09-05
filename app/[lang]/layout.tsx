@@ -10,6 +10,7 @@ import { orgJsonLd } from "@/lib/seo";
 import { allReviews, ratingSummary } from "@/lib/content/load";
 import { decorateNav } from "@/lib/nav/catalog";
 import { BRAND, isIndexable, siteUrl } from "@/lib/site";
+import { ThemeProvider } from "@/components/theme-provider";
 import "../globals.css";
 
 /**
@@ -93,14 +94,16 @@ export default async function RootLayout({
           viewport on pages too short to fill it, instead of leaving a band of
           bare ground under it.
         */}
-        <div className="flex min-h-screen flex-col bg-bg text-ink">
-          <Header lang={lang} rating={ratingSummary(allReviews())} nav={decorateNav(lang)} />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <Footer lang={lang} />
-          <DeskChrome lang={lang} />
-        </div>
+        <ThemeProvider>
+          <div className="flex min-h-screen flex-col bg-bg text-ink">
+            <Header lang={lang} rating={ratingSummary(allReviews())} nav={decorateNav(lang)} />
+            <main id="main" className="flex-1">
+              {children}
+            </main>
+            <Footer lang={lang} />
+            <DeskChrome lang={lang} />
+          </div>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

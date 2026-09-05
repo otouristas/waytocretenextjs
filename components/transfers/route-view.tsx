@@ -51,11 +51,11 @@ export function RouteView({
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 md:py-8">
       <nav aria-label={ui.breadcrumb} className="text-xs text-muted">
-        <Link href={langPath(lang)} className="hover:text-olive-deep">
+        <Link href={langPath(lang)} className="hover:text-accent">
           {ui.home}
         </Link>
         <span className="px-1.5 text-faint">/</span>
-        <Link href={langPath(lang, "/transfers")} className="hover:text-olive-deep">
+        <Link href={langPath(lang, "/transfers")} className="hover:text-accent">
           {ui.navTransfers}
         </Link>
         <span className="px-1.5 text-faint">/</span>
@@ -66,11 +66,11 @@ export function RouteView({
 
       <div className="mt-6 grid items-start gap-10 lg:grid-cols-[1fr_minmax(0,24rem)]">
         <article>
-          <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-olive">
+          <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
             {airport ? <PlaneLanding className="size-3.5" /> : <RouteIcon className="size-3.5" />}
             {p.kicker}
           </p>
-          <h1 className="mt-2 font-display text-3xl leading-tight text-earth md:text-[2.75rem]">
+          <h1 className="mt-2 font-display text-3xl leading-tight text-ink md:text-[2.75rem]">
             {p.routeHeading(from, to)}
           </h1>
           <p className="mt-4 text-base leading-relaxed text-muted">
@@ -96,17 +96,17 @@ export function RouteView({
           </dl>
 
           <div className="mt-8 rounded-2xl bg-olive-50 p-6 ring-1 ring-olive-200">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-olive-deep">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
               {ui.transferEstimate}
             </p>
             {estimate ? (
               <>
-                <p className="mt-1 font-display text-3xl text-earth">
+                <p className="mt-1 font-display text-3xl text-ink">
                   €{estimate.low}
                   <span className="text-faint">–</span>
                   {estimate.high}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-olive-900">
+                <p className="mt-2 text-sm leading-relaxed text-accent">
                   {data.pricing.perKmRates
                     .map(
                       (rate) =>
@@ -119,24 +119,24 @@ export function RouteView({
                 </p>
               </>
             ) : (
-              <p className="mt-1 font-display text-2xl text-earth">{ui.onRequest}</p>
+              <p className="mt-1 font-display text-2xl text-ink">{ui.onRequest}</p>
             )}
-            <p className="mt-3 text-xs leading-relaxed text-olive-900/70">
+            <p className="mt-3 text-xs leading-relaxed text-accent/70">
               {ui.transferEstimateNote}
             </p>
           </div>
 
-          <h2 className="mt-10 font-display text-2xl text-earth">{ui.transferExtras}</h2>
+          <h2 className="mt-10 font-display text-2xl text-ink">{ui.transferExtras}</h2>
           <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
             {p.weDo.map((item) => (
               <li key={item} className="flex gap-2.5 text-sm text-ink">
-                <Check className="mt-0.5 size-4 shrink-0 text-olive" />
+                <Check className="mt-0.5 size-4 shrink-0 text-accent" />
                 {item}
               </li>
             ))}
           </ul>
 
-          <h2 className="mt-10 font-display text-2xl text-earth">{ui.transferVehicle}</h2>
+          <h2 className="mt-10 font-display text-2xl text-ink">{ui.transferVehicle}</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">{data.vehicle.description}</p>
           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
             {[data.vehicle.hero, ...data.vehicle.gallery].slice(0, 3).map((src) => (
@@ -150,7 +150,7 @@ export function RouteView({
 
           {others.length > 0 ? (
             <section className="mt-12">
-              <h2 className="font-display text-2xl text-earth">{p.routeOther}</h2>
+              <h2 className="font-display text-2xl text-ink">{p.routeOther}</h2>
               <ul className="mt-5 grid gap-4 sm:grid-cols-3">
                 {others.map((other) => (
                   <li key={other.slug}>
@@ -160,7 +160,7 @@ export function RouteView({
               </ul>
               <Link
                 href={langPath(lang, "/transfers")}
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-olive-deep hover:text-olive"
+                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent"
               >
                 {p.routeBackToAll}
                 <ArrowRight className="size-4" />
@@ -185,10 +185,10 @@ function Fact({ icon, term, value }: { icon: React.ReactNode; term: string; valu
   return (
     <div className="bg-surface px-4 py-3.5">
       <dt className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-faint">
-        <span className="text-olive">{icon}</span>
+        <span className="text-accent">{icon}</span>
         {term}
       </dt>
-      <dd className="mt-1 font-semibold text-earth">{value}</dd>
+      <dd className="mt-1 font-semibold text-ink">{value}</dd>
     </div>
   );
 }

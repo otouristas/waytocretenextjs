@@ -13,6 +13,7 @@ import {
   Search,
   Users,
   BookOpen,
+  MapPin,
 } from "lucide-react";
 import { langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
@@ -39,11 +40,12 @@ const KIND_ICON: Record<SearchKind, React.ComponentType<{ className?: string }>>
   transfer: Plane,
   place: Mountain,
   guide: BookOpen,
+  planner: MapPin,
 };
 
 /** The order groups appear in. Transfers rank above places and guides
  *  because they are the other thing we sell. */
-const KIND_ORDER: SearchKind[] = ["tour", "transfer", "place", "guide"];
+const KIND_ORDER: SearchKind[] = ["planner", "tour", "transfer", "place", "guide"];
 
 const MAX_RESULTS = 8;
 
@@ -192,7 +194,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
       >
         <label className="flex items-center gap-3 bg-surface px-4 py-3">
           <span className="grid size-9 shrink-0 place-items-center rounded-full bg-olive-50">
-            <Search className="size-4 text-olive" />
+            <Search className="size-4 text-accent" />
           </span>
           <span className="min-w-0 flex-1">
             <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
@@ -225,7 +227,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
           </span>
         </label>
 
-        <Field icon={<CalendarDays className="size-4 text-olive" />} label={copy.holdDate}>
+        <Field icon={<CalendarDays className="size-4 text-accent" />} label={copy.holdDate}>
           <input
             type="date"
             name="date"
@@ -235,7 +237,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
           />
         </Field>
 
-        <Field icon={<Users className="size-4 text-olive" />} label={copy.guests}>
+        <Field icon={<Users className="size-4 text-accent" />} label={copy.guests}>
           <input
             type="number"
             name="guests"
@@ -251,7 +253,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
         <div className="bg-surface p-2">
           <button
             type="submit"
-            className="flex h-full min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-olive px-7 text-sm font-semibold text-surface transition hover:bg-olive-deep"
+            className="flex h-full min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-olive px-7 text-sm font-semibold text-paper transition hover:bg-olive-deep"
           >
             <Search className="size-4" />
             {copy.checkAvail}
@@ -266,7 +268,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
               <p>{copy.searchNoResults}</p>
               <Link
                 href={langPath(lang, "/tours")}
-                className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-olive-deep hover:text-olive"
+                className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent"
                 onClick={() => setOpen(false)}
               >
                 {copy.searchSeeAll}
@@ -308,18 +310,18 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
                                   className="size-11 shrink-0 rounded-lg object-cover"
                                 />
                               ) : (
-                                <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-olive-50 text-olive">
+                                <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-olive-50 text-accent">
                                   <Icon className="size-4" />
                                 </span>
                               )}
                               <span className="min-w-0 flex-1">
-                                <span className="block truncate text-sm font-semibold text-earth">
+                                <span className="block truncate text-sm font-semibold text-ink">
                                   {item.title}
                                 </span>
                                 <span className="block truncate text-xs text-faint">{item.hint}</span>
                               </span>
                               {flatIndex === active ? (
-                                <CornerDownLeft className="size-3.5 shrink-0 text-olive" />
+                                <CornerDownLeft className="size-3.5 shrink-0 text-accent" />
                               ) : null}
                             </Link>
                           </li>
@@ -334,7 +336,7 @@ export function HeroSearch({ lang, index }: { lang: Lang; index: SearchIndex }) 
                 <Link
                   href={fallbackHref()}
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-olive-deep hover:text-olive"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent"
                 >
                   {copy.searchSeeAll}
                   <ArrowRight className="size-3.5" />

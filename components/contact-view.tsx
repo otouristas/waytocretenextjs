@@ -59,10 +59,10 @@ export function ContactView({
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
       <header className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           {copy.getInTouch}
         </p>
-        <h1 className="mt-2 font-display text-4xl text-earth md:text-5xl">{copy.contactTitle}</h1>
+        <h1 className="mt-2 font-display text-4xl text-ink md:text-5xl">{copy.contactTitle}</h1>
         <p className="mt-4 leading-relaxed text-muted">{copy.contactLead}</p>
       </header>
 
@@ -96,13 +96,13 @@ export function ContactView({
 
       <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-start">
         <div>
-          <h2 className="font-display text-2xl text-earth">{copy.faq}</h2>
+          <h2 className="font-display text-2xl text-ink">{copy.faq}</h2>
           <div className="mt-4 divide-y divide-line border-y border-line">
             {copy.faqs.slice(0, 4).map((faq) => (
               <details key={faq.q} className="group py-4">
-                <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-earth marker:content-['']">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-ink marker:content-['']">
                   {faq.q}
-                  <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-olive-deep transition group-open:rotate-45">
+                  <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-accent transition group-open:rotate-45">
                     +
                   </span>
                 </summary>
@@ -124,13 +124,13 @@ export function ContactView({
 
           <p className="mt-8 text-sm text-muted">
             {copy.lookingForTransfer}{" "}
-            <Link href={langPath(lang, "/transfers")} className="font-semibold text-olive-deep underline">
+            <Link href={langPath(lang, "/transfers")} className="font-semibold text-accent underline">
               {copy.navTransfers}
             </Link>{" "}
             ·{" "}
             <Link
               href={langPath(lang, "/transfers/weddings")}
-              className="font-semibold text-olive-deep underline"
+              className="font-semibold text-accent underline"
             >
               {copy.weddingTransfers}
             </Link>
@@ -139,10 +139,10 @@ export function ContactView({
 
         {done ? (
           <div className="flex items-start gap-4 rounded-2xl bg-olive-50 p-6 ring-1 ring-olive-200">
-            <span className="grid size-9 shrink-0 place-items-center rounded-full bg-olive text-surface">
+            <span className="grid size-9 shrink-0 place-items-center rounded-full bg-olive text-paper">
               <Check className="size-4" />
             </span>
-            <p className="text-sm leading-relaxed text-olive-900">{copy.submitted}</p>
+            <p className="text-sm leading-relaxed text-accent">{copy.submitted}</p>
           </div>
         ) : (
           <form
@@ -166,7 +166,7 @@ export function ContactView({
               setDone(true);
             }}
           >
-            <h2 className="font-display text-2xl text-earth">{copy.requestDay}</h2>
+            <h2 className="font-display text-2xl text-ink">{copy.requestDay}</h2>
 
             <Field label={copy.name}>
               <Input
@@ -255,11 +255,11 @@ function Channel({
   const cardClass = [
     "flex h-full flex-col gap-3 rounded-2xl p-6 ring-1 transition",
     accent
-      ? "bg-olive text-surface ring-olive hover:bg-olive-deep"
-      : "bg-surface text-earth ring-line hover:ring-olive-200",
+      ? "bg-olive text-paper ring-olive hover:bg-olive-deep"
+      : "bg-surface text-ink ring-line hover:ring-olive-200",
   ].join(" ");
   const linkProps = external ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
-  const noteClass = ["mt-auto text-xs leading-relaxed", accent ? "text-sand-200/80" : "text-faint"].join(
+  const noteClass = ["mt-auto text-xs leading-relaxed", accent ? "text-paper/80" : "text-faint"].join(
     " ",
   );
   const head = (
@@ -267,14 +267,14 @@ function Channel({
       <span
         className={[
           "grid size-10 place-items-center rounded-full",
-          accent ? "bg-surface/15 text-surface" : "bg-olive-50 text-olive",
+          accent ? "bg-paper/15 text-paper" : "bg-olive-50 text-accent",
         ].join(" ")}
       >
         {icon}
       </span>
       <span>
         <span className="block font-display text-lg">{title}</span>
-        <span className={accent ? "text-sm text-sand-100/90" : "text-sm text-muted"}>{value}</span>
+        <span className={accent ? "text-sm text-paper/90" : "text-sm text-muted"}>{value}</span>
       </span>
     </>
   );
@@ -289,7 +289,7 @@ function Channel({
           <a href={href} {...linkProps} className="flex flex-col gap-3">
             {head}
           </a>
-          <a href={secondaryHref} className={`${noteClass} underline decoration-line hover:text-olive-deep`}>
+          <a href={secondaryHref} className={`${noteClass} underline decoration-line hover:text-accent`}>
             {note}
           </a>
         </div>
@@ -319,7 +319,7 @@ function Aside({
   return (
     <li className="rounded-xl bg-surface p-4 ring-1 ring-line">
       <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-faint">
-        <span className="text-olive">{icon}</span>
+        <span className="text-accent">{icon}</span>
         {title}
       </p>
       <p className="mt-1.5 text-sm leading-relaxed text-muted">{children}</p>

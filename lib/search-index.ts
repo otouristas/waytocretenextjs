@@ -6,6 +6,7 @@ import { transferRoutes, shortPlace } from "@/lib/transfers";
 import { durationLabel } from "@/lib/content/format";
 import { priceFrom } from "@/lib/pricing";
 import { t } from "@/lib/i18n/ui";
+import { plannerCopy } from "@/lib/i18n/planner";
 
 /**
  * The index behind the hero search.
@@ -20,7 +21,7 @@ import { t } from "@/lib/i18n/ui";
  * which need appear in a title for the right result to come back.
  */
 
-export type SearchKind = "tour" | "transfer" | "place" | "guide";
+export type SearchKind = "tour" | "transfer" | "place" | "guide" | "planner";
 
 export type SearchItem = {
   id: string;
@@ -53,7 +54,20 @@ function fold(value: string): string {
 
 export const searchIndex = cache((lang: Lang): SearchIndex => {
   const ui = t(lang);
+  const planner = plannerCopy(lang);
   const items: SearchItem[] = [];
+
+  items.push({
+    id: "planner:create",
+    kind: "planner",
+    title: planner.nav,
+    hint: planner.homeLead,
+    href: langPath(lang, "/create"),
+    featured: true,
+    keywords: fold(
+      "create custom day itinerary private tour build your own crete preveli spili beach wine",
+    ),
+  });
 
   for (const { core, copy } of allTours(lang)) {
     const from = priceFrom(core.price);
@@ -136,6 +150,7 @@ export const searchIndex = cache((lang: Lang): SearchIndex => {
       transfer: ui.searchTransfers,
       place: ui.searchPlaces,
       guide: ui.searchGuides,
+      planner: planner.nav,
     },
   };
 });

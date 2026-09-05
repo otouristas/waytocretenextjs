@@ -33,19 +33,19 @@ export default async function Image({ params }: { params: Promise<{ lang: string
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(135deg, #442f29 0%, #392420 55%, #1a1c14 100%)",
+          background: "linear-gradient(135deg, #392420 0%, #392420 55%, #241614 100%)",
           padding: "72px 80px",
           fontFamily: "Georgia, serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-          <div style={{ width: 14, height: 14, borderRadius: 999, background: "#c9a227" }} />
+          <div style={{ width: 14, height: 14, borderRadius: 999, background: "#506551" }} />
           <div
             style={{
               fontSize: 24,
               letterSpacing: 6,
               textTransform: "uppercase",
-              color: "#e6d39a",
+              color: "#ecede9",
             }}
           >
             {ui.ogLocation}
@@ -53,17 +53,17 @@ export default async function Image({ params }: { params: Promise<{ lang: string
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <div style={{ fontSize: 88, lineHeight: 1.02, color: "#f7f3ea", letterSpacing: -2 }}>
+          <div style={{ fontSize: 88, lineHeight: 1.02, color: "#ecede9", letterSpacing: -2 }}>
             {BRAND}
           </div>
-          <div style={{ fontSize: 36, lineHeight: 1.25, color: "#c8d2b9", maxWidth: 900 }}>
+          <div style={{ fontSize: 36, lineHeight: 1.25, color: "#a6afa4", maxWidth: 900 }}>
             {ui.ogTagline}
           </div>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ height: 6, width: 120, background: "#6c7c59", borderRadius: 999 }} />
-          <div style={{ fontSize: 26, color: "#8a8474" }}>rethymnotours.com</div>
+          <div style={{ height: 6, width: 120, background: "#506551", borderRadius: 999 }} />
+          <div style={{ fontSize: 26, color: "#b6b1ad" }}>rethymnotours.com</div>
         </div>
       </div>
     ),

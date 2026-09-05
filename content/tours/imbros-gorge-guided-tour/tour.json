@@ -16,6 +16,7 @@
       { "minGuests": 8, "maxGuests": 8, "perPerson": 44 }
     ]
   },
+  "privateGuide": { "amount": 150, "currency": "EUR" },
   "thirdPartyCosts": [
     {
       "label": "Imbros Gorge entrance fee",
@@ -23,13 +24,6 @@
       "perPerson": true,
       "optional": false,
       "note": "Paid at the gorge gate; not included in the tour price."
-    },
-    {
-      "label": "Optional guide (history, flora and fauna of the gorge)",
-      "amount": null,
-      "perPerson": false,
-      "optional": true,
-      "note": "Available for an additional fee on request."
     }
   ],
   "cadence": { "kind": "daily" },

@@ -1,0 +1,14 @@
+{
+  "slug": "triopetra-beach",
+  "geo": { "lat": 35.127, "lng": 24.543 },
+  "kind": "beach",
+  "sameAs": [],
+  "elevationM": null,
+  "lengthKm": null,
+  "openMonths": [4, 5, 6, 7, 8, 9, 10],
+  "entryFeeEur": 0,
+  "driveFromRethymnoMinutes": 55,
+  "tours": ["south-crete-highlights"],
+  "hero": null,
+  "gallery": []
+}

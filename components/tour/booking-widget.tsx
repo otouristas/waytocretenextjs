@@ -1,18 +1,23 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CalendarDays, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, TrendingDown } from "lucide-react";
+import { CalendarDays, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
 import type { Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import type { PriceModel, ThirdPartyCost } from "@/lib/content/schema";
+import type { PriceModel, ThirdPartyCost, TourCore } from "@/lib/content/schema";
 import { quote, type Party } from "@/lib/pricing";
 import { formatPrice } from "@/lib/format";
 import { sendRequest } from "@/lib/send-request";
 import { bookUrl, catalogUrl } from "@/lib/travelotopos";
+import { EMAIL } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/cn";
+
+function guideOpsNote(amount: number) {
+  return `Private Guide requested: €${amount} — payable to the guide on the day. Do not charge online.`;
+}
 
 /**
  * The booking widget.
@@ -21,6 +26,10 @@ import { cn } from "@/lib/cn";
  * itself — every figure comes from `quote()` in lib/pricing, the same function
  * that generates the `Offer` in the page's JSON-LD, so what the guest is shown
  * and what Google indexes cannot diverge.
+ *
+ * The optional private-guide add-on is displayed here but never folded into
+ * `quote().total`, the live checkout URL, or structured data. It is paid to
+ * the guide on the day.
  */
 export function BookingWidget({
   slug,
@@ -31,6 +40,7 @@ export function BookingWidget({
   groupMax,
   cancelFreeHours,
   thirdPartyCosts,
+  privateGuide,
   priceNote,
   live,
 }: {
@@ -42,6 +52,7 @@ export function BookingWidget({
   groupMax: number;
   cancelFreeHours: number;
   thirdPartyCosts: ThirdPartyCost[];
+  privateGuide: TourCore["privateGuide"];
   priceNote?: string;
   live?: { serviceId: number; categoryId: number } | null;
 }) {
@@ -55,12 +66,22 @@ export function BookingWidget({
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [guideSelected, setGuideSelected] = useState(false);
 
   const party: Party = { adults, children, infants: 0 };
   const q = useMemo(() => quote(price, party, date || undefined), [price, adults, children, date]);
 
   const supportsChildren = price.kind === "adult_child_private";
   const guests = adults + children;
+  const guideOn = Boolean(privateGuide && guideSelected);
+
+  function partySummary() {
+    return (
+      `— ${title}, ${adults} adult(s)` +
+      (children ? `, ${children} child(ren)` : "") +
+      (q.kind === "priced" ? `, indicative total ${formatPrice(lang, q.total)}` : ", price on request")
+    );
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -75,22 +96,46 @@ export function BookingWidget({
       date,
       guests,
       message:
-        `${message}\n\n— ${title}, ${adults} adult(s)` +
-        (children ? `, ${children} child(ren)` : "") +
-        (q.kind === "priced" ? `, indicative total ${formatPrice(lang, q.total)}` : ", price on request"),
+        `${message}\n\n${partySummary()}` +
+        (guideOn && privateGuide ? `\n${guideOpsNote(privateGuide.amount)}` : ""),
     });
     setSending(false);
     if (result.ok) setSent(true);
     else if (result.mailto) window.location.href = result.mailto;
   }
 
+  async function openLive() {
+    if (!live) return;
+    const href = date
+      ? bookUrl(live.serviceId, live.categoryId, date)
+      : catalogUrl(live.serviceId, live.categoryId);
+    if (guideOn && privateGuide) {
+      setSending(true);
+      try {
+        await sendRequest({
+          kind: "tour",
+          lang,
+          slug,
+          name: "Travelotopos guest (private guide)",
+          email: EMAIL,
+          date,
+          guests,
+          message: `${guideOpsNote(privateGuide.amount)}\n\n${partySummary()}`,
+        });
+      } finally {
+        setSending(false);
+      }
+    }
+    window.open(href, "_blank", "noopener,noreferrer");
+  }
+
   if (sent) {
     return (
       <aside id="booking-panel" className="rounded-2xl bg-surface p-6 ring-1 ring-line">
-        <div className="grid size-11 place-items-center rounded-full bg-olive-50 text-olive-deep">
+        <div className="grid size-11 place-items-center rounded-full bg-olive-50 text-accent">
           <Check className="size-5" />
         </div>
-        <p className="mt-4 font-display text-xl text-earth">{ui.requestSent}</p>
+        <p className="mt-4 font-display text-xl text-ink">{ui.requestSent}</p>
         <p className="mt-2 text-sm text-muted">{ui.submitted}</p>
       </aside>
     );
@@ -106,7 +151,7 @@ export function BookingWidget({
         {q.kind === "priced" ? (
           <>
             <div className="flex items-baseline gap-2">
-              <span className="font-display text-3xl font-semibold text-earth">
+              <span className="font-display text-3xl font-semibold text-ink">
                 {formatPrice(lang, q.total)}
               </span>
               <span className="text-sm text-faint">
@@ -126,7 +171,7 @@ export function BookingWidget({
           </>
         ) : (
           <>
-            <span className="font-display text-2xl font-semibold text-earth">{ui.onRequest}</span>
+            <span className="font-display text-2xl font-semibold text-ink">{ui.onRequest}</span>
             <p className="mt-1 text-sm text-muted">
               {q.reason === "out_of_range"
                 ? `Tell us your group size and we will price it.`
@@ -141,7 +186,7 @@ export function BookingWidget({
          * a pressure tactic — the guest saves money by knowing.
          */}
         {q.kind === "priced" && q.nudge ? (
-          <p className="mt-3 flex items-start gap-2 rounded-lg bg-olive-50 p-2.5 text-xs text-olive-deep">
+          <p className="mt-3 flex items-start gap-2 rounded-lg bg-olive-50 p-2.5 text-xs text-accent">
             <TrendingDown className="mt-0.5 size-3.5 shrink-0" />
             <span>
               Add one more guest and the rate drops to{" "}
@@ -188,7 +233,7 @@ export function BookingWidget({
             {ui.selectDate}
           </span>
           <span className="relative">
-            <CalendarDays className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-olive" />
+            <CalendarDays className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-accent" />
             <Input
               type="date"
               value={date}
@@ -199,8 +244,37 @@ export function BookingWidget({
           </span>
         </label>
 
+        {privateGuide ? (
+          <div
+            className={cn(
+              "rounded-xl p-4 ring-1 transition",
+              guideSelected ? "bg-olive-50 ring-olive-200" : "bg-bg ring-line",
+            )}
+          >
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+              {ui.guideUpgradeEyebrow}
+            </p>
+            <p className="mt-1 font-display text-lg leading-snug text-ink">{ui.guideUpgradeTitle}</p>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted">{ui.guideUpgradeBody}</p>
+            <button
+              type="button"
+              aria-pressed={guideSelected}
+              onClick={() => setGuideSelected((v) => !v)}
+              className={cn(
+                "mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] transition",
+                guideSelected
+                  ? "bg-olive text-paper"
+                  : "bg-surface text-accent ring-1 ring-olive-200 hover:bg-olive-50",
+              )}
+            >
+              {guideSelected ? <Check className="size-3.5" /> : <Sparkles className="size-3.5" />}
+              {guideSelected ? ui.guideAdded : ui.guideAdd}
+            </button>
+          </div>
+        ) : null}
+
         {/* Line items, so the total is never a black box. */}
-        {q.kind === "priced" ? (
+        {q.kind === "priced" && !guideOn ? (
           <dl className="grid gap-1.5 rounded-lg bg-bg p-3 text-sm">
             {q.lines.map((line) => (
               <div key={line.label} className="flex justify-between gap-3 text-muted">
@@ -211,10 +285,40 @@ export function BookingWidget({
                 <dd>{formatPrice(lang, line.total)}</dd>
               </div>
             ))}
-            <div className="mt-1 flex justify-between gap-3 border-t border-line pt-2 font-semibold text-earth">
+            <div className="mt-1 flex justify-between gap-3 border-t border-line pt-2 font-semibold text-ink">
               <dt>{ui.total}</dt>
               <dd>{formatPrice(lang, q.total)}</dd>
             </div>
+          </dl>
+        ) : null}
+
+        {guideOn && privateGuide ? (
+          <dl className="grid gap-1.5 rounded-lg bg-bg p-3 text-sm">
+            {q.kind === "priced" ? (
+              <div className="flex justify-between gap-3 text-muted">
+                <dt>{ui.tourLine}</dt>
+                <dd>{formatPrice(lang, q.total)}</dd>
+              </div>
+            ) : null}
+            <div>
+              <div className="flex justify-between gap-3 text-muted">
+                <dt>{ui.guideLine}</dt>
+                <dd>+{formatPrice(lang, privateGuide.amount)}</dd>
+              </div>
+              <p className="mt-1 text-xs leading-relaxed text-faint">{ui.guidePayNote}</p>
+            </div>
+            {q.kind === "priced" ? (
+              <>
+                <div className="mt-1 flex justify-between gap-3 border-t border-line pt-2 font-semibold text-ink">
+                  <dt>{ui.payOnline}</dt>
+                  <dd>{formatPrice(lang, q.total)}</dd>
+                </div>
+                <div className="flex justify-between gap-3 text-sm text-muted">
+                  <dt>{ui.dayTotal}</dt>
+                  <dd>{formatPrice(lang, q.total + privateGuide.amount)}</dd>
+                </div>
+              </>
+            ) : null}
           </dl>
         ) : null}
 
@@ -243,15 +347,9 @@ export function BookingWidget({
 
         {live ? (
           <>
-            <Button asChild size="lg" className="w-full">
-              <a
-                href={date ? bookUrl(live.serviceId, live.categoryId, date) : catalogUrl(live.serviceId, live.categoryId)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="size-4" />
-                {date ? ui.bookLive : ui.bookLiveOpen}
-              </a>
+            <Button type="button" size="lg" className="w-full" disabled={sending} onClick={() => void openLive()}>
+              {sending ? <Loader2 className="size-4 animate-spin" /> : <ExternalLink className="size-4" />}
+              {date ? ui.bookLive : ui.bookLiveOpen}
             </Button>
             <p className="text-center text-xs text-muted">{ui.livePayNote}</p>
           </>
@@ -283,7 +381,7 @@ export function BookingWidget({
 
         {cancelFreeHours > 0 ? (
           <p className="flex items-center justify-center gap-1.5 text-xs text-muted">
-            <ShieldCheck className="size-3.5 text-olive" />
+            <ShieldCheck className="size-3.5 text-accent" />
             {ui.freeCancel} · {cancelFreeHours}h
           </p>
         ) : null}
@@ -316,7 +414,7 @@ function Stepper({
         >
           <Minus className="size-3.5" />
         </StepButton>
-        <span className="w-7 text-center text-sm font-semibold tabular-nums text-earth">{value}</span>
+        <span className="w-7 text-center text-sm font-semibold tabular-nums text-ink">{value}</span>
         <StepButton
           onClick={() => onChange(Math.min(max, value + 1))}
           disabled={value >= max}
@@ -350,7 +448,7 @@ function StepButton({
         "grid size-8 place-items-center rounded-full ring-1 transition",
         disabled
           ? "cursor-not-allowed text-faint ring-line"
-          : "text-olive-deep ring-olive-200 hover:bg-olive-50",
+          : "text-accent ring-olive-200 hover:bg-olive-50",
       )}
     >
       {children}

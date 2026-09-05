@@ -56,11 +56,11 @@ function TourResult({ card, lang }: { card: DeskTourCard; lang: Lang }) {
           <div className="absolute inset-0 bg-gradient-to-t from-hero/90 via-hero/25 to-transparent" />
 
           <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3">
-            <span className="rounded-full bg-hero/50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-surface backdrop-blur-sm">
+            <span className="rounded-full bg-hero/50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-paper backdrop-blur-sm">
               {card.category}
             </span>
             {card.featured ? (
-              <span className="rounded-full bg-gold px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-ink shadow">
+              <span className="rounded-full bg-olive px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.14em] text-paper shadow">
                 {ui.popular}
               </span>
             ) : null}
@@ -68,17 +68,17 @@ function TourResult({ card, lang }: { card: DeskTourCard; lang: Lang }) {
 
           <div className="absolute inset-x-0 bottom-0 p-3.5">
             {card.rating ? (
-              <p className="mb-1.5 flex items-center gap-1.5 text-[11px] text-surface/85">
+              <p className="mb-1.5 flex items-center gap-1.5 text-[11px] text-paper/85">
                 <Stars
                   value={card.rating.average}
                   size={12}
                   label={fill(ui.starsOutOf, { n: card.rating.average.toFixed(1) })}
                 />
-                <span className="font-bold text-surface">{card.rating.average.toFixed(1)}</span>
+                <span className="font-bold text-paper">{card.rating.average.toFixed(1)}</span>
                 <span>· {card.rating.count} {ui.reviews}</span>
               </p>
             ) : null}
-            <h4 className="font-display text-[1.35rem] leading-tight text-surface drop-shadow-sm">
+            <h4 className="font-display text-[1.35rem] leading-tight text-paper drop-shadow-sm">
               {card.title}
             </h4>
           </div>
@@ -87,7 +87,7 @@ function TourResult({ card, lang }: { card: DeskTourCard; lang: Lang }) {
 
       <div className="p-3.5">
         <div className="flex items-baseline justify-between gap-3">
-          <p className="font-display text-lg leading-none text-earth">{card.price}</p>
+          <p className="font-display text-lg leading-none text-ink">{card.price}</p>
           <p className="text-[11px] text-faint">{card.cadence}</p>
         </div>
 
@@ -95,7 +95,7 @@ function TourResult({ card, lang }: { card: DeskTourCard; lang: Lang }) {
           <ul className="mt-2.5 space-y-1">
             {card.highlights.slice(0, 2).map((line) => (
               <li key={line} className="flex gap-1.5 text-[12px] leading-snug text-muted">
-                <Check className="mt-0.5 size-3 shrink-0 text-olive" />
+                <Check className="mt-0.5 size-3 shrink-0 text-accent" />
                 <span className="line-clamp-1">{line}</span>
               </li>
             ))}
@@ -115,7 +115,7 @@ function TourResult({ card, lang }: { card: DeskTourCard; lang: Lang }) {
         <div className="mt-3.5 flex items-center gap-2">
           <Link
             href={card.href}
-            className="group inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-olive px-4 text-sm font-semibold text-surface transition hover:bg-olive-deep"
+            className="group inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-olive px-4 text-sm font-semibold text-paper transition hover:bg-olive-deep"
           >
             {card.bookUrl ? ui.chatHold : ui.chatSeeDay}
             <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
@@ -132,7 +132,7 @@ export function RouteCards({ cards, lang }: { cards: DeskRouteCard[]; lang: Lang
   if (!cards.length) return null;
   return (
     <div className="mt-3">
-      <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-olive">
+      <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-accent">
         {ui.chatRoutesTitle}
       </p>
       <ul className="space-y-2">
@@ -152,9 +152,9 @@ function RouteResult({ card, lang }: { card: DeskRouteCard; lang: Lang }) {
     <article className="rounded-[20px] bg-surface p-3.5 ring-1 ring-line">
       <div className="flex items-start justify-between gap-3">
         <Link href={card.href} className="min-w-0 flex-1">
-          <p className="font-display text-base leading-tight text-earth">
+          <p className="font-display text-base leading-tight text-ink">
             {card.from}
-            <span className="mx-1.5 text-olive">→</span>
+            <span className="mx-1.5 text-accent">→</span>
             {card.to}
           </p>
         </Link>
@@ -164,7 +164,7 @@ function RouteResult({ card, lang }: { card: DeskRouteCard; lang: Lang }) {
             a promise this panel is not in a position to make. */}
         {card.estimate ? (
           <p className="shrink-0 text-right leading-none">
-            <span className="font-display text-lg text-earth">
+            <span className="font-display text-lg text-ink">
               €{card.estimate.low}–{card.estimate.high}
             </span>
             <span className="mt-1 block text-[9px] uppercase tracking-wider text-faint">
@@ -182,7 +182,7 @@ function RouteResult({ card, lang }: { card: DeskRouteCard; lang: Lang }) {
       <div className="mt-3 flex items-center gap-2">
         <Link
           href={card.href}
-          className="group inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-earth px-4 text-sm font-semibold text-surface transition hover:bg-hero"
+          className="group inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-earth px-4 text-sm font-semibold text-paper transition hover:bg-hero"
         >
           {ui.chatRequestRide}
           <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
@@ -196,7 +196,7 @@ function RouteResult({ card, lang }: { card: DeskRouteCard; lang: Lang }) {
 function Chip({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
     <li className="inline-flex items-center gap-1 rounded-full bg-bg px-2.5 py-1 text-[10px] font-semibold text-muted">
-      <span className="text-olive">{icon}</span>
+      <span className="text-accent">{icon}</span>
       {children}
     </li>
   );

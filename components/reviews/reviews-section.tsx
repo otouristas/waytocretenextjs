@@ -45,10 +45,10 @@ export function ReviewsSection({
   return (
     <section className={cn("@container mt-12", className)}>
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-        <h2 className="font-display text-2xl text-earth">{title ?? ui.reviewsForThis}</h2>
+        <h2 className="font-display text-2xl text-ink">{title ?? ui.reviewsForThis}</h2>
         <Link
           href={langPath(lang, "/reviews")}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-olive-deep hover:text-olive"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent"
         >
           {ui.reviewsAll}
           <ArrowRight className="size-4" />

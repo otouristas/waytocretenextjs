@@ -11,6 +11,7 @@ import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/site";
 import { bookNowTarget } from "@/lib/travelotopos";
 import { cn } from "@/lib/cn";
 import { BrandLogo } from "@/components/brand-logo";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileMenu } from "@/components/mobile-menu";
 import { MegaMenu } from "@/components/nav/mega-menu";
 import { NavDropdown } from "@/components/nav/nav-dropdown";
@@ -152,6 +153,7 @@ export function Header({
           </nav>
 
           <div className="ml-auto flex items-center gap-1.5 xl:ml-0">
+            <ThemeToggle toLight={copy.themeToLight} toDark={copy.themeToDark} />
             <div className="relative" ref={langBox}>
               <button
                 type="button"
@@ -161,7 +163,7 @@ export function Header({
                 }}
                 aria-label={copy.languages}
                 aria-expanded={langs}
-                className="flex h-10 items-center gap-0.5 rounded-full px-2 text-[11px] font-bold uppercase tracking-wider text-earth ring-1 ring-line transition hover:bg-bg sm:px-2.5"
+                className="flex h-10 items-center gap-0.5 rounded-full px-2 text-[11px] font-bold uppercase tracking-wider text-ink ring-1 ring-line transition hover:bg-bg sm:px-2.5"
               >
                 {LANG_META[lang].hreflang}
                 <ChevronDown className={cn("size-3 transition", langs && "rotate-180")} />
@@ -175,7 +177,7 @@ export function Header({
                         onClick={() => setLangs(false)}
                         className={cn(
                           "flex w-full items-center justify-between px-3 py-2.5 text-sm hover:bg-bg",
-                          code === lang && "bg-bg font-semibold text-olive-deep",
+                          code === lang && "bg-bg font-semibold text-accent",
                         )}
                       >
                         <span>{LANG_META[code].native}</span>
@@ -190,7 +192,7 @@ export function Header({
             <a
               href={book.href}
               {...(book.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-olive px-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-surface transition hover:bg-olive-deep sm:px-4 sm:text-xs"
+              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-olive px-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-paper transition hover:bg-olive-deep sm:px-4 sm:text-xs"
             >
               <CalendarCheck className="size-3.5 shrink-0" />
               <span className="truncate">{labels.bookNow}</span>
@@ -198,7 +200,7 @@ export function Header({
 
             <button
               type="button"
-              className="grid size-10 shrink-0 place-items-center rounded-full bg-olive text-surface xl:hidden"
+              className="grid size-10 shrink-0 place-items-center rounded-full bg-olive text-paper xl:hidden"
               onClick={() => setSheet(true)}
               aria-label={copy.menu}
             >
@@ -245,8 +247,8 @@ function NavTrigger({
   onToggle: () => void;
 }) {
   const className = cn(
-    "inline-flex items-center gap-0.5 rounded-full px-2.5 py-2 text-[12px] font-semibold tracking-[0.04em] text-ink transition hover:text-olive",
-    (active || expanded) && "text-olive",
+    "inline-flex items-center gap-0.5 rounded-full px-2.5 py-2 text-[12px] font-semibold tracking-[0.04em] text-ink transition hover:text-accent",
+    (active || expanded) && "text-accent",
   );
 
   if (!item.href) {
@@ -276,7 +278,7 @@ function NavTrigger({
       {item.kind !== "link" ? (
         <button
           type="button"
-          className={cn("grid size-7 place-items-center rounded-full text-ink hover:bg-bg", expanded && "text-olive")}
+          className={cn("grid size-7 place-items-center rounded-full text-ink hover:bg-bg", expanded && "text-accent")}
           aria-label={`${openLabel}: ${item.label}`}
           aria-expanded={expanded}
           aria-haspopup="true"
@@ -299,23 +301,23 @@ function PromoStrip({
 }) {
   const copy = t(lang);
   return (
-    <div className="hidden border-b border-earth-800/40 bg-earth text-surface lg:block">
+    <div className="hidden border-b border-olive-800/40 bg-olive text-paper lg:block">
       <div className="flex items-center justify-between gap-4 px-6 py-1.5 text-[11px] font-medium xl:px-8">
         <ul className="flex flex-wrap items-center gap-x-5">
           <li className="inline-flex items-center gap-1.5">
-            <CalendarCheck className="size-3 text-gold-soft" />
+            <CalendarCheck className="size-3 text-paper" />
             {copy.freeCancel}
           </li>
           <li className="inline-flex items-center gap-1.5">
-            <CarFront className="size-3 text-gold-soft" />
+            <CarFront className="size-3 text-paper" />
             {copy.pickup}
           </li>
           <li className="inline-flex items-center gap-1.5">
-            <Camera className="size-3 text-gold-soft" />
+            <Camera className="size-3 text-paper" />
             {copy.photoshoot}
           </li>
           <li className="inline-flex items-center gap-1.5">
-            <Users className="size-3 text-gold-soft" />
+            <Users className="size-3 text-paper" />
             {copy.smallGroup}
           </li>
         </ul>
@@ -323,7 +325,7 @@ function PromoStrip({
           {rating ? (
             <Link
               href={langPath(lang, "/reviews")}
-              className="inline-flex items-center gap-2 hover:text-gold-soft"
+              className="inline-flex items-center gap-2 hover:text-paper"
             >
               <Stars
                 value={rating.average}
@@ -339,10 +341,10 @@ function PromoStrip({
               </span>
             </Link>
           ) : null}
-          <a href={WHATSAPP} className="hover:text-gold-soft">
+          <a href={WHATSAPP} className="hover:text-paper">
             {copy.whatsapp}
           </a>
-          <a href={`tel:${PHONE}`} className="hover:text-gold-soft">
+          <a href={`tel:${PHONE}`} className="hover:text-paper">
             {PHONE_DISPLAY}
           </a>
         </div>

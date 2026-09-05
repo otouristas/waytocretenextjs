@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
-  <g fill="none" stroke="#6c7c59" stroke-width="1.2" opacity="0.22">
+  <g fill="none" stroke="#506551" stroke-width="1.2" opacity="0.22">
     <path d="M40 120c20-40 60-40 80 0s60 40 80 0"/>
     <ellipse cx="70" cy="108" rx="8" ry="14" transform="rotate(-35 70 108)"/>
     <ellipse cx="96" cy="96" rx="8" ry="14" transform="rotate(-20 96 96)"/>

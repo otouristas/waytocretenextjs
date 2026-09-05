@@ -5,6 +5,11 @@ import {
   GuideCore,
   PlaceCopy,
   PlaceCore,
+  PlannerCopyFile,
+  PlannerLeg,
+  PlannerStart,
+  PlannerStop,
+  PlannerTemplate,
   Review,
   TourCopy,
   TourCore,
@@ -284,6 +289,79 @@ if (existsSync(reviewsPath)) {
   console.log(`  ${list.length} reviews, ${eligible} eligible for AggregateRating`);
 } else {
   console.log("  (no reviews file yet)");
+}
+
+/* ────────────────────────────── planner ────────────────────────────── */
+
+console.log("\nPlanner");
+{
+  const starts = (load(join(CONTENT, "planner/starts.json")) as unknown[]) ?? [];
+  const stops = (load(join(CONTENT, "planner/stops.json")) as unknown[]) ?? [];
+  const legs = (load(join(CONTENT, "planner/legs.json")) as unknown[]) ?? [];
+  const templates = (load(join(CONTENT, "planner/templates.json")) as unknown[]) ?? [];
+  const copy = load(join(CONTENT, "planner/copy/en.json"));
+
+  const startSlugs = new Set<string>();
+  if (Array.isArray(starts)) {
+    starts.forEach((row, i) => {
+      const parsed = check(PlannerStart, row, `planner/starts.json[${i}]`);
+      if (!parsed) return;
+      if (startSlugs.has(parsed.slug)) fail("planner/starts.json", `duplicate start ${parsed.slug}`);
+      startSlugs.add(parsed.slug);
+    });
+  }
+
+  const stopSlugs = new Set<string>();
+  if (Array.isArray(stops)) {
+    stops.forEach((row, i) => {
+      const parsed = check(PlannerStop, row, `planner/stops.json[${i}]`);
+      if (!parsed) return;
+      if (stopSlugs.has(parsed.slug)) fail("planner/stops.json", `duplicate stop ${parsed.slug}`);
+      stopSlugs.add(parsed.slug);
+      if (parsed.minStayMin > parsed.suggestedStayMin || parsed.suggestedStayMin > parsed.maxStayMin) {
+        fail(`planner/stops.json[${parsed.slug}]`, "stay min/suggested/max is inverted");
+      }
+      if (parsed.place && !knownPlaces.has(parsed.place)) {
+        warn(`planner/stops.json[${parsed.slug}]`, `place "${parsed.place}" has no content/places entry`);
+      }
+    });
+  }
+
+  const nodes = new Set([...startSlugs, ...stopSlugs]);
+  if (Array.isArray(legs)) {
+    legs.forEach((row, i) => {
+      const parsed = check(PlannerLeg, row, `planner/legs.json[${i}]`);
+      if (!parsed) return;
+      if (!nodes.has(parsed.from) || !nodes.has(parsed.to)) {
+        fail(`planner/legs.json[${i}]`, `unknown node ${parsed.from} → ${parsed.to}`);
+      }
+    });
+  }
+
+  if (Array.isArray(templates)) {
+    templates.forEach((row, i) => {
+      const parsed = check(PlannerTemplate, row, `planner/templates.json[${i}]`);
+      if (!parsed) return;
+      for (const slug of parsed.stops) {
+        if (!stopSlugs.has(slug)) fail(`planner/templates.json[${parsed.id}]`, `unknown stop ${slug}`);
+      }
+      if (parsed.matchTour && knownTours.size > 0 && !knownTours.has(parsed.matchTour)) {
+        warn(`planner/templates.json[${parsed.id}]`, `matchTour "${parsed.matchTour}" is not a tour`);
+      }
+    });
+  }
+
+  const copyParsed = check(PlannerCopyFile, copy, "planner/copy/en.json");
+  if (copyParsed) {
+    for (const slug of startSlugs) {
+      if (!copyParsed.starts[slug]) fail("planner/copy/en.json", `missing start label ${slug}`);
+    }
+    for (const slug of stopSlugs) {
+      if (!copyParsed.stops[slug]) fail("planner/copy/en.json", `missing stop copy ${slug}`);
+    }
+  }
+
+  console.log(`  ${startSlugs.size} starts, ${stopSlugs.size} stops, ${Array.isArray(legs) ? legs.length : 0} legs`);
 }
 
 /* ────────────────────────────── result ────────────────────────────── */

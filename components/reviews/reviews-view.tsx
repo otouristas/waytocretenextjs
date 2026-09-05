@@ -56,10 +56,10 @@ export function ReviewsView({
     <div>
       <section className="pattern-olive border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-olive">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent">
             {ui.trustLine}
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl text-earth md:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-4xl text-ink md:text-5xl">
             {ui.reviewsTitle}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">{ui.reviewsLead}</p>
@@ -79,13 +79,13 @@ export function ReviewsView({
           Imbros can get straight to the words about the one they mean. */}
       {(tourCounts.length > 0 || transfers.length > 0) && (
         <section className="mx-auto max-w-6xl px-4 py-12">
-          <h2 className="font-display text-2xl text-earth">{ui.reviewsForThis}</h2>
+          <h2 className="font-display text-2xl text-ink">{ui.reviewsForThis}</h2>
           <ul className="mt-5 flex flex-wrap gap-2">
             {tourCounts.map(([slug, list]) => (
               <li key={slug}>
                 <Link
                   href={langPath(lang, `/tours/${slug}`)}
-                  className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm text-earth ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive-200"
+                  className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm text-ink ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive-200"
                 >
                   {tourIndex.get(slug)}
                   <span className="text-xs text-faint">{list.length}</span>
@@ -96,7 +96,7 @@ export function ReviewsView({
               <li>
                 <Link
                   href={langPath(lang, "/transfers")}
-                  className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm text-earth ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive-200"
+                  className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm text-ink ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive-200"
                 >
                   {ui.navTransfers}
                   <span className="text-xs text-faint">{transfers.length}</span>
@@ -107,7 +107,7 @@ export function ReviewsView({
               <li>
                 <Link
                   href={langPath(lang, "/transfers/weddings")}
-                  className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm text-earth ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive-200"
+                  className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm text-ink ring-1 ring-line transition hover:bg-olive-50 hover:ring-olive-200"
                 >
                   {ui.weddingTransfers}
                   <span className="text-xs text-faint">{weddings.length}</span>
@@ -145,7 +145,7 @@ export function ReviewsView({
       {direct.length > 0 ? (
         <SourceWall
           id="direct"
-          mark={<span className="font-display text-xl text-earth">{ui.travellerTips}</span>}
+          mark={<span className="font-display text-xl text-ink">{ui.travellerTips}</span>}
           reviews={direct}
           lang={lang}
           tourIndex={tourIndex}
@@ -154,11 +154,11 @@ export function ReviewsView({
       ) : null}
 
       <section className="mx-auto max-w-6xl px-4 pb-16">
-        <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-earth px-6 py-8 text-surface">
-          <p className="max-w-md text-sm leading-relaxed text-sand-200/90">{ui.contactLead}</p>
+        <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-earth px-6 py-8 text-paper">
+          <p className="max-w-md text-sm leading-relaxed text-paper/90">{ui.contactLead}</p>
           <Link
             href={langPath(lang, "/tours")}
-            className="inline-flex items-center gap-2 rounded-full bg-gold-soft px-6 py-3 text-sm font-semibold text-earth transition hover:bg-surface"
+            className="inline-flex items-center gap-2 rounded-full bg-olive px-6 py-3 text-sm font-semibold text-paper transition hover:bg-olive-deep"
           >
             {ui.viewAll}
             <ArrowRight className="size-4" />

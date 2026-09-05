@@ -48,7 +48,7 @@ export function NavDropdown({
                   </span>
                 ) : null}
                 <span className="min-w-0 flex-1">
-                  <span className="block font-display text-[15px] leading-snug text-earth group-hover:text-olive-deep">
+                  <span className="block font-display text-[15px] leading-snug text-ink group-hover:text-accent">
                     {tour.label}
                   </span>
                   {tour.duration || tour.priceFrom != null ? (
@@ -59,7 +59,7 @@ export function NavDropdown({
                           {tour.duration}
                         </span>
                       ) : null}
-                      <span className="font-semibold text-earth">
+                      <span className="font-semibold text-ink">
                         {tour.priceFrom != null
                           ? `${ui.fromPrice} ${formatPrice(lang, tour.priceFrom)}`
                           : null}
@@ -77,7 +77,7 @@ export function NavDropdown({
           <Link
             href={extra.href}
             onClick={onNavigate}
-            className="flex items-center justify-between border-t border-line px-4 py-3 text-xs font-semibold text-olive-deep hover:bg-olive-50"
+            className="flex items-center justify-between border-t border-line px-4 py-3 text-xs font-semibold text-accent hover:bg-olive-50"
           >
             {extra.label}
             <ArrowRight className="size-3.5" />

@@ -7,6 +7,7 @@ import {
   CategoryTiles,
   GuidesTeaser,
   HomeFaq,
+  PlannerHomeBand,
   Reviews,
   SectionHead,
   WhyBookDirect,
@@ -50,6 +51,7 @@ export function HomeView({ lang }: { lang: Lang }) {
   return (
     <div>
       <HomeHero lang={lang} />
+      <PlannerHomeBand lang={lang} />
 
       <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
         <SectionHead

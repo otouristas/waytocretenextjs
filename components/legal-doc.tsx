@@ -22,8 +22,8 @@ export function LegalDoc({ doc, lang }: { doc: Doc; lang: Lang }) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 md:py-14">
       <header className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive">{ui.legalKicker}</p>
-        <h1 className="mt-2 font-display text-4xl text-earth md:text-5xl">{doc.title}</h1>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{ui.legalKicker}</p>
+        <h1 className="mt-2 font-display text-4xl text-ink md:text-5xl">{doc.title}</h1>
         <p className="mt-4 leading-relaxed text-muted">{doc.description}</p>
         <p className="mt-4 text-xs text-faint">
           {ui.lastUpdated}{" "}
@@ -42,21 +42,21 @@ export function LegalDoc({ doc, lang }: { doc: Doc; lang: Lang }) {
           <Prose markdown={doc.markdown} anchors />
 
           <aside className="mt-12 rounded-2xl bg-surface p-5 ring-1 ring-line">
-            <h2 className="font-display text-lg text-earth">{ui.getInTouch}</h2>
+            <h2 className="font-display text-lg text-ink">{ui.getInTouch}</h2>
             <p className="mt-1.5 text-sm leading-relaxed text-muted">{ui.legalAsk}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
                 href={`mailto:${EMAIL}`}
-                className="inline-flex items-center gap-2 rounded-full bg-olive px-4 py-2 text-xs font-semibold text-surface transition hover:bg-olive-deep"
+                className="inline-flex items-center gap-2 rounded-full bg-olive px-4 py-2 text-xs font-semibold text-paper transition hover:bg-olive-deep"
               >
                 <Mail className="size-3.5" />
                 {EMAIL}
               </a>
               <a
                 href={`tel:${PHONE}`}
-                className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-xs font-semibold text-earth ring-1 ring-line transition hover:ring-olive-200"
+                className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-xs font-semibold text-ink ring-1 ring-line transition hover:ring-olive-200"
               >
-                <Phone className="size-3.5 text-olive" />
+                <Phone className="size-3.5 text-accent" />
                 {PHONE_DISPLAY}
               </a>
             </div>
@@ -64,7 +64,7 @@ export function LegalDoc({ doc, lang }: { doc: Doc; lang: Lang }) {
               {ui.seeAlso}{" "}
               <Link
                 href={langPath(lang, `/${other}`)}
-                className="font-medium text-olive-deep underline"
+                className="font-medium text-accent underline"
               >
                 {other === "privacy" ? ui.privacy : ui.terms}
               </Link>
@@ -87,7 +87,7 @@ export function LegalDoc({ doc, lang }: { doc: Doc; lang: Lang }) {
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
-                  className="text-muted transition hover:text-olive-deep"
+                  className="text-muted transition hover:text-accent"
                 >
                   {section.title}
                 </a>

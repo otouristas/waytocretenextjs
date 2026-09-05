@@ -57,7 +57,7 @@ export function ReviewCard({
           <span
             aria-hidden
             className={cn(
-              "select-none font-script leading-none text-gold",
+              "select-none font-script leading-none text-accent",
               featured ? "text-5xl" : "text-4xl",
             )}
           >
@@ -80,7 +80,7 @@ export function ReviewCard({
 
       <blockquote
         className={cn(
-          "flex-1 leading-relaxed text-earth/80",
+          "flex-1 leading-relaxed text-ink/80",
           featured ? "text-base sm:text-lg" : "text-sm",
           clamp ? "line-clamp-7 min-h-0" : "whitespace-pre-line",
         )}
@@ -95,13 +95,13 @@ export function ReviewCard({
       <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-4">
         <AuthorMark name={review.author} />
         <div className="min-w-0 text-xs">
-          <p className="truncate font-semibold text-earth">{review.author}</p>
+          <p className="truncate font-semibold text-ink">{review.author}</p>
           {review.sourceUrl ? (
             <a
               href={review.sourceUrl}
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="text-faint underline decoration-line hover:text-olive-deep"
+              className="text-faint underline decoration-line hover:text-accent"
             >
               {review.source}
             </a>
@@ -111,7 +111,7 @@ export function ReviewCard({
           {context ? (
             <Link
               href={langPath(lang, `/tours/${context.slug}`)}
-              className="mt-0.5 block truncate text-olive-deep hover:text-olive"
+              className="mt-0.5 block truncate text-accent hover:text-accent"
             >
               {context.title}
             </Link>
@@ -123,10 +123,10 @@ export function ReviewCard({
 }
 
 const AVATAR_TONES = [
-  "bg-olive-100 text-olive-800",
-  "bg-earth-100 text-earth",
-  "bg-sand-300 text-earth",
-  "bg-olive-50 text-olive-deep",
+  "bg-olive-100 text-accent",
+  "bg-earth-100 text-ink",
+  "bg-sand-300 text-ink",
+  "bg-olive-50 text-accent",
 ] as const;
 
 function AuthorMark({ name }: { name: string }) {

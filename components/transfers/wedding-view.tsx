@@ -42,14 +42,14 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-earth-900/94 via-earth-900/60 to-earth-900/25" />
           <div className="absolute inset-0 flex items-end">
             <div className="mx-auto w-full max-w-6xl px-4 pb-10">
-              <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-soft">
+              <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-paper">
                 <Heart className="size-3.5" />
                 {p.weddingKicker}
               </p>
-              <h1 className="mt-3 max-w-3xl font-display text-4xl text-surface md:text-5xl">
+              <h1 className="mt-3 max-w-3xl font-display text-4xl text-paper md:text-5xl">
                 {p.weddingHeading}
               </h1>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-sand-200/90 md:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-paper/90 md:text-base">
                 {p.weddingLead}
               </p>
             </div>
@@ -62,25 +62,25 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_minmax(0,24rem)]">
           <div>
-            <h2 className="font-display text-2xl text-earth">{p.weddingWhatTitle}</h2>
+            <h2 className="font-display text-2xl text-ink">{p.weddingWhatTitle}</h2>
             <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
               {w.services.map((service) => (
                 <li key={service} className="flex gap-2.5 text-sm text-ink">
-                  <Check className="mt-0.5 size-4 shrink-0 text-olive" />
+                  <Check className="mt-0.5 size-4 shrink-0 text-accent" />
                   {service}
                 </li>
               ))}
             </ul>
 
-            <h2 className="mt-12 font-display text-2xl text-earth">{p.weddingRoutesTitle}</h2>
+            <h2 className="mt-12 font-display text-2xl text-ink">{p.weddingRoutesTitle}</h2>
             <ol className="mt-5 grid gap-px overflow-hidden rounded-xl bg-line ring-1 ring-line">
               {w.typicalRoutes.map((item) => (
                 <li
                   key={item.route}
                   className="flex flex-wrap items-center justify-between gap-2 bg-surface px-5 py-4"
                 >
-                  <span className="inline-flex items-center gap-2.5 text-sm font-semibold text-earth">
-                    <MapPin className="size-4 shrink-0 text-olive" />
+                  <span className="inline-flex items-center gap-2.5 text-sm font-semibold text-ink">
+                    <MapPin className="size-4 shrink-0 text-accent" />
                     {item.route}
                   </span>
                   <span className="text-xs text-faint">{item.when}</span>
@@ -88,11 +88,11 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
               ))}
             </ol>
 
-            <h2 className="mt-12 font-display text-2xl text-earth">{p.weddingProcessTitle}</h2>
+            <h2 className="mt-12 font-display text-2xl text-ink">{p.weddingProcessTitle}</h2>
             <ol className="mt-5 grid gap-4">
               {w.process.map((step, i) => (
                 <li key={step} className="flex gap-4">
-                  <span className="grid size-7 shrink-0 place-items-center rounded-full bg-olive text-xs font-semibold text-surface">
+                  <span className="grid size-7 shrink-0 place-items-center rounded-full bg-olive text-xs font-semibold text-paper">
                     {i + 1}
                   </span>
                   <p className="pt-0.5 text-sm leading-relaxed text-muted">{step}</p>
@@ -110,19 +110,19 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
                 plan impossible — and a couple needs to know before they
                 book the venue, not after. */}
             <div className="mt-4 rounded-2xl bg-surface p-6 text-sm leading-relaxed text-muted ring-1 ring-line">
-              <h3 className="font-display text-lg text-earth">{ui.transferCoverage}</h3>
+              <h3 className="font-display text-lg text-ink">{ui.transferCoverage}</h3>
               <p className="mt-2">{w.coverageNote}</p>
             </div>
 
             {w.faqs.length > 0 ? (
               <section className="mt-12">
-                <h2 className="font-display text-2xl text-earth">{ui.faq}</h2>
+                <h2 className="font-display text-2xl text-ink">{ui.faq}</h2>
                 <div className="mt-4 divide-y divide-line border-y border-line">
                   {w.faqs.map((faq) => (
                     <details key={faq.q} className="group py-4">
-                      <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-earth marker:content-['']">
+                      <summary className="flex cursor-pointer items-center justify-between gap-4 font-semibold text-ink marker:content-['']">
                         {faq.q}
-                        <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-olive-deep transition group-open:rotate-45">
+                        <span className="grid size-6 shrink-0 place-items-center rounded-full bg-olive-50 text-accent transition group-open:rotate-45">
                           +
                         </span>
                       </summary>
@@ -143,7 +143,7 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
             </p>
             <Link
               href={langPath(lang, "/transfers")}
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-olive-deep hover:text-olive"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent"
             >
               {p.routeBackToAll}
               <ArrowRight className="size-4" />
@@ -158,7 +158,7 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
 function Note({ title, body }: { title: string; body: string }) {
   return (
     <div className="rounded-2xl bg-surface p-6 ring-1 ring-line">
-      <h3 className="font-display text-lg text-earth">{title}</h3>
+      <h3 className="font-display text-lg text-ink">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
     </div>
   );

@@ -44,7 +44,6 @@ Leave it unset on Preview and Development so those builds stay `noindex`. Option
 | `RESEND_API_KEY`, `RESEND_FROM` | Desk request mail. Forms fall back to `mailto:` without them. After DNS, `RESEND_FROM=Rethymno Tours desk <desk@rethymnotours.com>`. |
 | `RESEND_DESK_TO` | Forward target. Defaults to `info@waytocrete.com`. |
 | `RESEND_TEMPLATE_DESK`, `RESEND_TEMPLATE_GUEST` | Optional Resend template IDs. |
-| `AI_GATEWAY_API_KEY`, `AI_GATEWAY_MODEL` | Guest-desk chat. OIDC on Vercel also works without a key. |
 
 ## Architecture
 

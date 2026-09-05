@@ -114,8 +114,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-earth-900/92 via-earth-900/45 to-earth-900/15" />
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-5xl px-4 pb-10">
-            <p className="font-script text-2xl text-gold-soft md:text-3xl">{copy.desk}</p>
-            <h1 className="mt-2 max-w-3xl font-display text-4xl text-surface md:text-5xl">
+            <p className="font-script text-2xl text-paper md:text-3xl">{copy.desk}</p>
+            <h1 className="mt-2 max-w-3xl font-display text-4xl text-paper md:text-5xl">
               {copy.aboutTitle}
             </h1>
           </div>
@@ -129,10 +129,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {facts.map((fact) => (
           <div key={fact.term} className="bg-surface px-5 py-4">
             <dt className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-faint">
-              <span className="text-olive">{fact.icon}</span>
+              <span className="text-accent">{fact.icon}</span>
               {fact.term}
             </dt>
-            <dd className="mt-1 text-sm font-semibold text-earth">{fact.value}</dd>
+            <dd className="mt-1 text-sm font-semibold text-ink">{fact.value}</dd>
           </div>
         ))}
       </dl>
@@ -144,19 +144,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <p className="mt-5 leading-relaxed text-muted">{copy.aboutBody}</p>
 
             <figure className="mt-10 border-l-2 border-olive pl-6">
-              <blockquote className="font-display text-xl leading-snug text-earth">
+              <blockquote className="font-display text-xl leading-snug text-ink">
                 {copy.ernest}
               </blockquote>
             </figure>
 
-            <h2 className="mt-12 font-display text-2xl text-earth">{copy.pointsTitle}</h2>
+            <h2 className="mt-12 font-display text-2xl text-ink">{copy.pointsTitle}</h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {copy.points.map((point) => (
                 <li
                   key={point}
                   className="flex gap-3 rounded-xl bg-surface p-4 text-sm leading-relaxed text-muted ring-1 ring-line"
                 >
-                  <BadgeCheck className="mt-0.5 size-4 shrink-0 text-olive" />
+                  <BadgeCheck className="mt-0.5 size-4 shrink-0 text-accent" />
                   {point}
                 </li>
               ))}
@@ -170,7 +170,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <p className="mt-10 rounded-xl bg-surface p-5 text-sm leading-relaxed text-muted ring-1 ring-line">
               {copy.storyHint}{" "}
               <a
-                className="font-semibold text-olive-deep underline"
+                className="font-semibold text-accent underline"
                 href={sisterUrl("about-us")}
                 rel="noopener"
               >
@@ -181,14 +181,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <aside className="grid gap-4 lg:sticky lg:top-28">
             <div className="rounded-2xl bg-olive-50 p-5 ring-1 ring-olive-200">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-olive-deep">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
                 {copy.trustLine}
               </p>
               <RatingInline lang={lang} summary={rating} className="mt-2" />
-              <p className="mt-3 text-sm leading-relaxed text-olive-900">{copy.verifiedNote}</p>
+              <p className="mt-3 text-sm leading-relaxed text-accent">{copy.verifiedNote}</p>
               <Link
                 href={langPath(lang, "/reviews")}
-                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-olive-deep hover:text-olive"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent"
               >
                 {copy.reviewsAll}
                 <ArrowRight className="size-4" />
@@ -200,12 +200,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               className="group flex items-center justify-between gap-3 rounded-2xl bg-surface p-5 ring-1 ring-line transition hover:ring-olive-200"
             >
               <span>
-                <span className="block font-display text-lg text-earth">{copy.viewAll}</span>
+                <span className="block font-display text-lg text-ink">{copy.viewAll}</span>
                 <span className="text-sm text-muted">
                   {tourCount} {copy.navTours.toLowerCase()}
                 </span>
               </span>
-              <ArrowRight className="size-4 shrink-0 text-olive transition group-hover:translate-x-0.5" />
+              <ArrowRight className="size-4 shrink-0 text-accent transition group-hover:translate-x-0.5" />
             </Link>
 
             <Link
@@ -213,14 +213,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               className="group flex items-center justify-between gap-3 rounded-2xl bg-surface p-5 ring-1 ring-line transition hover:ring-olive-200"
             >
               <span>
-                <span className="block font-display text-lg text-earth">{copy.getInTouch}</span>
+                <span className="block font-display text-lg text-ink">{copy.getInTouch}</span>
                 <span className="text-sm text-muted">{copy.whatsapp}</span>
               </span>
-              <ArrowRight className="size-4 shrink-0 text-olive transition group-hover:translate-x-0.5" />
+              <ArrowRight className="size-4 shrink-0 text-accent transition group-hover:translate-x-0.5" />
             </Link>
 
             <p className="flex items-start gap-2.5 rounded-2xl bg-surface p-5 text-sm leading-relaxed text-muted ring-1 ring-line">
-              <Camera className="mt-0.5 size-4 shrink-0 text-olive" />
+              <Camera className="mt-0.5 size-4 shrink-0 text-accent" />
               {copy.photoshoot}
             </p>
           </aside>
