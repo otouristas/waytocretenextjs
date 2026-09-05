@@ -182,7 +182,7 @@ function RouteResult({ card, lang }: { card: DeskRouteCard; lang: Lang }) {
       <div className="mt-3 flex items-center gap-2">
         <Link
           href={card.href}
-          className="group inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-earth px-4 text-sm font-semibold text-paper transition hover:bg-hero"
+          className="group inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-olive px-4 text-sm font-semibold text-paper transition hover:bg-olive-deep"
         >
           {ui.chatRequestRide}
           <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />

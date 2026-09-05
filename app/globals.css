@@ -125,7 +125,7 @@ html.dark {
   --ink: var(--paper);
   --muted: color-mix(in srgb, var(--paper) 70%, var(--earth));
   --faint: color-mix(in srgb, var(--paper) 48%, var(--earth));
-  --line: color-mix(in srgb, var(--earth) 78%, var(--paper));
+  --line: color-mix(in srgb, var(--earth) 55%, var(--paper));
   --pine-soft: color-mix(in srgb, var(--earth) 72%, var(--pine));
   --pine-hover: color-mix(in srgb, var(--pine) 82%, var(--paper));
   --accent-readable: #a6afa4;
