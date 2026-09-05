@@ -7,14 +7,18 @@ import type { Review } from "@/lib/content/schema";
 import { ratingSummary } from "@/lib/content/load";
 import { ReviewCard } from "@/components/reviews/review-card";
 import { RatingBanner } from "@/components/reviews/rating-summary";
+import {
+  WriteReviewCta,
+  type ExperienceOption,
+} from "@/components/reviews/write-review-cta";
 
 /**
  * The embeddable review block.
  *
  * Dropped onto tour pages, the transfers hub, each route page and the
- * wedding page. It renders nothing at all when the set is empty, which is
- * the right outcome for the nine tours no review names yet — an empty
- * "What guests say" heading is worse than no heading.
+ * wedding page. Quotes hide when the set is empty — an empty card frame
+ * is worse than none — but the write-review form still renders, so a
+ * tour nobody has reviewed yet is exactly where the CTA belongs.
  *
  * The cards live in a framed module rather than a three-column grid. Tour
  * pages place this block in the article column beside the booking widget,
@@ -28,16 +32,18 @@ export function ReviewsSection({
   title,
   limit = 3,
   className = "",
+  experience,
+  experiences,
 }: {
   lang: Lang;
   reviews: Review[];
   title?: string;
   limit?: number;
   className?: string;
+  experience?: string;
+  experiences?: ExperienceOption[];
 }) {
   const ui = t(lang);
-  if (reviews.length === 0) return null;
-
   const shown = reviews.slice(0, limit);
   const summary = ratingSummary(reviews);
   const single = shown.length === 1;
@@ -55,29 +61,40 @@ export function ReviewsSection({
         </Link>
       </div>
 
-      <div className="overflow-hidden rounded-3xl bg-line shadow-[0_24px_50px_-32px_rgba(57,36,32,0.45)] ring-1 ring-line">
-        <RatingBanner lang={lang} summary={summary} />
-        <div
-          className={
-            single
-              ? "grid"
-              : "grid gap-px @4xl:grid-cols-2 @5xl:grid-cols-3"
-          }
-        >
-          {shown.map((review) => (
-            <ReviewCard
-              key={review.id}
-              review={review}
-              lang={lang}
-              flush
-              featured={single}
-              clamp={!single}
-            />
-          ))}
+      {shown.length > 0 ? (
+        <div className="overflow-hidden rounded-3xl bg-line shadow-[0_24px_50px_-32px_rgba(57,36,32,0.45)] ring-1 ring-line">
+          <RatingBanner lang={lang} summary={summary} />
+          <div
+            className={
+              single
+                ? "grid"
+                : "grid gap-px @4xl:grid-cols-2 @5xl:grid-cols-3"
+            }
+          >
+            {shown.map((review) => (
+              <ReviewCard
+                key={review.id}
+                review={review}
+                lang={lang}
+                flush
+                featured={single}
+                clamp={!single}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      ) : null}
 
-      <p className="mt-4 text-xs text-faint">{ui.verifiedNote}</p>
+      {shown.length > 0 ? (
+        <p className="mt-4 text-xs text-faint">{ui.verifiedNote}</p>
+      ) : null}
+
+      <WriteReviewCta
+        lang={lang}
+        experience={experience}
+        experiences={experiences}
+        className={shown.length > 0 ? "mt-6" : undefined}
+      />
     </section>
   );
 }

@@ -5,8 +5,7 @@ import { langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { plannerCopy } from "@/lib/i18n/planner";
 import type { Review } from "@/lib/content/schema";
-import { SOCIAL } from "@/lib/site";
-import { GoogleWordmark, TripAdvisorOwl } from "@/components/trust/source-logos";
+import { WriteReviewCta, type ExperienceOption } from "@/components/reviews/write-review-cta";
 
 /* ────────────────────────── shared section chrome ────────────────────────── */
 
@@ -177,75 +176,44 @@ export function WhyBookDirect({ lang }: { lang: Lang }) {
  * source data carries a numeric star rating. Showing "5.0" here would be the
  * same fabrication that was removed from the structured data.
  */
-export function Reviews({ lang, reviews }: { lang: Lang; reviews: Review[] }) {
+export function Reviews({
+  lang,
+  reviews,
+  experiences,
+}: {
+  lang: Lang;
+  reviews: Review[];
+  experiences: ExperienceOption[];
+}) {
   const ui = t(lang);
-  if (reviews.length === 0) return null;
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <SectionHead eyebrow={ui.trustLine} title={ui.stories} />
-      <div className="grid gap-4 md:grid-cols-3">
-        {reviews.slice(0, 3).map((review) => (
-          <figure
-            key={review.id}
-            className="flex flex-col rounded-2xl bg-surface p-6 ring-1 ring-line"
-          >
-            <blockquote className="flex-1 text-sm leading-relaxed text-muted">
-              “{review.text}”
-            </blockquote>
-            <figcaption className="mt-5 border-t border-line pt-4 text-xs">
-              <span className="font-semibold text-ink">{review.author}</span>
-              <span className="text-faint"> · {review.source}</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-      {/* The marks come from components/trust/source-logos, not from
-          /brand/trust/*.png — those two files never existed, so both logos
-          rendered as empty boxes. The .svg versions on disk would not have
-          worked through <Image> either: the optimiser rejects SVG unless
-          `dangerouslyAllowSVG` is set. Inline SVG is what these marks are
-          for at this size. */}
-      <p className="mt-6 flex flex-wrap items-center gap-3 text-sm text-muted">
-        <PlatformLink href={SOCIAL.google} label="Google">
-          <GoogleWordmark className="h-5 w-auto" />
-        </PlatformLink>
-        <PlatformLink href={SOCIAL.tripadvisor} label="Tripadvisor">
-          <TripAdvisorOwl className="h-4 w-auto" />
-          <span className="text-sm font-semibold tracking-tight text-[#08808a]">Tripadvisor</span>
-        </PlatformLink>
-      </p>
+      {reviews.length > 0 ? (
+        <div className="grid gap-4 md:grid-cols-3">
+          {reviews.slice(0, 3).map((review) => (
+            <figure
+              key={review.id}
+              className="flex flex-col rounded-2xl bg-surface p-6 ring-1 ring-line"
+            >
+              <blockquote className="flex-1 text-sm leading-relaxed text-muted">
+                “{review.text}”
+              </blockquote>
+              <figcaption className="mt-5 border-t border-line pt-4 text-xs">
+                <span className="font-semibold text-ink">{review.author}</span>
+                <span className="text-faint"> · {review.source}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : null}
+      <WriteReviewCta
+        lang={lang}
+        experiences={experiences}
+        className={reviews.length > 0 ? "mt-8" : undefined}
+      />
     </section>
-  );
-}
-
-/**
- * A review platform's own mark, as the link.
- *
- * The mark carries the platform name, so the word is not repeated beside it;
- * `label` is the accessible name instead. `nofollow` matches the rule the
- * rating panel already follows — outbound review links are navigational for
- * the reader, not equity we are passing on.
- */
-function PlatformLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-      aria-label={label}
-      className="inline-flex items-center gap-2 rounded-full bg-surface px-3.5 py-2 ring-1 ring-line transition hover:ring-olive"
-    >
-      {children}
-    </a>
   );
 }
 

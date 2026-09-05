@@ -71,7 +71,8 @@ export const SOCIAL = {
   facebook: "https://www.facebook.com/people/WaytoCrete/61557000327140/",
   tripadvisor:
     "https://www.tripadvisor.com/Attraction_Review-g189421-d27887863-Reviews-WaytoCrete-Rethymnon_Rethymnon_Prefecture_Crete.html",
-  google: "https://g.page/r/CU_EsfuRR6JSEBM/review",
+  /** Google Business Profile. The write-a-review deep link is `REVIEW_WRITE.google`. */
+  google: "https://g.page/r/CU_EsfuRR6JSEBM",
 } as const;
 
 /**
@@ -95,6 +96,24 @@ export const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encod
 )}&query_place_id=${MAP_PLACE_ID}`;
 
 export const MAP_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${GEO.lat},${GEO.lng}&destination_place_id=${MAP_PLACE_ID}`;
+
+/**
+ * Where a guest *reads* existing reviews vs where they *write* one.
+ *
+ * `SOCIAL.google` used to be the write deep link (`…/review`) while every
+ * label said "read our reviews". These two maps keep that from happening
+ * again. `sameAs` and other profile citations stay on `SOCIAL`.
+ */
+export const REVIEW_WRITE = {
+  google: `${SOCIAL.google}/review`,
+  tripadvisor:
+    "https://www.tripadvisor.com/UserReviewEdit-g189421-d27887863-WaytoCrete-Rethymnon_Rethymnon_Prefecture_Crete.html",
+} as const;
+
+export const REVIEW_READ = {
+  google: MAP_LINK,
+  tripadvisor: SOCIAL.tripadvisor,
+} as const;
 
 /** Canonical public origin. Never localhost, never a preview, never the sister site. */
 export function siteUrl() {

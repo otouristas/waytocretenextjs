@@ -7,6 +7,8 @@ import { ratingSummary } from "@/lib/content/load";
 import { GoogleWordmark, TripAdvisorOwl } from "@/components/trust/source-logos";
 import { ReviewCard } from "@/components/reviews/review-card";
 import { RatingPanel } from "@/components/reviews/rating-summary";
+import { WriteReviewCta } from "@/components/reviews/write-review-cta";
+import { reviewExperienceOptions } from "@/lib/reviews/experiences";
 
 /**
  * The reviews page.
@@ -70,6 +72,12 @@ export function ReviewsView({
             googleCount={google.length}
             tripadvisorCount={tripadvisor.length}
             className="mt-10"
+          />
+
+          <WriteReviewCta
+            lang={lang}
+            experiences={reviewExperienceOptions(lang)}
+            className="mt-6"
           />
         </div>
       </section>

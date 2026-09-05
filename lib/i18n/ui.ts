@@ -167,6 +167,16 @@ export type UI = {
   reviewsForThis: string;
   readOnGoogle: string;
   readOnTripadvisor: string;
+  writeReviewLead: string;
+  writeReviewHighlight: string;
+  writeReviewHost: string;
+  writeReviewExperience: string;
+  writeReviewChoose: string;
+  writeReviewPreview: string;
+  writeOnGoogle: string;
+  writeOnTripadvisor: string;
+  writeReviewCopied: string;
+  writeReviewClipboardFail: string;
   verifiedNote: string;
   weddingTransfers: string;
   licensedTitle: string;
@@ -440,6 +450,17 @@ const EN: UI = {
   reviewsForThis: "Guests on this experience",
   readOnGoogle: "Read our Google reviews",
   readOnTripadvisor: "Read our Tripadvisor reviews",
+  writeReviewLead:
+    "Travelled with us? Add a few details and we'll draft a review you can paste on Google or Tripadvisor.",
+  writeReviewHighlight: "What you want to say",
+  writeReviewHost: "Guide or driver (optional)",
+  writeReviewExperience: "Experience",
+  writeReviewChoose: "Choose the experience",
+  writeReviewPreview: "Your review",
+  writeOnGoogle: "Copy & open Google",
+  writeOnTripadvisor: "Copy & open Tripadvisor",
+  writeReviewCopied: "Copied — paste it in the box",
+  writeReviewClipboardFail: "Copy the review below, then open the review page.",
   verifiedNote: "Published as written, on the platform named beside each one.",
   weddingTransfers: "Wedding transfers",
   licensedTitle: "Licensed Greek tour operator",
@@ -773,6 +794,17 @@ const DE: UI = {
   reviewsForThis: "Gäste auf diesem Erlebnis",
   readOnGoogle: "Unsere Google-Bewertungen lesen",
   readOnTripadvisor: "Unsere Tripadvisor-Bewertungen lesen",
+  writeReviewLead:
+    "Mit uns unterwegs gewesen? Ein paar Angaben, und wir formulieren eine Bewertung zum Einfügen auf Google oder Tripadvisor.",
+  writeReviewHighlight: "Was Sie schreiben möchten",
+  writeReviewHost: "Guide oder Fahrer (optional)",
+  writeReviewExperience: "Erlebnis",
+  writeReviewChoose: "Erlebnis wählen",
+  writeReviewPreview: "Ihre Bewertung",
+  writeOnGoogle: "Kopieren und Google öffnen",
+  writeOnTripadvisor: "Kopieren und Tripadvisor öffnen",
+  writeReviewCopied: "Kopiert — im Feld einfügen",
+  writeReviewClipboardFail: "Kopieren Sie die Bewertung unten und öffnen Sie dann die Bewertungsseite.",
   verifiedNote: "Unverändert veröffentlicht, auf der Plattform neben jedem Eintrag.",
   weddingTransfers: "Hochzeitstransfers",
   licensedTitle: "Lizenzierter griechischer Reiseveranstalter",
@@ -1106,6 +1138,17 @@ const IT: UI = {
   reviewsForThis: "Ospiti di questa esperienza",
   readOnGoogle: "Leggi le recensioni Google",
   readOnTripadvisor: "Leggi le recensioni Tripadvisor",
+  writeReviewLead:
+    "Avete viaggiato con noi? Aggiungete qualche dettaglio e prepariamo una recensione da incollare su Google o Tripadvisor.",
+  writeReviewHighlight: "Cosa volete dire",
+  writeReviewHost: "Guida o autista (facoltativo)",
+  writeReviewExperience: "Esperienza",
+  writeReviewChoose: "Scegliete l'esperienza",
+  writeReviewPreview: "La vostra recensione",
+  writeOnGoogle: "Copia e apri Google",
+  writeOnTripadvisor: "Copia e apri Tripadvisor",
+  writeReviewCopied: "Copiato — incollate nel riquadro",
+  writeReviewClipboardFail: "Copiate la recensione qui sotto, poi aprite la pagina della recensione.",
   verifiedNote: "Pubblicate così come scritte, sulla piattaforma indicata accanto.",
   weddingTransfers: "Transfer per matrimoni",
   licensedTitle: "Tour operator greco con licenza",
@@ -1439,6 +1482,17 @@ const FR: UI = {
   reviewsForThis: "Voyageurs de cette expérience",
   readOnGoogle: "Lire nos avis Google",
   readOnTripadvisor: "Lire nos avis Tripadvisor",
+  writeReviewLead:
+    "Vous avez voyagé avec nous ? Ajoutez quelques détails et nous rédigeons un avis à coller sur Google ou Tripadvisor.",
+  writeReviewHighlight: "Ce que vous voulez dire",
+  writeReviewHost: "Guide ou chauffeur (facultatif)",
+  writeReviewExperience: "Expérience",
+  writeReviewChoose: "Choisir l'expérience",
+  writeReviewPreview: "Votre avis",
+  writeOnGoogle: "Copier et ouvrir Google",
+  writeOnTripadvisor: "Copier et ouvrir Tripadvisor",
+  writeReviewCopied: "Copié — collez-le dans le champ",
+  writeReviewClipboardFail: "Copiez l'avis ci-dessous, puis ouvrez la page d'avis.",
   verifiedNote: "Publiés tels quels, sur la plateforme indiquée à côté.",
   weddingTransfers: "Transferts de mariage",
   licensedTitle: "Voyagiste grec licencié",
@@ -1772,6 +1826,17 @@ const SV: UI = {
   reviewsForThis: "Gäster på den här upplevelsen",
   readOnGoogle: "Läs våra Google-omdömen",
   readOnTripadvisor: "Läs våra Tripadvisor-omdömen",
+  writeReviewLead:
+    "Reste ni med oss? Fyll i några uppgifter så skriver vi ett omdöme ni kan klistra in på Google eller Tripadvisor.",
+  writeReviewHighlight: "Vad ni vill säga",
+  writeReviewHost: "Guide eller chaufför (valfritt)",
+  writeReviewExperience: "Upplevelse",
+  writeReviewChoose: "Välj upplevelse",
+  writeReviewPreview: "Ert omdöme",
+  writeOnGoogle: "Kopiera och öppna Google",
+  writeOnTripadvisor: "Kopiera och öppna Tripadvisor",
+  writeReviewCopied: "Kopierat — klistra in i rutan",
+  writeReviewClipboardFail: "Kopiera omdömet nedan och öppna sedan omdömessidan.",
   verifiedNote: "Publicerade som de skrevs, på plattformen som står bredvid.",
   weddingTransfers: "Bröllopstransfer",
   licensedTitle: "Licensierad grekisk researrangör",

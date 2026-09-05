@@ -146,7 +146,12 @@ export function RouteView({
             ))}
           </div>
 
-          <ReviewsSection lang={lang} reviews={reviews} title={p.reviewsTitle} />
+          <ReviewsSection
+            lang={lang}
+            reviews={reviews}
+            title={p.reviewsTitle}
+            experience={`${from} → ${to}`}
+          />
 
           {others.length > 0 ? (
             <section className="mt-12">

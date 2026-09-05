@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { fill, langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import { SOCIAL } from "@/lib/site";
+import { REVIEW_READ } from "@/lib/site";
 import type { RatingSummary } from "@/lib/content/load";
 import { GoogleWordmark, Stars, TripAdvisorOwl } from "@/components/trust/source-logos";
 
@@ -57,7 +57,7 @@ export function RatingPanel({
       </div>
 
       <PlatformTile
-        href={SOCIAL.google}
+        href={REVIEW_READ.google}
         count={googleCount}
         label={ui.readOnGoogle}
         countLabel={ui.reviews}
@@ -65,7 +65,7 @@ export function RatingPanel({
       />
 
       <PlatformTile
-        href={SOCIAL.tripadvisor}
+        href={REVIEW_READ.tripadvisor}
         count={tripadvisorCount}
         label={ui.readOnTripadvisor}
         countLabel={ui.reviews}

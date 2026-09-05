@@ -10,6 +10,7 @@ import { breadcrumbNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/
 import { JsonLd } from "@/components/seo/json-ld";
 import { RatingInline } from "@/components/reviews/rating-summary";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
+import { reviewExperienceOptions } from "@/lib/reviews/experiences";
 import {
   ADDRESS_DISPLAY,
   BRAND,
@@ -227,7 +228,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </aside>
         </div>
 
-        <ReviewsSection lang={lang} reviews={reviews} title={copy.stories} />
+        <ReviewsSection
+          lang={lang}
+          reviews={reviews}
+          title={copy.stories}
+          experiences={reviewExperienceOptions(lang)}
+        />
       </div>
     </>
   );

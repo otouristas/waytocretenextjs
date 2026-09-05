@@ -28,6 +28,7 @@ import {
 } from "@/lib/transfers";
 import { TransferForm } from "@/components/transfers/transfer-form";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
+import { reviewExperienceOptions } from "@/lib/reviews/experiences";
 
 /**
  * The transfers hub.
@@ -216,7 +217,12 @@ export function TransfersView({ lang, reviews }: { lang: Lang; reviews: Review[]
       </section>
 
       <div className="mx-auto max-w-6xl px-4 pb-16">
-        <ReviewsSection lang={lang} reviews={reviews} title={p.reviewsTitle} />
+        <ReviewsSection
+          lang={lang}
+          reviews={reviews}
+          title={p.reviewsTitle}
+          experiences={reviewExperienceOptions(lang)}
+        />
       </div>
     </div>
   );

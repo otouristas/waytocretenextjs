@@ -133,7 +133,12 @@ export function TourPage({
           <PackingLists wear={copy.whatToWear} bring={copy.whatToBring} lang={lang} />
           <FaqList faqs={copy.faqs} title={ui.faq} />
 
-          <ReviewsSection lang={lang} reviews={reviews} title={ui.reviewsForThis} />
+          <ReviewsSection
+            lang={lang}
+            reviews={reviews}
+            title={ui.reviewsForThis}
+            experience={copy.title}
+          />
 
           {/*
             The contextual link to the sister site. In-content and topically

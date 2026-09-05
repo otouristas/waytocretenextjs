@@ -15,6 +15,7 @@ import {
   MHTE_LICENCE,
   PHONE,
   PHONE_DISPLAY,
+  REVIEW_WRITE,
   SOCIAL,
 } from "@/lib/site";
 
@@ -78,7 +79,18 @@ export function Footer({ lang }: { lang: Lang }) {
             <SocialIcon href={SOCIAL.tiktok} label="TikTok">
               <TikTokGlyph className="size-4" />
             </SocialIcon>
-            <SocialIcon href={SOCIAL.tripadvisor} label="Tripadvisor">
+            <SocialIcon
+              href={REVIEW_WRITE.google}
+              label={ui.writeOnGoogle}
+              rel="noopener noreferrer nofollow"
+            >
+              <GoogleWordmark className="h-2.5 w-auto" />
+            </SocialIcon>
+            <SocialIcon
+              href={REVIEW_WRITE.tripadvisor}
+              label={ui.writeOnTripadvisor}
+              rel="noopener noreferrer nofollow"
+            >
               <TripAdvisorOwl className="h-3 w-auto" />
             </SocialIcon>
           </ul>
@@ -273,10 +285,12 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
 function SocialIcon({
   href,
   label,
+  rel = "noopener noreferrer",
   children,
 }: {
   href: string;
   label: string;
+  rel?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -284,7 +298,7 @@ function SocialIcon({
       <a
         href={href}
         target="_blank"
-        rel="noopener noreferrer"
+        rel={rel}
         aria-label={label}
         title={label}
         className="grid size-9 place-items-center rounded-full bg-surface text-ink ring-1 ring-line transition hover:bg-olive hover:text-paper hover:ring-olive"

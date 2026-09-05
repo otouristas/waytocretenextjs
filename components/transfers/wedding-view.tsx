@@ -133,7 +133,12 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
               </section>
             ) : null}
 
-            <ReviewsSection lang={lang} reviews={reviews} title={p.reviewsTitle} />
+            <ReviewsSection
+              lang={lang}
+              reviews={reviews}
+              title={p.reviewsTitle}
+              experience={ui.weddingTransfers}
+            />
           </div>
 
           <div className="lg:sticky lg:top-28 lg:self-start">
