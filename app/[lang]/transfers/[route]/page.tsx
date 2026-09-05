@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { LANGS, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { transfersCopy } from "@/lib/i18n/transfers";
-import { reviewsForTransfers } from "@/lib/content/load";
+import { ratingsFor, reviewsForTransfers } from "@/lib/content/load";
 import {
   getTransferRoute,
   routeDuration,
@@ -11,7 +11,17 @@ import {
   transfers,
   transferRouteSlugs,
 } from "@/lib/transfers";
-import { absolute, breadcrumbNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import {
+  absolute,
+  breadcrumbNode,
+  graph,
+  id,
+  pageMeta,
+  reviewNodes,
+  transferProductNode,
+  webPageNode,
+  type Crumb,
+} from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { RouteView } from "@/components/transfers/route-view";
 
@@ -66,13 +76,11 @@ export default async function Page({
   ];
 
   /**
-   * `TaxiService` with the journey as a `Trip`.
-   *
-   * The distance and drive time are real road figures and are the whole
-   * point of the page, so they are in the markup as well as on it. No price
-   * is asserted anywhere — the estimate on the page is derived from the
-   * per-km bands and is labelled as such.
+   * `TaxiService` with the journey as a `Trip`, plus a `Product` that
+   * carries the real Google rating. No `Offer`: the fare on the page is an
+   * estimate from the per-km bands, not a published price.
    */
+  const reviews = reviewsForTransfers(slug);
   const jsonLd = graph([
     webPageNode({
       lang,
@@ -104,12 +112,22 @@ export default async function Page({
         ],
       },
     },
+    transferProductNode({
+      lang,
+      slug,
+      name: p.routeHeading(from, to),
+      description: p.routeLead(from, to, routeDuration(route.durationMinutes)),
+      durationMinutes: route.durationMinutes,
+      images: [transfers().vehicle.hero],
+      ratings: ratingsFor(reviews),
+      reviews: reviewNodes(reviews, 6),
+    }),
   ]);
 
   return (
     <>
       <JsonLd data={jsonLd} />
-      <RouteView route={route} lang={lang} reviews={reviewsForTransfers(slug)} />
+      <RouteView route={route} lang={lang} reviews={reviews} />
     </>
   );
 }

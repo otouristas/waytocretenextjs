@@ -57,7 +57,9 @@ function body(): string {
   const lines: string[] = [];
 
   lines.push("# " + origin);
+  lines.push("# Index for language models: " + origin + "/llms.txt");
   lines.push("# Full content for language models: " + origin + "/llms-full.txt");
+  lines.push("# Offers catalog: " + origin + "/offers.json");
   lines.push("");
 
   lines.push("User-agent: *");

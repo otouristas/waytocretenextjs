@@ -1,5 +1,5 @@
-import { siteUrl } from "@/lib/site";
-import { type Lang, langPath } from "@/lib/i18n/langs";
+import { siteUrl } from "../site.ts";
+import { type Lang, langPath } from "../i18n/langs.ts";
 
 /**
  * Stable `@id` values for the JSON-LD graph.
@@ -17,6 +17,7 @@ export const id = {
   webpage: (lang: Lang, path: string) => `${siteUrl()}${langPath(lang, path)}#webpage`,
   breadcrumb: (lang: Lang, path: string) => `${siteUrl()}${langPath(lang, path)}#breadcrumb`,
   tour: (slug: string) => `${siteUrl()}/#tour/${slug}`,
+  transfer: (slug: string) => `${siteUrl()}/#transfer/${slug}`,
   place: (slug: string) => `${siteUrl()}/#place/${slug}`,
   guide: (lang: Lang, slug: string) => `${siteUrl()}${langPath(lang, `/guides/${slug}`)}#article`,
   author: (authorId: string) => `${siteUrl()}/#author/${authorId}`,

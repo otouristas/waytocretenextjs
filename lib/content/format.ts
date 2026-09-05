@@ -1,6 +1,6 @@
-import type { Lang } from "@/lib/i18n/langs";
-import { t } from "@/lib/i18n/ui";
-import type { Cadence } from "./schema";
+import type { Lang } from "../i18n/langs.ts";
+import { t } from "../i18n/ui.ts";
+import type { Cadence } from "./schema.ts";
 
 /** "5–7h", "12h", "7 days" — derived from minutes so it cannot drift. */
 export function durationLabel(minutes: number, lang: Lang): string {

@@ -5,7 +5,7 @@ import { navCopy } from "@/lib/i18n/nav";
 import { t } from "@/lib/i18n/ui";
 import type { HubDef } from "@/lib/nav/hubs";
 import { allTours } from "@/lib/content/load";
-import { TourCard } from "@/components/tour/tour-card";
+import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
 import { BOOK_NOW_URL } from "@/lib/site";
 
 export function HubView({ lang, hub }: { lang: Lang; hub: HubDef }) {
@@ -49,7 +49,7 @@ export function HubView({ lang, hub }: { lang: Lang; hub: HubDef }) {
       ) : (
         <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {ordered.map(({ core, copy }, i) => (
-            <TourCard key={core.slug} core={core} copy={copy} lang={lang} priority={i < 3} />
+            <CatalogTourCard key={core.slug} core={core} copy={copy} lang={lang} priority={i < 3} />
           ))}
         </div>
       )}

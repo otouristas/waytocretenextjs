@@ -1,4 +1,4 @@
-import { llmsFullTxt } from "@/lib/seo/llms";
+import { llmFeedHeaders, llmsFullTxt } from "@/lib/seo/llms";
 import { isIndexable } from "@/lib/site";
 
 /**
@@ -17,10 +17,5 @@ export function GET() {
     });
   }
 
-  return new Response(llmsFullTxt(), {
-    headers: {
-      "content-type": "text/plain; charset=utf-8",
-      "cache-control": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
-    },
-  });
+  return new Response(llmsFullTxt(), { headers: llmFeedHeaders("full") });
 }

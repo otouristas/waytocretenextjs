@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LANGS, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { transfersCopy } from "@/lib/i18n/transfers";
-import { reviewsForWeddings } from "@/lib/content/load";
+import { ratingsFor, reviewsForWeddings } from "@/lib/content/load";
 import { transfers } from "@/lib/transfers";
 import {
   absolute,
@@ -11,6 +11,8 @@ import {
   graph,
   id,
   pageMeta,
+  reviewNodes,
+  transferProductNode,
   webPageNode,
   type Crumb,
 } from "@/lib/seo";
@@ -50,6 +52,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     { name: ui.weddingTransfers, path },
   ];
 
+  const reviews = reviewsForWeddings();
   const jsonLd = graph([
     webPageNode({
       lang,
@@ -76,13 +79,23 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         })),
       },
     },
+    transferProductNode({
+      lang,
+      slug: "weddings",
+      path,
+      name: p.weddingSeoTitle,
+      description: w.positioning,
+      images: [transfers().vehicle.gallery[0] ?? transfers().vehicle.hero],
+      ratings: ratingsFor(reviews),
+      reviews: reviewNodes(reviews, 6),
+    }),
     faqNode(w.faqs),
   ]);
 
   return (
     <>
       <JsonLd data={jsonLd} />
-      <WeddingTransfersView lang={lang} reviews={reviewsForWeddings()} />
+      <WeddingTransfersView lang={lang} reviews={reviews} />
     </>
   );
 }

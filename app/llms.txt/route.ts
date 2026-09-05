@@ -1,4 +1,4 @@
-import { llmsTxt } from "@/lib/seo/llms";
+import { llmFeedHeaders, llmsTxt } from "@/lib/seo/llms";
 import { isIndexable } from "@/lib/site";
 
 /**
@@ -14,8 +14,6 @@ import { isIndexable } from "@/lib/site";
 export const dynamic = "force-static";
 
 export function GET() {
-  // A preview deployment must not publish a corpus that competes with
-  // production, for the same reason it must not publish a sitemap.
   if (!isIndexable()) {
     return new Response("User-agent: *\nDisallow: /\n", {
       status: 404,
@@ -23,10 +21,5 @@ export function GET() {
     });
   }
 
-  return new Response(llmsTxt(), {
-    headers: {
-      "content-type": "text/plain; charset=utf-8",
-      "cache-control": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
-    },
-  });
+  return new Response(llmsTxt(), { headers: llmFeedHeaders("index") });
 }

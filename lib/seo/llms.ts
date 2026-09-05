@@ -6,6 +6,9 @@ import {
   allTours,
   allReviews,
   ratingSummary,
+  reviewsForTour,
+  reviewsForTransfers,
+  reviewsForWeddings,
 } from "@/lib/content/load";
 import { transfers, transferRoutes, shortPlace, routeDuration, estimateRoute } from "@/lib/transfers";
 import { durationLabel } from "@/lib/content/format";
@@ -69,6 +72,37 @@ function priceLine(price: Parameters<typeof isPriced>[0]): string {
   return `€${low} ${unit}`;
 }
 
+function ratingClause(
+  reviews: Parameters<typeof ratingSummary>[0],
+): string {
+  const rating = ratingSummary(reviews);
+  if (!rating) return "";
+  return ` ${rating.average.toFixed(1)}/5 (${rating.count} Google reviews)`;
+}
+
+/** Headers Discover Cyclades-style: Canonical, Long-form/Short-form, Sitemap. */
+export function llmFeedHeaders(kind: "index" | "full" | "offers"): HeadersInit {
+  const origin = siteUrl();
+  const date = new Date().toISOString().slice(0, 10);
+  const canonical =
+    kind === "index"
+      ? `${origin}/llms.txt`
+      : kind === "full"
+        ? `${origin}/llms-full.txt`
+        : `${origin}/offers.json`;
+  return {
+    "content-type":
+      kind === "offers" ? "application/ld+json; charset=utf-8" : "text/plain; charset=utf-8",
+    "cache-control": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
+    "Last-Updated": date,
+    Canonical: canonical,
+    ...(kind === "full"
+      ? { "Short-form": `${origin}/llms.txt` }
+      : { "Long-form": `${origin}/llms-full.txt` }),
+    Sitemap: `${origin}/sitemap.xml`,
+  };
+}
+
 export function llmsTxt(): string {
   const tours = allTours(LANG);
   const places = allPlaces(LANG);
@@ -108,23 +142,23 @@ export function llmsTxt(): string {
   lines.push("");
   for (const { core, copy } of tours) {
     lines.push(
-      `- [${copy.title}](${url(`/tours/${core.slug}`)}): ${durationLabel(core.durationMinutes, LANG)}, ${core.difficulty}, ${priceLine(core.price)}. ${copy.summary.split(". ")[0]}.`,
+      `- [${copy.title}](${url(`/tours/${core.slug}`)}): ${durationLabel(core.durationMinutes, LANG)}, ${core.difficulty}, ${priceLine(core.price)}.${ratingClause(reviewsForTour(core.slug))} ${copy.summary.split(". ")[0]}.`,
     );
   }
   lines.push("");
 
   lines.push("## Transfers");
   lines.push("");
-  lines.push(`- [All transfers](${url("/transfers")}): ${transfers().coverage.statement}`);
+  lines.push(`- [All transfers](${url("/transfers")}): ${transfers().coverage.statement}${ratingClause(reviewsForTransfers())}`);
   lines.push(
-    `- [Wedding transfers](${url("/transfers/weddings")}): guest transport for destination weddings in the Rethymno region.`,
+    `- [Wedding transfers](${url("/transfers/weddings")}): guest transport for destination weddings in the Rethymno region.${ratingClause(reviewsForWeddings())}`,
   );
   for (const route of routes) {
     const estimate = estimateRoute(route);
     lines.push(
       `- [${shortPlace(route.from)} to ${shortPlace(route.to)}](${url(`/transfers/${route.slug}`)}): ${route.distanceKm} km, about ${routeDuration(route.durationMinutes)}${
         estimate ? `, estimated €${estimate.low}–${estimate.high}` : ""
-      }.`,
+      }.${ratingClause(reviewsForTransfers(route.slug))}`,
     );
   }
   lines.push("");
@@ -159,6 +193,7 @@ export function llmsTxt(): string {
     lines.push(`- [${legalDoc(slug, LANG).title}](${url(`/${slug}`)})`);
   }
   lines.push(`- [Full content for language models](${siteUrl()}/llms-full.txt)`);
+  lines.push(`- [Machine-readable offers catalog](${siteUrl()}/offers.json)`);
   lines.push("");
 
   return `${lines.join("\n")}\n`;
@@ -191,6 +226,12 @@ export function llmsFullTxt(): string {
     out.push(`- Difficulty: ${core.difficulty}`);
     out.push(`- Group size: ${core.groupMin}–${core.groupMax}`);
     out.push(`- Price: ${priceLine(core.price)}`);
+    {
+      const rating = ratingSummary(reviewsForTour(core.slug));
+      if (rating) {
+        out.push(`- Rating: ${rating.average.toFixed(1)}/5 (${rating.count} Google reviews)`);
+      }
+    }
     if (core.pickupTime) out.push(`- Pickup time: ${core.pickupTime}`);
     out.push(`- Hotel pickup: ${core.hotelPickup ? "yes, across the Rethymno area" : "no"}`);
     if (core.photoshoot) out.push("- Includes a professional photoshoot at no extra cost");
@@ -232,6 +273,15 @@ export function llmsFullTxt(): string {
   out.push("");
   out.push(`URL: ${url("/transfers")}`);
   out.push("");
+  {
+    const rating = ratingSummary(reviewsForTransfers());
+    if (rating) {
+      out.push(
+        `Rating: ${rating.average.toFixed(1)}/5 (${rating.count} Google reviews).`,
+      );
+      out.push("");
+    }
+  }
   out.push(data.coverage.statement);
   out.push("");
   out.push(
@@ -258,7 +308,7 @@ export function llmsFullTxt(): string {
   for (const route of transferRoutes()) {
     const estimate = estimateRoute(route);
     out.push(
-      `- ${route.from} to ${route.to} — ${route.distanceKm} km, about ${routeDuration(route.durationMinutes)}${estimate ? `, estimated €${estimate.low}–${estimate.high}` : ""}. ${url(`/transfers/${route.slug}`)}`,
+      `- ${route.from} to ${route.to} — ${route.distanceKm} km, about ${routeDuration(route.durationMinutes)}${estimate ? `, estimated €${estimate.low}–${estimate.high}` : ""}.${ratingClause(reviewsForTransfers(route.slug))} ${url(`/transfers/${route.slug}`)}`,
     );
   }
   out.push("");
@@ -266,6 +316,13 @@ export function llmsFullTxt(): string {
   out.push("");
   out.push(`URL: ${url("/transfers/weddings")}`);
   out.push("");
+  {
+    const rating = ratingSummary(reviewsForWeddings());
+    if (rating) {
+      out.push(`Rating: ${rating.average.toFixed(1)}/5 (${rating.count} Google reviews).`);
+      out.push("");
+    }
+  }
   out.push(data.weddings.positioning);
   out.push("");
   for (const service of data.weddings.services) out.push(`- ${service}`);

@@ -1,4 +1,4 @@
-import { type Lang, LANG_META } from "@/lib/i18n/langs";
+import { type Lang, LANG_META } from "../i18n/langs.ts";
 import {
   ADDRESS,
   BRAND,
@@ -9,10 +9,11 @@ import {
   SISTER_ORIGIN,
   SOCIAL,
   siteUrl,
-} from "@/lib/site";
-import { type PriceModel } from "@/lib/content/schema";
-import { isPriced, priceFrom, priceTo, quote } from "@/lib/pricing";
-import { absolute, id } from "./ids";
+} from "../site.ts";
+import { type PriceModel } from "../content/schema.ts";
+import { durationLabel } from "../content/format.ts";
+import { isPriced, priceFrom, priceTo, quote } from "../pricing.ts";
+import { absolute, id } from "./ids.ts";
 
 /**
  * JSON-LD graph builders.
@@ -167,6 +168,34 @@ export function isoDuration(minutes: number): string {
   return `PT${h ? `${h}H` : ""}${m ? `${m}M` : ""}` || "PT0M";
 }
 
+/**
+ * Product attributes Google paints in activity snippets (Duration, Language).
+ *
+ * Language is the language of this URL, not a claim about which languages
+ * a guide speaks — we do not store that. Duration is the same figure the
+ * page shows, plus the ISO-8601 value already used on `TouristTrip`.
+ */
+export function productExtras(opts: { lang: Lang; durationMinutes?: number }): Node {
+  const properties: Node[] = [];
+  if (opts.durationMinutes) {
+    properties.push({
+      "@type": "PropertyValue",
+      name: "Duration",
+      value: durationLabel(opts.durationMinutes, opts.lang),
+      valueReference: isoDuration(opts.durationMinutes),
+    });
+  }
+  properties.push({
+    "@type": "PropertyValue",
+    name: "Language",
+    value: LANG_META[opts.lang].native,
+  });
+  return {
+    inLanguage: LANG_META[opts.lang].hreflang,
+    additionalProperty: properties,
+  };
+}
+
 export function faqNode(faqs: ReadonlyArray<{ q: string; a: string }>): Node | null {
   if (!faqs.length) return null;
   return {
@@ -260,6 +289,7 @@ export function tourNode(opts: {
   return {
     "@type": ["Product", "TouristTrip"],
     "@id": id.tour(opts.slug),
+    sku: opts.slug,
     name: opts.name,
     description: opts.description,
     url,
@@ -267,6 +297,7 @@ export function tourNode(opts: {
     brand: { "@id": id.organization() },
     provider: { "@id": id.organization() },
     tourBookingPage: url,
+    ...productExtras({ lang: opts.lang, durationMinutes: opts.durationMinutes }),
     ...(opts.durationMinutes ? { duration: isoDuration(opts.durationMinutes) } : {}),
     ...(offer ? { offers: offer } : {}),
     ...(rating ? { aggregateRating: rating } : {}),
@@ -287,6 +318,47 @@ export function tourNode(opts: {
           },
         }
       : {}),
+  };
+}
+
+/**
+ * A transfer (or wedding-transfer) product.
+ *
+ * Stars come from reviews that actually describe this service. There is no
+ * `Offer`: published fares do not exist, and an estimate must not become a
+ * price Google treats as committed.
+ */
+export function transferProductNode(opts: {
+  lang: Lang;
+  slug: string;
+  /** Defaults to `/transfers/${slug}`. Wedding uses `/transfers/weddings`. */
+  path?: string;
+  name: string;
+  description: string;
+  durationMinutes?: number;
+  images?: readonly string[];
+  ratings?: readonly number[];
+  reviews?: readonly Node[];
+}): Node {
+  const path = opts.path ?? `/transfers/${opts.slug}`;
+  const url = absolute(opts.lang, path);
+  const rating = aggregateRatingNode(opts.ratings ?? []);
+  const images = opts.images?.filter(Boolean) ?? [];
+
+  return {
+    "@type": ["Product", "Service"],
+    "@id": id.transfer(opts.slug),
+    sku: opts.slug,
+    name: opts.name,
+    description: opts.description,
+    url,
+    ...(images.length ? { image: images } : {}),
+    brand: { "@id": id.organization() },
+    provider: { "@id": id.organization() },
+    ...productExtras({ lang: opts.lang, durationMinutes: opts.durationMinutes }),
+    ...(opts.durationMinutes ? { duration: isoDuration(opts.durationMinutes) } : {}),
+    ...(rating ? { aggregateRating: rating } : {}),
+    ...(opts.reviews?.length ? { review: opts.reviews } : {}),
   };
 }
 

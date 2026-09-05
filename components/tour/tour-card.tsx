@@ -7,29 +7,28 @@ import type { TourCore, TourCopy } from "@/lib/content/schema";
 import { priceFrom, isPriced } from "@/lib/pricing";
 import { formatPrice } from "@/lib/format";
 import { cadenceLabel, durationLabel } from "@/lib/content/format";
+import { RatingInline } from "@/components/reviews/rating-summary";
 import { SaveButton } from "@/components/tour/save-button";
 
 /**
  * A tour card.
  *
- * Server-rendered: the whole card is a link and static content, with a single
- * client leaf for the save button. The previous card was a client component
- * in its entirety, which shipped the store and the icon set to every grid.
- *
- * Deliberately absent: a star rating. Every tour in the source data carries
- * the same default 5.0 with no real reviews behind it, so showing one would
- * be a fabricated trust signal.
+ * Server-rendered except on the saved list (a client island). Stars appear
+ * only when the caller passes an eligible Google rating — never a fabricated
+ * 5.0. Catalog pages use `CatalogTourCard`, which looks that rating up.
  */
 export function TourCard({
   core,
   copy,
   lang,
   priority = false,
+  rating = null,
 }: {
   core: TourCore;
   copy: TourCopy;
   lang: Lang;
   priority?: boolean;
+  rating?: { average: number; count: number } | null;
 }) {
   const ui = t(lang);
   const from = priceFrom(core.price);
@@ -58,6 +57,7 @@ export function TourCard({
 
         <div className="flex flex-1 flex-col p-4">
           <h3 className="font-display text-lg leading-snug text-ink">{copy.title}</h3>
+          <RatingInline lang={lang} summary={rating} link={false} className="mt-1.5" />
 
           {copy.tagline ? (
             <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted">{copy.tagline}</p>

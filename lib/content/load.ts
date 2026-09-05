@@ -9,6 +9,7 @@ import {
   PlaceCopy,
   PlaceCore,
   Review,
+  type RatingSummary,
   TourCopy,
   TourCore,
 } from "./schema";
@@ -278,7 +279,7 @@ export function ratingsFor(reviews: Review[]): number[] {
     .map((r) => r.rating as number);
 }
 
-export type RatingSummary = { average: number; count: number };
+export type { RatingSummary } from "./schema";
 
 /** Null when nothing in the set carries a real star value. */
 export function ratingSummary(reviews: Review[]): RatingSummary | null {

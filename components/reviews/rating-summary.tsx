@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { fill, langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { REVIEW_READ } from "@/lib/site";
-import type { RatingSummary } from "@/lib/content/load";
+import type { RatingSummary } from "@/lib/content/schema";
 import { GoogleWordmark, Stars, TripAdvisorOwl } from "@/components/trust/source-logos";
 
 /**
@@ -121,22 +121,29 @@ export function RatingInline({
   lang,
   summary,
   className = "",
+  /** False inside another link (tour cards) so we do not nest `<a>`. */
+  link = true,
 }: {
   lang: Lang;
   summary: RatingSummary | null;
   className?: string;
+  link?: boolean;
 }) {
   if (!summary) return null;
   const ui = t(lang);
-  return (
-    <Link
-      href={langPath(lang, "/reviews")}
-      className={`inline-flex items-center gap-2 text-sm text-muted hover:text-accent ${className}`}
-    >
+  const inner = (
+    <>
       <Stars value={summary.average} size={14} label={fill(ui.starsOutOf, { n: summary.average.toFixed(1) })} />
       <span className="font-semibold text-ink">{summary.average.toFixed(1)}</span>
       <span>· {reviewCountLabel(lang, summary.count)}</span>
       <GoogleWordmark className="h-3.5 w-auto" />
+    </>
+  );
+  const cls = `inline-flex items-center gap-2 text-sm text-muted ${link ? "hover:text-accent" : ""} ${className}`;
+  if (!link) return <span className={cls}>{inner}</span>;
+  return (
+    <Link href={langPath(lang, "/reviews")} className={cls}>
+      {inner}
     </Link>
   );
 }

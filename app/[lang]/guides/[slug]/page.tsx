@@ -17,7 +17,7 @@ import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Prose, QuickAnswers } from "@/components/prose";
 import { FaqList } from "@/components/tour/sections";
-import { TourCard } from "@/components/tour/tour-card";
+import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
 import { BRAND } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -165,7 +165,7 @@ export default async function Page({
             <h2 className="font-display text-2xl text-ink">{ui.guidesMentioned}</h2>
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
               {linked.slice(0, 4).map(({ core: c, copy: cp }) => (
-                <TourCard key={c.slug} core={c} copy={cp} lang={lang} />
+                <CatalogTourCard key={c.slug} core={c} copy={cp} lang={lang} />
               ))}
             </div>
           </section>

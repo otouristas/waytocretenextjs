@@ -8,6 +8,8 @@ import type { Review } from "@/lib/content/schema";
 import { transfers } from "@/lib/transfers";
 import { TransferForm } from "@/components/transfers/transfer-form";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
+import { RatingInline } from "@/components/reviews/rating-summary";
+import { ratingSummary } from "@/lib/content/load";
 
 /**
  * Wedding transfers.
@@ -58,6 +60,7 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14">
+        <RatingInline lang={lang} summary={ratingSummary(reviews)} className="mb-4" />
         <p className="max-w-3xl text-lg leading-relaxed text-ink">{w.positioning}</p>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_minmax(0,24rem)]">

@@ -482,6 +482,9 @@ export const Review = z.object({
 });
 export type Review = z.infer<typeof Review>;
 
+/** Averaged eligible Google stars. Null summaries are represented as `null`, not this type. */
+export type RatingSummary = { average: number; count: number };
+
 /* ────────────────────────────── authors ────────────────────────────── */
 
 /** Real people with real credentials — the E-E-A-T anchor for guides. */

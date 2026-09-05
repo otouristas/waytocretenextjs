@@ -13,7 +13,7 @@ import {
   SectionHead,
   WhyBookDirect,
 } from "@/components/home/sections";
-import { TourCard } from "@/components/tour/tour-card";
+import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
 
 /**
  * The home page.
@@ -61,7 +61,7 @@ export function HomeView({ lang }: { lang: Lang }) {
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {shown.map(({ core, copy }) => (
-            <TourCard key={core.slug} core={core} copy={copy} lang={lang} />
+            <CatalogTourCard key={core.slug} core={core} copy={copy} lang={lang} />
           ))}
         </div>
       </section>

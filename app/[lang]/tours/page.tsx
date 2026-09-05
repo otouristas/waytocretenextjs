@@ -8,7 +8,7 @@ import { priceFrom } from "@/lib/pricing";
 import { breadcrumbNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
-import { TourCard } from "@/components/tour/tour-card";
+import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
 import { FilterBar, FilterRail, type Facet, type Facets } from "@/components/tour/filter-rail";
 
 export function generateStaticParams() {
@@ -217,7 +217,7 @@ export default async function Page({
             ) : (
               <div className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                 {results.map(({ core, copy }, i) => (
-                  <TourCard key={core.slug} core={core} copy={copy} lang={lang} priority={i < 3} />
+                  <CatalogTourCard key={core.slug} core={core} copy={copy} lang={lang} priority={i < 3} />
                 ))}
               </div>
             )}

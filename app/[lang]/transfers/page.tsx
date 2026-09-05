@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import { LANGS, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { transfersCopy } from "@/lib/i18n/transfers";
-import { reviewsForTransfers } from "@/lib/content/load";
+import { ratingsFor, reviewsForTransfers } from "@/lib/content/load";
 import { transfers, transferRoutes, shortPlace, routeDuration } from "@/lib/transfers";
-import { breadcrumbNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import {
+  aggregateRatingNode,
+  breadcrumbNode,
+  graph,
+  pageMeta,
+  webPageNode,
+  type Crumb,
+} from "@/lib/seo";
 import { id, absolute } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { TransfersView } from "@/components/transfers/transfers-view";
@@ -51,6 +58,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
    * exactly the kind of markup that contradicts the page.
    */
   const routes = transferRoutes();
+  const reviews = reviewsForTransfers();
+  const rating = aggregateRatingNode(ratingsFor(reviews));
   const jsonLd = graph([
     webPageNode({ lang, path: "/transfers", name: p.seoTitle, description: p.seoDesc, crumbs }),
     breadcrumbNode(lang, "/transfers", crumbs),
@@ -69,6 +78,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         "@type": "ServiceChannel",
         serviceUrl: absolute(lang, "/transfers"),
       },
+      ...(rating ? { aggregateRating: rating } : {}),
     },
     {
       "@type": "ItemList",
@@ -133,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   return (
     <>
       <JsonLd data={jsonLd} />
-      <TransfersView lang={lang} reviews={reviewsForTransfers()} />
+      <TransfersView lang={lang} reviews={reviews} />
     </>
   );
 }

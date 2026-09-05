@@ -16,6 +16,8 @@ import {
 import { TransferForm } from "@/components/transfers/transfer-form";
 import { RouteCard } from "@/components/transfers/transfers-view";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
+import { RatingInline } from "@/components/reviews/rating-summary";
+import { ratingSummary } from "@/lib/content/load";
 
 /**
  * One origin-pair page, e.g. /transfers/chania-airport-to-rethymno.
@@ -73,6 +75,7 @@ export function RouteView({
           <h1 className="mt-2 font-display text-3xl leading-tight text-ink md:text-[2.75rem]">
             {p.routeHeading(from, to)}
           </h1>
+          <RatingInline lang={lang} summary={ratingSummary(reviews)} className="mt-3" />
           <p className="mt-4 text-base leading-relaxed text-muted">
             {p.routeLead(from, to, duration)}
           </p>
