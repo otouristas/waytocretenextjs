@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { LANGS, LANG_META, type Lang, langPath } from "@/lib/i18n/langs";
 import { BRAND, isIndexable, siteUrl } from "@/lib/site";
+import { defaultOgPath } from "./images";
 
 export type PageMetaOptions = {
   lang: Lang;
@@ -25,9 +26,6 @@ export type PageMetaOptions = {
   publishedTime?: string;
   modifiedTime?: string;
 };
-
-/** The generated per-locale social card at app/[lang]/opengraph-image.tsx. */
-const defaultOg = (lang: Lang) => `/${lang}/opengraph-image`;
 
 export function pageMeta(opts: PageMetaOptions): Metadata {
   const {
@@ -58,8 +56,8 @@ export function pageMeta(opts: PageMetaOptions): Metadata {
   }
 
   const index = isIndexable() && !noindex;
-  const ogImage = image ?? defaultOg(lang);
-  const absoluteImage = ogImage.startsWith("http") ? ogImage : `${origin}${ogImage}`;
+  const resolvedImage = image?.trim() ? image.trim() : defaultOgPath(lang);
+  const absoluteImage = resolvedImage.startsWith("http") ? resolvedImage : `${origin}${resolvedImage}`;
 
   return {
     // Absolute, so the layout's `%s | Rethymno Tours` template does not

@@ -39,6 +39,8 @@ export async function generateMetadata({
     title: copy.seoTitle,
     description: copy.seoDescription,
     path: "/create",
+    image: getTourCore("cretan-nature-village-journey")?.hero,
+    imageAlt: copy.seoTitle,
   });
 }
 

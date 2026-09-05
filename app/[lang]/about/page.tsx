@@ -47,6 +47,7 @@ export async function generateMetadata({
     description: t(lang).aboutLead,
     path: "/about",
     image: HERO,
+    imageAlt: t(lang).aboutSeoTitle,
   });
 }
 

@@ -49,6 +49,20 @@ export async function generateMetadata({
     robots: isIndexable() ? { index: true, follow: true } : { index: false, follow: false },
     verification: { google: GSC_VERIFICATION },
     icons: { icon: "/brand/logos/favicon.png" },
+    openGraph: {
+      siteName: BRAND,
+      locale: LANG_META[lang].locale,
+      type: "website",
+      images: [
+        {
+          url: `/${lang}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${BRAND} — ${ui.ogTagline}`,
+        },
+      ],
+    },
+    twitter: { card: "summary_large_image" },
   };
 }
 

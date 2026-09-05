@@ -39,11 +39,15 @@ export async function generateMetadata({
   const filtered = Boolean(sp.cat || sp.dur || sp.diff || sp.q);
   const ui = t(lang);
 
+  const tours = allTours(lang);
+  const featured = tours.find((tour) => tour.core.featured) ?? tours[0];
   const meta = pageMeta({
     lang,
     title: ui.toursTitle,
     description: ui.heroSub,
     path: "/tours",
+    image: featured?.core.hero,
+    imageAlt: featured?.copy.title ?? ui.toursTitle,
     // A filtered view is a slice of the hub, not a page in its own right.
     // It stays crawlable and linkable but is kept out of the index, and
     // canonicalises to the unfiltered hub so signals consolidate there.

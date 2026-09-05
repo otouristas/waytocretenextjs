@@ -20,7 +20,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = parseLang((await params).lang);
   const p = transfersCopy(lang);
-  return pageMeta({ lang, title: p.seoTitle, description: p.seoDesc, path: "/transfers" });
+  const vehicle = transfers().vehicle;
+  return pageMeta({
+    lang,
+    title: p.seoTitle,
+    description: p.seoDesc,
+    path: "/transfers",
+    image: vehicle.hero,
+    imageAlt: vehicle.name,
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {

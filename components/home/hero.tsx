@@ -4,6 +4,7 @@ import type { Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { searchIndex } from "@/lib/search-index";
 import { HeroSearch } from "@/components/home/hero-search";
+import { HOME_OG_IMAGE } from "@/lib/seo/images";
 
 /**
  * The home hero.
@@ -14,8 +15,6 @@ import { HeroSearch } from "@/components/home/hero-search";
  * never shifts.
  */
 
-const HERO_IMAGE = "https://waytocrete.com/wp-content/uploads/2026/01/10.jpg";
-
 export function HomeHero({ lang }: { lang: Lang }) {
   const copy = t(lang);
 
@@ -23,7 +22,7 @@ export function HomeHero({ lang }: { lang: Lang }) {
     <section className="relative">
       <div className="relative h-[min(86vh,780px)] min-h-[540px] w-full overflow-hidden">
         <Image
-          src={HERO_IMAGE}
+          src={HOME_OG_IMAGE}
           alt={copy.heroImageAlt}
           fill
           priority

@@ -1,4 +1,5 @@
 export { pageMeta, type PageMetaOptions } from "./meta";
+export { HOME_OG_IMAGE, defaultOgPath, ogImage } from "./images";
 export { absolute, id } from "./ids";
 export {
   aggregateRatingNode,

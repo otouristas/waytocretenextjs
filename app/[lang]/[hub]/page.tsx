@@ -4,8 +4,9 @@ import { LANGS, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { hubCopy } from "@/lib/i18n/hubs";
 import { HUB_IDS, hubById } from "@/lib/nav/hubs";
+import { getTourCore } from "@/lib/content/load";
 import { HubView } from "@/components/nav/hub-view";
-import { breadcrumbNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import { breadcrumbNode, graph, ogImage, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 
 export const dynamicParams = false;
@@ -30,6 +31,8 @@ export async function generateMetadata({
     title: copy.seoTitle,
     description: copy.seoDesc,
     path: `/${hub.id}`,
+    image: ogImage(...hub.slugs.map((slug) => getTourCore(slug)?.hero)),
+    imageAlt: copy.label,
   });
 }
 

@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import { parseLang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import { breadcrumbNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import { breadcrumbNode, graph, HOME_OG_IMAGE, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ContactView } from "@/components/contact-view";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = parseLang((await params).lang);
+  const ui = t(lang);
   return pageMeta({
     lang,
-    title: t(lang).contactSeoTitle,
-    description: t(lang).contactLead,
+    title: ui.contactSeoTitle,
+    description: ui.contactLead,
     path: "/contact",
+    image: HOME_OG_IMAGE,
+    imageAlt: ui.heroImageAlt,
   });
 }
 

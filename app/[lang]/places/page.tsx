@@ -44,7 +44,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = parseLang((await params).lang) as Lang;
   const ui = t(lang);
-  return pageMeta({ lang, title: ui.placesSeoTitle, description: ui.placesSeoDesc, path: "/places" });
+  const featured = allPlaces(lang).find((place) => place.core.hero);
+  return pageMeta({
+    lang,
+    title: ui.placesSeoTitle,
+    description: ui.placesSeoDesc,
+    path: "/places",
+    image: featured?.core.hero,
+    imageAlt: featured?.copy.name ?? ui.placesSeoTitle,
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {

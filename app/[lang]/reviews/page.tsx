@@ -5,6 +5,7 @@ import { allReviews, allTours, ratingSummary } from "@/lib/content/load";
 import {
   breadcrumbNode,
   graph,
+  HOME_OG_IMAGE,
   pageMeta,
   reviewNodes,
   webPageNode,
@@ -29,7 +30,14 @@ export async function generateMetadata({
     ? fill(ui.reviewsMetaDesc, { count: summary.count, avg: summary.average.toFixed(1) })
     : ui.reviewsLead;
 
-  return pageMeta({ lang, title: ui.reviewsTitleTag, description, path: "/reviews" });
+  return pageMeta({
+    lang,
+    title: ui.reviewsTitleTag,
+    description,
+    path: "/reviews",
+    image: HOME_OG_IMAGE,
+    imageAlt: ui.heroImageAlt,
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { parseLang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import { breadcrumbNode, faqNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import { breadcrumbNode, faqNode, graph, HOME_OG_IMAGE, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { HomeView } from "@/components/home-view";
 
@@ -12,7 +12,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = parseLang((await params).lang);
   const ui = t(lang);
-  return pageMeta({ lang, title: ui.homeTitle, description: ui.heroSub, path: "/" });
+  return pageMeta({
+    lang,
+    title: ui.homeTitle,
+    description: ui.heroSub,
+    path: "/",
+    image: HOME_OG_IMAGE,
+    imageAlt: ui.heroImageAlt,
+  });
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
