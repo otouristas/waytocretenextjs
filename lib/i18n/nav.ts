@@ -86,7 +86,10 @@ export const TOUR_COLUMNS: readonly NavColumnSpec[] = [
   {
     hub: "hiking-trekking-from-rethymno",
     tours: [
-      { slug: "imbros-gorge-guided-tour", label: "Imbros Gorge Guided Tour" },
+      // The slug still carries "guided-tour" from the WordPress source, but the
+      // guide on this walk is a paid extra — nothing user-facing may call it a
+      // guided tour. See the tour's copy and `photoshoot: "with_guide"`.
+      { slug: "imbros-gorge-guided-tour", label: "Imbros Gorge Hike" },
       { slug: "samaria-gorge-explorer", label: "Samaria Gorge Explorer" },
       { slug: "aradaina-gorge", label: "Aradaina Gorge" },
       { slug: "pachnes-summit", label: "Private hike to Pachnes summit" },
