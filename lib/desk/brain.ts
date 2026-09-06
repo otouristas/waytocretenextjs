@@ -434,7 +434,11 @@ export async function answerLocally(userText: string, lang: Lang, path: string):
       const perks = [
         card.pickup ? desk.perkPickup : desk.perkMeet,
         fill(desk.perkGroup, { n: card.groupMax }),
-        card.photoshoot ? desk.perkPhoto : null,
+        card.photoshoot === "included"
+          ? desk.perkPhoto
+          : card.photoshoot === "with_guide"
+            ? desk.perkPhotoWithGuide
+            : null,
         card.cancelHours ? fill(desk.perkCancel, { n: card.cancelHours }) : null,
       ].filter(Boolean).join(", ");
       return {

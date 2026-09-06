@@ -18,11 +18,14 @@
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": false,
   "cancelFreeHours": 48,
   "meetingPoint": null,
-  "places": ["lampini", "potamon-dam"],
+  "places": [
+    "lampini",
+    "potamon-dam"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/02/taste-of-crete-46-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/Honey-experience-12-scaled.jpg",

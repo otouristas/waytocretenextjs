@@ -18,6 +18,8 @@ export type UI = {
   guests: string;
   viewAll: string;
   fromPrice: string;
+  /** Sliding ladders only: says why a bigger party pays less a head. */
+  priceLadderNote: string;
   perPerson: string;
   perGroup: string;
   perCouple: string;
@@ -28,6 +30,15 @@ export type UI = {
   reviews: string;
   pickup: string;
   photoshoot: string;
+  /** Products where the photoshoot travels with the optional guide. */
+  photoshootWithGuide: string;
+  /**
+   * The sitewide brand claim, as opposed to the per-tour tag.
+   * Hedged because it is true of most of the catalogue, not all of it — four
+   * products only include it once the optional guide is added, and four do
+   * not offer it at all.
+   */
+  photoshootMost: string;
   privateTour: string;
   freeCancel: string;
   smallGroup: string;
@@ -77,7 +88,6 @@ export type UI = {
   aboutTitle: string;
   aboutLead: string;
   aboutBody: string;
-  ernest: string;
   contactTitle: string;
   contactSeoTitle: string;
   contactLead: string;
@@ -137,6 +147,8 @@ export type UI = {
   guideUpgradeEyebrow: string;
   guideUpgradeTitle: string;
   guideUpgradeBody: string;
+  /** Shown on products whose photoshoot travels with the guide. */
+  guidePhotoshootFree: string;
   guideAdd: string;
   guideAdded: string;
   guideLine: string;
@@ -341,6 +353,7 @@ const EN: UI = {
   guests: "Guests",
   viewAll: "All tours",
   fromPrice: "From",
+  priceLadderNote: "{high} per person for two, down to {low} a head in a full van — the van and the driver cost the same either way.",
   perPerson: "per person",
   perGroup: "for the private group",
   perCouple: "per couple",
@@ -351,6 +364,8 @@ const EN: UI = {
   reviews: "reviews",
   pickup: "Hotel pickup",
   photoshoot: "Photoshoot included",
+  photoshootWithGuide: "Photoshoot with a guide",
+  photoshootMost: "Photoshoot on most tours",
   privateTour: "Private",
   freeCancel: "Free cancellation",
   smallGroup: "Small group",
@@ -400,7 +415,6 @@ const EN: UI = {
   aboutTitle: "Local hosts in Rethymno, not a coach operator",
   aboutLead: "You book with people who live here. Small groups, our own vans, and a host who plans the day around you.",
   aboutBody: "We are a Rethymno-based team running private guided days across Crete — gorge hikes, village and food experiences, beaches, and airport transfers. Every tour is hosted by someone who grew up on this island.",
-  ernest: "Ernest grew up in Crete. Days with him feel like a cousin showing you around — not a scripted excursion.",
   contactTitle: "Tell us your dates and we will plan the day",
   contactSeoTitle: "Contact | Plan Your Day in Crete | Rethymno Tours",
   contactLead: "Your hotel, how many of you, and what you want the day to feel like. WhatsApp is usually fastest.",
@@ -461,6 +475,8 @@ const EN: UI = {
   guideUpgradeTitle: "Add a Private Local Guide",
   guideUpgradeBody:
     "Explore Crete with a professional local guide and discover the history, culture and stories behind each place.",
+  guidePhotoshootFree:
+    "The professional photoshoot comes with the guide — free, and yours within 48 hours.",
   guideAdd: "Add private guide +",
   guideAdded: "Private guide added",
   guideLine: "Private Guide",
@@ -734,6 +750,7 @@ const DE: UI = {
   guests: "Gäste",
   viewAll: "Alle Touren",
   fromPrice: "Ab",
+  priceLadderNote: "{high} pro Person zu zweit, bis hinunter zu {low} pro Kopf im vollen Van — Van und Fahrer kosten so oder so gleich.",
   perPerson: "pro Person",
   perGroup: "für die private Gruppe",
   perCouple: "pro Paar",
@@ -744,6 +761,8 @@ const DE: UI = {
   reviews: "Bewertungen",
   pickup: "Hotelabholung",
   photoshoot: "Fotoshooting inklusive",
+  photoshootWithGuide: "Fotoshooting mit Guide",
+  photoshootMost: "Fotoshooting auf den meisten Touren",
   privateTour: "Privat",
   freeCancel: "Kostenlose Stornierung",
   smallGroup: "Kleine Gruppe",
@@ -793,7 +812,6 @@ const DE: UI = {
   aboutTitle: "Lokale Gastgeber in Rethymno, kein Reisebusbetrieb",
   aboutLead: "Sie buchen bei Menschen, die hier leben. Kleine Gruppen, eigene Vans und ein Gastgeber, der den Tag um Sie herum plant.",
   aboutBody: "Wir sind ein Team aus Rethymno und führen private geführte Tage auf Kreta — Schluchtenwanderungen, Dorf- und Kulinarikerlebnisse, Strände und Flughafentransfers. Jede Tour wird von jemandem geleitet, der auf dieser Insel aufgewachsen ist.",
-  ernest: "Ernest ist auf Kreta aufgewachsen. Tage mit ihm fühlen sich an, als würde ein Cousin Sie herumführen — keine abgespulte Exkursion.",
   contactTitle: "Nennen Sie uns Ihre Daten, wir planen den Tag",
   contactSeoTitle: "Kontakt | Planen Sie Ihren Tag auf Kreta | Rethymno Tours",
   contactLead: "Ihr Hotel, wie viele Sie sind und wie sich der Tag anfühlen soll. WhatsApp ist meist am schnellsten.",
@@ -854,6 +872,8 @@ const DE: UI = {
   guideUpgradeTitle: "Privaten lokalen Guide hinzufügen",
   guideUpgradeBody:
     "Entdecken Sie Kreta mit einem professionellen lokalen Guide und die Geschichte, Kultur und Geschichten hinter jedem Ort.",
+  guidePhotoshootFree:
+    "Das professionelle Fotoshooting kommt mit dem Guide — kostenlos, und innerhalb von 48 Stunden bei Ihnen.",
   guideAdd: "Privaten Guide hinzufügen +",
   guideAdded: "Privater Guide hinzugefügt",
   guideLine: "Privater Guide",
@@ -1127,6 +1147,7 @@ const IT: UI = {
   guests: "Ospiti",
   viewAll: "Tutti i tour",
   fromPrice: "Da",
+  priceLadderNote: "{high} a persona in due, fino a {low} a testa con il van pieno: il van e l'autista costano uguale in ogni caso.",
   perPerson: "a persona",
   perGroup: "per il gruppo privato",
   perCouple: "a coppia",
@@ -1137,6 +1158,8 @@ const IT: UI = {
   reviews: "recensioni",
   pickup: "Ritiro in hotel",
   photoshoot: "Servizio fotografico incluso",
+  photoshootWithGuide: "Servizio fotografico con guida",
+  photoshootMost: "Servizio fotografico nella maggior parte dei tour",
   privateTour: "Privato",
   freeCancel: "Cancellazione gratuita",
   smallGroup: "Piccolo gruppo",
@@ -1186,7 +1209,6 @@ const IT: UI = {
   aboutTitle: "Ospiti locali a Rethymno, non un operatore di pullman",
   aboutLead: "Prenotate con persone che vivono qui. Gruppi piccoli, i nostri van e un ospite che pianifica la giornata intorno a voi.",
   aboutBody: "Siamo un team di Rethymno e organizziamo giornate private guidate in Creta — gole, villaggi e cibo, spiagge e transfer aeroportuali. Ogni tour è condotto da qualcuno cresciuto su quest'isola.",
-  ernest: "Ernest è cresciuto a Creta. Le giornate con lui sembrano un cugino che vi accompagna — non un'escursione a copione.",
   contactTitle: "Diteci le date e organizziamo la giornata",
   contactSeoTitle: "Contatti | Pianificate la giornata a Creta | Rethymno Tours",
   contactLead: "L'hotel, in quanti siete e che atmosfera volete. WhatsApp di solito è il più veloce.",
@@ -1247,6 +1269,8 @@ const IT: UI = {
   guideUpgradeTitle: "Aggiungi una guida locale privata",
   guideUpgradeBody:
     "Esplora Creta con una guida locale professionista e scopri la storia, la cultura e le storie di ogni luogo.",
+  guidePhotoshootFree:
+    "Il servizio fotografico professionale arriva con la guida — gratuito, e tuo entro 48 ore.",
   guideAdd: "Aggiungi guida privata +",
   guideAdded: "Guida privata aggiunta",
   guideLine: "Guida privata",
@@ -1520,6 +1544,7 @@ const FR: UI = {
   guests: "Voyageurs",
   viewAll: "Toutes les excursions",
   fromPrice: "À partir de",
+  priceLadderNote: "{high} par personne à deux, jusqu'à {low} par tête dans un van complet — le van et le chauffeur coûtent pareil.",
   perPerson: "par personne",
   perGroup: "pour le groupe privé",
   perCouple: "par couple",
@@ -1530,6 +1555,8 @@ const FR: UI = {
   reviews: "avis",
   pickup: "Prise en charge à l'hôtel",
   photoshoot: "Séance photo incluse",
+  photoshootWithGuide: "Séance photo avec guide",
+  photoshootMost: "Séance photo sur la plupart des excursions",
   privateTour: "Privé",
   freeCancel: "Annulation gratuite",
   smallGroup: "Petit groupe",
@@ -1579,7 +1606,6 @@ const FR: UI = {
   aboutTitle: "Des hôtes locaux à Réthymnon, pas un autocariste",
   aboutLead: "Vous réservez auprès de gens qui vivent ici. Petits groupes, nos propres vans, et un hôte qui construit la journée autour de vous.",
   aboutBody: "Nous sommes une équipe basée à Réthymnon et nous guidons des journées privées en Crète — gorges, villages et gastronomie, plages et transferts aéroport. Chaque excursion est menée par quelqu'un qui a grandi sur cette île.",
-  ernest: "Ernest a grandi en Crète. Une journée avec lui, c'est un cousin qui vous promène — pas une excursion au script.",
   contactTitle: "Donnez-nous vos dates, nous organisons la journée",
   contactSeoTitle: "Contact | Planifiez votre journée en Crète | Rethymno Tours",
   contactLead: "Votre hôtel, votre nombre et l'ambiance que vous voulez. WhatsApp est en général le plus rapide.",
@@ -1640,6 +1666,8 @@ const FR: UI = {
   guideUpgradeTitle: "Ajouter un guide local privé",
   guideUpgradeBody:
     "Explorez la Crète avec un guide local professionnel et découvrez l'histoire, la culture et les récits de chaque lieu.",
+  guidePhotoshootFree:
+    "La séance photo professionnelle vient avec le guide — gratuite, et à vous sous 48 heures.",
   guideAdd: "Ajouter un guide privé +",
   guideAdded: "Guide privé ajouté",
   guideLine: "Guide privé",
@@ -1913,6 +1941,7 @@ const SV: UI = {
   guests: "Gäster",
   viewAll: "Alla turer",
   fromPrice: "Från",
+  priceLadderNote: "{high} per person för två, ner till {low} per huvud i en full van — vanen och föraren kostar lika mycket ändå.",
   perPerson: "per person",
   perGroup: "för den privata gruppen",
   perCouple: "per par",
@@ -1923,6 +1952,8 @@ const SV: UI = {
   reviews: "omdömen",
   pickup: "Hämtning på hotellet",
   photoshoot: "Fotografering ingår",
+  photoshootWithGuide: "Fotografering med guide",
+  photoshootMost: "Fotografering på de flesta turer",
   privateTour: "Privat",
   freeCancel: "Gratis avbokning",
   smallGroup: "Liten grupp",
@@ -1972,7 +2003,6 @@ const SV: UI = {
   aboutTitle: "Lokala värdar i Rethymno, inte ett bussbolag",
   aboutLead: "Ni bokar med människor som bor här. Små grupper, våra egna vans och en värd som planerar dagen kring er.",
   aboutBody: "Vi är ett team i Rethymno och kör privata guidade dagar på Kreta — ravinvandringar, by- och matupplevelser, stränder och flygplatstransfer. Varje tur leds av någon som vuxit upp på den här ön.",
-  ernest: "Ernest växte upp på Kreta. Dagar med honom känns som att en kusin visar er runt — inte en inlärd utflykt.",
   contactTitle: "Berätta era datum så planerar vi dagen",
   contactSeoTitle: "Kontakt | Planera dagen på Kreta | Rethymno Tours",
   contactLead: "Ert hotell, hur många ni är och hur dagen ska kännas. WhatsApp är oftast snabbast.",
@@ -2033,6 +2063,8 @@ const SV: UI = {
   guideUpgradeTitle: "Lägg till en privat lokal guide",
   guideUpgradeBody:
     "Utforska Kreta med en professionell lokal guide och upptäck historien, kulturen och berättelserna bakom varje plats.",
+  guidePhotoshootFree:
+    "Den professionella fotograferingen följer med guiden — gratis, och er inom 48 timmar.",
   guideAdd: "Lägg till privat guide +",
   guideAdded: "Privat guide tillagd",
   guideLine: "Privat guide",

@@ -11,7 +11,13 @@
   "thirdPartyCosts": [],
   "cadence": {
     "kind": "weekdays",
-    "days": ["mon", "tue", "wed", "thu", "fri"]
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri"
+    ]
   },
   "pickupTime": "09:30",
   "durationMinutes": 330,
@@ -19,11 +25,15 @@
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": false,
   "cancelFreeHours": 48,
   "meetingPoint": null,
-  "places": ["lampini", "patsos", "potamon-dam"],
+  "places": [
+    "lampini",
+    "patsos",
+    "potamon-dam"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/05/WINERY_-271-scaled-1.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/05/15-scaled-1.jpg",

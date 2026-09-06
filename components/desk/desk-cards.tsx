@@ -106,7 +106,11 @@ function TourResult({ card, lang }: { card: DeskTourCard; lang: Lang }) {
           <Chip icon={<Clock3 className="size-3" />}>{card.duration}</Chip>
           <Chip icon={<Users className="size-3" />}>≤ {card.groupMax}</Chip>
           {card.pickup ? <Chip icon={<CarFront className="size-3" />}>{ui.pickup}</Chip> : null}
-          {card.photoshoot ? <Chip icon={<Camera className="size-3" />}>{ui.photoshoot}</Chip> : null}
+          {card.photoshoot === "included" ? (
+            <Chip icon={<Camera className="size-3" />}>{ui.photoshoot}</Chip>
+          ) : card.photoshoot === "with_guide" ? (
+            <Chip icon={<Camera className="size-3" />}>{ui.photoshootWithGuide}</Chip>
+          ) : null}
           {card.cancelHours ? (
             <Chip icon={<ShieldCheck className="size-3" />}>{card.cancelHours}h</Chip>
           ) : null}

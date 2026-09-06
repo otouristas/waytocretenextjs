@@ -9,8 +9,14 @@
     "adult": null,
     "child": 45,
     "infantFree": true,
-    "childAges": [4, 13],
-    "infantAges": [0, 3],
+    "childAges": [
+      4,
+      13
+    ],
+    "infantAges": [
+      0,
+      3
+    ],
     "privateGroup": {
       "total": 250,
       "includedGuests": 4,
@@ -33,7 +39,10 @@
       "note": "Food and drinks are not included."
     }
   ],
-  "privateGuide": { "amount": 150, "currency": "EUR" },
+  "privateGuide": {
+    "amount": 150,
+    "currency": "EUR"
+  },
   "cadence": {
     "kind": "daily"
   },
@@ -43,7 +52,7 @@
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": true,
   "cancelFreeHours": 48,
   "meetingPoint": null,
@@ -63,7 +72,10 @@
     "https://waytocrete.com/wp-content/uploads/2024/07/DSC09603-scaled-1.jpg",
     "https://waytocrete.com/wp-content/uploads/2024/07/DSC09587-scaled-2.jpg"
   ],
-  "travelotopos": { "serviceId": 23, "categoryId": 4 },
+  "travelotopos": {
+    "serviceId": 23,
+    "categoryId": 4
+  },
   "featured": false,
   "supersedes": []
 }

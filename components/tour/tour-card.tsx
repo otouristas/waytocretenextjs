@@ -84,7 +84,11 @@ export function TourCard({
             {core.cancelFreeHours > 0 ? (
               <Tag icon={<CalendarCheck className="size-3" />}>{ui.freeCancel}</Tag>
             ) : null}
-            {core.photoshoot ? <Tag icon={<Camera className="size-3" />}>{ui.photoshoot}</Tag> : null}
+            {core.photoshoot === "included" ? (
+              <Tag icon={<Camera className="size-3" />}>{ui.photoshoot}</Tag>
+            ) : core.photoshoot === "with_guide" ? (
+              <Tag icon={<Camera className="size-3" />}>{ui.photoshootWithGuide}</Tag>
+            ) : null}
           </div>
 
           <div className="mt-auto flex items-end justify-between gap-3 pt-4">

@@ -11,7 +11,10 @@
     "extraGuest": null,
     "unitLabel": "group"
   },
-  "privateGuide": { "amount": 180, "currency": "EUR" },
+  "privateGuide": {
+    "amount": 180,
+    "currency": "EUR"
+  },
   "thirdPartyCosts": [
     {
       "label": "Samaria Gorge entrance fee",
@@ -40,8 +43,23 @@
   ],
   "cadence": {
     "kind": "seasonal",
-    "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
-    "months": [5, 6, 7, 8, 9, 10]
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ],
+    "months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
   },
   "pickupTime": "06:30",
   "durationMinutes": 720,
@@ -49,11 +67,17 @@
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": false,
+  "photoshoot": "with_guide",
   "privateOnly": true,
   "cancelFreeHours": 48,
-  "meetingPoint": { "lat": 35.3086, "lng": 23.9042 },
-  "places": ["samaria-gorge", "agia-roumeli"],
+  "meetingPoint": {
+    "lat": 35.3086,
+    "lng": 23.9042
+  },
+  "places": [
+    "samaria-gorge",
+    "agia-roumeli"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-73-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-71.jpg",
@@ -65,7 +89,10 @@
     "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-122-scaled.jpg",
     "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-123-scaled.jpg"
   ],
-  "travelotopos": { "serviceId": 13, "categoryId": 4 },
+  "travelotopos": {
+    "serviceId": 13,
+    "categoryId": 4
+  },
   "featured": false,
   "supersedes": []
 }

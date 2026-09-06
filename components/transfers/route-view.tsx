@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Baby, Check, Clock, PlaneLanding, Route as RouteIcon, Users } from "lucide-react";
+import { ArrowDown, ArrowRight, Baby, Check, Clock, PlaneLanding, Route as RouteIcon, Users } from "lucide-react";
 import { langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { transfersCopy } from "@/lib/i18n/transfers";
@@ -98,36 +98,53 @@ export function RouteView({
             />
           </dl>
 
-          <div className="mt-8 rounded-2xl bg-olive-50 p-6 ring-1 ring-olive-200">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-              {ui.transferEstimate}
-            </p>
-            {estimate ? (
-              <>
-                <p className="mt-1 font-display text-3xl text-ink">
-                  €{estimate.low}
-                  <span className="text-faint">–</span>
-                  {estimate.high}
+          {/* Same shape as the price band on a tour page: fact strip, then
+              the number, in the reading order the page is built in. */}
+          <aside
+            className="mt-8 overflow-hidden rounded-2xl bg-olive-50 ring-1 ring-olive-200"
+            aria-label={ui.transferEstimate}
+          >
+            <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4 p-5 sm:p-6">
+              <div className="min-w-0">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+                  {ui.transferEstimate}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-accent">
-                  {data.pricing.perKmRates
-                    .map(
-                      (rate) =>
-                        `€${rate.eurPerKm.toFixed(2)}/km for ${rate.minPassengers}–${rate.maxPassengers}`,
-                    )
-                    .join(" · ")}
-                  {estimate.atMinimum
-                    ? `. This route is under the ${data.pricing.minimumDistanceKm} km minimum, so it bills at the minimum.`
-                    : ""}
+                {estimate ? (
+                  <>
+                    <p className="mt-1 font-display text-4xl leading-none text-ink sm:text-[2.75rem]">
+                      €{estimate.low}
+                      <span className="mx-0.5 text-faint">–</span>
+                      {estimate.high}
+                    </p>
+                    <p className="mt-2.5 text-sm leading-relaxed text-accent">
+                      {data.pricing.perKmRates
+                        .map(
+                          (rate) =>
+                            `€${rate.eurPerKm.toFixed(2)}/km for ${rate.minPassengers}–${rate.maxPassengers}`,
+                        )
+                        .join(" · ")}
+                      {estimate.atMinimum
+                        ? `. This route is under the ${data.pricing.minimumDistanceKm} km minimum, so it bills at the minimum.`
+                        : ""}
+                    </p>
+                  </>
+                ) : (
+                  <p className="mt-1 font-display text-3xl leading-none text-ink">{ui.onRequest}</p>
+                )}
+                <p className="mt-3 text-xs leading-relaxed text-accent/70">
+                  {ui.transferEstimateNote}
                 </p>
-              </>
-            ) : (
-              <p className="mt-1 font-display text-2xl text-ink">{ui.onRequest}</p>
-            )}
-            <p className="mt-3 text-xs leading-relaxed text-accent/70">
-              {ui.transferEstimateNote}
-            </p>
-          </div>
+              </div>
+
+              <a
+                href="#booking-panel"
+                className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-olive px-5 text-sm font-semibold text-paper transition-colors hover:bg-olive-deep"
+              >
+                {ui.bookThis}
+                <ArrowDown className="size-4" aria-hidden />
+              </a>
+            </div>
+          </aside>
 
           <h2 className="mt-10 font-display text-2xl text-ink">{ui.transferExtras}</h2>
           <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">

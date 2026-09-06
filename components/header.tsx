@@ -314,7 +314,7 @@ function PromoStrip({
           </li>
           <li className="inline-flex items-center gap-1.5">
             <Camera className="size-3 text-paper" />
-            {copy.photoshoot}
+            {copy.photoshootMost}
           </li>
           <li className="inline-flex items-center gap-1.5">
             <Users className="size-3 text-paper" />

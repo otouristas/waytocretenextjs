@@ -7,16 +7,47 @@
     "kind": "sliding_per_person",
     "currency": "EUR",
     "tiers": [
-      { "minGuests": 2, "maxGuests": 2, "perPerson": 145 },
-      { "minGuests": 3, "maxGuests": 3, "perPerson": 96 },
-      { "minGuests": 4, "maxGuests": 4, "perPerson": 72.5 },
-      { "minGuests": 5, "maxGuests": 5, "perPerson": 70 },
-      { "minGuests": 6, "maxGuests": 6, "perPerson": 58 },
-      { "minGuests": 7, "maxGuests": 7, "perPerson": 50 },
-      { "minGuests": 8, "maxGuests": 8, "perPerson": 44 }
+      {
+        "minGuests": 2,
+        "maxGuests": 2,
+        "perPerson": 145
+      },
+      {
+        "minGuests": 3,
+        "maxGuests": 3,
+        "perPerson": 96
+      },
+      {
+        "minGuests": 4,
+        "maxGuests": 4,
+        "perPerson": 72.5
+      },
+      {
+        "minGuests": 5,
+        "maxGuests": 5,
+        "perPerson": 70
+      },
+      {
+        "minGuests": 6,
+        "maxGuests": 6,
+        "perPerson": 58
+      },
+      {
+        "minGuests": 7,
+        "maxGuests": 7,
+        "perPerson": 50
+      },
+      {
+        "minGuests": 8,
+        "maxGuests": 8,
+        "perPerson": 44
+      }
     ]
   },
-  "privateGuide": { "amount": 150, "currency": "EUR" },
+  "privateGuide": {
+    "amount": 150,
+    "currency": "EUR"
+  },
   "thirdPartyCosts": [
     {
       "label": "Imbros Gorge entrance fee",
@@ -26,18 +57,25 @@
       "note": "Paid at the gorge gate; not included in the tour price."
     }
   ],
-  "cadence": { "kind": "daily" },
+  "cadence": {
+    "kind": "daily"
+  },
   "pickupTime": "07:00",
   "durationMinutes": 360,
   "difficulty": "easy",
   "groupMin": 2,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "with_guide",
   "privateOnly": true,
   "cancelFreeHours": 48,
-  "meetingPoint": { "lat": 35.2264, "lng": 24.1406 },
-  "places": ["imbros-gorge"],
+  "meetingPoint": {
+    "lat": 35.2264,
+    "lng": 24.1406
+  },
+  "places": [
+    "imbros-gorge"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2024/12/imbros-17.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/imbros-27-scaled.jpg",
@@ -49,7 +87,10 @@
     "https://waytocrete.com/wp-content/uploads/2025/02/imbros-46-scaled.jpg",
     "https://waytocrete.com/wp-content/uploads/2025/02/imbros-49-scaled.jpg"
   ],
-  "travelotopos": { "serviceId": 11, "categoryId": 4 },
+  "travelotopos": {
+    "serviceId": 11,
+    "categoryId": 4
+  },
   "featured": true,
   "supersedes": []
 }

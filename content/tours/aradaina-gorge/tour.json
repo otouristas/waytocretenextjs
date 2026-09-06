@@ -8,7 +8,10 @@
     "currency": "EUR",
     "indicativeFrom": null
   },
-  "privateGuide": { "amount": 180, "currency": "EUR" },
+  "privateGuide": {
+    "amount": 180,
+    "currency": "EUR"
+  },
   "thirdPartyCosts": [
     {
       "label": "Gorge entrance fee",
@@ -24,18 +27,26 @@
       "note": "50 EUR total for 1-5 passengers; 10 EUR per person for 6 or more."
     }
   ],
-  "cadence": { "kind": "on_request" },
+  "cadence": {
+    "kind": "on_request"
+  },
   "pickupTime": "07:00",
   "durationMinutes": 540,
   "difficulty": "hard",
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": false,
+  "photoshoot": "with_guide",
   "privateOnly": true,
   "cancelFreeHours": 48,
-  "meetingPoint": { "lat": 35.2183, "lng": 24.065 },
-  "places": ["aradaina-gorge", "marmara-beach"],
+  "meetingPoint": {
+    "lat": 35.2183,
+    "lng": 24.065
+  },
+  "places": [
+    "aradaina-gorge",
+    "marmara-beach"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/02/flowers-28-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/flowers-48-scaled.jpg",

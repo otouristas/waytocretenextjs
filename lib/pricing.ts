@@ -316,6 +316,34 @@ export function priceFrom(price: PriceModel): number | null {
   }
 }
 
+/**
+ * The unit a published price is quoted in — "per person", "for the group".
+ *
+ * A label, not a number: this decides how a figure is described, never what
+ * the figure is. `priceFrom()` and `quote()` remain the only things that
+ * compute money, so a band and a booking widget cannot disagree about the
+ * price while disagreeing about what it buys.
+ */
+export function priceUnit(price: PriceModel): "person" | "group" | "couple" | "hour" | null {
+  switch (price.kind) {
+    case "sliding_per_person":
+    case "fixed_departure":
+      return "person";
+    case "adult_child_private":
+      // Falls back to the private buyout when no per-adult rate is published,
+      // which is what `priceFrom()` returns in that case.
+      return price.adult != null ? "person" : "group";
+    case "banded_group":
+      return "group";
+    case "flat_group":
+      return price.unitLabel === "couple" ? "couple" : "group";
+    case "hourly_private":
+      return "hour";
+    case "on_request":
+      return price.indicativeFrom == null ? null : "person";
+  }
+}
+
 /** The highest per-person price, for `Offer.highPrice` on sliding ladders. */
 export function priceTo(price: PriceModel): number | null {
   switch (price.kind) {

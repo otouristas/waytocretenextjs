@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CalendarDays, Banknote, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
+import { CalendarDays, Banknote, Camera, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
 import type { Lang } from "@/lib/i18n/langs";
 import { fill } from "@/lib/i18n/langs";
 import { t, type UI } from "@/lib/i18n/ui";
@@ -63,6 +63,7 @@ export function BookingWidget({
   cancelFreeHours,
   thirdPartyCosts,
   privateGuide,
+  photoshoot,
   priceNote,
   live,
 }: {
@@ -75,6 +76,7 @@ export function BookingWidget({
   cancelFreeHours: number;
   thirdPartyCosts: ThirdPartyCost[];
   privateGuide: TourCore["privateGuide"];
+  photoshoot: TourCore["photoshoot"];
   priceNote?: string;
   live?: { serviceId: number; categoryId: number } | null;
 }) {
@@ -321,6 +323,12 @@ export function BookingWidget({
             </p>
             <p className="mt-1 font-display text-lg leading-snug text-ink">{ui.guideUpgradeTitle}</p>
             <p className="mt-1.5 text-sm leading-relaxed text-muted">{ui.guideUpgradeBody}</p>
+            {photoshoot === "with_guide" ? (
+              <p className="mt-2 inline-flex items-start gap-1.5 text-sm font-semibold leading-relaxed text-accent">
+                <Camera className="mt-0.5 size-3.5 shrink-0" aria-hidden />
+                {ui.guidePhotoshootFree}
+              </p>
+            ) : null}
             <button
               type="button"
               aria-pressed={guideSelected}

@@ -2,6 +2,7 @@ import "server-only";
 import { allTours, photographyByKind } from "@/lib/content/load";
 import { durationLabel } from "@/lib/content/format";
 import { priceFrom } from "@/lib/pricing";
+import type { PhotoshootPolicy } from "@/lib/content/schema";
 import { langPath, type Lang } from "@/lib/i18n/langs";
 import { hubCopy } from "@/lib/i18n/hubs";
 import { photographyCopy } from "@/lib/i18n/photography";
@@ -29,7 +30,7 @@ export type NavTour = {
   multiday: boolean;
   couples: boolean;
   hotelPickup: boolean;
-  photoshoot: boolean;
+  photoshoot: PhotoshootPolicy;
   groupMax: number;
   badges: NavBadge[];
 };
@@ -107,7 +108,7 @@ export function decorateNav(lang: Lang): NavEntry[] {
         multiday: false,
         couples: false,
         hotelPickup: true,
-        photoshoot: false,
+        photoshoot: "none",
         groupMax: 8,
         badges: [],
       };

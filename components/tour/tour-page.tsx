@@ -9,6 +9,7 @@ import { SISTER_BRAND, sisterUrl } from "@/lib/site";
 import { TourHeroMosaic } from "@/components/tour/hero-mosaic";
 import { priceFrom } from "@/lib/pricing";
 import { BookingWidget } from "@/components/tour/booking-widget";
+import { PriceBand } from "@/components/tour/price-band";
 import { MobileBookBar } from "@/components/tour/mobile-book-bar";
 import { catalogUrl, liveBooker } from "@/lib/travelotopos";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
@@ -117,6 +118,11 @@ export function TourPage({
             <QuickFacts core={core} lang={lang} />
           </div>
 
+          {/* Gallery, title, facts, price. The number used to appear only in
+              the sidebar, which on a phone lands below the whole itinerary —
+              last, when it is the first thing most visitors look for. */}
+          {open ? <PriceBand core={core} lang={lang} /> : null}
+
           <p className="mt-8 text-base leading-relaxed text-ink">{copy.summary}</p>
 
           {core.durationMinutes < 1440 ? (
@@ -190,6 +196,7 @@ export function TourPage({
               cancelFreeHours={core.cancelFreeHours}
               thirdPartyCosts={core.thirdPartyCosts}
               privateGuide={core.privateGuide}
+              photoshoot={core.photoshoot}
               priceNote={copy.priceNote}
               live={live}
             />

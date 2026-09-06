@@ -90,7 +90,7 @@ export function MobileMenu({
           <Perk icon={<Clock3 className="size-4" />} label={copy.freeCancel} />
           <Perk icon={<CarFront className="size-4" />} label={copy.pickup} />
           <Perk icon={<Users className="size-4" />} label={copy.smallGroup} />
-          <Perk icon={<Camera className="size-4" />} label={copy.photoshoot} />
+          <Perk icon={<Camera className="size-4" />} label={copy.photoshootMost} />
         </ul>
 
         {rating ? (

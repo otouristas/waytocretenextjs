@@ -267,7 +267,7 @@ function FeaturedPanel({
         </p>
         <h4 className="mt-2 font-display text-2xl leading-tight">{tour.label}</h4>
         <p className="mt-2 text-sm text-paper/80">
-          {[tour.duration, tour.hotelPickup ? ui.pickup : null, tour.photoshoot ? ui.photoshoot : null]
+          {[tour.duration, tour.hotelPickup ? ui.pickup : null, tour.photoshoot === "included" ? ui.photoshoot : null]
             .filter(Boolean)
             .join(" · ")}
         </p>

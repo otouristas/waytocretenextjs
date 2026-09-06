@@ -47,11 +47,15 @@
   "groupMin": 2,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": false,
+  "photoshoot": "none",
   "privateOnly": true,
   "cancelFreeHours": 48,
   "meetingPoint": null,
-  "places": ["spinalonga", "elounda", "plaka"],
+  "places": [
+    "spinalonga",
+    "elounda",
+    "plaka"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Spinalonga-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/Spinalonga-1-scaled.jpg",

@@ -276,7 +276,16 @@ export function llmsFullTxt(): string {
     }
     if (core.pickupTime) out.push(`- Pickup time: ${core.pickupTime}`);
     out.push(`- Hotel pickup: ${core.hotelPickup ? "yes, across the Rethymno area" : "no"}`);
-    if (core.photoshoot) out.push("- Includes a professional photoshoot at no extra cost");
+    if (core.photoshoot === "included") {
+      out.push("- Includes a professional photoshoot at no extra cost");
+    } else if (core.photoshoot === "with_guide") {
+      // Stated with its condition attached. An answer engine that reads
+      // "includes a photoshoot" here will tell a traveller so, and the
+      // booking will not deliver one unless they added the guide.
+      out.push(
+        "- Professional photoshoot: included only when the optional private guide is added, at no extra cost on top of the guide",
+      );
+    }
     out.push(`- Free cancellation: up to ${core.cancelFreeHours} hours before pickup`);
     if (core.privateGuide) {
       out.push(

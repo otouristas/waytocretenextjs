@@ -8,6 +8,7 @@ import { allReviews, allTours, ratingSummary } from "@/lib/content/load";
 import { transfers } from "@/lib/transfers";
 import { breadcrumbNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
+import { HostSection } from "@/components/host-section";
 import { RatingInline } from "@/components/reviews/rating-summary";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
 import { reviewExperienceOptions } from "@/lib/reviews/experiences";
@@ -145,11 +146,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <p className="text-lg leading-relaxed text-ink">{copy.aboutLead}</p>
             <p className="mt-5 leading-relaxed text-muted">{copy.aboutBody}</p>
 
-            <figure className="mt-10 border-l-2 border-olive pl-6">
-              <blockquote className="font-display text-xl leading-snug text-ink">
-                {copy.ernest}
-              </blockquote>
-            </figure>
+            <HostSection lang={lang} />
 
             <h2 className="mt-12 font-display text-2xl text-ink">{copy.pointsTitle}</h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -223,7 +220,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
             <p className="flex items-start gap-2.5 rounded-2xl bg-surface p-5 text-sm leading-relaxed text-muted ring-1 ring-line">
               <Camera className="mt-0.5 size-4 shrink-0 text-accent" />
-              {copy.photoshoot}
+              {copy.photoshootMost}
             </p>
           </aside>
         </div>

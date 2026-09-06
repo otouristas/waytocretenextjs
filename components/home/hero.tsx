@@ -68,7 +68,7 @@ export function HomeHero({ lang }: { lang: Lang }) {
               <Chip icon={<CalendarCheck className="size-3.5" />}>{copy.freeCancel}</Chip>
               <Chip icon={<Users className="size-3.5" />}>{copy.smallGroup}</Chip>
               <Chip icon={<MapPin className="size-3.5" />}>{copy.pickup}</Chip>
-              <Chip icon={<Camera className="size-3.5" />}>{copy.photoshoot}</Chip>
+              <Chip icon={<Camera className="size-3.5" />}>{copy.photoshootMost}</Chip>
             </ul>
           </div>
         </div>

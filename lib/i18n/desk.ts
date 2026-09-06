@@ -22,6 +22,8 @@ export type DeskCopy = {
   perkMeet: string;
   perkGroup: string;
   perkPhoto: string;
+  /** The same perk on products where it arrives with the optional guide. */
+  perkPhotoWithGuide: string;
   perkCancel: string;
   currentTour: string;
   leadPrice: string;
@@ -65,6 +67,7 @@ const EN: DeskCopy = {
   perkMeet: "we meet in town",
   perkGroup: "groups of {n} or fewer",
   perkPhoto: "a photographer comes along",
+  perkPhotoWithGuide: "a photographer comes along when you add the guide",
   perkCancel: "free cancellation {n}h before",
   currentTour:
     "{title} — {price}, {duration}, {perks}. Tell me a date and how many of you, and I will put it in front of Ernest.",
@@ -111,6 +114,7 @@ const DE: DeskCopy = {
   perkMeet: "wir treffen uns in der Stadt",
   perkGroup: "Gruppen von höchstens {n}",
   perkPhoto: "ein Fotograf kommt mit",
+  perkPhotoWithGuide: "ein Fotograf kommt mit, wenn Sie den Guide dazubuchen",
   perkCancel: "kostenlose Stornierung {n} Std. vorher",
   currentTour:
     "{title} — {price}, {duration}, {perks}. Nennen Sie mir ein Datum und wie viele Sie sind, dann lege ich es Ernest vor.",
@@ -157,6 +161,7 @@ const IT: DeskCopy = {
   perkMeet: "ci vediamo in città",
   perkGroup: "gruppi di {n} o meno",
   perkPhoto: "c'è un fotografo",
+  perkPhotoWithGuide: "c'è un fotografo se aggiungi la guida",
   perkCancel: "cancellazione gratuita {n}h prima",
   currentTour:
     "{title} — {price}, {duration}, {perks}. Datemi una data e in quanti siete, e lo metto davanti a Ernest.",
@@ -203,6 +208,7 @@ const FR: DeskCopy = {
   perkMeet: "on se retrouve en ville",
   perkGroup: "groupes de {n} ou moins",
   perkPhoto: "un photographe vient",
+  perkPhotoWithGuide: "un photographe vient si vous ajoutez le guide",
   perkCancel: "annulation gratuite {n}h avant",
   currentTour:
     "{title} — {price}, {duration}, {perks}. Donnez-moi une date et combien vous êtes, je le mets devant Ernest.",
@@ -249,6 +255,7 @@ const SV: DeskCopy = {
   perkMeet: "vi möts i stan",
   perkGroup: "grupper på högst {n}",
   perkPhoto: "en fotograf följer med",
+  perkPhotoWithGuide: "en fotograf följer med om ni lägger till guiden",
   perkCancel: "gratis avbokning {n} timmar före",
   currentTour:
     "{title} — {price}, {duration}, {perks}. Ge mig ett datum och hur många ni är, så lägger jag det framför Ernest.",

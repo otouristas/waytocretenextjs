@@ -9,14 +9,24 @@
     "adult": 120,
     "child": 65,
     "infantFree": true,
-    "childAges": [4, 13],
-    "infantAges": [0, 3],
+    "childAges": [
+      4,
+      13
+    ],
+    "infantAges": [
+      0,
+      3
+    ],
     "privateGroup": null
   },
   "thirdPartyCosts": [],
   "cadence": {
     "kind": "weekdays",
-    "days": ["mon", "wed", "thu"]
+    "days": [
+      "mon",
+      "wed",
+      "thu"
+    ]
   },
   "pickupTime": "09:30",
   "durationMinutes": 240,
@@ -24,11 +34,13 @@
   "groupMin": 4,
   "groupMax": 8,
   "hotelPickup": false,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": false,
   "cancelFreeHours": 48,
   "meetingPoint": null,
-  "places": ["rethymno-old-town"],
+  "places": [
+    "rethymno-old-town"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-28-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-15-1-scaled.jpg",
@@ -40,7 +52,10 @@
     "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-24-scaled.jpg",
     "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-31-scaled.jpg"
   ],
-  "travelotopos": { "serviceId": 21, "categoryId": 5 },
+  "travelotopos": {
+    "serviceId": 21,
+    "categoryId": 5
+  },
   "featured": true,
   "supersedes": []
 }

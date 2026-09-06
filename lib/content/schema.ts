@@ -234,6 +234,14 @@ export type TourCategory = z.infer<typeof TourCategory>;
  * Locale-independent, operations-owned facts. Changing any of these changes
  * what we sell; changing TourCopy only changes how we describe it.
  */
+/**
+ * When the professional photoshoot happens.
+ *
+ * See `TourCore.photoshoot` for why this is not a boolean.
+ */
+export const PhotoshootPolicy = z.enum(["none", "included", "with_guide"]);
+export type PhotoshootPolicy = z.infer<typeof PhotoshootPolicy>;
+
 export const TourCore = z.object({
   slug: Slug,
   category: TourCategory,
@@ -269,8 +277,22 @@ export const TourCore = z.object({
   groupMax: z.number().int().min(1),
 
   hotelPickup: z.boolean().default(true),
-  /** The "Memory Maker" professional photoshoot — a real differentiator. */
-  photoshoot: z.boolean().default(false),
+  /**
+   * The "Memory Maker" professional photoshoot — a real differentiator, and
+   * one that travels with the guide rather than with the van.
+   *
+   * Three states rather than a boolean, because the honest answer on several
+   * products is "yes, if you take the guide". A gorge walk sold with a driver
+   * and an optional local guide cannot promise a photoshoot outright: nobody
+   * is carrying the camera unless the guide is on board. Saying `true` there
+   * advertises something the booking may not deliver, and saying `false`
+   * hides a real perk from the guests who do add the guide.
+   *
+   *   included   — comes with the tour, at no extra cost
+   *   with_guide — free, but only once the optional guide is added
+   *   none       — not offered on this product
+   */
+  photoshoot: PhotoshootPolicy.default("none"),
   privateOnly: z.boolean().default(false),
 
   cancelFreeHours: z.number().int().nonnegative().default(48),

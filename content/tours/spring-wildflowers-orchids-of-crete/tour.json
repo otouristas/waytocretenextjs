@@ -33,7 +33,7 @@
   "groupMin": 7,
   "groupMax": 14,
   "hotelPickup": false,
-  "photoshoot": false,
+  "photoshoot": "none",
   "privateOnly": false,
   "cancelFreeHours": 0,
   "meetingPoint": null,

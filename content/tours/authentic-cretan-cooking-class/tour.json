@@ -11,7 +11,11 @@
   "thirdPartyCosts": [],
   "cadence": {
     "kind": "weekdays",
-    "days": ["mon", "thu", "fri"]
+    "days": [
+      "mon",
+      "thu",
+      "fri"
+    ]
   },
   "pickupTime": "10:30",
   "durationMinutes": 330,
@@ -19,11 +23,14 @@
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": false,
   "cancelFreeHours": 48,
   "meetingPoint": null,
-  "places": ["patsos-gorge", "potamon-dam"],
+  "places": [
+    "patsos-gorge",
+    "potamon-dam"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/11/cooking-classes-8-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/cooking-classes-33-scaled.jpg",
@@ -37,5 +44,7 @@
   ],
   "featured": false,
   "availability": "unavailable",
-  "supersedes": ["/the-cretan-cooking-experience"]
+  "supersedes": [
+    "/the-cretan-cooking-experience"
+  ]
 }

@@ -24,7 +24,10 @@
       "note": "Paid at the museum; a combined Knossos + museum ticket is usually available."
     }
   ],
-  "privateGuide": { "amount": 150, "currency": "EUR" },
+  "privateGuide": {
+    "amount": 150,
+    "currency": "EUR"
+  },
   "cadence": {
     "kind": "on_request"
   },
@@ -34,11 +37,15 @@
   "groupMin": 2,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": false,
+  "photoshoot": "with_guide",
   "privateOnly": true,
   "cancelFreeHours": 48,
   "meetingPoint": null,
-  "places": ["knossos", "heraklion-archaeological-museum", "heraklion-old-town"],
+  "places": [
+    "knossos",
+    "heraklion-archaeological-museum",
+    "heraklion-old-town"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0007-scaled-1.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0001-scaled-1.jpg",

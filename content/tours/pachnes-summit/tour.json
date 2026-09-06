@@ -17,18 +17,25 @@
       "note": "Paid directly at the taverna; not part of the tour price."
     }
   ],
-  "cadence": { "kind": "on_request" },
+  "cadence": {
+    "kind": "on_request"
+  },
   "pickupTime": "07:00",
   "durationMinutes": 540,
   "difficulty": "moderate",
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": true,
   "cancelFreeHours": 48,
-  "meetingPoint": { "lat": 35.2103, "lng": 24.0778 },
-  "places": ["pachnes"],
+  "meetingPoint": {
+    "lat": 35.2103,
+    "lng": 24.0778
+  },
+  "places": [
+    "pachnes"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-22-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-35-scaled.jpg",

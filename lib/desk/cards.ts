@@ -12,6 +12,8 @@
  * 5.0 with nothing behind it.
  */
 
+import type { PhotoshootPolicy } from "@/lib/content/schema";
+
 export type DeskTourCard = {
   kind: "tour";
   slug: string;
@@ -25,7 +27,7 @@ export type DeskTourCard = {
   category: string;
   groupMax: number;
   pickup: boolean;
-  photoshoot: boolean;
+  photoshoot: PhotoshootPolicy;
   cancelHours: number;
   blurb: string;
   highlights: string[];

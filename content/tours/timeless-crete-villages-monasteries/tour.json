@@ -9,8 +9,14 @@
     "adult": null,
     "child": 45,
     "infantFree": true,
-    "childAges": [4, 13],
-    "infantAges": [0, 3],
+    "childAges": [
+      4,
+      13
+    ],
+    "infantAges": [
+      0,
+      3
+    ],
     "privateGroup": {
       "total": 290,
       "includedGuests": 4,
@@ -54,7 +60,14 @@
   ],
   "cadence": {
     "kind": "weekdays",
-    "days": ["mon", "wed", "thu", "fri", "sat", "sun"]
+    "days": [
+      "mon",
+      "wed",
+      "thu",
+      "fri",
+      "sat",
+      "sun"
+    ]
   },
   "pickupTime": "09:00",
   "durationMinutes": 300,
@@ -62,11 +75,16 @@
   "groupMin": 2,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": false,
   "cancelFreeHours": 48,
   "meetingPoint": null,
-  "places": ["arkadi-monastery", "eleftherna", "margarites", "melidoni-cave"],
+  "places": [
+    "arkadi-monastery",
+    "eleftherna",
+    "margarites",
+    "melidoni-cave"
+  ],
   "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-scaled.jpg",
   "gallery": [
     "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-6-scaled.jpg",
@@ -78,7 +96,10 @@
     "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave-scaled.jpg",
     "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave-1-scaled.jpg"
   ],
-  "travelotopos": { "serviceId": 14, "categoryId": 6 },
+  "travelotopos": {
+    "serviceId": 14,
+    "categoryId": 6
+  },
   "featured": false,
   "supersedes": []
 }

@@ -46,7 +46,7 @@
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": false,
   "cancelFreeHours": 48,
   "meetingPoint": null,
@@ -64,7 +64,10 @@
     "https://waytocrete.com/wp-content/uploads/2025/02/flowers-65-1-scaled.jpg",
     "https://waytocrete.com/wp-content/uploads/2025/02/flowers-22-scaled.jpg"
   ],
-  "travelotopos": { "serviceId": 18, "categoryId": 8 },
+  "travelotopos": {
+    "serviceId": 18,
+    "categoryId": 8
+  },
   "featured": false,
   "supersedes": []
 }

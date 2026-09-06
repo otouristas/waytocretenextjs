@@ -18,7 +18,7 @@
   "groupMin": 1,
   "groupMax": 8,
   "hotelPickup": true,
-  "photoshoot": false,
+  "photoshoot": "none",
   "privateOnly": false,
   "cancelFreeHours": 48,
   "meetingPoint": null,

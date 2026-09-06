@@ -21,7 +21,7 @@
   "groupMin": 2,
   "groupMax": 2,
   "hotelPickup": true,
-  "photoshoot": true,
+  "photoshoot": "included",
   "privateOnly": true,
   "cancelFreeHours": 48,
   "meetingPoint": null,
@@ -41,7 +41,10 @@
     "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-7-scaled.jpg",
     "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-24-scaled.jpg"
   ],
-  "travelotopos": { "serviceId": 17, "categoryId": 7 },
+  "travelotopos": {
+    "serviceId": 17,
+    "categoryId": 7
+  },
   "featured": true,
   "supersedes": []
 }
