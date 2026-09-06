@@ -4,13 +4,18 @@ import { bodyFor, type RequestPayload } from "@/lib/request";
 export function guestConfirmText(payload: RequestPayload) {
   return [
     `Thank you, ${payload.name}.`,
-    "The Rethymno Tours desk has your request. We will reply within a few hours.",
+    "The Rethymno Tours desk in Crete has your request. We will reply within a few hours.",
+    payload.cashCode
+      ? `Your cash code is ${payload.cashCode}. Quote it when we confirm the date. Pay in cash on the day of the tour for 10% off.`
+      : "",
     "",
     bodyFor(payload),
     "",
     `WhatsApp: ${WHATSAPP}`,
     `Phone: ${PHONE_DISPLAY}`,
-  ].join("\n");
+  ]
+    .filter((line, i, all) => line !== "" || all[i - 1] !== "")
+    .join("\n");
 }
 
 export function guestConfirmSubject(payload: RequestPayload) {
@@ -28,6 +33,8 @@ export function templateVars(payload: RequestPayload): Record<string, string | n
     DATE: payload.date || "TBC",
     GUESTS_COUNT: payload.guests ?? "",
     EXPERIENCE: payload.slug || "",
+    PHOTO_PACKAGE: payload.photoPackage || "",
+    DEPARTURE: payload.departure || "",
     HOTEL: payload.hotel || "",
     NOTE: payload.message || "",
     PICKUP: payload.pickup || "",
@@ -37,6 +44,8 @@ export function templateVars(payload: RequestPayload): Record<string, string | n
     PHONE_LINE: payload.phone || "",
     TIME: payload.time || "",
     WEDDING: payload.wedding ? "yes" : "",
+    PAY_CASH: payload.payCash ? "yes" : "",
+    CASH_CODE: payload.cashCode || "",
     ROUTE: payload.itinerary?.route || "",
     STOPS: payload.itinerary?.stops.map((s, i) => `${i + 1}. ${s.name} (${s.stay})`).join("\n") || "",
     DRIVING: payload.itinerary?.driving || "",

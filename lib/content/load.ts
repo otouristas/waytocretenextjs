@@ -6,6 +6,11 @@ import { LANGS, type Lang } from "@/lib/i18n/langs";
 import {
   GuideCopy,
   GuideCore,
+  type PhotoDeparture,
+  type PhotoWorkshop,
+  PhotographyCopy,
+  PhotographyCore,
+  type PhotographyKind,
   PlaceCopy,
   PlaceCore,
   Review,
@@ -202,6 +207,79 @@ export const allPlaces = cache((lang: Lang) =>
     })
     .filter((x): x is { core: PlaceCore; copy: PlaceCopy } => x !== null),
 );
+
+/* ────────────────────────────── photography ────────────────────────────── */
+
+/**
+ * The photography section.
+ *
+ * Same two-file contract as tours: `photo.json` carries the operations facts
+ * (prices, party sizes, departures) and `{lang}.json` carries the prose. A
+ * product is only routable once both its structural file and its English copy
+ * exist, for the same reason tours are — half a product generated as a route
+ * 404s at render.
+ */
+
+export const photographySlugs = cache((): string[] =>
+  dirsIn("photography").filter(
+    (slug) =>
+      existsSync(join(CONTENT, "photography", slug, "photo.json")) &&
+      existsSync(join(CONTENT, "photography", slug, "en.json")),
+  ),
+);
+
+export const getPhotographyCore = cache((slug: string): PhotographyCore | null => {
+  const path = join(CONTENT, "photography", slug, "photo.json");
+  if (!existsSync(path)) return null;
+  return parseOrThrow(PhotographyCore, readJson(path), path);
+});
+
+export const getPhotographyCopy = cache((slug: string, lang: Lang): PhotographyCopy | null => {
+  const path = join(CONTENT, "photography", slug, `${lang}.json`);
+  if (!existsSync(path)) return null;
+  return parseOrThrow(PhotographyCopy, readJson(path), path);
+});
+
+export const photographyLangs = cache((slug: string): Lang[] =>
+  LANGS.filter((lang) => getPhotographyCopy(slug, lang)?.state === "reviewed"),
+);
+
+export type PhotographyEntry = { core: PhotographyCore; copy: PhotographyCopy };
+
+export const allPhotography = cache((lang: Lang): PhotographyEntry[] =>
+  photographySlugs()
+    .map((slug) => {
+      const core = getPhotographyCore(slug);
+      const copy = getPhotographyCopy(slug, lang) ?? getPhotographyCopy(slug, "en");
+      return core && copy ? { core, copy } : null;
+    })
+    .filter((x): x is PhotographyEntry => x !== null)
+    .sort((a, b) => a.core.order - b.core.order || a.core.slug.localeCompare(b.core.slug)),
+);
+
+/** One family, in hub order. The `kind` discriminant is the only filter. */
+export function photographyByKind(lang: Lang, kind: PhotographyKind): PhotographyEntry[] {
+  return allPhotography(lang).filter((entry) => entry.core.kind === kind);
+}
+
+/**
+ * Departures worth showing, soonest first.
+ *
+ * A month that has fully passed is dropped rather than displayed as sold out:
+ * the page is statically generated and revalidated daily, so this is what
+ * keeps a seasonal list from advertising last spring. `month` is compared as
+ * a string because `YYYY-MM` sorts lexicographically, which sidesteps every
+ * timezone question a Date would raise.
+ */
+export function upcomingDepartures(
+  workshop: PhotoWorkshop,
+  now = new Date(),
+): PhotoDeparture[] {
+  const current = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}`;
+  return workshop.departures
+    .filter((departure) => departure.month >= current)
+    .sort((a, b) => a.month.localeCompare(b.month) || a.id.localeCompare(b.id));
+}
 
 /* ────────────────────────────── reviews ────────────────────────────── */
 

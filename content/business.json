@@ -21,13 +21,6 @@
       "display": "+30 697 253 1808",
       "whatsapp": "https://wa.me/306972531808",
       "primary": true
-    },
-    {
-      "label": "Office landline",
-      "e164": "+302832020102",
-      "display": "+30 28320 20102",
-      "whatsapp": null,
-      "primary": false
     }
   ],
   "emails": [
@@ -52,8 +45,7 @@
     "mhte": "Elementor footer template \"way Footer\" (WP 111) and its German twin (WP 2752): an image-box widget whose description_text is the bare string \"1041E60000439401\", sitting beside badge image /wp-content/uploads/2024/05/image-6-1-1.png. The footer prints the number with no label, so the classification as an MHTE/GNTO tour-operator registry number rests on the format (NNNN + E + 11 digits), which is the Greek MHTE pattern. Verify with the operator before publishing it as a licence number.",
     "address.street": "Google Maps embed on the Contact page (WP 46): maps.google.com/maps?q=Eratous%206%2C%20rethymno. This is the ONLY place a street appears anywhere in the database. The visible Contact page text says only \"Crete, Greece\".",
     "address.geo": "Chauffeur booking form (WP 5930) chbs_base_location \"Rethymnon, Greece\" with lat 35.3655545 / lng 24.4919838. This is the transfer dispatch base, not necessarily the office.",
-    "phones[0]": "Header template (WP 78), footer (WP 111), Contact page (WP 46) and 34 other places; also the WhatsApp link wa.me/306972531808.",
-    "phones[1]": "German header (WP 2743), German footer (WP 2752) and the tel: link behind the phone heading on both the English Contact page (WP 46) and the German Kontakt page (WP 2692).",
+    "phones[0]": "Header template (WP 78), footer (WP 111), Contact page (WP 46) and 34 other places; also the WhatsApp link wa.me/306972531808. The old office landline (+30 28320 20102) is retired and must not be published.",
     "emails[0]": "Header, footer, Contact page, and the PayPal receiving address on the transfer booking form (WP 5930).",
     "hours.structuredDataValue": "wp_options rank-math-options-titles, opening_hours array.",
     "hours.publishedClaim": "Contact page body copy (WP 46).",

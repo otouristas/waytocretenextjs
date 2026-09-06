@@ -23,10 +23,6 @@ export const WHATSAPP = "https://wa.me/306972531808";
 /** Header / mobile CTA — the live booking engine, not a WordPress page. */
 export const BOOK_NOW_URL = "https://waytocrete.travelotopos.com/";
 
-/** The office landline, found on the German header and footer templates. */
-export const PHONE_OFFICE = "+302832020102";
-export const PHONE_OFFICE_DISPLAY = "+30 28320 20102";
-
 export const EMAIL = "info@waytocrete.com";
 export const PARTNERS_EMAIL = "partners@waytocrete.com";
 

@@ -3,6 +3,8 @@ import { join } from "node:path";
 import {
   GuideCopy,
   GuideCore,
+  PhotographyCopy,
+  PhotographyCore,
   PlaceCopy,
   PlaceCore,
   PlannerCopyFile,
@@ -377,6 +379,182 @@ console.log("\nPlanner");
 
   console.log(`  ${startSlugs.size} starts, ${stopSlugs.size} stops, ${Array.isArray(legs) ? legs.length : 0} legs`);
 }
+
+/* ────────────────────────────── photography ────────────────────────────── */
+
+console.log("\nPhotography");
+const photographySlugs = dirs("photography");
+
+for (const slug of photographySlugs) {
+  const base = join(CONTENT, "photography", slug);
+  const corePath = join(base, "photo.json");
+  if (!existsSync(corePath)) {
+    fail(`photography/${slug}`, "missing photo.json");
+    continue;
+  }
+
+  const core = check(PhotographyCore, load(corePath), `photography/${slug}/photo.json`);
+  if (!core) continue;
+
+  if (core.slug !== slug) fail(`photography/${slug}/photo.json`, `slug field is "${core.slug}"`);
+
+  if (core.gallery.includes(core.hero)) {
+    warn(`photography/${slug}`, "hero image is repeated in the gallery");
+  }
+
+  for (const place of core.places) {
+    if (knownPlaces.size > 0 && !knownPlaces.has(place)) {
+      warn(`photography/${slug}`, `references place "${place}" with no content/places entry`);
+    }
+  }
+
+  if (core.kind === "experience") {
+    /**
+     * The ladder has to read as a ladder. A package that costs more and
+     * delivers less than the one above it is not a pricing decision, it is a
+     * typo — and it is invisible until a guest compares two cards.
+     */
+    const ids = new Set<string>();
+    for (const pkg of core.packages) {
+      if (ids.has(pkg.id)) fail(`photography/${slug}`, `duplicate package id "${pkg.id}"`);
+      ids.add(pkg.id);
+
+      if (pkg.locations[0] > pkg.locations[1]) {
+        fail(`photography/${slug}`, `package "${pkg.id}" has an inverted location range`);
+      }
+      const [minPhotos, maxPhotos] = pkg.editedPhotos;
+      if (maxPhotos != null && maxPhotos < minPhotos) {
+        fail(`photography/${slug}`, `package "${pkg.id}" has an inverted edited-photo range`);
+      }
+      if (pkg.minutesMax != null && pkg.minutesMax < pkg.minutes) {
+        fail(`photography/${slug}`, `package "${pkg.id}" has an inverted duration range`);
+      }
+    }
+
+    const popular = core.packages.filter((pkg) => pkg.popular);
+    if (popular.length > 1) {
+      fail(
+        `photography/${slug}`,
+        `${popular.length} packages are flagged "popular" — a most-popular badge on more than one is a badge on none`,
+      );
+    }
+
+    const byPrice = [...core.packages].sort((a, b) => a.priceEur - b.priceEur);
+    for (let i = 1; i < byPrice.length; i++) {
+      const prev = byPrice[i - 1];
+      const next = byPrice[i];
+      if (next.minutes < prev.minutes) {
+        warn(
+          `photography/${slug}`,
+          `package "${next.id}" costs more than "${prev.id}" but is shorter`,
+        );
+      }
+      if (next.editedPhotos[0] < prev.editedPhotos[0]) {
+        warn(
+          `photography/${slug}`,
+          `package "${next.id}" costs more than "${prev.id}" but delivers fewer photos`,
+        );
+      }
+    }
+  } else {
+    const { groupMin, groupMax, standard, earlyBird, departures } = core.workshop;
+    if (groupMin > groupMax) {
+      fail(`photography/${slug}`, `groupMin ${groupMin} exceeds groupMax ${groupMax}`);
+    }
+    if (earlyBird != null && earlyBird >= standard) {
+      fail(
+        `photography/${slug}`,
+        `early-bird price €${earlyBird} is not below the standard €${standard}`,
+      );
+    }
+    const seen = new Set<string>();
+    for (const departure of departures) {
+      if (seen.has(departure.id)) {
+        fail(`photography/${slug}`, `duplicate departure id "${departure.id}"`);
+      }
+      seen.add(departure.id);
+      if (departure.start && departure.end && departure.end < departure.start) {
+        fail(`photography/${slug}`, `departure "${departure.id}" ends before it starts`);
+      }
+      if (departure.start && !departure.start.startsWith(departure.month)) {
+        warn(
+          `photography/${slug}`,
+          `departure "${departure.id}" starts ${departure.start} but is filed under ${departure.month}`,
+        );
+      }
+      /**
+       * A confirmed departure with no dates is the one contradiction this
+       * product cannot survive: the page tells the guest a confirmed
+       * departure is bookable, and there is nothing to book.
+       */
+      if (departure.status === "confirmed" && (!departure.start || !departure.end)) {
+        fail(
+          `photography/${slug}`,
+          `departure "${departure.id}" is marked confirmed but publishes no dates`,
+        );
+      }
+    }
+  }
+
+  // Locale copy.
+  for (const file of readdirSync(base)) {
+    if (!file.endsWith(".json") || file === "photo.json" || file.startsWith("_")) continue;
+    const path = `photography/${slug}/${file}`;
+    const copy = check(PhotographyCopy, load(join(base, file)), path);
+    if (!copy) continue;
+
+    if (copy.seoTitle.length > 70) fail(path, `seoTitle is ${copy.seoTitle.length} chars (max 70)`);
+    if (copy.seoDescription.length > 165) {
+      fail(path, `seoDescription is ${copy.seoDescription.length} chars (max 165)`);
+    }
+
+    // Every id the core names must be spoken for, in every locale. A missing
+    // package name renders as a raw slug on a €650 card.
+    if (core.kind === "experience") {
+      const named = new Set(copy.packages.map((pkg) => pkg.id));
+      for (const pkg of core.packages) {
+        if (!named.has(pkg.id)) fail(path, `no copy for package "${pkg.id}"`);
+      }
+      for (const pkg of copy.packages) {
+        if (!core.packages.some((entry) => entry.id === pkg.id)) {
+          warn(path, `copy for package "${pkg.id}", which photo.json does not define`);
+        }
+      }
+      if (copy.days.length > 0) {
+        warn(path, "an experience carries a day-by-day curriculum — that belongs to a workshop");
+      }
+    } else {
+      if (copy.days.length !== core.workshop.days) {
+        fail(
+          path,
+          `${copy.days.length} curriculum days for a ${core.workshop.days}-day workshop`,
+        );
+      }
+      const editions = new Set(copy.editions.map((edition) => edition.id));
+      for (const departure of core.workshop.departures) {
+        if (!editions.has(departure.edition)) {
+          fail(path, `departure "${departure.id}" names edition "${departure.edition}", which has no copy`);
+        }
+      }
+    }
+
+    const describedSettings = new Set(copy.settings.map((setting) => setting.id));
+    for (const setting of core.settings) {
+      if (!describedSettings.has(setting)) fail(path, `no copy for setting "${setting}"`);
+    }
+
+    /**
+     * The promise line is the one sentence that keeps the two families apart.
+     * If it stops naming what actually happens, the section's whole
+     * information architecture stops working.
+     */
+    const promise = copy.promise.toLowerCase();
+    if (core.kind === "workshop" && !/learn|lär|impar|lern|appren/.test(promise)) {
+      warn(path, "a workshop's promise line does not say the guest learns anything");
+    }
+  }
+}
+console.log(`  ${photographySlugs.length} photography products checked`);
 
 /* ────────────────────────────── result ────────────────────────────── */
 

@@ -1,0 +1,83 @@
+{
+  "slug": "crete-photography-escape",
+  "kind": "workshop",
+  "order": 0,
+  "settings": [
+    "mountains",
+    "gorges",
+    "beaches",
+    "villages",
+    "old-town",
+    "olive-groves",
+    "viewpoints",
+    "golden-hour"
+  ],
+  "places": [
+    "rethymno-old-town",
+    "margarites",
+    "spili",
+    "kourtaliotiko-gorge",
+    "preveli-beach",
+    "imbros-gorge",
+    "triopetra-beach"
+  ],
+  "workshop": {
+    "days": 4,
+    "currency": "EUR",
+    "standard": 895,
+    "earlyBird": 795,
+    "groupMin": 4,
+    "groupMax": 6,
+    "gear": ["dslr", "mirrorless", "compact", "smartphone"],
+    "departures": [
+      {
+        "id": "2026-10",
+        "edition": "autumn",
+        "month": "2026-10",
+        "status": "forming",
+        "spotsLeft": 6
+      },
+      {
+        "id": "2026-11",
+        "edition": "autumn",
+        "month": "2026-11",
+        "status": "forming",
+        "spotsLeft": 6
+      },
+      {
+        "id": "2026-12",
+        "edition": "winter",
+        "month": "2026-12",
+        "status": "limited",
+        "spotsLeft": 6
+      },
+      {
+        "id": "2027-04",
+        "edition": "spring",
+        "month": "2027-04",
+        "status": "forming",
+        "spotsLeft": 6
+      },
+      {
+        "id": "2027-05",
+        "edition": "spring",
+        "month": "2027-05",
+        "status": "forming",
+        "spotsLeft": 6
+      }
+    ]
+  },
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-22-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-15-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-41-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2024/12/imbros-17.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-28-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-54-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-28-scaled.jpg"
+  ],
+  "featured": true,
+  "supersedes": []
+}

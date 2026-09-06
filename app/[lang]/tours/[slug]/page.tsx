@@ -24,6 +24,9 @@ import {
 } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { TourPage } from "@/components/tour/tour-page";
+import { getMonthAvailability, liveBooker } from "@/lib/travelotopos";
+import { browsingNow, fewOpenDates } from "@/lib/tour-signals";
+import { tourIsOpen } from "@/lib/content/schema";
 
 export function generateStaticParams() {
   return tourSlugs().flatMap((slug) => LANGS.map((lang) => ({ lang, slug })));
@@ -73,8 +76,8 @@ export default async function Page({
     { name: copy.title, path },
   ];
 
-  // Related: same category first, then anything else, never itself.
-  const others = allTours(lang).filter((x) => x.core.slug !== slug);
+  // Related: same category first, then anything else, never itself or a paused day.
+  const others = allTours(lang).filter((x) => x.core.slug !== slug && tourIsOpen(x.core));
   const related = [
     ...others.filter((x) => x.core.category === core.category),
     ...others.filter((x) => x.core.category !== core.category),
@@ -88,6 +91,11 @@ export default async function Page({
    * the correct outcome while the source data carries no star values.
    */
   const reviews = reviewsForTour(slug);
+
+  const booker = liveBooker(slug);
+  const month = booker ? await getMonthAvailability(slug) : null;
+  const fewDates = month?.ok ? fewOpenDates(month.data) : false;
+  const browsing = tourIsOpen(core) ? browsingNow(slug, core.featured) : null;
 
   const jsonLd = graph([
     webPageNode({ lang, path, name: copy.seoTitle, description: copy.seoDescription, crumbs }),
@@ -117,6 +125,8 @@ export default async function Page({
         related={related}
         linkablePlaces={new Set(placeSlugs())}
         reviews={reviews}
+        browsing={browsing}
+        fewDates={fewDates}
       />
     </>
   );

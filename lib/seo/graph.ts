@@ -10,7 +10,7 @@ import {
   SOCIAL,
   siteUrl,
 } from "../site.ts";
-import { type PriceModel } from "../content/schema.ts";
+import { type PhotographyCore, type PriceModel } from "../content/schema.ts";
 import { durationLabel } from "../content/format.ts";
 import { isPriced, priceFrom, priceTo, quote } from "../pricing.ts";
 import { absolute, id } from "./ids.ts";
@@ -372,3 +372,129 @@ export function graph(nodes: Array<Node | null | undefined>) {
 
 /** Re-exported so callers price through the one authority. */
 export { quote };
+
+/* ────────────────────────────── photography ────────────────────────────── */
+
+/**
+ * The offer on a photography product.
+ *
+ * An experience publishes a ladder of packages, so it becomes an
+ * `AggregateOffer` carrying the real low and high and every rung as its own
+ * `Offer` — a single "from €160" would understate a €650 product, and a
+ * single "€650" would overstate the entry point. A workshop with an
+ * early-bird rate publishes two genuine prices and gets the same treatment;
+ * one with a single rate gets a plain `Offer`.
+ */
+function photographyOffer(core: PhotographyCore, url: string, names: Record<string, string>): Node {
+  const base = {
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url,
+    seller: { "@id": id.organization() },
+  };
+
+  if (core.kind === "experience") {
+    const prices = core.packages.map((pkg) => pkg.priceEur);
+    return {
+      "@type": "AggregateOffer",
+      ...base,
+      lowPrice: Math.min(...prices),
+      highPrice: Math.max(...prices),
+      offerCount: core.packages.length,
+      offers: core.packages.map((pkg) => ({
+        "@type": "Offer",
+        name: names[pkg.id] ?? pkg.id,
+        price: pkg.priceEur,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url,
+      })),
+    };
+  }
+
+  const { standard, earlyBird } = core.workshop;
+  if (earlyBird == null) return { "@type": "Offer", ...base, price: standard };
+  return {
+    "@type": "AggregateOffer",
+    ...base,
+    lowPrice: Math.min(earlyBird, standard),
+    highPrice: Math.max(earlyBird, standard),
+    offerCount: 2,
+  };
+}
+
+/**
+ * A photography product.
+ *
+ * The workshop is typed `Course` as well as `Product` because that is what it
+ * is — it teaches, it has a syllabus and a level — and `Course` is a far less
+ * contested result type than a travel `Product`. `hasCourseInstance` is
+ * emitted only for departures whose dates the operator has actually fixed:
+ * an instance carrying invented dates would be markup that contradicts the
+ * page, which says in plain words that the dates are confirmed on departure.
+ */
+export function photographyNode(opts: {
+  lang: Lang;
+  core: PhotographyCore;
+  name: string;
+  description: string;
+  images: string[];
+  /** Package id → display name, for the per-package offers. */
+  packageNames?: Record<string, string>;
+  ratings?: readonly number[];
+  reviews?: readonly Node[];
+  placeNames?: ReadonlyArray<{ name: string; slug: string }>;
+}): Node {
+  const { core, lang } = opts;
+  const url = absolute(lang, `/photography/${core.slug}`);
+  const rating = aggregateRatingNode(opts.ratings ?? []);
+  const isWorkshop = core.kind === "workshop";
+  const durationMinutes = isWorkshop ? core.workshop.days * 1440 : undefined;
+
+  const instances = isWorkshop
+    ? core.workshop.departures
+        .filter((departure) => departure.start && departure.end)
+        .map((departure) => ({
+          "@type": "CourseInstance",
+          courseMode: "Onsite",
+          courseWorkload: isoDuration(core.workshop.days * 1440),
+          startDate: departure.start,
+          endDate: departure.end,
+          location: { "@type": "Place", name: "Crete, Greece" },
+          maximumAttendeeCapacity: core.workshop.groupMax,
+        }))
+    : [];
+
+  return {
+    "@type": isWorkshop ? ["Product", "Course"] : ["Product", "Service"],
+    "@id": id.photography(core.slug),
+    sku: core.slug,
+    name: opts.name,
+    description: opts.description,
+    url,
+    ...(opts.images.length ? { image: opts.images } : {}),
+    brand: { "@id": id.organization() },
+    provider: { "@id": id.organization() },
+    ...productExtras({ lang, durationMinutes }),
+    ...(durationMinutes ? { duration: isoDuration(durationMinutes) } : {}),
+    ...(isWorkshop
+      ? {
+          educationalLevel: "Beginner",
+          teaches: "Photography: exposure, composition, natural light, landscape, portrait and basic editing",
+          ...(instances.length ? { hasCourseInstance: instances } : {}),
+        }
+      : { serviceType: "Photography" }),
+    offers: photographyOffer(core, url, opts.packageNames ?? {}),
+    ...(rating ? { aggregateRating: rating } : {}),
+    ...(opts.reviews?.length ? { review: opts.reviews } : {}),
+    ...(opts.placeNames?.length
+      ? {
+          contentLocation: opts.placeNames.map((place) => ({
+            "@type": "TouristAttraction",
+            "@id": id.place(place.slug),
+            name: place.name,
+          })),
+        }
+      : {}),
+  };
+}

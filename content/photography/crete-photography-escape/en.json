@@ -1,0 +1,190 @@
+{
+  "lang": "en",
+  "state": "reviewed",
+  "title": "Crete Photography Escape",
+  "tagline": "A four-day beginner photography workshop through the landscapes of Crete",
+  "seoTitle": "Crete Photography Escape | 4-Day Beginner Workshop",
+  "seoDescription": "A four-day beginner photography workshop in Crete. Small groups of four to six, daily lessons, sunrise and sunset sessions, from EUR 795 per person.",
+  "promise": "You learn to photograph. You are behind the camera all four days, not in front of it.",
+  "summary": "The Crete Photography Escape is a four-day photography workshop for beginners and enthusiasts, run in small groups of four to six participants. Each day combines a photography excursion with practical teaching: camera settings and composition on day one, landscape and nature photography on day two, villages and local life on day three, and Golden Hour, storytelling and basic Lightroom editing on day four. Any camera is welcome, including a smartphone, and no previous experience is required. The price is EUR 895 per person, EUR 795 at the early-bird launch rate, and includes a professional instructor, private transport and all excursions. Departures run in spring (April and May), autumn (October and November) and early December, and each departure is confirmed once four participants have joined.",
+  "overview": [
+    "You do not just visit Crete. You learn how to photograph it. That distinction is the whole design of this workshop: every day is built around getting you into a landscape at the right hour with a camera in your hands and someone beside you who can explain why the picture is or is not working.",
+    "It is written for beginners. If you own a camera you have never taken off automatic, or a phone you suspect is capable of more than you are asking of it, you are exactly the person this is for. Professionals will find it too slow. That is deliberate — the group stays at four to six people so nobody is ever waiting their turn to ask a question.",
+    "Four days, four themes, and a lot of walking between them. Mornings and evenings are shooting sessions, because that is when the island gives you the light. The middle of the day is where the teaching, the reviewing and, on the last day, the editing happen. You will finish with a set of your own photographs that you actually understand the making of.",
+    "The exact locations shift with the weather, the season and the light, and we do not pretend otherwise. What does not change is the teaching, the group size and the fact that the instructor stays with you for all four days."
+  ],
+  "highlights": [
+    "Four days of guided photography excursions with a professional instructor",
+    "Small group of four to six people, so everyone gets time and attention",
+    "Any camera works: DSLR, mirrorless, compact, or the phone in your pocket",
+    "Sunrise and sunset sessions planned around the light, not the timetable",
+    "Mountains, gorges, coastline, olive groves and traditional villages",
+    "A basic Lightroom and photo-selection workshop on the final day",
+    "Certificate of participation, and a set of images you know how you made"
+  ],
+  "days": [
+    {
+      "title": "Camera Basics & Composition",
+      "focus": "The controls, the exposure triangle, and why a photograph is composed before it is taken.",
+      "topics": [
+        "Your camera's settings, whatever camera you brought",
+        "Aperture and depth of field",
+        "Shutter speed and movement",
+        "ISO, noise and when to stop worrying about it",
+        "Composition and framing",
+        "Working with natural light",
+        "Portrait photography",
+        "A first Golden Hour and sunset session"
+      ]
+    },
+    {
+      "title": "Landscape & Nature Photography",
+      "focus": "Big country: mountains, coastline and gorges, and how to keep a landscape from going flat.",
+      "topics": [
+        "Mountain landscapes",
+        "Coastline and sea",
+        "Gorges and rock",
+        "Composition techniques for wide scenes",
+        "Leading lines",
+        "Foreground, middle ground and background",
+        "Reading and working with changing light"
+      ]
+    },
+    {
+      "title": "Crete, Villages & Local Life",
+      "focus": "People and place: the harder, more rewarding half of travel photography.",
+      "topics": [
+        "Traditional villages",
+        "Architecture and detail",
+        "Street photography",
+        "Photographing people and lifestyle, respectfully",
+        "Telling a story across several frames",
+        "Local food and culture photography"
+      ]
+    },
+    {
+      "title": "Golden Hour, Storytelling & Editing",
+      "focus": "Turning four days of files into a set of pictures you would show someone.",
+      "topics": [
+        "A sunrise or early-morning session",
+        "Creative and experimental photography",
+        "Building a photographic story",
+        "Selecting your best images, and killing your favourites",
+        "Introduction to Lightroom and basic editing",
+        "A final sunset photography session"
+      ]
+    }
+  ],
+  "editions": [
+    {
+      "id": "spring",
+      "name": "Spring Edition",
+      "blurb": "April and May. Wildflowers, green landscapes, snow still on the high peaks, and villages at their most alive."
+    },
+    {
+      "id": "autumn",
+      "name": "Autumn Edition",
+      "blurb": "October and November. Golden light, olive groves in harvest, quiet coastline and long shadows all day."
+    },
+    {
+      "id": "winter",
+      "name": "Early Winter Edition",
+      "blurb": "Early December. Dramatic skies, hard winter light, empty mountains and a coastline with weather in it."
+    }
+  ],
+  "settings": [
+    {
+      "id": "mountains",
+      "name": "Mountains",
+      "blurb": "The Psiloritis and Lefka Ori plateaus, where the weather does half the composing for you."
+    },
+    {
+      "id": "gorges",
+      "name": "Gorges",
+      "blurb": "Kourtaliotiko and Imbros: vertical rock, deep shade and the hardest exposure problems of the week."
+    },
+    {
+      "id": "beaches",
+      "name": "Coastline",
+      "blurb": "Preveli's palm river and the rock shelves at Triopetra — long exposures, reflections and sunsets."
+    },
+    {
+      "id": "villages",
+      "name": "Traditional villages",
+      "blurb": "Margarites and Spili: doorways, shutters, cats, and the patience street photography asks for."
+    },
+    {
+      "id": "old-town",
+      "name": "Rethymno Old Town",
+      "blurb": "Venetian lanes and a working harbour, best at first light before the town fills up."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Olive groves",
+      "blurb": "Terraces of silver leaf that scatter light in every direction. The friendliest place to practise portraits."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Scenic viewpoints",
+      "blurb": "The chapel hilltops and roadside pull-offs locals use, where the whole south coast opens at once."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Sunrise & Golden Hour",
+      "blurb": "The two hours that make the difference between a snapshot and a photograph. We are out in them every day."
+    }
+  ],
+  "included": [
+    "A professional photography instructor for all four days",
+    "Private transport throughout the workshop",
+    "Four days of photography excursions",
+    "Sunrise and sunset photography sessions",
+    "Landscape, nature and coastal photography",
+    "Traditional villages and local life",
+    "Daily photography lessons",
+    "Camera settings and composition teaching",
+    "Practical, hands-on guidance in the field",
+    "A basic Lightroom and editing workshop",
+    "Photo selection and visual storytelling",
+    "Selected local food and refreshment experiences",
+    "Professional photography of the group during selected sessions",
+    "Certificate of participation"
+  ],
+  "excluded": [
+    "Accommodation",
+    "Flights",
+    "Personal expenses",
+    "Alcoholic drinks",
+    "Entrance fees where applicable",
+    "Camera equipment",
+    "Travel insurance"
+  ],
+  "faqs": [
+    {
+      "q": "Do I need to be a good photographer already?",
+      "a": "No. The workshop is written for beginners and enthusiasts, and day one starts at the camera's own controls. If you have never left automatic mode you are in the right place. Working professionals will find the pace too slow."
+    },
+    {
+      "q": "What camera do I need?",
+      "a": "Whatever you own. DSLR, mirrorless, compact and smartphone are all supported, and the teaching is adapted to the cameras that turn up. Camera equipment is not provided, so bring what you intend to keep using afterwards."
+    },
+    {
+      "q": "How does booking work if the departure is not confirmed?",
+      "a": "The workshop needs four participants to run, so joining is a request rather than an instant confirmation. You send a request to join, we hold your place, and the departure is confirmed in writing once four people have committed. Nothing is charged before that."
+    },
+    {
+      "q": "When does the workshop run?",
+      "a": "In three seasonal editions: April and May, October and November, and early December. Early December departures are subject to the minimum group size and to workable weather, because the island is quieter and the conditions are less predictable."
+    },
+    {
+      "q": "Is accommodation included?",
+      "a": "No. Accommodation, flights and travel insurance are not included, so you are free to stay where and how you prefer. Ask us when you enquire and we will suggest options near the base and can arrange a room as an add-on."
+    },
+    {
+      "q": "Will the locations be exactly as listed?",
+      "a": "The themes and the teaching are fixed; the exact locations are not. Weather, season and light decide where a given session gives you the best pictures, and the instructor will move a day around rather than shoot a mediocre location on schedule."
+    }
+  ],
+  "priceNote": "Per person. The early-bird launch price applies while places on a departure are still forming.",
+  "bookingNote": "Places are requested, not instantly confirmed. A departure runs once four participants have joined, and you are told either way before any payment is taken."
+}

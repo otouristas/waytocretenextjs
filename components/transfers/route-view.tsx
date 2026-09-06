@@ -141,8 +141,10 @@ export function RouteView({
 
           <h2 className="mt-10 font-display text-2xl text-ink">{ui.transferVehicle}</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">{data.vehicle.description}</p>
-          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {[data.vehicle.hero, ...data.vehicle.gallery].slice(0, 3).map((src) => (
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {[data.vehicle.hero, ...data.vehicle.gallery.filter((src) => src !== data.vehicle.hero)]
+              .slice(0, 4)
+              .map((src) => (
               <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-line">
                 <Image src={src} alt="" fill sizes="(min-width: 640px) 22vw, 45vw" className="object-cover" />
               </div>

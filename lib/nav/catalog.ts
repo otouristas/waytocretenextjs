@@ -1,9 +1,11 @@
 import "server-only";
-import { allTours } from "@/lib/content/load";
+import { allTours, photographyByKind } from "@/lib/content/load";
 import { durationLabel } from "@/lib/content/format";
 import { priceFrom } from "@/lib/pricing";
 import { langPath, type Lang } from "@/lib/i18n/langs";
 import { hubCopy } from "@/lib/i18n/hubs";
+import { photographyCopy } from "@/lib/i18n/photography";
+import { photoPriceFrom } from "@/lib/photography";
 import { t } from "@/lib/i18n/ui";
 import {
   NAV_SPEC,
@@ -41,6 +43,25 @@ export type NavColumn = {
   tours: NavTour[];
 };
 
+/**
+ * A product family in a dropdown — the two halves of Photography.
+ *
+ * `blurb` is deliberately the one-line distinction ("We photograph you" /
+ * "You learn to photograph") rather than a marketing sentence. The single
+ * biggest failure mode of this section is a guest booking the wrong half,
+ * and the menu is where that mistake starts.
+ */
+export type NavSection = {
+  id: string;
+  label: string;
+  blurb: string;
+  href: string;
+  hero: string;
+  chips: string[];
+  priceFrom: number | null;
+  count: number;
+};
+
 export type NavEntry = {
   id: string;
   label: string;
@@ -48,6 +69,7 @@ export type NavEntry = {
   kind: NavKind;
   columns?: NavColumn[];
   tours?: NavTour[];
+  sections?: NavSection[];
 };
 
 function badgesFor(input: {
@@ -145,6 +167,32 @@ export function decorateNav(lang: Lang): NavEntry[] {
       entry.tours = item.tours
         .map((tour) => toTour(tour.slug, tour.label))
         .filter((x): x is NavTour => x !== null);
+    }
+
+    if (item.sections) {
+      const photo = photographyCopy(lang);
+      entry.sections = item.sections
+        .map((section): NavSection | null => {
+          const kind = section.id === "experience" ? "experience" : "workshop";
+          const products = photographyByKind(lang, kind);
+          // A family with nothing published yet is a link to an empty page.
+          if (products.length === 0) return null;
+          const lead = products.find((p) => p.core.featured) ?? products[0];
+          const prices = products
+            .map((p) => photoPriceFrom(p.core))
+            .filter((n): n is number => n != null);
+          return {
+            id: section.id,
+            label: kind === "experience" ? photo.experienceNav : photo.workshopNav,
+            blurb: kind === "experience" ? photo.weShootYou : photo.youLearn,
+            href: langPath(lang, section.path),
+            hero: lead.core.hero,
+            chips: [...(kind === "experience" ? photo.experienceChips : photo.workshopChips)],
+            priceFrom: prices.length ? Math.min(...prices) : null,
+            count: products.length,
+          };
+        })
+        .filter((x): x is NavSection => x !== null);
     }
 
     return entry;

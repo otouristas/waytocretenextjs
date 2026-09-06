@@ -1,0 +1,190 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "title": "Crete Photography Escape",
+  "tagline": "En fyra dagars fotoworkshop för nybörjare genom Kretas landskap",
+  "seoTitle": "Crete Photography Escape | 4 dagars fotoworkshop",
+  "seoDescription": "Fyra dagars fotoworkshop för nybörjare på Kreta. Små grupper om fyra till sex, dagliga lektioner, soluppgång och solnedgång, från 795 EUR per person.",
+  "promise": "Ni lär er fotografera. I fyra dagar står ni bakom kameran, inte framför den.",
+  "summary": "Crete Photography Escape är en fyra dagar lång fotoworkshop för nybörjare och entusiaster, i små grupper om fyra till sex deltagare. Varje dag förenar en fotoexkursion med praktisk undervisning: kamerainställningar och komposition dag ett, landskaps- och naturfotografi dag två, byar och lokalt liv dag tre, och Golden Hour, bildberättande samt grunderna i Lightroom dag fyra. Alla kameror är välkomna, smartphone inräknad, och ingen tidigare erfarenhet krävs. Priset är 895 EUR per person, 795 EUR till early bird-lanseringspris, och inkluderar professionell instruktör, privat transport och samtliga exkursioner. Avgångar går på våren (april och maj), på hösten (oktober och november) och i början av december, och varje avgång bekräftas när fyra deltagare har anslutit.",
+  "overview": [
+    "Ni besöker inte bara Kreta. Ni lär er fotografera det. Den skillnaden är hela workshopens konstruktion: varje dag är byggd för att få er ut i ett landskap vid rätt timme med en kamera i handen och någon bredvid er som kan förklara varför bilden fungerar eller inte.",
+    "Den är skriven för nybörjare. Äger ni en kamera ni aldrig tagit ur automatläget, eller en telefon ni misstänker klarar mer än ni ber den om, är ni precis rätt person. Proffs kommer att tycka att tempot är för långsamt. Det är avsiktligt — gruppen hålls till fyra till sex personer så att ingen någonsin väntar på sin tur att ställa en fråga.",
+    "Fyra dagar, fyra teman och mycket gående däremellan. Morgnar och kvällar är fotograferingspass, för det är då ön ger er ljuset. Mitten av dagen rymmer undervisningen, genomgången och, sista dagen, redigeringen. Ni slutar med en uppsättning egna bilder vars tillkomst ni faktiskt förstår.",
+    "De exakta platserna skiftar med väder, säsong och ljus, och vi låtsas inte annat. Det som inte ändras är undervisningen, gruppstorleken och att instruktören stannar hos er alla fyra dagarna."
+  ],
+  "highlights": [
+    "Fyra dagars guidade fotoexkursioner med en professionell instruktör",
+    "Liten grupp om fyra till sex personer, så alla får tid och uppmärksamhet",
+    "Vilken kamera som helst fungerar: DSLR, spegellös, kompakt eller telefonen i fickan",
+    "Pass vid soluppgång och solnedgång, planerade efter ljuset och inte efter schemat",
+    "Berg, raviner, kust, olivlundar och traditionella byar",
+    "En grundläggande workshop i Lightroom och bildurval sista dagen",
+    "Deltagarbevis, och en uppsättning bilder ni vet hur ni gjorde"
+  ],
+  "days": [
+    {
+      "title": "Kamerans grunder och komposition",
+      "focus": "Reglagen, exponeringstriangeln, och varför en bild komponeras innan den tas.",
+      "topics": [
+        "Er kameras inställningar, vilken kamera ni än tagit med",
+        "Bländare och skärpedjup",
+        "Slutartid och rörelse",
+        "ISO, brus och när man får sluta oroa sig för det",
+        "Komposition och beskärning",
+        "Att arbeta med naturligt ljus",
+        "Porträttfotografi",
+        "Ett första pass i Golden Hour och solnedgång"
+      ]
+    },
+    {
+      "title": "Landskaps- och naturfotografi",
+      "focus": "Stora vidder: berg, kust och raviner, och hur ett landskap slipper bli platt.",
+      "topics": [
+        "Bergslandskap",
+        "Kust och hav",
+        "Raviner och berggrund",
+        "Kompositionsteknik för vida motiv",
+        "Ledande linjer",
+        "Förgrund, mellanplan och bakgrund",
+        "Att läsa och utnyttja skiftande ljus"
+      ]
+    },
+    {
+      "title": "Kreta, byar och lokalt liv",
+      "focus": "Människor och plats: den svårare och mer givande halvan av reportagefotografi.",
+      "topics": [
+        "Traditionella byar",
+        "Arkitektur och detaljer",
+        "Gatufotografi",
+        "Att fotografera människor och vardag med respekt",
+        "Att berätta en historia över flera bilder",
+        "Fotografi av lokal mat och kultur"
+      ]
+    },
+    {
+      "title": "Golden Hour, berättande och redigering",
+      "focus": "Att göra fyra dagars filer till en uppsättning bilder ni skulle visa någon.",
+      "topics": [
+        "Ett pass vid soluppgång eller tidig morgon",
+        "Kreativt och experimentellt fotograferande",
+        "Att bygga en fotografisk berättelse",
+        "Att välja ut era bästa bilder, och offra favoriterna",
+        "Introduktion till Lightroom och grundläggande redigering",
+        "Ett avslutande solnedgångspass"
+      ]
+    }
+  ],
+  "editions": [
+    {
+      "id": "spring",
+      "name": "Vårutgåvan",
+      "blurb": "April och maj. Vildblommor, gröna landskap, snö kvar på de höga topparna och byar när de är som livligast."
+    },
+    {
+      "id": "autumn",
+      "name": "Höstutgåvan",
+      "blurb": "Oktober och november. Gyllene ljus, olivlundar i skörd, stilla kust och långa skuggor hela dagen."
+    },
+    {
+      "id": "winter",
+      "name": "Tidig vinterutgåva",
+      "blurb": "Början av december. Dramatisk himmel, hårt vinterljus, tomma berg och en kust med väder i sig."
+    }
+  ],
+  "settings": [
+    {
+      "id": "mountains",
+      "name": "Berg",
+      "blurb": "Högplatåerna på Psiloritis och Lefka Ori, där vädret komponerar halva bilden åt er."
+    },
+    {
+      "id": "gorges",
+      "name": "Raviner",
+      "blurb": "Kourtaliotiko och Imbros: lodrät klippa, djup skugga och veckans svåraste exponeringsproblem."
+    },
+    {
+      "id": "beaches",
+      "name": "Kust",
+      "blurb": "Prevelis palmflod och klipphällarna vid Triopetra — långa exponeringar, reflexer och solnedgångar."
+    },
+    {
+      "id": "villages",
+      "name": "Traditionella byar",
+      "blurb": "Margarites och Spili: portar, fönsterluckor, katter, och det tålamod gatufotografi kräver."
+    },
+    {
+      "id": "old-town",
+      "name": "Rethymnos gamla stad",
+      "blurb": "Venetianska gränder och en hamn i arbete, bäst i första ljuset innan staden fylls."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Olivlundar",
+      "blurb": "Terrasser av silverblad som sprider ljuset åt alla håll. Den vänligaste platsen att öva porträtt på."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Utsiktspunkter",
+      "blurb": "Kapellkullarna och fickparkeringarna som lokalborna använder, där hela sydkusten öppnar sig på en gång."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Soluppgång och Golden Hour",
+      "blurb": "De två timmar som skiljer ett kort från en fotografi. Vi är ute i dem varje dag."
+    }
+  ],
+  "included": [
+    "En professionell fotoinstruktör alla fyra dagarna",
+    "Privat transport under hela workshopen",
+    "Fyra dagars fotoexkursioner",
+    "Fotopass vid soluppgång och solnedgång",
+    "Landskaps-, natur- och kustfotografi",
+    "Traditionella byar och lokalt liv",
+    "Dagliga fotolektioner",
+    "Undervisning i kamerainställningar och komposition",
+    "Praktisk handledning ute i fält",
+    "En grundläggande workshop i Lightroom och redigering",
+    "Bildurval och visuellt berättande",
+    "Utvalda lokala mat- och fikaupplevelser",
+    "Professionella bilder på gruppen under utvalda pass",
+    "Deltagarbevis"
+  ],
+  "excluded": [
+    "Boende",
+    "Flyg",
+    "Personliga utgifter",
+    "Alkoholhaltiga drycker",
+    "Entréavgifter där sådana förekommer",
+    "Kamerautrustning",
+    "Reseförsäkring"
+  ],
+  "faqs": [
+    {
+      "q": "Måste jag redan vara en bra fotograf?",
+      "a": "Nej. Workshopen är skriven för nybörjare och entusiaster, och dag ett börjar vid kamerans egna reglage. Har ni aldrig lämnat automatläget är ni på rätt plats. Yrkesverksamma fotografer kommer att tycka att tempot är för långsamt."
+    },
+    {
+      "q": "Vilken kamera behöver jag?",
+      "a": "Den ni äger. DSLR, spegellös, kompakt och smartphone stöds alla, och undervisningen anpassas till de kameror som dyker upp. Utrustning ingår inte, så ta med det ni tänker fortsätta använda efteråt."
+    },
+    {
+      "q": "Hur fungerar bokningen om avgången inte är bekräftad?",
+      "a": "Workshopen behöver fyra deltagare för att gå, så att ansluta är en förfrågan snarare än en direkt bekräftelse. Ni skickar en ansökan, vi håller platsen, och avgången bekräftas skriftligt när fyra personer har bundit sig. Inget debiteras dessförinnan."
+    },
+    {
+      "q": "När körs workshopen?",
+      "a": "I tre säsongsutgåvor: april och maj, oktober och november, samt början av december. Avgångar i början av december förutsätter minimigruppen och användbart väder, eftersom ön är tystare och förhållandena mindre förutsägbara."
+    },
+    {
+      "q": "Ingår boende?",
+      "a": "Nej. Boende, flyg och reseförsäkring ingår inte, så ni bor var och hur ni föredrar. Fråga oss när ni hör av er, så föreslår vi alternativ nära basen och kan ordna ett rum som tillval."
+    },
+    {
+      "q": "Blir platserna exakt de som anges?",
+      "a": "Temana och undervisningen ligger fast; de exakta platserna gör det inte. Väder, säsong och ljus avgör var ett pass ger er de bästa bilderna, och instruktören flyttar hellre om en dag än fotograferar en medelmåttig plats enligt schema."
+    }
+  ],
+  "priceNote": "Per person. Early bird-lanseringspriset gäller så länge platserna på en avgång fortfarande fylls.",
+  "bookingNote": "Platser ansöks om, de bekräftas inte direkt. En avgång går när fyra deltagare har anslutit, och ni får besked åt endera hållet innan någon betalning sker."
+}

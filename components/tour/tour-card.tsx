@@ -74,6 +74,13 @@ export function TourCard({
           </ul>
 
           <div className="mt-3 flex flex-wrap gap-1.5">
+            {core.availability === "unavailable" ? (
+              <Tag>{ui.temporarilyUnavailable}</Tag>
+            ) : core.privateOnly ? (
+              <Tag>{ui.privateDeparture}</Tag>
+            ) : (
+              <Tag>{fill(ui.onlySeats, { n: core.groupMax })}</Tag>
+            )}
             {core.cancelFreeHours > 0 ? (
               <Tag icon={<CalendarCheck className="size-3" />}>{ui.freeCancel}</Tag>
             ) : null}
@@ -94,7 +101,7 @@ export function TourCard({
               )}
             </p>
             <span className="rounded-full bg-olive-50 px-3.5 py-1.5 text-xs font-semibold text-accent transition group-hover:bg-olive group-hover:text-paper">
-              {ui.bookThis}
+              {core.availability === "unavailable" ? ui.notAvailable : ui.bookThis}
             </span>
           </div>
         </div>
@@ -103,7 +110,7 @@ export function TourCard({
   );
 }
 
-function Tag({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
+function Tag({ icon, children }: { icon?: React.ReactNode; children: React.ReactNode }) {
   return (
     <span className="inline-flex items-center gap-1 rounded-full bg-olive-50 px-2 py-0.5 text-[10px] font-medium text-accent">
       {icon}

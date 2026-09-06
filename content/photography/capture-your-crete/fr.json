@@ -1,0 +1,154 @@
+{
+  "lang": "fr",
+  "state": "reviewed",
+  "title": "Expérience photo – Capture Your Crete",
+  "tagline": "Explorez la Crète et faites photographier professionnellement vos plus beaux moments",
+  "seoTitle": "Expérience photo en Crète | Capture Your Crete",
+  "seoDescription": "Séance photo en extérieur en Crète : plages, villages, gorges et Golden Hour. Séances d'une heure à une journée entière, à partir de 160 EUR, galerie en ligne.",
+  "promise": "Nous vous photographions. Vous n'avez rien à connaître à la photographie.",
+  "summary": "Capture Your Crete est une expérience photographique en extérieur, pas une séance en studio. Un photographe professionnel vous retrouve à votre hôtel ou sur un lieu de votre choix, parcourt l'île avec vous pendant une heure à une journée entière, et vous photographie dedans : portraits, couples, familles et images lifestyle devant les plages, les montagnes, les villages et les oliveraies de Crète. Quatre formules vont de 160 EUR pour une heure sur un seul lieu avec 30 à 40 photos retouchées, à 650 EUR pour sept à huit heures sur trois ou quatre lieux, avec véhicule privé, pause déjeuner, séance au coucher du soleil et plus de 200 photos retouchées. Chaque formule est livrée sous forme de galerie en ligne privée d'images sélectionnées, étalonnées et retouchées.",
+  "overview": [
+    "La plupart des gens rentrent de Crète avec un téléphone plein d'images et pas une seule photographie d'eux-mêmes. Cette expérience existe pour corriger cela. Vous continuez d'explorer l'île exactement comme prévu ; un photographe vous accompagne et se charge de regarder.",
+    "Ce n'est délibérément pas une séance en studio. Pas de fond, pas de décor loué, pas de structure d'éclairage. Nous vous emmenons dans de vrais lieux — un morceau de côte à l'heure où la mer devient claire, une ruelle de village où la lumière tombe de biais, une oliveraie, un belvédère au-dessus d'une gorge — et nous vous photographions en train d'y être. Rien n'est mis en scène qui n'ait pas besoin de l'être.",
+    "Vous choisissez la durée, nous choisissons l'heure. La lumière de Crète donne le meilleur tôt et tard : deux heures à dix-huit heures battront toujours quatre heures à midi. Si vous avez un créneau fixe, nous travaillons dedans et choisissons les lieux qui lui conviennent ; si vous êtes souples, nous construisons autour de la Golden Hour, et cela se voit.",
+    "Ce qui revient, c'est une sélection, pas une carte mémoire. Chaque image de votre galerie a été choisie, étalonnée et retouchée. C'est tout le sens des chiffres que nous publions : 30 à 40 photographies que vous utiliserez vraiment valent mieux qu'un millier que vous n'ouvrirez jamais."
+  ],
+  "highlights": [
+    "Un photographe professionnel pour une heure, une demi-journée ou une journée entière — à vous de voir",
+    "De vrais lieux crétois : côte, montagnes, villages, gorges, oliveraies et belvédères",
+    "Portraits naturels, images de couple, de famille et lifestyle — personne n'a à poser sur commande",
+    "Golden Hour et coucher de soleil planifiés sur la lumière, pas sur l'horaire",
+    "De 30-40 à plus de 200 photographies retouchées professionnellement, selon la formule",
+    "Livraison en galerie en ligne privée avec téléchargements pleine résolution"
+  ],
+  "packages": [
+    {
+      "id": "essential",
+      "name": "Essential",
+      "tagline": "Une heure, un lieu, une très bonne galerie.",
+      "features": [
+        "Correction colorimétrique professionnelle",
+        "Retouche de portrait de base",
+        "Direction du photographe tout au long de la séance",
+        "Galerie en ligne privée avec téléchargements pleine résolution"
+      ]
+    },
+    {
+      "id": "explorer",
+      "name": "Explorer",
+      "tagline": "Deux heures et un second lieu, pour que la série ait de l'ampleur.",
+      "features": [
+        "Étalonnage professionnel",
+        "Retouche de portrait",
+        "Conseils de pose et de mouvement naturel, pour que personne n'ait à jouer le naturel",
+        "Galerie en ligne privée avec téléchargements pleine résolution"
+      ]
+    },
+    {
+      "id": "crete-story",
+      "name": "Crete Story",
+      "tagline": "Une demi-journée, trois paysages, une histoire qui tient debout.",
+      "features": [
+        "Repérage des lieux avant le jour J, pour que rien ne soit improvisé",
+        "Nature, village et côte réunis en une seule séance",
+        "Galerie en ligne privée avec téléchargements pleine résolution"
+      ]
+    },
+    {
+      "id": "full-day",
+      "name": "Full Day",
+      "tagline": "De la lumière du matin à celle du soir, avec l'île entre les deux.",
+      "features": [
+        "Plusieurs paysages distincts en une journée — côte, village et montagne",
+        "Une pause déjeuner locale, choisie pour la vue autant que pour la table",
+        "Une séance au coucher du soleil pour clore la journée",
+        "Galerie en ligne privée avec téléchargements pleine résolution"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "beaches",
+      "name": "Plages et littoral",
+      "blurb": "Le sable rose d'Elafonisi, la rivière aux palmiers de Preveli, les dalles plates de Triopetra. Au mieux dans les deux dernières heures de lumière."
+    },
+    {
+      "id": "old-town",
+      "name": "Vieille ville de Rethymno",
+      "blurb": "Portails vénitiens, le port et des ruelles assez étroites pour que la lumière rebondisse sur les murs. Idéal tôt, avant le réveil de la ville."
+    },
+    {
+      "id": "villages",
+      "name": "Villages traditionnels",
+      "blurb": "Margarites, Spili et les hameaux de montagne au-dessus — pierre, volets, places d'église et un voisin curieux de temps en temps."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Oliveraies",
+      "blurb": "De vieilles terrasses au feuillage argenté qui adoucissent la lumière dans toutes les directions. Le décor le plus indulgent de l'île pour le portrait."
+    },
+    {
+      "id": "gorges",
+      "name": "Gorges et nature",
+      "blurb": "Kourtaliotiko et l'entrée d'Imbros : parois hautes, ombre froide et une échelle qui rend une personne convenablement petite."
+    },
+    {
+      "id": "mountains",
+      "name": "Montagnes",
+      "blurb": "Les plateaux du Psiloritis et des Lefka Ori, où l'horizon s'effondre et où la météo écrit l'image à votre place."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Points de vue",
+      "blurb": "Les aires et les collines à chapelle qu'utilisent les habitants, presque toutes à cinq minutes d'une route qu'on traverserait sans s'arrêter."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Coucher de soleil et Golden Hour",
+      "blurb": "Pas un lieu mais une heure. Dites-le-nous et nous construisons toute la séance à rebours du moment où le soleil s'en va."
+    }
+  ],
+  "included": [
+    "Un photographe professionnel pour toute la séance réservée",
+    "La planification des lieux selon la lumière, la saison et votre groupe",
+    "Direction et conseils de pose pendant toute la séance",
+    "La retouche professionnelle de chaque image livrée",
+    "Une galerie en ligne privée avec téléchargements pleine résolution",
+    "Les droits d'usage personnel sur chaque photographie livrée"
+  ],
+  "excluded": [
+    "Votre trajet jusqu'au point de rendez-vous sur les séances d'une et deux heures",
+    "Tirages, albums et encadrement",
+    "Les droits d'entrée là où un lieu en réclame",
+    "Coiffure, maquillage et stylisme",
+    "Les droits d'usage commercial ou publicitaire"
+  ],
+  "faqs": [
+    {
+      "q": "Est-ce une séance photo en studio ?",
+      "a": "Non. Pas de studio, pas de fond, pas de décor loué. C'est une expérience en extérieur : nous vous emmenons sur des lieux de Crète et nous vous y photographions, à la lumière du jour. Si vous voulez précisément un portrait en studio, nous ne sommes pas les bonnes personnes."
+    },
+    {
+      "q": "Combien de photos recevons-nous, et quand ?",
+      "a": "Essential livre 30 à 40 photographies retouchées professionnellement, Explorer 50 à 60, Crete Story 80 à 100 et Full Day plus de 200. Ce sont des images sélectionnées, étalonnées et retouchées, pas toutes les prises de vue. Les galeries arrivent en ligne, normalement sous dix à quatorze jours."
+    },
+    {
+      "q": "Et si on ne nous a jamais photographiés ?",
+      "a": "C'est le cas de la plupart de nos clients. Le photographe dirige toute la séance — où se placer, où regarder, quoi faire de ses mains — et les meilleures images naissent presque toujours en marchant, en parlant ou en riant, pas en tenant une pose."
+    },
+    {
+      "q": "Pouvons-nous choisir les lieux ?",
+      "a": "Oui. Dites-nous les paysages que vous voulez — côte, village, montagnes, la vieille ville, une gorge, des oliveraies — et nous construisons la séance autour d'eux et de l'heure qui leur convient. Sur Crete Story et Full Day, nous repérons l'itinéraire avant le jour J."
+    },
+    {
+      "q": "Que se passe-t-il si le temps tourne ?",
+      "a": "La météo crétoise annule rarement une séance ; une lumière couverte est excellente pour le portrait. Si les conditions rendent vraiment la photographie impossible, nous déplaçons la séance à un autre jour de votre séjour, ou nous la remboursons intégralement."
+    },
+    {
+      "q": "Un photographe peut-il rejoindre une excursion déjà réservée ?",
+      "a": "Sur certaines excursions à la journée, oui : le photographe voyage avec le groupe et photographie pendant que la journée se déroule normalement. Demandez-le en réservant l'excursion, ou envoyez-nous la référence et nous confirmerons si cette excursion le permet."
+    }
+  ],
+  "priceNote": "Les tarifs sont par séance et couvrent tout votre groupe jusqu'à la limite de la formule, non par personne.",
+  "bookingNote": "Aucun paiement n'est prélevé sur ce site. Nous confirmons le photographe et la date par écrit, puis envoyons un lien de paiement."
+}

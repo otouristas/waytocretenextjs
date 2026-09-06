@@ -1,0 +1,190 @@
+{
+  "lang": "it",
+  "state": "reviewed",
+  "title": "Crete Photography Escape",
+  "tagline": "Un workshop di fotografia di quattro giorni per principianti tra i paesaggi di Creta",
+  "seoTitle": "Crete Photography Escape | Workshop di 4 giorni",
+  "seoDescription": "Workshop fotografico di quattro giorni per principianti a Creta. Gruppi di quattro-sei persone, lezioni quotidiane, alba e tramonto, da 795 EUR a persona.",
+  "promise": "Imparate a fotografare. Per quattro giorni state dietro l'obiettivo, non davanti.",
+  "summary": "Crete Photography Escape è un workshop di fotografia di quattro giorni per principianti e appassionati, in piccoli gruppi da quattro a sei partecipanti. Ogni giornata unisce un'escursione fotografica a un insegnamento pratico: impostazioni della macchina e composizione il primo giorno, fotografia di paesaggio e natura il secondo, villaggi e vita locale il terzo, Golden Hour, narrazione per immagini e basi di Lightroom il quarto. Va bene qualunque macchina, smartphone compreso, e non serve alcuna esperienza precedente. Il prezzo è di 895 EUR a persona, 795 EUR con la tariffa lancio early bird, e comprende un istruttore professionista, il trasporto privato e tutte le escursioni. Le partenze sono in primavera (aprile e maggio), in autunno (ottobre e novembre) e a inizio dicembre, e ogni partenza si conferma quando quattro partecipanti hanno aderito.",
+  "overview": [
+    "Non visitate soltanto Creta. Imparate a fotografarla. Questa distinzione è l'intero progetto del workshop: ogni giornata è costruita per portarvi dentro un paesaggio all'ora giusta, con una macchina fotografica in mano e accanto qualcuno capace di spiegare perché l'immagine funziona o non funziona.",
+    "È scritto per principianti. Se possedete una macchina che non avete mai tolto dall'automatico, o un telefono che sospettate capace di più di quanto gli chiediate, siete esattamente le persone giuste. I professionisti lo troveranno troppo lento: è voluto, e il gruppo resta di quattro-sei persone proprio perché nessuno debba aspettare il proprio turno per fare una domanda.",
+    "Quattro giorni, quattro temi e molto cammino in mezzo. Mattina e sera si fotografa, perché è allora che l'isola dà la luce. Il centro della giornata è dedicato all'insegnamento, alla revisione delle immagini e, l'ultimo giorno, all'editing. Finirete con una serie di fotografie vostre di cui capite davvero come sono nate.",
+    "I luoghi esatti cambiano con il meteo, la stagione e la luce, e non fingiamo il contrario. Ciò che non cambia è l'insegnamento, la dimensione del gruppo e il fatto che l'istruttore resta con voi tutti e quattro i giorni."
+  ],
+  "highlights": [
+    "Quattro giorni di escursioni fotografiche guidate con un istruttore professionista",
+    "Piccolo gruppo di quattro-sei persone, così ognuno ha tempo e attenzione",
+    "Va bene qualunque macchina: reflex, mirrorless, compatta o il telefono in tasca",
+    "Sessioni all'alba e al tramonto pianificate sulla luce, non sull'orario",
+    "Montagne, gole, costa, uliveti e villaggi tradizionali",
+    "Un workshop di base su Lightroom e selezione delle immagini l'ultimo giorno",
+    "Attestato di partecipazione e una serie di immagini di cui conoscete la fattura"
+  ],
+  "days": [
+    {
+      "title": "Basi della macchina e composizione",
+      "focus": "I comandi, il triangolo dell'esposizione e perché una fotografia si compone prima di scattarla.",
+      "topics": [
+        "Le impostazioni della vostra macchina, qualunque abbiate portato",
+        "Diaframma e profondità di campo",
+        "Tempo di posa e movimento",
+        "ISO, rumore e quando smettere di preoccuparsene",
+        "Composizione e inquadratura",
+        "Lavorare con la luce naturale",
+        "Fotografia di ritratto",
+        "Una prima sessione in Golden Hour e al tramonto"
+      ]
+    },
+    {
+      "title": "Fotografia di paesaggio e natura",
+      "focus": "Spazi ampi: montagne, costa e gole, e come evitare che un paesaggio risulti piatto.",
+      "topics": [
+        "Paesaggi di montagna",
+        "Costa e mare",
+        "Gole e roccia",
+        "Tecniche di composizione per scene ampie",
+        "Linee guida",
+        "Primo piano, piano intermedio e sfondo",
+        "Leggere e sfruttare la luce che cambia"
+      ]
+    },
+    {
+      "title": "Creta, villaggi e vita locale",
+      "focus": "Persone e luoghi: la metà più difficile e più gratificante della fotografia di viaggio.",
+      "topics": [
+        "Villaggi tradizionali",
+        "Architettura e dettagli",
+        "Street photography",
+        "Fotografare persone e lifestyle con rispetto",
+        "Raccontare una storia in più fotogrammi",
+        "Fotografia di cibo e cultura locale"
+      ]
+    },
+    {
+      "title": "Golden Hour, narrazione ed editing",
+      "focus": "Trasformare quattro giorni di file in una serie di immagini da mostrare a qualcuno.",
+      "topics": [
+        "Una sessione all'alba o di primo mattino",
+        "Fotografia creativa e sperimentale",
+        "Costruire una storia fotografica",
+        "Scegliere le immagini migliori, e sacrificare le preferite",
+        "Introduzione a Lightroom e all'editing di base",
+        "Una sessione finale al tramonto"
+      ]
+    }
+  ],
+  "editions": [
+    {
+      "id": "spring",
+      "name": "Edizione primaverile",
+      "blurb": "Aprile e maggio. Fiori selvatici, paesaggi verdi, neve ancora sulle cime e villaggi al massimo della vita."
+    },
+    {
+      "id": "autumn",
+      "name": "Edizione autunnale",
+      "blurb": "Ottobre e novembre. Luce dorata, uliveti in raccolta, costa tranquilla e ombre lunghe tutto il giorno."
+    },
+    {
+      "id": "winter",
+      "name": "Edizione di inizio inverno",
+      "blurb": "Inizio dicembre. Cieli drammatici, luce invernale dura, montagne vuote e una costa con dentro il tempo."
+    }
+  ],
+  "settings": [
+    {
+      "id": "mountains",
+      "name": "Montagne",
+      "blurb": "Gli altipiani dello Psiloritis e dei Lefka Ori, dove il meteo compone metà dell'immagine per voi."
+    },
+    {
+      "id": "gorges",
+      "name": "Gole",
+      "blurb": "Kourtaliotiko e Imbros: roccia verticale, ombra profonda e i problemi di esposizione più difficili della settimana."
+    },
+    {
+      "id": "beaches",
+      "name": "Costa",
+      "blurb": "Il fiume di palme di Preveli e le lastre di Triopetra: lunghe esposizioni, riflessi e tramonti."
+    },
+    {
+      "id": "villages",
+      "name": "Villaggi tradizionali",
+      "blurb": "Margarites e Spili: portoni, persiane, gatti e la pazienza che la street photography richiede."
+    },
+    {
+      "id": "old-town",
+      "name": "Centro storico di Rethymno",
+      "blurb": "Vicoli veneziani e un porto che lavora, al meglio con la prima luce prima che la città si riempia."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Uliveti",
+      "blurb": "Terrazzamenti di foglia argentata che diffondono la luce in ogni direzione. Il posto più amichevole per esercitarsi sul ritratto."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Punti panoramici",
+      "blurb": "Le colline con cappella e le piazzole che usano gli abitanti, da cui tutta la costa sud si apre in una volta."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Alba e Golden Hour",
+      "blurb": "Le due ore che fanno la differenza tra uno scatto e una fotografia. Ci siamo dentro ogni giorno."
+    }
+  ],
+  "included": [
+    "Un istruttore professionista di fotografia per tutti e quattro i giorni",
+    "Trasporto privato per tutta la durata del workshop",
+    "Quattro giorni di escursioni fotografiche",
+    "Sessioni fotografiche all'alba e al tramonto",
+    "Fotografia di paesaggio, natura e costa",
+    "Villaggi tradizionali e vita locale",
+    "Lezioni di fotografia quotidiane",
+    "Insegnamento su impostazioni della macchina e composizione",
+    "Guida pratica sul campo",
+    "Un workshop di base su Lightroom e post-produzione",
+    "Selezione delle immagini e narrazione visiva",
+    "Alcune esperienze di cibo e ristoro locali",
+    "Fotografie professionali del gruppo durante alcune sessioni",
+    "Attestato di partecipazione"
+  ],
+  "excluded": [
+    "Alloggio",
+    "Voli",
+    "Spese personali",
+    "Bevande alcoliche",
+    "Biglietti d'ingresso dove previsti",
+    "Attrezzatura fotografica",
+    "Assicurazione di viaggio"
+  ],
+  "faqs": [
+    {
+      "q": "Devo già saper fotografare bene?",
+      "a": "No. Il workshop è scritto per principianti e appassionati, e il primo giorno parte dai comandi della macchina. Se non avete mai lasciato la modalità automatica siete nel posto giusto. I professionisti in attività troveranno il ritmo troppo lento."
+    },
+    {
+      "q": "Che macchina fotografica serve?",
+      "a": "Quella che avete. Reflex, mirrorless, compatta e smartphone sono tutti supportati, e l'insegnamento si adatta alle macchine che si presentano. L'attrezzatura non è fornita, quindi portate quella che intendete continuare a usare."
+    },
+    {
+      "q": "Come funziona la prenotazione se la partenza non è confermata?",
+      "a": "Il workshop richiede quattro partecipanti per svolgersi, quindi aderire è una richiesta e non una conferma immediata. Voi inviate la richiesta, noi teniamo il posto, e la partenza viene confermata per iscritto quando quattro persone si sono impegnate. Prima di allora non viene addebitato nulla."
+    },
+    {
+      "q": "Quando si svolge il workshop?",
+      "a": "In tre edizioni stagionali: aprile e maggio, ottobre e novembre, e inizio dicembre. Le partenze di inizio dicembre sono soggette al gruppo minimo e a un meteo praticabile, perché l'isola è più tranquilla e le condizioni meno prevedibili."
+    },
+    {
+      "q": "L'alloggio è incluso?",
+      "a": "No. Alloggio, voli e assicurazione di viaggio non sono inclusi, così siete liberi di stare dove e come preferite. Chiedetecelo quando scrivete: vi suggeriamo soluzioni vicine alla base e possiamo organizzare una camera come servizio aggiuntivo."
+    },
+    {
+      "q": "Le location saranno esattamente quelle elencate?",
+      "a": "I temi e l'insegnamento sono fissi; le location esatte no. Meteo, stagione e luce decidono dove una sessione dà le immagini migliori, e l'istruttore preferisce spostare una giornata piuttosto che fotografare una location mediocre per rispettare il programma."
+    }
+  ],
+  "priceNote": "A persona. Il prezzo lancio early bird vale finché i posti di una partenza si stanno ancora riempiendo.",
+  "bookingNote": "I posti si richiedono, non si confermano all'istante. Una partenza si svolge quando quattro partecipanti hanno aderito, e in ogni caso lo saprete prima di qualsiasi pagamento."
+}

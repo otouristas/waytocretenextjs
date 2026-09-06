@@ -1,0 +1,154 @@
+{
+  "lang": "it",
+  "state": "reviewed",
+  "title": "Esperienza fotografica – Capture Your Crete",
+  "tagline": "Esplorate Creta e fatevi fotografare professionalmente nei vostri momenti più belli",
+  "seoTitle": "Esperienza fotografica a Creta | Capture Your Crete",
+  "seoDescription": "Servizio fotografico all'aperto a Creta: spiagge, villaggi, gole e Golden Hour. Sessioni da un'ora a una giornata intera, da 160 EUR, con galleria online.",
+  "promise": "Fotografiamo voi. Non dovete sapere nulla di fotografia.",
+  "summary": "Capture Your Crete è un'esperienza fotografica all'aperto, non una seduta in studio. Un fotografo professionista vi raggiunge in hotel o in un luogo che scegliete voi, percorre l'isola con voi per un tempo che va da un'ora a una giornata intera e vi fotografa dentro il paesaggio: ritratti, coppie, famiglie e immagini di lifestyle tra spiagge, montagne, villaggi e uliveti cretesi. Quattro pacchetti vanno da 160 EUR per un'ora in un'unica location con 30-40 foto elaborate, fino a 650 EUR per sette-otto ore in tre o quattro location, con veicolo privato, sosta pranzo, sessione al tramonto e oltre 200 foto elaborate. Ogni pacchetto viene consegnato come galleria online privata di immagini selezionate, corrette nel colore e ritoccate.",
+  "overview": [
+    "Quasi tutti tornano da Creta con il telefono pieno di immagini e nemmeno una fotografia di se stessi. Questa esperienza esiste per rimediare. Voi continuate a esplorare l'isola esattamente come avevate programmato; un fotografo viene con voi e si occupa di guardare.",
+    "Non è un servizio in studio, e la scelta è voluta. Niente fondale, niente set in affitto, niente illuminazione montata. Vi portiamo in luoghi veri — un tratto di costa nell'ora in cui il mare diventa trasparente, un vicolo di paese con la luce che scende di lato, un uliveto, un belvedere sopra una gola — e vi fotografiamo mentre ci siete. Non mettiamo in scena nulla che non debba esserlo.",
+    "Voi scegliete la durata, noi scegliamo l'ora. La luce di Creta dà il meglio presto e tardi, quindi due ore alle sei di sera batteranno sempre quattro ore a mezzogiorno. Se avete una finestra fissa lavoriamo dentro quella e scegliamo le location adatte; se siete flessibili pianifichiamo attorno alla Golden Hour, e nelle foto si vede.",
+    "Quello che tornate a casa è una selezione, non una scheda di memoria. Ogni immagine della vostra galleria è stata scelta, corretta nel colore e ritoccata. È tutto il senso dei numeri che pubblichiamo: 30-40 fotografie che userete davvero valgono più di mille che non aprirete mai."
+  ],
+  "highlights": [
+    "Un fotografo professionista per un'ora, mezza giornata o una giornata intera — scegliete voi",
+    "Location cretesi vere: costa, montagne, villaggi, gole, uliveti e belvedere",
+    "Ritratti naturali, immagini di coppia, famiglia e lifestyle — nessuno deve posare a comando",
+    "Golden Hour e tramonto pianificati sulla luce, non sull'orario",
+    "Da 30-40 a oltre 200 fotografie elaborate professionalmente, secondo il pacchetto",
+    "Consegna in galleria online privata con download alla massima risoluzione"
+  ],
+  "packages": [
+    {
+      "id": "essential",
+      "name": "Essential",
+      "tagline": "Un'ora, una location, una galleria davvero buona.",
+      "features": [
+        "Correzione colore professionale",
+        "Ritocco base dei ritratti",
+        "Indicazioni del fotografo per tutta la sessione",
+        "Galleria online privata con download alla massima risoluzione"
+      ]
+    },
+    {
+      "id": "explorer",
+      "name": "Explorer",
+      "tagline": "Due ore e una seconda location, perché la serie abbia respiro.",
+      "features": [
+        "Colour grading professionale",
+        "Ritocco dei ritratti",
+        "Guida a pose e movimento naturale, così nessuno deve recitare la naturalezza",
+        "Galleria online privata con download alla massima risoluzione"
+      ]
+    },
+    {
+      "id": "crete-story",
+      "name": "Crete Story",
+      "tagline": "Mezza giornata, tre paesaggi, una storia che tiene insieme.",
+      "features": [
+        "Sopralluogo delle location prima del giorno, così nulla è improvvisato",
+        "Natura, villaggio e costa uniti in un'unica sessione",
+        "Galleria online privata con download alla massima risoluzione"
+      ]
+    },
+    {
+      "id": "full-day",
+      "name": "Full Day",
+      "tagline": "Dalla luce del mattino a quella del tramonto, con l'isola in mezzo.",
+      "features": [
+        "Più paesaggi distinti in un giorno — costa, villaggio e montagna",
+        "Una sosta pranzo locale, scelta per la vista quanto per il cibo",
+        "Una sessione al tramonto per chiudere la giornata",
+        "Galleria online privata con download alla massima risoluzione"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "beaches",
+      "name": "Spiagge e costa",
+      "blurb": "La sabbia rosa di Elafonisi, il fiume di palme di Preveli, le lastre piatte di Triopetra. Al meglio nelle ultime due ore di luce."
+    },
+    {
+      "id": "old-town",
+      "name": "Centro storico di Rethymno",
+      "blurb": "Portali veneziani, il porto e vicoli abbastanza stretti da far rimbalzare la luce sui muri. Funziona presto, prima che la città si svegli."
+    },
+    {
+      "id": "villages",
+      "name": "Villaggi tradizionali",
+      "blurb": "Margarites, Spili e i borghi di montagna sopra di loro — pietra, persiane, piazze di chiesa e qualche vicino curioso."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Uliveti",
+      "blurb": "Antichi terrazzamenti di foglia argentata che ammorbidiscono la luce in ogni direzione. Lo sfondo più generoso dell'isola per i ritratti."
+    },
+    {
+      "id": "gorges",
+      "name": "Gole e natura",
+      "blurb": "Kourtaliotiko e l'imbocco di Imbros: pareti alte, ombra fredda e una scala che fa sembrare una persona giustamente piccola."
+    },
+    {
+      "id": "mountains",
+      "name": "Montagne",
+      "blurb": "Gli altipiani dello Psiloritis e dei Lefka Ori, dove l'orizzonte sprofonda e il meteo scrive la fotografia al posto vostro."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Punti panoramici",
+      "blurb": "Le piazzole e le colline con cappella che usano gli abitanti, quasi tutte a cinque minuti da una strada che altrimenti percorrereste dritti."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Tramonto e Golden Hour",
+      "blurb": "Non un luogo ma un'ora. Ditecelo e costruiamo l'intera sessione a ritroso dal momento in cui il sole se ne va."
+    }
+  ],
+  "included": [
+    "Un fotografo professionista per tutta la sessione prenotata",
+    "Pianificazione delle location su luce, stagione e composizione del gruppo",
+    "Indicazioni e guida alle pose durante tutto il servizio",
+    "Elaborazione professionale di ogni immagine consegnata",
+    "Una galleria online privata con download alla massima risoluzione",
+    "Diritti d'uso personale su ogni fotografia consegnata"
+  ],
+  "excluded": [
+    "Il vostro spostamento fino al punto d'incontro nelle sessioni da una e due ore",
+    "Stampe, album e cornici",
+    "Biglietti d'ingresso dove una location li richiede",
+    "Acconciatura, trucco e styling",
+    "Diritti d'uso commerciale o pubblicitario"
+  ],
+  "faqs": [
+    {
+      "q": "È un servizio fotografico in studio?",
+      "a": "No. Nessuno studio, nessun fondale, nessun set in affitto. È un'esperienza all'aperto: vi portiamo in luoghi di Creta e vi fotografiamo lì, con la luce del giorno. Se cercate espressamente un ritratto in studio, non siamo le persone giuste."
+    },
+    {
+      "q": "Quante foto riceviamo, e quando?",
+      "a": "Essential consegna 30-40 fotografie elaborate professionalmente, Explorer 50-60, Crete Story 80-100 e Full Day oltre 200. Sono immagini selezionate, corrette nel colore e ritoccate, non ogni scatto fatto. Le gallerie arrivano online, di norma entro dieci-quattordici giorni."
+    },
+    {
+      "q": "E se non ci hanno mai fotografati?",
+      "a": "Descrive la maggior parte dei nostri ospiti. Il fotografo guida l'intera sessione — dove stare, dove guardare, cosa fare con le mani — e le immagini migliori nascono quasi sempre mentre si cammina, si parla o si ride, non mentre si tiene una posa."
+    },
+    {
+      "q": "Possiamo scegliere le location?",
+      "a": "Sì. Diteci quali paesaggi volete — costa, villaggio, montagne, centro storico, una gola, uliveti — e costruiamo la sessione attorno a quelli e all'ora che li valorizza. Con Crete Story e Full Day facciamo un sopralluogo prima del giorno."
+    },
+    {
+      "q": "Cosa succede se il tempo peggiora?",
+      "a": "Il meteo cretese annulla raramente un servizio; la luce coperta è ottima per i ritratti. Se le condizioni rendono davvero impossibile fotografare, spostiamo la sessione a un altro giorno del vostro soggiorno o la rimborsiamo per intero."
+    },
+    {
+      "q": "Un fotografo può unirsi a un tour già prenotato?",
+      "a": "Su alcuni tour giornalieri sì: il fotografo viaggia con il gruppo e scatta mentre la giornata prosegue normalmente. Chiedetelo quando prenotate il tour, oppure inviateci il codice di prenotazione e vi confermiamo se quel tour lo prevede."
+    }
+  ],
+  "priceNote": "I prezzi sono per sessione e coprono l'intero gruppo fino al limite del pacchetto, non per persona.",
+  "bookingNote": "Su questo sito non viene addebitato nulla. Confermiamo fotografo e data per iscritto, poi inviamo un link di pagamento."
+}

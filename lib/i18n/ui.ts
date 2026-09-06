@@ -183,6 +183,10 @@ export type UI = {
   gntoLicence: string;
   paymentTitle: string;
   paymentAlt: string;
+  soldOnKicker: string;
+  soldOnTitle: string;
+  soldOnPause: string;
+  soldOnPlay: string;
   terms: string;
   privacy: string;
   searchTours: string;
@@ -218,6 +222,9 @@ export type UI = {
   homeGuidesTitle: string;
   homeGuidesAll: string;
   heroImageAlt: string;
+  heroImageAlts: string[];
+  heroSlider: string;
+  heroGoToSlide: string;
   toursTitle: string;
   toursHubTitle: string;
   placesSeoTitle: string;
@@ -244,7 +251,7 @@ export type UI = {
   travellerTips: string;
   whatsappNote: string;
   emailNote: string;
-  officeLine: string;
+  phoneNote: string;
   pickupAreaNote: string;
   replyTimeTitle: string;
   replyTimeBody: string;
@@ -278,6 +285,22 @@ export type UI = {
   quoteGroupBand: string;
   quoteGroupUpTo: string;
   quoteHourly: string;
+  temporarilyUnavailable: string;
+  notAvailable: string;
+  unavailableLead: string;
+  onlySeats: string;
+  privateDeparture: string;
+  seatsLeft: string;
+  browsingNow: string;
+  fewDates: string;
+  payCashCta: string;
+  payCashToggle: string;
+  payCashNote: string;
+  requestCashCode: string;
+  cashOffPrice: string;
+  cashCodeLabel: string;
+  cashCodeSent: string;
+  cashOnRequestNote: string;
   legalKicker: string;
   lastUpdated: string;
   onThisPage: string;
@@ -304,7 +327,7 @@ export type UI = {
 
 const EN: UI = {
   brand: "Rethymno Tours",
-  desk: "Rethymno, Crete",
+  desk: "Crete",
   navTours: "Tours",
   navGuides: "Guides",
   navAbout: "About",
@@ -381,9 +404,9 @@ const EN: UI = {
   contactTitle: "Tell us your dates and we will plan the day",
   contactSeoTitle: "Contact | Plan Your Day in Crete | Rethymno Tours",
   contactLead: "Your hotel, how many of you, and what you want the day to feel like. WhatsApp is usually fastest.",
-  heroKicker: "Private tours and transfers from Rethymno",
+  heroKicker: "Private tours and transfers in Crete",
   heroTitle: "See Crete the way people who live here see it",
-  heroSub: "Private guided days from Rethymno — gorges, mountain villages, food and beaches. Small groups, hotel pickup, and free cancellation up to 48 hours.",
+  heroSub: "Private guided days across Crete — gorges, mountain villages, food and beaches. Small groups, hotel pickup, and free cancellation up to 48 hours.",
   pointsTitle: "Why book with us",
   footerNav: "Explore",
   footerTours: "Popular tours",
@@ -394,7 +417,7 @@ const EN: UI = {
   moderate: "Moderate",
   hard: "Challenging",
   confirm: "Send request",
-  requestSent: "Your request is with our Rethymno team.",
+  requestSent: "Your request is with our team in Crete.",
   backTours: "All tours",
   languages: "Language",
   pickupTime: "Pickup",
@@ -412,7 +435,7 @@ const EN: UI = {
   pillPrice: "Indicative",
   chatName: "Olive",
   chatKicker: "Ask us anything",
-  chatGreeting: "I'm Olive, from the Rethymno team. A date, a hotel, a hike, a transfer — tell me what you need.",
+  chatGreeting: "I'm Olive, from the team in Crete. A date, a hotel, a hike, a transfer — tell me what you need.",
   chatPlaceholder: "A date, a hotel, a feeling…",
   chatOpen: "Open chat",
   chatClose: "Close chat",
@@ -487,6 +510,10 @@ const EN: UI = {
   gntoLicence: "Greek Ministry of Tourism licence",
   paymentTitle: "Payment",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard and bank transfer accepted",
+  soldOnKicker: "Also bookable on",
+  soldOnTitle: "The same tours, on the platforms you already use",
+  soldOnPause: "Pause",
+  soldOnPlay: "Play",
   terms: "Terms",
   privacy: "Privacy",
   searchTours: "Tours & experiences",
@@ -517,15 +544,22 @@ const EN: UI = {
   themeToLight: "Switch to light appearance",
   themeToDark: "Switch to dark appearance",
   breadcrumb: "Breadcrumb",
-  homeTitle: "Private Tours from Rethymno, Crete | Rethymno Tours",
+  homeTitle: "Private Tours in Crete | Rethymno Tours",
   homeFeaturedTitle: "Days our guests book first",
   homeCategoriesTitle: "What kind of day are you after?",
   homeGuidesEyebrow: "Plan your trip",
   homeGuidesTitle: "Guides from people who live here",
   homeGuidesAll: "All guides",
-  heroImageAlt: "Lake Kournas and the hills of western Crete on a clear summer day",
-  toursTitle: "Crete Tours & Day Trips from Rethymno | Rethymno Tours",
-  toursHubTitle: "Days out from Rethymno",
+  heroImageAlt: "The Lefka Ori, the White Mountains of western Crete",
+  heroImageAlts: [
+    "The Lefka Ori, the White Mountains of western Crete",
+    "Olive trees and wildflowers below a mountain in western Crete",
+    "The Fortezza of Rethymno above the sea at golden hour",
+  ],
+  heroSlider: "Photographs of Crete",
+  heroGoToSlide: "Show photograph {n}",
+  toursTitle: "Crete Tours & Day Trips | Rethymno Tours",
+  toursHubTitle: "Days out in Crete",
   placesSeoTitle: "Places to Visit in Crete | Gorges, Beaches and Ancient Sites",
   placesSeoDesc:
     "The attractions worth the drive from Rethymno: Samaria and Imbros gorges, Preveli and Elafonisi beaches, Knossos, Spinalonga, Lake Kournas and Arkadi — with drive times, entry fees and open seasons.",
@@ -552,7 +586,7 @@ const EN: UI = {
   travellerTips: "Traveller tips",
   whatsappNote: "Usually the fastest — we reply between jobs.",
   emailNote: "For itineraries, groups and anything with attachments.",
-  officeLine: "Office {n}",
+  phoneNote: "The mobile we pick up — same number as WhatsApp.",
   pickupAreaNote: "Hotel pickup across the Rethymno region on almost every tour.",
   replyTimeTitle: "Reply time",
   replyTimeBody: "Most enquiries are answered within a few hours, seven days a week in season.",
@@ -586,6 +620,24 @@ const EN: UI = {
   quoteGroupBand: "group of {min}–{max}",
   quoteGroupUpTo: "group of up to {n}",
   quoteHourly: "{hours}h private tour",
+  temporarilyUnavailable: "Temporarily not available",
+  notAvailable: "Not available",
+  unavailableLead:
+    "This day is paused for now. You can still read about it here — bookings will open again when we can host it properly.",
+  onlySeats: "Only {n} seats per departure",
+  privateDeparture: "Private · your group only",
+  seatsLeft: "{n} seats left on this departure",
+  browsingNow: "{n} looking at this right now",
+  fewDates: "Few open dates this month",
+  payCashCta: "I'll pay cash on arrival · 10% off",
+  payCashToggle: "Pay cash on arrival for 10% off",
+  payCashNote:
+    "Pay in cash on the day we pick you up and the total is 10% less. We email you a code; the desk confirms the date. This does not go to the live checkout.",
+  requestCashCode: "Request my 10% cash code",
+  cashOffPrice: "10% cash on arrival",
+  cashCodeLabel: "Your cash code",
+  cashCodeSent: "Quote this code when we confirm the date. Pay in cash on the day of the tour — not online.",
+  cashOnRequestNote: "10% off the quoted price if you pay cash on arrival.",
   legalKicker: "Legal",
   lastUpdated: "Last updated",
   onThisPage: "On this page",
@@ -599,9 +651,9 @@ const EN: UI = {
   reviewsMetaDesc:
     "{count} verified Google reviews averaging {avg} out of 5, plus Tripadvisor reviews, for private tours, gorge hikes and airport transfers from Rethymno, Crete.",
   layoutDesc:
-    "Private guided days, gorge hikes, food experiences and airport transfers from Rethymno, Crete. Small groups, local hosts, free cancellation up to 48 hours.",
-  ogTagline: "Private tours & transfers from Rethymno, Crete",
-  ogLocation: "Rethymno · Crete · Greece",
+    "Private guided days, gorge hikes, food experiences and airport transfers across Crete. Small groups, local hosts, free cancellation up to 48 hours.",
+  ogTagline: "Private tours & transfers in Crete",
+  ogLocation: "Crete · Greece",
   daysShort: { mon: "Mon", tue: "Tue", wed: "Wed", thu: "Thu", fri: "Fri", sat: "Sat", sun: "Sun" },
   monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   placeKinds: {
@@ -668,7 +720,7 @@ const EN: UI = {
 
 const DE: UI = {
   brand: "Rethymno Tours",
-  desk: "Rethymno, Kreta",
+  desk: "Kreta",
   navTours: "Touren",
   navGuides: "Reiseführer",
   navAbout: "Über uns",
@@ -745,9 +797,9 @@ const DE: UI = {
   contactTitle: "Nennen Sie uns Ihre Daten, wir planen den Tag",
   contactSeoTitle: "Kontakt | Planen Sie Ihren Tag auf Kreta | Rethymno Tours",
   contactLead: "Ihr Hotel, wie viele Sie sind und wie sich der Tag anfühlen soll. WhatsApp ist meist am schnellsten.",
-  heroKicker: "Private Touren und Transfers ab Rethymno",
+  heroKicker: "Private Touren und Transfers auf Kreta",
   heroTitle: "Kreta sehen, wie Menschen, die hier leben, es sehen",
-  heroSub: "Private geführte Tage ab Rethymno — Schluchten, Bergdörfer, Essen und Strände. Kleine Gruppen, Hotelabholung und kostenlose Stornierung bis 48 Stunden vorher.",
+  heroSub: "Private geführte Tage auf Kreta — Schluchten, Bergdörfer, Essen und Strände. Kleine Gruppen, Hotelabholung und kostenlose Stornierung bis 48 Stunden vorher.",
   pointsTitle: "Warum bei uns buchen",
   footerNav: "Entdecken",
   footerTours: "Beliebte Touren",
@@ -758,7 +810,7 @@ const DE: UI = {
   moderate: "Mittel",
   hard: "Anspruchsvoll",
   confirm: "Anfrage senden",
-  requestSent: "Ihre Anfrage ist bei unserem Team in Rethymno.",
+  requestSent: "Ihre Anfrage ist bei unserem Team auf Kreta.",
   backTours: "Alle Touren",
   languages: "Sprache",
   pickupTime: "Abholung",
@@ -776,7 +828,7 @@ const DE: UI = {
   pillPrice: "Richtpreis",
   chatName: "Olive",
   chatKicker: "Fragen Sie uns alles",
-  chatGreeting: "Ich bin Olive, vom Team in Rethymno. Ein Datum, ein Hotel, eine Wanderung, ein Transfer — sagen Sie, was Sie brauchen.",
+  chatGreeting: "Ich bin Olive, vom Team auf Kreta. Ein Datum, ein Hotel, eine Wanderung, ein Transfer — sagen Sie, was Sie brauchen.",
   chatPlaceholder: "Ein Datum, ein Hotel, ein Gefühl…",
   chatOpen: "Chat öffnen",
   chatClose: "Chat schließen",
@@ -851,6 +903,10 @@ const DE: UI = {
   gntoLicence: "Lizenz des griechischen Tourismusministeriums",
   paymentTitle: "Zahlung",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard und Überweisung akzeptiert",
+  soldOnKicker: "Auch buchbar auf",
+  soldOnTitle: "Dieselben Touren, auf den Plattformen, die Sie schon kennen",
+  soldOnPause: "Pause",
+  soldOnPlay: "Abspielen",
   terms: "AGB",
   privacy: "Datenschutz",
   searchTours: "Touren & Erlebnisse",
@@ -881,15 +937,22 @@ const DE: UI = {
   themeToLight: "Zur hellen Ansicht wechseln",
   themeToDark: "Zur dunklen Ansicht wechseln",
   breadcrumb: "Brotkrumen",
-  homeTitle: "Private Touren ab Rethymno, Kreta | Rethymno Tours",
+  homeTitle: "Private Touren auf Kreta | Rethymno Tours",
   homeFeaturedTitle: "Tage, die unsere Gäste zuerst buchen",
   homeCategoriesTitle: "Welche Art von Tag suchen Sie?",
   homeGuidesEyebrow: "Reise planen",
   homeGuidesTitle: "Reiseführer von Menschen, die hier leben",
   homeGuidesAll: "Alle Reiseführer",
-  heroImageAlt: "Der Kournas-See und die Hügel Westkretas an einem klaren Sommertag",
-  toursTitle: "Kreta-Touren und Tagesausflüge ab Rethymno | Rethymno Tours",
-  toursHubTitle: "Ausflüge ab Rethymno",
+  heroImageAlt: "Die Lefka Ori, das Weiße Gebirge im Westen Kretas",
+  heroImageAlts: [
+    "Die Lefka Ori, das Weiße Gebirge im Westen Kretas",
+    "Olivenbäume und Wildblumen unterhalb eines Berges in Westkreta",
+    "Die Fortezza von Rethymno über dem Meer im goldenen Licht",
+  ],
+  heroSlider: "Fotografien von Kreta",
+  heroGoToSlide: "Fotografie {n} anzeigen",
+  toursTitle: "Kreta-Touren und Tagesausflüge | Rethymno Tours",
+  toursHubTitle: "Ausflüge auf Kreta",
   placesSeoTitle: "Orte auf Kreta | Schluchten, Strände und antike Stätten",
   placesSeoDesc:
     "Die Ziele, die die Fahrt ab Rethymno wert sind: Samaria und Imbros, Preveli und Elafonisi, Knossos, Spinalonga, Kournas und Arkadi — mit Fahrzeiten, Eintritt und Saison.",
@@ -916,7 +979,7 @@ const DE: UI = {
   travellerTips: "Reisetipps",
   whatsappNote: "Meist am schnellsten — wir antworten zwischen den Fahrten.",
   emailNote: "Für Reisepläne, Gruppen und alles mit Anhängen.",
-  officeLine: "Büro {n}",
+  phoneNote: "Das Handy, das wir abnehmen — dieselbe Nummer wie WhatsApp.",
   pickupAreaNote: "Hotelabholung in der Region Rethymno bei fast jeder Tour.",
   replyTimeTitle: "Antwortzeit",
   replyTimeBody: "Die meisten Anfragen beantworten wir innerhalb weniger Stunden, in der Saison sieben Tage die Woche.",
@@ -950,6 +1013,24 @@ const DE: UI = {
   quoteGroupBand: "Gruppe {min}–{max}",
   quoteGroupUpTo: "Gruppe bis {n} Personen",
   quoteHourly: "{hours} Std. Privattour",
+  temporarilyUnavailable: "Zurzeit nicht verfügbar",
+  notAvailable: "Nicht verfügbar",
+  unavailableLead:
+    "Dieser Tag ist vorerst pausiert. Sie können ihn hier weiterlesen — Buchungen öffnen wir wieder, sobald wir ihn richtig ausrichten können.",
+  onlySeats: "Nur {n} Plätze pro Abfahrt",
+  privateDeparture: "Privat · nur Ihre Gruppe",
+  seatsLeft: "Noch {n} Plätze auf dieser Abfahrt",
+  browsingNow: "{n} schauen gerade hierher",
+  fewDates: "Nur wenige offene Termine in diesem Monat",
+  payCashCta: "Ich zahle bar bei Ankunft · 10 % Rabatt",
+  payCashToggle: "Barzahlung bei Ankunft für 10 % Rabatt",
+  payCashNote:
+    "Bar am Abholtag, und der Gesamtpreis ist 10 % niedriger. Wir mailen Ihnen einen Code; der Desk bestätigt das Datum. Das geht nicht in die Live-Kasse.",
+  requestCashCode: "Meinen 10%-Code für Barzahlung anfragen",
+  cashOffPrice: "10 % Barzahlung bei Ankunft",
+  cashCodeLabel: "Ihr Code für Barzahlung",
+  cashCodeSent: "Nennen Sie diesen Code, wenn wir das Datum bestätigen. Bar am Tourtag — nicht online.",
+  cashOnRequestNote: "10 % auf den Angebotspreis bei Barzahlung am Ankunftstag.",
   legalKicker: "Rechtliches",
   lastUpdated: "Zuletzt aktualisiert",
   onThisPage: "Auf dieser Seite",
@@ -963,9 +1044,9 @@ const DE: UI = {
   reviewsMetaDesc:
     "{count} geprüfte Google-Bewertungen mit {avg} von 5, plus Tripadvisor-Bewertungen, für private Touren, Schluchtenwanderungen und Flughafentransfers ab Rethymno, Kreta.",
   layoutDesc:
-    "Private geführte Tage, Schluchtenwanderungen, Kulinarik und Flughafentransfers ab Rethymno, Kreta. Kleine Gruppen, lokale Gastgeber, kostenlose Stornierung bis 48 Stunden.",
-  ogTagline: "Private Touren & Transfers ab Rethymno, Kreta",
-  ogLocation: "Rethymno · Kreta · Griechenland",
+    "Private geführte Tage, Schluchtenwanderungen, Kulinarik und Flughafentransfers auf Kreta. Kleine Gruppen, lokale Gastgeber, kostenlose Stornierung bis 48 Stunden.",
+  ogTagline: "Private Touren & Transfers auf Kreta",
+  ogLocation: "Kreta · Griechenland",
   daysShort: { mon: "Mo", tue: "Di", wed: "Mi", thu: "Do", fri: "Fr", sat: "Sa", sun: "So" },
   monthsShort: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
   placeKinds: {
@@ -1032,7 +1113,7 @@ const DE: UI = {
 
 const IT: UI = {
   brand: "Rethymno Tours",
-  desk: "Rethymno, Creta",
+  desk: "Creta",
   navTours: "Tour",
   navGuides: "Guide",
   navAbout: "Chi siamo",
@@ -1109,9 +1190,9 @@ const IT: UI = {
   contactTitle: "Diteci le date e organizziamo la giornata",
   contactSeoTitle: "Contatti | Pianificate la giornata a Creta | Rethymno Tours",
   contactLead: "L'hotel, in quanti siete e che atmosfera volete. WhatsApp di solito è il più veloce.",
-  heroKicker: "Tour e transfer privati da Rethymno",
+  heroKicker: "Tour e transfer privati a Creta",
   heroTitle: "Vedere Creta come la vedono chi ci vive",
-  heroSub: "Giornate private guidate da Rethymno — gole, villaggi di montagna, cibo e spiagge. Gruppi piccoli, ritiro in hotel e cancellazione gratuita fino a 48 ore prima.",
+  heroSub: "Giornate private guidate in Creta — gole, villaggi di montagna, cibo e spiagge. Gruppi piccoli, ritiro in hotel e cancellazione gratuita fino a 48 ore prima.",
   pointsTitle: "Perché prenotare con noi",
   footerNav: "Esplora",
   footerTours: "Tour più richiesti",
@@ -1122,7 +1203,7 @@ const IT: UI = {
   moderate: "Media",
   hard: "Impegnativa",
   confirm: "Invia richiesta",
-  requestSent: "La vostra richiesta è al nostro team di Rethymno.",
+  requestSent: "La vostra richiesta è al nostro team a Creta.",
   backTours: "Tutti i tour",
   languages: "Lingua",
   pickupTime: "Ritiro",
@@ -1140,7 +1221,7 @@ const IT: UI = {
   pillPrice: "Indicativo",
   chatName: "Olive",
   chatKicker: "Chiedeteci qualsiasi cosa",
-  chatGreeting: "Sono Olive, del team di Rethymno. Una data, un hotel, un'escursione, un transfer — diteci di cosa avete bisogno.",
+  chatGreeting: "Sono Olive, del team a Creta. Una data, un hotel, un'escursione, un transfer — diteci di cosa avete bisogno.",
   chatPlaceholder: "Una data, un hotel, un'atmosfera…",
   chatOpen: "Apri chat",
   chatClose: "Chiudi chat",
@@ -1215,6 +1296,10 @@ const IT: UI = {
   gntoLicence: "Licenza del Ministero del Turismo greco",
   paymentTitle: "Pagamento",
   paymentAlt: "Si accettano PayPal, Stripe, Visa, Mastercard e bonifico",
+  soldOnKicker: "Prenotabile anche su",
+  soldOnTitle: "Gli stessi tour, sulle piattaforme che usate già",
+  soldOnPause: "Pausa",
+  soldOnPlay: "Riproduci",
   terms: "Termini",
   privacy: "Privacy",
   searchTours: "Tour ed esperienze",
@@ -1245,15 +1330,22 @@ const IT: UI = {
   themeToLight: "Passa alla modalità chiara",
   themeToDark: "Passa alla modalità scura",
   breadcrumb: "Percorso di navigazione",
-  homeTitle: "Tour privati da Rethymno, Creta | Rethymno Tours",
+  homeTitle: "Tour privati a Creta | Rethymno Tours",
   homeFeaturedTitle: "Le giornate che i nostri ospiti prenotano per prime",
   homeCategoriesTitle: "Che tipo di giornata cercate?",
   homeGuidesEyebrow: "Pianificate il viaggio",
   homeGuidesTitle: "Guide di chi vive qui",
   homeGuidesAll: "Tutte le guide",
-  heroImageAlt: "Il lago Kournas e le colline della Creta occidentale in una giornata d'estate",
-  toursTitle: "Tour ed escursioni a Creta da Rethymno | Rethymno Tours",
-  toursHubTitle: "Giornate fuori da Rethymno",
+  heroImageAlt: "I Lefka Ori, le Montagne Bianche della Creta occidentale",
+  heroImageAlts: [
+    "I Lefka Ori, le Montagne Bianche della Creta occidentale",
+    "Ulivi e fiori selvatici sotto una montagna nella Creta occidentale",
+    "La Fortezza di Rethymno sul mare all'ora d'oro",
+  ],
+  heroSlider: "Fotografie di Creta",
+  heroGoToSlide: "Mostra la fotografia {n}",
+  toursTitle: "Tour ed escursioni a Creta | Rethymno Tours",
+  toursHubTitle: "Giornate fuori a Creta",
   placesSeoTitle: "Luoghi da visitare a Creta | Gole, spiagge e siti antichi",
   placesSeoDesc:
     "Le tappe che valgono il tragitto da Rethymno: Samaria e Imbros, Preveli ed Elafonisi, Cnosso, Spinalonga, Kournas e Arkadi — con tempi di guida, ingressi e stagioni.",
@@ -1280,7 +1372,7 @@ const IT: UI = {
   travellerTips: "Consigli dei viaggiatori",
   whatsappNote: "Di solito il più veloce — rispondiamo tra un servizio e l'altro.",
   emailNote: "Per itinerari, gruppi e qualsiasi cosa con allegati.",
-  officeLine: "Ufficio {n}",
+  phoneNote: "Il cellulare a cui rispondiamo — lo stesso numero di WhatsApp.",
   pickupAreaNote: "Ritiro in hotel in tutta la zona di Rethymno in quasi ogni tour.",
   replyTimeTitle: "Tempi di risposta",
   replyTimeBody: "La maggior parte delle richieste riceve risposta in poche ore, sette giorni su sette in stagione.",
@@ -1314,6 +1406,24 @@ const IT: UI = {
   quoteGroupBand: "gruppo di {min}–{max}",
   quoteGroupUpTo: "gruppo fino a {n}",
   quoteHourly: "{hours}h tour privato",
+  temporarilyUnavailable: "Temporaneamente non disponibile",
+  notAvailable: "Non disponibile",
+  unavailableLead:
+    "Questa giornata è in pausa per ora. Potete comunque leggerla qui — le prenotazioni ripartiranno quando potremo ospitarla come si deve.",
+  onlySeats: "Solo {n} posti per partenza",
+  privateDeparture: "Privato · solo il vostro gruppo",
+  seatsLeft: "{n} posti rimasti su questa partenza",
+  browsingNow: "{n} stanno guardando in questo momento",
+  fewDates: "Poche date aperte questo mese",
+  payCashCta: "Pago in contanti all'arrivo · 10% di sconto",
+  payCashToggle: "Pago in contanti all'arrivo per il 10% di sconto",
+  payCashNote:
+    "In contanti il giorno del ritiro il totale è il 10% in meno. Vi mandiamo un codice; il desk conferma la data. Non passa dal checkout live.",
+  requestCashCode: "Richiedi il mio codice sconto 10%",
+  cashOffPrice: "10% in contanti all'arrivo",
+  cashCodeLabel: "Il vostro codice contanti",
+  cashCodeSent: "Indicate questo codice quando confermiamo la data. Pagate in contanti il giorno del tour — non online.",
+  cashOnRequestNote: "10% sul prezzo indicato se pagate in contanti all'arrivo.",
   legalKicker: "Note legali",
   lastUpdated: "Ultimo aggiornamento",
   onThisPage: "In questa pagina",
@@ -1327,9 +1437,9 @@ const IT: UI = {
   reviewsMetaDesc:
     "{count} recensioni Google verificate con media {avg} su 5, più recensioni Tripadvisor, per tour privati, trekking nelle gole e transfer aeroportuali da Rethymno, Creta.",
   layoutDesc:
-    "Giornate private guidate, trekking nelle gole, esperienze gastronomiche e transfer aeroportuali da Rethymno, Creta. Gruppi piccoli, host locali, cancellazione gratuita fino a 48 ore.",
-  ogTagline: "Tour e transfer privati da Rethymno, Creta",
-  ogLocation: "Rethymno · Creta · Grecia",
+    "Giornate private guidate, trekking nelle gole, esperienze gastronomiche e transfer aeroportuali a Creta. Gruppi piccoli, host locali, cancellazione gratuita fino a 48 ore.",
+  ogTagline: "Tour e transfer privati a Creta",
+  ogLocation: "Creta · Grecia",
   daysShort: { mon: "lun", tue: "mar", wed: "mer", thu: "gio", fri: "ven", sat: "sab", sun: "dom" },
   monthsShort: ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"],
   placeKinds: {
@@ -1396,7 +1506,7 @@ const IT: UI = {
 
 const FR: UI = {
   brand: "Rethymno Tours",
-  desk: "Réthymnon, Crète",
+  desk: "Crète",
   navTours: "Excursions",
   navGuides: "Guides",
   navAbout: "À propos",
@@ -1473,9 +1583,9 @@ const FR: UI = {
   contactTitle: "Donnez-nous vos dates, nous organisons la journée",
   contactSeoTitle: "Contact | Planifiez votre journée en Crète | Rethymno Tours",
   contactLead: "Votre hôtel, votre nombre et l'ambiance que vous voulez. WhatsApp est en général le plus rapide.",
-  heroKicker: "Excursions et transferts privés depuis Réthymnon",
+  heroKicker: "Excursions et transferts privés en Crète",
   heroTitle: "Voir la Crète comme la voient ceux qui y vivent",
-  heroSub: "Journées guidées privées depuis Réthymnon — gorges, villages de montagne, table et plages. Petits groupes, prise en charge à l'hôtel et annulation gratuite jusqu'à 48 heures avant.",
+  heroSub: "Journées guidées privées en Crète — gorges, villages de montagne, table et plages. Petits groupes, prise en charge à l'hôtel et annulation gratuite jusqu'à 48 heures avant.",
   pointsTitle: "Pourquoi réserver avec nous",
   footerNav: "Explorer",
   footerTours: "Excursions populaires",
@@ -1486,7 +1596,7 @@ const FR: UI = {
   moderate: "Modérée",
   hard: "Soutenue",
   confirm: "Envoyer la demande",
-  requestSent: "Votre demande est chez notre équipe à Réthymnon.",
+  requestSent: "Votre demande est chez notre équipe en Crète.",
   backTours: "Toutes les excursions",
   languages: "Langue",
   pickupTime: "Prise en charge",
@@ -1504,7 +1614,7 @@ const FR: UI = {
   pillPrice: "Indicatif",
   chatName: "Olive",
   chatKicker: "Posez-nous n'importe quelle question",
-  chatGreeting: "Je suis Olive, de l'équipe de Réthymnon. Une date, un hôtel, une randonnée, un transfert — dites-moi ce qu'il vous faut.",
+  chatGreeting: "Je suis Olive, de l'équipe en Crète. Une date, un hôtel, une randonnée, un transfert — dites-moi ce qu'il vous faut.",
   chatPlaceholder: "Une date, un hôtel, une envie…",
   chatOpen: "Ouvrir le chat",
   chatClose: "Fermer le chat",
@@ -1579,6 +1689,10 @@ const FR: UI = {
   gntoLicence: "Licence du ministère grec du Tourisme",
   paymentTitle: "Paiement",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard et virement acceptés",
+  soldOnKicker: "Aussi réservable sur",
+  soldOnTitle: "Les mêmes excursions, sur les plateformes que vous utilisez déjà",
+  soldOnPause: "Pause",
+  soldOnPlay: "Lecture",
   terms: "Conditions",
   privacy: "Confidentialité",
   searchTours: "Excursions et expériences",
@@ -1609,15 +1723,22 @@ const FR: UI = {
   themeToLight: "Passer en mode clair",
   themeToDark: "Passer en mode sombre",
   breadcrumb: "Fil d'Ariane",
-  homeTitle: "Excursions privées depuis Réthymnon, Crète | Rethymno Tours",
+  homeTitle: "Excursions privées en Crète | Rethymno Tours",
   homeFeaturedTitle: "Les journées que nos voyageurs réservent en premier",
   homeCategoriesTitle: "Quel type de journée cherchez-vous ?",
   homeGuidesEyebrow: "Préparer le voyage",
   homeGuidesTitle: "Des guides écrits par des gens d'ici",
   homeGuidesAll: "Tous les guides",
-  heroImageAlt: "Le lac Kournas et les collines de la Crète occidentale par une journée d'été",
-  toursTitle: "Excursions en Crète depuis Réthymnon | Rethymno Tours",
-  toursHubTitle: "Journées au départ de Réthymnon",
+  heroImageAlt: "Les Lefka Ori, les Montagnes Blanches de la Crète occidentale",
+  heroImageAlts: [
+    "Les Lefka Ori, les Montagnes Blanches de la Crète occidentale",
+    "Oliviers et fleurs sauvages au pied d'une montagne en Crète occidentale",
+    "La Fortezza de Réthymnon au-dessus de la mer à l'heure dorée",
+  ],
+  heroSlider: "Photographies de la Crète",
+  heroGoToSlide: "Afficher la photographie {n}",
+  toursTitle: "Excursions en Crète | Rethymno Tours",
+  toursHubTitle: "Journées en Crète",
   placesSeoTitle: "Lieux à visiter en Crète | Gorges, plages et sites antiques",
   placesSeoDesc:
     "Les étapes qui valent la route depuis Réthymnon : Samaria et Imbros, Preveli et Elafonissi, Knossos, Spinalonga, Kournas et Arkadi — avec temps de route, droits d'entrée et saisons.",
@@ -1644,7 +1765,7 @@ const FR: UI = {
   travellerTips: "Conseils de voyageurs",
   whatsappNote: "En général le plus rapide — nous répondons entre deux services.",
   emailNote: "Pour les itinéraires, les groupes et tout ce qui a des pièces jointes.",
-  officeLine: "Bureau {n}",
+  phoneNote: "Le mobile auquel nous répondons — le même numéro que WhatsApp.",
   pickupAreaNote: "Prise en charge à l'hôtel dans la région de Réthymnon sur presque chaque excursion.",
   replyTimeTitle: "Délai de réponse",
   replyTimeBody: "La plupart des demandes reçoivent une réponse en quelques heures, sept jours sur sept en saison.",
@@ -1678,6 +1799,24 @@ const FR: UI = {
   quoteGroupBand: "groupe de {min}–{max}",
   quoteGroupUpTo: "groupe jusqu'à {n}",
   quoteHourly: "{hours}h en privé",
+  temporarilyUnavailable: "Temporairement indisponible",
+  notAvailable: "Indisponible",
+  unavailableLead:
+    "Cette journée est en pause pour le moment. Vous pouvez encore la lire ici — les réservations reprendront quand nous pourrons l'accueillir comme il faut.",
+  onlySeats: "Seulement {n} places par départ",
+  privateDeparture: "Privé · uniquement votre groupe",
+  seatsLeft: "{n} places restantes sur ce départ",
+  browsingNow: "{n} regardent cette page en ce moment",
+  fewDates: "Peu de dates ouvertes ce mois-ci",
+  payCashCta: "Je paie en espèces à l'arrivée · 10 % de réduction",
+  payCashToggle: "Payer en espèces à l'arrivée pour 10 % de réduction",
+  payCashNote:
+    "En espèces le jour de la prise en charge, le total est 10 % moins cher. Nous vous envoyons un code ; le desk confirme la date. Cela ne passe pas par le checkout en ligne.",
+  requestCashCode: "Demander mon code 10 % espèces",
+  cashOffPrice: "10 % en espèces à l'arrivée",
+  cashCodeLabel: "Votre code espèces",
+  cashCodeSent: "Citez ce code lorsque nous confirmons la date. Paiement en espèces le jour de l'excursion — pas en ligne.",
+  cashOnRequestNote: "10 % sur le tarif indiqué si vous payez en espèces à l'arrivée.",
   legalKicker: "Mentions légales",
   lastUpdated: "Dernière mise à jour",
   onThisPage: "Sur cette page",
@@ -1691,9 +1830,9 @@ const FR: UI = {
   reviewsMetaDesc:
     "{count} avis Google vérifiés avec une moyenne de {avg} sur 5, plus des avis Tripadvisor, pour des excursions privées, des randonnées dans les gorges et des transferts aéroport depuis Réthymnon, Crète.",
   layoutDesc:
-    "Journées guidées privées, randonnées dans les gorges, expériences culinaires et transferts aéroport depuis Réthymnon, Crète. Petits groupes, hôtes locaux, annulation gratuite jusqu'à 48 heures.",
-  ogTagline: "Excursions et transferts privés depuis Réthymnon, Crète",
-  ogLocation: "Réthymnon · Crète · Grèce",
+    "Journées guidées privées, randonnées dans les gorges, expériences culinaires et transferts aéroport en Crète. Petits groupes, hôtes locaux, annulation gratuite jusqu'à 48 heures.",
+  ogTagline: "Excursions et transferts privés en Crète",
+  ogLocation: "Crète · Grèce",
   daysShort: { mon: "lun", tue: "mar", wed: "mer", thu: "jeu", fri: "ven", sat: "sam", sun: "dim" },
   monthsShort: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
   placeKinds: {
@@ -1760,7 +1899,7 @@ const FR: UI = {
 
 const SV: UI = {
   brand: "Rethymno Tours",
-  desk: "Rethymno, Kreta",
+  desk: "Kreta",
   navTours: "Turer",
   navGuides: "Guider",
   navAbout: "Om oss",
@@ -1837,9 +1976,9 @@ const SV: UI = {
   contactTitle: "Berätta era datum så planerar vi dagen",
   contactSeoTitle: "Kontakt | Planera dagen på Kreta | Rethymno Tours",
   contactLead: "Ert hotell, hur många ni är och hur dagen ska kännas. WhatsApp är oftast snabbast.",
-  heroKicker: "Privata turer och transfer från Rethymno",
+  heroKicker: "Privata turer och transfer på Kreta",
   heroTitle: "Se Kreta som de som bor här ser det",
-  heroSub: "Privata guidade dagar från Rethymno — raviner, bergsbyar, mat och stränder. Små grupper, hämtning på hotellet och gratis avbokning upp till 48 timmar innan.",
+  heroSub: "Privata guidade dagar på Kreta — raviner, bergsbyar, mat och stränder. Små grupper, hämtning på hotellet och gratis avbokning upp till 48 timmar innan.",
   pointsTitle: "Varför boka med oss",
   footerNav: "Utforska",
   footerTours: "Populära turer",
@@ -1850,7 +1989,7 @@ const SV: UI = {
   moderate: "Medel",
   hard: "Krävande",
   confirm: "Skicka förfrågan",
-  requestSent: "Er förfrågan är hos vårt team i Rethymno.",
+  requestSent: "Er förfrågan är hos vårt team på Kreta.",
   backTours: "Alla turer",
   languages: "Språk",
   pickupTime: "Hämtning",
@@ -1868,7 +2007,7 @@ const SV: UI = {
   pillPrice: "Riktpris",
   chatName: "Olive",
   chatKicker: "Fråga oss vad som helst",
-  chatGreeting: "Jag är Olive, från teamet i Rethymno. Ett datum, ett hotell, en vandring, en transfer — säg vad ni behöver.",
+  chatGreeting: "Jag är Olive, från teamet på Kreta. Ett datum, ett hotell, en vandring, en transfer — säg vad ni behöver.",
   chatPlaceholder: "Ett datum, ett hotell, en känsla…",
   chatOpen: "Öppna chatten",
   chatClose: "Stäng chatten",
@@ -1943,6 +2082,10 @@ const SV: UI = {
   gntoLicence: "Licens från det grekiska turistministeriet",
   paymentTitle: "Betalning",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard och banköverföring accepteras",
+  soldOnKicker: "Även bokningsbar på",
+  soldOnTitle: "Samma turer, på plattformarna ni redan använder",
+  soldOnPause: "Pausa",
+  soldOnPlay: "Spela",
   terms: "Villkor",
   privacy: "Integritet",
   searchTours: "Turer och upplevelser",
@@ -1973,15 +2116,22 @@ const SV: UI = {
   themeToLight: "Växla till ljust läge",
   themeToDark: "Växla till mörkt läge",
   breadcrumb: "Sökväg",
-  homeTitle: "Privata turer från Rethymno, Kreta | Rethymno Tours",
+  homeTitle: "Privata turer på Kreta | Rethymno Tours",
   homeFeaturedTitle: "Dagarna våra gäster bokar först",
   homeCategoriesTitle: "Vilken sorts dag är ni ute efter?",
   homeGuidesEyebrow: "Planera resan",
   homeGuidesTitle: "Guider från människor som bor här",
   homeGuidesAll: "Alla guider",
-  heroImageAlt: "Kournassjön och kullarna i västra Kreta en klar sommardag",
-  toursTitle: "Turer och dagsutflykter på Kreta från Rethymno | Rethymno Tours",
-  toursHubTitle: "Utflykter från Rethymno",
+  heroImageAlt: "Lefka Ori, de vita bergen i västra Kreta",
+  heroImageAlts: [
+    "Lefka Ori, de vita bergen i västra Kreta",
+    "Olivträd och vilda blommor nedanför ett berg i västra Kreta",
+    "Fortezzan i Rethymno ovanför havet i gyllene ljus",
+  ],
+  heroSlider: "Foton från Kreta",
+  heroGoToSlide: "Visa foto {n}",
+  toursTitle: "Turer och dagsutflykter på Kreta | Rethymno Tours",
+  toursHubTitle: "Utflykter på Kreta",
   placesSeoTitle: "Platser att besöka på Kreta | Raviner, stränder och antika platser",
   placesSeoDesc:
     "Målen som är värda körningen från Rethymno: Samaria och Imbros, Preveli och Elafonisi, Knossos, Spinalonga, Kournas och Arkadi — med körtid, entré och säsong.",
@@ -2008,7 +2158,7 @@ const SV: UI = {
   travellerTips: "Restips",
   whatsappNote: "Oftast snabbast — vi svarar mellan uppdragen.",
   emailNote: "För resplaner, grupper och allt med bilagor.",
-  officeLine: "Kontor {n}",
+  phoneNote: "Mobilen vi svarar i — samma nummer som WhatsApp.",
   pickupAreaNote: "Hämtning på hotellet i Rethymnoregionen på nästan varje tur.",
   replyTimeTitle: "Svarstid",
   replyTimeBody: "De flesta förfrågningar får svar inom några timmar, sju dagar i veckan under säsong.",
@@ -2042,6 +2192,24 @@ const SV: UI = {
   quoteGroupBand: "grupp {min}–{max}",
   quoteGroupUpTo: "grupp upp till {n}",
   quoteHourly: "{hours}h privat tur",
+  temporarilyUnavailable: "Tillfälligt inte tillgänglig",
+  notAvailable: "Inte tillgänglig",
+  unavailableLead:
+    "Den här dagen är pausad just nu. Ni kan fortfarande läsa om den här — bokningarna öppnar igen när vi kan hålla den som den ska.",
+  onlySeats: "Bara {n} platser per avgång",
+  privateDeparture: "Privat · bara er grupp",
+  seatsLeft: "{n} platser kvar på den här avgången",
+  browsingNow: "{n} tittar på den här just nu",
+  fewDates: "Få öppna datum den här månaden",
+  payCashCta: "Jag betalar kontant vid ankomst · 10 % rabatt",
+  payCashToggle: "Betala kontant vid ankomst för 10 % rabatt",
+  payCashNote:
+    "Kontant på hämtningsdagen blir totalen 10 % lägre. Vi mejlar en kod; desken bekräftar datumet. Det går inte till livekassan.",
+  requestCashCode: "Begär min 10 %-kod för kontant",
+  cashOffPrice: "10 % kontant vid ankomst",
+  cashCodeLabel: "Er kontantkod",
+  cashCodeSent: "Ange den här koden när vi bekräftar datumet. Betala kontant på turdagen — inte online.",
+  cashOnRequestNote: "10 % på det angivna priset om ni betalar kontant vid ankomst.",
   legalKicker: "Juridiskt",
   lastUpdated: "Senast uppdaterad",
   onThisPage: "På den här sidan",
@@ -2055,9 +2223,9 @@ const SV: UI = {
   reviewsMetaDesc:
     "{count} verifierade Google-omdömen med {avg} av 5 i snitt, plus Tripadvisor-omdömen, för privata turer, ravinvandringar och flygplatstransfer från Rethymno, Kreta.",
   layoutDesc:
-    "Privata guidade dagar, ravinvandringar, matupplevelser och flygplatstransfer från Rethymno, Kreta. Små grupper, lokala värdar, gratis avbokning upp till 48 timmar.",
-  ogTagline: "Privata turer och transfer från Rethymno, Kreta",
-  ogLocation: "Rethymno · Kreta · Grekland",
+    "Privata guidade dagar, ravinvandringar, matupplevelser och flygplatstransfer på Kreta. Små grupper, lokala värdar, gratis avbokning upp till 48 timmar.",
+  ogTagline: "Privata turer och transfer på Kreta",
+  ogLocation: "Kreta · Grekland",
   daysShort: { mon: "mån", tue: "tis", wed: "ons", thu: "tor", fri: "fre", sat: "lör", sun: "sön" },
   monthsShort: ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
   placeKinds: {

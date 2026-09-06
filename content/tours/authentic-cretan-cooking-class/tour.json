@@ -35,6 +35,7 @@
     "https://waytocrete.com/wp-content/uploads/2025/02/cooking-classes-5-scaled.jpg",
     "https://waytocrete.com/wp-content/uploads/2025/02/cooking-classes-30-scaled.jpg"
   ],
-  "featured": true,
+  "featured": false,
+  "availability": "unavailable",
   "supersedes": ["/the-cretan-cooking-experience"]
 }

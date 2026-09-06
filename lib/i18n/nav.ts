@@ -2,6 +2,8 @@ import type { Lang } from "./langs";
 import { langPath } from "./langs";
 import { t } from "./ui";
 import { hubCopy } from "./hubs";
+import { photographyCopy } from "./photography";
+import { partnersCopy } from "./partners";
 import { HUBS, type HubId } from "@/lib/nav/hubs";
 
 /**
@@ -26,6 +28,19 @@ export type NavColumnSpec = {
   tours: readonly NavTourSpec[];
 };
 
+/**
+ * A product family inside a dropdown — currently the two halves of
+ * Photography.
+ *
+ * Distinct from `NavTourSpec` because these do not resolve against the tour
+ * catalogue: a family points at a hub, and the label, blurb and image are
+ * assembled in `lib/nav/catalog.ts` from that family's own content.
+ */
+export type NavSectionSpec = {
+  id: "experience" | "workshop";
+  path: string;
+};
+
 export type NavItemSpec = {
   id: string;
   kind: NavKind;
@@ -33,6 +48,7 @@ export type NavItemSpec = {
   path: string | null;
   columns?: readonly NavColumnSpec[];
   tours?: readonly NavTourSpec[];
+  sections?: readonly NavSectionSpec[];
 };
 
 export const TOUR_COLUMNS: readonly NavColumnSpec[] = [
@@ -93,6 +109,15 @@ export const NAV_SPEC: readonly NavItemSpec[] = [
   { id: "tours", kind: "mega", path: "/tours", columns: TOUR_COLUMNS },
   { id: "create", kind: "link", path: "/create" },
   {
+    id: "photography",
+    kind: "menu",
+    path: "/photography",
+    sections: [
+      { id: "experience", path: "/photography/experiences" },
+      { id: "workshop", path: "/photography/workshops" },
+    ],
+  },
+  {
     id: "multiday",
     kind: "menu",
     path: "/multiday-tours",
@@ -111,6 +136,7 @@ export const NAV_SPEC: readonly NavItemSpec[] = [
   },
   { id: "boat", kind: "link", path: "/tours/boat-cruise" },
   { id: "blog", kind: "link", path: "/guides" },
+  { id: "partners", kind: "link", path: "/partners" },
   { id: "contact", kind: "link", path: "/contact" },
 ];
 
@@ -277,6 +303,10 @@ export function itemLabel(id: string, lang: Lang): string {
       return copy.tours;
     case "create":
       return copy.create;
+    case "photography":
+      // Not in NAV_COPY: the section owns its own name in lib/i18n/photography,
+      // and a second copy here is one that would eventually disagree.
+      return photographyCopy(lang).nav;
     case "multiday":
       return copy.multiday;
     case "transfer":
@@ -285,6 +315,8 @@ export function itemLabel(id: string, lang: Lang): string {
       return copy.boat;
     case "blog":
       return copy.blog;
+    case "partners":
+      return partnersCopy(lang).become;
     case "contact":
       return copy.contact;
     default:
@@ -323,7 +355,6 @@ export function secondaryNav(lang: Lang) {
     { href: langPath(lang, "/places"), label: copy.navPlaces },
     { href: langPath(lang, "/reviews"), label: copy.navReviews },
     { href: langPath(lang, "/transfers/weddings"), label: copy.weddingTransfers },
-    { href: langPath(lang, "/partners"), label: copy.navPartners },
   ];
 }
 
@@ -338,7 +369,9 @@ export function activeNavId(pathname: string): string | null {
   if (rest === "/multiday-tours" || rest.startsWith("/multiday-tours/")) return "multiday";
   if (rest === "/transfers" || rest.startsWith("/transfers/")) return "transfer";
   if (rest === "/guides" || rest.startsWith("/guides/")) return "blog";
+  if (rest === "/partners" || rest.startsWith("/partners/")) return "partners";
   if (rest === "/contact" || rest.startsWith("/contact/")) return "contact";
+  if (rest === "/photography" || rest.startsWith("/photography/")) return "photography";
   if (rest === "/tours" || rest.startsWith("/tours/")) return "tours";
   if (rest === "/create" || rest.startsWith("/create/")) return "create";
   const hub = rest.replace(/\/$/, "");

@@ -18,14 +18,14 @@ import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
 /**
  * The home page.
  *
- * A server component throughout — the only JavaScript this page ships comes
- * from the hero search inputs and the save button on each card.
+ * A server component throughout — the JavaScript this page ships comes from
+ * the hero slider, the hero search inputs, and the save button on each card.
  */
 export function HomeView({ lang }: { lang: Lang }) {
   const ui = t(lang);
   const tours = allTours(lang);
-  const featured = tours.filter((x) => x.core.featured);
-  const shown = (featured.length >= 6 ? featured : tours).slice(0, 6);
+  const featured = tours.filter((x) => x.core.featured && x.core.availability !== "unavailable");
+  const shown = featured.slice(0, 6);
 
   // Category tiles are built from the catalogue we actually have, each using
   // its own lead image, so a tile can never point at an empty listing.

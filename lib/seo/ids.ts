@@ -19,6 +19,7 @@ export const id = {
   tour: (slug: string) => `${siteUrl()}/#tour/${slug}`,
   transfer: (slug: string) => `${siteUrl()}/#transfer/${slug}`,
   place: (slug: string) => `${siteUrl()}/#place/${slug}`,
+  photography: (slug: string) => `${siteUrl()}/#photography/${slug}`,
   guide: (lang: Lang, slug: string) => `${siteUrl()}${langPath(lang, `/guides/${slug}`)}#article`,
   author: (authorId: string) => `${siteUrl()}/#author/${authorId}`,
   image: (mediaId: string) => `${siteUrl()}/#image/${mediaId}`,

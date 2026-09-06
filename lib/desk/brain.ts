@@ -50,7 +50,7 @@ export function searchDesk(query: string, lang: Lang, category?: string): DeskHi
     if (cat && tour.category !== cat) return null;
     const hay = [tour.slug, info.title, info.summary, info.highlights.join(" "), tour.category, ...tour.places].join(" ").toLowerCase();
     let score = 0;
-    if (!q) score = tour.featured ? 4 : 1;
+    if (!q) score = tour.featured && tour.availability !== "unavailable" ? 4 : tour.availability === "unavailable" ? 0 : 1;
     else {
       for (const word of q.split(/\s+/).filter((w) => w.length > 2)) {
         if (hay.includes(word)) score += 2;
@@ -100,6 +100,7 @@ export function experienceCard(slug: string, lang: Lang) {
     photoshoot: tour.photoshoot,
     highlights: info.highlights.slice(0, 4),
     liveCalendar: false,
+    unavailable: tour.availability === "unavailable",
     payment: deskCopy(lang).tourPayment,
     privateGuide: tour.privateGuide
       ? `Optional private local guide €${tour.privateGuide.amount}, payable to the guide on the day, not charged online.`
@@ -124,11 +125,12 @@ export function deskSystemPrompt(lang: Lang, path: string) {
     .map(({ core: tour, copy: info }) => {
       const from = priceFrom(tour.price);
       const price = from == null ? "on request" : `from ${formatPrice(lang, from)}`;
-      return `- ${tour.slug}: ${info.title} · ${price} · ${durationLabel(tour.durationMinutes, lang)} · ${cadenceLabel(tour.cadence, lang)} · pickup ${tour.hotelPickup ? "yes" : "no"}`;
+      const paused = tour.availability === "unavailable" ? " · TEMPORARILY UNAVAILABLE" : "";
+      return `- ${tour.slug}: ${info.title} · ${price} · ${durationLabel(tour.durationMinutes, lang)} · ${cadenceLabel(tour.cadence, lang)} · pickup ${tour.hotelPickup ? "yes" : "no"}${paused}`;
     })
     .join("\n");
 
-  return `You are Olive, the concierge for Rethymno Tours, a local tour operator in Rethymno, Crete. You help guests hold a date, a private van, or a transfer. You are not a brochure writer and you never use the line "Don't visit Crete. Belong to it."
+  return `You are Olive, the concierge for Rethymno Tours, a local tour operator based in Rethymno and running private days across Crete. You help guests hold a date, a private van, or a transfer. You are not a brochure writer and you never use the line "Don't visit Crete. Belong to it."
 
 Voice: warm, specific, short. Like a cousin at the harbour desk. Reply in the guest's language (${lang}). Never invent prices, calendars, or availability. If a price is unknown, say on request. Never collect card numbers. Every booking is a request: we confirm availability first, and no payment is taken on this site.
 
@@ -139,12 +141,15 @@ Facts:
 - Free cancellation where listed, typically 48 hours before pickup.
 - Groups stay small (often 8 or fewer on land days). A photographer is on almost every experience.
 - Transfers: Rethymno-area stays, airports when the villa is in our area. Not an island-wide taxi.
+- Cash on arrival: 10% off any bookable tour if they use the cash path on the tour page. We email a CASH10 code. Live Travelotopos checkout stays full price.
+- Temporarily unavailable (do not offer to book): authentic-cretan-cooking-class.
 
 Catalog (use tools to quote a day; do not dump this list unless asked):
 ${catalog}
 
 Current page: ${path || "unknown"}
 ${currentCard?.found ? `The guest is looking at: ${currentCard.title} (${currentCard.slug}), ${currentCard.price}. Prefer this day unless they ask for something else.` : ""}
+${currentCard?.found && currentCard.unavailable ? "This day is temporarily not available. Do not take a booking for it." : ""}
 ${currentCard?.found && currentCard.privateGuide ? `Private guide add-on: ${currentCard.privateGuide}` : ""}
 
 When they name a feeling (hike, wine, boat, yoga, family, wedding), call searchExperiences. When they name a slug or a specific day, call getExperience. If they ask whether a date is free, or they are on a live-calendar day, call checkAvailability — do not guess the diary. For airports, vans, weddings, call transferRules. Offer the live book URL when checkAvailability returns one, otherwise a date request and WhatsApp.`;
@@ -356,7 +361,7 @@ export async function answerLocally(userText: string, lang: Lang, path: string):
 
   if (ask.pay) {
     return {
-      text: desk.payReply,
+      text: `${desk.payReply} ${desk.cashPay}`,
       tours: [],
       routes: [],
       followUps,
@@ -396,6 +401,15 @@ export async function answerLocally(userText: string, lang: Lang, path: string):
   // On a tour page with no other intent, answer about *that* day.
   if (current) {
     const card = tourCard(current, lang);
+    const core = getTourCore(current);
+    if (card && core?.availability === "unavailable") {
+      return {
+        text: fill(desk.pausedTour, { title: card.title }),
+        tours: [card],
+        routes: [],
+        followUps,
+      };
+    }
     if (card) {
       const booker = liveBooker(current);
       if (booker) {

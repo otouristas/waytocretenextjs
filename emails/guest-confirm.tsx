@@ -11,15 +11,19 @@ export function GuestConfirmEmail({ payload }: { payload: RequestPayload }) {
     <EmailShell
       preview={
         custom
-          ? "The Rethymno desk has the day you built. Someone who hosts it will reply within a few hours."
-          : "The Rethymno desk has your note. Someone who hosts the day will reply within a few hours."
+          ? "The desk in Crete has the day you built. Someone who hosts it will reply within a few hours."
+          : payload.cashCode
+            ? `Your cash code is ${payload.cashCode}. The desk in Crete will confirm the date.`
+            : "The desk in Crete has your note. Someone who hosts the day will reply within a few hours."
       }
       eyebrow={custom ? "Your Crete day" : "Request received"}
       title={custom ? `${first}, we have your day` : `Thank you, ${first}`}
       lead={
         custom
           ? "The desk has the route, the hours and the live price below. Someone who actually hosts the day will reply within a few hours — usually on WhatsApp or this thread — to confirm the date, then send how to pay. Nothing is charged on this email."
-          : "The Rethymno desk has your note. Someone who actually hosts the day will reply within a few hours — usually on WhatsApp or this email thread."
+          : payload.cashCode
+            ? "The desk in Crete has your request. Pay in cash on the day of the tour for 10% off — quote the code below when we confirm the date. Nothing is charged on this email."
+            : "The desk in Crete has your note. Someone who actually hosts the day will reply within a few hours — usually on WhatsApp or this email thread."
       }
       ctaLabel="Message the desk on WhatsApp"
       ctaHref={WHATSAPP}
@@ -28,6 +32,14 @@ export function GuestConfirmEmail({ payload }: { payload: RequestPayload }) {
     >
       {payload.itinerary ? (
         <CustomDayCard day={payload.itinerary} heading="The day you built" />
+      ) : null}
+      {payload.cashCode ? (
+        <DetailCard
+          rows={[
+            { label: "Cash code", value: payload.cashCode },
+            { label: "Discount", value: "10% if paid in cash on the day of the tour" },
+          ]}
+        />
       ) : null}
       <DetailCard
         rows={[

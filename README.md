@@ -56,6 +56,12 @@ Leave it unset on Preview and Development so those builds stay `noindex`. Option
   departures with deposits, and enquiry-only), modelled as a discriminated union. Both the booking
   UI and the JSON-LD `Offer` call `quote()`, so the price a guest sees and the price Google indexes
   cannot drift apart.
+- **`content/photography/`** — the photography section, modelled as its own discriminated union
+  (`PhotographyCore`) rather than squeezed into `TourCore`. Two families sit under `/photography`
+  and must never be confused: an `experience` is a photographer photographing the **guest** (a
+  ladder of packages, priced per session), a `workshop` is the **guest learning** photography (a
+  multi-day fixed departure that only runs once its minimum group is reached). Every card, hub and
+  feed renders the `promise` line for exactly that reason. Adding a product is a new folder.
 - **`lib/seo/`** — one JSON-LD `@graph` per page, cross-referenced by `@id`. `graph.ts` builds the
   nodes, `meta.ts` the metadata, `ids.ts` the stable identifiers.
 - **`app/[lang]/layout.tsx`** is the root layout. It lives under the dynamic segment so
@@ -79,6 +85,7 @@ Harvested from waytocrete.com via the Novamira MCP and validated by `npm run con
 | Tours | 21 |
 | Guides | 29 (incl. 4 answer pages that never existed on WordPress) |
 | Places | 12 attraction entities |
+| Photography | 2 — one shoot experience (4 packages), one 4-day beginner workshop |
 | Reviews | 15 — **0 with a numeric rating**, so no `AggregateRating` is emitted |
 
 Re-sync by re-running the harvest; the linter is the gate. Anything with a structural file but no

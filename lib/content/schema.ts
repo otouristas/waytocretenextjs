@@ -291,10 +291,19 @@ export const TourCore = z.object({
     .optional(),
 
   featured: z.boolean().default(false),
+  /**
+   * `unavailable` keeps the indexed page live but stops booking CTAs.
+   * Default `open` so existing tours do not need a field.
+   */
+  availability: z.enum(["open", "unavailable"]).default("open"),
   /** Old slugs that 301 here. Generates the redirect map at build time. */
   supersedes: z.array(z.string()).default([]),
 });
 export type TourCore = z.infer<typeof TourCore>;
+
+export function tourIsOpen(core: Pick<TourCore, "availability">) {
+  return core.availability !== "unavailable";
+}
 
 const FaqItem = z.object({
   q: z.string().min(1),
@@ -578,3 +587,196 @@ export const PlannerCopyFile = z.object({
   stops: z.record(z.string(), PlannerStopCopy),
 });
 export type PlannerCopyFile = z.infer<typeof PlannerCopyFile>;
+
+/* ────────────────────────────── photography ────────────────────────────── */
+
+/**
+ * The photography section.
+ *
+ * Two product families live here and they are deliberately modelled as one
+ * discriminated union rather than two loose shapes:
+ *
+ *   `experience` — a professional photographer shoots the GUEST. Sold as a
+ *                  ladder of packages, each with its own price, duration,
+ *                  party size and delivered image count.
+ *   `workshop`   — the GUEST learns photography. Sold as a multi-day, fixed
+ *                  seasonal departure that only runs once a minimum group is
+ *                  reached.
+ *
+ * Confusing the two is the single biggest risk this section carries — a guest
+ * who books a workshop expecting portraits of themselves has been mis-sold —
+ * so the `kind` discriminant is what every page, hub and feed keys off, and
+ * neither variant can quietly acquire the other's fields.
+ */
+
+/** The landscapes a shoot can be built around. Not a studio list. */
+export const PhotoSetting = z.enum([
+  "beaches",
+  "mountains",
+  "villages",
+  "old-town",
+  "gorges",
+  "olive-groves",
+  "viewpoints",
+  "golden-hour",
+]);
+export type PhotoSetting = z.infer<typeof PhotoSetting>;
+
+/** What the guest brings to a workshop. Explicitly includes phones. */
+export const PhotoGear = z.enum(["dslr", "mirrorless", "compact", "smartphone"]);
+export type PhotoGear = z.infer<typeof PhotoGear>;
+
+/**
+ * One rung of the shoot ladder.
+ *
+ * `editedPhotos` is a `[min, max]` range where a null max renders "200+".
+ * It is stored as data rather than prose because the operator's brief is
+ * explicit that the number must be identical everywhere it appears — page,
+ * package card, JSON-LD, llms.txt — and prose in four places drifts.
+ */
+export const PhotoPackage = z.object({
+  id: Slug,
+  priceEur: z.number().positive(),
+  currency: z.literal("EUR").default("EUR"),
+  minutes: z.number().int().positive(),
+  /** Upper bound for ranges like "7–8 hours". Null means an exact duration. */
+  minutesMax: z.number().int().positive().nullable().default(null),
+  maxGuests: z.number().int().min(1),
+  /** `[min, max]` locations visited. `[1, 1]` is a single-location shoot. */
+  locations: z.tuple([z.number().int().min(1), z.number().int().min(1)]),
+  editedPhotos: z.tuple([
+    z.number().int().positive(),
+    z.number().int().positive().nullable(),
+  ]),
+  /** Private vehicle between locations. */
+  transport: z.boolean().default(false),
+  goldenHour: z.boolean().default(false),
+  /** At most one package per product may carry this. */
+  popular: z.boolean().default(false),
+});
+export type PhotoPackage = z.infer<typeof PhotoPackage>;
+
+/**
+ * A workshop departure.
+ *
+ * Exact dates are nullable on purpose. A departure that has not reached its
+ * minimum group has no dates to publish yet, and inventing them is exactly
+ * the promise this booking model exists to avoid. The status is what the
+ * page renders a call to action from:
+ *
+ *   `confirmed` — minimum reached, the departure runs, book it.
+ *   `forming`   — taking requests; runs when the minimum is reached.
+ *   `limited`   — forming, and additionally subject to weather and demand.
+ *                 Early December is the case this exists for.
+ */
+export const PhotoDeparture = z.object({
+  id: z.string().min(1),
+  /** Which seasonal edition this belongs to — see `PhotographyCopy.editions`. */
+  edition: Slug,
+  /** The month it sits in, `YYYY-MM`. Drives ordering and expiry. */
+  month: z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/, "expected YYYY-MM"),
+  start: IsoDate.nullable().default(null),
+  end: IsoDate.nullable().default(null),
+  status: z.enum(["confirmed", "forming", "limited"]),
+  /** Places still open. Null when ops has not counted — never guessed. */
+  spotsLeft: z.number().int().nonnegative().nullable().default(null),
+});
+export type PhotoDeparture = z.infer<typeof PhotoDeparture>;
+
+export const PhotoWorkshop = z.object({
+  days: z.number().int().min(2),
+  currency: z.literal("EUR").default("EUR"),
+  /** Per person, not per group. */
+  standard: z.number().positive(),
+  earlyBird: z.number().positive().nullable().default(null),
+  /** The workshop only operates once `groupMin` is reached. */
+  groupMin: z.number().int().min(1),
+  groupMax: z.number().int().min(1),
+  gear: z.array(PhotoGear).min(1),
+  departures: z.array(PhotoDeparture).min(1),
+});
+export type PhotoWorkshop = z.infer<typeof PhotoWorkshop>;
+
+const PhotoShared = {
+  slug: Slug,
+  /** Sort order inside its family hub. Lower first, ties break on slug. */
+  order: z.number().int().default(0),
+  settings: z.array(PhotoSetting).default([]),
+  /** Attractions the shoot or the workshop uses, as /places slugs. */
+  places: z.array(Slug).default([]),
+  hero: MediaRef,
+  gallery: z.array(MediaRef).default([]),
+  featured: z.boolean().default(false),
+  supersedes: z.array(z.string()).default([]),
+};
+
+export const PhotographyCore = z.discriminatedUnion("kind", [
+  z.object({
+    kind: z.literal("experience"),
+    ...PhotoShared,
+    packages: z.array(PhotoPackage).min(1),
+  }),
+  z.object({
+    kind: z.literal("workshop"),
+    ...PhotoShared,
+    workshop: PhotoWorkshop,
+  }),
+]);
+export type PhotographyCore = z.infer<typeof PhotographyCore>;
+export type PhotographyKind = PhotographyCore["kind"];
+
+export const PhotographyCopy = z.object({
+  lang: LangEnum,
+  state: TranslationState,
+  title: z.string().min(1),
+  tagline: z.string().optional(),
+  seoTitle: z.string().min(1).max(70),
+  seoDescription: z.string().min(50).max(165),
+  /**
+   * The one sentence that separates the two families: "we photograph you" or
+   * "you learn to photograph". Rendered on every card and at the top of every
+   * page, because a guest who confuses the two has been mis-sold.
+   */
+  promise: z.string().min(1),
+  summary: z.string().min(1),
+  overview: z
+    .union([z.string().min(1), z.array(z.string().min(1))])
+    .transform((v) => (Array.isArray(v) ? v : v.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean))),
+  highlights: z.array(z.string().min(1)).min(1),
+  /** Keyed by `PhotoPackage.id`. Lint enforces one entry per package. */
+  packages: z
+    .array(
+      z.object({
+        id: Slug,
+        name: z.string().min(1),
+        tagline: z.string().min(1),
+        features: z.array(z.string().min(1)).min(1),
+      }),
+    )
+    .default([]),
+  /** Keyed by `PhotoSetting`. */
+  settings: z
+    .array(z.object({ id: PhotoSetting, name: z.string().min(1), blurb: z.string().min(1) }))
+    .default([]),
+  /** The workshop curriculum, one entry per day. */
+  days: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        focus: z.string().min(1),
+        topics: z.array(z.string().min(1)).min(1),
+      }),
+    )
+    .default([]),
+  /** Keyed by `PhotoDeparture.edition`. */
+  editions: z
+    .array(z.object({ id: Slug, name: z.string().min(1), blurb: z.string().min(1) }))
+    .default([]),
+  included: z.array(z.string().min(1)).min(1),
+  excluded: z.array(z.string().min(1)).default([]),
+  faqs: z.array(FaqItem).default([]),
+  priceNote: z.string().optional(),
+  /** How booking actually works — request-to-join, deposits, confirmation. */
+  bookingNote: z.string().optional(),
+});
+export type PhotographyCopy = z.infer<typeof PhotographyCopy>;

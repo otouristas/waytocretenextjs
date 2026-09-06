@@ -30,6 +30,8 @@ export type DeskCopy = {
   noLiveCalendar: string;
   whatsappHint: string;
   emptyChat: string;
+  pausedTour: string;
+  cashPay: string;
 };
 
 const EN: DeskCopy = {
@@ -72,6 +74,10 @@ const EN: DeskCopy = {
   noLiveCalendar: "No live calendar. Ask them to request the date on this page or WhatsApp.",
   whatsappHint: "WhatsApp is usually fastest for a same-day reply.",
   emptyChat: "Say what you need the desk to hold.",
+  pausedTour:
+    "{title} is temporarily not available. Do not take a booking for it — suggest another gastronomy day, or they can leave a note for when it returns.",
+  cashPay:
+    "On tours, paying cash on the day of arrival is 10% off. They request it on the tour page, we email a CASH10 code, and they pay in cash when we pick them up — not on the live checkout.",
 };
 
 const DE: DeskCopy = {
@@ -114,6 +120,10 @@ const DE: DeskCopy = {
   noLiveCalendar: "Kein Live-Kalender. Bitte das Datum auf dieser Seite oder per WhatsApp anfragen.",
   whatsappHint: "WhatsApp ist meist am schnellsten für eine Antwort am selben Tag.",
   emptyChat: "Sagen Sie, was der Desk halten soll.",
+  pausedTour:
+    "{title} ist zurzeit nicht verfügbar. Nicht buchen — einen anderen Kulinarik-Tag vorschlagen, oder sie hinterlassen eine Notiz für später.",
+  cashPay:
+    "Bei Touren gibt es 10 % Rabatt bei Barzahlung am Ankunftstag. Sie fragen das auf der Tourseite an, wir mailen einen CASH10-Code, bar bei der Abholung — nicht in der Live-Kasse.",
 };
 
 const IT: DeskCopy = {
@@ -156,6 +166,10 @@ const IT: DeskCopy = {
   noLiveCalendar: "Nessun calendario live. Chiedete la data in questa pagina o su WhatsApp.",
   whatsappHint: "WhatsApp è di solito il più veloce per una risposta in giornata.",
   emptyChat: "Dite cosa deve tenere il desk.",
+  pausedTour:
+    "{title} al momento non è disponibile. Non prendere una prenotazione — proponete un'altra giornata gastronomica, o possono lasciare un messaggio per quando torna.",
+  cashPay:
+    "Sui tour, pagare in contanti il giorno dell'arrivo è il 10% in meno. Lo chiedono sulla pagina del tour, mandiamo un codice CASH10, pagano in contanti al ritiro — non sul checkout live.",
 };
 
 const FR: DeskCopy = {
@@ -198,6 +212,10 @@ const FR: DeskCopy = {
   noLiveCalendar: "Pas de calendrier live. Demandez la date sur cette page ou par WhatsApp.",
   whatsappHint: "WhatsApp est en général le plus rapide pour une réponse le jour même.",
   emptyChat: "Dites ce que le desk doit retenir.",
+  pausedTour:
+    "{title} est temporairement indisponible. Ne prenez pas de réservation — proposez une autre journée gastronomie, ou ils peuvent laisser un mot pour plus tard.",
+  cashPay:
+    "Sur les excursions, payer en espèces le jour de l'arrivée fait 10 % de moins. Ils le demandent sur la page, nous envoyons un code CASH10, paiement en espèces à la prise en charge — pas sur le checkout live.",
 };
 
 const SV: DeskCopy = {
@@ -240,6 +258,10 @@ const SV: DeskCopy = {
   noLiveCalendar: "Ingen livekalender. Be dem fråga efter datumet på den här sidan eller WhatsApp.",
   whatsappHint: "WhatsApp är oftast snabbast för svar samma dag.",
   emptyChat: "Säg vad desken ska hålla.",
+  pausedTour:
+    "{title} är tillfälligt inte tillgänglig. Ta ingen bokning — föreslå en annan matdag, eller så kan de lämna en notis till när den kommer tillbaka.",
+  cashPay:
+    "På turer är kontantbetalning på ankomstdagen 10 % rabatt. De begär det på tursidan, vi mejlar en CASH10-kod, de betalar kontant vid hämtning — inte i livekassan.",
 };
 
 export const DESK: Record<Lang, DeskCopy> = {

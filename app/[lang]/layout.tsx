@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics, GSC_VERIFICATION } from "@/components/analytics";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SoldOn } from "@/components/sold-on";
 import { DeskChrome } from "@/components/desk/desk-chrome";
 import { JsonLd } from "@/components/seo/json-ld";
 import { LANGS, LANG_META, parseLang, type Lang } from "@/lib/i18n/langs";
@@ -114,6 +115,7 @@ export default async function RootLayout({
             <main id="main" className="flex-1">
               {children}
             </main>
+            <SoldOn lang={lang} />
             <Footer lang={lang} />
             <DeskChrome lang={lang} />
           </div>

@@ -11,8 +11,6 @@ import {
   EMAIL,
   PHONE,
   PHONE_DISPLAY,
-  PHONE_OFFICE,
-  PHONE_OFFICE_DISPLAY,
   WHATSAPP,
 } from "@/lib/site";
 import { ContactMap } from "@/components/contact-map";
@@ -82,8 +80,7 @@ export function ContactView({
           icon={<Phone className="size-5" />}
           title={copy.phone}
           value={PHONE_DISPLAY}
-          note={fill(copy.officeLine, { n: PHONE_OFFICE_DISPLAY })}
-          secondaryHref={`tel:${PHONE_OFFICE}`}
+          note={copy.phoneNote}
         />
         <Channel
           href={`mailto:${EMAIL}`}
@@ -240,7 +237,6 @@ function Channel({
   title,
   value,
   note,
-  secondaryHref,
   accent = false,
 }: {
   href: string;
@@ -249,7 +245,6 @@ function Channel({
   title: string;
   value: string;
   note: string;
-  secondaryHref?: string;
   accent?: boolean;
 }) {
   const cardClass = [
@@ -262,45 +257,22 @@ function Channel({
   const noteClass = ["mt-auto text-xs leading-relaxed", accent ? "text-paper/80" : "text-faint"].join(
     " ",
   );
-  const head = (
-    <>
-      <span
-        className={[
-          "grid size-10 place-items-center rounded-full",
-          accent ? "bg-paper/15 text-paper" : "bg-olive-50 text-accent",
-        ].join(" ")}
-      >
-        {icon}
-      </span>
-      <span>
-        <span className="block font-display text-lg">{title}</span>
-        <span className={accent ? "text-sm text-paper/90" : "text-sm text-muted"}>{value}</span>
-      </span>
-    </>
-  );
-
-  // A second tel: link cannot live inside the card <a> — nested anchors
-  // hydrate as invalid HTML. The office landline stays on the same card
-  // as a sibling link: same channel, same people, just a desk number.
-  if (secondaryHref) {
-    return (
-      <li>
-        <div className={cardClass}>
-          <a href={href} {...linkProps} className="flex flex-col gap-3">
-            {head}
-          </a>
-          <a href={secondaryHref} className={`${noteClass} underline decoration-line hover:text-accent`}>
-            {note}
-          </a>
-        </div>
-      </li>
-    );
-  }
 
   return (
     <li>
       <a href={href} {...linkProps} className={cardClass}>
-        {head}
+        <span
+          className={[
+            "grid size-10 place-items-center rounded-full",
+            accent ? "bg-paper/15 text-paper" : "bg-olive-50 text-accent",
+          ].join(" ")}
+        >
+          {icon}
+        </span>
+        <span>
+          <span className="block font-display text-lg">{title}</span>
+          <span className={accent ? "text-sm text-paper/90" : "text-sm text-muted"}>{value}</span>
+        </span>
         <span className={noteClass}>{note}</span>
       </a>
     </li>

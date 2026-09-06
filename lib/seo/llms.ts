@@ -2,9 +2,11 @@ import "server-only";
 import { LANGS, langPath, DEFAULT_LANG } from "@/lib/i18n/langs";
 import {
   allGuides,
+  allPhotography,
   allPlaces,
   allTours,
   allReviews,
+  upcomingDepartures,
   ratingSummary,
   reviewsForTour,
   reviewsForTransfers,
@@ -13,6 +15,13 @@ import {
 import { transfers, transferRoutes, shortPlace, routeDuration, estimateRoute } from "@/lib/transfers";
 import { durationLabel } from "@/lib/content/format";
 import { isPriced, priceFrom, priceTo } from "@/lib/pricing";
+import {
+  departureMonthLabel,
+  departureStatusLabel,
+  editedPhotosCount,
+  gearLabel,
+  photoPriceFrom,
+} from "@/lib/photography";
 import { legalDoc, LEGAL_SLUGS } from "@/lib/content/legal";
 import {
   ADDRESS_DISPLAY,
@@ -72,6 +81,28 @@ function priceLine(price: Parameters<typeof isPriced>[0]): string {
   return `€${low} ${unit}`;
 }
 
+/**
+ * "€160–650 per session, 4 packages" / "€795–895 per person, 4 days".
+ *
+ * Photography prices never pass through `priceLine`: the tour price model
+ * cannot express a package ladder, and forcing it through would have meant
+ * either dropping the top of the range or inventing a per-person figure for
+ * a session sold per party.
+ */
+function photoLine(core: Parameters<typeof photoPriceFrom>[0]): string {
+  if (core.kind === "experience") {
+    const prices = core.packages.map((pkg) => pkg.priceEur);
+    const low = Math.min(...prices);
+    const high = Math.max(...prices);
+    return `€${low}–${high} per session (whole party), ${core.packages.length} packages, ${core.packages
+      .map((pkg) => `${editedPhotosCount(pkg)} edited photos`)
+      .join(" / ")}.`;
+  }
+  const { standard, earlyBird, days, groupMin, groupMax } = core.workshop;
+  const price = earlyBird ? `€${earlyBird}–${standard}` : `€${standard}`;
+  return `${price} per person, ${days} days, group of ${groupMin}–${groupMax}, beginner level.`;
+}
+
 function ratingClause(
   reviews: Parameters<typeof ratingSummary>[0],
 ): string {
@@ -108,6 +139,7 @@ export function llmsTxt(): string {
   const places = allPlaces(LANG);
   const guides = allGuides(LANG);
   const routes = transferRoutes();
+  const photography = allPhotography(LANG);
   const rating = ratingSummary(allReviews());
 
   const lines: string[] = [];
@@ -144,6 +176,16 @@ export function llmsTxt(): string {
     lines.push(
       `- [${copy.title}](${url(`/tours/${core.slug}`)}): ${durationLabel(core.durationMinutes, LANG)}, ${core.difficulty}, ${priceLine(core.price)}.${ratingClause(reviewsForTour(core.slug))} ${copy.summary.split(". ")[0]}.`,
     );
+  }
+  lines.push("");
+
+  lines.push("## Photography");
+  lines.push("");
+  lines.push(
+    `- [Photography in Crete](${url("/photography")}): two separate products — an outdoor photoshoot OF the guest, and a multi-day workshop where the guest LEARNS photography. They are not versions of each other.`,
+  );
+  for (const { core, copy } of photography) {
+    lines.push(`- [${copy.title}](${url(`/photography/${core.slug}`)}): ${photoLine(core)} ${copy.promise}`);
   }
   lines.push("");
 
@@ -256,6 +298,70 @@ export function llmsFullTxt(): string {
       out.push(`Included: ${copy.included.join("; ")}`);
       out.push("");
     }
+    if (copy.excluded.length > 0) {
+      out.push(`Not included: ${copy.excluded.join("; ")}`);
+      out.push("");
+    }
+    for (const faq of copy.faqs) {
+      out.push(`**${faq.q}** ${faq.a}`);
+      out.push("");
+    }
+  }
+
+  /* ── photography ───────────────────────────────────────────────────── */
+  out.push("---");
+  out.push("");
+  out.push("## Photography");
+  out.push("");
+  out.push(
+    "Two separate products under one section, and confusing them is the mistake to avoid. The Photography Experience is a professional photographer photographing the GUEST outdoors in Crete. The Photography Escape is a multi-day workshop in which the GUEST learns to photograph Crete. Neither is a version of the other.",
+  );
+  out.push("");
+  for (const { core, copy } of allPhotography("en")) {
+    out.push(`### ${copy.title}`);
+    out.push("");
+    out.push(`URL: ${url(`/photography/${core.slug}`)}`);
+    out.push(`What it is: ${copy.promise}`);
+    out.push("");
+    out.push(copy.summary);
+    out.push("");
+    out.push(`- Price: ${photoLine(core)}`);
+    if (core.kind === "experience") {
+      for (const pkg of core.packages) {
+        const name = copy.packages.find((entry) => entry.id === pkg.id)?.name ?? pkg.id;
+        const hours = pkg.minutesMax
+          ? `${pkg.minutes / 60}–${pkg.minutesMax / 60} hours`
+          : `${pkg.minutes / 60} hour${pkg.minutes === 60 ? "" : "s"}`;
+        const locations =
+          pkg.locations[0] === pkg.locations[1]
+            ? `${pkg.locations[0]} location${pkg.locations[0] === 1 ? "" : "s"}`
+            : `${pkg.locations[0]}–${pkg.locations[1]} locations`;
+        out.push(
+          `  - ${name}: €${pkg.priceEur}, ${hours}, up to ${pkg.maxGuests} people, ${locations}, ${editedPhotosCount(pkg)} professionally edited photos${pkg.transport ? ", private transport between locations" : ""}${pkg.goldenHour ? ", Golden Hour session when possible" : ""}.`,
+        );
+      }
+    } else {
+      out.push(
+        `- Group size: ${core.workshop.groupMin}–${core.workshop.groupMax}. The workshop only runs once the minimum is reached, so joining is a request, not an instant confirmation.`,
+      );
+      out.push(
+        `- Cameras supported: ${core.workshop.gear.map((gear) => gearLabel(gear, "en")).join(", ")}. No previous professional experience required.`,
+      );
+      for (const departure of upcomingDepartures(core.workshop)) {
+        out.push(
+          `- Departure ${departureMonthLabel(departure.month, "en")}: ${departureStatusLabel(departure.status, "en")}${departure.start && departure.end ? `, ${departure.start} to ${departure.end}` : ", exact dates confirmed on departure"}.`,
+        );
+      }
+      for (const day of copy.days) {
+        out.push(`- ${day.title}: ${day.topics.join(", ")}.`);
+      }
+    }
+    out.push("");
+    out.push("Highlights:");
+    for (const highlight of copy.highlights) out.push(`- ${highlight}`);
+    out.push("");
+    out.push(`Included: ${copy.included.join("; ")}`);
+    out.push("");
     if (copy.excluded.length > 0) {
       out.push(`Not included: ${copy.excluded.join("; ")}`);
       out.push("");

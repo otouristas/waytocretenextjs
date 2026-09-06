@@ -597,3 +597,65 @@ html.dark .planner-map .leaflet-tile-pane {
     animation: none;
   }
 }
+
+/**
+ * Marketplace logo reel. Two copies of the set sit side by side; the
+ * animation shifts exactly one set's width so the loop does not jump.
+ * Hover, focus-within and the pause control freeze it. Reduced-motion
+ * readers get a wrapped row and never see the duplicate.
+ */
+@keyframes sold-on-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.sold-on-mask {
+  overflow: hidden;
+  margin-top: 1.75rem;
+  padding-block: 1.25rem 2.5rem;
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.sold-on-marquee {
+  display: flex;
+  width: max-content;
+  animation: sold-on-scroll 42s linear infinite;
+}
+
+.sold-on-set {
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.sold-on-mask:hover .sold-on-marquee,
+.sold-on-mask:focus-within .sold-on-marquee,
+.sold-on-marquee-still {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sold-on-marquee {
+    animation-name: none !important;
+    transform: none;
+    width: auto;
+    justify-content: center;
+  }
+  .sold-on-set {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+    padding-inline: 1rem;
+  }
+  .sold-on-mask {
+    mask-image: none;
+  }
+  .sold-on-marquee [data-duplicate],
+  .sold-on-pause {
+    display: none;
+  }
+}

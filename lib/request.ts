@@ -1,4 +1,10 @@
-export type RequestKind = "tour" | "transfer" | "contact" | "partner" | "custom-day";
+export type RequestKind =
+  | "tour"
+  | "transfer"
+  | "contact"
+  | "partner"
+  | "custom-day"
+  | "photography";
 
 export type CustomDayStop = {
   name: string;
@@ -36,6 +42,18 @@ export type RequestPayload = {
   message?: string;
   wedding?: boolean;
   itinerary?: CustomDayItinerary;
+  payCash?: boolean;
+  cashCode?: string;
+  /**
+   * Photography requests only.
+   *
+   * The chosen package ("explorer") or workshop departure ("2026-10"), sent
+   * as its own field rather than buried in `message`, so the desk can read
+   * what was actually asked for without parsing prose. `photoPackage` is the
+   * literal string "custom" when the guest wants something off the ladder.
+   */
+  photoPackage?: string;
+  departure?: string;
 };
 
 export function mailtoFor(payload: RequestPayload, to: string) {
@@ -45,6 +63,9 @@ export function mailtoFor(payload: RequestPayload, to: string) {
 }
 
 export function subjectFor(payload: RequestPayload) {
+  if (payload.kind === "tour" && payload.payCash && payload.cashCode) {
+    return `Guest desk: CASH 10% ${payload.cashCode} · ${payload.slug || "day"} · ${payload.date || "date TBC"}`;
+  }
   if (payload.kind === "tour") return `Guest desk: ${payload.slug || "day"} · ${payload.date || "date TBC"}`;
   if (payload.kind === "custom-day") {
     const bits = [
@@ -52,6 +73,15 @@ export function subjectFor(payload: RequestPayload) {
       payload.date || "date TBC",
       payload.guests ? `${payload.guests} guests` : null,
       payload.itinerary?.price,
+    ].filter(Boolean);
+    return bits.join(" · ");
+  }
+  if (payload.kind === "photography") {
+    const bits = [
+      "Guest desk: photography",
+      payload.slug || "session",
+      payload.photoPackage || payload.departure || null,
+      payload.date || "date TBC",
     ].filter(Boolean);
     return bits.join(" · ");
   }
@@ -94,10 +124,14 @@ export function bodyFor(payload: RequestPayload) {
     ["Time", payload.time],
     ["Guests", payload.guests],
     ["Experience", payload.slug],
+    ["Package", payload.photoPackage],
+    ["Departure", payload.departure],
     ["Pickup", payload.pickup],
     ["Drop-off", payload.dropoff],
     ["Flight", payload.flight],
     ["Wedding/event", payload.wedding ? "yes" : undefined],
+    ["Pay cash 10%", payload.payCash ? "yes" : undefined],
+    ["Cash code", payload.cashCode],
     ["Message", payload.message],
   ];
   const head = rows

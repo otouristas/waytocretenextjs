@@ -1,0 +1,190 @@
+{
+  "lang": "de",
+  "state": "reviewed",
+  "title": "Crete Photography Escape",
+  "tagline": "Ein viertägiger Foto-Workshop für Einsteiger durch die Landschaften Kretas",
+  "seoTitle": "Crete Photography Escape | 4-Tage-Workshop für Einsteiger",
+  "seoDescription": "Viertägiger Foto-Workshop für Einsteiger auf Kreta. Kleine Gruppen von vier bis sechs, tägliche Lektionen, Sonnenauf- und -untergang, ab 795 EUR pro Person.",
+  "promise": "Sie lernen fotografieren. Vier Tage lang stehen Sie hinter der Kamera, nicht davor.",
+  "summary": "Der Crete Photography Escape ist ein viertägiger Foto-Workshop für Einsteiger und Enthusiasten, in kleinen Gruppen von vier bis sechs Teilnehmenden. Jeder Tag verbindet eine Fotoexkursion mit praktischem Unterricht: Kameraeinstellungen und Bildgestaltung am ersten Tag, Landschafts- und Naturfotografie am zweiten, Dörfer und lokales Leben am dritten, Goldene Stunde, Bildergeschichten und Lightroom-Grundlagen am vierten. Jede Kamera ist willkommen, auch das Smartphone, Vorkenntnisse sind nicht nötig. Der Preis liegt bei 895 EUR pro Person, 795 EUR zum Frühbucher-Startpreis, und enthält einen professionellen Dozenten, privaten Transport und alle Exkursionen. Termine gibt es im Frühling (April und Mai), im Herbst (Oktober und November) und Anfang Dezember; jeder Termin gilt als bestätigt, sobald vier Teilnehmende zugesagt haben.",
+  "overview": [
+    "Sie besuchen Kreta nicht nur. Sie lernen, es zu fotografieren. Dieser Unterschied ist der ganze Bauplan des Workshops: Jeder Tag ist darauf ausgelegt, Sie zur richtigen Stunde mit einer Kamera in der Hand in eine Landschaft zu bringen — und jemanden daneben zu stellen, der erklären kann, warum das Bild funktioniert oder eben nicht.",
+    "Er ist für Einsteiger geschrieben. Wenn Sie eine Kamera besitzen, die Sie nie aus der Automatik geholt haben, oder ein Telefon, von dem Sie ahnen, dass es mehr kann, als Sie ihm abverlangen, sind Sie genau die richtige Person. Profis wird es zu langsam sein. Das ist Absicht — die Gruppe bleibt bei vier bis sechs Personen, damit niemand darauf wartet, eine Frage stellen zu dürfen.",
+    "Vier Tage, vier Themen und viel Weg dazwischen. Morgens und abends wird fotografiert, weil die Insel dann das Licht liefert. In der Tagesmitte liegen Unterricht, Bildbesprechung und am letzten Tag die Bearbeitung. Am Ende halten Sie eigene Fotografien in der Hand, deren Entstehung Sie wirklich verstehen.",
+    "Die genauen Orte verschieben sich mit Wetter, Jahreszeit und Licht, und wir behaupten nichts anderes. Was sich nicht ändert, sind der Unterricht, die Gruppengröße und die Tatsache, dass der Dozent alle vier Tage bei Ihnen bleibt."
+  ],
+  "highlights": [
+    "Vier Tage geführte Fotoexkursionen mit einem professionellen Dozenten",
+    "Kleine Gruppe von vier bis sechs Personen, damit jede und jeder Zeit bekommt",
+    "Jede Kamera funktioniert: DSLR, spiegellos, Kompakt oder das Telefon in Ihrer Tasche",
+    "Sonnenaufgangs- und Sonnenuntergangssessions, geplant nach dem Licht statt nach der Uhr",
+    "Berge, Schluchten, Küste, Olivenhaine und traditionelle Dörfer",
+    "Ein Lightroom- und Bildauswahl-Workshop am letzten Tag",
+    "Teilnahmezertifikat und eine Bildserie, von der Sie wissen, wie sie entstanden ist"
+  ],
+  "days": [
+    {
+      "title": "Kameragrundlagen & Bildgestaltung",
+      "focus": "Die Bedienung, das Belichtungsdreieck und warum ein Foto komponiert wird, bevor es aufgenommen wird.",
+      "topics": [
+        "Die Einstellungen Ihrer Kamera, welche Sie auch mitgebracht haben",
+        "Blende und Schärfentiefe",
+        "Verschlusszeit und Bewegung",
+        "ISO, Rauschen und wann man aufhören darf, sich darum zu sorgen",
+        "Bildgestaltung und Bildausschnitt",
+        "Arbeiten mit natürlichem Licht",
+        "Porträtfotografie",
+        "Eine erste Session zur Goldenen Stunde und zum Sonnenuntergang"
+      ]
+    },
+    {
+      "title": "Landschafts- & Naturfotografie",
+      "focus": "Weites Land: Berge, Küste und Schluchten — und wie eine Landschaft nicht flach wird.",
+      "topics": [
+        "Berglandschaften",
+        "Küste und Meer",
+        "Schluchten und Fels",
+        "Kompositionstechniken für weite Szenen",
+        "Führende Linien",
+        "Vorder-, Mittel- und Hintergrund",
+        "Wechselndes Licht lesen und nutzen"
+      ]
+    },
+    {
+      "title": "Kreta, Dörfer & lokales Leben",
+      "focus": "Menschen und Orte: die schwierigere, lohnendere Hälfte der Reisefotografie.",
+      "topics": [
+        "Traditionelle Dörfer",
+        "Architektur und Details",
+        "Streetfotografie",
+        "Menschen und Lifestyle respektvoll fotografieren",
+        "Eine Geschichte über mehrere Bilder erzählen",
+        "Lokales Essen und Kultur fotografieren"
+      ]
+    },
+    {
+      "title": "Goldene Stunde, Bildergeschichten & Bearbeitung",
+      "focus": "Aus vier Tagen Dateien eine Bildserie machen, die man jemandem zeigen würde.",
+      "topics": [
+        "Eine Session bei Sonnenaufgang oder am frühen Morgen",
+        "Kreative und experimentelle Fotografie",
+        "Eine fotografische Geschichte aufbauen",
+        "Die besten Bilder auswählen — und die Lieblinge aussortieren",
+        "Einführung in Lightroom und Grundlagen der Bearbeitung",
+        "Eine abschließende Session zum Sonnenuntergang"
+      ]
+    }
+  ],
+  "editions": [
+    {
+      "id": "spring",
+      "name": "Frühlings-Edition",
+      "blurb": "April und Mai. Wildblumen, grüne Landschaften, noch Schnee auf den Gipfeln und Dörfer, die am lebendigsten sind."
+    },
+    {
+      "id": "autumn",
+      "name": "Herbst-Edition",
+      "blurb": "Oktober und November. Goldenes Licht, Olivenhaine in der Ernte, ruhige Küste und lange Schatten den ganzen Tag."
+    },
+    {
+      "id": "winter",
+      "name": "Frühwinter-Edition",
+      "blurb": "Anfang Dezember. Dramatischer Himmel, hartes Winterlicht, leere Berge und eine Küste mit Wetter darin."
+    }
+  ],
+  "settings": [
+    {
+      "id": "mountains",
+      "name": "Berge",
+      "blurb": "Die Hochebenen von Psiloritis und Lefka Ori, wo das Wetter die halbe Bildgestaltung übernimmt."
+    },
+    {
+      "id": "gorges",
+      "name": "Schluchten",
+      "blurb": "Kourtaliotiko und Imbros: senkrechter Fels, tiefer Schatten und die schwierigsten Belichtungsfragen der Woche."
+    },
+    {
+      "id": "beaches",
+      "name": "Küste",
+      "blurb": "Prevelis Palmenfluss und die Felsplatten von Triopetra — Langzeitbelichtungen, Spiegelungen und Sonnenuntergänge."
+    },
+    {
+      "id": "villages",
+      "name": "Traditionelle Dörfer",
+      "blurb": "Margarites und Spili: Türen, Fensterläden, Katzen und die Geduld, die Streetfotografie verlangt."
+    },
+    {
+      "id": "old-town",
+      "name": "Altstadt von Rethymno",
+      "blurb": "Venezianische Gassen und ein arbeitender Hafen, am besten im ersten Licht, bevor die Stadt sich füllt."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Olivenhaine",
+      "blurb": "Terrassen aus silbrigem Laub, die das Licht in alle Richtungen streuen. Der freundlichste Ort zum Porträtüben."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Aussichtspunkte",
+      "blurb": "Kapellenhügel und Haltebuchten, von denen sich die gesamte Südküste auf einmal öffnet."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Sonnenaufgang & Goldene Stunde",
+      "blurb": "Die zwei Stunden, die den Unterschied zwischen Schnappschuss und Fotografie ausmachen. Wir sind jeden Tag darin unterwegs."
+    }
+  ],
+  "included": [
+    "Ein professioneller Foto-Dozent an allen vier Tagen",
+    "Privater Transport während des gesamten Workshops",
+    "Vier Tage Fotoexkursionen",
+    "Sessions bei Sonnenaufgang und Sonnenuntergang",
+    "Landschafts-, Natur- und Küstenfotografie",
+    "Traditionelle Dörfer und lokales Leben",
+    "Tägliche Fotolektionen",
+    "Unterricht zu Kameraeinstellungen und Bildgestaltung",
+    "Praktische Anleitung direkt im Gelände",
+    "Ein Lightroom- und Bearbeitungs-Workshop für Einsteiger",
+    "Bildauswahl und visuelles Erzählen",
+    "Ausgewählte lokale Verpflegungs- und Genusserlebnisse",
+    "Professionelle Fotos der Gruppe während ausgewählter Sessions",
+    "Teilnahmezertifikat"
+  ],
+  "excluded": [
+    "Unterkunft",
+    "Flüge",
+    "Persönliche Ausgaben",
+    "Alkoholische Getränke",
+    "Eintrittsgelder, wo sie anfallen",
+    "Fotoausrüstung",
+    "Reiseversicherung"
+  ],
+  "faqs": [
+    {
+      "q": "Muss ich schon gut fotografieren können?",
+      "a": "Nein. Der Workshop ist für Einsteiger und Enthusiasten geschrieben, und Tag eins beginnt bei den Bedienelementen der Kamera. Wenn Sie die Automatik nie verlassen haben, sind Sie richtig. Berufsfotografen wird das Tempo zu langsam sein."
+    },
+    {
+      "q": "Welche Kamera brauche ich?",
+      "a": "Die, die Sie besitzen. DSLR, spiegellos, Kompaktkamera und Smartphone werden alle unterstützt, und der Unterricht richtet sich nach den Kameras, die dabei sind. Ausrüstung wird nicht gestellt, bringen Sie also das mit, was Sie danach weiter nutzen wollen."
+    },
+    {
+      "q": "Wie funktioniert die Buchung, wenn ein Termin noch nicht bestätigt ist?",
+      "a": "Der Workshop braucht vier Teilnehmende, deshalb ist die Anmeldung eine Anfrage und keine sofortige Bestätigung. Sie fragen einen Platz an, wir halten ihn, und der Termin wird schriftlich bestätigt, sobald sich vier Personen festgelegt haben. Vorher wird nichts abgebucht."
+    },
+    {
+      "q": "Wann findet der Workshop statt?",
+      "a": "In drei saisonalen Editionen: April und Mai, Oktober und November sowie Anfang Dezember. Termine Anfang Dezember stehen unter dem Vorbehalt der Mindestgruppe und brauchbaren Wetters, weil die Insel dann ruhiger und die Bedingungen weniger verlässlich sind."
+    },
+    {
+      "q": "Ist die Unterkunft enthalten?",
+      "a": "Nein. Unterkunft, Flüge und Reiseversicherung sind nicht enthalten, Sie wohnen also, wo und wie Sie möchten. Fragen Sie bei der Anfrage danach: Wir schlagen Optionen in der Nähe der Basis vor und können ein Zimmer als Zusatzleistung organisieren."
+    },
+    {
+      "q": "Sind die Orte genau die genannten?",
+      "a": "Die Themen und der Unterricht stehen fest, die genauen Orte nicht. Wetter, Jahreszeit und Licht entscheiden, wo eine Session die besten Bilder bringt, und der Dozent verschiebt einen Tag lieber, als eine mittelmäßige Location nach Plan abzuarbeiten."
+    }
+  ],
+  "priceNote": "Pro Person. Der Frühbucher-Startpreis gilt, solange sich die Gruppe eines Termins noch bildet.",
+  "bookingNote": "Plätze werden angefragt, nicht sofort bestätigt. Ein Termin läuft, sobald vier Teilnehmende zugesagt haben, und Sie erfahren es so oder so, bevor eine Zahlung erfolgt."
+}

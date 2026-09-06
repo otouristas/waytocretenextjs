@@ -1,6 +1,7 @@
 import "server-only";
 import { DEFAULT_LANG } from "@/lib/i18n/langs";
 import {
+  allPhotography,
   allTours,
   ratingsFor,
   reviewsForTour,
@@ -9,7 +10,7 @@ import {
 import { transferRoutes, shortPlace } from "@/lib/transfers";
 import { BRAND } from "@/lib/site";
 import { absolute, id } from "./ids";
-import { aggregateRatingNode, offerNode } from "./graph";
+import { aggregateRatingNode, offerNode, photographyNode } from "./graph";
 
 /**
  * /offers.json — a schema.org ItemList of every tour and transfer product.
@@ -35,6 +36,22 @@ export function offersJson(): object {
       ...(offer ? { offers: offer } : {}),
       ...(rating ? { aggregateRating: rating } : {}),
     });
+  }
+
+  // Photography products carry their own offer shape — a package ladder or an
+  // early-bird pair — so they are built by `photographyNode` rather than
+  // squeezed through the tour price model, which cannot express either.
+  for (const { core, copy } of allPhotography(lang)) {
+    items.push(
+      photographyNode({
+        lang,
+        core,
+        name: copy.title,
+        description: copy.summary,
+        images: [core.hero],
+        packageNames: Object.fromEntries(copy.packages.map((p) => [p.id, p.name])),
+      }) as Record<string, unknown>,
+    );
   }
 
   for (const route of transferRoutes()) {

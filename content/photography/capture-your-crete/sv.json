@@ -1,0 +1,154 @@
+{
+  "lang": "sv",
+  "state": "reviewed",
+  "title": "Fotoupplevelse – Capture Your Crete",
+  "tagline": "Utforska Kreta och låt era vackraste stunder bli professionellt fotograferade",
+  "seoTitle": "Fotoupplevelse på Kreta | Capture Your Crete",
+  "seoDescription": "Professionell utomhusfotografering på Kreta: stränder, byar, raviner och Golden Hour. Pass från en timme till en heldag, från 160 EUR, med onlinegalleri.",
+  "promise": "Vi fotograferar er. Ni behöver inte kunna något om fotografi.",
+  "summary": "Capture Your Crete är en fotoupplevelse utomhus, inte ett studiopass. En professionell fotograf möter er på hotellet eller på en plats ni väljer, går ön med er i allt från en timme till en hel dag och fotograferar er i den: porträtt, par, familjer och lifestylebilder mot kretensiska stränder, berg, byar och olivlundar. Fyra paket sträcker sig från 160 EUR för en timme på en plats med 30 till 40 redigerade bilder, till 650 EUR för sju till åtta timmar på tre eller fyra platser med privat fordon, lunchstopp, solnedgångspass och över 200 redigerade bilder. Varje paket levereras som ett privat onlinegalleri med utvalda, färgsatta och retuscherade bilder.",
+  "overview": [
+    "De flesta kommer hem från Kreta med en telefon full av bilder och inte en enda fotografi av sig själva. Den här upplevelsen finns för att rätta till det. Ni fortsätter utforska ön precis som ni planerat; en fotograf följer med och sköter tittandet.",
+    "Det är medvetet ingen studiofotografering. Ingen fond, ingen hyrd studio, ingen ljusrigg. Vi tar er till riktiga platser — en kuststräcka i den timme då havet blir klart, en bygata med ljuset fallande från sidan, en olivlund, en utsiktsplats ovanför en ravin — och fotograferar er där ni är. Inget arrangeras som inte behöver arrangeras.",
+    "Ni väljer längden, vi väljer timmen. Kretas ljus är som bäst tidigt och sent, så två timmar klockan sex på kvällen slår alltid fyra timmar mitt på dagen. Har ni ett fast fönster arbetar vi inom det och väljer platser som passar; är ni flexibla planerar vi kring Golden Hour, och det syns på bilderna.",
+    "Det som kommer tillbaka är ett urval, inte ett minneskort. Varje bild i ert galleri har valts ut, färgsatts och retuscherats. Det är hela poängen med siffrorna vi publicerar: 30 till 40 bilder ni faktiskt använder är värda mer än tusen ni aldrig öppnar."
+  ],
+  "highlights": [
+    "En professionell fotograf i en timme, en halvdag eller en heldag — ni väljer",
+    "Riktiga kretensiska platser: kust, berg, byar, raviner, olivlundar och utsiktspunkter",
+    "Naturliga porträtt, par-, familje- och lifestylebilder — ingen behöver posera på kommando",
+    "Golden Hour och solnedgång planerade efter ljuset, inte efter tidtabellen",
+    "30–40 till 200+ professionellt redigerade bilder, beroende på paket",
+    "Levereras som privat onlinegalleri med nedladdning i full upplösning"
+  ],
+  "packages": [
+    {
+      "id": "essential",
+      "name": "Essential",
+      "tagline": "En timme, en plats, ett riktigt bra galleri.",
+      "features": [
+        "Professionell färgkorrigering",
+        "Grundläggande porträttretusch",
+        "Vägledning från er fotograf hela passet igenom",
+        "Privat onlinegalleri med nedladdning i full upplösning"
+      ]
+    },
+    {
+      "id": "explorer",
+      "name": "Explorer",
+      "tagline": "Två timmar och en andra plats, så serien får bredd.",
+      "features": [
+        "Professionell färgsättning",
+        "Porträttretusch",
+        "Vägledning i posering och naturlig rörelse, så ingen behöver spela naturlig",
+        "Privat onlinegalleri med nedladdning i full upplösning"
+      ]
+    },
+    {
+      "id": "crete-story",
+      "name": "Crete Story",
+      "tagline": "En halvdag, tre landskap, en berättelse som hänger ihop.",
+      "features": [
+        "Platsrekognosering före dagen, så inget improviseras",
+        "Natur, by och kust förenade i ett enda pass",
+        "Privat onlinegalleri med nedladdning i full upplösning"
+      ]
+    },
+    {
+      "id": "full-day",
+      "name": "Full Day",
+      "tagline": "Från morgonljus till kvällsljus, med ön däremellan.",
+      "features": [
+        "Flera skilda landskap på en dag — kust, by och berg",
+        "Ett lokalt lunchstopp, valt lika mycket för utsikten som för maten",
+        "Ett solnedgångspass som avslutar dagen",
+        "Privat onlinegalleri med nedladdning i full upplösning"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "beaches",
+      "name": "Stränder och kust",
+      "blurb": "Rosa sand vid Elafonisi, palmfloden vid Preveli, de flata klipphällarna vid Triopetra. Bäst under de två sista ljustimmarna."
+    },
+    {
+      "id": "old-town",
+      "name": "Rethymnos gamla stad",
+      "blurb": "Venetianska portaler, hamnen och gränder smala nog att ljuset studsar mot väggarna. Fungerar tidigt, innan staden vaknar."
+    },
+    {
+      "id": "villages",
+      "name": "Traditionella byar",
+      "blurb": "Margarites, Spili och bergsbyarna ovanför — sten, fönsterluckor, kyrktorg och en och annan nyfiken granne."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Olivlundar",
+      "blurb": "Gamla terrasser av silverblad som mjukar upp ljuset åt alla håll. Öns mest förlåtande miljö för porträtt."
+    },
+    {
+      "id": "gorges",
+      "name": "Raviner och natur",
+      "blurb": "Kourtaliotiko och Imbros mynning: höga väggar, kall skugga och en skala som får en människa att se ordentligt liten ut."
+    },
+    {
+      "id": "mountains",
+      "name": "Berg",
+      "blurb": "Högplatåerna på Psiloritis och Lefka Ori, där horisonten faller bort och vädret skriver bilden åt er."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Utsiktspunkter",
+      "blurb": "Fickparkeringarna och kapellkullarna som lokalborna använder, de flesta fem minuter från en väg ni annars kört rakt förbi."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Solnedgång och Golden Hour",
+      "blurb": "Ingen plats utan en timme. Säg till, så bygger vi hela passet baklänges från ögonblicket då solen går ner."
+    }
+  ],
+  "included": [
+    "En professionell fotograf under hela det bokade passet",
+    "Platsplanering efter ljus, säsong och ert sällskap",
+    "Vägledning och poseringshjälp genom hela fotograferingen",
+    "Professionell redigering av varje levererad bild",
+    "Ett privat onlinegalleri med nedladdning i full upplösning",
+    "Rätt att använda varje levererad bild privat"
+  ],
+  "excluded": [
+    "Er egen resa till mötesplatsen på pass om en och två timmar",
+    "Utskrifter, album och inramning",
+    "Entréavgifter där en plats tar ut sådana",
+    "Hår, smink och styling",
+    "Kommersiella rättigheter eller reklamanvändning"
+  ],
+  "faqs": [
+    {
+      "q": "Är detta en studiofotografering?",
+      "a": "Nej. Ingen studio, ingen fond, ingen hyrd kuliss. Det är en utomhusupplevelse: vi tar er till platser runt om på Kreta och fotograferar er där, i dagsljus. Vill ni uttryckligen ha ett studioporträtt är vi fel personer."
+    },
+    {
+      "q": "Hur många bilder får vi, och när?",
+      "a": "Essential levererar 30 till 40 professionellt redigerade bilder, Explorer 50 till 60, Crete Story 80 till 100 och Full Day över 200. Det är utvalda, färgsatta och retuscherade bilder snarare än varje tagen ruta. Gallerierna levereras online, normalt inom tio till fjorton dagar."
+    },
+    {
+      "q": "Tänk om vi aldrig blivit fotograferade förut?",
+      "a": "Det stämmer in på de flesta gäster. Fotografen leder hela passet — var ni ska stå, vart ni ska titta, vad ni ska göra med händerna — och bilderna som fungerar bäst är nästan alltid de som tas medan folk går, pratar eller skrattar."
+    },
+    {
+      "q": "Kan vi välja platserna?",
+      "a": "Ja. Säg vilka landskap ni vill ha — kust, by, berg, gamla stan, en ravin, olivlundar — så bygger vi passet kring dem och kring timmen som passar dem. På Crete Story och Full Day rekognoserar vi rutten före dagen."
+    },
+    {
+      "q": "Vad händer om vädret vänder?",
+      "a": "Kretensiskt väder ställer sällan in en fotografering; mulet ljus är utmärkt för porträtt. Om förhållandena verkligen omöjliggör fotografering flyttar vi passet till en annan dag under er vistelse, eller återbetalar det i sin helhet."
+    },
+    {
+      "q": "Kan en fotograf följa med på en tur vi redan bokat?",
+      "a": "På utvalda dagsturer, ja — fotografen reser med gruppen och fotograferar medan dagen löper som vanligt. Fråga när ni bokar turen, eller skicka bokningsnumret så bekräftar vi om just den turen tillåter det."
+    }
+  ],
+  "priceNote": "Priserna gäller per pass och täcker hela ert sällskap upp till paketets gräns, inte per person.",
+  "bookingNote": "Ingen betalning sker på den här webbplatsen. Vi bekräftar fotograf och datum skriftligt och skickar sedan en betallänk."
+}

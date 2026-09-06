@@ -1,7 +1,9 @@
 import { mailtoFor, type RequestPayload } from "@/lib/request";
 import { EMAIL, PARTNERS_EMAIL } from "@/lib/site";
 
-export async function sendRequest(payload: RequestPayload): Promise<{ ok: true } | { ok: false; mailto: string }> {
+export async function sendRequest(
+  payload: RequestPayload,
+): Promise<{ ok: true; cashCode?: string } | { ok: false; mailto: string }> {
   const to = payload.kind === "partner" ? PARTNERS_EMAIL : EMAIL;
   try {
     const res = await fetch("/api/request", {
@@ -9,8 +11,15 @@ export async function sendRequest(payload: RequestPayload): Promise<{ ok: true }
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-    const data = (await res.json()) as { ok?: boolean; fallback?: string; to?: string; subject?: string; body?: string };
-    if (data.ok) return { ok: true };
+    const data = (await res.json()) as {
+      ok?: boolean;
+      cashCode?: string;
+      fallback?: string;
+      to?: string;
+      subject?: string;
+      body?: string;
+    };
+    if (data.ok) return { ok: true, cashCode: data.cashCode };
     if (data.fallback === "mailto") {
       const subject = encodeURIComponent(data.subject || "");
       const body = encodeURIComponent(data.body || "");

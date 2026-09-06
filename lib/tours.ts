@@ -193,7 +193,7 @@ export const TOURS: Tour[] = [
     cadence: "mon_thu_fri",
     priceFrom: null,
     reviews: 16,
-    featured: true,
+    featured: false,
     image: IMG.cooking,
     gallery: [IMG.cooking, IMG.winery, IMG.oldTown],
   }),

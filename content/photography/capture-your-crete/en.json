@@ -1,0 +1,154 @@
+{
+  "lang": "en",
+  "state": "reviewed",
+  "title": "Photography Experience – Capture Your Crete",
+  "tagline": "Explore Crete and have your most beautiful moments professionally photographed",
+  "seoTitle": "Photography Experience in Crete | Capture Your Crete",
+  "seoDescription": "A professional outdoor photoshoot in Crete: beaches, villages, gorges and Golden Hour. Sessions from one hour to a full day, from EUR 160, with an online gallery.",
+  "promise": "We photograph you. You do not need to know anything about photography.",
+  "summary": "Capture Your Crete is an outdoor photography experience, not a studio session. A professional photographer meets you at your hotel or at a location you choose, walks the island with you for anywhere between one hour and a full day, and photographs you in it: portraits, couples, families and lifestyle images against Cretan beaches, mountains, villages and olive groves. Four packages run from EUR 160 for a one-hour, single-location session with 30 to 40 edited photographs, to EUR 650 for a seven to eight hour day across three or four locations with a private vehicle, a lunch stop, a sunset session and more than 200 edited photographs. Every package is delivered as a private online gallery of professionally selected, colour-graded and retouched images.",
+  "overview": [
+    "Most people come home from Crete with a phone full of pictures and not one photograph of themselves. This experience exists to fix that. You keep exploring the island exactly as you planned; a photographer comes with you and does the looking.",
+    "It is deliberately not a studio shoot. There is no backdrop, no rented set and no lighting rig. We take you to real places — a stretch of coastline at the hour the sea goes clear, a village lane with the light coming down it sideways, an olive grove, a viewpoint above a gorge — and we photograph you being there. Nothing is staged that does not need to be.",
+    "You choose the length and we choose the hour. Crete's light is at its best early and late, so a two-hour session at six in the evening will always beat four hours at midday. If you have a fixed window, we work inside it and pick the locations that suit it; if you are flexible, we plan around Golden Hour and the pictures show it.",
+    "What comes back is a curated set, not a memory card. Every image in your gallery has been chosen, colour-graded and retouched. That is the whole point of the counts we publish: 30 to 40 photographs you will actually use are worth more than a thousand you never open."
+  ],
+  "highlights": [
+    "A professional photographer for one hour, half a day or a full day — you pick",
+    "Real Cretan locations: coastline, mountains, villages, gorges, olive groves and viewpoints",
+    "Natural portraits, couple, family and lifestyle images — nobody has to pose on command",
+    "Golden Hour and sunset sessions planned around the light, not around the timetable",
+    "30–40 to 200+ professionally edited photographs, depending on the package",
+    "Delivered as a private online gallery with full-resolution downloads"
+  ],
+  "packages": [
+    {
+      "id": "essential",
+      "name": "Essential",
+      "tagline": "One hour, one location, one very good gallery.",
+      "features": [
+        "Professional colour correction",
+        "Basic portrait retouching",
+        "Direction from your photographer throughout",
+        "Private online gallery with full-resolution downloads"
+      ]
+    },
+    {
+      "id": "explorer",
+      "name": "Explorer",
+      "tagline": "Two hours and a second location, so the set has range.",
+      "features": [
+        "Professional colour grading",
+        "Portrait retouching",
+        "Posing and natural-movement guidance, so nobody has to act natural",
+        "Private online gallery with full-resolution downloads"
+      ]
+    },
+    {
+      "id": "crete-story",
+      "name": "Crete Story",
+      "tagline": "Half a day, three landscapes, one story that hangs together.",
+      "features": [
+        "Location scouting before the day, so nothing is improvised",
+        "Nature, village and coast combined in a single session",
+        "Private online gallery with full-resolution downloads"
+      ]
+    },
+    {
+      "id": "full-day",
+      "name": "Full Day",
+      "tagline": "Sunrise light to sunset light, with the island in between.",
+      "features": [
+        "Several distinct landscapes in one day — coast, village and mountain",
+        "A local lunch stop, chosen for the view as much as for the food",
+        "A sunset session to close the day",
+        "Private online gallery with full-resolution downloads"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "beaches",
+      "name": "Beaches & coastline",
+      "blurb": "Pink sand at Elafonisi, the palm river at Preveli, the flat rock shelves at Triopetra. Best in the last two hours of light."
+    },
+    {
+      "id": "old-town",
+      "name": "Rethymno Old Town",
+      "blurb": "Venetian doorways, the harbour, and lanes narrow enough that the light bounces off the walls. Works early, before the town wakes."
+    },
+    {
+      "id": "villages",
+      "name": "Traditional villages",
+      "blurb": "Margarites, Spili and the mountain hamlets above them — stone, shutters, church squares and the odd curious neighbour."
+    },
+    {
+      "id": "olive-groves",
+      "name": "Olive groves",
+      "blurb": "Old terraces of silver leaf that turn the light soft in every direction. The most forgiving setting on the island for portraits."
+    },
+    {
+      "id": "gorges",
+      "name": "Gorges & nature",
+      "blurb": "Kourtaliotiko and the mouth of Imbros: high walls, cold shade and a scale that makes a person look properly small."
+    },
+    {
+      "id": "mountains",
+      "name": "Mountains",
+      "blurb": "The Psiloritis and Lefka Ori plateaus, where the horizon drops away and the weather writes the picture for you."
+    },
+    {
+      "id": "viewpoints",
+      "name": "Scenic viewpoints",
+      "blurb": "The pull-offs and chapel hilltops locals use, most of them five minutes off a road you would otherwise drive straight past."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Sunset & Golden Hour",
+      "blurb": "Not a place but an hour. Tell us you want it and we build the whole session backwards from the moment the sun goes."
+    }
+  ],
+  "included": [
+    "A professional photographer for the full booked session",
+    "Location planning around the light, the season and your party",
+    "Direction and posing guidance throughout the shoot",
+    "Professional editing of every delivered image",
+    "A private online gallery with full-resolution downloads",
+    "Personal-use rights to every photograph we deliver"
+  ],
+  "excluded": [
+    "Your travel to the meeting point on the one and two hour sessions",
+    "Prints, albums and framing",
+    "Entrance fees where a location charges one",
+    "Hair, make-up and styling",
+    "Commercial or advertising usage rights"
+  ],
+  "faqs": [
+    {
+      "q": "Is this a studio photoshoot?",
+      "a": "No. There is no studio, no backdrop and no rented set. It is an outdoor experience: we take you to locations across Crete and photograph you in them, using daylight. If you specifically want a studio portrait, we are not the right people."
+    },
+    {
+      "q": "How many photos do we get, and when?",
+      "a": "Essential delivers 30 to 40 professionally edited photographs, Explorer 50 to 60, Crete Story 80 to 100, and Full Day more than 200. Those are selected, colour-graded and retouched images rather than every frame taken. Galleries are delivered online, normally within ten to fourteen days."
+    },
+    {
+      "q": "What if we have never been photographed before?",
+      "a": "That describes most guests. The photographer directs the whole session — where to stand, where to look, what to do with your hands — and the images that work best are almost always the ones taken while people are walking, talking or laughing rather than holding a pose."
+    },
+    {
+      "q": "Can we choose the locations?",
+      "a": "Yes. Tell us the landscapes you want — coast, village, mountains, the Old Town, a gorge, olive groves — and we build the session around them and around the hour that suits them. On the Crete Story and Full Day packages we scout the route before the day."
+    },
+    {
+      "q": "What happens if the weather turns?",
+      "a": "Cretan weather rarely cancels a shoot; overcast light is excellent for portraits. If conditions genuinely make photography impossible, we move the session to another day within your stay, or refund it in full."
+    },
+    {
+      "q": "Can a photographer join a tour we have already booked?",
+      "a": "On selected day tours, yes — the photographer travels with the group and shoots while the day runs as normal. Ask when you book the tour, or send us the booking reference and we will confirm whether that tour supports it."
+    }
+  ],
+  "priceNote": "Prices are per session and cover your whole party up to the package limit, not per person.",
+  "bookingNote": "No payment is taken on this site. We confirm the photographer and the date in writing, then send a payment link."
+}

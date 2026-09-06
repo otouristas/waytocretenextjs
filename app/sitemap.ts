@@ -3,8 +3,10 @@ import { DEFAULT_LANG, LANGS, LANG_META, langPath } from "@/lib/i18n/langs";
 import { LEGAL_SLUGS } from "@/lib/content/legal";
 import {
   getGuideCore,
+  getPhotographyCore,
   getTourCore,
   guideSlugs,
+  photographySlugs,
   placeSlugs,
   tourSlugs,
 } from "@/lib/content/load";
@@ -35,6 +37,9 @@ const STATIC_PATHS: Array<{ path: string; priority: number }> = [
   { path: "/hiking-trekking-from-rethymno", priority: 0.85 },
   { path: "/signature-experiences", priority: 0.85 },
   { path: "/multiday-tours", priority: 0.8 },
+  { path: "/photography", priority: 0.85 },
+  { path: "/photography/experiences", priority: 0.8 },
+  { path: "/photography/workshops", priority: 0.8 },
   { path: "/places", priority: 0.9 },
   { path: "/guides", priority: 0.8 },
   { path: "/transfers", priority: 0.8 },
@@ -93,6 +98,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const slug of tourSlugs()) {
     const core = getTourCore(slug);
     push(`/tours/${slug}`, core?.featured ? 0.8 : 0.7);
+  }
+
+  // Photography is a new section with no history, so its products crawl at
+  // the same priority as a featured tour rather than below one.
+  for (const slug of photographySlugs()) {
+    push(`/photography/${slug}`, getPhotographyCore(slug)?.featured ? 0.8 : 0.7);
   }
 
   // Attraction pages carry the organic load, so they rank above product pages

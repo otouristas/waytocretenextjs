@@ -4,15 +4,15 @@ import type { Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { searchIndex } from "@/lib/search-index";
 import { HeroSearch } from "@/components/home/hero-search";
-import { HOME_OG_IMAGE } from "@/lib/seo/images";
+import { HomeHeroSlider } from "@/components/home/hero-slider";
+import { HOME_HERO_IMAGES } from "@/lib/seo/images";
 
 /**
  * The home hero.
  *
- * A server component: the image, the headline and the trust chips are static,
- * so only the search card below ships JavaScript. The LCP element is the
- * background image, marked `priority` and served at explicit sizes so it
- * never shifts.
+ * Headline, chips and the search card stay on the server. The photograph
+ * track is the only extra client island — three frames, sliding, with the
+ * first marked `priority` so LCP does not wait on hydration.
  */
 
 export function HomeHero({ lang }: { lang: Lang }) {
@@ -21,13 +21,23 @@ export function HomeHero({ lang }: { lang: Lang }) {
   return (
     <section className="relative">
       <div className="relative h-[min(86vh,780px)] min-h-[540px] w-full overflow-hidden">
-        <Image
-          src={HOME_OG_IMAGE}
-          alt={copy.heroImageAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
+        {/* Static first frame so LCP is a server-rendered <img>, not a
+            slide that only exists after the client island hydrates. */}
+        <div aria-hidden className="absolute inset-0">
+          <Image
+            src={HOME_HERO_IMAGES[0]}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <HomeHeroSlider
+          images={HOME_HERO_IMAGES}
+          alts={copy.heroImageAlts}
+          label={copy.heroSlider}
+          goToLabel={copy.heroGoToSlide}
         />
 
         {/* Two scrims: one bottom-up for the headline block, one from the left
@@ -35,14 +45,14 @@ export function HomeHero({ lang }: { lang: Lang }) {
             whole photograph into mud. */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-earth-900/92 via-earth-900/45 to-earth-900/10"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-earth-900/92 via-earth-900/45 to-earth-900/10"
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-r from-earth-900/70 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-earth-900/70 via-transparent to-transparent"
         />
 
-        <div className="absolute inset-0 flex items-end">
+        <div className="pointer-events-none absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-6xl px-4 pb-28 md:pb-32">
             <p className="font-script text-2xl text-paper md:text-3xl">{copy.desk}</p>
 

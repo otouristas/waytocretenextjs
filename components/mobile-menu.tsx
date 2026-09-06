@@ -12,6 +12,7 @@ import {
   Users,
   X,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
@@ -23,7 +24,7 @@ import { GoogleWordmark, Stars } from "@/components/trust/source-logos";
 import { BrandLogo } from "@/components/brand-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/cn";
-import type { NavColumn, NavEntry, NavTour } from "@/lib/nav/catalog";
+import type { NavColumn, NavEntry, NavSection, NavTour } from "@/lib/nav/catalog";
 import { formatPrice } from "@/lib/format";
 
 export function MobileMenu({
@@ -113,7 +114,7 @@ export function MobileMenu({
           <ul className="flex flex-col">
             {nav.map((item) => (
               <li key={item.id} className="border-b border-line/70">
-                {item.kind === "link" || (!item.columns && !item.tours) ? (
+                {item.kind === "link" || (!item.columns && !item.tours && !item.sections) ? (
                   <Link
                     href={item.href ?? "#"}
                     onClick={onClose}
@@ -273,6 +274,9 @@ function AccordionItem({
               seeCollection={copy.seeCollection}
             />
           ))}
+          {item.sections?.map((section) => (
+            <SectionLink key={section.id} section={section} lang={lang} onClose={onClose} />
+          ))}
           {item.tours?.map((tour) => (
             <TourLink key={tour.slug} tour={tour} lang={lang} onClose={onClose} />
           ))}
@@ -327,6 +331,47 @@ function MobileColumn({
         </ul>
       ) : null}
     </div>
+  );
+}
+
+/**
+ * A product family in the sheet — Photography's two halves.
+ *
+ * The blurb is the whole reason this is not a plain link: on a phone the
+ * distinction between "we photograph you" and "you learn to photograph" has
+ * to survive being read at arm's length in a taxi.
+ */
+function SectionLink({
+  section,
+  lang,
+  onClose,
+}: {
+  section: NavSection;
+  lang: Lang;
+  onClose: () => void;
+}) {
+  const ui = t(lang);
+  return (
+    <Link
+      href={section.href}
+      onClick={onClose}
+      className="flex items-start gap-3 border-t border-line/60 py-3"
+    >
+      {section.hero ? (
+        <span className="relative size-14 shrink-0 overflow-hidden rounded-lg bg-olive-100">
+          <Image src={section.hero} alt="" fill sizes="56px" className="object-cover" />
+        </span>
+      ) : null}
+      <span className="min-w-0 flex-1">
+        <span className="block text-sm font-semibold text-ink">{section.label}</span>
+        <span className="mt-0.5 block text-[11px] text-muted">{section.blurb}</span>
+      </span>
+      {section.priceFrom != null ? (
+        <span className="shrink-0 pt-0.5 text-[11px] font-semibold text-muted">
+          {ui.fromPrice} {formatPrice(lang, section.priceFrom)}
+        </span>
+      ) : null}
+    </Link>
   );
 }
 

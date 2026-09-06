@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { langPath, type Lang } from "@/lib/i18n/langs";
+import { Eye } from "lucide-react";
+import { fill, langPath, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { plannerCopy } from "@/lib/i18n/planner";
 import { PLANNER_STOPS } from "@/lib/planner/catalog";
-import type { Review, TourCopy, TourCore } from "@/lib/content/schema";
+import { tourIsOpen, type Review, type TourCopy, type TourCore } from "@/lib/content/schema";
 import { SISTER_BRAND, sisterUrl } from "@/lib/site";
 import { TourHeroMosaic } from "@/components/tour/hero-mosaic";
 import { priceFrom } from "@/lib/pricing";
@@ -37,6 +38,8 @@ export function TourPage({
   related,
   linkablePlaces,
   reviews,
+  browsing,
+  fewDates,
 }: {
   core: TourCore;
   copy: TourCopy;
@@ -44,9 +47,12 @@ export function TourPage({
   related: Array<{ slug: string; title: string; hero: string }>;
   linkablePlaces: ReadonlySet<string>;
   reviews: Review[];
+  browsing: number | null;
+  fewDates: boolean;
 }) {
   const ui = t(lang);
   const live = liveBooker(core.slug);
+  const open = tourIsOpen(core);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 md:py-8">
@@ -69,7 +75,7 @@ export function TourPage({
         />
       </div>
 
-      <div className="mt-8 grid items-start gap-10 lg:grid-cols-[1fr_360px]">
+      <div className={open ? "mt-8 grid items-start gap-10 lg:grid-cols-[1fr_360px]" : "mt-8"}>
         <article>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             {ui.categories[core.category as keyof typeof ui.categories] ?? core.category}
@@ -81,18 +87,36 @@ export function TourPage({
             <p className="mt-3 text-lg leading-relaxed text-muted">{copy.tagline}</p>
           ) : null}
 
-          {/* The score sits with the title rather than only beside the
-              reviews further down: it is a decision input, and by the time a
-              reader reaches the review block they have already decided. */}
           <RatingInline lang={lang} summary={ratingSummary(reviews)} className="mt-3" />
+
+          {!open ? (
+            <div className="mt-6 rounded-xl bg-olive-50 p-5 ring-1 ring-olive-200">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                {ui.temporarilyUnavailable}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-ink">{ui.unavailableLead}</p>
+            </div>
+          ) : (
+            <ul className="mt-4 flex flex-wrap gap-2 text-xs text-accent">
+              <li className="rounded-full bg-olive-50 px-2.5 py-1">
+                {core.privateOnly ? ui.privateDeparture : fill(ui.onlySeats, { n: core.groupMax })}
+              </li>
+              {fewDates ? (
+                <li className="rounded-full bg-olive-50 px-2.5 py-1">{ui.fewDates}</li>
+              ) : null}
+              {browsing ? (
+                <li className="inline-flex items-center gap-1 rounded-full bg-olive-50 px-2.5 py-1">
+                  <Eye className="size-3" />
+                  {fill(ui.browsingNow, { n: browsing })}
+                </li>
+              ) : null}
+            </ul>
+          )}
 
           <div className="mt-6">
             <QuickFacts core={core} lang={lang} />
           </div>
 
-          {/* The answer-first summary. Deliberately the first prose on the
-              page: it is what an answer engine quotes, and what a skimming
-              reader needs before anything else. */}
           <p className="mt-8 text-base leading-relaxed text-ink">{copy.summary}</p>
 
           {core.durationMinutes < 1440 ? (
@@ -140,11 +164,6 @@ export function TourPage({
             experience={copy.title}
           />
 
-          {/*
-            The contextual link to the sister site. In-content and topically
-            matched — their page about this same route — rather than a sitewide
-            footer link, which is the pattern that reads as a link scheme.
-          */}
           <p className="mt-12 rounded-xl bg-surface p-5 text-sm leading-relaxed text-muted ring-1 ring-line">
             {ui.storyHint}{" "}
             <a
@@ -159,29 +178,33 @@ export function TourPage({
           <RelatedTours lang={lang} tours={related} />
         </article>
 
-        <div className="lg:sticky lg:top-28">
-          <BookingWidget
-            slug={core.slug}
-            title={copy.title}
-            lang={lang}
-            price={core.price}
-            groupMin={core.groupMin}
-            groupMax={core.groupMax}
-            cancelFreeHours={core.cancelFreeHours}
-            thirdPartyCosts={core.thirdPartyCosts}
-            privateGuide={core.privateGuide}
-            priceNote={copy.priceNote}
-            live={live}
-          />
-        </div>
+        {open ? (
+          <div className="lg:sticky lg:top-28">
+            <BookingWidget
+              slug={core.slug}
+              title={copy.title}
+              lang={lang}
+              price={core.price}
+              groupMin={core.groupMin}
+              groupMax={core.groupMax}
+              cancelFreeHours={core.cancelFreeHours}
+              thirdPartyCosts={core.thirdPartyCosts}
+              privateGuide={core.privateGuide}
+              priceNote={copy.priceNote}
+              live={live}
+            />
+          </div>
+        ) : null}
       </div>
 
-      <MobileBookBar
-        lang={lang}
-        priceFrom={priceFrom(core.price)}
-        onRequestLabel={core.price.kind === "on_request"}
-        bookHref={live ? catalogUrl(live.serviceId, live.categoryId) : null}
-      />
+      {open ? (
+        <MobileBookBar
+          lang={lang}
+          priceFrom={priceFrom(core.price)}
+          onRequestLabel={core.price.kind === "on_request"}
+          bookHref={live ? catalogUrl(live.serviceId, live.categoryId) : null}
+        />
+      ) : null}
     </div>
   );
 }

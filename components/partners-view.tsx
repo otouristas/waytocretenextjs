@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { Lang } from "@/lib/i18n/langs";
 import { partnersCopy } from "@/lib/i18n/partners";
 import { t } from "@/lib/i18n/ui";
@@ -9,6 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+
+/** Wide drone frame of the coast: the "whole of Crete" promise the section makes. */
+const OFFER_IMAGE = "https://waytocrete.com/wp-content/uploads/2024/05/DJI_0715-scaled.jpg";
 
 export function PartnersView({ lang }: { lang: Lang }) {
   const p = partnersCopy(lang);
@@ -34,17 +38,44 @@ export function PartnersView({ lang }: { lang: Lang }) {
           <p className="mt-4 text-xs text-faint">{p.ratesNote}</p>
         </div>
       </section>
-      <section className="bg-earth py-16 text-paper">
-        <div className="mx-auto max-w-6xl px-4">
-          <h2 className="font-display text-3xl text-paper md:text-5xl">{p.oneTitle}</h2>
-          <p className="mt-4 max-w-3xl text-paper">{p.oneLead}</p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {p.pillars.map((item) => (
-              <div key={item.title} className="rounded-sm bg-earth-deep/40 p-4 ring-1 ring-paper/30">
-                <p className="font-display text-lg">{item.title}</p>
-                <p className="mt-1 text-xs text-paper">{item.text}</p>
+      <section className="bg-earth text-paper">
+        <div className="grid lg:grid-cols-2">
+          {/* Photo half, bled to the viewport edge and held while the list scrolls past. */}
+          <div className="relative min-h-[20rem] sm:min-h-[26rem] lg:sticky lg:top-[78px] lg:h-[calc(100svh-78px)] lg:min-h-[38rem]">
+            <Image
+              src={OFFER_IMAGE}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <span
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-earth via-earth/25 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-earth/70"
+            />
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-paper/70">{p.kicker}</p>
+              <h2 className="mt-3 max-w-md font-display text-3xl leading-[1.08] text-paper md:text-5xl">
+                {p.oneTitle}
+              </h2>
+            </div>
+          </div>
+          {/* Copy half, held to the width of the page container's right column. */}
+          <div className="flex items-center px-4 py-16 sm:px-6 lg:px-14 lg:py-24">
+            <div className="w-full max-w-xl">
+              <p className="text-lg leading-relaxed text-paper">{p.oneLead}</p>
+              <dl className="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+                {p.pillars.map((item) => (
+                  <div key={item.title} className="border-t border-paper/25 pt-4">
+                    <dt className="font-display text-xl text-paper">{item.title}</dt>
+                    <dd className="mt-1.5 text-sm leading-relaxed text-paper/75">{item.text}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="mt-10">
+                <Button asChild><a href="#partner-form">{p.become}</a></Button>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

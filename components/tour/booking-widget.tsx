@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CalendarDays, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
+import { CalendarDays, Banknote, Check, ExternalLink, Loader2, Minus, Plus, ShieldCheck, Sparkles, TrendingDown } from "lucide-react";
 import type { Lang } from "@/lib/i18n/langs";
 import { fill } from "@/lib/i18n/langs";
 import { t, type UI } from "@/lib/i18n/ui";
@@ -15,6 +15,8 @@ import { EMAIL } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { cashPrice } from "@/lib/cash";
+import { seatsLeftOnDeparture } from "@/lib/tour-signals";
 import { cn } from "@/lib/cn";
 
 function guideOpsNote(amount: number) {
@@ -86,6 +88,8 @@ export function BookingWidget({
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [cashCode, setCashCode] = useState<string | null>(null);
+  const [cashMode, setCashMode] = useState(false);
   const [guideSelected, setGuideSelected] = useState(false);
 
   const party: Party = { adults, children, infants: 0 };
@@ -94,12 +98,19 @@ export function BookingWidget({
   const supportsChildren = price.kind === "adult_child_private";
   const guests = adults + children;
   const guideOn = Boolean(privateGuide && guideSelected);
+  const seatsLeft = seatsLeftOnDeparture(groupMax, guests);
+  const discounted = cashMode && q.kind === "priced" ? cashPrice(q.total) : null;
 
   function partySummary() {
     return (
       `— ${title}, ${adults} adult(s)` +
       (children ? `, ${children} child(ren)` : "") +
-      (q.kind === "priced" ? `, indicative total ${formatPrice(lang, q.total)}` : ", price on request")
+      (q.kind === "priced" ? `, indicative total ${formatPrice(lang, q.total)}` : ", price on request") +
+      (cashMode
+        ? discounted != null
+          ? `, cash on arrival 10% off → ${formatPrice(lang, discounted)}`
+          : ", cash on arrival 10% off"
+        : "")
     );
   }
 
@@ -115,13 +126,16 @@ export function BookingWidget({
       hotel,
       date,
       guests,
+      payCash: cashMode,
       message:
         `${message}\n\n${partySummary()}` +
         (guideOn && privateGuide ? `\n${guideOpsNote(privateGuide.amount)}` : ""),
     });
     setSending(false);
-    if (result.ok) setSent(true);
-    else if (result.mailto) window.location.href = result.mailto;
+    if (result.ok) {
+      if (result.cashCode) setCashCode(result.cashCode);
+      setSent(true);
+    } else if (result.mailto) window.location.href = result.mailto;
   }
 
   async function openLive() {
@@ -156,6 +170,15 @@ export function BookingWidget({
           <Check className="size-5" />
         </div>
         <p className="mt-4 font-display text-xl text-ink">{ui.requestSent}</p>
+        {cashCode ? (
+          <div className="mt-4 rounded-xl bg-olive-50 p-4 ring-1 ring-olive-200">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+              {ui.cashCodeLabel}
+            </p>
+            <p className="mt-1 font-display text-2xl tracking-[0.12em] text-ink">{cashCode}</p>
+            <p className="mt-2 text-sm text-muted">{ui.cashCodeSent}</p>
+          </div>
+        ) : null}
         <p className="mt-2 text-sm text-muted">{ui.submitted}</p>
       </aside>
     );
@@ -171,13 +194,27 @@ export function BookingWidget({
         {q.kind === "priced" ? (
           <>
             <div className="flex items-baseline gap-2">
-              <span className="font-display text-3xl font-semibold text-ink">
-                {formatPrice(lang, q.total)}
-              </span>
+              {discounted != null ? (
+                <>
+                  <span className="font-display text-lg text-faint line-through">
+                    {formatPrice(lang, q.total)}
+                  </span>
+                  <span className="font-display text-3xl font-semibold text-ink">
+                    {formatPrice(lang, discounted)}
+                  </span>
+                </>
+              ) : (
+                <span className="font-display text-3xl font-semibold text-ink">
+                  {formatPrice(lang, q.total)}
+                </span>
+              )}
               <span className="text-sm text-faint">
                 {guests} {guests === 1 ? ui.guestOne : ui.guestMany}
               </span>
             </div>
+            {discounted != null ? (
+              <p className="mt-1 text-xs font-semibold text-accent">{ui.cashOffPrice}</p>
+            ) : null}
             {q.perPerson != null && guests > 1 ? (
               <p className="mt-1 text-sm text-muted">
                 {formatPrice(lang, q.perPerson)} {ui.perPerson}
@@ -195,6 +232,7 @@ export function BookingWidget({
             <p className="mt-1 text-sm text-muted">
               {q.reason === "out_of_range" ? ui.tellUsGroup : ui.checkAvail}
             </p>
+            {cashMode ? <p className="mt-1 text-xs font-semibold text-accent">{ui.cashOnRequestNote}</p> : null}
           </>
         )}
 
@@ -216,11 +254,15 @@ export function BookingWidget({
         ) : null}
 
         {priceNote ? <p className="mt-3 text-xs leading-relaxed text-faint">{priceNote}</p> : null}
+
+        {seatsLeft ? (
+          <p className="mt-3 text-xs font-semibold text-accent">{fill(ui.seatsLeft, { n: seatsLeft })}</p>
+        ) : null}
       </div>
 
       <form
         onSubmit={(e) => {
-          if (live) {
+          if (live && !cashMode) {
             e.preventDefault();
             return;
           }
@@ -262,7 +304,7 @@ export function BookingWidget({
               value={date}
               onChange={(e) => setDate(e.target.value)}
               className="pl-9"
-              required={!live}
+              required={!live || cashMode}
             />
           </span>
         </label>
@@ -375,29 +417,69 @@ export function BookingWidget({
               {date ? ui.bookLive : ui.bookLiveOpen}
             </Button>
             <p className="text-center text-xs text-muted">{ui.livePayNote}</p>
+            <button
+              type="button"
+              onClick={() => setCashMode((v) => !v)}
+              className={cn(
+                "inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] transition",
+                cashMode
+                  ? "bg-olive text-paper"
+                  : "bg-surface text-accent ring-1 ring-olive-200 hover:bg-olive-50",
+              )}
+            >
+              <Banknote className="size-3.5" />
+              {ui.payCashCta}
+            </button>
+            {cashMode ? (
+              <>
+                <p className="text-xs leading-relaxed text-muted">{ui.payCashNote}</p>
+                <ContactFields
+                  ui={ui}
+                  name={name}
+                  email={email}
+                  hotel={hotel}
+                  message={message}
+                  onName={setName}
+                  onEmail={setEmail}
+                  onHotel={setHotel}
+                  onMessage={setMessage}
+                />
+                <Button type="submit" size="lg" disabled={sending} className="w-full">
+                  {sending ? <Loader2 className="size-4 animate-spin" /> : <Banknote className="size-4" />}
+                  {sending ? ui.sending : ui.requestCashCode}
+                </Button>
+              </>
+            ) : null}
           </>
         ) : (
           <>
-            <div className="grid gap-3">
-              <Input placeholder={ui.name} value={name} onChange={(e) => setName(e.target.value)} required />
-              <Input
-                type="email"
-                placeholder={ui.email}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
+            <label className="flex cursor-pointer items-start gap-3 rounded-xl bg-bg p-3 text-sm ring-1 ring-line">
+              <input
+                type="checkbox"
+                checked={cashMode}
+                onChange={(e) => setCashMode(e.target.checked)}
+                className="mt-0.5 size-4 accent-olive"
               />
-              <Input placeholder={ui.hotel} value={hotel} onChange={(e) => setHotel(e.target.value)} />
-              <Textarea
-                placeholder={ui.message}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
-            </div>
+              <span>
+                <span className="font-semibold text-ink">{ui.payCashToggle}</span>
+                <span className="mt-1 block text-xs leading-relaxed text-muted">{ui.payCashNote}</span>
+              </span>
+            </label>
+            <ContactFields
+              ui={ui}
+              name={name}
+              email={email}
+              hotel={hotel}
+              message={message}
+              onName={setName}
+              onEmail={setEmail}
+              onHotel={setHotel}
+              onMessage={setMessage}
+            />
 
             <Button type="submit" size="lg" disabled={sending} className="w-full">
-              {sending ? <Loader2 className="size-4 animate-spin" /> : null}
-              {sending ? ui.sending : ui.bookThis}
+              {sending ? <Loader2 className="size-4 animate-spin" /> : cashMode ? <Banknote className="size-4" /> : null}
+              {sending ? ui.sending : cashMode ? ui.requestCashCode : ui.bookThis}
             </Button>
           </>
         )}
@@ -410,6 +492,43 @@ export function BookingWidget({
         ) : null}
       </form>
     </aside>
+  );
+}
+
+function ContactFields({
+  ui,
+  name,
+  email,
+  hotel,
+  message,
+  onName,
+  onEmail,
+  onHotel,
+  onMessage,
+}: {
+  ui: UI;
+  name: string;
+  email: string;
+  hotel: string;
+  message: string;
+  onName: (v: string) => void;
+  onEmail: (v: string) => void;
+  onHotel: (v: string) => void;
+  onMessage: (v: string) => void;
+}) {
+  return (
+    <div className="grid gap-3">
+      <Input placeholder={ui.name} value={name} onChange={(e) => onName(e.target.value)} required />
+      <Input
+        type="email"
+        placeholder={ui.email}
+        value={email}
+        onChange={(e) => onEmail(e.target.value)}
+        required
+      />
+      <Input placeholder={ui.hotel} value={hotel} onChange={(e) => onHotel(e.target.value)} />
+      <Textarea placeholder={ui.message} value={message} onChange={(e) => onMessage(e.target.value)} />
+    </div>
   );
 }
 

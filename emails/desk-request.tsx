@@ -9,6 +9,7 @@ const KIND_EYEBROW: Record<RequestPayload["kind"], string> = {
   transfer: "New transfer request",
   contact: "New desk message",
   partner: "Trade desk",
+  photography: "New photography request",
 };
 
 export function DeskRequestEmail({ payload }: { payload: RequestPayload }) {
@@ -52,6 +53,8 @@ export function DeskRequestEmail({ payload }: { payload: RequestPayload }) {
           { label: "Drop-off", value: payload.dropoff },
           { label: "Flight", value: payload.flight },
           { label: "Wedding / event", value: payload.wedding },
+          { label: "Pay cash 10%", value: payload.payCash ? "yes" : undefined },
+          { label: "Cash code", value: payload.cashCode },
           { label: "Guest note", value: payload.message },
         ]}
       />

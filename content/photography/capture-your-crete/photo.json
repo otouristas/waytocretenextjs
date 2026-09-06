@@ -1,0 +1,76 @@
+{
+  "slug": "capture-your-crete",
+  "kind": "experience",
+  "order": 0,
+  "settings": [
+    "beaches",
+    "old-town",
+    "villages",
+    "olive-groves",
+    "gorges",
+    "mountains",
+    "viewpoints",
+    "golden-hour"
+  ],
+  "places": ["rethymno-old-town", "preveli-beach", "margarites", "triopetra-beach"],
+  "packages": [
+    {
+      "id": "essential",
+      "priceEur": 160,
+      "minutes": 60,
+      "maxGuests": 4,
+      "locations": [1, 1],
+      "editedPhotos": [30, 40],
+      "transport": false,
+      "goldenHour": false,
+      "popular": false
+    },
+    {
+      "id": "explorer",
+      "priceEur": 260,
+      "minutes": 120,
+      "maxGuests": 4,
+      "locations": [1, 2],
+      "editedPhotos": [50, 60],
+      "transport": false,
+      "goldenHour": true,
+      "popular": true
+    },
+    {
+      "id": "crete-story",
+      "priceEur": 450,
+      "minutes": 240,
+      "maxGuests": 6,
+      "locations": [2, 3],
+      "editedPhotos": [80, 100],
+      "transport": true,
+      "goldenHour": true,
+      "popular": false
+    },
+    {
+      "id": "full-day",
+      "priceEur": 650,
+      "minutes": 420,
+      "minutesMax": 480,
+      "maxGuests": 6,
+      "locations": [3, 4],
+      "editedPhotos": [200, null],
+      "transport": true,
+      "goldenHour": true,
+      "popular": false
+    }
+  ],
+  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-37-scaled.jpg",
+  "gallery": [
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-9-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-59-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-53-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-52-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-48-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-5-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-24-scaled.jpg",
+    "https://waytocrete.com/wp-content/uploads/2025/02/Gisela-Volker-7-scaled.jpg"
+  ],
+  "featured": true,
+  "supersedes": []
+}

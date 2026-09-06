@@ -32,7 +32,7 @@ import {
 export function Footer({ lang }: { lang: Lang }) {
   const ui = t(lang);
   const tours = allTours(lang)
-    .filter((x) => x.core.featured)
+    .filter((x) => x.core.featured && x.core.availability !== "unavailable")
     .slice(0, 6);
   // What the Explore column leaves out: a hub with nothing behind it yet,
   // which would be a link to an empty page, and anything the columns beside
@@ -44,7 +44,7 @@ export function Footer({ lang }: { lang: Lang }) {
   const rating = ratingSummary(allReviews());
 
   return (
-    <footer className="mt-16 border-t border-line pattern-olive">
+    <footer className="border-t border-line pattern-olive">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <BrandLogo lang={lang} height={56} />

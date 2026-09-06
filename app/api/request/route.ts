@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendRequestMail } from "@/lib/email/send-request-mail";
+import { newCashCode } from "@/lib/cash";
 import type { RequestPayload } from "@/lib/request";
 
 export async function POST(request: Request) {
@@ -12,15 +13,21 @@ export async function POST(request: Request) {
   if (!payload?.name || !payload?.email || !payload?.kind) {
     return NextResponse.json({ ok: false, error: "missing_fields" }, { status: 400 });
   }
+  if (payload.kind === "tour" && payload.payCash) {
+    payload = { ...payload, cashCode: newCashCode() };
+  } else {
+    payload = { ...payload, payCash: false, cashCode: undefined };
+  }
   const result = await sendRequestMail(payload);
   if (!result.ok) {
     return NextResponse.json({
       ok: false,
       fallback: "mailto",
+      cashCode: payload.cashCode,
       to: result.to,
       subject: result.subject,
       body: result.body,
     });
   }
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, cashCode: payload.cashCode });
 }
