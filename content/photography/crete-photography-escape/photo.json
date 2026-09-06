@@ -31,27 +31,6 @@
     "gear": ["dslr", "mirrorless", "compact", "smartphone"],
     "departures": [
       {
-        "id": "2026-10",
-        "edition": "autumn",
-        "month": "2026-10",
-        "status": "forming",
-        "spotsLeft": 6
-      },
-      {
-        "id": "2026-11",
-        "edition": "autumn",
-        "month": "2026-11",
-        "status": "forming",
-        "spotsLeft": 6
-      },
-      {
-        "id": "2026-12",
-        "edition": "winter",
-        "month": "2026-12",
-        "status": "limited",
-        "spotsLeft": 6
-      },
-      {
         "id": "2027-04",
         "edition": "spring",
         "month": "2027-04",
@@ -63,6 +42,27 @@
         "edition": "spring",
         "month": "2027-05",
         "status": "forming",
+        "spotsLeft": 6
+      },
+      {
+        "id": "2027-10",
+        "edition": "autumn",
+        "month": "2027-10",
+        "status": "forming",
+        "spotsLeft": 6
+      },
+      {
+        "id": "2027-11",
+        "edition": "autumn",
+        "month": "2027-11",
+        "status": "forming",
+        "spotsLeft": 6
+      },
+      {
+        "id": "2027-12",
+        "edition": "winter",
+        "month": "2027-12",
+        "status": "limited",
         "spotsLeft": 6
       }
     ]
