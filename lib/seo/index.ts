@@ -9,6 +9,7 @@ export {
   isoDuration,
   offerNode,
   organizationNode,
+  personNode,
   photographyNode,
   productExtras,
   reviewNodes,

@@ -4,6 +4,7 @@ import { t } from "./ui";
 import { hubCopy } from "./hubs";
 import { photographyCopy } from "./photography";
 import { partnersCopy } from "./partners";
+import { landingCopy } from "./landing";
 import { HUBS, type HubId } from "@/lib/nav/hubs";
 
 /**
@@ -354,7 +355,14 @@ export function mainNav(lang: Lang) {
  */
 export function secondaryNav(lang: Lang) {
   const copy = t(lang);
+  const landing = landingCopy(lang);
   return [
+    // The two Rethymno landing pages. They live here rather than in the main
+    // navbar because they are search entry points, not primary navigation —
+    // but they need a sitewide inbound link, which is exactly what the hubs
+    // did not have.
+    { href: langPath(lang, "/things-to-do-in-rethymno"), label: landing.thingsTitle },
+    { href: langPath(lang, "/private-tours-from-rethymno"), label: landing.privateTitle },
     { href: langPath(lang, "/places"), label: copy.navPlaces },
     { href: langPath(lang, "/reviews"), label: copy.navReviews },
     { href: langPath(lang, "/transfers/weddings"), label: copy.weddingTransfers },

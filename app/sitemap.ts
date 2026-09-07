@@ -30,6 +30,8 @@ const STATIC_PATHS: Array<{ path: string; priority: number }> = [
   { path: "", priority: 1 },
   { path: "/tours", priority: 0.9 },
   { path: "/create", priority: 0.9 },
+  { path: "/things-to-do-in-rethymno", priority: 0.9 },
+  { path: "/private-tours-from-rethymno", priority: 0.85 },
   { path: "/outdoor-activities-nature-tours-crete", priority: 0.85 },
   { path: "/cretan-history-tours", priority: 0.85 },
   { path: "/cretan-culture-tours", priority: 0.85 },

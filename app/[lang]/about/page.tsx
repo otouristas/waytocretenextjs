@@ -6,10 +6,11 @@ import { fill, LANGS, LANG_META, langPath, parseLang, type Lang } from "@/lib/i1
 import { t } from "@/lib/i18n/ui";
 import { allReviews, allTours, ratingSummary } from "@/lib/content/load";
 import { transfers } from "@/lib/transfers";
-import { breadcrumbNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import { breadcrumbNode, graph, id, pageMeta, personNode, webPageNode, type Crumb } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SISTER_ANCHOR, sisterLink } from "@/lib/seo/links";
 import { HostSection } from "@/components/host-section";
+import { HOST_IMAGES, HOST_NAME, hostCopy } from "@/lib/i18n/host";
 import { RatingInline } from "@/components/reviews/rating-summary";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
 import { reviewExperienceOptions } from "@/lib/reviews/experiences";
@@ -77,6 +78,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     }),
     breadcrumbNode(lang, "/about", crumbs),
     { "@type": "AboutPage", mainEntity: { "@id": id.organization() } },
+    // The host whose bio this page publishes. A real named person at the
+    // business is the half of E-E-A-T an organization node cannot carry, and
+    // this is the one page where the claim is actually backed by copy.
+    personNode({
+      name: HOST_NAME,
+      description: hostCopy(lang).paragraphs[0],
+      image: HOST_IMAGES[0].src,
+    }),
   ]);
 
   const facts = [

@@ -12,6 +12,15 @@ import type { Lang } from "./langs";
  * text that describes them, so a caption can never drift from its picture.
  */
 
+/**
+ * The host's name, as a constant rather than only inside prose.
+ *
+ * The `Person` node on the About page needs it as a value; the bio needs it
+ * inside sentences in five languages. Naming it once keeps the schema and the
+ * copy referring to the same person.
+ */
+export const HOST_NAME = "Ernest";
+
 export type HostCopy = {
   eyebrow: string;
   title: string;

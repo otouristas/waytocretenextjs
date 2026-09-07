@@ -93,10 +93,32 @@ Re-sync by re-running the harvest; the linter is the gate. Anything with a struc
 
 ## Status
 
-The site builds 434 static pages across six locales. Design tokens, content schema, pricing engine,
-SEO graph, per-locale `<html lang>`, 301 redirects, robots and a 414-URL sitemap with hreflang
-alternates are all in place, as are the redesigned home, tours, tour detail, guide and place pages.
+The site builds 531 static pages across five locales — Greek was retired and `/el/*` 308s to
+`/en/*`. Design tokens, content schema, pricing engine, SEO graph, per-locale `<html lang>`, 301
+redirects, robots and a sitemap with hreflang alternates are all in place, as are the redesigned
+home, tours, tour detail, guide and place pages. All nine transfer origin-pairs ship, including
+both airport runs in both directions. All five locales carry reviewed copy, so hreflang advertises
+all five.
 
-Still to do: the five transfer origin-pair pages, the `/rethymno` hub, the image pipeline
-(imagery is still hot-linked from waytocrete.com), and locales beyond English — every non-English
-page currently falls back to English copy and is correctly excluded from hreflang until it does not.
+Still to do:
+
+- **The image pipeline.** 215 unique images are hot-linked from waytocrete.com and `public/` holds
+  no photographs. `scripts/media-build.ts` is referenced by `next.config.ts` and has never been
+  written, so LCP depends on someone else's WordPress server and filenames cannot be made
+  descriptive. All 29 guide heroes also render `alt=""` with no schema field to hold one.
+- **Verified entity data.** `content/business.json` has no legal name, no VAT, an address with
+  `confidence: "low"` and three contradictory opening-hours claims, and the Google Business Profile
+  is still the sister brand's. None of it should become `LocalBusiness` markup until the operator
+  confirms it.
+
+### SEO notes
+
+Two rules that are easy to undo by accident:
+
+- **Internal links in Markdown bodies are rewritten to the reader's locale** at render time by
+  `localiseHref()`. Authored links may be written unprefixed (`/tours/…`); do not "fix" them by
+  hard-coding `/en/`.
+- **Cross-domain links are capped by a list**, `SISTER_STORY_TOURS` in `lib/seo/links.ts`, not by
+  convention. The tour template used to carry one unconditionally and shipped 105 anchors. The
+  relationship is stated sitewide as text and as `alternateName` on the organization node; the
+  hyperlink is not.

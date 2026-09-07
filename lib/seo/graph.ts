@@ -99,6 +99,32 @@ export function organizationNode(): Node {
   };
 }
 
+/**
+ * A named human at the business.
+ *
+ * The organization node says a company exists; a `Person` says someone real
+ * runs the days it sells, which is the half of E-E-A-T a company node cannot
+ * carry on its own.
+ *
+ * Emitted only on the About page, where the bio it summarises is actually
+ * published. It is deliberately NOT set as the author of the 29 guides: who
+ * wrote those is not recorded anywhere in this repo, and inventing an author
+ * byline is the exact failure the E-E-A-T guidance warns about. Attribution
+ * there stays with the organization until the operator says otherwise.
+ */
+export function personNode(opts: { name: string; description: string; image?: string }): Node {
+  return {
+    "@type": "Person",
+    "@id": id.author(opts.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")),
+    name: opts.name,
+    description: opts.description,
+    ...(opts.image ? { image: opts.image } : {}),
+    worksFor: { "@id": id.organization() },
+    jobTitle: "Local host",
+    knowsAbout: ["Crete", "Rethymno", "Hiking", "Cretan food", "Local history"],
+  };
+}
+
 export function websiteNode(lang: Lang): Node {
   return {
     "@type": "WebSite",
