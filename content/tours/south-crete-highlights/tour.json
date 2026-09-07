@@ -30,13 +30,6 @@
       "perPerson": true,
       "optional": false,
       "note": "Paid on site; not included in the tour price."
-    },
-    {
-      "label": "Lunch at a Triopetra taverna",
-      "amount": null,
-      "perPerson": true,
-      "optional": true,
-      "note": "Food and drinks are not included."
     }
   ],
   "privateGuide": {
