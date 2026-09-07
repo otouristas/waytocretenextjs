@@ -143,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   return (
     <>
       <JsonLd data={jsonLd} />
-      <TransfersView lang={lang} reviews={reviews} />
+      <TransfersView lang={lang} reviews={reviews} crumbs={crumbs} />
     </>
   );
 }

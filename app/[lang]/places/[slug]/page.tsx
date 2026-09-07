@@ -11,12 +11,14 @@ import {
   getPlaceCore,
   getTourCopy,
   getTourCore,
+  guidesForPlace,
   placeLangs,
   placeSlugs,
 } from "@/lib/content/load";
 import { breadcrumbNode, faqNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Prose, QuickAnswers } from "@/components/prose";
 import { FaqList } from "@/components/tour/sections";
 import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
@@ -72,6 +74,7 @@ export default async function Page({
   if (!core || !copy) notFound();
 
   const ui = t(lang);
+  const guides = guidesForPlace(slug, lang);
   const path = `/places/${slug}`;
   const crumbs: Crumb[] = [
     { name: ui.home, path: "/" },
@@ -147,13 +150,7 @@ export default async function Page({
         ) : null}
 
         <article className="mx-auto max-w-4xl px-4 py-10">
-          <nav aria-label={ui.breadcrumb} className="text-xs text-muted">
-            <Link href={`/${lang}`} className="hover:text-accent">
-              {ui.home}
-            </Link>
-            <span className="px-1.5 text-faint">/</span>
-            <span className="text-ink">{copy.name}</span>
-          </nav>
+          <Breadcrumbs crumbs={crumbs} lang={lang} />
 
           {!core.hero ? (
             <h1 className="mt-4 font-display text-4xl text-ink">{copy.name}</h1>
@@ -177,7 +174,7 @@ export default async function Page({
           <QuickAnswers items={copy.quickAnswers} title={ui.atAGlance} />
 
           <div className="mt-8">
-            <Prose markdown={copy.body} />
+            <Prose markdown={copy.body} lang={lang} />
           </div>
 
           <FaqList faqs={copy.faqs} title={ui.faq} />
@@ -190,6 +187,32 @@ export default async function Page({
                   <CatalogTourCard key={c.slug} core={c} copy={cp} lang={lang} />
                 ))}
               </div>
+            </section>
+          ) : null}
+
+          {/* A place page used to link only to tours, which made fifteen of
+              the most specific documents on the site dead ends for a reader
+              who wanted to know more before booking anything. */}
+          {guides.length > 0 ? (
+            <section className="mt-14 border-t border-line pt-10">
+              <h2 className="font-display text-2xl text-ink">
+                {fill(ui.readAboutPlace, { name: copy.name })}
+              </h2>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {guides.slice(0, 4).map(({ core: c, copy: cp }) => (
+                  <li key={c.slug}>
+                    <Link
+                      href={langPath(lang, `/guides/${c.slug}`)}
+                      className="block h-full rounded-xl bg-surface p-4 ring-1 ring-line transition hover:-translate-y-0.5 hover:ring-olive-200"
+                    >
+                      <span className="block font-semibold leading-snug text-ink">{cp.title}</span>
+                      <span className="mt-1.5 line-clamp-2 block text-sm leading-relaxed text-muted">
+                        {cp.summary}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </section>
           ) : null}
         </article>

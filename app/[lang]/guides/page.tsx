@@ -7,6 +7,7 @@ import { allGuides, GUIDES_HUB_LEAD, guidesForHub } from "@/lib/content/load";
 import { breadcrumbNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
@@ -63,7 +64,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     <>
       <JsonLd data={jsonLd} />
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
-        <header className="max-w-2xl">
+        <Breadcrumbs crumbs={crumbs} lang={lang} />
+
+        <header className="mt-4 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{ui.navGuides}</p>
           <h1 className="mt-2 font-display text-4xl text-ink md:text-5xl">
             {ui.guidesHubTitle}

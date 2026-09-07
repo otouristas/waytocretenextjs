@@ -8,6 +8,7 @@ import { priceFrom } from "@/lib/pricing";
 import { breadcrumbNode, graph, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
 import { FilterBar, FilterRail, type Facet, type Facets } from "@/components/tour/filter-rail";
 
@@ -182,7 +183,9 @@ export default async function Page({
     <>
       <JsonLd data={jsonLd} />
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
-        <header className="max-w-2xl">
+        <Breadcrumbs crumbs={crumbs} lang={lang} />
+
+        <header className="mt-4 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             {ui.navTours}
           </p>

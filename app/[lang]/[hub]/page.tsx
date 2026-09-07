@@ -69,7 +69,7 @@ export default async function Page({
   return (
     <>
       <JsonLd data={jsonLd} />
-      <HubView lang={lang} hub={hub} />
+      <HubView lang={lang} hub={hub} crumbs={crumbs} />
     </>
   );
 }

@@ -8,6 +8,8 @@ import { tourIsOpen, type Review, type TourCopy, type TourCore } from "@/lib/con
 import { SISTER_BRAND, sisterUrl } from "@/lib/site";
 import { TourHeroMosaic } from "@/components/tour/hero-mosaic";
 import { priceFrom } from "@/lib/pricing";
+import type { Crumb } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { BookingWidget } from "@/components/tour/booking-widget";
 import { PriceBand } from "@/components/tour/price-band";
 import { MobileBookBar } from "@/components/tour/mobile-book-bar";
@@ -41,6 +43,7 @@ export function TourPage({
   reviews,
   browsing,
   fewDates,
+  crumbs,
 }: {
   core: TourCore;
   copy: TourCopy;
@@ -50,6 +53,8 @@ export function TourPage({
   reviews: Review[];
   browsing: number | null;
   fewDates: boolean;
+  /** Built by the route, so the trail and its JSON-LD come from one array. */
+  crumbs: Crumb[];
 }) {
   const ui = t(lang);
   const live = liveBooker(core.slug);
@@ -57,17 +62,7 @@ export function TourPage({
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 md:py-8">
-      <nav aria-label={ui.breadcrumb} className="text-xs text-muted">
-        <Link href={langPath(lang)} className="hover:text-accent">
-          {ui.home}
-        </Link>
-        <span className="px-1.5 text-faint">/</span>
-        <Link href={langPath(lang, "/tours")} className="hover:text-accent">
-          {ui.navTours}
-        </Link>
-        <span className="px-1.5 text-faint">/</span>
-        <span className="text-ink">{copy.title}</span>
-      </nav>
+      <Breadcrumbs crumbs={crumbs} lang={lang} />
 
       <div className="mt-4">
         <TourHeroMosaic

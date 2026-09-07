@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { fill, type Lang, langPath } from "@/lib/i18n/langs";
-import { mainNav, secondaryNav } from "@/lib/i18n/nav";
+import { hubLabel, mainNav, secondaryNav } from "@/lib/i18n/nav";
+import { HUB_IDS } from "@/lib/nav/hubs";
 import { t } from "@/lib/i18n/ui";
 import { allGuides, allPlaces, allTours, allReviews, ratingSummary } from "@/lib/content/load";
 import { transferRoutes } from "@/lib/transfers";
@@ -45,7 +46,7 @@ export function Footer({ lang }: { lang: Lang }) {
 
   return (
     <footer className="border-t border-line pattern-olive">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
           <BrandLogo lang={lang} height={56} />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">{ui.aboutLead}</p>
@@ -103,6 +104,18 @@ export function Footer({ lang }: { lang: Lang }) {
             </FooterLink>
           ))}
           <FooterLink href={langPath(lang, "/tours")}>{ui.viewAll}</FooterLink>
+        </FooterColumn>
+
+        {/* The category hubs. Their only route in used to be the desktop mega
+            menu, which meant a phone could not reach them at all and nothing
+            on the site passed them anything. Short labels here — the headings
+            are written for the page, not for a 14-em column. */}
+        <FooterColumn title={ui.footerBrowse}>
+          {HUB_IDS.map((id) => (
+            <FooterLink key={id} href={langPath(lang, `/${id}`)}>
+              {hubLabel(id, lang, true)}
+            </FooterLink>
+          ))}
         </FooterColumn>
 
         <FooterColumn title={ui.navTransfers}>

@@ -158,6 +158,19 @@ export function guidesForHub(lang: Lang) {
   return lead ? [lead, ...rest] : all;
 }
 
+/**
+ * The guides that actually cover a place, newest first.
+ *
+ * Place pages linked out to tours and to nothing else, so fifteen of the
+ * site's most specific documents were dead ends and the guides that discuss
+ * them got no inbound link from the very page a reader lands on. The relation
+ * already exists in the content — guides declare the places they cover — it
+ * was simply never read in this direction.
+ */
+export const guidesForPlace = cache((slug: string, lang: Lang) =>
+  allGuides(lang).filter((entry) => entry.core.places.includes(slug)),
+);
+
 export function guidesForHomeTeaser(lang: Lang) {
   const all = allGuides(lang);
   const picked: typeof all = [];

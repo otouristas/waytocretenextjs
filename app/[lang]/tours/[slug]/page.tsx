@@ -24,6 +24,8 @@ import {
 } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { TourPage } from "@/components/tour/tour-page";
+import { hubForTour } from "@/lib/nav/hubs";
+import { hubLabel } from "@/lib/i18n/nav";
 import { getMonthAvailability, liveBooker } from "@/lib/travelotopos";
 import { browsingNow, fewOpenDates } from "@/lib/tour-signals";
 import { tourIsOpen } from "@/lib/content/schema";
@@ -70,9 +72,17 @@ export default async function Page({
 
   const ui = t(lang);
   const path = `/tours/${slug}`;
+
+  /**
+   * The hub sits between the catalogue and the tour, so the trail says where
+   * this day belongs rather than flattening 21 tours under one parent. It is
+   * also the only inbound link the hub pages get from the content itself.
+   */
+  const hub = hubForTour(slug);
   const crumbs: Crumb[] = [
     { name: ui.home, path: "/" },
     { name: ui.navTours, path: "/tours" },
+    ...(hub ? [{ name: hubLabel(hub.id, lang, true), path: `/${hub.id}` }] : []),
     { name: copy.title, path },
   ];
 
@@ -127,6 +137,7 @@ export default async function Page({
         reviews={reviews}
         browsing={browsing}
         fewDates={fewDates}
+        crumbs={crumbs}
       />
     </>
   );

@@ -1,4 +1,4 @@
-import type { Lang } from "../i18n/langs.ts";
+import { LANGS, langPath, type Lang } from "../i18n/langs.ts";
 import { t } from "../i18n/ui.ts";
 import type { Cadence } from "./schema.ts";
 
@@ -80,4 +80,30 @@ export function headingId(text: string) {
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+/gu, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+/**
+ * A locale prefix at the start of a path, matched only on a segment boundary.
+ *
+ * `lib/i18n/langs.ts` exports a similar pattern without the boundary. That is
+ * safe where it is used — the middleware splits the path on "/" first — but
+ * not for a string replace: a bare `^/(en|…)` turns `/england` into `gland`.
+ */
+const LOCALE_PREFIX = new RegExp(`^/(?:${LANGS.join("|")})(?=/|$)`);
+
+/**
+ * Point an authored link at the locale the reader is actually on.
+ *
+ * Guide bodies were written with a mix of `/tours/samaria-gorge-explorer` and
+ * `/en/guides/…`, and both are wrong on four of the five locales: the
+ * unprefixed form takes a 308 through the middleware into English, and the
+ * `/en/` form hard-codes it. Either way a German reader following an internal
+ * link lands in English, and our own markup undermines the hreflang cluster.
+ *
+ * Anchors, `mailto:`, `tel:` and absolute URLs are returned untouched.
+ */
+export function localiseHref(href: string, lang: Lang): string {
+  if (!href.startsWith("/")) return href;
+  const withoutLocale = href.replace(LOCALE_PREFIX, "");
+  return langPath(lang, withoutLocale || "/");
 }

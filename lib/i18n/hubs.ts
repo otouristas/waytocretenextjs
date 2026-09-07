@@ -19,7 +19,7 @@ const EN: Record<HubId, HubCopy> = {
     lead: "Lakes, south-coast villages and the pink sand of Elafonisi — days that stay outdoors without a coach timetable.",
   },
   "cretan-history-tours": {
-    label: "Cretan History",
+    label: "Cretan History Tours from Rethymno",
     short: "Cretan History",
     seoTitle: "Cretan History Tours from Rethymno | Villages, Monasteries, Spinalonga",
     seoDesc:
@@ -27,7 +27,7 @@ const EN: Record<HubId, HubCopy> = {
     lead: "Monasteries, Venetian harbours and the island of Spinalonga — history told by people who live with it.",
   },
   "cretan-culture-tours": {
-    label: "Culture",
+    label: "Cretan Culture Tours from Rethymno",
     short: "Culture",
     seoTitle: "Cretan Culture Tours from Rethymno | Shepherd Day & Knossos",
     seoDesc:
@@ -35,7 +35,7 @@ const EN: Record<HubId, HubCopy> = {
     lead: "A working shepherd's day, and a private morning at Knossos — culture you join, not watch from a rope line.",
   },
   "cretan-gastronomy-food-tours": {
-    label: "Cretan Gastronomy",
+    label: "Cretan Gastronomy & Food Tours from Rethymno",
     short: "Gastronomy",
     seoTitle: "Cretan Gastronomy & Food Tours from Rethymno",
     seoDesc:
@@ -51,7 +51,7 @@ const EN: Record<HubId, HubCopy> = {
     lead: "Gorges and a White Mountains summit, run from Rethymno — family-scale Imbros through to a private Pachnes day.",
   },
   "signature-experiences": {
-    label: "Signature Experiences",
+    label: "Signature Experiences in Crete",
     short: "Signature",
     seoTitle: "Signature Experiences in Crete | Taste, Romance, Wildflowers, Sunset",
     seoDesc:
@@ -59,7 +59,7 @@ const EN: Record<HubId, HubCopy> = {
     lead: "The days guests write home about — food, an Old Town evening for two, spring flowers, and sound at last light.",
   },
   "multiday-tours": {
-    label: "Multiday Tours",
+    label: "Multiday Tours in Crete",
     short: "Multiday",
     seoTitle: "Multiday Tours in Crete | Spring Wildflowers & Orchids",
     seoDesc:
@@ -78,7 +78,7 @@ const DE: Record<HubId, HubCopy> = {
     lead: "Seen, Dörfer an der Südküste und der rosa Sand von Elafonisi — Tage draußen, ohne Reisebus-Fahrplan.",
   },
   "cretan-history-tours": {
-    label: "Kretische Geschichte",
+    label: "Geschichtstouren auf Kreta ab Rethymno",
     short: "Geschichte",
     seoTitle: "Geschichtstouren auf Kreta ab Rethymno | Dörfer, Klöster, Spinalonga",
     seoDesc:
@@ -86,7 +86,7 @@ const DE: Record<HubId, HubCopy> = {
     lead: "Klöster, venezianische Häfen und die Insel Spinalonga — Geschichte von Menschen, die damit leben.",
   },
   "cretan-culture-tours": {
-    label: "Kultur",
+    label: "Kultur-Touren auf Kreta ab Rethymno",
     short: "Kultur",
     seoTitle: "Kultur-Touren auf Kreta ab Rethymno | Schäfertag und Knossos",
     seoDesc:
@@ -94,7 +94,7 @@ const DE: Record<HubId, HubCopy> = {
     lead: "Ein Arbeitstag beim Schäfer und ein privater Vormittag in Knossos — Kultur, die man mitmacht, nicht hinter einer Absperrung.",
   },
   "cretan-gastronomy-food-tours": {
-    label: "Kretische Gastronomie",
+    label: "Kretische Gastronomie und Food-Touren ab Rethymno",
     short: "Gastronomie",
     seoTitle: "Kretische Gastronomie und Food-Touren ab Rethymno",
     seoDesc:
@@ -110,7 +110,7 @@ const DE: Record<HubId, HubCopy> = {
     lead: "Schluchten und ein Lefka-Ori-Gipfel, ab Rethymno — familiengerechtes Imbros bis zu einem privaten Pachnes-Tag.",
   },
   "signature-experiences": {
-    label: "Signature-Erlebnisse",
+    label: "Signature-Erlebnisse auf Kreta",
     short: "Signature",
     seoTitle: "Signature-Erlebnisse auf Kreta | Geschmack, Romantik, Wildblumen, Sonnenuntergang",
     seoDesc:
@@ -118,7 +118,7 @@ const DE: Record<HubId, HubCopy> = {
     lead: "Die Tage, von denen Gäste schreiben — Essen, ein Altstadtabend zu zweit, Frühlingsblumen und Klang im letzten Licht.",
   },
   "multiday-tours": {
-    label: "Mehrtagesreisen",
+    label: "Mehrtagesreisen auf Kreta",
     short: "Mehrtages",
     seoTitle: "Mehrtagesreisen auf Kreta | Frühlingswildblumen und Orchideen",
     seoDesc:
@@ -137,7 +137,7 @@ const IT: Record<HubId, HubCopy> = {
     lead: "Laghi, villaggi della costa sud e la sabbia rosa di Elafonisi — giornate all'aperto, senza orario da pullman.",
   },
   "cretan-history-tours": {
-    label: "Storia di Creta",
+    label: "Tour di storia cretese da Rethymno",
     short: "Storia",
     seoTitle: "Tour di storia cretese da Rethymno | Villaggi, monasteri, Spinalonga",
     seoDesc:
@@ -145,7 +145,7 @@ const IT: Record<HubId, HubCopy> = {
     lead: "Monasteri, porti veneziani e l'isola di Spinalonga — storia raccontata da chi ci vive.",
   },
   "cretan-culture-tours": {
-    label: "Cultura",
+    label: "Tour di cultura cretese da Rethymno",
     short: "Cultura",
     seoTitle: "Tour di cultura cretese da Rethymno | Giorno da pastore e Cnosso",
     seoDesc:
@@ -153,7 +153,7 @@ const IT: Record<HubId, HubCopy> = {
     lead: "Una giornata da pastore e una mattina privata a Cnosso — cultura a cui si partecipa, non da cordone.",
   },
   "cretan-gastronomy-food-tours": {
-    label: "Gastronomia cretese",
+    label: "Gastronomia e food tour cretesi da Rethymno",
     short: "Gastronomia",
     seoTitle: "Gastronomia e food tour cretesi da Rethymno",
     seoDesc:
@@ -169,7 +169,7 @@ const IT: Record<HubId, HubCopy> = {
     lead: "Gole e una vetta dei Lefka Ori, da Rethymno — Imbros in scala famiglia fino a un Pachnes privato.",
   },
   "signature-experiences": {
-    label: "Esperienze signature",
+    label: "Esperienze signature a Creta",
     short: "Signature",
     seoTitle: "Esperienze signature a Creta | Gusto, romance, fiori, tramonto",
     seoDesc:
@@ -177,7 +177,7 @@ const IT: Record<HubId, HubCopy> = {
     lead: "I giorni di cui si scrive — cibo, una serata in Città Vecchia in due, fiori di primavera e suono all'ultima luce.",
   },
   "multiday-tours": {
-    label: "Tour di più giorni",
+    label: "Tour di più giorni a Creta",
     short: "Più giorni",
     seoTitle: "Tour di più giorni a Creta | Fiori di primavera e orchidee",
     seoDesc:
@@ -196,7 +196,7 @@ const FR: Record<HubId, HubCopy> = {
     lead: "Lacs, villages de la côte sud et le sable rose d'Elafonisi — des journées dehors, sans horaire de car.",
   },
   "cretan-history-tours": {
-    label: "Histoire crétoise",
+    label: "Excursions d'histoire crétoise depuis Réthymnon",
     short: "Histoire",
     seoTitle: "Excursions d'histoire crétoise depuis Réthymnon | Villages, monastères, Spinalonga",
     seoDesc:
@@ -204,7 +204,7 @@ const FR: Record<HubId, HubCopy> = {
     lead: "Monastères, ports vénitiens et l'île de Spinalonga — l'histoire racontée par ceux qui vivent avec.",
   },
   "cretan-culture-tours": {
-    label: "Culture",
+    label: "Excursions culturelles en Crète depuis Réthymnon",
     short: "Culture",
     seoTitle: "Excursions culturelles en Crète depuis Réthymnon | Jour de berger et Cnossos",
     seoDesc:
@@ -212,7 +212,7 @@ const FR: Record<HubId, HubCopy> = {
     lead: "Une journée chez le berger et une matinée privée à Cnossos — une culture qu'on rejoint, pas qu'on regarde derrière une corde.",
   },
   "cretan-gastronomy-food-tours": {
-    label: "Gastronomie crétoise",
+    label: "Gastronomie et food tours crétois depuis Réthymnon",
     short: "Gastronomie",
     seoTitle: "Gastronomie et food tours crétois depuis Réthymnon",
     seoDesc:
@@ -228,7 +228,7 @@ const FR: Record<HubId, HubCopy> = {
     lead: "Gorges et un sommet des Lefka Ori, depuis Réthymnon — Imbros à l'échelle familiale jusqu'à une journée privée au Pachnes.",
   },
   "signature-experiences": {
-    label: "Expériences signature",
+    label: "Expériences signature en Crète",
     short: "Signature",
     seoTitle: "Expériences signature en Crète | Goût, romance, fleurs, coucher de soleil",
     seoDesc:
@@ -236,7 +236,7 @@ const FR: Record<HubId, HubCopy> = {
     lead: "Les journées dont on écrit — la table, une soirée en vieille ville à deux, les fleurs de printemps et le son à la dernière lumière.",
   },
   "multiday-tours": {
-    label: "Circuits de plusieurs jours",
+    label: "Circuits de plusieurs jours en Crète",
     short: "Plusieurs jours",
     seoTitle: "Circuits de plusieurs jours en Crète | Fleurs de printemps et orchidées",
     seoDesc:
@@ -255,7 +255,7 @@ const SV: Record<HubId, HubCopy> = {
     lead: "Sjöar, byar på sydkusten och den rosa sanden på Elafonisi — dagar utomhus, utan busschema.",
   },
   "cretan-history-tours": {
-    label: "Kretensisk historia",
+    label: "Historieturer på Kreta från Rethymno",
     short: "Historia",
     seoTitle: "Historieturer på Kreta från Rethymno | Byar, kloster, Spinalonga",
     seoDesc:
@@ -263,7 +263,7 @@ const SV: Record<HubId, HubCopy> = {
     lead: "Kloster, venetianska hamnar och ön Spinalonga — historia berättad av dem som lever med den.",
   },
   "cretan-culture-tours": {
-    label: "Kultur",
+    label: "Kulturturer på Kreta från Rethymno",
     short: "Kultur",
     seoTitle: "Kulturturer på Kreta från Rethymno | Herdedag och Knossos",
     seoDesc:
@@ -271,7 +271,7 @@ const SV: Record<HubId, HubCopy> = {
     lead: "En herdedag och en privat förmiddag i Knossos — kultur man är med i, inte bakom ett snöre.",
   },
   "cretan-gastronomy-food-tours": {
-    label: "Kretensisk gastronomi",
+    label: "Kretensisk gastronomi och matturer från Rethymno",
     short: "Gastronomi",
     seoTitle: "Kretensisk gastronomi och matturer från Rethymno",
     seoDesc:
@@ -287,7 +287,7 @@ const SV: Record<HubId, HubCopy> = {
     lead: "Raviner och en Lefka Ori-topp, från Rethymno — familjeskala Imbros ända till en privat Pachnes-dag.",
   },
   "signature-experiences": {
-    label: "Signature-upplevelser",
+    label: "Signature-upplevelser på Kreta",
     short: "Signature",
     seoTitle: "Signature-upplevelser på Kreta | Smak, romantik, blommor, solnedgång",
     seoDesc:
@@ -295,7 +295,7 @@ const SV: Record<HubId, HubCopy> = {
     lead: "Dagarna man skriver om — mat, en kväll i gamla stan för två, vårblommor och ljud i sista ljuset.",
   },
   "multiday-tours": {
-    label: "Flerdagarsturer",
+    label: "Flerdagarsturer på Kreta",
     short: "Flera dagar",
     seoTitle: "Flerdagarsturer på Kreta | Vårblommor och orkidéer",
     seoDesc:

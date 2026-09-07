@@ -15,6 +15,7 @@ import {
 import { breadcrumbNode, faqNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Prose, QuickAnswers } from "@/components/prose";
 import { FaqList } from "@/components/tour/sections";
 import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
@@ -107,15 +108,7 @@ export default async function Page({
     <>
       <JsonLd data={jsonLd} />
       <article className="mx-auto max-w-3xl px-4 py-10 md:py-14">
-        <nav aria-label={ui.breadcrumb} className="text-xs text-muted">
-          <Link href={`/${lang}`} className="hover:text-accent">
-            {ui.home}
-          </Link>
-          <span className="px-1.5 text-faint">/</span>
-          <Link href={`/${lang}/guides`} className="hover:text-accent">
-            {ui.navGuides}
-          </Link>
-        </nav>
+        <Breadcrumbs crumbs={crumbs} lang={lang} />
 
         <h1 className="mt-4 font-display text-4xl leading-tight text-ink md:text-5xl">
           {copy.title}
@@ -155,7 +148,7 @@ export default async function Page({
         <QuickAnswers items={copy.quickAnswers} title={ui.atAGlance} />
 
         <div className="mt-8">
-          <Prose markdown={copy.body} />
+          <Prose markdown={copy.body} lang={lang} />
         </div>
 
         <FaqList faqs={copy.faqs} title={ui.faq} />

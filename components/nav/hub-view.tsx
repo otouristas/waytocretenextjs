@@ -7,8 +7,10 @@ import type { HubDef } from "@/lib/nav/hubs";
 import { allTours } from "@/lib/content/load";
 import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
 import { BOOK_NOW_URL } from "@/lib/site";
+import type { Crumb } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
-export function HubView({ lang, hub }: { lang: Lang; hub: HubDef }) {
+export function HubView({ lang, hub, crumbs }: { lang: Lang; hub: HubDef; crumbs: Crumb[] }) {
   const ui = t(lang);
   const labels = navCopy(lang);
   const copy = hubCopy(lang, hub.id);
@@ -20,7 +22,9 @@ export function HubView({ lang, hub }: { lang: Lang; hub: HubDef }) {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
-      <header className="max-w-2xl">
+      <Breadcrumbs crumbs={crumbs} lang={lang} />
+
+      <header className="mt-4 max-w-2xl">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           {labels.tours}
         </p>

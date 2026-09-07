@@ -56,11 +56,19 @@ export function HomeHero({ lang }: { lang: Lang }) {
           <div className="mx-auto w-full max-w-6xl px-4 pb-28 md:pb-32">
             <p className="font-script text-2xl text-paper md:text-3xl">{copy.desk}</p>
 
+            {/* The H1 says what this page sells; the line under it says why
+                it is us. The brand statement was the H1 and carried no search
+                intent at all, which on the site's most linked page is the one
+                heading that can least afford to be decorative. */}
             <h1 className="mt-3 max-w-3xl font-display text-[2.6rem] leading-[1.02] text-paper md:text-6xl lg:text-[4.25rem]">
               {copy.heroTitle}
             </h1>
 
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-paper/90 md:text-lg">
+            <p className="mt-4 max-w-2xl font-display text-xl leading-snug text-paper/95 md:text-2xl">
+              {copy.heroPromise}
+            </p>
+
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-paper/90 md:text-lg">
               {copy.heroSub}
             </p>
 

@@ -39,7 +39,7 @@ export function LegalDoc({ doc, lang }: { doc: Doc; lang: Lang }) {
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_200px] lg:items-start">
         <div className="min-w-0 max-w-2xl">
-          <Prose markdown={doc.markdown} anchors />
+          <Prose markdown={doc.markdown} lang={lang} anchors />
 
           <aside className="mt-12 rounded-2xl bg-surface p-5 ring-1 ring-line">
             <h2 className="font-display text-lg text-ink">{ui.getInTouch}</h2>

@@ -93,10 +93,17 @@ export type UI = {
   contactLead: string;
   heroKicker: string;
   heroTitle: string;
+  /**
+   * The brand line, demoted from the H1 but not from the design.
+   * The heading has to say what the page sells; this says why it is us.
+   */
+  heroPromise: string;
   heroSub: string;
   pointsTitle: string;
   footerNav: string;
   footerTours: string;
+  /** The category-hub column, so the hubs have a sitewide route in. */
+  footerBrowse: string;
   rights: string;
   home: string;
   difficulty: string;
@@ -258,6 +265,8 @@ export type UI = {
   bringTitle: string;
   relatedTours: string;
   visitWithUs: string;
+  /** Heading over the guides that cover a place. `{name}` is the place. */
+  readAboutPlace: string;
   atAGlance: string;
   travellerTip: string;
   travellerTips: string;
@@ -419,11 +428,13 @@ const EN: UI = {
   contactSeoTitle: "Contact | Plan Your Day in Crete | Rethymno Tours",
   contactLead: "Your hotel, how many of you, and what you want the day to feel like. WhatsApp is usually fastest.",
   heroKicker: "Private tours and transfers in Crete",
-  heroTitle: "See Crete the way people who live here see it",
+  heroTitle: "Private Tours & Day Trips from Rethymno",
+  heroPromise: "See Crete the way people who live here see it",
   heroSub: "Private guided days across Crete — gorges, mountain villages, food and beaches. Small groups, hotel pickup, and free cancellation up to 48 hours.",
   pointsTitle: "Why book with us",
   footerNav: "Explore",
   footerTours: "Popular tours",
+  footerBrowse: "Browse by",
   rights: "Rethymno Tours · Rethymno, Crete",
   home: "Home",
   difficulty: "Difficulty",
@@ -575,7 +586,7 @@ const EN: UI = {
   heroSlider: "Photographs of Crete",
   heroGoToSlide: "Show photograph {n}",
   toursTitle: "Crete Tours & Day Trips | Rethymno Tours",
-  toursHubTitle: "Days out in Crete",
+  toursHubTitle: "Tours & Day Trips from Rethymno",
   placesSeoTitle: "Places to Visit in Crete | Gorges, Beaches and Ancient Sites",
   placesSeoDesc:
     "The attractions worth the drive from Rethymno: Samaria and Imbros gorges, Preveli and Elafonisi beaches, Knossos, Spinalonga, Lake Kournas and Arkadi — with drive times, entry fees and open seasons.",
@@ -597,6 +608,7 @@ const EN: UI = {
   bringTitle: "What to bring",
   relatedTours: "You might also like",
   visitWithUs: "Visit {name} with us",
+  readAboutPlace: "Read more about {name}",
   atAGlance: "At a glance",
   travellerTip: "Traveller tip",
   travellerTips: "Traveller tips",
@@ -816,11 +828,13 @@ const DE: UI = {
   contactSeoTitle: "Kontakt | Planen Sie Ihren Tag auf Kreta | Rethymno Tours",
   contactLead: "Ihr Hotel, wie viele Sie sind und wie sich der Tag anfühlen soll. WhatsApp ist meist am schnellsten.",
   heroKicker: "Private Touren und Transfers auf Kreta",
-  heroTitle: "Kreta sehen, wie Menschen, die hier leben, es sehen",
+  heroTitle: "Private Touren und Tagesausflüge ab Rethymno",
+  heroPromise: "Kreta sehen, wie Menschen, die hier leben, es sehen",
   heroSub: "Private geführte Tage auf Kreta — Schluchten, Bergdörfer, Essen und Strände. Kleine Gruppen, Hotelabholung und kostenlose Stornierung bis 48 Stunden vorher.",
   pointsTitle: "Warum bei uns buchen",
   footerNav: "Entdecken",
   footerTours: "Beliebte Touren",
+  footerBrowse: "Kategorien",
   rights: "Rethymno Tours · Rethymno, Kreta",
   home: "Start",
   difficulty: "Schwierigkeit",
@@ -972,7 +986,7 @@ const DE: UI = {
   heroSlider: "Fotografien von Kreta",
   heroGoToSlide: "Fotografie {n} anzeigen",
   toursTitle: "Kreta-Touren und Tagesausflüge | Rethymno Tours",
-  toursHubTitle: "Ausflüge auf Kreta",
+  toursHubTitle: "Touren und Tagesausflüge ab Rethymno",
   placesSeoTitle: "Orte auf Kreta | Schluchten, Strände und antike Stätten",
   placesSeoDesc:
     "Die Ziele, die die Fahrt ab Rethymno wert sind: Samaria und Imbros, Preveli und Elafonisi, Knossos, Spinalonga, Kournas und Arkadi — mit Fahrzeiten, Eintritt und Saison.",
@@ -994,6 +1008,7 @@ const DE: UI = {
   bringTitle: "Was mitbringen",
   relatedTours: "Das könnte Ihnen auch gefallen",
   visitWithUs: "{name} mit uns besuchen",
+  readAboutPlace: "Mehr über {name} lesen",
   atAGlance: "Auf einen Blick",
   travellerTip: "Reisetipp",
   travellerTips: "Reisetipps",
@@ -1213,11 +1228,13 @@ const IT: UI = {
   contactSeoTitle: "Contatti | Pianificate la giornata a Creta | Rethymno Tours",
   contactLead: "L'hotel, in quanti siete e che atmosfera volete. WhatsApp di solito è il più veloce.",
   heroKicker: "Tour e transfer privati a Creta",
-  heroTitle: "Vedere Creta come la vedono chi ci vive",
+  heroTitle: "Tour privati ed escursioni giornaliere da Rethymno",
+  heroPromise: "Vedere Creta come la vedono chi ci vive",
   heroSub: "Giornate private guidate in Creta — gole, villaggi di montagna, cibo e spiagge. Gruppi piccoli, ritiro in hotel e cancellazione gratuita fino a 48 ore prima.",
   pointsTitle: "Perché prenotare con noi",
   footerNav: "Esplora",
   footerTours: "Tour più richiesti",
+  footerBrowse: "Categorie",
   rights: "Rethymno Tours · Rethymno, Creta",
   home: "Home",
   difficulty: "Difficoltà",
@@ -1369,7 +1386,7 @@ const IT: UI = {
   heroSlider: "Fotografie di Creta",
   heroGoToSlide: "Mostra la fotografia {n}",
   toursTitle: "Tour ed escursioni a Creta | Rethymno Tours",
-  toursHubTitle: "Giornate fuori a Creta",
+  toursHubTitle: "Tour ed escursioni giornaliere da Rethymno",
   placesSeoTitle: "Luoghi da visitare a Creta | Gole, spiagge e siti antichi",
   placesSeoDesc:
     "Le tappe che valgono il tragitto da Rethymno: Samaria e Imbros, Preveli ed Elafonisi, Cnosso, Spinalonga, Kournas e Arkadi — con tempi di guida, ingressi e stagioni.",
@@ -1391,6 +1408,7 @@ const IT: UI = {
   bringTitle: "Cosa portare",
   relatedTours: "Potrebbe piacervi anche",
   visitWithUs: "Visitate {name} con noi",
+  readAboutPlace: "Leggi di più su {name}",
   atAGlance: "In sintesi",
   travellerTip: "Consiglio del viaggiatore",
   travellerTips: "Consigli dei viaggiatori",
@@ -1610,11 +1628,13 @@ const FR: UI = {
   contactSeoTitle: "Contact | Planifiez votre journée en Crète | Rethymno Tours",
   contactLead: "Votre hôtel, votre nombre et l'ambiance que vous voulez. WhatsApp est en général le plus rapide.",
   heroKicker: "Excursions et transferts privés en Crète",
-  heroTitle: "Voir la Crète comme la voient ceux qui y vivent",
+  heroTitle: "Excursions privées et journées depuis Réthymnon",
+  heroPromise: "Voir la Crète comme la voient ceux qui y vivent",
   heroSub: "Journées guidées privées en Crète — gorges, villages de montagne, table et plages. Petits groupes, prise en charge à l'hôtel et annulation gratuite jusqu'à 48 heures avant.",
   pointsTitle: "Pourquoi réserver avec nous",
   footerNav: "Explorer",
   footerTours: "Excursions populaires",
+  footerBrowse: "Catégories",
   rights: "Rethymno Tours · Réthymnon, Crète",
   home: "Accueil",
   difficulty: "Difficulté",
@@ -1766,7 +1786,7 @@ const FR: UI = {
   heroSlider: "Photographies de la Crète",
   heroGoToSlide: "Afficher la photographie {n}",
   toursTitle: "Excursions en Crète | Rethymno Tours",
-  toursHubTitle: "Journées en Crète",
+  toursHubTitle: "Excursions et journées depuis Réthymnon",
   placesSeoTitle: "Lieux à visiter en Crète | Gorges, plages et sites antiques",
   placesSeoDesc:
     "Les étapes qui valent la route depuis Réthymnon : Samaria et Imbros, Preveli et Elafonissi, Knossos, Spinalonga, Kournas et Arkadi — avec temps de route, droits d'entrée et saisons.",
@@ -1788,6 +1808,7 @@ const FR: UI = {
   bringTitle: "Quoi emporter",
   relatedTours: "Vous aimerez aussi",
   visitWithUs: "Visitez {name} avec nous",
+  readAboutPlace: "En savoir plus sur {name}",
   atAGlance: "En un coup d'œil",
   travellerTip: "Conseil de voyageur",
   travellerTips: "Conseils de voyageurs",
@@ -2007,11 +2028,13 @@ const SV: UI = {
   contactSeoTitle: "Kontakt | Planera dagen på Kreta | Rethymno Tours",
   contactLead: "Ert hotell, hur många ni är och hur dagen ska kännas. WhatsApp är oftast snabbast.",
   heroKicker: "Privata turer och transfer på Kreta",
-  heroTitle: "Se Kreta som de som bor här ser det",
+  heroTitle: "Privata turer och dagsutflykter från Rethymno",
+  heroPromise: "Se Kreta som de som bor här ser det",
   heroSub: "Privata guidade dagar på Kreta — raviner, bergsbyar, mat och stränder. Små grupper, hämtning på hotellet och gratis avbokning upp till 48 timmar innan.",
   pointsTitle: "Varför boka med oss",
   footerNav: "Utforska",
   footerTours: "Populära turer",
+  footerBrowse: "Kategorier",
   rights: "Rethymno Tours · Rethymno, Kreta",
   home: "Hem",
   difficulty: "Svårighet",
@@ -2163,7 +2186,7 @@ const SV: UI = {
   heroSlider: "Foton från Kreta",
   heroGoToSlide: "Visa foto {n}",
   toursTitle: "Turer och dagsutflykter på Kreta | Rethymno Tours",
-  toursHubTitle: "Utflykter på Kreta",
+  toursHubTitle: "Turer och dagsutflykter från Rethymno",
   placesSeoTitle: "Platser att besöka på Kreta | Raviner, stränder och antika platser",
   placesSeoDesc:
     "Målen som är värda körningen från Rethymno: Samaria och Imbros, Preveli och Elafonisi, Knossos, Spinalonga, Kournas och Arkadi — med körtid, entré och säsong.",
@@ -2185,6 +2208,7 @@ const SV: UI = {
   bringTitle: "Vad ni ska ta med",
   relatedTours: "Ni kanske också gillar",
   visitWithUs: "Besök {name} med oss",
+  readAboutPlace: "Läs mer om {name}",
   atAGlance: "I korthet",
   travellerTip: "Restips",
   travellerTips: "Restips",

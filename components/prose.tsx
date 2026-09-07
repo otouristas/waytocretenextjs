@@ -1,5 +1,6 @@
 import { Marked, type Tokens } from "marked";
-import { headingId } from "@/lib/content/format";
+import { headingId, localiseHref } from "@/lib/content/format";
+import type { Lang } from "@/lib/i18n/langs";
 
 /**
  * Long-form body copy.
@@ -20,29 +21,66 @@ import { headingId } from "@/lib/content/format";
  */
 
 /**
- * marked no longer generates heading ids of its own, so the anchored variant
- * gets its own instance rather than mutating the shared parser — `marked.use`
- * is global and would silently start stamping ids on guide and place bodies
- * too.
+ * Rewriting links at render time rather than in the content files means the
+ * fix holds for every guide and place body, in every locale, including bodies
+ * authored later. See `localiseHref` for what was wrong with them.
  */
-const anchored = new Marked({
-  gfm: true,
-  breaks: false,
-  renderer: {
-    heading(token: Tokens.Heading) {
-      const content = this.parser.parseInline(token.tokens);
-      if (token.depth !== 2 && token.depth !== 3) {
-        return `<h${token.depth}>${content}</h${token.depth}>`;
-      }
-      return `<h${token.depth} id="${headingId(token.text)}">${content}</h${token.depth}>`;
+function renderer(lang: Lang, anchors: boolean) {
+  return {
+    ...(anchors
+      ? {
+          heading(this: { parser: { parseInline: (t: Tokens.Heading["tokens"]) => string } }, token: Tokens.Heading) {
+            const content = this.parser.parseInline(token.tokens);
+            if (token.depth !== 2 && token.depth !== 3) {
+              return `<h${token.depth}>${content}</h${token.depth}>`;
+            }
+            return `<h${token.depth} id="${headingId(token.text)}">${content}</h${token.depth}>`;
+          },
+        }
+      : {}),
+    link(this: { parser: { parseInline: (t: Tokens.Link["tokens"]) => string } }, token: Tokens.Link) {
+      const text = this.parser.parseInline(token.tokens);
+      const href = localiseHref(token.href, lang);
+      const title = token.title ? ` title="${token.title}"` : "";
+      // Outbound links — the two in the legal documents — shipped with no
+      // `rel` at all, because this used marked's default renderer.
+      const external = /^https?:\/\//i.test(href);
+      const rel = external ? ' rel="noopener"' : "";
+      return `<a href="${href}"${title}${rel}>${text}</a>`;
     },
-  },
-});
+  };
+}
 
-const plain = new Marked({ gfm: true, breaks: false });
+/**
+ * One parser per locale and heading mode.
+ *
+ * `marked.use` is global, so the anchored variant cannot share an instance
+ * with the plain one — it would silently start stamping ids on guide and
+ * place bodies too. Instances are cached because building one per render
+ * would re-parse the renderer on every page.
+ */
+const parsers = new Map<string, Marked>();
 
-export function Prose({ markdown, anchors = false }: { markdown: string; anchors?: boolean }) {
-  const html = (anchors ? anchored : plain).parse(markdown, { async: false }) as string;
+function parserFor(lang: Lang, anchors: boolean): Marked {
+  const key = `${lang}:${anchors}`;
+  let parser = parsers.get(key);
+  if (!parser) {
+    parser = new Marked({ gfm: true, breaks: false, renderer: renderer(lang, anchors) });
+    parsers.set(key, parser);
+  }
+  return parser;
+}
+
+export function Prose({
+  markdown,
+  lang,
+  anchors = false,
+}: {
+  markdown: string;
+  lang: Lang;
+  anchors?: boolean;
+}) {
+  const html = parserFor(lang, anchors).parse(markdown, { async: false }) as string;
 
   return (
     <div

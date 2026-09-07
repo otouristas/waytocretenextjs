@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Crumb } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import {
   ArrowRight,
   BadgeCheck,
@@ -42,7 +44,15 @@ import { reviewExperienceOptions } from "@/lib/reviews/experiences";
  *
  * Everything except the request form is server-rendered.
  */
-export function TransfersView({ lang, reviews }: { lang: Lang; reviews: Review[] }) {
+export function TransfersView({
+  lang,
+  reviews,
+  crumbs,
+}: {
+  lang: Lang;
+  reviews: Review[];
+  crumbs: Crumb[];
+}) {
   const p = transfersCopy(lang);
   const ui = t(lang);
   const data = transfers();
@@ -63,6 +73,8 @@ export function TransfersView({ lang, reviews }: { lang: Lang; reviews: Review[]
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-earth-900/92 via-earth-900/55 to-earth-900/20" />
           <div className="absolute inset-0 flex items-end">
             <div className="mx-auto w-full max-w-6xl px-4 pb-10">
+              <Breadcrumbs crumbs={crumbs} lang={lang} tone="onImage" className="mb-3 text-xs text-paper/80" />
+
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-paper">
                 {p.kicker}
               </p>
