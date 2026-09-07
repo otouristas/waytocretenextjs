@@ -242,6 +242,47 @@ export type TourCategory = z.infer<typeof TourCategory>;
 export const PhotoshootPolicy = z.enum(["none", "included", "with_guide"]);
 export type PhotoshootPolicy = z.infer<typeof PhotoshootPolicy>;
 
+/* ────────────────────────────── small-group departures ────────────────────────────── */
+
+/**
+ * A tour that can be sold by the seat as well as by the vehicle.
+ *
+ * The catalogue is overwhelmingly private: a van and a driver cost the same
+ * whether one person rides in them or eight, so a lone traveller is quoted the
+ * whole day and walks away. A `smallGroup` block opts a product into a second,
+ * parallel way to sell the same date — seats in a shared departure that only
+ * operates once enough of them are taken.
+ *
+ * `price` is a full `PriceModel` rather than a bare per-person number, for two
+ * reasons. It keeps `quote()` the single pricing authority, so a seat and the
+ * private buyout of the same day cannot be computed by two code paths that
+ * drift. And per-head rates that fall as the vehicle fills are already
+ * expressible as a `sliding_per_person` ladder — dynamic pricing becomes new
+ * tiers in a JSON file rather than new code.
+ *
+ * There is deliberately no field for the private price. That is the tour's own
+ * `price`, read through the same `quote()`, because the private product is not
+ * a variant of the shared one — it is what this tour has always been.
+ */
+export const SmallGroup = z.object({
+  /** Per-seat pricing. Priced through `quote()` only. */
+  price: PriceModel,
+  /** Seats needed before the departure operates. */
+  minParticipants: z.number().int().min(1),
+  /**
+   * Revenue the departure must clear to be worth running, in EUR. Null means
+   * head count alone decides. See `meetsRevenueFloor()`.
+   */
+  minRevenue: z.number().nonnegative().nullable().default(null),
+  /**
+   * Hours before pickup at which we write to a guest whose departure is still
+   * short. Not a deadline — the date stays bookable, because one more seat can
+   * still confirm it.
+   */
+  noticeHours: z.number().int().positive().default(48),
+});
+export type SmallGroup = z.infer<typeof SmallGroup>;
+
 export const TourCore = z.object({
   slug: Slug,
   category: TourCategory,
@@ -296,6 +337,14 @@ export const TourCore = z.object({
   privateOnly: z.boolean().default(false),
 
   cancelFreeHours: z.number().int().nonnegative().default(48),
+
+  /**
+   * Opt this tour into shared departures. Null — the default — means it is
+   * sold by the vehicle only, exactly as the whole catalogue was before.
+   * Capacity comes from `groupMax`: a shared departure and a private one are
+   * the same van.
+   */
+  smallGroup: SmallGroup.nullable().default(null),
 
   meetingPoint: GeoPoint.nullable().default(null),
   /** Attractions visited, as /places slugs. Drives the itinerary ItemList. */
