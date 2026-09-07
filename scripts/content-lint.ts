@@ -17,6 +17,7 @@ import {
   TourCore,
 } from "../lib/content/schema.ts";
 import { priceFrom, quote } from "../lib/pricing.ts";
+import { LANGS } from "../lib/i18n/langs.ts";
 
 /**
  * The content gate.
@@ -555,6 +556,53 @@ for (const slug of photographySlugs) {
   }
 }
 console.log(`  ${photographySlugs.length} photography products checked`);
+
+/* ─────────────────────── unique titles and descriptions ─────────────────────── */
+
+/**
+ * Two pages must not share a title or a meta description.
+ *
+ * The schema already caps both at the lengths Google will render, which is
+ * what stops a truncated title. It says nothing about two pages claiming the
+ * same one — and duplicates are what actually costs rankings, because Google
+ * treats them as a signal that the pages are the same page and picks one.
+ *
+ * Checked per locale: the English and German titles of one place are supposed
+ * to differ from each other and are not duplicates of anything.
+ *
+ * A separate pass over the files rather than a hook inside each loop above,
+ * so the rule holds for every content kind including ones added later.
+ */
+console.log("\nSEO uniqueness");
+
+const seenTitles = new Map<string, string>();
+const seenDescriptions = new Map<string, string>();
+let metaChecked = 0;
+
+for (const kind of ["tours", "guides", "places", "photography"]) {
+  for (const slug of dirs(kind)) {
+    for (const lang of LANGS) {
+      const path = join(CONTENT, kind, slug, `${lang}.json`);
+      if (!existsSync(path)) continue;
+      const copy = load(path) as { seoTitle?: string; seoDescription?: string } | null;
+      if (!copy) continue;
+      const where = `${kind}/${slug}/${lang}`;
+      metaChecked += 1;
+
+      for (const [field, value, seen] of [
+        ["seoTitle", copy.seoTitle, seenTitles],
+        ["seoDescription", copy.seoDescription, seenDescriptions],
+      ] as const) {
+        if (!value) continue;
+        const key = `${lang}::${value.trim().toLowerCase()}`;
+        const owner = seen.get(key);
+        if (owner) fail(where, `${field} duplicates ${owner}:\n    "${value}"`);
+        else seen.set(key, where);
+      }
+    }
+  }
+}
+console.log(`  ${metaChecked} page titles and descriptions checked for duplicates`);
 
 /* ────────────────────────────── result ────────────────────────────── */
 
