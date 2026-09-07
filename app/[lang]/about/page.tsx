@@ -35,7 +35,7 @@ export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
 }
 
-const HERO = "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-19-1024x683.jpg";
+const HERO = "/images/site/lefka-ori-19.jpg";
 
 export async function generateMetadata({
   params,

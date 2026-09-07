@@ -31,15 +31,15 @@
     "south-crete-highlights",
     "spring-wildflowers-orchids-of-crete"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/preveli-palm-forest-4-scaled.jpg",
+  "hero": "/images/tours/south-crete-highlights/gallery-05.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-15-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-6-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-10-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-14-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-24-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-23-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-28-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-32-scaled.jpg"
+    "/images/tours/south-crete-highlights/hero.jpg",
+    "/images/tours/south-crete-highlights/gallery-01.jpg",
+    "/images/tours/south-crete-highlights/gallery-02.jpg",
+    "/images/tours/south-crete-highlights/gallery-03.jpg",
+    "/images/tours/south-crete-highlights/gallery-04.jpg",
+    "/images/tours/south-crete-highlights/gallery-06.jpg",
+    "/images/tours/south-crete-highlights/gallery-07.jpg",
+    "/images/tours/south-crete-highlights/gallery-08.jpg"
   ]
 }

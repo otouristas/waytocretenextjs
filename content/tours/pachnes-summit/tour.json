@@ -36,13 +36,13 @@
   "places": [
     "pachnes"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-22-scaled.jpg",
+  "hero": "/images/tours/pachnes-summit/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-35-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-41-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-54-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-12-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-23-scaled.jpg"
+    "/images/tours/pachnes-summit/gallery-01.jpg",
+    "/images/tours/pachnes-summit/gallery-02.jpg",
+    "/images/tours/pachnes-summit/gallery-03.jpg",
+    "/images/tours/pachnes-summit/gallery-04.jpg",
+    "/images/tours/pachnes-summit/gallery-05.jpg"
   ],
   "featured": false,
   "supersedes": []

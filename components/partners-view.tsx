@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 /** Wide drone frame of the coast: the "whole of Crete" promise the section makes. */
-const OFFER_IMAGE = "https://waytocrete.com/wp-content/uploads/2024/05/DJI_0715-scaled.jpg";
+const OFFER_IMAGE = "/images/site/dji-0715.jpg";
 
 export function PartnersView({ lang }: { lang: Lang }) {
   const p = partnersCopy(lang);

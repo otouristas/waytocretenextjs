@@ -3,11 +3,11 @@ import { contentRedirects } from "./lib/content/redirects";
 
 const nextConfig: NextConfig = {
   images: {
-    // TEMPORARY: tour imagery is still hot-linked from the sister WordPress
-    // site. The media pipeline (scripts/media-build.ts) self-hosts these; drop
-    // this pattern once it has run, so the new site owns its own assets and
-    // its LCP no longer depends on someone else's server.
-    remotePatterns: [{ protocol: "https", hostname: "waytocrete.com", pathname: "/wp-content/uploads/**" }],
+    // No `remotePatterns`. Every photograph is self-hosted under /public/images
+    // by `scripts/media-build.ts`, so the site owns its own assets and its LCP
+    // no longer depends on someone else's server. Leaving the pattern in place
+    // would let a re-introduced hot-link render silently; without it, one is a
+    // build error — which is the point.
     formats: ["image/avif", "image/webp"],
   },
   // These are permanent slug corrections. They were 302s, which neither

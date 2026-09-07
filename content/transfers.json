@@ -28,12 +28,12 @@
     "passengers": 8,
     "bags": 8,
     "description": "One to eight seats, suited to families and small groups.",
-    "hero": "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-2-scaled.jpg",
+    "hero": "/images/transfers/vehicle-hero.jpg",
     "gallery": [
-      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-34-scaled.jpg",
-      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-7-scaled.jpg",
-      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-25-scaled.jpg",
-      "https://waytocrete.com/wp-content/uploads/2026/01/Autosales-Patelaros-4-scaled.jpg"
+      "/images/transfers/vehicle-01.jpg",
+      "/images/transfers/vehicle-02.jpg",
+      "/images/guides/crete-without-a-car/hero.jpg",
+      "/images/transfers/vehicle-04.jpg"
     ],
     "note": "One vehicle is published. Larger wedding parties are covered by combining vehicles rather than by a bigger single vehicle."
   },

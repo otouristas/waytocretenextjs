@@ -56,15 +56,15 @@
     "elounda",
     "plaka"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Spinalonga-scaled.jpg",
+  "hero": "/images/tours/spinalonga-tour-from-rethymno/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/Spinalonga-1-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/1-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/2-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/3-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/4-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/5-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/6-scaled.jpg"
+    "/images/tours/spinalonga-tour-from-rethymno/gallery-01.jpg",
+    "/images/tours/spinalonga-tour-from-rethymno/gallery-02.jpg",
+    "/images/tours/spinalonga-tour-from-rethymno/gallery-03.jpg",
+    "/images/tours/spinalonga-tour-from-rethymno/gallery-04.jpg",
+    "/images/tours/spinalonga-tour-from-rethymno/gallery-05.jpg",
+    "/images/tours/spinalonga-tour-from-rethymno/gallery-06.jpg",
+    "/images/tours/spinalonga-tour-from-rethymno/gallery-07.jpg"
   ],
   "featured": false,
   "supersedes": []

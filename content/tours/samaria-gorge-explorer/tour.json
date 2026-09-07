@@ -78,16 +78,16 @@
     "samaria-gorge",
     "agia-roumeli"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-73-scaled.jpg",
+  "hero": "/images/tours/samaria-gorge-explorer/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-71.jpg",
-    "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-118-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2024/12/increteblue-suites-103-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-98-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-105-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-115-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-122-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-123-scaled.jpg"
+    "/images/tours/samaria-gorge-explorer/gallery-01.jpg",
+    "/images/tours/samaria-gorge-explorer/gallery-02.jpg",
+    "/images/tours/samaria-gorge-explorer/gallery-03.jpg",
+    "/images/tours/samaria-gorge-explorer/gallery-04.jpg",
+    "/images/tours/samaria-gorge-explorer/gallery-05.jpg",
+    "/images/tours/samaria-gorge-explorer/gallery-06.jpg",
+    "/images/tours/samaria-gorge-explorer/gallery-07.jpg",
+    "/images/tours/samaria-gorge-explorer/gallery-08.jpg"
   ],
   "travelotopos": {
     "serviceId": 13,

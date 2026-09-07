@@ -42,15 +42,15 @@
   "cancelFreeHours": 48,
   "meetingPoint": null,
   "places": [],
-  "hero": "https://waytocrete.com/wp-content/uploads/2024/05/to-spiti-tou-voskou-1024-2.jpg",
+  "hero": "/images/tours/shepherd-for-a-day-crete/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/4-6-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/176-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/78-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/13-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/55-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/90-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/114-scaled.jpg"
+    "/images/tours/shepherd-for-a-day-crete/gallery-01.jpg",
+    "/images/tours/shepherd-for-a-day-crete/gallery-02.jpg",
+    "/images/tours/shepherd-for-a-day-crete/gallery-03.jpg",
+    "/images/tours/shepherd-for-a-day-crete/gallery-04.jpg",
+    "/images/tours/shepherd-for-a-day-crete/gallery-05.jpg",
+    "/images/tours/shepherd-for-a-day-crete/gallery-06.jpg",
+    "/images/tours/shepherd-for-a-day-crete/gallery-07.jpg"
   ],
   "travelotopos": {
     "serviceId": 3,

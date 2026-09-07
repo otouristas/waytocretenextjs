@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { LANGS, LANG_META, parseLang, type Lang } from "@/lib/i18n/langs";
+import { LANGS, LANG_META, langPath, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import {
   getGuideCopy,
@@ -12,14 +12,14 @@ import {
   guideLangs,
   guideSlugs,
 } from "@/lib/content/load";
-import { breadcrumbNode, faqNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import { breadcrumbNode, faqNode, graph, id, pageMeta, personNode, webPageNode, type Crumb } from "@/lib/seo";
 import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Prose, QuickAnswers } from "@/components/prose";
 import { FaqList } from "@/components/tour/sections";
 import { CatalogTourCard } from "@/components/tour/catalog-tour-card";
-import { BRAND } from "@/lib/site";
+import { HOST_IMAGES, HOST_NAME, hostCopy } from "@/lib/i18n/host";
 
 export function generateStaticParams() {
   return guideSlugs().flatMap((slug) => LANGS.map((lang) => ({ lang, slug })));
@@ -62,6 +62,7 @@ export default async function Page({
   if (!core || !copy) notFound();
 
   const ui = t(lang);
+  const host = hostCopy(lang);
   const path = `/guides/${slug}`;
   const crumbs: Crumb[] = [
     { name: ui.home, path: "/" },
@@ -97,10 +98,17 @@ export default async function Page({
       datePublished: core.published,
       dateModified: core.updated,
       ...(core.hero ? { image: [core.hero] } : {}),
-      author: { "@id": id.organization() },
+      author: { "@id": id.author(core.authorId) },
       publisher: { "@id": id.organization() },
       isPartOf: { "@id": id.website() },
     },
+    // The author node itself, so the `@id` above resolves on this page rather
+    // than pointing at something a consumer has to go and find.
+    personNode({
+      name: HOST_NAME,
+      description: host.paragraphs[0],
+      image: HOST_IMAGES[0].src,
+    }),
     faqNode(copy.faqs),
   ]);
 
@@ -115,7 +123,10 @@ export default async function Page({
         </h1>
 
         <p className="mt-3 text-xs text-faint">
-          {BRAND} ·{" "}
+          <Link href={langPath(lang, "/about")} className="font-semibold text-accent hover:underline">
+            {HOST_NAME}
+          </Link>{" "}
+          ·{" "}
           <time dateTime={core.updated}>
             {ui.updatedOn}{" "}
             {new Date(`${core.updated}T00:00:00Z`).toLocaleDateString(LANG_META[lang].dateLocale, {
@@ -136,7 +147,11 @@ export default async function Page({
           <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
               src={core.hero}
-              alt=""
+              // The LCP image on 29 guides in five locales shipped with no
+              // alt at all. The title is what every other content image on
+              // the site describes itself with, and there is no per-image
+              // description in the schema to draw on.
+              alt={copy.title}
               fill
               priority
               sizes="(min-width: 768px) 768px, 100vw"
@@ -152,6 +167,32 @@ export default async function Page({
         </div>
 
         <FaqList faqs={copy.faqs} title={ui.faq} />
+
+        {/* Who wrote this, at the end where a reader who has just finished
+            2,000 words is deciding whether to trust it. The bio is the same
+            one the About page publishes — one source, two placements. */}
+        <aside className="mt-14 flex gap-4 rounded-2xl bg-surface p-5 ring-1 ring-line">
+          <Image
+            src={HOST_IMAGES[0].src}
+            alt={HOST_IMAGES[0].alt}
+            width={72}
+            height={72}
+            className="size-16 shrink-0 rounded-full object-cover"
+          />
+          <div className="min-w-0">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+              {host.eyebrow}
+            </p>
+            <p className="mt-1 font-display text-lg text-ink">{HOST_NAME}</p>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted">{host.paragraphs[0]}</p>
+            <Link
+              href={langPath(lang, "/about")}
+              className="mt-2 inline-block text-sm font-semibold text-accent hover:underline"
+            >
+              {ui.navAbout}
+            </Link>
+          </div>
+        </aside>
 
         {linked.length > 0 ? (
           <section className="mt-14 border-t border-line pt-10">

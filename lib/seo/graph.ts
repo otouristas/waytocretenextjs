@@ -34,6 +34,24 @@ import { absolute, id } from "./ids.ts";
 
 type Node = Record<string, unknown>;
 
+/**
+ * Structured data needs absolute image URLs.
+ *
+ * Every photograph used to be hot-linked from the sister site, so the values
+ * flowing into these nodes were already absolute and this worked by accident.
+ * Self-hosting made them root-relative (`/images/tours/…`), which would have
+ * shipped relative URLs inside `Product`, `TouristAttraction`, `Article` and
+ * `Person` — valid JSON, useless to a consumer. `lib/seo/meta.ts` has done
+ * this for OpenGraph since the beginning; this is the same rule for the graph.
+ */
+function absoluteImage(src: string): string {
+  return src.startsWith("http") ? src : `${siteUrl()}${src.startsWith("/") ? "" : "/"}${src}`;
+}
+
+function absoluteImages(sources: readonly string[]): string[] {
+  return sources.map(absoluteImage);
+}
+
 export type Crumb = { name: string; path: string };
 
 export function organizationNode(): Node {
@@ -118,7 +136,7 @@ export function personNode(opts: { name: string; description: string; image?: st
     "@id": id.author(opts.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")),
     name: opts.name,
     description: opts.description,
-    ...(opts.image ? { image: opts.image } : {}),
+    ...(opts.image ? { image: absoluteImage(opts.image) } : {}),
     worksFor: { "@id": id.organization() },
     jobTitle: "Local host",
     knowsAbout: ["Crete", "Rethymno", "Hiking", "Cretan food", "Local history"],
@@ -350,7 +368,7 @@ export function tourNode(opts: {
     name: opts.name,
     description: opts.description,
     url,
-    ...(opts.images.length ? { image: opts.images } : {}),
+    ...(opts.images.length ? { image: absoluteImages(opts.images) } : {}),
     brand: { "@id": id.organization() },
     provider: { "@id": id.organization() },
     tourBookingPage: url,
@@ -409,7 +427,7 @@ export function transferProductNode(opts: {
     name: opts.name,
     description: opts.description,
     url,
-    ...(images.length ? { image: images } : {}),
+    ...(images.length ? { image: absoluteImages(images) } : {}),
     brand: { "@id": id.organization() },
     provider: { "@id": id.organization() },
     ...productExtras({ lang: opts.lang, durationMinutes: opts.durationMinutes }),
@@ -529,7 +547,7 @@ export function photographyNode(opts: {
     name: opts.name,
     description: opts.description,
     url,
-    ...(opts.images.length ? { image: opts.images } : {}),
+    ...(opts.images.length ? { image: absoluteImages(opts.images) } : {}),
     brand: { "@id": id.organization() },
     provider: { "@id": id.organization() },
     ...productExtras({ lang, durationMinutes }),

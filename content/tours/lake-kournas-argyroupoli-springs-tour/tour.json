@@ -58,14 +58,14 @@
     "lake-kournas",
     "argyroupoli"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-2-scaled.jpg",
+  "hero": "/images/tours/lake-kournas-argyroupoli-springs-tour/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-1--scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Argiroupoli-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Argirpoupoli-1-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-46-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-52-scaled.jpg"
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-01.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-02.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-03.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-04.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-05.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-06.jpg"
   ],
   "travelotopos": {
     "serviceId": 20,

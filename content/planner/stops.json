@@ -11,7 +11,7 @@
     "needs": [],
     "place": "preveli-beach",
     "tour": "south-crete-highlights",
-    "hero": "https://waytocrete.com/wp-content/uploads/2024/12/preveli-palm-forest-4-scaled.jpg"
+    "hero": "/images/tours/south-crete-highlights/gallery-05.jpg"
   },
   {
     "slug": "triopetra-beach",
@@ -81,7 +81,7 @@
     "needs": [],
     "place": "elafonisi",
     "tour": "elafonisi-pink-sand-beach-tour-from-rethymno",
-    "hero": "https://waytocrete.com/wp-content/uploads/2024/12/kriti-69-scaled.jpg"
+    "hero": "/images/tours/elafonisi-pink-sand-beach-tour-from-rethymno/hero.jpg"
   },
   {
     "slug": "arkadi-monastery",
@@ -95,7 +95,7 @@
     "needs": ["ticket"],
     "place": "arkadi-monastery",
     "tour": "timeless-crete-villages-monasteries",
-    "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-scaled.jpg"
+    "hero": "/images/tours/timeless-crete-villages-monasteries/hero.jpg"
   },
   {
     "slug": "melidoni-cave",
@@ -109,7 +109,7 @@
     "needs": ["ticket"],
     "place": "melidoni-cave",
     "tour": "timeless-crete-villages-monasteries",
-    "hero": "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave-scaled.jpg"
+    "hero": "/images/tours/timeless-crete-villages-monasteries/gallery-07.jpg"
   },
   {
     "slug": "eleftherna",
@@ -137,7 +137,7 @@
     "needs": [],
     "place": "rethymno-old-town",
     "tour": "rethymno-walk-taste",
-    "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-28-scaled.jpg"
+    "hero": "/images/tours/rethymno-walk-taste/hero.jpg"
   },
   {
     "slug": "knossos",
@@ -179,7 +179,7 @@
     "needs": [],
     "place": "margarites",
     "tour": "timeless-crete-villages-monasteries",
-    "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-scaled.jpg"
+    "hero": "/images/tours/timeless-crete-villages-monasteries/gallery-04.jpg"
   },
   {
     "slug": "anogia",
@@ -221,7 +221,7 @@
     "needs": [],
     "place": null,
     "tour": "cretan-honey-wine-experience",
-    "hero": "https://waytocrete.com/wp-content/uploads/2025/02/WINERY_-271-scaled.jpg"
+    "hero": "/images/planner/klados-winery.jpg"
   },
   {
     "slug": "kourtaliotiko-gorge",
@@ -263,7 +263,7 @@
     "needs": [],
     "place": "lake-kournas",
     "tour": "lake-kournas-argyroupoli-springs-tour",
-    "hero": "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-scaled.jpg"
+    "hero": "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-01.jpg"
   },
   {
     "slug": "imbros-gorge",
@@ -277,6 +277,6 @@
     "needs": ["hike", "ticket"],
     "place": "imbros-gorge",
     "tour": "imbros-gorge-guided-tour",
-    "hero": "https://waytocrete.com/wp-content/uploads/2024/12/imbros-17.jpg"
+    "hero": "/images/tours/imbros-gorge-guided-tour/hero.jpg"
   }
 ]

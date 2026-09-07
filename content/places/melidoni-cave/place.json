@@ -30,9 +30,9 @@
   "tours": [
     "timeless-crete-villages-monasteries"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave-scaled.jpg",
+  "hero": "/images/tours/timeless-crete-villages-monasteries/gallery-07.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave-1-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2024/12/melidoni-cave2-scaled.jpg"
+    "/images/tours/timeless-crete-villages-monasteries/gallery-08.jpg",
+    "/images/places/melidoni-cave/gallery-02.jpg"
   ]
 }

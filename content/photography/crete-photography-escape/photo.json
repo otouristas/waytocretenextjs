@@ -67,16 +67,16 @@
       }
     ]
   },
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-22-scaled.jpg",
+  "hero": "/images/tours/pachnes-summit/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/preveli-day-trip-15-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-41-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2024/12/imbros-17.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Timeless-Crete-Tour-28-4-26-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/01/preveli-day-trip-28-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-54-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Rethymno-Walk-Taste-28-scaled.jpg"
+    "/images/tours/south-crete-highlights/hero.jpg",
+    "/images/tours/timeless-crete-villages-monasteries/gallery-04.jpg",
+    "/images/tours/pachnes-summit/gallery-02.jpg",
+    "/images/tours/imbros-gorge-guided-tour/hero.jpg",
+    "/images/tours/timeless-crete-villages-monasteries/hero.jpg",
+    "/images/tours/south-crete-highlights/gallery-07.jpg",
+    "/images/tours/pachnes-summit/gallery-03.jpg",
+    "/images/tours/rethymno-walk-taste/hero.jpg"
   ],
   "featured": true,
   "supersedes": []

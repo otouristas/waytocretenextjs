@@ -55,7 +55,13 @@ export const config = {
   // robots.txt / sitemap / llms stay in the matcher so www → apex applies
   // to them too. The locale rewrite below ignores dotted first segments,
   // so those files still fall straight through on the apex host.
+  //
+  // `images` is excluded for the same reason `brand` and `patterns` are: it is
+  // a directory under /public, not a page. Without it every photograph 308s to
+  // `/en/images/…`, which does not exist — invisible in the browser, because
+  // next/image fetches through the optimizer, but broken for anything reading
+  // an absolute image URL out of our JSON-LD or OpenGraph tags.
   matcher: [
-    "/((?!_next|favicon|brand|patterns|api|icon|opengraph-image).*)",
+    "/((?!_next|favicon|brand|patterns|images|api|icon|opengraph-image).*)",
   ],
 };

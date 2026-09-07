@@ -30,11 +30,11 @@
   "tours": [
     "lake-kournas-argyroupoli-springs-tour"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-scaled.jpg",
+  "hero": "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-01.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/lake-kournas-1--scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-2-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-46-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/SafariPathfinder-final-52-scaled.jpg"
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-02.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/hero.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-05.jpg",
+    "/images/tours/lake-kournas-argyroupoli-springs-tour/gallery-06.jpg"
   ]
 }

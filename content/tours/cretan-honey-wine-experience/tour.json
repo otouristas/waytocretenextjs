@@ -34,16 +34,16 @@
     "patsos",
     "potamon-dam"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/05/WINERY_-271-scaled-1.jpg",
+  "hero": "/images/tours/cretan-honey-wine-experience/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/05/15-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/01/6-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/01/5-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/01/4-2-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/05/Waytocrete-10-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/05/Waytocrete-15-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/05/Waytocrete-11-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/raki-gidospito-IMG_1957.jpeg"
+    "/images/tours/cretan-honey-wine-experience/gallery-01.jpg",
+    "/images/tours/cretan-honey-wine-experience/gallery-02.jpg",
+    "/images/tours/cretan-honey-wine-experience/gallery-03.jpg",
+    "/images/tours/cretan-honey-wine-experience/gallery-04.jpg",
+    "/images/tours/cretan-honey-wine-experience/gallery-05.jpg",
+    "/images/tours/cretan-honey-wine-experience/gallery-06.jpg",
+    "/images/tours/cretan-honey-wine-experience/gallery-07.jpg",
+    "/images/tours/cretan-honey-wine-experience/gallery-08.jpg"
   ],
   "featured": false,
   "supersedes": []

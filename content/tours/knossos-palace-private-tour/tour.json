@@ -46,16 +46,16 @@
     "heraklion-archaeological-museum",
     "heraklion-old-town"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0007-scaled-1.jpg",
+  "hero": "/images/tours/knossos-palace-private-tour/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0001-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0002-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0003-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0004-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0005-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/04/%CE%91%CE%BD%CF%8E%CE%BD%CF%85%CE%BC%CE%BF-%CF%83%CF%87%CE%AD%CE%B4%CE%B9%CE%BF-3_page-0006-scaled-1.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/04/heraklion-archeological-museum.jpeg",
-    "https://waytocrete.com/wp-content/uploads/2025/04/heraklion-archaeological-museum-gallery-005.jpg"
+    "/images/tours/knossos-palace-private-tour/gallery-01.jpg",
+    "/images/tours/knossos-palace-private-tour/gallery-02.jpg",
+    "/images/tours/knossos-palace-private-tour/gallery-03.jpg",
+    "/images/tours/knossos-palace-private-tour/gallery-04.jpg",
+    "/images/tours/knossos-palace-private-tour/gallery-05.jpg",
+    "/images/tours/knossos-palace-private-tour/gallery-06.jpg",
+    "/images/tours/knossos-palace-private-tour/gallery-07.jpg",
+    "/images/tours/knossos-palace-private-tour/gallery-08.jpg"
   ],
   "featured": false,
   "supersedes": []

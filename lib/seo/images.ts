@@ -7,9 +7,9 @@ import type { Lang } from "@/lib/i18n/langs";
  * have their own shot (contact, reviews, partners, legal).
  */
 export const HOME_HERO_IMAGES = [
-  "https://waytocrete.com/wp-content/uploads/2026/01/lefka-ori-44.jpg",
-  "https://waytocrete.com/wp-content/uploads/2024/05/DSC09353-2.jpg",
-  "https://waytocrete.com/wp-content/uploads/2025/02/8-2.jpg",
+  "/images/site/lefka-ori-44.jpg",
+  "/images/site/dsc09353-2.jpg",
+  "/images/site/8-2.jpg",
 ] as const;
 
 export const HOME_OG_IMAGE = HOME_HERO_IMAGES[0];

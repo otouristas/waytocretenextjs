@@ -50,16 +50,16 @@
     "gious-kampos",
     "psiloritis"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2026/06/flowers-10-scaled.jpg",
+  "hero": "/images/tours/spring-wildflowers-orchids-of-crete/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2026/06/flowers-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-12-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-20-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-23-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-30-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-38-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/06/Flower-Gious-41-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2026/06/flowers-48-scaled.jpg"
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-01.jpg",
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-02.jpg",
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-03.jpg",
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-04.jpg",
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-05.jpg",
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-06.jpg",
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-07.jpg",
+    "/images/tours/spring-wildflowers-orchids-of-crete/gallery-08.jpg"
   ],
   "featured": false,
   "supersedes": [

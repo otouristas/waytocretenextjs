@@ -37,15 +37,15 @@ export type HostCopy = {
  */
 export const HOST_IMAGES = [
   {
-    src: "https://waytocrete.com/wp-content/uploads/2025/02/lefka-ori-23-scaled.jpg",
+    src: "/images/tours/pachnes-summit/gallery-05.jpg",
     alt: "The Lefka Ori, the White Mountains rising above south-west Crete",
   },
   {
-    src: "https://waytocrete.com/wp-content/uploads/2025/12/lefka-ori-2-scaled.jpg",
+    src: "/images/site/lefka-ori-2.jpg",
     alt: "High ground in the Lefka Ori, above the treeline",
   },
   {
-    src: "https://waytocrete.com/wp-content/uploads/2025/02/imbros-19-scaled.jpg",
+    src: "/images/tours/imbros-gorge-guided-tour/gallery-04.jpg",
     alt: "The walls of the Imbros Gorge on the walk down towards Komitades",
   },
 ] as const;

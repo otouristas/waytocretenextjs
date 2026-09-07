@@ -27,10 +27,10 @@
     "fortezza-castle",
     "panormo"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/11-2-scaled.jpg",
+  "hero": "/images/tours/boat-cruise/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/12-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/8-2-scaled.jpg"
+    "/images/tours/boat-cruise/gallery-01.jpg",
+    "/images/tours/boat-cruise/gallery-02.jpg"
   ],
   "featured": false,
   "supersedes": []

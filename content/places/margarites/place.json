@@ -30,11 +30,11 @@
   "tours": [
     "timeless-crete-villages-monasteries"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-scaled.jpg",
+  "hero": "/images/tours/timeless-crete-villages-monasteries/gallery-04.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-4-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-5-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-6-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/Margarites-11-scaled.jpg"
+    "/images/places/margarites/gallery-01.jpg",
+    "/images/tours/timeless-crete-villages-monasteries/gallery-05.jpg",
+    "/images/places/margarites/gallery-03.jpg",
+    "/images/tours/timeless-crete-villages-monasteries/gallery-06.jpg"
   ]
 }

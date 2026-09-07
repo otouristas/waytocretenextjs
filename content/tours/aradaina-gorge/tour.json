@@ -47,15 +47,15 @@
     "aradaina-gorge",
     "marmara-beach"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2025/02/flowers-28-scaled.jpg",
+  "hero": "/images/tours/aradaina-gorge/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-48-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-38-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-29-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-51-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-76-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/flowers-60-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/increteblue-suites-124-scaled.jpg"
+    "/images/tours/aradaina-gorge/gallery-01.jpg",
+    "/images/tours/aradaina-gorge/gallery-02.jpg",
+    "/images/tours/aradaina-gorge/gallery-03.jpg",
+    "/images/tours/aradaina-gorge/gallery-04.jpg",
+    "/images/tours/aradaina-gorge/gallery-05.jpg",
+    "/images/tours/aradaina-gorge/gallery-06.jpg",
+    "/images/tours/aradaina-gorge/gallery-07.jpg"
   ],
   "featured": false,
   "supersedes": []

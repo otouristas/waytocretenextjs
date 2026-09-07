@@ -31,15 +31,15 @@
     "imbros-gorge-guided-tour",
     "spring-wildflowers-orchids-of-crete"
   ],
-  "hero": "https://waytocrete.com/wp-content/uploads/2024/12/imbros-17.jpg",
+  "hero": "/images/tours/imbros-gorge-guided-tour/hero.jpg",
   "gallery": [
-    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-27-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-25-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2024/12/imbros-26.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-19-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-22-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-18-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-46-scaled.jpg",
-    "https://waytocrete.com/wp-content/uploads/2025/02/imbros-49-scaled.jpg"
+    "/images/tours/imbros-gorge-guided-tour/gallery-01.jpg",
+    "/images/tours/imbros-gorge-guided-tour/gallery-02.jpg",
+    "/images/tours/imbros-gorge-guided-tour/gallery-03.jpg",
+    "/images/tours/imbros-gorge-guided-tour/gallery-04.jpg",
+    "/images/tours/imbros-gorge-guided-tour/gallery-05.jpg",
+    "/images/tours/imbros-gorge-guided-tour/gallery-06.jpg",
+    "/images/tours/imbros-gorge-guided-tour/gallery-07.jpg",
+    "/images/tours/imbros-gorge-guided-tour/gallery-08.jpg"
   ]
 }
