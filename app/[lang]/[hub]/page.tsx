@@ -4,9 +4,10 @@ import { LANGS, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { hubCopy } from "@/lib/i18n/hubs";
 import { HUB_IDS, hubById } from "@/lib/nav/hubs";
-import { getTourCore } from "@/lib/content/load";
+import { allTours, getTourCore } from "@/lib/content/load";
 import { HubView } from "@/components/nav/hub-view";
 import { breadcrumbNode, graph, ogImage, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
+import { absolute } from "@/lib/seo/ids";
 import { JsonLd } from "@/components/seo/json-ld";
 
 export const dynamicParams = false;
@@ -55,6 +56,13 @@ export default async function Page({
     { name: copy.label, path },
   ];
 
+  // Same source and order the page renders, so the markup cannot list a tour
+  // the page does not show.
+  const inHub = new Set(hub.slugs);
+  const listed = hub.slugs
+    .map((slug) => allTours(lang).find((entry) => entry.core.slug === slug))
+    .filter((entry): entry is NonNullable<typeof entry> => entry != null && inHub.has(entry.core.slug));
+
   const jsonLd = graph([
     webPageNode({
       lang,
@@ -64,6 +72,19 @@ export default async function Page({
       crumbs,
     }),
     breadcrumbNode(lang, path, crumbs),
+    // The list of tours this hub actually contains. Every other hub on the
+    // site emitted one; these seven did not, so a category page described
+    // itself to a crawler without ever naming what was on it.
+    {
+      "@type": "ItemList",
+      numberOfItems: listed.length,
+      itemListElement: listed.map((entry, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: absolute(lang, `/tours/${entry.core.slug}`),
+        name: entry.copy.title,
+      })),
+    },
   ]);
 
   return (

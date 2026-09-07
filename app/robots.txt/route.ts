@@ -65,13 +65,18 @@ function body(): string {
   lines.push("User-agent: *");
   lines.push("Allow: /");
   // The saved list is per-visitor browser state and renders empty to a
-  // crawler. Filtered tour views duplicate their hub — note the pattern is
-  // `/*?` and not `/*/tours?`: in robots.txt a `?` is a literal character,
-  // so the old rule blocked a path that contains a question mark and let
-  // every real filtered URL through.
+  // crawler.
   lines.push("Disallow: /*/saved");
-  lines.push("Disallow: /*?");
   lines.push("Disallow: /api/");
+  //
+  // Query strings are deliberately NOT blocked. Every one of them already
+  // resolves correctly on its own: filtered `/tours?…` views ship `noindex`
+  // and canonicalise to `/tours`, and the planner's shareable links
+  // (`/create?s=…`) and prefilled contact URLs canonicalise to their clean
+  // path. A blanket `Disallow: /*?` stopped a crawler reading any of that —
+  // and a blocked URL that collects links can still be indexed, bare, with
+  // the canonical it was never allowed to see. Duplicate content is a job for
+  // canonical and noindex; robots.txt only decides what gets fetched.
   lines.push("");
 
   // Legal pages are English-only and every locale canonicalises to /en/.
