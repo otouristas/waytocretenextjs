@@ -1,7 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import type { PriceModel } from "../content/schema.ts";
-import { offerNode, tourNode, transferProductNode } from "./graph.ts";
+import { MHTE_LICENCE, SISTER_BRAND, SISTER_ORIGIN } from "../site.ts";
+import { SISTER_STORY_TOURS, sisterLink } from "./links.ts";
+import { offerNode, organizationNode, tourNode, transferProductNode } from "./graph.ts";
 
 const imbros: PriceModel = {
   kind: "sliding_per_person",
@@ -85,4 +87,54 @@ test("transfer product never carries an Offer", () => {
   assert.deepEqual(propertyNames(node), ["Duration", "Language"]);
   const rating = node.aggregateRating as { reviewCount: number };
   assert.equal(rating.reviewCount, 2);
+});
+
+/* ────────────────────── organization and the sister policy ────────────────────── */
+
+test("the organization node claims the Google Business Profile", () => {
+  // `sameAs` is what ties the profile Google already holds to this site. It
+  // listed Instagram, Facebook, TikTok and Tripadvisor — and not Google.
+  const node = organizationNode();
+  const sameAs = node.sameAs as string[];
+  assert.ok(
+    sameAs.some((url) => url.includes("g.page")),
+    `sameAs is missing the Google Business Profile: ${sameAs.join(", ")}`,
+  );
+  assert.ok(sameAs.includes(SISTER_ORIGIN), "sameAs should still name the sister site");
+});
+
+test("the organization node carries the licence as a verifiable identifier", () => {
+  const node = organizationNode();
+  const identifier = node.identifier as { "@type": string; value: string } | undefined;
+  assert.equal(identifier?.["@type"], "PropertyValue");
+  assert.equal(identifier?.value, MHTE_LICENCE);
+});
+
+test("the trading-name relationship is asserted, so no sitewide link has to be", () => {
+  assert.equal(organizationNode().alternateName, SISTER_BRAND);
+});
+
+test("the organization never rates itself", () => {
+  // A business rating itself on its own site is self-serving markup and
+  // ineligible for rich results, however the stars were sourced.
+  assert.equal(organizationNode().aggregateRating, undefined);
+});
+
+test("the sister-link allowlist stays inside the cap it documents", () => {
+  // The rule is 2–4 links across the whole site. It used to be enforced "by
+  // convention plus review", and the tour template quietly shipped 105.
+  assert.ok(
+    SISTER_STORY_TOURS.length >= 1 && SISTER_STORY_TOURS.length <= 3,
+    `${SISTER_STORY_TOURS.length} tours link out; the site-wide cap is 2–4 including the About page`,
+  );
+  assert.equal(new Set(SISTER_STORY_TOURS).size, SISTER_STORY_TOURS.length, "no duplicates");
+});
+
+test("a sister link is dofollow and safe, never nofollow", () => {
+  // These are genuine same-company references. Marking them nofollow would
+  // be its own kind of signal.
+  const link = sisterLink("imbros-gorge", "Read the full story — Way to Crete");
+  assert.equal(link.rel, "noopener");
+  assert.ok(!link.rel.includes("nofollow"));
+  assert.ok(link.href.startsWith("https://waytocrete.com/"));
 });

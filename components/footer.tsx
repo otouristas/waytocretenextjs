@@ -17,6 +17,7 @@ import {
   PHONE,
   PHONE_DISPLAY,
   REVIEW_WRITE,
+  SISTER_BRAND,
   SOCIAL,
 } from "@/lib/site";
 
@@ -26,9 +27,14 @@ import {
  * A server component — it was previously marked `"use client"` despite having
  * no state or browser API at all.
  *
- * Note what is not here: a sitewide link to the sister site. A link on every
+ * Note what is not here: a sitewide *link* to the sister site. A link on every
  * page of both properties is the clearest cross-site footprint there is, so
- * links to waytocrete.com are contextual and in-content only.
+ * links to waytocrete.com stay contextual and in-content only.
+ *
+ * The relationship itself is stated, because a visitor checking who they are
+ * buying from should not have to open the terms to find out. It is plain text
+ * in the trust row, and `alternateName` on the organization node — the two
+ * channels that carry the fact without carrying a link.
  */
 export function Footer({ lang }: { lang: Lang }) {
   const ui = t(lang);
@@ -159,6 +165,11 @@ export function Footer({ lang }: { lang: Lang }) {
             <p className="text-xs leading-relaxed text-muted">
               <span className="block font-semibold text-ink">{ui.licensedTitle}</span>
               {MHTE_LICENCE ? `${ui.gntoLicence} ${MHTE_LICENCE}` : ui.gntoLicence}
+              {/* The relationship, in words and on every page — but not as a
+                  link. A reader checking who they are dealing with finds it
+                  here; the machine-readable half is `alternateName` on the
+                  organization node. Neither is a sitewide cross-site link. */}
+              <span className="block">{fill(ui.tradingAs, { sister: SISTER_BRAND })}</span>
             </p>
           </div>
 

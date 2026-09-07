@@ -200,6 +200,8 @@ export type UI = {
   weddingTransfers: string;
   licensedTitle: string;
   gntoLicence: string;
+  /** The trading-name relationship, stated in the footer. `{sister}` is the other brand. */
+  tradingAs: string;
   paymentTitle: string;
   paymentAlt: string;
   soldOnKicker: string;
@@ -535,6 +537,7 @@ const EN: UI = {
   weddingTransfers: "Wedding transfers",
   licensedTitle: "Licensed Greek tour operator",
   gntoLicence: "Greek Ministry of Tourism licence",
+  tradingAs: "A trading name of the same licensed operator as {sister}",
   paymentTitle: "Payment",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard and bank transfer accepted",
   soldOnKicker: "Also bookable on",
@@ -935,6 +938,7 @@ const DE: UI = {
   weddingTransfers: "Hochzeitstransfers",
   licensedTitle: "Lizenzierter griechischer Reiseveranstalter",
   gntoLicence: "Lizenz des griechischen Tourismusministeriums",
+  tradingAs: "Ein Handelsname desselben lizenzierten Veranstalters wie {sister}",
   paymentTitle: "Zahlung",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard und Überweisung akzeptiert",
   soldOnKicker: "Auch buchbar auf",
@@ -1335,6 +1339,7 @@ const IT: UI = {
   weddingTransfers: "Transfer per matrimoni",
   licensedTitle: "Tour operator greco con licenza",
   gntoLicence: "Licenza del Ministero del Turismo greco",
+  tradingAs: "Nome commerciale dello stesso operatore autorizzato di {sister}",
   paymentTitle: "Pagamento",
   paymentAlt: "Si accettano PayPal, Stripe, Visa, Mastercard e bonifico",
   soldOnKicker: "Prenotabile anche su",
@@ -1735,6 +1740,7 @@ const FR: UI = {
   weddingTransfers: "Transferts de mariage",
   licensedTitle: "Voyagiste grec licencié",
   gntoLicence: "Licence du ministère grec du Tourisme",
+  tradingAs: "Nom commercial du même opérateur agréé que {sister}",
   paymentTitle: "Paiement",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard et virement acceptés",
   soldOnKicker: "Aussi réservable sur",
@@ -2135,6 +2141,7 @@ const SV: UI = {
   weddingTransfers: "Bröllopstransfer",
   licensedTitle: "Licensierad grekisk researrangör",
   gntoLicence: "Licens från det grekiska turistministeriet",
+  tradingAs: "Ett handelsnamn för samma licensierade arrangör som {sister}",
   paymentTitle: "Betalning",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard och banköverföring accepteras",
   soldOnKicker: "Även bokningsbar på",

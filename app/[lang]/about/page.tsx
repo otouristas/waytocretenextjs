@@ -8,6 +8,7 @@ import { allReviews, allTours, ratingSummary } from "@/lib/content/load";
 import { transfers } from "@/lib/transfers";
 import { breadcrumbNode, graph, id, pageMeta, webPageNode, type Crumb } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
+import { SISTER_ANCHOR, sisterLink } from "@/lib/seo/links";
 import { HostSection } from "@/components/host-section";
 import { RatingInline } from "@/components/reviews/rating-summary";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
@@ -16,8 +17,6 @@ import {
   ADDRESS_DISPLAY,
   BRAND,
   MHTE_LICENCE,
-  SISTER_BRAND,
-  sisterUrl,
 } from "@/lib/site";
 
 /**
@@ -61,6 +60,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const tourCount = allTours(lang).length;
   const vehicle = transfers().vehicle;
 
+  // The site's other permitted sister link — see lib/seo/links.ts for the cap.
+  const aboutLink = sisterLink("about-us", `${copy.storyLink} — ${SISTER_ANCHOR}`);
   const crumbs: Crumb[] = [
     { name: copy.home, path: "/" },
     { name: copy.navAbout, path: "/about" },
@@ -170,10 +171,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {copy.storyHint}{" "}
               <a
                 className="font-semibold text-accent underline"
-                href={sisterUrl("about-us")}
-                rel="noopener"
+                href={aboutLink.href}
+                rel={aboutLink.rel}
               >
-                {copy.storyLink} — {SISTER_BRAND}
+                {aboutLink.anchor}
               </a>
             </p>
           </article>

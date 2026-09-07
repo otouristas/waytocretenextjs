@@ -5,7 +5,7 @@ import { t } from "@/lib/i18n/ui";
 import { plannerCopy } from "@/lib/i18n/planner";
 import { PLANNER_STOPS } from "@/lib/planner/catalog";
 import { tourIsOpen, type Review, type TourCopy, type TourCore } from "@/lib/content/schema";
-import { SISTER_BRAND, sisterUrl } from "@/lib/site";
+import { SISTER_ANCHOR, hasSisterStory, sisterLink } from "@/lib/seo/links";
 import { TourHeroMosaic } from "@/components/tour/hero-mosaic";
 import { priceFrom } from "@/lib/pricing";
 import type { Crumb } from "@/lib/seo";
@@ -165,16 +165,22 @@ export function TourPage({
             experience={copy.title}
           />
 
-          <p className="mt-12 rounded-xl bg-surface p-5 text-sm leading-relaxed text-muted ring-1 ring-line">
-            {ui.storyHint}{" "}
-            <a
-              className="font-semibold text-accent underline"
-              href={sisterUrl(core.wpSlug)}
-              rel="noopener"
-            >
-              {ui.storyLink} — {SISTER_BRAND}
-            </a>
-          </p>
+          {/* Only the few tours on the allowlist. This block was
+              unconditional, so a rule written as "2–4 links across the whole
+              site" shipped 105 of them — one per tour, per locale. */}
+          {hasSisterStory(core.slug)
+            ? (() => {
+                const link = sisterLink(core.wpSlug, `${ui.storyLink} — ${SISTER_ANCHOR}`);
+                return (
+                  <p className="mt-12 rounded-xl bg-surface p-5 text-sm leading-relaxed text-muted ring-1 ring-line">
+                    {ui.storyHint}{" "}
+                    <a className="font-semibold text-accent underline" href={link.href} rel={link.rel}>
+                      {link.anchor}
+                    </a>
+                  </p>
+                );
+              })()
+            : null}
 
           <RelatedTours lang={lang} tours={related} />
         </article>

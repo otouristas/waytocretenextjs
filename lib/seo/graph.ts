@@ -6,6 +6,8 @@ import {
   GEO,
   LEGAL_NAME,
   PHONE,
+  MHTE_LICENCE,
+  SISTER_BRAND,
   SISTER_ORIGIN,
   SOCIAL,
   siteUrl,
@@ -37,6 +39,11 @@ export type Crumb = { name: string; path: string };
 export function organizationNode(): Node {
   const sameAs = [
     SISTER_ORIGIN,
+    // The Google Business Profile — the single most useful entry in this list,
+    // and the one that was missing. `sameAs` is how the profile Google already
+    // holds and this site are asserted to describe one business; without it
+    // the two were left to be matched on name and phone number alone.
+    SOCIAL.google,
     SOCIAL.instagram,
     SOCIAL.facebook,
     SOCIAL.tiktok,
@@ -46,10 +53,34 @@ export function organizationNode(): Node {
     "@type": ["TravelAgency", "LocalBusiness"],
     "@id": id.organization(),
     name: BRAND,
+    /**
+     * Rethymno Tours and Way to Crete are trading names of one licensed
+     * operator, which the terms and the privacy policy already state in
+     * words. This is the machine-readable half of that: it makes the
+     * relationship explicit rather than leaving `sameAs` to imply it, and it
+     * is the reason no sitewide hyperlink between the two sites is needed.
+     */
+    alternateName: SISTER_BRAND,
     ...(LEGAL_NAME ? { legalName: LEGAL_NAME } : {}),
     url: siteUrl(),
+    logo: `${siteUrl()}/brand/logos/logo-full.png`,
+    image: `${siteUrl()}/brand/logos/logo-full.png`,
     telephone: PHONE,
     email: EMAIL,
+    /**
+     * The Greek tourism registry number, already printed in the footer. As an
+     * `identifier` it is a verifiable credential rather than decoration —
+     * which is what separates a licensed operator from a listing.
+     */
+    ...(MHTE_LICENCE
+      ? {
+          identifier: {
+            "@type": "PropertyValue",
+            name: "GNTO/MHTE licence",
+            value: MHTE_LICENCE,
+          },
+        }
+      : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: ADDRESS.street,
