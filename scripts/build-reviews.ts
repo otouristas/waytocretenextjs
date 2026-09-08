@@ -74,11 +74,14 @@ const SUBJECT: Record<string, Subject> = {
   "alex ha": { service: "tour", tour: "botanical-tours-crete" },
   "miss Dior": { service: "tour", tour: "botanical-tours-crete" },
   "Des Top": { service: "tour", tour: "botanical-tours-crete" },
-  // Named the range but not the peak or the route, so it stays a hiking
-  // review rather than being assigned to a product it may not describe.
-  "Nikolaos Gizas": { service: "tour" },
-  "Dariusz Szumacher": { service: "tour", lang: "pl" },
-  "Artemis xeinou": { service: "tour" },
+  // All three describe private guided hiking in the Lefka Ori / White
+  // Mountains — Dariusz names the range, Artemis names Spathes inside it,
+  // Nikolaos calls it a private mountain tour. Pachnes Summit is the only
+  // Lefka Ori mountain product in the catalogue, so that is what they are
+  // about; the gorge tours walk down through a gorge, not up a mountain.
+  "Nikolaos Gizas": { service: "tour", tour: "pachnes-summit" },
+  "Dariusz Szumacher": { service: "tour", tour: "pachnes-summit", lang: "pl" },
+  "Artemis xeinou": { service: "tour", tour: "pachnes-summit" },
 
   // ── transfers ──────────────────────────────────────────────────────────
   "Celine g": { service: "transfer", route: "chania-airport-to-rethymno", lang: "de" },

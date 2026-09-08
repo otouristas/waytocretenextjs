@@ -319,12 +319,31 @@ function byUsefulness(a: Review, b: Review) {
   return a.id.localeCompare(b.id);
 }
 
-/** Reviews for one tour. */
-export const reviewsForTour = cache((slug: string): Review[] =>
-  allReviews()
-    .filter((r) => r.tour === slug)
-    .sort(byUsefulness),
-);
+/**
+ * Reviews for one tour.
+ *
+ * Exact matches first — the reviews whose text names this tour — then the
+ * operator-wide ones. This is the same shape `reviewsForTransfers` has always
+ * had, and it exists for the same reason: a route page no guest has named by
+ * route still shows the transfer service's reviews, so a tour page nobody has
+ * named should show the tour service's. Twelve of the twenty-one tours have no
+ * review that names them, and a page with no rating is a page that can never
+ * carry stars in a result — which is the whole point of collecting them.
+ *
+ * The generic pool is deliberately narrow: `general` reviews, which are about
+ * the excursions and the guide rather than one product ("amazing tours in
+ * Crete", "very organised agency"), plus any `tour` review that names no tour.
+ * Transfer and wedding reviews stay out — "the airport pickup was on time" is
+ * not feedback about a day on a mountain.
+ */
+export const reviewsForTour = cache((slug: string): Review[] => {
+  const all = allReviews();
+  const exact = all.filter((r) => r.tour === slug).sort(byUsefulness);
+  const generic = all
+    .filter((r) => r.service === "general" || (r.service === "tour" && r.tour === null))
+    .sort(byUsefulness);
+  return [...exact, ...generic];
+});
 
 /**
  * Reviews for the transfer service.

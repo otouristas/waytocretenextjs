@@ -288,8 +288,33 @@ if (existsSync(reviewsPath)) {
       fail(`reviews[${i}]`, `"${review.author}" is schemaEligible but has no numeric rating`);
     }
     if (review.schemaEligible) eligible++;
+    // A typo in the mapping table is silent: the review simply stops being
+    // about anything and quietly leaves a tour page without stars.
+    if (review.tour && !tourSlugs.includes(review.tour)) {
+      fail(`reviews[${i}]`, `"${review.author}" is mapped to unknown tour ${review.tour}`);
+    }
   });
   console.log(`  ${list.length} reviews, ${eligible} eligible for AggregateRating`);
+
+  /*
+   * Every tour must resolve to at least one real star value, because a tour
+   * page with no `AggregateRating` can never show stars in a result — and
+   * that is the point of collecting reviews at all. This mirrors what
+   * `reviewsForTour` actually does: the tour's own reviews, plus the
+   * operator-wide pool. Keep the two in step or this check lies.
+   */
+  const rated = (r: { schemaEligible: boolean; rating: number | null }) =>
+    r.schemaEligible && typeof r.rating === "number";
+  const generic = list.filter(
+    (r) => rated(r) && (r.service === "general" || (r.service === "tour" && r.tour === null)),
+  );
+  const starless = tourSlugs.filter(
+    (slug) => generic.length === 0 && !list.some((r) => r.tour === slug && rated(r)),
+  );
+  for (const slug of starless) {
+    fail(`tours/${slug}`, "no review resolves to a star value, so the page can carry no rating");
+  }
+  console.log(`  ${tourSlugs.length - starless.length}/${tourSlugs.length} tours carry a rating`);
 } else {
   console.log("  (no reviews file yet)");
 }

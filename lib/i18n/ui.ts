@@ -184,6 +184,8 @@ export type UI = {
   reviewsTripadvisor: string;
   reviewsEmpty: string;
   reviewsForThis: string;
+  /** Heading when the tour has no review naming it, so the pool is operator-wide. */
+  reviewsWithUs: string;
   readOnGoogle: string;
   readOnTripadvisor: string;
   writeReviewLead: string;
@@ -520,6 +522,7 @@ const EN: UI = {
   reviewsTripadvisor: "Tripadvisor",
   reviewsEmpty: "No reviews name this one yet.",
   reviewsForThis: "Guests on this experience",
+  reviewsWithUs: "Guests who have travelled with us",
   readOnGoogle: "Read our Google reviews",
   readOnTripadvisor: "Read our Tripadvisor reviews",
   writeReviewLead:
@@ -921,6 +924,7 @@ const DE: UI = {
   reviewsTripadvisor: "Tripadvisor",
   reviewsEmpty: "Dazu gibt es noch keine Bewertung.",
   reviewsForThis: "Gäste auf diesem Erlebnis",
+  reviewsWithUs: "Gäste, die mit uns unterwegs waren",
   readOnGoogle: "Unsere Google-Bewertungen lesen",
   readOnTripadvisor: "Unsere Tripadvisor-Bewertungen lesen",
   writeReviewLead:
@@ -1322,6 +1326,7 @@ const IT: UI = {
   reviewsTripadvisor: "Tripadvisor",
   reviewsEmpty: "Nessuna recensione nomina ancora questa esperienza.",
   reviewsForThis: "Ospiti di questa esperienza",
+  reviewsWithUs: "Ospiti che hanno viaggiato con noi",
   readOnGoogle: "Leggi le recensioni Google",
   readOnTripadvisor: "Leggi le recensioni Tripadvisor",
   writeReviewLead:
@@ -1723,6 +1728,7 @@ const FR: UI = {
   reviewsTripadvisor: "Tripadvisor",
   reviewsEmpty: "Aucun avis ne nomme encore celle-ci.",
   reviewsForThis: "Voyageurs de cette expérience",
+  reviewsWithUs: "Voyageurs qui sont partis avec nous",
   readOnGoogle: "Lire nos avis Google",
   readOnTripadvisor: "Lire nos avis Tripadvisor",
   writeReviewLead:
@@ -2124,6 +2130,7 @@ const SV: UI = {
   reviewsTripadvisor: "Tripadvisor",
   reviewsEmpty: "Inga omdömen nämner den här ännu.",
   reviewsForThis: "Gäster på den här upplevelsen",
+  reviewsWithUs: "Gäster som har rest med oss",
   readOnGoogle: "Läs våra Google-omdömen",
   readOnTripadvisor: "Läs våra Tripadvisor-omdömen",
   writeReviewLead:

@@ -158,10 +158,16 @@ export function TourPage({
           <PackingLists wear={copy.whatToWear} bring={copy.whatToBring} lang={lang} />
           <FaqList faqs={copy.faqs} title={ui.faq} />
 
+          {/* `reviewsForTour` falls back to the operator-wide pool for the
+              tours no guest has named yet, so the heading has to follow:
+              calling a review of the agency a review "of this experience"
+              would be the one dishonest sentence on the page. */}
           <ReviewsSection
             lang={lang}
             reviews={reviews}
-            title={ui.reviewsForThis}
+            title={
+              reviews.some((r) => r.tour === core.slug) ? ui.reviewsForThis : ui.reviewsWithUs
+            }
             experience={copy.title}
           />
 
