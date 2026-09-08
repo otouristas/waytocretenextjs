@@ -50,7 +50,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   ];
 
   /**
-   * The transfer product as a `Service`, plus the routes as an `ItemList`.
+   * The transfer product, plus the routes as an `ItemList`.
+   *
+   * Typed `["Product", "Service"]` rather than `Service` alone, which is what
+   * it used to be. Google renders review stars only for a fixed list of types
+   * and `Service` is not on it — so the `aggregateRating` below was real,
+   * correct and permanently invisible. `Product` is on the list, and it is
+   * what the individual route pages already use.
    *
    * No `Offer` is attached: there is no published fare for any route, and
    * the per-kilometre estimate on the page is explicitly an estimate. An
@@ -64,7 +70,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     webPageNode({ lang, path: "/transfers", name: p.seoTitle, description: p.seoDesc, crumbs }),
     breadcrumbNode(lang, "/transfers", crumbs),
     {
-      "@type": "Service",
+      "@type": ["Product", "Service"],
       "@id": `${absolute(lang, "/transfers")}#service`,
       serviceType: "Airport transfer",
       name: p.seoTitle,
