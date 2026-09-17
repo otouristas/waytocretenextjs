@@ -70,7 +70,7 @@ export function MobileMenu({
     >
       <div className="flex h-16 shrink-0 items-center justify-between border-b border-line bg-surface pl-3 pr-2">
         <div onClick={onClose}>
-          <BrandLogo lang={lang} height={36} />
+          <BrandLogo lang={lang} height={40} className="h-10" />
         </div>
         <div className="flex items-center gap-1.5">
           <ThemeToggle toLight={copy.themeToLight} toDark={copy.themeToDark} />

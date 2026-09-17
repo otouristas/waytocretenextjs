@@ -54,7 +54,7 @@ export function Footer({ lang }: { lang: Lang }) {
     <footer className="border-t border-line pattern-olive">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-1">
-          <BrandLogo lang={lang} height={56} />
+          <BrandLogo lang={lang} height={56} className="h-12 lg:h-14" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">{ui.aboutLead}</p>
 
           <address className="mt-5 grid gap-2 text-sm not-italic text-muted">

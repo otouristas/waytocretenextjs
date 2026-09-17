@@ -108,7 +108,7 @@ export function Header({
         <PromoStrip lang={lang} rating={rating} />
 
         <div className="flex h-16 items-center gap-3 px-3 sm:px-5 lg:h-[78px] lg:px-6 xl:px-8">
-          <BrandLogo lang={lang} />
+          <BrandLogo lang={lang} compact />
 
           <nav
             className="hidden min-w-0 flex-1 items-center justify-center xl:flex"
