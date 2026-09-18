@@ -107,8 +107,8 @@ export function Header({
       >
         <PromoStrip lang={lang} rating={rating} />
 
-        <div className="flex h-16 items-center gap-3 px-3 sm:px-5 lg:h-[78px] lg:px-6 xl:px-8">
-          <BrandLogo lang={lang} compact />
+        <div className="flex h-16 items-center gap-2 px-2 sm:gap-3 sm:px-5 lg:h-[78px] lg:px-6 xl:px-8">
+          <BrandLogo lang={lang} fetchPriority="high" className="h-9 sm:h-11 lg:h-12" />
 
           <nav
             className="hidden min-w-0 flex-1 items-center justify-center xl:flex"
@@ -152,8 +152,12 @@ export function Header({
             </ul>
           </nav>
 
-          <div className="ml-auto flex items-center gap-1.5 xl:ml-0">
-            <ThemeToggle toLight={copy.themeToLight} toDark={copy.themeToDark} />
+          <div className="ml-auto flex shrink-0 items-center gap-1 sm:gap-1.5 xl:ml-0">
+            <ThemeToggle
+              className="size-9 sm:size-10"
+              toLight={copy.themeToLight}
+              toDark={copy.themeToDark}
+            />
             <div className="relative" ref={langBox}>
               <button
                 type="button"
@@ -163,7 +167,7 @@ export function Header({
                 }}
                 aria-label={copy.languages}
                 aria-expanded={langs}
-                className="flex h-10 items-center gap-0.5 rounded-full px-2 text-[11px] font-bold uppercase tracking-wider text-ink ring-1 ring-line transition hover:bg-bg sm:px-2.5"
+                className="flex h-9 items-center gap-0.5 rounded-full px-1.5 text-[11px] font-bold uppercase tracking-wider text-ink ring-1 ring-line transition hover:bg-bg sm:h-10 sm:px-2.5"
               >
                 {LANG_META[lang].hreflang}
                 <ChevronDown className={cn("size-3 transition", langs && "rotate-180")} />
@@ -192,15 +196,15 @@ export function Header({
             <a
               href={book.href}
               {...(book.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="inline-flex h-10 items-center gap-1.5 rounded-full bg-olive px-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-paper transition hover:bg-olive-deep sm:px-4 sm:text-xs"
+              className="inline-flex h-9 max-w-[9.5rem] items-center gap-1 rounded-full bg-olive px-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-paper transition hover:bg-olive-deep sm:h-10 sm:max-w-none sm:gap-1.5 sm:px-4 sm:text-xs"
             >
-              <CalendarCheck className="size-3.5 shrink-0" />
+              <CalendarCheck className="hidden size-3.5 shrink-0 min-[400px]:inline" />
               <span className="truncate">{labels.bookNow}</span>
             </a>
 
             <button
               type="button"
-              className="grid size-10 shrink-0 place-items-center rounded-full bg-olive text-paper xl:hidden"
+              className="grid size-9 shrink-0 place-items-center rounded-full bg-olive text-paper sm:size-10 xl:hidden"
               onClick={() => setSheet(true)}
               aria-label={copy.menu}
             >

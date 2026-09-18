@@ -82,8 +82,8 @@ export function EmailShell({
                 src={`${(process.env.EMAIL_ASSET_ORIGIN || SITE_ORIGIN).replace(/\/$/, "")}/brand/logos/logo-full.png`}
                 alt={BRAND}
                 width="180"
-                height="60"
-                className="h-[60px] w-[180px]"
+                height="83"
+                className="h-[83px] w-[180px]"
               />
             </Section>
             <Section className="bg-earth px-[36px] pb-[26px] pt-[26px]">

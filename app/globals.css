@@ -659,3 +659,17 @@ html.dark .planner-map .leaflet-tile-pane {
     display: none;
   }
 }
+
+/**
+ * Two-tone lockup on a transparent plate.
+ *
+ * `brightness-0 invert` first crushes earth and pine to black, then inverts
+ * them to the same white. Invert plus a 180° hue-rotate is the CSS inverse
+ * that keeps both tones: lightness flips, hue stays.
+ */
+.brand-logo {
+  filter: none;
+}
+html.dark .brand-logo {
+  filter: invert(1) hue-rotate(180deg);
+}
