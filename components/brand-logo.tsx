@@ -27,11 +27,11 @@ const HEIGHT = 551;
 export function BrandLogo({
   lang,
   className,
-  priority = false,
+  fetchPriority,
 }: {
   lang: Lang;
   className?: string;
-  priority?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
 }) {
   return (
     <Link
@@ -44,7 +44,7 @@ export function BrandLogo({
         alt=""
         width={WIDTH}
         height={HEIGHT}
-        priority={priority}
+        fetchPriority={fetchPriority}
         sizes="(min-width: 1024px) 220px, (min-width: 640px) 180px, 140px"
         className={cn(
           "brand-logo h-9 w-auto max-w-full object-contain object-left sm:h-11 lg:h-12",
