@@ -379,9 +379,9 @@ export const reviewsBySource = cache((source: Review["source"]): Review[] =>
  * The star values behind an `AggregateRating`.
  *
  * Only reviews that are schema-eligible AND carry a real numeric rating.
- * That is now 48 Google Business Profile reviews; the WordPress carousel
- * entries and every TripAdvisor review still return nothing, because their
- * five stars are template decoration rather than captured values.
+ * That is the Google Business Profile scrape — every review with prose and
+ * a captured star value. TripAdvisor and the leftover direct tip still
+ * return nothing, because they were never given a real numeric rating.
  */
 export function ratingsFor(reviews: Review[]): number[] {
   return reviews
