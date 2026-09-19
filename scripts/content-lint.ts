@@ -275,6 +275,14 @@ console.log(`  ${placeSlugs.length} places checked`);
 /* ────────────────────────────── reviews ────────────────────────────── */
 
 console.log("\nReviews");
+const transferRouteSlugs = new Set(
+  (
+    (load(join(CONTENT, "transfers.json")) as { routes?: Array<{ slug?: string }> } | null)
+      ?.routes ?? []
+  )
+    .map((r) => r.slug)
+    .filter((s): s is string => typeof s === "string"),
+);
 const reviewsPath = join(CONTENT, "reviews", "reviews.json");
 if (existsSync(reviewsPath)) {
   const raw = load(reviewsPath);
@@ -292,6 +300,9 @@ if (existsSync(reviewsPath)) {
     // about anything and quietly leaves a tour page without stars.
     if (review.tour && !tourSlugs.includes(review.tour)) {
       fail(`reviews[${i}]`, `"${review.author}" is mapped to unknown tour ${review.tour}`);
+    }
+    if (review.route && !transferRouteSlugs.has(review.route)) {
+      fail(`reviews[${i}]`, `"${review.author}" is mapped to unknown transfer route ${review.route}`);
     }
   });
   console.log(`  ${list.length} reviews, ${eligible} eligible for AggregateRating`);

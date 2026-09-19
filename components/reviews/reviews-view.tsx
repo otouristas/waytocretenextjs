@@ -40,8 +40,9 @@ export function ReviewsView({
   const tripadvisor = reviews.filter((r) => r.source === "TripAdvisor");
   const direct = reviews.filter((r) => r.source === "Direct");
 
-  // Which tours guests actually wrote about, most-reviewed first. Nine of
-  // the twenty-one have no review yet and simply do not appear.
+  // Which tours guests actually wrote about, most-reviewed first. Tours
+  // nobody has named do not appear here; they still inherit the operator-
+  // wide pool on their own page.
   const byTour = new Map<string, Review[]>();
   for (const review of reviews) {
     if (!review.tour || !tourIndex.has(review.tour)) continue;

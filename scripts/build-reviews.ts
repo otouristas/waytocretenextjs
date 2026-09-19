@@ -14,8 +14,9 @@
  * and assigned to the tour or transfer route it actually describes — keyword
  * matching would have put "Ernesto was our driver for our day of hiking
  * Samaria Gorge" on the transfers page and "the transfers to Agreco Farms"
- * on a gorge page. Anything genuinely generic stays `general`, and a generic
- * review is shown on the reviews hub only.
+ * on a gorge page. Anything genuinely generic stays `general`. Those still
+ * appear on the reviews hub and in each tour page's operator-wide pool;
+ * they just do not pin a product that the guest never named.
  *
  * Run: npm run content:reviews
  */
@@ -42,6 +43,14 @@ type Subject = {
   route?: string;
   /** ISO-639-1 code of the language the guest wrote in. */
   lang?: string;
+  /** Display name when the scrape's `name` is a handle, not a person. */
+  author?: string;
+  /**
+   * Override. Defaults to true for the Google scrape. The Plakias hotel
+   * endorsement is a trade quote, not a guest review, so it stays out of
+   * AggregateRating even though Google recorded five stars.
+   */
+  schemaEligible?: boolean;
 };
 
 /**
@@ -82,6 +91,32 @@ const SUBJECT: Record<string, Subject> = {
   "Nikolaos Gizas": { service: "tour", tour: "pachnes-summit" },
   "Dariusz Szumacher": { service: "tour", tour: "pachnes-summit", lang: "pl" },
   "Artemis xeinou": { service: "tour", tour: "pachnes-summit" },
+  // Imbros Gorge, named in Greek.
+  "Γιώργος Τζουρμπάκης": { service: "tour", tour: "imbros-gorge-guided-tour" },
+  // Preveli monastery and the palm forest — South Crete Highlights.
+  "Konstantinos Galliakis": { service: "tour", tour: "south-crete-highlights" },
+  // Preveli monastery plus the Hydria pottery workshop on that south-coast day.
+  "Irida Mndk": { service: "tour", tour: "south-crete-highlights" },
+  "Orley Garber": { service: "tour", tour: "south-crete-highlights" },
+  // Olive-oil factory and honey factory: Taste of Crete, not Honey & Wine.
+  "Gizem Gökalp": { service: "tour", tour: "taste-of-crete" },
+  // Full-day or village-version Spili days. Cretan Nature & Village Journey
+  // is the catalogue product that spends its first (and most distinctive)
+  // stop in Spili; none of these name Kourtaliotiko or Kalypso, but Spili
+  // is not sold as its own page.
+  "Anthi Kaskoura": { service: "tour", tour: "cretan-nature-village-journey" },
+  "Manthos Petrakis": { service: "tour", tour: "cretan-nature-village-journey" },
+  "Manos Kavaklis": { service: "tour", tour: "cretan-nature-village-journey" },
+  // Named gorges / caves that are not current catalogue products. They stay
+  // on the tour service so they reach every tour page's operator-wide pool,
+  // without pinning them to the wrong gorge.
+  "eugenia manou": { service: "tour" },
+  "Katerina Bitsakaki": { service: "tour" },
+  "Алла Ескина": { service: "tour" },
+  "ΜΑΤΘΑΙΟΣ ΒΑΡΒΑΝΤΑΚΗΣ": { service: "tour" },
+  "Giannis Tranos": { service: "tour" },
+  "Pavlos Marakis": { service: "tour" },
+  "kostis marcelo": { service: "tour" },
 
   // ── transfers ──────────────────────────────────────────────────────────
   "Celine g": { service: "transfer", route: "chania-airport-to-rethymno", lang: "de" },
@@ -103,7 +138,11 @@ const SUBJECT: Record<string, Subject> = {
   "Thomas Thanos": { service: "transfer" },
   "Αnna Papoutsa": { service: "transfer" },
   "Melina Koutentaki": { service: "transfer" },
-  "Giulia Dona": { service: "transfer", lang: "it" },
+  "Giulia Dona": {
+    service: "transfer",
+    route: "heraklion-airport-to-rethymno",
+    lang: "it",
+  },
   "Sivan Shalom Mørch": { service: "transfer" },
   "Lavinia Schiopu": { service: "transfer" },
   "Tony Clegg": { service: "transfer" },
@@ -117,30 +156,67 @@ const SUBJECT: Record<string, Subject> = {
   "xarhs manousakas": { service: "general", lang: "el" },
   "Edward Sweet-Williams": { service: "general" },
   "Μπάμπης Βιδάκης": { service: "general", lang: "el" },
-  "Μαριανικη Ιωαννιδου": { service: "general", lang: "el" },
-  "İsmet Karatekin": { service: "general", lang: "tr" },
+  "Μαριανικη Ιωαννιδου": { service: "general" },
+  "İsmet Karatekin": { service: "general" },
   "Arpit Wanchoo": { service: "general" },
   Λορδος: { service: "general", lang: "el" },
   "Andreas Mathioudakis": { service: "general" },
+  "Giorgos Leledakis": { service: "general" },
+  "Zoe Kak": { service: "general" },
+  "Gamers stars": { service: "general" },
+  "stefanos maragkakis": { service: "general" },
+  "Manolis Savvakis": { service: "general" },
+  "Xρύσα Φιλιππίδου": { service: "general" },
+  "Μιχαλης Καλοειδας": { service: "general" },
+  "Νιτσα Φουστουκου": { service: "general" },
+  "Μαρία Λουτριανάκη": { service: "general" },
+  "Athina Theodoraki": { service: "general" },
+  "Αλεχ Βρεν": { service: "general" },
+  "G_ Rouk": { service: "general" },
+  "Sandy Heretaki": { service: "general" },
+  "increteblue suitesplakias": {
+    service: "general",
+    author: "Increteblue Suites Plakias",
+    schemaEligible: false,
+  },
+  "George Papadakis": { service: "general" },
+  Giannis: { service: "general" },
+  "Diala Mello": { service: "general" },
+  "Fergus Pryor": { service: "general" },
+  "Emy Soyra": { service: "general" },
+  "Gianna Marinaki": { service: "general" },
+  "debbie Boop": { service: "general" },
+  "Irini Samothrakiti": { service: "general" },
+  "Ελένη Δαρδουμα": { service: "general" },
+  "Konstantinos Lorthes": { service: "general" },
+  "eugenia merkou": { service: "general" },
+  "Giannis Papadakis": { service: "general" },
+  "katerina sof": { service: "general" },
+  "Maria Karavellaki": { service: "general" },
+  "Sebastianos Adramis": { service: "general" },
+  "IRENE TZ (Irene_tz)": { service: "general" },
+  "m4 m4": { service: "general" },
+  "Σεργκι Μερτσινα": { service: "general" },
+  "Manolis Margaritis": { service: "general" },
+  "Charly Sakko": { service: "general", lang: "de" },
+  "stephen barley": { service: "general" },
+  "Katerina Kabouraki": { service: "general" },
+  Mixalis: { service: "general" },
+  "stefanos pel0pas": { service: "general" },
+  "Maria V.": { service: "general" },
+  "Charlène LAVOREL": { service: "general" },
+  "Еlena Fedorenko": { service: "general" },
+  "petros sgoyromalis": { service: "general" },
+  "Sp_ Vasil": { service: "general" },
+  "Γιαννης Νακης": { service: "general" },
 };
 
 /**
- * Reviews that exist only in the WordPress testimonial carousel, plus the
- * TripAdvisor and direct ones.
+ * TripAdvisor and direct reviews transcribed by hand.
  *
- * None carries a trustworthy numeric rating. The carousel does render five
- * stars and the label "Google Maps" on every card, but it renders them on
- * cards that are demonstrably TripAdvisor reviews too — they are template
- * defaults, not captured values. So every entry here is `rating: null` and
- * `schemaEligible: false`: displayed, never counted into an
- * `AggregateRating`. Only the Google Business Profile scrape, which carries
- * per-review stars and a link back to the review, feeds structured data.
- *
- * The pairing of name to text was re-derived from the carousel's own DOM
- * (`<strong class="elementskit-author-name">` then
- * `<div class="elementskit-commentor-content">`), because an earlier
- * transcription of this block had the names shifted one card against the
- * quotes — it credited Fergus Pryor with Katerina Sof's words, and so on.
+ * None carries a trustworthy numeric rating, so every entry here is
+ * `rating: null` and `schemaEligible: false`: displayed, never counted
+ * into an AggregateRating.
  */
 const MANUAL = [
   {
@@ -175,81 +251,19 @@ const MANUAL = [
     text: "Go early. By eleven the shallow lagoon at Elafonisi is busy and the pink sand on the far spit is the only quiet stretch left — the tour gets you there before the coaches.",
   },
 
-  // Google reviews that predate the scrape and survive only in the
-  // WordPress carousel. Kept because they are genuine and attributable;
-  // unrated because the carousel's stars are decoration.
-  {
-    id: "google-zoe-kak",
-    author: "Zoe Kak",
-    source: "Google",
-    service: "general",
-    text: "I highly recommend the WaytoCrete agency for those who want to explore Crete. With impeccable organization and friendly service, they offer unique excursions to impressive places.",
-  },
-  {
-    id: "google-g-rouk",
-    author: "G_ Rouk",
-    source: "Google",
-    service: "general",
-    text: "Excellent excursion options. Very organized office!! Crete from a different perspective!",
-  },
-  {
-    // A hotel in Plakias, not a traveller — this is a trade endorsement and
-    // it reads like one.
-    id: "google-increteblue-suites-plakias",
-    author: "Increteblue Suites Plakias",
-    source: "Google",
-    service: "general",
-    text: "We have an excellent collaboration with the agency which is characterized by consistency, reliability and professionalism. Our clients are completely satisfied with the excursions and experience unique experiences.",
-  },
-  {
-    id: "google-fergus-pryor",
-    author: "Fergus Pryor",
-    source: "Google",
-    service: "general",
-    text: "I was in Spili for two weeks and went on several excursions with Ernesto and his team. I was extremely impressed with their levels of service, professionalism and care. Ernesto is a great guy and tailored excursions to fit with the intricacies of our group (we had a combination of elderly people, babies and toddlers as well as my wife and I). They truly went above and beyond to ensure that we had the best experience. I would not hesitate to recommend Ernesto and his team to anyone looking to see Crete and all the beautiful places it has to offer. If you're thinking of booking with these guys, you won't regret it!",
-  },
-  {
-    id: "google-katerina-sof",
-    author: "Katerina Sof",
-    source: "Google",
-    service: "general",
-    text: "Fantastic service!!! Well done!!! Very nice excursions I highly recommend it if you are in Crete!!",
-  },
-  {
-    // The olive-oil farm and the beekeeper are the two stops that define
-    // Taste of Crete.
-    id: "google-gizem-gokalp",
-    author: "Gizem Gökalp",
-    source: "Google",
-    service: "tour",
-    tour: "taste-of-crete",
-    text: "We had the pleasure of having Ernest as our tour guide, and he truly made our experience unforgettable. Ernest was incredibly generous and friendly, making us feel welcomed and comfortable from the start. His knowledge and passion shone through during our visits to both the olive oil factory and the honey factory. Ernest provided insightful information and answered all our questions with enthusiasm. Highly recommend Ernest for an exceptional tour experience!",
-  },
-  {
-    id: "google-charly-sakko",
-    author: "Charly Sakko",
-    source: "Google",
-    service: "general",
-    text: "Very beautiful and unique excursions. Ernesto is a very good and friendly guide. His bird knowledge is excellent. Highly recommended for young and old. The prices are very good for what is offered.",
-  },
-  {
-    id: "google-stephen-barley",
-    author: "Stephen Barley",
-    source: "Google",
-    service: "general",
-    text: "Very friendly helpful and knowledgeable, full of helpful info and nothing too much for him to help with. Good time doing this tour.",
-  },
-  {
-    // Pottery workshop, monastery, Preveli beach and a Cretan lunch — the
-    // South Crete Highlights route, stop for stop.
-    id: "google-orley-garber",
-    author: "Orley Garber",
-    source: "Google",
-    service: "tour",
-    tour: "south-crete-highlights",
-    text: "This organization is a rare find. Ernest the leader and tour guide gave us an unforgettable day in Crete - easily our favorite tour. Not only did we experience a pottery workshop, a monastery visit, a visit to the breathtaking Preveli beach, and a scrumptious Greek meal... we also had a caring guide who watched our belongings, gave us copious amounts of water, and shared information about Crete throughout the drive. I will recommend Way To Crete to any friends going to Crete.",
-  },
+  // Older Google reviews that used to live only in the WordPress carousel
+  // (Zoe Kak, Gizem Gökalp, Orley Garber, Fergus Pryor, and the rest) are
+  // now in the Business Profile scrape, with original-language text, a
+  // real star value and a link back to the review. They come through the
+  // RAW path above.
 ] as const;
+
+/** Guest-written language. SUBJECT.lang wins when the script cannot tell. */
+function detectLang(text: string): string {
+  if (/[\u0370-\u03FF\u1F00-\u1FFF]/.test(text)) return "el";
+  if (/[\u0400-\u04FF]/.test(text)) return "ru";
+  return "en";
+}
 
 /** "Maria Koutoulaki" → "google-maria-koutoulaki", ASCII-folded. */
 function idFor(name: string): string {
@@ -289,20 +303,21 @@ function main() {
 
     out.push({
       id,
-      author: r.name,
+      author: subject?.author ?? r.name,
       source: "Google",
       sourceUrl: r.reviewUrl ?? null,
       rating: r.stars,
       date: null,
-      lang: subject?.lang ?? "en",
+      lang: subject?.lang ?? detectLang(text),
       service: subject?.service ?? "general",
       tour: subject?.tour ?? null,
       route: subject?.route ?? null,
       text,
       // Google reviews are attributable, carry a real star value and link
       // back to the review on Google. These are the only ones that may
-      // enter an AggregateRating.
-      schemaEligible: true,
+      // enter an AggregateRating — unless SUBJECT opts a trade endorsement
+      // out.
+      schemaEligible: subject?.schemaEligible ?? true,
     });
   }
 
