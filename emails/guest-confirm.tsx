@@ -1,11 +1,19 @@
-import { DetailCard, EmailShell } from "@/emails/chrome";
+import { CodePanel, DetailCard, EmailShell } from "@/emails/chrome";
 import { CustomDayCard } from "@/emails/custom-day-card";
-import { SAMPLE_CUSTOM_DAY, type RequestPayload } from "@/lib/request";
+import { SummaryCard } from "@/emails/summary-card";
+import { mailContent } from "@/lib/email/content";
+import { SAMPLE_REQUESTS, type RequestPayload } from "@/lib/request";
 import { EMAIL, WHATSAPP } from "@/lib/site";
 
+/**
+ * The receipt the guest gets back, in the same chrome as the desk mail and
+ * with the same card — a tour, a transfer or a plain question is confirmed as
+ * fully as a custom day. What each one says is decided in
+ * `lib/email/content.ts`.
+ */
 export function GuestConfirmEmail({ payload }: { payload: RequestPayload }) {
-  const first = payload.name.trim().split(/\s+/)[0] || payload.name;
   const custom = payload.kind === "custom-day";
+  const { eyebrow, title, hero, rows } = mailContent(payload, "guest");
 
   return (
     <EmailShell
@@ -16,8 +24,8 @@ export function GuestConfirmEmail({ payload }: { payload: RequestPayload }) {
             ? `Your cash code is ${payload.cashCode}. The desk in Crete will confirm the date.`
             : "The desk in Crete has your note. Someone who hosts the day will reply within a few hours."
       }
-      eyebrow={custom ? "Your Crete day" : "Request received"}
-      title={custom ? `${first}, we have your day` : `Thank you, ${first}`}
+      eyebrow={eyebrow}
+      title={title}
       lead={
         custom
           ? "The desk has the route, the hours and the live price below. Someone who actually hosts the day will reply within a few hours — usually on WhatsApp or this thread — to confirm the date, then send how to pay. Nothing is charged on this email."
@@ -31,34 +39,30 @@ export function GuestConfirmEmail({ payload }: { payload: RequestPayload }) {
       secondaryHref={`mailto:${EMAIL}`}
     >
       {payload.itinerary ? (
-        <CustomDayCard day={payload.itinerary} heading="The day you built" />
-      ) : null}
+        <CustomDayCard
+          day={payload.itinerary}
+          heading={hero.heading}
+          note={hero.note}
+          noteLabel="In your words"
+        />
+      ) : (
+        <SummaryCard hero={hero} noteLabel="In your words" />
+      )}
       {payload.cashCode ? (
-        <DetailCard
-          rows={[
-            { label: "Cash code", value: payload.cashCode },
-            { label: "Discount", value: "10% if paid in cash on the day of the tour" },
-          ]}
+        <CodePanel
+          label="Your cash code"
+          code={payload.cashCode}
+          note="10% off when you pay in cash on the day of the tour. Quote it to us when we confirm the date."
         />
       ) : null}
-      <DetailCard
-        rows={[
-          { label: "What you asked", value: custom ? "Private custom day" : payload.kind },
-          { label: "Preferred date", value: payload.date || "To be confirmed" },
-          { label: "Guests", value: payload.guests },
-          { label: "Experience", value: custom ? undefined : payload.slug },
-          { label: "Hotel / villa", value: payload.hotel },
-          { label: "Pickup", value: payload.itinerary ? undefined : payload.pickup },
-          { label: "Drop-off", value: payload.dropoff },
-          { label: "Your note", value: payload.message },
-        ]}
-      />
+      <DetailCard rows={rows} />
     </EmailShell>
   );
 }
 
+/** Swap for any other key of `SAMPLE_REQUESTS` to preview that kind. */
 GuestConfirmEmail.PreviewProps = {
-  payload: SAMPLE_CUSTOM_DAY,
+  payload: SAMPLE_REQUESTS.tour,
 } satisfies { payload: RequestPayload };
 
 export default GuestConfirmEmail;
