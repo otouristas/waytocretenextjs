@@ -326,6 +326,15 @@ export type UI = {
   cashCodeLabel: string;
   cashCodeSent: string;
   cashOnRequestNote: string;
+  /** Sitewide offer dialog: 10% off tours, final figure on request. */
+  promoKicker: string;
+  promoTitle: string;
+  promoPercent: string;
+  promoBody: string;
+  promoPriceNote: string;
+  promoCta: string;
+  promoDismiss: string;
+  promoClose: string;
   legalKicker: string;
   lastUpdated: string;
   onThisPage: string;
@@ -672,6 +681,16 @@ const EN: UI = {
   cashCodeLabel: "Your cash code",
   cashCodeSent: "Quote this code when we confirm the date. Pay in cash on the day of the tour — not online.",
   cashOnRequestNote: "10% off the quoted price if you pay cash on arrival.",
+  promoKicker: "Limited offer",
+  promoTitle: "All trips & tours",
+  promoPercent: "10% off",
+  promoBody:
+    "Every private tour and day trip from Rethymno is 10% less right now. Tell us your dates and group size — we confirm availability first.",
+  promoPriceNote:
+    "The final price is quoted on request and is not published on this site.",
+  promoCta: "Browse tours",
+  promoDismiss: "Maybe later",
+  promoClose: "Close offer",
   legalKicker: "Legal",
   lastUpdated: "Last updated",
   onThisPage: "On this page",
@@ -1074,6 +1093,16 @@ const DE: UI = {
   cashCodeLabel: "Ihr Code für Barzahlung",
   cashCodeSent: "Nennen Sie diesen Code, wenn wir das Datum bestätigen. Bar am Tourtag — nicht online.",
   cashOnRequestNote: "10 % auf den Angebotspreis bei Barzahlung am Ankunftstag.",
+  promoKicker: "Zeitlich begrenztes Angebot",
+  promoTitle: "Alle Touren & Ausflüge",
+  promoPercent: "10 % Rabatt",
+  promoBody:
+    "Jede private Tour und jeder Tagesausflug ab Rethymno ist gerade 10 % günstiger. Nennen Sie uns Datum und Gruppengröße — wir prüfen zuerst die Verfügbarkeit.",
+  promoPriceNote:
+    "Der Endpreis wird auf Anfrage genannt und ist auf dieser Website nicht veröffentlicht.",
+  promoCta: "Touren ansehen",
+  promoDismiss: "Vielleicht später",
+  promoClose: "Angebot schließen",
   legalKicker: "Rechtliches",
   lastUpdated: "Zuletzt aktualisiert",
   onThisPage: "Auf dieser Seite",
@@ -1476,6 +1505,16 @@ const IT: UI = {
   cashCodeLabel: "Il vostro codice contanti",
   cashCodeSent: "Indicate questo codice quando confermiamo la data. Pagate in contanti il giorno del tour — non online.",
   cashOnRequestNote: "10% sul prezzo indicato se pagate in contanti all'arrivo.",
+  promoKicker: "Offerta a tempo",
+  promoTitle: "Tutti i tour e le escursioni",
+  promoPercent: "10% di sconto",
+  promoBody:
+    "Ogni tour privato e giornata da Rethymno costa il 10% in meno in questo momento. Diteci date e numero di ospiti — confermiamo prima la disponibilità.",
+  promoPriceNote:
+    "Il prezzo finale viene quotato su richiesta e non è pubblicato su questo sito.",
+  promoCta: "Vedi i tour",
+  promoDismiss: "Forse più tardi",
+  promoClose: "Chiudi offerta",
   legalKicker: "Note legali",
   lastUpdated: "Ultimo aggiornamento",
   onThisPage: "In questa pagina",
@@ -1878,6 +1917,16 @@ const FR: UI = {
   cashCodeLabel: "Votre code espèces",
   cashCodeSent: "Citez ce code lorsque nous confirmons la date. Paiement en espèces le jour de l'excursion — pas en ligne.",
   cashOnRequestNote: "10 % sur le tarif indiqué si vous payez en espèces à l'arrivée.",
+  promoKicker: "Offre limitée",
+  promoTitle: "Toutes les excursions",
+  promoPercent: "−10 %",
+  promoBody:
+    "Chaque excursion privée au départ de Réthymnon est 10 % moins chère en ce moment. Indiquez-nous vos dates et le nombre de personnes — nous confirmons d'abord la disponibilité.",
+  promoPriceNote:
+    "Le prix final est communiqué sur demande et n'est pas publié sur ce site.",
+  promoCta: "Voir les excursions",
+  promoDismiss: "Plus tard",
+  promoClose: "Fermer l'offre",
   legalKicker: "Mentions légales",
   lastUpdated: "Dernière mise à jour",
   onThisPage: "Sur cette page",
@@ -2280,6 +2329,16 @@ const SV: UI = {
   cashCodeLabel: "Er kontantkod",
   cashCodeSent: "Ange den här koden när vi bekräftar datumet. Betala kontant på turdagen — inte online.",
   cashOnRequestNote: "10 % på det angivna priset om ni betalar kontant vid ankomst.",
+  promoKicker: "Tidsbegränsat erbjudande",
+  promoTitle: "Alla turer & utflykter",
+  promoPercent: "10 % rabatt",
+  promoBody:
+    "Varje privat tur och dagsutflykt från Rethymno är 10 % billigare just nu. Säg till oss datum och sällskapsstorlek — vi bekräftar tillgängligheten först.",
+  promoPriceNote:
+    "Slutpriset anges på begäran och publiceras inte på den här webbplatsen.",
+  promoCta: "Se turer",
+  promoDismiss: "Kanske senare",
+  promoClose: "Stäng erbjudandet",
   legalKicker: "Juridiskt",
   lastUpdated: "Senast uppdaterad",
   onThisPage: "På den här sidan",

@@ -673,3 +673,31 @@ html.dark .planner-map .leaflet-tile-pane {
 html.dark .brand-logo {
   filter: invert(1) hue-rotate(180deg);
 }
+
+@keyframes promo-popup-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes promo-popup-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.promo-popup-backdrop {
+  animation: promo-popup-fade 280ms var(--ease-out-soft) both;
+}
+
+.promo-popup-panel {
+  animation: promo-popup-rise 380ms var(--ease-out-soft) both;
+}

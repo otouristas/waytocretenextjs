@@ -12,6 +12,7 @@ import { allReviews, ratingSummary } from "@/lib/content/load";
 import { decorateNav } from "@/lib/nav/catalog";
 import { BRAND, isIndexable, siteUrl } from "@/lib/site";
 import { ThemeProvider } from "@/components/theme-provider";
+import { PromoPopup } from "@/components/promo-popup";
 import "../globals.css";
 
 /**
@@ -118,6 +119,7 @@ export default async function RootLayout({
             <SoldOn lang={lang} />
             <Footer lang={lang} />
             <DeskChrome lang={lang} />
+            <PromoPopup lang={lang} />
           </div>
         </ThemeProvider>
         <Analytics />
