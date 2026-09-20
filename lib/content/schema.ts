@@ -89,9 +89,9 @@ export const PriceModel = z.discriminatedUnion("kind", [
 
   /**
    * Per-adult pricing with child/infant bands and an optional private-group
-   * buyout. Shepherd for a Day: €240pp, private up to 4 for €790, extra
-   * person €160, child (4–13) €90, infant (0–3) free.
-   * `adult` is nullable — Timeless Crete publishes only a group rate.
+   * buyout. Rethymno Walk & Taste is the reference: €120 adult, child (4–13)
+   * €65. South Crete Highlights publishes only a group buyout (`adult` is
+   * nullable), as does Timeless Crete.
    */
   z.object({
     kind: z.literal("adult_child_private"),
