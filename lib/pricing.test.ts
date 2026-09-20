@@ -39,8 +39,8 @@ const samaria: PriceModel = {
   unitLabel: "group",
 };
 
-/** Shepherd for a Day: 240€ pp, private up to 4 for 790€ (+160€), child 90€. */
-const shepherd: PriceModel = {
+/** Adult + child + private-buyout shape used by several culture/food days. */
+const adultChildPrivate: PriceModel = {
   kind: "adult_child_private",
   currency: "EUR",
   adult: 240,
@@ -119,19 +119,19 @@ test("flat group beyond capacity with no extra rate becomes an enquiry", () => {
 });
 
 test("per-adult pricing applies below the private-buyout threshold", () => {
-  const q = quote(shepherd, party(2));
+  const q = quote(adultChildPrivate, party(2));
   if (q.kind !== "priced") throw new Error("expected a price");
   assert.equal(q.total, 480);
 });
 
 test("the private buyout wins once it is cheaper than per-head", () => {
-  const q = quote(shepherd, party(4));
+  const q = quote(adultChildPrivate, party(4));
   if (q.kind !== "priced") throw new Error("expected a price");
   assert.equal(q.total, 790);
 });
 
 test("children are charged at the child rate", () => {
-  const q = quote(shepherd, party(2, 1));
+  const q = quote(adultChildPrivate, party(2, 1));
   if (q.kind !== "priced") throw new Error("expected a price");
   assert.equal(q.total, 570);
 });

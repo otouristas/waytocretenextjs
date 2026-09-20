@@ -95,9 +95,9 @@ const COPY: Record<string, TourCopy> = {
   "shepherd-for-a-day-crete": {
     title: "Shepherd for a day",
     seoTitle: "Shepherd for a Day in Crete: Cheese Making & Antikristo",
-    seoDesc: "Saturday or Sunday farm day: milking, cheese, kalitsounia, antikristo. €240 pp or €790 private for 4.",
-    long: "Giorgos’ yard, not a show farm. Weekends only. You milk, make cheese, cook, then eat antikristo. Private buyout is €790 for up to four.",
-    highlights: ["Sat & Sun, pickup 11:00", "€240 pp or €790 private (4)", "Hands-on, 4–6 hours", "Photoshoot included"],
+    seoDesc: "Farm day in Crete: milking, cheese, kalitsounia, antikristo. Price on request.",
+    long: "Giorgos’ yard, not a show farm. You milk, make cheese, cook, then eat antikristo. We quote the day when we know your dates and group.",
+    highlights: ["On request, pickup 11:00", "Hands-on, 4–6 hours", "Photoshoot included", "Price confirmed after your request"],
     itinerary: ["Pickup", "Meet the shepherd", "Milking and cheese", "Kalitsounia", "Garden and antikristo lunch", "Return"],
     included: ["Pickup and drop-off", "Driver-guide", "Milking and cheese workshop", "Lunch", "Photoshoot"],
     excluded: ["Extra drinks", "Tips"],

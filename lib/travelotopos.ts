@@ -8,7 +8,6 @@ export const TRAVELOTOPOS_ORIGIN = "https://waytocrete.travelotopos.com";
  * Tours not listed here stay on the Resend request form.
  */
 export const TRAVELOTOPOS_BY_SLUG: Record<string, { serviceId: number; categoryId: number }> = {
-  "shepherd-for-a-day-crete": { serviceId: 3, categoryId: 3 },
   "imbros-gorge-guided-tour": { serviceId: 11, categoryId: 4 },
   "samaria-gorge-explorer": { serviceId: 13, categoryId: 4 },
   "timeless-crete-villages-monasteries": { serviceId: 14, categoryId: 6 },

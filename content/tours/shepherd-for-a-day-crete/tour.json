@@ -4,32 +4,13 @@
   "wpSlug": "shepherd-for-a-day-crete",
   "wpId": 653,
   "price": {
-    "kind": "adult_child_private",
+    "kind": "on_request",
     "currency": "EUR",
-    "adult": 240,
-    "child": 90,
-    "infantFree": true,
-    "childAges": [
-      4,
-      13
-    ],
-    "infantAges": [
-      0,
-      3
-    ],
-    "privateGroup": {
-      "total": 790,
-      "includedGuests": 4,
-      "extraGuest": 160
-    }
+    "indicativeFrom": null
   },
   "thirdPartyCosts": [],
   "cadence": {
-    "kind": "weekdays",
-    "days": [
-      "sat",
-      "sun"
-    ]
+    "kind": "on_request"
   },
   "pickupTime": "11:00",
   "durationMinutes": 300,
@@ -52,10 +33,6 @@
     "/images/tours/shepherd-for-a-day-crete/gallery-06.jpg",
     "/images/tours/shepherd-for-a-day-crete/gallery-07.jpg"
   ],
-  "travelotopos": {
-    "serviceId": 3,
-    "categoryId": 3
-  },
   "featured": false,
   "supersedes": []
 }
