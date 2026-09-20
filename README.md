@@ -22,6 +22,7 @@ npm run build
 | `NEXT_PUBLIC_SITE_URL` | Indexability switch. Canonicals, JSON-LD `WebSite`/`Organization` URLs and the sitemap always use `https://rethymnotours.com`. Set this to that same origin on production so the site is indexable; leave unset on previews. |
 | `RESEND_API_KEY`, `RESEND_FROM` | Desk mail via Resend. Without a key, forms fall back to a `mailto:` draft. After the domain is verified, set `RESEND_FROM` to `Rethymno Tours desk <desk@rethymnotours.com>`. |
 | `RESEND_DESK_TO` | Inbox that receives every request. Defaults to `info@waytocrete.com`. |
+| `EMAIL_ASSET_ORIGIN` | Where the mail templates load the logo from. Defaults to the production origin, which is what you want on previews too — a preview URL dies and the image with it. |
 
 `isIndexable()` in `lib/site.ts` only returns true for the real production host — a Vercel preview
 that ranks would compete with production for the same content.
@@ -43,7 +44,28 @@ Leave it unset on Preview and Development so those builds stay `noindex`. Option
 |---|---|
 | `RESEND_API_KEY`, `RESEND_FROM` | Desk request mail. Forms fall back to `mailto:` without them. After DNS, `RESEND_FROM=Rethymno Tours desk <desk@rethymnotours.com>`. |
 | `RESEND_DESK_TO` | Forward target. Defaults to `info@waytocrete.com`. |
-| `RESEND_TEMPLATE_DESK`, `RESEND_TEMPLATE_GUEST` | Optional Resend template IDs. |
+
+`RESEND_TEMPLATE_DESK` and `RESEND_TEMPLATE_GUEST` are gone. They swapped a template built in the
+Resend dashboard in for the one in this repo, one stream at a time, so setting either sent that
+stream unstyled while the other stayed branded — which is why some requests used to arrive
+designed and some arrived as plain text. Delete them from the Vercel project if they are still
+set; nothing reads them. The templates live in `emails/`.
+
+## Email
+
+Two mails go out per request — the desk notification and the guest confirmation — and both are
+React Email templates in `emails/`, rendered by `lib/email/send-request-mail.tsx`. There is
+deliberately no second path.
+
+- **`lib/email/content.ts`** decides what each mail says: the heading, the card, the facts, and
+  which of them the table below the card may repeat. It is plain data, so `content.test.ts` can
+  assert that every field a form sends actually reaches the desk. That test exists because
+  `photoPackage` and `departure` once shipped readable only in the plain-text part.
+- **`emails/chrome.tsx`** holds the shell and the palette. The palette is the three anchors from
+  `app/globals.css` — paper, pine, earth — with every mix pre-computed as hex, because no mail
+  client supports `color-mix()`.
+- `npm run email` opens the preview server on :3333. Each template's `PreviewProps` points at a
+  key of `SAMPLE_REQUESTS` in `lib/request.ts`; swap it to preview another kind.
 
 ## Architecture
 

@@ -172,3 +172,69 @@ export const SAMPLE_CUSTOM_DAY: RequestPayload = {
     shareUrl: "https://rethymnotours.com/en/create?d=2026-09-10&s=kourtaliotiko-gorge:30",
   },
 };
+
+/**
+ * One realistic request per kind, for `npm run email`.
+ *
+ * The custom day above was for a long time the only sample anyone could
+ * preview, which is how five of the six kinds shipped with a template nobody
+ * had looked at. Point a `PreviewProps` at any of these to see that kind.
+ */
+export const SAMPLE_REQUESTS: Record<RequestKind, RequestPayload> = {
+  "custom-day": SAMPLE_CUSTOM_DAY,
+  tour: {
+    kind: "tour",
+    lang: "en",
+    name: "Anna Fischer",
+    email: "anna@example.com",
+    phone: "+49 171 234 5678",
+    slug: "imbros-gorge-guided-tour",
+    date: "2026-10-04",
+    guests: 2,
+    hotel: "Hotel Fortezza, Rethymno",
+    message: "We would like a morning pickup, and one of us walks slowly downhill.",
+    payCash: true,
+    cashCode: "CASH-7QK2",
+  },
+  transfer: {
+    kind: "transfer",
+    lang: "de",
+    name: "Lukas Weber",
+    email: "lukas@example.com",
+    phone: "+49 171 234 5678",
+    date: "2026-07-18",
+    time: "14:30",
+    guests: 3,
+    pickup: "Chania Airport (CHQ)",
+    dropoff: "Hotel Fortezza, Rethymno",
+    flight: "A3 352",
+    message: "Two large suitcases and a child seat, please.",
+  },
+  contact: {
+    kind: "contact",
+    lang: "en",
+    name: "Priya Nair",
+    email: "priya@example.com",
+    message: "Do you run the gorge walks in early April, or is it still too wet?",
+  },
+  partner: {
+    kind: "partner",
+    lang: "en",
+    name: "Sofia Marin",
+    email: "sofia@blueaegean.example",
+    company: "Blue Aegean Travel",
+    message: "We place around forty guests a season in Rethymno and need a day-tour partner.",
+  },
+  photography: {
+    kind: "photography",
+    lang: "it",
+    name: "Marco Rossi",
+    email: "marco@example.com",
+    slug: "crete-photography-workshop",
+    departure: "2027-10",
+    date: "2027-10-12",
+    guests: 1,
+    hotel: "Casa Mooma, Rethymno",
+    message: "Is the October departure still open, and what lenses would you bring?",
+  },
+};

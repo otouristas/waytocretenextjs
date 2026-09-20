@@ -3,7 +3,7 @@ import { DeskRequestEmail } from "@/emails/desk-request";
 import { GuestConfirmEmail } from "@/emails/guest-confirm";
 import { EMAIL, PARTNERS_EMAIL } from "@/lib/site";
 import { bodyFor, subjectFor, type RequestPayload } from "@/lib/request";
-import { guestConfirmSubject, guestConfirmText, templateVars } from "@/lib/email/html";
+import { guestConfirmSubject, guestConfirmText } from "@/lib/email/html";
 
 export type MailResult =
   | { ok: true }
@@ -39,6 +39,20 @@ async function sendOne(
   return data?.id ?? "sent";
 }
 
+/**
+ * Sends the desk notification and the guest confirmation.
+ *
+ * Both are rendered from `emails/` and nowhere else. There used to be a
+ * second path — `RESEND_TEMPLATE_DESK` / `RESEND_TEMPLATE_GUEST` swapped in a
+ * template built in the Resend dashboard — and whichever of the two was set
+ * sent an unstyled mail while the other kept the branded one. That is the
+ * whole reason some requests arrived designed and some arrived plain. The
+ * templates live in the repo, where they are reviewed and previewed, so the
+ * escape hatch is gone rather than fixed twice.
+ *
+ * `text` stays alongside `react`: it is the multipart alternative, which
+ * plain-text clients read and spam filters expect, not a fallback layout.
+ */
 export async function sendRequestMail(payload: RequestPayload): Promise<MailResult> {
   const to = deskRecipients(payload);
   const inbox = deskInbox();
@@ -50,41 +64,23 @@ export async function sendRequestMail(payload: RequestPayload): Promise<MailResu
   const resend = new Resend(key);
   const id = crypto.randomUUID();
   const from = fromAddress();
-  const vars = templateVars(payload);
-  const deskTemplate = process.env.RESEND_TEMPLATE_DESK;
-  const guestTemplate = process.env.RESEND_TEMPLATE_GUEST;
 
-  const deskSent = deskTemplate
-    ? await sendOne(
-        resend,
-        {
-          from,
-          to,
-          replyTo: payload.email,
-          template: { id: deskTemplate, variables: vars },
-          tags: [
-            { name: "kind", value: payload.kind },
-            { name: "stream", value: "desk" },
-          ],
-        },
-        `desk-request/${id}`,
-      )
-    : await sendOne(
-        resend,
-        {
-          from,
-          to,
-          replyTo: payload.email,
-          subject: subjectFor(payload),
-          react: <DeskRequestEmail payload={payload} />,
-          text: bodyFor(payload),
-          tags: [
-            { name: "kind", value: payload.kind },
-            { name: "stream", value: "desk" },
-          ],
-        },
-        `desk-request/${id}`,
-      );
+  const deskSent = await sendOne(
+    resend,
+    {
+      from,
+      to,
+      replyTo: payload.email,
+      subject: subjectFor(payload),
+      react: <DeskRequestEmail payload={payload} />,
+      text: bodyFor(payload),
+      tags: [
+        { name: "kind", value: payload.kind },
+        { name: "stream", value: "desk" },
+      ],
+    },
+    `desk-request/${id}`,
+  );
 
   if (!deskSent) {
     return { ok: false, fallback: "mailto", to: inbox, subject: subjectFor(payload), body: bodyFor(payload) };
@@ -92,39 +88,23 @@ export async function sendRequestMail(payload: RequestPayload): Promise<MailResu
 
   const guestBcc = payload.email.toLowerCase() === inbox.toLowerCase() ? undefined : [inbox];
 
-  const guestResult = guestTemplate
-    ? await sendOne(
-        resend,
-        {
-          from,
-          to: payload.email,
-          replyTo: inbox,
-          bcc: guestBcc,
-          template: { id: guestTemplate, variables: vars },
-          tags: [
-            { name: "kind", value: payload.kind },
-            { name: "stream", value: "guest" },
-          ],
-        },
-        `guest-confirm/${id}`,
-      )
-    : await sendOne(
-        resend,
-        {
-          from,
-          to: payload.email,
-          replyTo: inbox,
-          bcc: guestBcc,
-          subject: guestConfirmSubject(payload),
-          react: <GuestConfirmEmail payload={payload} />,
-          text: guestConfirmText(payload),
-          tags: [
-            { name: "kind", value: payload.kind },
-            { name: "stream", value: "guest" },
-          ],
-        },
-        `guest-confirm/${id}`,
-      );
+  const guestResult = await sendOne(
+    resend,
+    {
+      from,
+      to: payload.email,
+      replyTo: inbox,
+      bcc: guestBcc,
+      subject: guestConfirmSubject(payload),
+      react: <GuestConfirmEmail payload={payload} />,
+      text: guestConfirmText(payload),
+      tags: [
+        { name: "kind", value: payload.kind },
+        { name: "stream", value: "guest" },
+      ],
+    },
+    `guest-confirm/${id}`,
+  );
 
   if (!guestResult) {
     console.error("Guest confirmation email failed; desk notification was sent.");
