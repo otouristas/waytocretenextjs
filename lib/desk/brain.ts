@@ -58,7 +58,7 @@ export function searchDesk(query: string, lang: Lang, category?: string): DeskHi
       }
       if (/(hike|hiking|gorge)/.test(q) && tour.category === "hiking") score += 6;
       if (/(wine|food|cook|taste)/.test(q) && tour.category === "gastronomy") score += 6;
-      if (/(boat|beach|sea|swim)/.test(q) && tour.category === "beach") score += 6;
+      if (/(boat|beach|sea|swim|sail)/.test(q) && (tour.category === "beach" || tour.category === "boat")) score += 6;
       if (/(yoga|wellness|sunset)/.test(q) && tour.category === "wellness") score += 6;
     }
     if (score <= 0) return null;

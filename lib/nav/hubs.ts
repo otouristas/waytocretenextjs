@@ -45,6 +45,7 @@ export const HUBS: Record<HubId, HubDef> = {
       // The boat cruise belonged to no hub at all: its only route in was a
       // direct navbar link, so it had no category page passing it anything.
       "boat-cruise",
+      "serenity-sailing-rethymno",
     ],
   },
   "cretan-history-tours": {

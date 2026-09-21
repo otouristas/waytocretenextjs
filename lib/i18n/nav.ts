@@ -138,7 +138,23 @@ export const NAV_SPEC: readonly NavItemSpec[] = [
     path: "/transfers",
     tours: [{ slug: "wedding-transfers", label: "Wedding Transfers" }],
   },
-  { id: "boat", kind: "link", path: "/tours/boat-cruise" },
+  /**
+   * Two sea products now, so this stopped being a link.
+   *
+   * `path` is null because there is no hub page for them to sit under: a
+   * parent that pointed at one of its own children would have given the
+   * motorboat a navbar link and the sailing yacht none, which is how the
+   * boat cruise ended up in no hub in the first place.
+   */
+  {
+    id: "boat",
+    kind: "menu",
+    path: null,
+    tours: [
+      { slug: "boat-cruise", label: "Boat Cruise" },
+      { slug: "serenity-sailing-rethymno", label: "Serenity Sailing from Rethymno" },
+    ],
+  },
   { id: "blog", kind: "link", path: "/guides" },
   { id: "partners", kind: "link", path: "/partners" },
   { id: "contact", kind: "link", path: "/contact" },
@@ -177,7 +193,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     create: "Create your day",
     multiday: "Multiday Tours",
     transfer: "Transfer",
-    boat: "Boat Cruise",
+    boat: "Boat & Sailing",
     blog: "Blog",
     contact: "Contact",
     bookNow: "Book now",
@@ -201,7 +217,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     create: "Tag gestalten",
     multiday: "Mehrtagesreisen",
     transfer: "Transfer",
-    boat: "Bootsfahrt",
+    boat: "Boot & Segeln",
     blog: "Blog",
     contact: "Kontakt",
     bookNow: "Jetzt buchen",
@@ -225,7 +241,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     create: "Crea la tua giornata",
     multiday: "Tour di più giorni",
     transfer: "Transfer",
-    boat: "Crociera in barca",
+    boat: "Barca e vela",
     blog: "Blog",
     contact: "Contatti",
     bookNow: "Prenota ora",
@@ -249,7 +265,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     create: "Créer votre journée",
     multiday: "Circuits de plusieurs jours",
     transfer: "Transfert",
-    boat: "Croisière",
+    boat: "Bateau & voile",
     blog: "Blog",
     contact: "Contact",
     bookNow: "Réserver",
@@ -273,7 +289,7 @@ const NAV_COPY: Record<Lang, NavCopy> = {
     create: "Skapa er dag",
     multiday: "Flerdagarsturer",
     transfer: "Transfer",
-    boat: "Båttur",
+    boat: "Båt & segling",
     blog: "Blogg",
     contact: "Kontakt",
     bookNow: "Boka nu",
@@ -371,10 +387,20 @@ export function secondaryNav(lang: Lang) {
 
 const HUB_PATHS = new Set(Object.keys(HUBS).map((id) => `/${id}`));
 
+/**
+ * The tours the "Boat & Sailing" item covers, so both of them light it up
+ * rather than falling through to the generic /tours branch below.
+ */
+const BOAT_PATHS = new Set(
+  (NAV_SPEC.find((item) => item.id === "boat")?.tours ?? []).map(
+    (tour) => `/tours/${tour.slug}`,
+  ),
+);
+
 /** Which top-level item the current path belongs to. */
 export function activeNavId(pathname: string): string | null {
   const rest = pathname.replace(/^\/(en|de|it|fr|sv)(?=\/|$)/, "") || "/";
-  if (rest === "/tours/boat-cruise") return "boat";
+  if (BOAT_PATHS.has(rest)) return "boat";
   if (rest === "/" || rest === "") return "home";
   if (rest === "/about" || rest.startsWith("/about/")) return "about";
   if (rest === "/multiday-tours" || rest.startsWith("/multiday-tours/")) return "multiday";

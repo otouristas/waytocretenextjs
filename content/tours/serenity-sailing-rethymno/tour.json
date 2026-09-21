@@ -1,0 +1,33 @@
+{
+  "slug": "serenity-sailing-rethymno",
+  "category": "boat",
+  "wpSlug": "serenity-sailing-rethymno",
+  "price": {
+    "kind": "on_request",
+    "currency": "EUR",
+    "indicativeFrom": null
+  },
+  "thirdPartyCosts": [],
+  "cadence": {
+    "kind": "daily"
+  },
+  "pickupTime": "09:00",
+  "durationMinutes": 360,
+  "difficulty": "easy",
+  "groupMin": 1,
+  "groupMax": 8,
+  "hotelPickup": false,
+  "photoshoot": "none",
+  "privateOnly": false,
+  "cancelFreeHours": 48,
+  "meetingPoint": null,
+  "places": [],
+  "hero": "/images/tours/serenity-sailing-rethymno/hero.jpg",
+  "gallery": [
+    "/images/tours/serenity-sailing-rethymno/gallery-01.jpg",
+    "/images/tours/serenity-sailing-rethymno/gallery-02.jpg",
+    "/images/tours/serenity-sailing-rethymno/gallery-03.jpg"
+  ],
+  "featured": false,
+  "supersedes": []
+}
