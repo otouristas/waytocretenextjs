@@ -32,8 +32,12 @@ const IsoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "expected YYYY-MM-DD");
  */
 export const PriceModel = z.discriminatedUnion("kind", [
   /**
-   * A sliding per-person scale that gets cheaper as the group grows.
-   * Imbros Gorge is the reference: €44pp at 8 people rising to €145pp at 2.
+   * A sliding per-person scale that gets cheaper as the group grows —
+   * €145pp for two falling to €44pp for eight. Imbros Gorge was the
+   * reference until it moved to a flat group rate, so nothing in the
+   * catalogue is priced this way today; the shape stays because it is how
+   * the operator prices a van that fills up, and dropping it would mean
+   * re-deriving it the next time a product is sold by the seat.
    * Tiers are stored ascending by `minGuests`; `perPerson` applies when
    * `minGuests <= guests <= maxGuests`. Non-integer rates are legal (€72.50).
    */
@@ -53,7 +57,8 @@ export const PriceModel = z.discriminatedUnion("kind", [
 
   /**
    * One flat total covering the whole group up to `includedGuests`.
-   * Samaria Gorge (€350 up to 8) and Romance & History (€320 per couple).
+   * Samaria Gorge (€350 up to 8), Imbros Gorge (€290 up to 8) and
+   * Romance & History (€320 per couple).
    */
   z.object({
     kind: z.literal("flat_group"),

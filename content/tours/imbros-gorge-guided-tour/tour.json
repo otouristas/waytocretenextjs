@@ -4,45 +4,12 @@
   "wpSlug": "imbros-gorge-guided-tour",
   "wpId": 45,
   "price": {
-    "kind": "sliding_per_person",
+    "kind": "flat_group",
     "currency": "EUR",
-    "tiers": [
-      {
-        "minGuests": 2,
-        "maxGuests": 2,
-        "perPerson": 145
-      },
-      {
-        "minGuests": 3,
-        "maxGuests": 3,
-        "perPerson": 96
-      },
-      {
-        "minGuests": 4,
-        "maxGuests": 4,
-        "perPerson": 72.5
-      },
-      {
-        "minGuests": 5,
-        "maxGuests": 5,
-        "perPerson": 70
-      },
-      {
-        "minGuests": 6,
-        "maxGuests": 6,
-        "perPerson": 58
-      },
-      {
-        "minGuests": 7,
-        "maxGuests": 7,
-        "perPerson": 50
-      },
-      {
-        "minGuests": 8,
-        "maxGuests": 8,
-        "perPerson": 44
-      }
-    ]
+    "total": 290,
+    "includedGuests": 8,
+    "extraGuest": null,
+    "unitLabel": "group"
   },
   "privateGuide": {
     "amount": 150,
