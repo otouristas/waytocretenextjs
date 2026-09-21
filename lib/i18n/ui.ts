@@ -767,7 +767,7 @@ const EN: UI = {
     { q: "What is your cancellation policy?", a: "Free cancellation with a full refund up to 48 hours before pickup on every tour that lists a price. Inside 48 hours we will always try to move your date rather than charge you." },
     { q: "Do I pay when I book?", a: "No. You send a request with your date and group size, and we confirm availability first. Payment details follow once the day is held — nothing is charged on this site." },
     { q: "Which airport should I fly into for Rethymno?", a: "Chania (CHQ) and Heraklion (HER) are both about an hour from Rethymno by road, so either works. We run private transfers from both." },
-    { q: "Do the prices change with group size?", a: "On several tours, yes. Imbros Gorge for example is €44 per person in a full van of 8, rising to €145 per person for a couple, because the van and guide cost the same either way." },
+    { q: "Do the prices change with group size?", a: "On several tours, yes. Imbros Gorge for example is €290 for the whole group, so a couple pays €145 each and a full van of 8 pays €36.25 each — the van and driver cost the same either way." },
   ],
 };
 
@@ -1179,7 +1179,7 @@ const DE: UI = {
     { q: "Wie sind die Stornobedingungen?", a: "Kostenlose Stornierung mit voller Erstattung bis 48 Stunden vor der Abholung bei jeder Tour mit Preis. Innerhalb von 48 Stunden versuchen wir immer, das Datum zu verschieben, statt Sie zu belasten." },
     { q: "Zahle ich bei der Buchung?", a: "Nein. Sie schicken eine Anfrage mit Datum und Gruppengröße, wir bestätigen zuerst die Verfügbarkeit. Zahlungsdetails folgen, sobald der Tag gehalten ist — auf dieser Seite wird nichts abgebucht." },
     { q: "Welchen Flughafen soll ich für Rethymno anfliegen?", a: "Chania (CHQ) und Heraklion (HER) sind beide etwa eine Stunde von Rethymno entfernt, beides geht. Wir fahren private Transfers von beiden." },
-    { q: "Ändern sich die Preise mit der Gruppengröße?", a: "Bei mehreren Touren ja. Die Imbros-Schlucht zum Beispiel kostet 44 € pro Person im vollen Van mit 8, und 145 € pro Person für ein Paar, weil Van und Guide in beiden Fällen gleich viel kosten." },
+    { q: "Ändern sich die Preise mit der Gruppengröße?", a: "Bei mehreren Touren ja. Die Imbros-Schlucht zum Beispiel kostet 290 € für die ganze Gruppe, ein Paar zahlt also 145 € pro Person und ein voller Van mit 8 nur 36,25 € pro Person – Van und Fahrer kosten in beiden Fällen gleich viel." },
   ],
 };
 
@@ -1591,7 +1591,7 @@ const IT: UI = {
     { q: "Qual è la politica di cancellazione?", a: "Cancellazione gratuita con rimborso completo fino a 48 ore prima del ritiro su ogni tour con prezzo. Entro le 48 ore cerchiamo sempre di spostare la data invece di addebitarvi." },
     { q: "Si paga al momento della prenotazione?", a: "No. Inviate una richiesta con data e numero di persone, e confermiamo prima la disponibilità. I dettagli di pagamento arrivano quando la giornata è bloccata — su questo sito non si addebita nulla." },
     { q: "In quale aeroporto arrivare per Rethymno?", a: "La Canea (CHQ) e Heraklion (HER) distano entrambe circa un'ora da Rethymno, vanno bene entrambi. Facciamo transfer privati da tutti e due." },
-    { q: "I prezzi cambiano con la dimensione del gruppo?", a: "In diversi tour, sì. La gola di Imbros per esempio è 44 € a persona in un van pieno di 8, e sale a 145 € a persona per una coppia, perché van e guida costano uguale in ogni caso." },
+    { q: "I prezzi cambiano con la dimensione del gruppo?", a: "In diversi tour, sì. La gola di Imbros per esempio costa 290 € per l'intero gruppo, quindi una coppia paga 145 € a persona e un van pieno di 8 solo 36,25 € a persona – van e autista costano uguale in ogni caso." },
   ],
 };
 
@@ -2003,7 +2003,7 @@ const FR: UI = {
     { q: "Quelle est votre politique d'annulation ?", a: "Annulation gratuite avec remboursement intégral jusqu'à 48 heures avant la prise en charge sur chaque excursion tarifée. Dans les 48 heures, nous essayons toujours de déplacer la date plutôt que de vous facturer." },
     { q: "Paie-t-on au moment de la réservation ?", a: "Non. Vous envoyez une demande avec la date et le nombre de personnes, nous confirmons d'abord la disponibilité. Les modalités de paiement suivent une fois la journée bloquée — rien n'est débité sur ce site." },
     { q: "Quel aéroport pour Réthymnon ?", a: "La Canée (CHQ) et Héraklion (HER) sont tous deux à environ une heure de Réthymnon, les deux conviennent. Nous assurons des transferts privés depuis les deux." },
-    { q: "Les prix changent-ils avec la taille du groupe ?", a: "Sur plusieurs excursions, oui. Les gorges d'Imbros par exemple sont à 44 € par personne dans un van complet de 8, et montent à 145 € par personne pour un couple, parce que le van et le guide coûtent autant dans les deux cas." },
+    { q: "Les prix changent-ils avec la taille du groupe ?", a: "Sur plusieurs excursions, oui. Les gorges d'Imbros par exemple coûtent 290 € pour tout le groupe : un couple paie 145 € par personne et un van complet de 8 seulement 36,25 € par personne, parce que le van et le chauffeur coûtent autant dans les deux cas." },
   ],
 };
 
@@ -2415,7 +2415,7 @@ const SV: UI = {
     { q: "Vilka avbokningsregler har ni?", a: "Gratis avbokning med full återbetalning upp till 48 timmar före hämtning på varje tur med pris. Inom 48 timmar försöker vi alltid flytta datumet i stället för att debitera er." },
     { q: "Betalar jag när jag bokar?", a: "Nej. Ni skickar en förfrågan med datum och gruppstorlek, och vi bekräftar först tillgängligheten. Betalningsuppgifter kommer när dagen är hållen — ingenting debiteras på den här sidan." },
     { q: "Vilken flygplats ska jag flyga till för Rethymno?", a: "Chania (CHQ) och Heraklion (HER) ligger båda ungefär en timme från Rethymno, så båda fungerar. Vi kör privat transfer från båda." },
-    { q: "Ändras priserna med gruppstorleken?", a: "På flera turer, ja. Imbrosravinen till exempel är 44 € per person i en full van med 8, och stiger till 145 € per person för ett par, eftersom van och guide kostar lika mycket oavsett." },
+    { q: "Ändras priserna med gruppstorleken?", a: "På flera turer, ja. Imbrosravinen till exempel kostar 290 € för hela gruppen, så ett par betalar 145 € per person och en full van med 8 bara 36,25 € per person, eftersom van och förare kostar lika mycket oavsett." },
   ],
 };
 
