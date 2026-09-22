@@ -2,39 +2,41 @@
   "lang": "sv",
   "state": "reviewed",
   "title": "Sydkretas höjdpunkter",
-  "tagline": "Klostret Preveli, palmlagunen och stranden Triopetra på en ostressad dag.",
+  "tagline": "Lejonfontänerna i Spili, Kourtaliotiko-ravinen, klostret Preveli och palmlagunen på en ostressad dag.",
   "seoTitle": "Preveli: palmskog, kloster och lagun från Rethymno",
-  "seoDescription": "Sex timmar privat från Rethymno: klostret Preveli, palmskog och lagun, stranden Triopetra och byn Spili. Fotografering ingår.",
-  "summary": "Sydkretas höjdpunkter är en sex timmar lång privat dagsutflykt från Rethymno längs Kretas sydkust, varje dag för grupper på upp till åtta med hämtning på hotellet kl. 09:00. Rutten korsar Kourtaliotiko-ravinen till klostret Preveli på klippan, går ner till palmskogen i Preveli där floden Megalopotamos möter Libyska havet, gör ett kort stopp vid Triopetra Beach och avslutar med de venetianska lejonfontänerna i byn Spili. Svårighetsgraden är lätt, professionell fotografering och ett redigerat digitalt album ingår, och priset är €250 för en grupp på upp till fyra.",
+  "seoDescription": "Fem timmar privat från Rethymno: byn Spili, Kourtaliotiko-ravinen, klostret Preveli och palmskogen i Preveli. Fotografering ingår.",
+  "summary": "Sydkretas höjdpunkter är en fem timmar lång privat dagstur från Rethymno längs Kretas sydkust, varje dag för grupper på upp till åtta med hotellhämtning 09:00. Rutten börjar i bergsbyn Spili med dess venetianska lejonhuvudfontäner, går söderut genom Kourtaliotiko-ravinen till klostret Preveli högt på klippan och avslutas i palmskogen i Preveli, där floden Megalopotamos möter Libyska havet. Svårighetsgraden är lätt, professionell fotografering och ett redigerat digitalt album ingår, och priset är €200 för en grupp på upp till fyra.",
   "overview": "Sydkreta är den orörda sidan av ön, där bergen går rakt ner i havet. Landskapet ändras hela tiden längs den här kusten: raviner, floder, palmlundar och stilla stränder långt från folksamlingarna, med små byar utspridda i kullarna mellan stenhus, smala gränder och olivterrasser.\n\nLivet här är långsamt. Ni möter lokalbor i vardagen, barn som leker på gatorna och fiskare som arbetar längs stranden. Luften doftar salt, örter och blommor, och det enda soundtracket är vågor och fågelsång.\n\nDen här dagen är byggd för det tempot. Ni vandrar, tittar, badar, äter lokal mat och tar er tid. Det är mindre en checklista av sevärdheter än en chans att känna hur ön faktiskt lever, och det fungerar lika bra för familjer som för par.",
   "highlights": [
-    "Vidsträckta vyer över Libyska havet från klostret Preveli på klippan, och dess roll i Kretas motstånd under osmanskt styre och under andra världskriget",
-    "En promenad genom lunden med sällsynta Phoenix theophrasti-palmer, hemmahörande på Kreta",
+    "De 25 venetianska lejonhuvudfontänerna på torget i Spili, med friskt källvatten från bergen",
+    "Stenhusen, de smala gränderna och den lugna karaktären i en levande kretensisk bergsby",
+    "Kourtaliotiko-ravinens höga kalkstensväggar, med ett stopp vid en utsiktsplats",
+    "Vida vyer över Libyska havet från klostret Preveli högt på klippan, och dess roll i det kretensiska motståndet under osmanskt styre och i andra världskriget",
+    "Klostrets stilla innergård, dess bysantinska arkitektur och fresker",
+    "En promenad genom lunden av sällsynta Phoenix theophrasti-palmer, endemiska för Kreta",
     "Lagunen där floden Megalopotamos möter havet, lugn nog att simma i sötvatten",
-    "De tre klipporna som ger Triopetra Beach sitt namn, reser sig ur turkost vatten",
-    "De 25 venetianska lejonhuvudfontänerna på torget i Spili",
-    "En professionell fotografering längs vägen, levererad som redigerat digitalt album inom 48 timmar"
+    "Professionell fotografering under dagen, levererad som ett redigerat digitalt album inom 48 timmar"
   ],
   "itinerary": [
     {
-      "heading": "Kourtaliotiko-ravinen och klostret Preveli",
-      "body": "Färden söderut går genom Kourtaliotiko-ravinen, med ett kort stopp för att ta in de höga klipporna som reser sig på båda sidor av vägen. Därifrån klättrar vägen till klostret Preveli, högt ovanför Libyska havet. Klostret spelade en viktig roll i Kretas motstånd under den osmanska tiden och återigen under andra världskriget, och ni får höra vad munkarna gjorde under båda perioderna. Det finns tid att gå genom de bysantinska byggnaderna och den stilla gården, som har en av de bästa havsutsikterna längs den här kusten.",
+      "heading": "Byn Spili",
+      "body": "Dagen börjar i Spili, en av de mest charmiga och genuina bergsbyarna på södra Kreta. Traditionell arkitektur, smala gränder och ett långsamt tempo gör den till en fin introduktion till den sida av ön som hotellanläggningarna aldrig visar. Bytorget är anledningen till att alla stannar: en rad venetianska lejonhuvudfontäner, 25 stenpipar med friskt källvatten från bergen ovanför. Det finns tid för en kort promenad genom byn, för foton och för en kaffe innan vi fortsätter söderut.",
+      "place": "spili"
+    },
+    {
+      "heading": "Kourtaliotiko-ravinen",
+      "body": "Från Spili sjunker vägen söderut genom Kourtaliotiko-ravinen, ett av de mest spektakulära landskapen på södra Kreta. Den går mellan höga kalkstensväggar och dramatiska klippformationer, med bergen som öppnar sig på båda sidor. Vi gör ett kort stopp vid en utsiktsplats för att ta in ravinen och fotografera. Ravinen är känd för de starka vindarna som kanaliseras genom den och för den täta växtligheten längs floden, en grön kontrast mot den nakna klippan ovanför.",
+      "place": "kourtaliotiko-gorge"
+    },
+    {
+      "heading": "Klostret Preveli",
+      "body": "Härnäst kommer klostret Preveli, högt på klipporna över Libyska havet. Dess långa historia hänger tätt ihop med Kretas egen, särskilt under perioderna av motstånd och konflikt. Det finns tid att gå runt på området, se den bysantinska och traditionellt kretensiska arkitekturen och freskerna, och sitta på den stilla innergården med en av de finaste havsutsikterna på den här kusten. Ni får också höra vad klostret och dess munkar gjorde för lokalbefolkningen — under osmanskt styre och åter i andra världskriget.",
       "place": "preveli-monastery"
     },
     {
       "heading": "Palmskogen i Preveli",
-      "body": "Därefter kommer palmskogen i Preveli, en oas där floden Megalopotamos når havet. Det är en av de få platser där den sällsynta Phoenix theophrasti, den kretensiska dadelpalmen, växer vilt, vilket gör lunden lika mycket en ekologisk sällsynthet som en vacker plats. Bland palmerna hör ni floden och prasslet från bladen, gott om fågelliv, och längst ut en lagun där ni kan svalka er i sötvatten innan havet.",
+      "body": "Sista stoppet är palmskogen i Preveli, en naturlig oas där floden Megalopotamos når Libyska havet. Det är en av få platser där den sällsynta Phoenix theophrasti, den kretensiska dadelpalmen, växer vilt, vilket gör lunden till en ekologisk raritet lika mycket som en vacker plats. Det finns tid att utforska palmlunden, gå längs floden, lyssna på fågellivet och fotografera — och beroende på säsong och väder svalka sig i lagunen där sötvattnet möter havet. Flod, palmer, berg och hav på samma plats är en passande avslutning på en dag på sydkusten.",
       "place": "preveli-beach"
-    },
-    {
-      "heading": "Stranden Triopetra",
-      "body": "Efter en vacker körning västerut längs kusten gör vi ett kort stopp i Triopetra, känt för sina klippformationer och klara turkosa vatten. De tre stenarna som ger stranden dess namn bildar en dramatisk fond mot den karga kusten — sydkustens bästa fotografi.",
-      "place": "triopetra-beach"
-    },
-    {
-      "heading": "Byn Spili",
-      "body": "På vägen tillbaka till Rethymno gör vi ett kort stopp i Spili. Bytorget är känt för sin rad av 25 venetianska lejonhuvudfontäner med kallt källvatten. Det finns tid för en promenad, en kaffe och foton innan färden tillbaka ner mot kusten.",
-      "place": "spili"
     }
   ],
   "included": [
@@ -70,7 +72,7 @@
   "faqs": [
     {
       "q": "Besöker vi klostret?",
-      "a": "Ja, vi stannar först vid det historiska klostret Preveli. Utsikten över Libyska havet från klipporna är enastående, och historien är ännu bättre."
+      "a": "Ja, vi stannar vid det historiska klostret Preveli på vägen ner till palmskogen. Utsikten över Libyska havet från klipporna är fantastisk, och historien är ännu bättre."
     },
     {
       "q": "Funkar turen för barn?",
@@ -86,12 +88,12 @@
     },
     {
       "q": "Vad kostar turen?",
-      "a": "€250 för en grupp på upp till fyra personer. Varje extra vuxen utöver fyra är €50, barn i åldern 4 till 13 är €45 och spädbarn 0 till 3 reser gratis. Gruppen är max åtta."
+      "a": "€200 för en grupp på upp till fyra personer. Varje extra gäst utöver fyra kostar €45, vuxna och barn 4 till 13 år lika, och spädbarn 0 till 3 år åker gratis. Gruppen är begränsad till åtta."
     },
     {
       "q": "Vad gäller vid avbokning?",
       "a": "Full återbetalning vid avbokning upp till 48 timmar före turen."
     }
   ],
-  "priceNote": "€250 täcker en privat grupp på upp till fyra. Extra vuxna är €50 vardera upp till högst åtta gäster, barn i åldern 4-13 är €45 och spädbarn 0-3 är gratis."
+  "priceNote": "€200 täcker en privat grupp på upp till fyra. Varje extra gäst kostar €45 upp till högst åtta — samma pris för vuxna och för barn 4-13 år — och spädbarn 0-3 är gratis."
 }

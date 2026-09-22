@@ -2,39 +2,41 @@
   "lang": "fr",
   "state": "reviewed",
   "title": "Les incontournables de la Crète du Sud",
-  "tagline": "Monastère de Preveli, le lagon de la palmeraie et la plage de Triopetra en une journée sans hâte.",
+  "tagline": "Les fontaines aux lions de Spili, les gorges de Kourtaliotiko, le monastère de Preveli et le lagon de la palmeraie en une journée sans hâte.",
   "seoTitle": "Preveli : palmeraie, monastère et lagon depuis Réthymnon",
-  "seoDescription": "Six heures en privé depuis Réthymnon : monastère de Preveli, palmeraie et lagon, plage de Triopetra et village de Spili. Séance photo incluse.",
-  "summary": "Les incontournables de la Crète du Sud sont une excursion privée de six heures depuis Réthymnon le long de la côte sud de la Crète, tous les jours pour des groupes jusqu'à huit personnes, avec prise en charge à l'hôtel à 09:00. L'itinéraire traverse les gorges de Kourtaliotiko jusqu'au monastère de Preveli perché sur la falaise, descend vers la palmeraie de Preveli où le fleuve Megalopotamos rejoint la mer de Libye, fait un court arrêt à Triopetra Beach, et se termine par les fontaines vénitiennes à têtes de lion du village de Spili. Le niveau de difficulté est facile, une séance photo professionnelle et un album numérique retouché sont inclus, et le tarif est de €250 pour un groupe jusqu'à quatre personnes.",
+  "seoDescription": "Cinq heures en privé depuis Réthymnon : le village de Spili, les gorges de Kourtaliotiko, le monastère de Preveli et la palmeraie. Séance photo incluse.",
+  "summary": "Les incontournables de la Crète du Sud est une excursion privée de cinq heures depuis Réthymnon le long de la côte sud de la Crète, proposée tous les jours pour des groupes de huit personnes maximum, avec prise en charge à l'hôtel à 09:00. L'itinéraire commence au village de montagne de Spili et ses fontaines vénitiennes à têtes de lion, descend vers le sud par les gorges de Kourtaliotiko jusqu'au monastère de Preveli perché sur la falaise, et se termine dans la palmeraie de Preveli, là où le fleuve Megalopotamos rejoint la mer de Libye. La difficulté est facile, une séance photo professionnelle et un album numérique retouché sont inclus, et le prix est de €200 pour un groupe allant jusqu'à quatre personnes.",
   "overview": "La Crète du Sud est le versant préservé de l'île, là où les montagnes plongent droit dans la mer. Le paysage change sans cesse le long de cette côte : gorges, rivières, palmeraies et plages calmes loin de la foule, avec de petits villages disséminés dans les collines, entre maisons de pierre, ruelles étroites et terrasses d'oliviers.\n\nLa vie ici est lente. Vous croisez des habitants dans leur journée, des enfants qui jouent dans les rues et des pêcheurs au travail le long du rivage. L'air sent le sel, les herbes et les fleurs, et la seule bande-son, ce sont les vagues et le chant des oiseaux.\n\nCette journée est construite sur ce rythme. Vous marchez, vous regardez, vous nagez, vous mangez local et vous prenez votre temps. Ce n'est pas une liste de sites à cocher, mais une occasion de sentir comment l'île vit vraiment, et cela convient autant aux familles qu'aux couples.",
   "highlights": [
-    "Vues ouvertes sur la mer de Libye depuis le monastère de Preveli en haut de la falaise, et son rôle dans la résistance crétoise sous la domination ottomane et pendant la Seconde Guerre mondiale",
-    "Une promenade dans le bosquet de rares palmiers Phoenix theophrasti, originaires de Crète",
+    "Les 25 fontaines vénitiennes à têtes de lion sur la place de Spili, alimentées par l'eau de source fraîche des montagnes",
+    "Les maisons de pierre, les ruelles étroites et le rythme paisible d'un vrai village de montagne crétois",
+    "Les hautes falaises calcaires des gorges de Kourtaliotiko, avec un arrêt à un point de vue panoramique",
+    "Les vues immenses sur la mer de Libye depuis le monastère de Preveli perché sur la falaise, et son rôle dans la résistance crétoise sous la domination ottomane et pendant la Seconde Guerre mondiale",
+    "La cour paisible du monastère, son architecture byzantine et ses fresques",
+    "Une promenade dans la palmeraie de Phoenix theophrasti, palmiers rares endémiques de Crète",
     "Le lagon où le fleuve Megalopotamos rejoint la mer, assez calme pour nager en eau douce",
-    "Les trois rochers qui donnent son nom à Triopetra Beach, dressés dans une eau turquoise",
-    "Les 25 fontaines vénitiennes à têtes de lion sur la place de Spili",
-    "Une séance photo professionnelle en chemin, livrée sous forme d'album numérique retouché sous 48 heures"
+    "Une séance photo professionnelle en chemin, livrée sous forme d'album numérique retouché en 48 heures"
   ],
   "itinerary": [
     {
-      "heading": "Gorges de Kourtaliotiko et monastère de Preveli",
-      "body": "La route vers le sud traverse les gorges de Kourtaliotiko, avec un court arrêt pour prendre les falaises qui s'élèvent de chaque côté de la chaussée. De là, la route grimpe jusqu'au monastère de Preveli, perché au-dessus de la mer de Libye. Le monastère a joué un rôle important dans la résistance de la Crète à l'époque ottomane, puis à nouveau pendant la Seconde Guerre mondiale ; vous entendrez ce que firent les moines aux deux époques. Il y a le temps de parcourir les bâtiments byzantins et la cour calme, qui offre l'une des plus belles vues sur mer de cette côte.",
+      "heading": "Village de Spili",
+      "body": "La journée commence à Spili, l'un des villages de montagne les plus charmants et les plus authentiques du sud de la Crète. Architecture traditionnelle, ruelles étroites et rythme lent en font une belle introduction au versant de l'île que les stations balnéaires ne montrent jamais. La place centrale est la raison pour laquelle tout le monde s'arrête : une rangée de fontaines vénitiennes à têtes de lion, 25 becs de pierre d'où coule l'eau de source fraîche des montagnes au-dessus. Il y a le temps pour une courte promenade dans le village, des photos et un café avant de poursuivre vers le sud.",
+      "place": "spili"
+    },
+    {
+      "heading": "Gorges de Kourtaliotiko",
+      "body": "Depuis Spili, la route descend vers le sud par les gorges de Kourtaliotiko, l'un des paysages les plus spectaculaires du sud de la Crète. Elle passe entre de hautes falaises calcaires et des formations rocheuses saisissantes, les montagnes s'ouvrant de part et d'autre. Nous faisons un court arrêt à un point de vue pour admirer les gorges et prendre des photos. Les gorges sont connues pour les vents puissants qui s'y engouffrent et pour la végétation dense le long de la rivière, un contraste vert avec la roche nue au-dessus.",
+      "place": "kourtaliotiko-gorge"
+    },
+    {
+      "heading": "Monastère de Preveli",
+      "body": "Vient ensuite le monastère de Preveli, haut perché sur les falaises au-dessus de la mer de Libye. Sa longue histoire est étroitement liée à celle de la Crète elle-même, en particulier pendant les périodes de résistance et de conflit. Il y a le temps de parcourir le site, d'observer l'architecture byzantine et crétoise traditionnelle et les fresques, et de s'asseoir dans la cour paisible qui offre l'une des plus belles vues sur la mer de cette côte. Vous découvrirez aussi ce que le monastère et ses moines ont fait pour la population locale, sous la domination ottomane puis pendant la Seconde Guerre mondiale.",
       "place": "preveli-monastery"
     },
     {
       "heading": "Palmeraie de Preveli",
-      "body": "Vient ensuite la palmeraie de Preveli, une oasis au point où le fleuve Megalopotamos atteint la mer. C'est l'un des rares endroits où le rare Phoenix theophrasti, le palmier-dattier crétois, pousse à l'état sauvage, ce qui fait du bosquet une rareté écologique autant qu'un site de beauté. En marchant parmi les palmiers, vous avez le bruit de la rivière et le froissement des palmes, beaucoup d'oiseaux, et au bout un lagon où vous pouvez vous rafraîchir en eau douce avant la mer.",
+      "body": "Dernier arrêt : la palmeraie de Preveli, une oasis naturelle là où le fleuve Megalopotamos atteint la mer de Libye. C'est l'un des rares endroits où le Phoenix theophrasti, le palmier-dattier de Crète, pousse à l'état sauvage, ce qui fait de la palmeraie une rareté écologique autant qu'un lieu de beauté. Il y a le temps d'explorer la palmeraie, de marcher le long de la rivière, d'écouter les oiseaux et de prendre des photos — et, selon la saison et la météo, de se rafraîchir dans le lagon où l'eau douce rejoint la mer. Rivière, palmiers, montagnes et mer au même endroit : une belle façon de clore une journée sur la côte sud.",
       "place": "preveli-beach"
-    },
-    {
-      "heading": "Plage de Triopetra",
-      "body": "Après une route pittoresque vers l'ouest le long de la côte, nous faisons un court arrêt à Triopetra, connue pour ses formations rocheuses et son eau turquoise claire. Les trois pierres qui donnent son nom à la plage forment un décor dramatique contre le rivage escarpé : c'est la plus belle photo de la côte sud.",
-      "place": "triopetra-beach"
-    },
-    {
-      "heading": "Village de Spili",
-      "body": "Sur le chemin du retour vers Réthymnon, nous faisons un court arrêt à Spili. La place du village est connue pour sa rangée de 25 fontaines vénitiennes à têtes de lion qui coulent d'eau de source froide. Il y a le temps d'une promenade, d'un café et de quelques photos avant de redescendre vers la côte.",
-      "place": "spili"
     }
   ],
   "included": [
@@ -70,7 +72,7 @@
   "faqs": [
     {
       "q": "Visitons-nous le monastère ?",
-      "a": "Oui, nous nous arrêtons d'abord au monastère historique de Preveli. Les vues sur la mer de Libye depuis les falaises sont extraordinaires, et l'histoire l'est encore davantage."
+      "a": "Oui, nous nous arrêtons au monastère historique de Preveli en descendant vers la palmeraie. Les vues sur la mer de Libye depuis les falaises sont incroyables, et l'histoire l'est encore plus."
     },
     {
       "q": "Cette excursion convient-elle aux enfants ?",
@@ -86,12 +88,12 @@
     },
     {
       "q": "Combien coûte l'excursion ?",
-      "a": "€250 pour un groupe jusqu'à quatre personnes. Chaque adulte supplémentaire au-delà de quatre est à €50, les enfants de 4 à 13 ans à €45 et les tout-petits de 0 à 3 ans voyagent gratuitement. Le groupe est limité à huit."
+      "a": "€200 pour un groupe allant jusqu'à quatre personnes. Chaque voyageur supplémentaire au-delà de quatre est à €45, adultes comme enfants de 4 à 13 ans, et les tout-petits de 0 à 3 ans voyagent gratuitement. Le groupe est limité à huit personnes."
     },
     {
       "q": "Quelle est la politique d'annulation ?",
       "a": "Remboursement intégral pour les annulations jusqu'à 48 heures avant l'excursion."
     }
   ],
-  "priceNote": "€250 couvre un groupe privé jusqu'à quatre personnes. Les adultes supplémentaires sont à €50 chacun jusqu'à un maximum de huit voyageurs, les enfants de 4-13 ans à €45 et les tout-petits de 0-3 ans sont gratuits."
+  "priceNote": "€200 couvre un groupe privé jusqu'à quatre personnes. Chaque voyageur supplémentaire est à €45 jusqu'à un maximum de huit — le même tarif pour les adultes et pour les enfants de 4-13 ans — et les tout-petits de 0-3 ans sont gratuits."
 }
