@@ -8,7 +8,8 @@ import {
   PHONE,
   MHTE_LICENCE,
   SISTER_BRAND,
-  SISTER_ORIGIN,
+  NETWORK,
+  NETWORK_PARENT,
   SOCIAL,
   siteUrl,
 } from "../site.ts";
@@ -56,7 +57,7 @@ export type Crumb = { name: string; path: string };
 
 export function organizationNode(): Node {
   const sameAs = [
-    SISTER_ORIGIN,
+    ...NETWORK.map((site) => site.origin),
     // The Google Business Profile — the single most useful entry in this list,
     // and the one that was missing. `sameAs` is how the profile Google already
     // holds and this site are asserted to describe one business; without it
@@ -79,6 +80,26 @@ export function organizationNode(): Node {
      * is the reason no sitewide hyperlink between the two sites is needed.
      */
     alternateName: SISTER_BRAND,
+    /**
+     * The brand family, in the vocabulary built for it.
+     *
+     * The footer links these three sites, and a link alone leaves an engine
+     * to guess whether it is a partner, an affiliate or a link swap.
+     * `parentOrganization` plus a sibling under the parent says "one company,
+     * three brands" outright, which is both the honest answer and the thing
+     * that lets an answer engine merge the three into one entity rather than
+     * ranking them against each other.
+     */
+    parentOrganization: {
+      "@type": "Organization",
+      name: NETWORK_PARENT.brand,
+      url: NETWORK_PARENT.origin,
+      subOrganization: NETWORK.filter((site) => site.relation === "sibling").map((site) => ({
+        "@type": "Organization",
+        name: site.brand,
+        url: site.origin,
+      })),
+    },
     ...(LEGAL_NAME ? { legalName: LEGAL_NAME } : {}),
     url: siteUrl(),
     logo: `${siteUrl()}/brand/logos/logo-full.png`,
