@@ -16,6 +16,48 @@ export const SITE_ORIGIN = `https://${SITE_HOST}`;
 export const SISTER_ORIGIN = "https://waytocrete.com";
 export const SISTER_BRAND = "Way to Crete";
 
+/**
+ * The brand network this site belongs to.
+ *
+ * waytocrete.com is the parent brand and rethymnotours.com and
+ * elafonisitours.com are the two destination brands beside it. The operator
+ * asked for these to be linked from the footer, so the relationship is now
+ * carried as a hyperlink as well as in words.
+ *
+ * Two rules the row must keep, because a same-owner network in a sitewide
+ * footer is the one cross-site pattern search engines do look at:
+ *
+ *  - Branded anchors only. "Way to Crete", never "Crete tours". An
+ *    exact-match commercial anchor repeated on every page of three sites is
+ *    what turns a brand family into a link scheme.
+ *  - Declared, not just linked. `parentOrganization` / `subOrganization` on
+ *    the organization node says these are one company in the vocabulary
+ *    built for saying it, which is also what lets an answer engine merge the
+ *    three into a single entity instead of three competing ones.
+ *
+ * `lib/seo/links.ts` still governs in-content links to the sister site and
+ * its 2–4 cap is unchanged — that cap was about editorial anchors in body
+ * copy, which is a different surface from a declared brand row.
+ */
+export const NETWORK = [
+  {
+    origin: SISTER_ORIGIN,
+    brand: SISTER_BRAND,
+    relation: "parent",
+  },
+  {
+    origin: "https://elafonisitours.com",
+    brand: "Elafonisi Tours",
+    relation: "sibling",
+  },
+] as const satisfies ReadonlyArray<{
+  origin: string;
+  brand: string;
+  relation: "parent" | "sibling";
+}>;
+
+export const NETWORK_PARENT = NETWORK.find((n) => n.relation === "parent")!;
+
 export const PHONE = "+306972531808";
 export const PHONE_DISPLAY = "+30 697 253 1808";
 export const WHATSAPP = "https://wa.me/306972531808";

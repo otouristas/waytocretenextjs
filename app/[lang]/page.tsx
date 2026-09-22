@@ -15,7 +15,9 @@ export async function generateMetadata({
   return pageMeta({
     lang,
     title: ui.homeTitle,
-    description: ui.heroSub,
+    // Not `heroSub` — the tours hub uses that too, and shipping one sentence
+    // as the description of two URLs wastes the snippet on both.
+    description: ui.homeSeoDesc,
     path: "/",
     image: HOME_OG_IMAGE,
     imageAlt: ui.heroImageAlt,
@@ -30,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   // The home page has visible FAQ content but the previous build never marked
   // it up. FAQPage is exactly the kind of markup answer engines lift verbatim.
   const jsonLd = graph([
-    webPageNode({ lang, path: "/", name: copy.homeTitle, description: copy.heroSub, crumbs }),
+    webPageNode({ lang, path: "/", name: copy.homeTitle, description: copy.homeSeoDesc, crumbs }),
     breadcrumbNode(lang, "/", crumbs),
     faqNode(copy.faqs),
   ]);

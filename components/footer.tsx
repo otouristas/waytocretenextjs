@@ -16,6 +16,7 @@ import {
   MHTE_LICENCE,
   PHONE,
   PHONE_DISPLAY,
+  NETWORK,
   REVIEW_WRITE,
   SISTER_BRAND,
   SOCIAL,
@@ -27,14 +28,18 @@ import {
  * A server component — it was previously marked `"use client"` despite having
  * no state or browser API at all.
  *
- * Note what is not here: a sitewide *link* to the sister site. A link on every
- * page of both properties is the clearest cross-site footprint there is, so
- * links to waytocrete.com stay contextual and in-content only.
+ * The brand row at the bottom links the network: waytocrete.com as the parent
+ * brand and elafonisitours.com beside us. This file used to argue the opposite
+ * — that a sitewide cross-site link is a footprint and the relationship should
+ * travel as words only — and that caution still applies to the *anchors*, not
+ * to the fact of the link. So the row is branded-anchor only, it is labelled
+ * as a brand family rather than dressed up as a recommendation, and the
+ * machine-readable half (`parentOrganization` / `subOrganization`) now states
+ * the same thing in the vocabulary built for it.
  *
- * The relationship itself is stated, because a visitor checking who they are
- * buying from should not have to open the terms to find out. It is plain text
- * in the trust row, and `alternateName` on the organization node — the two
- * channels that carry the fact without carrying a link.
+ * `lib/seo/links.ts` still caps *in-content* links to the sister site at 2-4
+ * across the whole site. That cap is about editorial anchors inside body copy
+ * and is untouched by this row.
  */
 export function Footer({ lang }: { lang: Lang }) {
   const ui = t(lang);
@@ -165,10 +170,9 @@ export function Footer({ lang }: { lang: Lang }) {
             <p className="text-xs leading-relaxed text-muted">
               <span className="block font-semibold text-ink">{ui.licensedTitle}</span>
               {MHTE_LICENCE ? `${ui.gntoLicence} ${MHTE_LICENCE}` : ui.gntoLicence}
-              {/* The relationship, in words and on every page — but not as a
-                  link. A reader checking who they are dealing with finds it
-                  here; the machine-readable half is `alternateName` on the
-                  organization node. Neither is a sitewide cross-site link. */}
+              {/* The relationship in words, for a reader checking who they
+                  are dealing with. The brand row below carries it as links
+                  and the organization node carries it as structured data. */}
               <span className="block">{fill(ui.tradingAs, { sister: SISTER_BRAND })}</span>
             </p>
           </div>
@@ -208,6 +212,37 @@ export function Footer({ lang }: { lang: Lang }) {
               className="h-6 w-auto opacity-90"
             />
           </div>
+        </div>
+      </div>
+
+      {/*
+        The brand family.
+
+        Branded anchors and a label that says what the relationship is, so the
+        row reads as "same company, other sites" rather than as an endorsement
+        or a swap. `rel` is `noopener` only: these are genuine same-owner
+        references and marking them `nofollow` would be its own odd signal on
+        a relationship the schema declares openly two lines further down.
+      */}
+      <div className="border-t border-line">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-3 gap-y-2 px-4 py-5 text-xs text-faint sm:justify-start">
+          <span className="font-semibold uppercase tracking-[0.16em] text-muted">
+            {ui.networkTitle}
+          </span>
+          {NETWORK.map((site) => (
+            <a
+              key={site.origin}
+              href={site.origin}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1.5 hover:text-accent"
+            >
+              <span className="font-semibold text-muted">{site.brand}</span>
+              <span className="text-faint">
+                {site.relation === "parent" ? ui.networkParent : ui.networkSibling}
+              </span>
+            </a>
+          ))}
         </div>
       </div>
 

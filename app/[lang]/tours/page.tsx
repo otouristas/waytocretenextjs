@@ -45,7 +45,7 @@ export async function generateMetadata({
   const meta = pageMeta({
     lang,
     title: ui.toursTitle,
-    description: ui.heroSub,
+    description: ui.toursSeoDesc,
     path: "/tours",
     image: featured?.core.hero,
     imageAlt: featured?.copy.title ?? ui.toursTitle,
@@ -165,7 +165,7 @@ export default async function Page({
   ];
 
   const jsonLd = graph([
-    webPageNode({ lang, path: "/tours", name: ui.toursTitle, description: ui.heroSub, crumbs }),
+    webPageNode({ lang, path: "/tours", name: ui.toursTitle, description: ui.toursSeoDesc, crumbs }),
     breadcrumbNode(lang, "/tours", crumbs),
     {
       "@type": "ItemList",

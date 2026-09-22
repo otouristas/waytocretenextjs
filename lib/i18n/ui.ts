@@ -204,6 +204,10 @@ export type UI = {
   gntoLicence: string;
   /** The trading-name relationship, stated in the footer. `{sister}` is the other brand. */
   tradingAs: string;
+  /** Footer brand-family row: the label, and what each site is to us. */
+  networkTitle: string;
+  networkParent: string;
+  networkSibling: string;
   paymentTitle: string;
   paymentAlt: string;
   soldOnKicker: string;
@@ -256,6 +260,17 @@ export type UI = {
   placesEmpty: string;
   guidesSeoTitle: string;
   guidesSeoDesc: string;
+  /**
+   * Search-result descriptions for the home page and the tours hub.
+   *
+   * Both pages used to be described by `heroSub`, so every locale shipped the
+   * same sentence on two different URLs — ten pages, five descriptions. Search
+   * Console has both ranking inside the top twenty with no clicks at all, and
+   * a description that does not say what is on the page is the likeliest
+   * reason. `heroSub` stays what it is: the sentence under the hero heading.
+   */
+  homeSeoDesc: string;
+  toursSeoDesc: string;
   guidesHubTitle: string;
   guidesEmpty: string;
   guidesMentioned: string;
@@ -550,6 +565,9 @@ const EN: UI = {
   licensedTitle: "Licensed Greek tour operator",
   gntoLicence: "Greek Ministry of Tourism licence",
   tradingAs: "A trading name of the same licensed operator as {sister}",
+  networkTitle: "Our sites",
+  networkParent: "· parent brand",
+  networkSibling: "· sister site",
   paymentTitle: "Payment",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard and bank transfer accepted",
   soldOnKicker: "Also bookable on",
@@ -610,6 +628,10 @@ const EN: UI = {
   guidesSeoTitle: "Crete Travel Guides from Local Hosts | Rethymno Tours",
   guidesSeoDesc:
     "Practical guides to Crete from a Rethymno tour operator: when to visit, where to stay, which gorge to walk, what to eat, and how to get around without a car.",
+  homeSeoDesc:
+    "Private day tours of Crete from Rethymno, run by a licensed local operator. Hotel pickup, small groups, a photoshoot on every tour and free cancellation up to 48 hours.",
+  toursSeoDesc:
+    "Every private day trip we run from Rethymno: Samaria and Imbros gorges, Preveli palm beach, Elafonisi, Knossos, village and food days. Group prices, hotel pickup included.",
   guidesHubTitle: "Crete, explained by people who live here",
   guidesEmpty: "Guides are on their way.",
   guidesMentioned: "Tours mentioned in this guide",
@@ -962,6 +984,9 @@ const DE: UI = {
   licensedTitle: "Lizenzierter griechischer Reiseveranstalter",
   gntoLicence: "Lizenz des griechischen Tourismusministeriums",
   tradingAs: "Ein Handelsname desselben lizenzierten Veranstalters wie {sister}",
+  networkTitle: "Unsere Websites",
+  networkParent: "· Hauptmarke",
+  networkSibling: "· Schwesterseite",
   paymentTitle: "Zahlung",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard und Überweisung akzeptiert",
   soldOnKicker: "Auch buchbar auf",
@@ -1022,6 +1047,10 @@ const DE: UI = {
   guidesSeoTitle: "Kreta-Reiseführer von lokalen Gastgebern | Rethymno Tours",
   guidesSeoDesc:
     "Praktische Kreta-Führer von einem Veranstalter in Rethymno: Wann reisen, wo übernachten, welche Schlucht, was essen und wie ohne Auto weiterkommen.",
+  homeSeoDesc:
+    "Private Tagestouren auf Kreta ab Rethymno von einem lizenzierten lokalen Veranstalter. Hotelabholung, kleine Gruppen, Fotoshooting inklusive, Stornierung bis 48 Stunden gratis.",
+  toursSeoDesc:
+    "Alle privaten Tagesausflüge ab Rethymno: Samaria- und Imbros-Schlucht, Preveli-Palmenstrand, Elafonisi, Knossos, Dorf- und Genusstage. Gruppenpreise, Hotelabholung inklusive.",
   guidesHubTitle: "Kreta, erklärt von Menschen, die hier leben",
   guidesEmpty: "Die Reiseführer folgen in Kürze.",
   guidesMentioned: "Touren in diesem Reiseführer",
@@ -1374,6 +1403,9 @@ const IT: UI = {
   licensedTitle: "Tour operator greco con licenza",
   gntoLicence: "Licenza del Ministero del Turismo greco",
   tradingAs: "Nome commerciale dello stesso operatore autorizzato di {sister}",
+  networkTitle: "I nostri siti",
+  networkParent: "· marchio principale",
+  networkSibling: "· sito gemello",
   paymentTitle: "Pagamento",
   paymentAlt: "Si accettano PayPal, Stripe, Visa, Mastercard e bonifico",
   soldOnKicker: "Prenotabile anche su",
@@ -1434,6 +1466,10 @@ const IT: UI = {
   guidesSeoTitle: "Guide di viaggio a Creta da host locali | Rethymno Tours",
   guidesSeoDesc:
     "Guide pratiche su Creta da un operatore di Rethymno: quando andare, dove dormire, quale gola camminare, cosa mangiare e come muoversi senza auto.",
+  homeSeoDesc:
+    "Tour privati di un giorno a Creta da Rethymno, di un operatore locale autorizzato. Ritiro in hotel, gruppi piccoli, servizio fotografico incluso e cancellazione gratuita entro 48 ore.",
+  toursSeoDesc:
+    "Tutte le escursioni private di un giorno da Rethymno: gole di Samaria e Imbros, spiaggia di Preveli, Elafonisi, Knossos, giornate nei villaggi e gastronomiche. Ritiro in hotel incluso.",
   guidesHubTitle: "Creta, spiegata da chi ci vive",
   guidesEmpty: "Le guide arriveranno a breve.",
   guidesMentioned: "Tour citati in questa guida",
@@ -1786,6 +1822,9 @@ const FR: UI = {
   licensedTitle: "Voyagiste grec licencié",
   gntoLicence: "Licence du ministère grec du Tourisme",
   tradingAs: "Nom commercial du même opérateur agréé que {sister}",
+  networkTitle: "Nos sites",
+  networkParent: "· marque mère",
+  networkSibling: "· site jumeau",
   paymentTitle: "Paiement",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard et virement acceptés",
   soldOnKicker: "Aussi réservable sur",
@@ -1846,6 +1885,10 @@ const FR: UI = {
   guidesSeoTitle: "Guides de voyage en Crète par des hôtes locaux | Rethymno Tours",
   guidesSeoDesc:
     "Guides pratiques sur la Crète par un voyagiste de Réthymnon : quand venir, où dormir, quelle gorge marcher, que manger et comment circuler sans voiture.",
+  homeSeoDesc:
+    "Excursions privées d'une journée en Crète au départ de Réthymnon, par un opérateur local agréé. Prise en charge à l'hôtel, petits groupes, séance photo incluse, annulation gratuite 48 h.",
+  toursSeoDesc:
+    "Toutes nos excursions privées au départ de Réthymnon : gorges de Samaria et d'Imbros, plage de Preveli, Elafonisi, Knossos, journées villages et gastronomie. Hôtel inclus.",
   guidesHubTitle: "La Crète, expliquée par ceux qui y vivent",
   guidesEmpty: "Les guides arrivent bientôt.",
   guidesMentioned: "Excursions citées dans ce guide",
@@ -2198,6 +2241,9 @@ const SV: UI = {
   licensedTitle: "Licensierad grekisk researrangör",
   gntoLicence: "Licens från det grekiska turistministeriet",
   tradingAs: "Ett handelsnamn för samma licensierade arrangör som {sister}",
+  networkTitle: "Våra webbplatser",
+  networkParent: "· modervarumärke",
+  networkSibling: "· systersajt",
   paymentTitle: "Betalning",
   paymentAlt: "PayPal, Stripe, Visa, Mastercard och banköverföring accepteras",
   soldOnKicker: "Även bokningsbar på",
@@ -2258,6 +2304,10 @@ const SV: UI = {
   guidesSeoTitle: "Kretaguider från lokala värdar | Rethymno Tours",
   guidesSeoDesc:
     "Praktiska guider till Kreta från en arrangör i Rethymno: när ni ska åka, var ni ska bo, vilken ravin ni ska vandra, vad ni ska äta och hur ni tar er fram utan bil.",
+  homeSeoDesc:
+    "Privata dagsturer på Kreta från Rethymno, av en licensierad lokal arrangör. Hämtning på hotellet, små grupper, fotografering ingår och gratis avbokning upp till 48 timmar.",
+  toursSeoDesc:
+    "Alla våra privata dagsutflykter från Rethymno: Samaria- och Imbrosravinen, Prevelis palmstrand, Elafonisi, Knossos, by- och matdagar. Grupppriser, hotellhämtning ingår.",
   guidesHubTitle: "Kreta, förklarat av dem som bor här",
   guidesEmpty: "Guiderna är på väg.",
   guidesMentioned: "Turer som nämns i den här guiden",
