@@ -2,9 +2,18 @@ import Script from "next/script";
 
 export const GSC_VERIFICATION = "VXpuFnwqw67_f4M7YpNEpvOKNTXmeD2-BGzLlSvq3f8";
 export const GA4_ID = "G-TNFHV5HKFQ";
+/** Google Ads, for conversion tracking and remarketing audiences. */
+export const GOOGLE_ADS_ID = "AW-18468011419";
 
 /**
- * GA4, plus the two contact events worth counting.
+ * GA4 and Google Ads, plus the two contact events worth counting.
+ *
+ * Both products ride one gtag.js load. The tag Google hands you pastes its own
+ * `<script src=...gtag/js?id=...>`, but that file is the same library whatever
+ * id is in the query string, so pasting it verbatim would download and run it
+ * twice. One loader and one `config` call per product is the documented way to
+ * run several Google tags on a page, and it is what the second `config` below
+ * does.
  *
  * WhatsApp and phone taps are delegated from one listener on the document
  * rather than an `onClick` on each link. There are WhatsApp links in the
@@ -38,8 +47,8 @@ export function Analytics() {
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`} strategy="afterInteractive" />
-      <Script id="ga4" strategy="afterInteractive">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA4_ID}');`}
+      <Script id="google-tags" strategy="afterInteractive">
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA4_ID}');gtag('config','${GOOGLE_ADS_ID}');`}
       </Script>
       <Script id="ga4-contact-events" strategy="afterInteractive">
         {CONTACT_EVENTS}
