@@ -18,9 +18,9 @@
       3
     ],
     "privateGroup": {
-      "total": 250,
+      "total": 200,
       "includedGuests": 4,
-      "extraGuest": 50
+      "extraGuest": 45
     }
   },
   "thirdPartyCosts": [
@@ -40,7 +40,7 @@
     "kind": "daily"
   },
   "pickupTime": "09:00",
-  "durationMinutes": 360,
+  "durationMinutes": 300,
   "difficulty": "easy",
   "groupMin": 1,
   "groupMax": 8,
@@ -50,11 +50,10 @@
   "cancelFreeHours": 48,
   "meetingPoint": null,
   "places": [
+    "spili",
     "kourtaliotiko-gorge",
     "preveli-monastery",
-    "preveli-beach",
-    "triopetra-beach",
-    "spili"
+    "preveli-beach"
   ],
   "hero": "/images/tours/south-crete-highlights/hero.jpg",
   "gallery": [
