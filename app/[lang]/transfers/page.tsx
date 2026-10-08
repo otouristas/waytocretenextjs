@@ -3,7 +3,7 @@ import { LANGS, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
 import { transfersCopy } from "@/lib/i18n/transfers";
 import { ratingsFor, reviewsForTransfers } from "@/lib/content/load";
-import { transfers, transferRoutes, shortPlace, routeDuration } from "@/lib/transfers";
+import { transfers, transferRoutes, shortPlace, routeDuration, transferPricingSummary } from "@/lib/transfers";
 import {
   aggregateRatingNode,
   breadcrumbNode,
@@ -58,10 +58,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
    * correct and permanently invisible. `Product` is on the list, and it is
    * what the individual route pages already use.
    *
-   * No `Offer` is attached: there is no published fare for any route, and
-   * the per-kilometre estimate on the page is explicitly an estimate. An
-   * `Offer` carrying a number the operator has not committed to would be
-   * exactly the kind of markup that contradicts the page.
+   * Individual routes carry their published fixed offers. The hub also
+   * covers regional estimates, so it does not claim one fare for everything.
    */
   const routes = transferRoutes();
   const reviews = reviewsForTransfers();
@@ -110,12 +108,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           name: "How much does a transfer cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: `Fares are metered per kilometre: ${data.pricing.perKmRates
-              .map(
-                (r) =>
-                  `€${r.eurPerKm.toFixed(2)} per km for ${r.minPassengers} to ${r.maxPassengers} passengers`,
-              )
-              .join(", ")}. There is a ${data.pricing.minimumDistanceKm} km minimum distance and a €${data.pricing.minimumOrderEur} minimum order.`,
+            text: transferPricingSummary(),
           },
         },
         {

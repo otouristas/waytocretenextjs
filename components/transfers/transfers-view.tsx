@@ -22,6 +22,7 @@ import { transfersCopy } from "@/lib/i18n/transfers";
 import type { Review } from "@/lib/content/schema";
 import {
   estimateRoute,
+  fixedRouteRates,
   routeDuration,
   shortPlace,
   transfers,
@@ -29,6 +30,7 @@ import {
   type TransferRoute,
 } from "@/lib/transfers";
 import { TransferForm } from "@/components/transfers/transfer-form";
+import { FixedTransferPricing, FixedTransferRates } from "@/components/transfers/fixed-pricing";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
 import { reviewExperienceOptions } from "@/lib/reviews/experiences";
 
@@ -100,7 +102,8 @@ export function TransfersView({
 
       {/* ── routes ──────────────────────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="mb-8 max-w-2xl">
+        <FixedTransferPricing lang={lang} />
+        <div className="mb-8 mt-12 max-w-2xl">
           <h2 className="font-display text-3xl text-ink">{ui.transferRoutesTitle}</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted">{ui.transferRoutesLead}</p>
         </div>
@@ -194,7 +197,8 @@ export function TransfersView({
             <p className="mt-4 text-xs leading-relaxed text-faint">{data.vehicle.note}</p>
           ) : null}
 
-          <h3 className="mt-10 font-display text-2xl text-ink">{ui.transferPayment}</h3>
+          <h3 className="mt-10 font-display text-2xl text-ink">{p.regionalPricingTitle}</h3>
+          <p className="mt-3 text-xs leading-relaxed text-muted">{ui.transferEstimateNote}</p>
           <dl className="mt-4 grid gap-px overflow-hidden rounded-xl bg-line ring-1 ring-line sm:grid-cols-2">
             {data.pricing.perKmRates.map((rate) => (
               <PriceRow
@@ -244,6 +248,8 @@ export function TransfersView({
 
 export function RouteCard({ route, lang }: { route: TransferRoute; lang: Lang }) {
   const ui = t(lang);
+  const p = transfersCopy(lang);
+  const rates = fixedRouteRates(route);
   const estimate = estimateRoute(route);
   const airport = /airport/i.test(route.from) || /airport/i.test(route.to);
 
@@ -274,8 +280,13 @@ export function RouteCard({ route, lang }: { route: TransferRoute; lang: Lang })
         </span>
       </dl>
 
-      <span className="mt-auto flex items-end justify-between gap-3 pt-5">
-        {estimate ? (
+      <div className="mt-auto flex items-end justify-between gap-3 pt-5">
+        {rates ? (
+          <div className="w-full">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-faint">{p.fixedFare}</p>
+            <FixedTransferRates rates={rates} lang={lang} />
+          </div>
+        ) : estimate ? (
           <span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-faint">
               {ui.transferEstimate}
@@ -288,7 +299,7 @@ export function RouteCard({ route, lang }: { route: TransferRoute; lang: Lang })
           <span className="font-display text-lg text-ink">{ui.onRequest}</span>
         )}
         <ArrowRight className="mb-1 size-4 shrink-0 text-accent transition group-hover:translate-x-0.5" />
-      </span>
+      </div>
     </Link>
   );
 }

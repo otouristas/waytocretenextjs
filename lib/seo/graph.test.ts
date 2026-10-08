@@ -70,7 +70,7 @@ test("empty ratings omit aggregateRating", () => {
   assert.equal(offerNode(onRequest, "https://example.com/en/tours/knossos"), null);
 });
 
-test("transfer product never carries an Offer", () => {
+test("unpriced transfer product omits an Offer", () => {
   const node = transferProductNode({
     lang: "en",
     slug: "heraklion-airport-to-rethymno",

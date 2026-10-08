@@ -12,7 +12,7 @@ import {
   reviewsForTransfers,
   reviewsForWeddings,
 } from "@/lib/content/load";
-import { transfers, transferRoutes, shortPlace, routeDuration, estimateRoute } from "@/lib/transfers";
+import { transfers, transferRoutes, shortPlace, routeDuration, estimateRoute, fixedRouteRates, transferPricingSummary, type TransferRoute } from "@/lib/transfers";
 import { durationLabel } from "@/lib/content/format";
 import { isPriced, priceFrom, priceTo } from "@/lib/pricing";
 import {
@@ -57,6 +57,15 @@ const LANG = DEFAULT_LANG;
 
 function url(path = "") {
   return `${siteUrl()}${langPath(LANG, path)}`;
+}
+
+function transferFareLine(route: TransferRoute): string {
+  const rates = fixedRouteRates(route);
+  if (rates) {
+    return rates.map((rate) => `€${rate.totalEur} total for ${rate.minPassengers}–${rate.maxPassengers} passengers`).join(", ") + " per vehicle, per one-way journey";
+  }
+  const estimate = estimateRoute(route);
+  return estimate ? `estimated €${estimate.low}–${estimate.high}` : "On request";
 }
 
 /** "€44–145 per person" / "€350 for the group" / "On request". */
@@ -192,15 +201,13 @@ export function llmsTxt(): string {
   lines.push("## Transfers");
   lines.push("");
   lines.push(`- [All transfers](${url("/transfers")}): ${transfers().coverage.statement}${ratingClause(reviewsForTransfers())}`);
+  lines.push(`- ${transferPricingSummary()}`);
   lines.push(
     `- [Wedding transfers](${url("/transfers/weddings")}): guest transport for destination weddings in the Rethymno region.${ratingClause(reviewsForWeddings())}`,
   );
   for (const route of routes) {
-    const estimate = estimateRoute(route);
     lines.push(
-      `- [${shortPlace(route.from)} to ${shortPlace(route.to)}](${url(`/transfers/${route.slug}`)}): ${route.distanceKm} km, about ${routeDuration(route.durationMinutes)}${
-        estimate ? `, estimated €${estimate.low}–${estimate.high}` : ""
-      }.${ratingClause(reviewsForTransfers(route.slug))}`,
+      `- [${shortPlace(route.from)} to ${shortPlace(route.to)}](${url(`/transfers/${route.slug}`)}): ${route.distanceKm} km, about ${routeDuration(route.durationMinutes)}, ${transferFareLine(route)}.${ratingClause(reviewsForTransfers(route.slug))}`,
     );
   }
   lines.push("");
@@ -400,12 +407,7 @@ export function llmsFullTxt(): string {
   out.push(data.coverage.statement);
   out.push("");
   out.push(
-    `Fares are metered per kilometre, not sold as flat route fares: ${data.pricing.perKmRates
-      .map(
-        (r) =>
-          `€${r.eurPerKm.toFixed(2)} per km for ${r.minPassengers}–${r.maxPassengers} passengers`,
-      )
-      .join(", ")}. Minimum distance ${data.pricing.minimumDistanceKm} km, minimum order €${data.pricing.minimumOrderEur}. Payment: ${data.pricing.paymentMethods.join(", ")}.`,
+    `${transferPricingSummary()} Payment: ${data.pricing.paymentMethods.join(", ")}.`,
   );
   out.push("");
   out.push(
@@ -421,9 +423,8 @@ export function llmsFullTxt(): string {
   out.push("### Routes");
   out.push("");
   for (const route of transferRoutes()) {
-    const estimate = estimateRoute(route);
     out.push(
-      `- ${route.from} to ${route.to} — ${route.distanceKm} km, about ${routeDuration(route.durationMinutes)}${estimate ? `, estimated €${estimate.low}–${estimate.high}` : ""}.${ratingClause(reviewsForTransfers(route.slug))} ${url(`/transfers/${route.slug}`)}`,
+      `- ${route.from} to ${route.to} — ${route.distanceKm} km, about ${routeDuration(route.durationMinutes)}, ${transferFareLine(route)}.${ratingClause(reviewsForTransfers(route.slug))} ${url(`/transfers/${route.slug}`)}`,
     );
   }
   out.push("");

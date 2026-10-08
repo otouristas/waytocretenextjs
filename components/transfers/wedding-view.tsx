@@ -7,6 +7,7 @@ import { transfersCopy } from "@/lib/i18n/transfers";
 import type { Review } from "@/lib/content/schema";
 import { transfers } from "@/lib/transfers";
 import { TransferForm } from "@/components/transfers/transfer-form";
+import { FixedTransferPricing } from "@/components/transfers/fixed-pricing";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
 import { RatingInline } from "@/components/reviews/rating-summary";
 import { ratingSummary } from "@/lib/content/load";
@@ -103,7 +104,11 @@ export function WeddingTransfersView({ lang, reviews }: { lang: Lang; reviews: R
               ))}
             </ol>
 
-            <div className="mt-12 grid gap-4 sm:grid-cols-2">
+            <div className="mt-12">
+              <FixedTransferPricing lang={lang} />
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <Note title={p.weddingPriceTitle} body={w.priceNote} />
               <Note title={ui.transferVehicle} body={w.vehicleNote} />
             </div>
