@@ -3,21 +3,15 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { cache } from "react";
 import { z } from "zod";
+import { getFixedRouteRates } from "./transfer-pricing";
 
 /**
  * The transfer product, read from content/transfers.json.
  *
- * The file was harvested from the WordPress booking plugin's own rate rules,
- * so the numbers here are the ones the live booking form quotes from. Two
- * consequences the UI has to respect:
- *
- *  - `priceEur` is null on every route. The operator publishes no flat fare;
- *    everything is metered per kilometre. A route page must therefore quote
- *    from `perKmRates` or say "on request" — never invent a headline price.
- *  - The coverage exclusions are a hard rule, not a preference. A journey
- *    that starts and ends inside Chania, Heraklion or Lassithi cannot be
- *    booked at all, so the pages state it rather than leaving a guest to
- *    request something we will refuse.
+ * Airport and city journeys between Chania or Heraklion and Rethymno use
+ * operator-approved fixed passenger bands in both directions. Other regional
+ * routes retain the per-kilometre estimates. A journey that starts and ends
+ * inside Chania, Heraklion or Lassithi is still outside coverage.
  */
 
 const PerKmRate = z.object({
@@ -59,7 +53,13 @@ const TransferData = z.object({
   }),
   pricing: z.object({
     currency: z.literal("EUR"),
-    model: z.literal("per_km"),
+    model: z.literal("fixed_routes_with_per_km"),
+    fixedRoutes: z.array(z.object({ from: z.string().min(1), to: z.string().min(1) })).min(1),
+    fixedRates: z.array(z.object({
+      minPassengers: z.number().int().positive(),
+      maxPassengers: z.number().int().positive(),
+      totalEur: z.number().positive(),
+    })).min(1),
     perKmRates: z.array(PerKmRate).min(1),
     returnLegRate: z.string(),
     minimumDistanceKm: z.number().positive(),
@@ -142,16 +142,25 @@ export type RouteEstimate = {
   atMinimum: boolean;
 };
 
+export function fixedRouteRates(route: Pick<TransferRoute, "from" | "to">) {
+  return getFixedRouteRates(route, transfers().pricing);
+}
+
+/** English pricing summary for the FAQ and discovery feeds. */
+export function transferPricingSummary(): string {
+  const { pricing } = transfers();
+  const routes = pricing.fixedRoutes.map((pair) => `${shortPlace(pair.from)} ↔ ${shortPlace(pair.to)}`).join("; ");
+  const bands = pricing.fixedRates.map((rate) => `€${rate.totalEur} total for ${rate.minPassengers}–${rate.maxPassengers} passengers`).join(", ");
+  const regional = pricing.perKmRates.map((rate) => `€${rate.eurPerKm.toFixed(2)} per km for ${rate.minPassengers}–${rate.maxPassengers} passengers`).join(", ");
+  return `${routes}: ${bands}. Totals are per vehicle, per one-way journey, in both directions. Each return leg uses the same rate. Other routes in the Rethymno region use ${regional}, with a ${pricing.minimumDistanceKm} km minimum distance and a €${pricing.minimumOrderEur} minimum order.`;
+}
+
 /**
- * What the meter would come to for a route.
- *
- * Deliberately a range, and deliberately labelled an estimate wherever it is
- * shown. The booking engine is the only thing that quotes a binding fare; it
- * applies the same per-km bands and the same €20 minimum order, so this
- * cannot contradict it — but a headline number presented as *the* price
- * would be a promise this site is not in a position to make.
+ * Regional estimates only. Never let a distance-based estimate replace a
+ * published fixed fare.
  */
 export function estimateRoute(route: TransferRoute): RouteEstimate | null {
+  if (fixedRouteRates(route)) return null;
   const { perKmRates, minimumOrderEur, minimumDistanceKm } = transfers().pricing;
   if (perKmRates.length === 0) return null;
 

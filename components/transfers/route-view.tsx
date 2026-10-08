@@ -7,6 +7,7 @@ import { transfersCopy } from "@/lib/i18n/transfers";
 import type { Review } from "@/lib/content/schema";
 import {
   estimateRoute,
+  fixedRouteRates,
   otherRoutes,
   routeDuration,
   shortPlace,
@@ -14,6 +15,7 @@ import {
   type TransferRoute,
 } from "@/lib/transfers";
 import { TransferForm } from "@/components/transfers/transfer-form";
+import { FixedTransferRates } from "@/components/transfers/fixed-pricing";
 import { RouteCard } from "@/components/transfers/transfers-view";
 import { ReviewsSection } from "@/components/reviews/reviews-section";
 import { RatingInline } from "@/components/reviews/rating-summary";
@@ -27,9 +29,8 @@ import { ratingSummary } from "@/lib/content/load";
  * its first screen — distance, drive time, what the meter comes to — and
  * only then asks for the booking.
  *
- * The fare is always a range and always labelled an estimate: the operator
- * publishes no flat fare for any route, and the booking form's meter is the
- * only binding quote.
+ * Published passenger-band totals take precedence over the estimates shown
+ * for other regional routes.
  */
 export function RouteView({
   route,
@@ -43,6 +44,7 @@ export function RouteView({
   const ui = t(lang);
   const p = transfersCopy(lang);
   const data = transfers();
+  const rates = fixedRouteRates(route);
   const estimate = estimateRoute(route);
   const from = shortPlace(route.from);
   const to = shortPlace(route.to);
@@ -102,14 +104,16 @@ export function RouteView({
               the number, in the reading order the page is built in. */}
           <aside
             className="mt-8 overflow-hidden rounded-2xl bg-olive-50 ring-1 ring-olive-200"
-            aria-label={ui.transferEstimate}
+            aria-label={rates ? p.fixedFare : ui.transferEstimate}
           >
             <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4 p-5 sm:p-6">
               <div className="min-w-0">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-                  {ui.transferEstimate}
+                  {rates ? p.fixedFare : ui.transferEstimate}
                 </p>
-                {estimate ? (
+                {rates ? (
+                  <FixedTransferRates rates={rates} lang={lang} />
+                ) : estimate ? (
                   <>
                     <p className="mt-1 font-display text-4xl leading-none text-ink sm:text-[2.75rem]">
                       €{estimate.low}
@@ -132,7 +136,7 @@ export function RouteView({
                   <p className="mt-1 font-display text-3xl leading-none text-ink">{ui.onRequest}</p>
                 )}
                 <p className="mt-3 text-xs leading-relaxed text-accent/70">
-                  {ui.transferEstimateNote}
+                  {rates ? p.fixedPriceNote : ui.transferEstimateNote}
                 </p>
               </div>
 

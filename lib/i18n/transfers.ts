@@ -20,6 +20,13 @@ export type TransferCopy = {
   passengers: string;
   wedding: string;
   checkoutNote: string;
+  fixedPriceTitle: string;
+  fixedFare: string;
+  fixedPriceNote: string;
+  regionalPricingTitle: string;
+  routeColumn: string;
+  rateBand: (min: number, max: number) => string;
+  totalFare: (total: number) => string;
   reviewsTitle: string;
   weddingHeading: string;
   weddingCta: string;
@@ -33,7 +40,7 @@ export type TransferCopy = {
   weddingFormTitle: string;
   weddingPriceTitle: string;
   routeSeoTitle: (from: string, to: string) => string;
-  routeSeoDesc: (from: string, to: string, km: number, minutes: string) => string;
+  routeSeoDesc: (from: string, to: string, km: number, minutes: string, fare?: string) => string;
   routeHeading: (from: string, to: string) => string;
   routeLead: (from: string, to: string, minutes: string) => string;
   routeOther: string;
@@ -43,16 +50,17 @@ export type TransferCopy = {
 const EN: TransferCopy = {
   seoTitle: "Rethymno Airport Transfers | Chania & Heraklion to Rethymno",
   seoDesc:
-    "Private airport transfers between Chania or Heraklion airport and Rethymno, plus hotel transfers across the Rethymno region. Metered per kilometre, flight tracking, free child seats.",
+    "Private airport and city transfers between Chania or Heraklion and Rethymno. Fixed passenger-band fares in both directions, flight tracking and free child seats.",
   kicker: "Rethymno region",
   title: "Ask for a transfer. We'll confirm the van.",
-  lead: "We cover Rethymno town and the wider Rethymno region, plus airport runs to Chania (CHQ) and Heraklion (HER) — and the same in reverse. We do not run intra-Chania, intra-Heraklion or Lassithi (including Agios Nikolaos).",
+  lead: "We cover Rethymno town and the wider Rethymno region, plus transfers between Rethymno and Chania or Heraklion airports and cities, in both directions. We do not run journeys that start and end within Chania, Heraklion or Lassithi (including Agios Nikolaos).",
   areaTitle: "Where we drive",
   areaBody:
-    "If your pin is inside the Rethymno area, or it is an airport shuttle to/from Rethymno, send the request.",
+    "If your pin is inside the Rethymno area, or you need a transfer between Rethymno and Chania or Heraklion airport or city, send the request.",
   weDo: [
     "Hotel, villa and port pickups in the Rethymno region",
     "CHQ or HER airport ↔ Rethymno, with your flight tracked",
+    "Chania City or Heraklion City ↔ Rethymno",
     "Wedding guest logistics from Rethymno bases",
     "Multi-day driver plans for a stay",
     "Free child and booster seats, up to two per booking",
@@ -73,6 +81,13 @@ const EN: TransferCopy = {
   wedding: "This is for a wedding or event",
   checkoutNote:
     "No payment is taken here. We confirm the vehicle and the fare, then send you a payment link.",
+  fixedPriceTitle: "Airport & city transfer prices",
+  fixedFare: "Fixed fare",
+  fixedPriceNote: "Total per vehicle, per one-way journey. The same rates apply in both directions; each return leg is charged at the same rate.",
+  regionalPricingTitle: "Other routes in the Rethymno region",
+  routeColumn: "Route · both directions",
+  rateBand: (min, max) => `${min}–${max} passengers`,
+  totalFare: (total) => `€${total} total`,
   reviewsTitle: "What transfer guests wrote",
   weddingHeading: "Getting every guest to the venue, on time",
   weddingCta: "Wedding transfers",
@@ -88,8 +103,8 @@ const EN: TransferCopy = {
   weddingFormTitle: "Tell us about the wedding",
   weddingPriceTitle: "What it costs",
   routeSeoTitle: (from, to) => `${from} to ${to} Transfer | Private Taxi, Crete`,
-  routeSeoDesc: (from, to, km, minutes) =>
-    `Private transfer from ${from} to ${to}: ${km} km, about ${minutes}. Metered per kilometre, flight tracked, free child seats, up to eight passengers.`,
+  routeSeoDesc: (from, to, km, minutes, fare) =>
+    `Private transfer from ${from} to ${to}: ${km} km, about ${minutes}. ${fare ?? "Metered per kilometre"}. Free child seats, up to eight passengers.`,
   routeHeading: (from, to) => `${from} to ${to}`,
   routeLead: (from, to, minutes) =>
     `A private, pre-booked drive from ${from} to ${to} — about ${minutes} door to door, in an air-conditioned van with your driver waiting when you land.`,
@@ -100,16 +115,17 @@ const EN: TransferCopy = {
 const DE: TransferCopy = {
   seoTitle: "Flughafentransfers Rethymno | Chania & Heraklion nach Rethymno",
   seoDesc:
-    "Private Flughafentransfers zwischen Chania oder Heraklion und Rethymno sowie Hoteltransfers in der Region. Nach Kilometer, Flugverfolgung, Kindersitze kostenlos.",
+    "Private Flughafen- und Stadttransfers zwischen Chania oder Heraklion und Rethymno. Festpreise nach Fahrgastzahl in beide Richtungen, Flugverfolgung und kostenlose Kindersitze.",
   kicker: "Region Rethymno",
   title: "Transfer anfragen. Wir bestätigen den Van.",
-  lead: "Wir fahren Rethymno-Stadt und die weitere Region, plus Flughafenfahrten nach Chania (CHQ) und Heraklion (HER) — und denselben Weg zurück. Wir fahren nicht innerhalb von Chania, Heraklion oder Lassithi (einschließlich Agios Nikolaos).",
+  lead: "Wir fahren in Rethymno-Stadt und der weiteren Region sowie zwischen Rethymno und den Flughäfen und Städten Chania und Heraklion, in beide Richtungen. Fahrten, die innerhalb von Chania, Heraklion oder Lassithi beginnen und enden, sind ausgeschlossen.",
   areaTitle: "Wohin wir fahren",
   areaBody:
-    "Liegt Ihre Adresse in der Region Rethymno, oder ist es ein Flughafenshuttle von/nach Rethymno, schicken Sie die Anfrage.",
+    "Liegt Ihre Adresse in der Region Rethymno, oder benötigen Sie einen Transfer zwischen Rethymno und Chania oder Heraklion (Flughafen oder Stadt), schicken Sie die Anfrage.",
   weDo: [
     "Hotel-, Villa- und Hafenabholung in der Region Rethymno",
     "Flughafen CHQ oder HER ↔ Rethymno, mit Flugverfolgung",
+    "Chania-Stadt oder Heraklion-Stadt ↔ Rethymno",
     "Logistik für Hochzeitsgäste ab Rethymno",
     "Mehrtägige Fahrerpläne für einen Aufenthalt",
     "Kostenlose Kinder- und Sitzerhöhungen, bis zu zwei pro Buchung",
@@ -130,6 +146,13 @@ const DE: TransferCopy = {
   wedding: "Das ist für eine Hochzeit oder Veranstaltung",
   checkoutNote:
     "Hier wird nichts abgebucht. Wir bestätigen Fahrzeug und Preis und schicken dann einen Zahlungslink.",
+  fixedPriceTitle: "Preise für Flughafen- und Stadttransfers",
+  fixedFare: "Festpreis",
+  fixedPriceNote: "Gesamtpreis pro Fahrzeug und einfacher Fahrt. Dieselben Preise gelten in beide Richtungen; jede Rückfahrt kostet denselben Betrag.",
+  regionalPricingTitle: "Andere Strecken in der Region Rethymno",
+  routeColumn: "Strecke · beide Richtungen",
+  rateBand: (min, max) => `${min}–${max} Fahrgäste`,
+  totalFare: (total) => `€${total} gesamt`,
   reviewsTitle: "Was Transfergäste geschrieben haben",
   weddingHeading: "Jeden Gast pünktlich zur Location",
   weddingCta: "Hochzeitstransfers",
@@ -145,8 +168,8 @@ const DE: TransferCopy = {
   weddingFormTitle: "Erzählen Sie uns von der Hochzeit",
   weddingPriceTitle: "Was es kostet",
   routeSeoTitle: (from, to) => `Transfer ${from} nach ${to} | Privates Taxi, Kreta`,
-  routeSeoDesc: (from, to, km, minutes) =>
-    `Privater Transfer von ${from} nach ${to}: ${km} km, etwa ${minutes}. Nach Kilometer, Flugverfolgung, Kindersitze kostenlos, bis acht Fahrgäste.`,
+  routeSeoDesc: (from, to, km, minutes, fare) =>
+    `Privater Transfer von ${from} nach ${to}: ${km} km, etwa ${minutes}. ${fare ?? "Nach Kilometer"}. Kindersitze kostenlos, bis acht Fahrgäste.`,
   routeHeading: (from, to) => `${from} nach ${to}`,
   routeLead: (from, to, minutes) =>
     `Eine private, vorgebuchte Fahrt von ${from} nach ${to} — etwa ${minutes} Tür zu Tür, im klimatisierten Van, der Fahrer wartet bei der Landung.`,
@@ -157,16 +180,17 @@ const DE: TransferCopy = {
 const IT: TransferCopy = {
   seoTitle: "Transfer aeroportuali Rethymno | La Canea e Heraklion",
   seoDesc:
-    "Transfer aeroportuali privati tra La Canea o Heraklion e Rethymno, più transfer hotel in zona. A chilometro, tracciamento del volo, seggiolini gratis.",
+    "Transfer privati da aeroporti e città di La Canea o Heraklion a Rethymno. Tariffe fisse per fascia di passeggeri in entrambe le direzioni, volo tracciato e seggiolini gratis.",
   kicker: "Regione di Rethymno",
   title: "Chiedete un transfer. Confermiamo il van.",
-  lead: "Copriamo Rethymno città e la regione, più le corse aeroportuali per La Canea (CHQ) e Heraklion (HER) — e il contrario. Non facciamo corse interne a La Canea, Heraklion o Lassithi (Agios Nikolaos compreso).",
+  lead: "Copriamo Rethymno città e la regione, oltre ai transfer tra Rethymno e gli aeroporti e le città di La Canea e Heraklion, in entrambe le direzioni. Sono esclusi i tragitti che iniziano e finiscono all'interno di La Canea, Heraklion o Lassithi.",
   areaTitle: "Dove guidiamo",
   areaBody:
-    "Se il pin è nella zona di Rethymno, o è una navetta aeroporto da/per Rethymno, inviate la richiesta.",
+    "Se il pin è nella zona di Rethymno, o vi serve un transfer tra Rethymno e La Canea o Heraklion (aeroporto o città), inviate la richiesta.",
   weDo: [
     "Ritiri in hotel, villa e porto nella regione di Rethymno",
     "Aeroporto CHQ o HER ↔ Rethymno, con volo tracciato",
+    "La Canea città o Heraklion città ↔ Rethymno",
     "Logistica ospiti matrimonio da basi a Rethymno",
     "Piani autista di più giorni per un soggiorno",
     "Seggiolini e rialzi gratis, fino a due per prenotazione",
@@ -187,6 +211,13 @@ const IT: TransferCopy = {
   wedding: "È per un matrimonio o un evento",
   checkoutNote:
     "Qui non si paga. Confermiamo il veicolo e la tariffa, poi inviamo un link di pagamento.",
+  fixedPriceTitle: "Prezzi transfer aeroportuali e tra città",
+  fixedFare: "Tariffa fissa",
+  fixedPriceNote: "Totale per veicolo, per tratta singola. Le stesse tariffe valgono in entrambe le direzioni; ogni tratta di ritorno costa lo stesso importo.",
+  regionalPricingTitle: "Altri percorsi nella regione di Rethymno",
+  routeColumn: "Tratta · entrambe le direzioni",
+  rateBand: (min, max) => `${min}–${max} passeggeri`,
+  totalFare: (total) => `€${total} totali`,
   reviewsTitle: "Cosa hanno scritto gli ospiti dei transfer",
   weddingHeading: "Ogni ospite in location, in orario",
   weddingCta: "Transfer per matrimoni",
@@ -202,8 +233,8 @@ const IT: TransferCopy = {
   weddingFormTitle: "Parlateci del matrimonio",
   weddingPriceTitle: "Quanto costa",
   routeSeoTitle: (from, to) => `Transfer ${from} – ${to} | Taxi privato, Creta`,
-  routeSeoDesc: (from, to, km, minutes) =>
-    `Transfer privato da ${from} a ${to}: ${km} km, circa ${minutes}. A chilometro, volo tracciato, seggiolini gratis, fino a otto passeggeri.`,
+  routeSeoDesc: (from, to, km, minutes, fare) =>
+    `Transfer privato da ${from} a ${to}: ${km} km, circa ${minutes}. ${fare ?? "A chilometro"}. Seggiolini gratis, fino a otto passeggeri.`,
   routeHeading: (from, to) => `${from} a ${to}`,
   routeLead: (from, to, minutes) =>
     `Un tragitto privato prenotato da ${from} a ${to} — circa ${minutes} porta a porta, in un van climatizzato con l'autista ad aspettarvi all'arrivo.`,
@@ -214,16 +245,17 @@ const IT: TransferCopy = {
 const FR: TransferCopy = {
   seoTitle: "Transferts aéroport Réthymnon | La Canée et Héraklion",
   seoDesc:
-    "Transferts aéroport privés entre La Canée ou Héraklion et Réthymnon, plus transferts hôtels dans la région. Au kilomètre, suivi de vol, sièges enfant offerts.",
+    "Transferts privés entre les aéroports et villes de La Canée ou Héraklion et Réthymnon. Tarifs fixes par groupe dans les deux sens, suivi de vol et sièges enfant offerts.",
   kicker: "Région de Réthymnon",
   title: "Demandez un transfert. Nous confirmons le van.",
-  lead: "Nous couvrons Réthymnon ville et la région, plus les navettes aéroport vers La Canée (CHQ) et Héraklion (HER) — et le chemin inverse. Nous ne faisons pas de courses intra-Canée, intra-Héraklion ni Lassithi (Agios Nikolaos compris).",
+  lead: "Nous couvrons Réthymnon et sa région, ainsi que les transferts entre Réthymnon et les aéroports et villes de La Canée et Héraklion, dans les deux sens. Les trajets commençant et se terminant dans La Canée, Héraklion ou Lassithi sont exclus.",
   areaTitle: "Où nous roulons",
   areaBody:
-    "Si votre épingle est dans la zone de Réthymnon, ou s'il s'agit d'une navette aéroport vers/depuis Réthymnon, envoyez la demande.",
+    "Si votre adresse est dans la région de Réthymnon, ou si vous avez besoin d'un transfert entre Réthymnon et La Canée ou Héraklion (aéroport ou ville), envoyez la demande.",
   weDo: [
     "Prises en charge hôtel, villa et port dans la région de Réthymnon",
     "Aéroport CHQ ou HER ↔ Réthymnon, avec suivi de vol",
+    "La Canée ville ou Héraklion ville ↔ Réthymnon",
     "Logistique des invités de mariage depuis Réthymnon",
     "Plans chauffeur sur plusieurs jours pour un séjour",
     "Sièges enfant et rehausseurs offerts, jusqu'à deux par réservation",
@@ -244,6 +276,13 @@ const FR: TransferCopy = {
   wedding: "C'est pour un mariage ou un événement",
   checkoutNote:
     "Aucun paiement ici. Nous confirmons le véhicule et le tarif, puis envoyons un lien de paiement.",
+  fixedPriceTitle: "Prix des transferts aéroport et entre villes",
+  fixedFare: "Tarif fixe",
+  fixedPriceNote: "Total par véhicule et par trajet simple. Les mêmes tarifs s'appliquent dans les deux sens ; chaque trajet retour coûte le même montant.",
+  regionalPricingTitle: "Autres trajets dans la région de Réthymnon",
+  routeColumn: "Trajet · dans les deux sens",
+  rateBand: (min, max) => `${min}–${max} passagers`,
+  totalFare: (total) => `€${total} au total`,
   reviewsTitle: "Ce qu'ont écrit les voyageurs en transfert",
   weddingHeading: "Chaque invité au lieu, à l'heure",
   weddingCta: "Transferts de mariage",
@@ -259,8 +298,8 @@ const FR: TransferCopy = {
   weddingFormTitle: "Parlez-nous du mariage",
   weddingPriceTitle: "Ce que ça coûte",
   routeSeoTitle: (from, to) => `Transfert ${from} – ${to} | Taxi privé, Crète`,
-  routeSeoDesc: (from, to, km, minutes) =>
-    `Transfert privé de ${from} à ${to} : ${km} km, environ ${minutes}. Au kilomètre, vol suivi, sièges enfant offerts, jusqu'à huit passagers.`,
+  routeSeoDesc: (from, to, km, minutes, fare) =>
+    `Transfert privé de ${from} à ${to} : ${km} km, environ ${minutes}. ${fare ?? "Au kilomètre"}. Sièges enfant offerts, jusqu'à huit passagers.`,
   routeHeading: (from, to) => `${from} à ${to}`,
   routeLead: (from, to, minutes) =>
     `Un trajet privé réservé de ${from} à ${to} — environ ${minutes} porte à porte, en van climatisé, le chauffeur vous attend à l'arrivée.`,
@@ -271,16 +310,17 @@ const FR: TransferCopy = {
 const SV: TransferCopy = {
   seoTitle: "Flygplatstransfer Rethymno | Chania och Heraklion",
   seoDesc:
-    "Privat flygplatstransfer mellan Chania eller Heraklion och Rethymno, plus hotelltransfer i regionen. Per kilometer, flygspårning, barnstolar gratis.",
+    "Privat transfer mellan Chanias eller Heraklions flygplatser och städer och Rethymno. Fasta priser efter antal passagerare i båda riktningarna, flygspårning och gratis barnstolar.",
   kicker: "Rethymnoregionen",
   title: "Be om transfer. Vi bekräftar vanen.",
-  lead: "Vi täcker Rethymno stad och regionen, plus flygplatskörningar till Chania (CHQ) och Heraklion (HER) — och samma väg tillbaka. Vi kör inte inom Chania, Heraklion eller Lassithi (inklusive Agios Nikolaos).",
+  lead: "Vi täcker Rethymno stad och regionen samt transfer mellan Rethymno och Chanias och Heraklions flygplatser och städer i båda riktningarna. Resor som börjar och slutar inom Chania, Heraklion eller Lassithi ingår inte.",
   areaTitle: "Vart vi kör",
   areaBody:
-    "Om er nål ligger i Rethymnoområdet, eller det är en flygplatsshuttle till/från Rethymno, skicka förfrågan.",
+    "Om adressen ligger i Rethymnoområdet, eller ni behöver transfer mellan Rethymno och Chania eller Heraklion (flygplats eller stad), skicka förfrågan.",
   weDo: [
     "Hämtning på hotell, villa och hamn i Rethymnoregionen",
     "Flygplats CHQ eller HER ↔ Rethymno, med flyget spårat",
+    "Chania stad eller Heraklion stad ↔ Rethymno",
     "Logistik för bröllopsgäster från baser i Rethymno",
     "Flerdagars chaufförsplaner för en vistelse",
     "Gratis barnstol och bälteskudde, upp till två per bokning",
@@ -301,6 +341,13 @@ const SV: TransferCopy = {
   wedding: "Det här är för ett bröllop eller evenemang",
   checkoutNote:
     "Ingen betalning tas här. Vi bekräftar fordon och pris, sedan skickar vi en betalningslänk.",
+  fixedPriceTitle: "Priser för flygplats- och stadstransfer",
+  fixedFare: "Fast pris",
+  fixedPriceNote: "Totalpris per fordon och enkelresa. Samma priser gäller i båda riktningarna; varje returresa kostar samma belopp.",
+  regionalPricingTitle: "Andra sträckor i Rethymnoregionen",
+  routeColumn: "Sträcka · båda riktningarna",
+  rateBand: (min, max) => `${min}–${max} passagerare`,
+  totalFare: (total) => `€${total} totalt`,
   reviewsTitle: "Vad transfergäster skrev",
   weddingHeading: "Varje gäst till venue, i tid",
   weddingCta: "Bröllopstransfer",
@@ -316,8 +363,8 @@ const SV: TransferCopy = {
   weddingFormTitle: "Berätta om bröllopet",
   weddingPriceTitle: "Vad det kostar",
   routeSeoTitle: (from, to) => `Transfer ${from} till ${to} | Privat taxi, Kreta`,
-  routeSeoDesc: (from, to, km, minutes) =>
-    `Privat transfer från ${from} till ${to}: ${km} km, cirka ${minutes}. Per kilometer, flyget spårat, barnstolar gratis, upp till åtta passagerare.`,
+  routeSeoDesc: (from, to, km, minutes, fare) =>
+    `Privat transfer från ${from} till ${to}: ${km} km, cirka ${minutes}. ${fare ?? "Per kilometer"}. Barnstolar gratis, upp till åtta passagerare.`,
   routeHeading: (from, to) => `${from} till ${to}`,
   routeLead: (from, to, minutes) =>
     `En privat, förbokad körning från ${from} till ${to} — cirka ${minutes} dörr till dörr, i en luftkonditionerad van där chauffören väntar när ni landar.`,
@@ -335,4 +382,12 @@ export const TRANSFERS: Record<Lang, TransferCopy> = {
 
 export function transfersCopy(lang: Lang) {
   return TRANSFERS[lang] ?? EN;
+}
+
+export function fixedFareCopy(
+  rates: readonly { minPassengers: number; maxPassengers: number; totalEur: number }[],
+  lang: Lang,
+): string {
+  const p = transfersCopy(lang);
+  return rates.map((rate) => `${p.rateBand(rate.minPassengers, rate.maxPassengers)}: ${p.totalFare(rate.totalEur)}`).join(" · ");
 }

@@ -7,7 +7,8 @@ import {
   reviewsForTour,
   reviewsForTransfers,
 } from "@/lib/content/load";
-import { transferRoutes, shortPlace } from "@/lib/transfers";
+import { transferRoutes, shortPlace, transfers } from "@/lib/transfers";
+import { fixedTransferPrice } from "@/lib/transfer-pricing";
 import { BRAND } from "@/lib/site";
 import { absolute, id } from "./ids";
 import { aggregateRatingNode, offerNode, photographyNode } from "./graph";
@@ -15,9 +16,8 @@ import { aggregateRatingNode, offerNode, photographyNode } from "./graph";
 /**
  * /offers.json — a schema.org ItemList of every tour and transfer product.
  *
- * Tour prices come from the same `offerNode` the pages emit. Transfer routes
- * are listed with ratings and a book URL but never a price, because none is
- * published.
+ * Prices come from the same `offerNode` the pages emit. Fixed transfer fares
+ * are published; regional estimates are never treated as offers.
  */
 export function offersJson(): object {
   const lang = DEFAULT_LANG;
@@ -57,12 +57,15 @@ export function offersJson(): object {
   for (const route of transferRoutes()) {
     const url = absolute(lang, `/transfers/${route.slug}`);
     const rating = aggregateRatingNode(ratingsFor(reviewsForTransfers(route.slug)));
+    const price = fixedTransferPrice(route, transfers().pricing);
+    const offer = price ? offerNode(price, url) : null;
     items.push({
       "@type": "Product",
       "@id": id.transfer(route.slug),
       sku: route.slug,
       name: `${shortPlace(route.from)} to ${shortPlace(route.to)}`,
       url,
+      ...(offer ? { offers: offer } : {}),
       ...(rating ? { aggregateRating: rating } : {}),
     });
   }

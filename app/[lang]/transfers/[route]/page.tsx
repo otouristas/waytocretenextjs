@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LANGS, parseLang, type Lang } from "@/lib/i18n/langs";
 import { t } from "@/lib/i18n/ui";
-import { transfersCopy } from "@/lib/i18n/transfers";
+import { fixedFareCopy, transfersCopy } from "@/lib/i18n/transfers";
+import { fixedTransferPrice } from "@/lib/transfer-pricing";
 import { ratingsFor, reviewsForTransfers } from "@/lib/content/load";
 import {
   getTransferRoute,
+  fixedRouteRates,
   routeDuration,
   shortPlace,
   transfers,
@@ -42,11 +44,12 @@ export async function generateMetadata({
   const p = transfersCopy(lang);
   const from = shortPlace(route.from);
   const to = shortPlace(route.to);
+  const rates = fixedRouteRates(route);
 
   return pageMeta({
     lang,
     title: p.routeSeoTitle(from, to),
-    description: p.routeSeoDesc(from, to, route.distanceKm, routeDuration(route.durationMinutes)),
+    description: p.routeSeoDesc(from, to, route.distanceKm, routeDuration(route.durationMinutes), rates ? fixedFareCopy(rates, lang) : undefined),
     path: `/transfers/${slug}`,
     image: transfers().vehicle.hero,
     imageAlt: `${from} to ${to} transfer`,
@@ -68,6 +71,7 @@ export default async function Page({
   const from = shortPlace(route.from);
   const to = shortPlace(route.to);
   const path = `/transfers/${slug}`;
+  const rates = fixedRouteRates(route);
 
   const crumbs: Crumb[] = [
     { name: ui.home, path: "/" },
@@ -77,8 +81,8 @@ export default async function Page({
 
   /**
    * `TaxiService` with the journey as a `Trip`, plus a `Product` that
-   * carries the real Google rating. No `Offer`: the fare on the page is an
-   * estimate from the per-km bands, not a published price.
+   * carries the real Google rating and, where published, the fixed group
+   * offers. Regional estimates remain outside Offer markup.
    */
   const reviews = reviewsForTransfers(slug);
   const jsonLd = graph([
@@ -86,7 +90,7 @@ export default async function Page({
       lang,
       path,
       name: p.routeSeoTitle(from, to),
-      description: p.routeSeoDesc(from, to, route.distanceKm, routeDuration(route.durationMinutes)),
+      description: p.routeSeoDesc(from, to, route.distanceKm, routeDuration(route.durationMinutes), rates ? fixedFareCopy(rates, lang) : undefined),
       crumbs,
     }),
     breadcrumbNode(lang, path, crumbs),
@@ -118,6 +122,7 @@ export default async function Page({
       name: p.routeHeading(from, to),
       description: p.routeLead(from, to, routeDuration(route.durationMinutes)),
       durationMinutes: route.durationMinutes,
+      price: fixedTransferPrice(route, transfers().pricing),
       images: [transfers().vehicle.hero],
       ratings: ratingsFor(reviews),
       reviews: reviewNodes(reviews, 6),

@@ -5,8 +5,8 @@ import { isIndexable } from "@/lib/site";
 /**
  * /offers.json — schema.org Product catalog for AI shopping agents.
  *
- * Same prices and ratings as the tour/transfer pages. Transfer items have
- * no Offer because the operator publishes no flat fare.
+ * Same prices and ratings as the tour/transfer pages. Published fixed transfer
+ * fares carry offers; regional estimates remain unpriced.
  */
 export const dynamic = "force-static";
 

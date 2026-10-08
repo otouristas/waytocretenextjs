@@ -420,9 +420,8 @@ export function tourNode(opts: {
 /**
  * A transfer (or wedding-transfer) product.
  *
- * Stars come from reviews that actually describe this service. There is no
- * `Offer`: published fares do not exist, and an estimate must not become a
- * price Google treats as committed.
+ * Stars come from reviews that actually describe this service. Only published
+ * fixed fares become offers; regional estimates and wedding plans do not.
  */
 export function transferProductNode(opts: {
   lang: Lang;
@@ -432,6 +431,7 @@ export function transferProductNode(opts: {
   name: string;
   description: string;
   durationMinutes?: number;
+  price?: PriceModel | null;
   images?: readonly string[];
   ratings?: readonly number[];
   reviews?: readonly Node[];
@@ -440,6 +440,7 @@ export function transferProductNode(opts: {
   const url = absolute(opts.lang, path);
   const rating = aggregateRatingNode(opts.ratings ?? []);
   const images = opts.images?.filter(Boolean) ?? [];
+  const offer = opts.price ? offerNode(opts.price, url) : null;
 
   return {
     "@type": ["Product", "Service"],
@@ -453,6 +454,7 @@ export function transferProductNode(opts: {
     provider: { "@id": id.organization() },
     ...productExtras({ lang: opts.lang, durationMinutes: opts.durationMinutes }),
     ...(opts.durationMinutes ? { duration: isoDuration(opts.durationMinutes) } : {}),
+    ...(offer ? { offers: offer } : {}),
     ...(rating ? { aggregateRating: rating } : {}),
     ...(opts.reviews?.length ? { review: opts.reviews } : {}),
   };

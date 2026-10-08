@@ -16,12 +16,12 @@
       "Rethymno to Heraklion Airport, and Heraklion Airport to Rethymno"
     ],
     "excluded": [
-      "Within the Chania region",
-      "Within the Heraklion region",
-      "Within the Lassithi region, including areas such as Agios Nikolaos"
+      "Journeys that start and end within the Chania region",
+      "Journeys that start and end within the Heraklion region",
+      "Journeys that start and end within the Lassithi region, including Agios Nikolaos"
     ],
-    "statement": "Our transfer services are based in Rethymno and operate within the city of Rethymno and the wider Rethymno region. We also provide transfers from Rethymno to Chania Airport and Heraklion Airport, as well as from Chania Airport or Heraklion Airport to Rethymno. Please note that we do not offer transfers within the Chania region, the Heraklion region, or the Lassithi region, including areas such as Agios Nikolaos.",
-    "note": "The exclusion is a hard rule, not a preference: the airport runs are the only journeys the operator makes outside the Rethymno regional unit. A pickup and a drop-off that both sit inside Chania, Heraklion or Lassithi cannot be booked."
+    "statement": "Our transfer services are based in Rethymno and operate within the city of Rethymno and the wider Rethymno region. We also provide transfers between Rethymno and Chania Airport, Chania City, Heraklion Airport or Heraklion City, in both directions. Please note that we do not offer transfers that start and end within the Chania region, the Heraklion region, or the Lassithi region, including areas such as Agios Nikolaos.",
+    "note": "Airport and city-to-city transfers between Chania or Heraklion and Rethymno are covered in both directions. Journeys that start and end within Chania, Heraklion or Lassithi are not covered."
   },
   "vehicle": {
     "name": "Mini Van",
@@ -39,7 +39,17 @@
   },
   "pricing": {
     "currency": "EUR",
-    "model": "per_km",
+    "model": "fixed_routes_with_per_km",
+    "fixedRoutes": [
+      { "from": "Chania International Airport (CHQ)", "to": "Rethymno" },
+      { "from": "Chania City", "to": "Rethymno" },
+      { "from": "Heraklion International Airport (HER)", "to": "Rethymno" },
+      { "from": "Heraklion City", "to": "Rethymno" }
+    ],
+    "fixedRates": [
+      { "minPassengers": 1, "maxPassengers": 4, "totalEur": 90 },
+      { "minPassengers": 5, "maxPassengers": 8, "totalEur": 105 }
+    ],
     "perKmRates": [
       { "minPassengers": 1, "maxPassengers": 4, "eurPerKm": 1.3 },
       { "minPassengers": 5, "maxPassengers": 8, "eurPerKm": 1.75 }
@@ -51,7 +61,7 @@
     "maximumOrderEur": 1500,
     "paymentMethods": ["Card", "PayPal", "Cash", "Bank transfer"],
     "depositRequired": false,
-    "note": "These are the live rate rules the public booking form quotes from (chbs_price_rule 6663 for 1-4 passengers and 6661 for 5-8). No route is sold at a published flat fare, which is why every route below carries a null price."
+    "note": "The listed airport and city routes have fixed totals per vehicle, per one-way journey, in either direction: €90 for 1-4 passengers and €105 for 5-8 passengers. Each return leg uses the same rate. Per-kilometre rates and minimums apply only to other routes in the Rethymno region. Route priceEur remains null because fixed fares have two passenger bands rather than one price."
   },
   "extras": [
     {
@@ -172,7 +182,7 @@
       "Pickup locations, departure times, routes and vehicles are confirmed against the wedding itinerary.",
       "The plan is fixed in advance so the day itself needs no coordination."
     ],
-    "coverageNote": "The same regional limits apply: Rethymno city and region plus the two airport runs, and no transfers within the Chania, Heraklion or Lassithi regions. If a venue or guest accommodation sits in one of those areas, the operator asks to be told early so it can say straight away what it can and cannot cover.",
+    "coverageNote": "The same regional limits apply: Rethymno city and region, plus transfers between Rethymno and Chania or Heraklion airports and cities in both directions. Journeys that start and end within Chania, Heraklion or Lassithi are not covered. Please share venue and accommodation locations so we can confirm coverage.",
     "vehicleNote": "Vehicles are matched to group size and route: private cars and taxis for small movements, minivans for families and small groups, larger vehicles for full guest parties. A single departure for a large wedding is often split across several vehicles leaving from different pickup points at staggered times.",
     "priceEur": null,
     "priceNote": "No wedding transfer price is published. The page states that vehicle combination and cost are confirmed after the planner supplies guest numbers and pickup locations.",
@@ -201,7 +211,7 @@
       },
       {
         "q": "Which areas of Crete do you cover for wedding transfers?",
-        "a": "Rethymno city and the wider Rethymno region, including transfers to and from Chania Airport and Heraklion Airport. Transfers within the Chania, Heraklion or Lassithi regions are not currently run."
+        "a": "Rethymno city and the wider Rethymno region, including transfers to and from Chania Airport, Chania City, Heraklion Airport and Heraklion City. Journeys that start and end within Chania, Heraklion or Lassithi are not covered."
       },
       {
         "q": "Do you work with wedding planners?",
@@ -217,5 +227,5 @@
       }
     ]
   },
-  "notes": "Distances and durations on the routes are accurate road figures, not values published by the operator, which is why they sit alongside null prices. The operator publishes no flat fare for any route: everything is quoted per kilometre by the booking engine, subject to a 20 km minimum distance and a 20 EUR minimum order."
+  "notes": "Existing route distances and durations are road estimates. Airport and city transfers between Chania or Heraklion and Rethymno use the published fixed passenger bands in both directions. Other regional routes retain their distance-based estimates."
 }
