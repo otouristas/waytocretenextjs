@@ -20,6 +20,12 @@ export type UI = {
   fromPrice: string;
   /** Sliding ladders only: says why a bigger party pays less a head. */
   priceLadderNote: string;
+  /** Fixed-departure early rate, shown beside the regular price. */
+  earlyBirdPrice: string;
+  /** Fixed-departure standard rate. */
+  regularPrice: string;
+  /** Per-person deposit that holds a place on a fixed departure. */
+  depositPerPerson: string;
   perPerson: string;
   perGroup: string;
   perCouple: string;
@@ -391,6 +397,9 @@ const EN: UI = {
   viewAll: "All tours",
   fromPrice: "From",
   priceLadderNote: "{high} per person for two, down to {low} a head in a full van — the van and the driver cost the same either way.",
+  earlyBirdPrice: "Early bird",
+  regularPrice: "Regular price",
+  depositPerPerson: "{price} booking deposit per person",
   perPerson: "per person",
   perGroup: "for the private group",
   perCouple: "per couple",
@@ -810,6 +819,9 @@ const DE: UI = {
   viewAll: "Alle Touren",
   fromPrice: "Ab",
   priceLadderNote: "{high} pro Person zu zweit, bis hinunter zu {low} pro Kopf im vollen Van — Van und Fahrer kosten so oder so gleich.",
+  earlyBirdPrice: "Frühbucher",
+  regularPrice: "Regulärer Preis",
+  depositPerPerson: "{price} Anzahlung pro Person",
   perPerson: "pro Person",
   perGroup: "für die private Gruppe",
   perCouple: "pro Paar",
@@ -1229,6 +1241,9 @@ const IT: UI = {
   viewAll: "Tutti i tour",
   fromPrice: "Da",
   priceLadderNote: "{high} a persona in due, fino a {low} a testa con il van pieno: il van e l'autista costano uguale in ogni caso.",
+  earlyBirdPrice: "Early bird",
+  regularPrice: "Prezzo intero",
+  depositPerPerson: "{price} di acconto a persona",
   perPerson: "a persona",
   perGroup: "per il gruppo privato",
   perCouple: "a coppia",
@@ -1648,6 +1663,9 @@ const FR: UI = {
   viewAll: "Toutes les excursions",
   fromPrice: "À partir de",
   priceLadderNote: "{high} par personne à deux, jusqu'à {low} par tête dans un van complet — le van et le chauffeur coûtent pareil.",
+  earlyBirdPrice: "Early bird",
+  regularPrice: "Tarif normal",
+  depositPerPerson: "{price} d'acompte par personne",
   perPerson: "par personne",
   perGroup: "pour le groupe privé",
   perCouple: "par couple",
@@ -2067,6 +2085,9 @@ const SV: UI = {
   viewAll: "Alla turer",
   fromPrice: "Från",
   priceLadderNote: "{high} per person för två, ner till {low} per huvud i en full van — vanen och föraren kostar lika mycket ändå.",
+  earlyBirdPrice: "Early bird",
+  regularPrice: "Ordinarie pris",
+  depositPerPerson: "{price} i handpenning per person",
   perPerson: "per person",
   perGroup: "för den privata gruppen",
   perCouple: "per par",

@@ -81,7 +81,10 @@ export function BookingWidget({
   live?: { serviceId: number; categoryId: number } | null;
 }) {
   const ui = t(lang);
-  const [adults, setAdults] = useState(Math.max(groupMin, 2));
+  // A fixed departure sells seats. groupMin is how many people the week needs
+  // before it runs, not how many one guest must book.
+  const perSeat = price.kind === "fixed_departure";
+  const [adults, setAdults] = useState(perSeat ? Math.min(groupMax, 2) : Math.max(groupMin, 2));
   const [children, setChildren] = useState(0);
   const [date, setDate] = useState("");
   const [name, setName] = useState("");
@@ -277,7 +280,7 @@ export function BookingWidget({
           <Stepper
             label={ui.adults}
             value={adults}
-            min={Math.max(1, groupMin - children)}
+            min={perSeat ? 1 : Math.max(1, groupMin - children)}
             max={groupMax - children}
             onChange={setAdults}
           />
