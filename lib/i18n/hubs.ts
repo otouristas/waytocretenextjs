@@ -63,7 +63,7 @@ const EN: Record<HubId, HubCopy> = {
     short: "Multiday",
     seoTitle: "Multiday Tours in Crete | Spring Wildflowers & Orchids",
     seoDesc:
-      "A week in the Cretan spring: wildflowers and orchids with botanists, based around Spili. Early booking from €990.",
+      "A week in the Cretan spring: wildflowers and orchids for 4–6 guests, based around Spili. Early bird from €1,490.",
     lead: "A week in the wildflowers, with botanists — the only multiday departure we publish as a product.",
   },
 };
@@ -122,7 +122,7 @@ const DE: Record<HubId, HubCopy> = {
     short: "Mehrtages",
     seoTitle: "Mehrtagesreisen auf Kreta | Frühlingswildblumen und Orchideen",
     seoDesc:
-      "Eine Woche im kretischen Frühling: Wildblumen und Orchideen mit Botanikern, rund um Spili. Frühbucher ab 990 €.",
+      "Eine Woche im kretischen Frühling: Wildblumen und Orchideen für 4–6 Gäste, rund um Spili. Frühbucher ab 1.490 €.",
     lead: "Eine Woche in den Wildblumen, mit Botanikern — die einzige Mehrtages-Abfahrt, die wir als Produkt führen.",
   },
 };
@@ -181,7 +181,7 @@ const IT: Record<HubId, HubCopy> = {
     short: "Più giorni",
     seoTitle: "Tour di più giorni a Creta | Fiori di primavera e orchidee",
     seoDesc:
-      "Una settimana nella primavera cretese: fiori e orchidee con botanici, intorno a Spili. Prenotazione anticipata da 990 €.",
+      "Una settimana nella primavera cretese: fiori e orchidee per 4–6 ospiti, intorno a Spili. Early bird da 1.490 €.",
     lead: "Una settimana tra i fiori, con botanici — l'unica partenza di più giorni che pubblichiamo come prodotto.",
   },
 };
@@ -240,7 +240,7 @@ const FR: Record<HubId, HubCopy> = {
     short: "Plusieurs jours",
     seoTitle: "Circuits de plusieurs jours en Crète | Fleurs de printemps et orchidées",
     seoDesc:
-      "Une semaine dans le printemps crétois : fleurs et orchidées avec des botanistes, autour de Spili. Réservation anticipée dès 990 €.",
+      "Une semaine dans le printemps crétois : fleurs et orchidées pour 4 à 6 voyageurs, autour de Spili. Early bird dès 1 490 €.",
     lead: "Une semaine dans les fleurs, avec des botanistes — le seul départ de plusieurs jours que nous publions comme produit.",
   },
 };
@@ -299,7 +299,7 @@ const SV: Record<HubId, HubCopy> = {
     short: "Flera dagar",
     seoTitle: "Flerdagarsturer på Kreta | Vårblommor och orkidéer",
     seoDesc:
-      "En vecka i den kretensiska våren: vilda blommor och orkidéer med botaniker, runt Spili. Tidig bokning från 990 €.",
+      "En vecka i den kretensiska våren: vilda blommor och orkidéer för 4–6 gäster, runt Spili. Early bird från 1 490 €.",
     lead: "En vecka bland blommorna, med botaniker — den enda flerdagarsavgång vi publicerar som produkt.",
   },
 };

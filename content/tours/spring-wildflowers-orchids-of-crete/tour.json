@@ -6,12 +6,12 @@
   "price": {
     "kind": "fixed_departure",
     "currency": "EUR",
-    "standard": 1200,
+    "standard": 1690,
     "earlyBird": {
-      "price": 990,
+      "price": 1490,
       "until": "2026-12-31"
     },
-    "deposit": 200,
+    "deposit": 250,
     "balanceDueWeeksBefore": [
       10,
       8
@@ -30,8 +30,8 @@
   "pickupTime": null,
   "durationMinutes": 10080,
   "difficulty": "easy",
-  "groupMin": 7,
-  "groupMax": 14,
+  "groupMin": 4,
+  "groupMax": 6,
   "hotelPickup": false,
   "photoshoot": "none",
   "privateOnly": false,

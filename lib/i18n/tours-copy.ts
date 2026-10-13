@@ -205,9 +205,9 @@ const COPY: Record<string, TourCopy> = {
   "spring-wildflowers-orchids-of-crete": {
     title: "Spring wildflowers (7 days)",
     seoTitle: "Crete Wildflowers & Orchids Tour | 7-Day Botanical Trip",
-    seoDesc: "Seven-day orchid and wildflower week based in Spili. 8–16 guests. From €990 early booking, €1,200 standard.",
-    long: "A seasonal small-group week, not a day trip: Lefka Ori, gorges, Gious Kambos, Psiloritis flora. €200 deposit holds a bed. We only run it in spring.",
-    highlights: ["Seasonal, 8–16 guests", "6 nights in Spili", "From €990 / €1,200", "Airport transfers included"],
+    seoDesc: "Seven-day orchid and wildflower week based in Spili. 4–6 guests. Early bird €1,490, regular €1,690.",
+    long: "A seasonal small-group week, not a day trip: Lefka Ori, gorges, Gious Kambos, Psiloritis flora. €250 deposit per person holds a bed. We only run it in spring.",
+    highlights: ["Seasonal, 4–6 guests", "6 nights in Spili", "Early bird €1,490 / regular €1,690", "Airport transfers included"],
     itinerary: ["Airport arrival to Spili", "Omalos / Samaria region", "Imbros", "Kourtaliotiko and Preveli", "Gious Kambos", "Psiloritis flora", "Departure transfer"],
     included: ["6 nights, breakfasts and dinners", "Picnic lunches", "CHQ/HER transfers", "Daily transport", "Naturalist guide"],
     excluded: ["Flights", "Travel insurance", "Drinks beyond meals"],

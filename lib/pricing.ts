@@ -93,6 +93,26 @@ export function billableHours(rawMinutes: number, price: HourlyPrivate): number 
  * the published minimum day — the "From €X" figure. The planner passes the
  * already-rounded billable hours from `billableHours()`.
  */
+/** UTC calendar day, YYYY-MM-DD. Early-bird deadlines are stored the same way. */
+export function utcToday(now: Date = new Date()): string {
+  return now.toISOString().slice(0, 10);
+}
+
+/**
+ * The per-person rate on a fixed departure.
+ *
+ * `bookedOn` is the day the guest is booking, not the day they travel. The
+ * April 2027 wildflower week is on sale at the early-bird rate through
+ * 31 December 2026; a travel date after that cutoff must not flip the rate.
+ */
+export function fixedDepartureRate(
+  price: { standard: number; earlyBird: { price: number; until: string } | null },
+  bookedOn: string,
+): number {
+  if (price.earlyBird != null && bookedOn <= price.earlyBird.until) return price.earlyBird.price;
+  return price.standard;
+}
+
 export function quote(price: PriceModel, party: Party, date?: string, hours?: number): Quote {
   const guests = participants(party);
 
@@ -238,9 +258,8 @@ export function quote(price: PriceModel, party: Party, date?: string, hours?: nu
     }
 
     case "fixed_departure": {
-      const earlyBirdApplies =
-        price.earlyBird != null && date != null && date <= price.earlyBird.until;
-      const unit = earlyBirdApplies ? (price.earlyBird as { price: number }).price : price.standard;
+      const unit = fixedDepartureRate(price, utcToday());
+      const earlyBirdApplies = price.earlyBird != null && unit === price.earlyBird.price;
       const total = round(unit * guests);
       return {
         kind: "priced",

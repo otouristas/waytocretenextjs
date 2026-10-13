@@ -3,7 +3,14 @@ import assert from "node:assert/strict";
 // Relative, extension-bearing imports so Node's type stripping can run this
 // file directly without a bundler or a path-alias resolver.
 import type { PriceModel } from "./content/schema.ts";
-import { billableHours, priceFrom, priceTo, quote, type HourlyPrivate } from "./pricing.ts";
+import {
+  billableHours,
+  fixedDepartureRate,
+  priceFrom,
+  priceTo,
+  quote,
+  type HourlyPrivate,
+} from "./pricing.ts";
 
 /**
  * Run with:  npm run test
@@ -223,4 +230,29 @@ test("hourly private five guests step to the €60 band", () => {
 test("hourly private beyond eight guests is an enquiry", () => {
   const q = quote(customDay, party(9), undefined, 5);
   assert.equal(q.kind, "enquiry");
+});
+
+const wildflowerWeek: PriceModel = {
+  kind: "fixed_departure",
+  currency: "EUR",
+  standard: 1690,
+  earlyBird: { price: 1490, until: "2026-12-31" },
+  deposit: 250,
+  balanceDueWeeksBefore: [10, 8],
+};
+
+test("early bird holds through the booking deadline, including for a later travel date", () => {
+  assert.equal(fixedDepartureRate(wildflowerWeek, "2026-10-13"), 1490);
+  assert.equal(fixedDepartureRate(wildflowerWeek, "2026-12-31"), 1490);
+  assert.equal(fixedDepartureRate(wildflowerWeek, "2027-01-01"), 1690);
+  assert.equal(fixedDepartureRate(wildflowerWeek, "2027-04-11"), 1690);
+});
+
+test("a fixed departure quotes the early-bird rate and a per-person deposit while the window is open", () => {
+  const q = quote(wildflowerWeek, party(2), "2027-04-11");
+  if (q.kind !== "priced") throw new Error("expected a price");
+  const open = fixedDepartureRate(wildflowerWeek, new Date().toISOString().slice(0, 10)) === 1490;
+  assert.equal(q.perPerson, open ? 1490 : 1690);
+  assert.equal(q.total, (open ? 1490 : 1690) * 2);
+  assert.equal(q.deposit, 500);
 });
