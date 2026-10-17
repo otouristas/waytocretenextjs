@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
-type Partner = "cyclades" | "crete" | null;
+type Partner = "crete" | null;
 
 const partners = {
-  cyclades: { name: "Discover Cyclades", url: "https://discovercyclades.gr/en", logo: "/images/brand/credits/discover-cyclades.png" },
   crete: { name: "Discover Crete", url: "https://discover-crete.com/", logo: "/images/brand/credits/discover-crete.png" },
 };
 
