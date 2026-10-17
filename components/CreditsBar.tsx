@@ -21,7 +21,7 @@ export function CreditsBar({ partner, source, className = "" }: { partner: Partn
       </a>
       <a href="https://touristas.ai" target="_blank" rel="noopener" className="inline-flex items-center gap-2 transition-colors hover:text-white">
         <span>Powered by</span>
-        <img src="/images/brand/credits/touristas-ai-white.png" alt="Touristas AI" width={92} height={19} className="h-[19px] w-auto" loading="lazy" />
+        <img src="/images/brand/credits/touristas-ai-white.png" alt="Touristas AI" width={123} height={19} className="h-[19px] w-auto" loading="lazy" />
       </a>
       {p && (
         <a href={`${p.url}?${utm}`} target="_blank" rel="noopener" className="inline-flex items-center gap-2 transition-opacity hover:opacity-90">
