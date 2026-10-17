@@ -9,6 +9,7 @@ import { allGuides, allPlaces, allTours, allReviews, ratingSummary } from "@/lib
 import { transferRoutes } from "@/lib/transfers";
 import { GoogleWordmark, Stars, TripAdvisorOwl } from "@/components/trust/source-logos";
 import { BrandLogo } from "@/components/brand-logo";
+import { CreditsBar } from "@/components/CreditsBar";
 import {
   ADDRESS_DISPLAY,
   BRAND,
@@ -247,7 +248,8 @@ export function Footer({ lang }: { lang: Lang }) {
       </div>
 
       {/*
-        The legal row carries the page's bottom padding.
+        The credits strip below the legal row carries the page's bottom
+        padding.
 
         This used to be `pb-28` on the layout's outermost div, which put seven
         rems of bare page background *below* the footer and read as a
@@ -256,7 +258,7 @@ export function Footer({ lang }: { lang: Lang }) {
         top of this text — so it now belongs to the footer, where it is
         footer-coloured rather than empty ground.
       */}
-      <div className="border-t border-line px-4 pt-5 pb-[max(5.5rem,calc(env(safe-area-inset-bottom)+5rem))]">
+      <div className="border-t border-line px-4 py-5">
         <div className="mx-auto grid max-w-6xl gap-4 text-xs text-faint">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p>
@@ -274,49 +276,13 @@ export function Footer({ lang }: { lang: Lang }) {
               </Link>
             </nav>
           </div>
-
-          {/* Credits and the partner property. The Discover Crete mark is
-              self-hosted: their /favicon.svg is a 1.3 MB PNG in an SVG
-              wrapper, which is not something to pull on every page view. */}
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:justify-end">
-            <a
-              href="https://anotherseoguru.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-accent"
-            >
-              Designed by <span className="font-semibold text-muted">AnotherSEOGuru</span>
-            </a>
-            <a
-              href="https://touristas.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-accent"
-            >
-              Powered by <span className="font-semibold text-muted">Touristas AI</span>
-            </a>
-            <a
-              href="https://discover-crete.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 transition hover:opacity-90"
-            >
-              <Image
-                src="/brand/partners/discover-crete.png"
-                alt=""
-                width={63}
-                height={64}
-                className="size-5 object-contain"
-              />
-              <span className="leading-tight">
-                <span className="block text-xs font-bold text-ink">Discover Crete</span>
-                <span className="block text-[9px] font-medium uppercase tracking-wider text-faint">
-                  Partner
-                </span>
-              </span>
-            </a>
-          </div>
         </div>
+      </div>
+      {/* Credits row. The AnotherSEOGuru and Touristas AI marks have light
+          lettering, so they sit on a strip of the brand's dark earth in both
+          themes. */}
+      <div className="bg-[#241614] px-4 pt-5 pb-[max(5.5rem,calc(env(safe-area-inset-bottom)+5rem))]">
+        <CreditsBar partner="crete" source="rethymnotours.com" className="mx-auto max-w-6xl sm:justify-center" />
       </div>
     </footer>
   );
