@@ -1,5 +1,6 @@
 import { llmFeedHeaders, llmsTxt } from "@/lib/seo/llms";
 import { isIndexable } from "@/lib/site";
+import { withLlmsHeader } from "@/lib/seo-parity/llms-header";
 
 /**
  * /llms.txt
@@ -21,5 +22,5 @@ export function GET() {
     });
   }
 
-  return new Response(llmsTxt(), { headers: llmFeedHeaders("index") });
+  return new Response(withLlmsHeader(llmsTxt(), { origin: "https://rethymnotours.com", kind: "index" }), { headers: llmFeedHeaders("index") });
 }

@@ -1,5 +1,6 @@
 import { llmFeedHeaders, llmsFullTxt } from "@/lib/seo/llms";
 import { isIndexable } from "@/lib/site";
+import { withLlmsHeader } from "@/lib/seo-parity/llms-header";
 
 /**
  * /llms-full.txt — the whole corpus in one plain-text document.
@@ -17,5 +18,5 @@ export function GET() {
     });
   }
 
-  return new Response(llmsFullTxt(), { headers: llmFeedHeaders("full") });
+  return new Response(withLlmsHeader(llmsFullTxt(), { origin: "https://rethymnotours.com", kind: "full" }), { headers: llmFeedHeaders("full") });
 }
